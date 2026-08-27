@@ -115,6 +115,20 @@ function numericWeek(value: unknown) {
   return Number.isFinite(n) ? n : null;
 }
 
+function currentPoolRows(rows: unknown[][]) {
+  const result: unknown[][] = [];
+  for (const row of rows.slice(1)) {
+    const entryNumber = String(row[0] ?? "").trim();
+    const entryName = String(row[1] ?? "").trim();
+
+    // The live 2026 pool is the first contiguous block beneath the header.
+    // Archived/eliminated blocks appear after the first fully blank separator row.
+    if (!entryNumber && !entryName) break;
+    if (entryName) result.push(row);
+  }
+  return result;
+}
+
 export async function getSurvivorSnapshot(currentWeek: number): Promise<SurvivorSnapshot> {
   const accessToken = await getAccessTokenFromCookie();
   if (!accessToken) {
@@ -136,7 +150,7 @@ export async function getSurvivorSnapshot(currentWeek: number): Promise<Survivor
       .map((label, index) => ({ label, index }))
       .filter(({ label, index }) => index >= 4 && index <= 35 && /^[A-Z]{2,3}$/.test(label));
 
-    const poolRows = rows.slice(1).filter((row) => String(row[1] ?? "").trim());
+    const poolRows = currentPoolRows(rows);
     const aliveRows = poolRows.filter((row) => String(row[3] ?? "").trim().toLowerCase() === "yes");
     const ownershipCounts = new Map<string, number>();
     let submitted = 0;
