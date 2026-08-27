@@ -1,3 +1,4 @@
+import AtAGlance from "@/components/AtAGlance";
 import styles from "./survivor.module.css";
 import { getDashboardData } from "@/lib/sleeper";
 import { getSurvivorSnapshot } from "@/lib/google-survivor";
@@ -28,6 +29,10 @@ export default async function SurvivorPage({
     ? snapshot.entries
     : placeholderEntries.map((name) => ({ name, alive: true, usedTeams: [] as Array<{ team: string; week: number }>, currentPick: undefined }));
   const ownership = snapshot.ownership.slice(0, 4);
+  const myEntries = entries.slice(0, 4);
+  const myAlive = myEntries.filter((entry) => entry.alive).length;
+  const submittedPct = snapshot.aliveEntries ? (snapshot.submitted / snapshot.aliveEntries) * 100 : 0;
+  const topOwnership = ownership[0];
 
   return (
     <main>
@@ -39,6 +44,13 @@ export default async function SurvivorPage({
             Four entries, one coordinated strategy. Survive first; use Friday ownership, diversification and future value only when the tradeoff earns it.
           </p>
         </header>
+
+        <AtAGlance items={[
+          { label: "Your entries alive", value: `${myAlive} / 4`, note: myAlive === 4 ? "Full portfolio still alive" : `${4 - myAlive} entry${4 - myAlive === 1 ? "" : "ies"} eliminated`, tone: myAlive === 4 ? "good" : "warn" },
+          { label: "Pool submitted", value: snapshot.connected ? `${submittedPct.toFixed(0)}%` : "—", note: snapshot.connected ? `${snapshot.submitted} of ${snapshot.aliveEntries || "—"} live entries have a Week ${currentWeek} pick visible` : "Connect Google for live submission pace", tone: "accent" },
+          { label: "Current chalk", value: topOwnership ? topOwnership.team : "—", note: topOwnership ? `${topOwnership.pct.toFixed(1)}% of submitted picks` : "No Week picks visible yet", tone: topOwnership ? "warn" : "default" },
+          { label: "Commissioner sheet", value: snapshot.connected && !snapshot.error ? "LIVE" : "Offline", note: snapshot.connected && !snapshot.error ? "Read-only Google sync is active" : "Reconnect to restore live pool intelligence", tone: snapshot.connected && !snapshot.error ? "good" : "warn" },
+        ]} />
 
         <section className={styles.poolStatus}>
           <div className={styles.statusMain}>
@@ -68,7 +80,7 @@ export default async function SurvivorPage({
         </section>
 
         <section className={styles.entryGrid}>
-          {entries.slice(0, 4).map((entry) => (
+          {myEntries.map((entry) => (
             <article className={styles.entryCard} key={entry.name}>
               <div className={styles.entryTop}>
                 <div>
