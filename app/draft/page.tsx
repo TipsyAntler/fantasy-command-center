@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AtAGlance from "@/components/AtAGlance";
 import PlayerContext from "@/components/PlayerContext";
 import { getDashboardData, SleeperPlayer } from "@/lib/sleeper";
 
@@ -14,6 +15,7 @@ export default async function DraftPage() {
   const risers = data.adds.filter((row) => row.heatingUp).slice(0, 8);
   const fallback = data.adds.slice(0, 8);
   const rows = risers.length >= 4 ? risers : fallback;
+  const topMover = rows[0];
 
   return (
     <main>
@@ -23,6 +25,13 @@ export default async function DraftPage() {
           <h1>Draft Room</h1>
           <p className="hero-copy">The future home of your custom board, tiers, roster construction and on-the-clock recommendations.</p>
         </header>
+
+        <AtAGlance items={[
+          { label: "Draft board", value: "Building", note: "Custom rankings unlock as league context fills in", tone: "accent" },
+          { label: "Market movers", value: `${rows.length}`, note: "Players drawing notable add attention right now" },
+          { label: "Top mover", value: topMover ? nameOf(topMover.player) : "—", note: topMover ? `${topMover.count.toLocaleString()} adds in the last 24h` : "Waiting for movement data", tone: "good" },
+          { label: "Yahoo draft sync", value: "Pending", note: "Live draft state arrives after Yahoo approval", tone: "warn" },
+        ]} />
 
         <section className="feature-grid">
           <article className="panel feature-card">
