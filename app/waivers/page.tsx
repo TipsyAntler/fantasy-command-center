@@ -1,3 +1,4 @@
+import PlayerContext from "@/components/PlayerContext";
 import { getDashboardData, SleeperPlayer } from "@/lib/sleeper";
 
 export const revalidate = 300;
@@ -25,7 +26,11 @@ export default async function WaiversPage() {
               {data.adds.slice(0, 15).map((row, index) => (
                 <div className="player-row" key={row.player_id}>
                   <span className="rank">{index + 1}</span>
-                  <div><div className="player-name-line"><strong>{nameOf(row.player)}</strong>{row.heatingUp ? <span className="heat-pill">Heating up</span> : null}</div><div className="meta">{row.player?.position || "—"} · {row.player?.team || "FA"}</div></div>
+                  <div className="player-copy">
+                    <div className="player-name-line"><strong>{nameOf(row.player)}</strong>{row.heatingUp ? <span className="heat-pill">Heating up</span> : null}</div>
+                    <div className="meta">{row.player?.position || "—"} · {row.player?.team || "FA"}</div>
+                    <PlayerContext player={row.player} kind="add" count={row.count} heatingUp={row.heatingUp} compact />
+                  </div>
                   <div className="count"><strong>{row.count.toLocaleString()}</strong><span>adds</span></div>
                 </div>
               ))}
@@ -38,7 +43,11 @@ export default async function WaiversPage() {
               {data.drops.slice(0, 15).map((row, index) => (
                 <div className="player-row" key={row.player_id}>
                   <span className="rank">{index + 1}</span>
-                  <div><strong>{nameOf(row.player)}</strong><div className="meta">{row.player?.position || "—"} · {row.player?.team || "FA"}</div></div>
+                  <div className="player-copy">
+                    <strong>{nameOf(row.player)}</strong>
+                    <div className="meta">{row.player?.position || "—"} · {row.player?.team || "FA"}</div>
+                    <PlayerContext player={row.player} kind="drop" count={row.count} compact />
+                  </div>
                   <div className="count"><strong>{row.count.toLocaleString()}</strong><span>drops</span></div>
                 </div>
               ))}
