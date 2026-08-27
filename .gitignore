@@ -1,0 +1,29 @@
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
+
+# Yahoo OAuth / API secrets and tokens
+*yahoo*token*.json
+*oauth*.json
+*credentials*.json
+*secrets*.json
+
+# Local fantasy data and generated snapshots
+data/*
+!data/.gitkeep
+snapshots/
+exports/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Logs and local tooling
+*.log
+.DS_Store
+.idea/
+.vscode/
