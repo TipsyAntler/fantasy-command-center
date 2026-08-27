@@ -1,3 +1,4 @@
+import Brief from "@/components/Brief";
 import { getDashboardData, SleeperPlayer } from "@/lib/sleeper";
 
 export const revalidate = 300;
@@ -23,16 +24,8 @@ function seasonType(value?: string) {
   return value;
 }
 
-function TrendList({
-  rows,
-  empty,
-}: {
-  rows: Array<{
-    player_id: string;
-    count: number;
-    player?: SleeperPlayer;
-    heatingUp?: boolean;
-  }>;
+function TrendList({ rows, empty }: {
+  rows: Array<{ player_id: string; count: number; player?: SleeperPlayer; heatingUp?: boolean }>;
   empty: string;
 }) {
   if (!rows.length) return <div className="empty">{empty}</div>;
@@ -79,30 +72,24 @@ export default async function Home() {
           <div>
             <div className="eyebrow">2026 · Personal Fantasy Operations</div>
             <h1>Fantasy Command Center</h1>
-            <p className="hero-copy">
-              One place for the signals worth noticing before your league mates notice them.
-            </p>
+            <p className="hero-copy">One place for the signals worth noticing before your league mates notice them.</p>
           </div>
-          <div className="live-badge">
-            <span className="live-dot" /> Live public data
-          </div>
+          <div className="live-badge"><span className="live-dot" /> Live public data</div>
         </header>
+
+        <Brief adds={data.adds} drops={data.drops} injuries={data.injuries} />
 
         <section className="status-grid">
           <article className="status-card">
             <div className="status-label">NFL NOW</div>
             <div className="status-value">{week ? `Week ${week}` : "Preseason"}</div>
-            <div className="status-note">
-              {seasonType(data.state?.season_type)} · {data.state?.season || "2026"}
-            </div>
+            <div className="status-note">{seasonType(data.state?.season_type)} · {data.state?.season || "2026"}</div>
           </article>
-
           <article className="status-card yahoo-card">
             <div className="status-label">YAHOO LEAGUES</div>
             <div className="status-value">Access pending</div>
             <div className="status-note">API application submitted · read-only integration queued</div>
           </article>
-
           <article className="status-card">
             <div className="status-label">LAST REFRESH</div>
             <div className="status-value">{updated}</div>
@@ -111,48 +98,26 @@ export default async function Home() {
         </section>
 
         <section className="section-heading">
-          <div>
-            <div className="eyebrow">WAIVER RADAR</div>
-            <h2>What fantasy players are doing right now</h2>
-          </div>
+          <div><div className="eyebrow">WAIVER RADAR</div><h2>What fantasy players are doing right now</h2></div>
           <span className="source-tag">Powered by Sleeper trending data</span>
         </section>
 
         <section className="two-column">
           <article className="panel featured-panel">
-            <div className="panel-head">
-              <div>
-                <span className="panel-kicker">ADD VELOCITY</span>
-                <h3>Trending Adds</h3>
-              </div>
-              <div className="panel-note">Past 24 hours</div>
-            </div>
-            <p className="panel-explainer">
-              “Heating up” flags players whose recent 4-hour add pace is meaningfully faster than their full-day pace.
-            </p>
+            <div className="panel-head"><div><span className="panel-kicker">ADD VELOCITY</span><h3>Trending Adds</h3></div><div className="panel-note">Past 24 hours</div></div>
+            <p className="panel-explainer">“Heating up” flags players whose recent 4-hour add pace is meaningfully faster than their full-day pace.</p>
             <TrendList rows={data.adds.slice(0, 12)} empty="No trending-add data available right now." />
           </article>
 
           <article className="panel">
-            <div className="panel-head">
-              <div>
-                <span className="panel-kicker">ROSTER PRESSURE</span>
-                <h3>Trending Drops</h3>
-              </div>
-              <div className="panel-note">Past 24 hours</div>
-            </div>
-            <p className="panel-explainer">
-              Useful for catching panic drops, roster churn, and players who may suddenly become available.
-            </p>
+            <div className="panel-head"><div><span className="panel-kicker">ROSTER PRESSURE</span><h3>Trending Drops</h3></div><div className="panel-note">Past 24 hours</div></div>
+            <p className="panel-explainer">Useful for catching panic drops, roster churn, and players who may suddenly become available.</p>
             <TrendList rows={data.drops.slice(0, 10)} empty="No trending-drop data available right now." />
           </article>
         </section>
 
         <section className="section-heading second-heading">
-          <div>
-            <div className="eyebrow">PLAYER AVAILABILITY</div>
-            <h2>Injury & practice radar</h2>
-          </div>
+          <div><div className="eyebrow">PLAYER AVAILABILITY</div><h2>Injury & practice radar</h2></div>
         </section>
 
         <section className="panel injury-panel">
@@ -160,48 +125,31 @@ export default async function Home() {
             <div className="injury-grid">
               {data.injuries.map((player) => (
                 <div className="injury-card" key={player.player_id || nameOf(player)}>
-                  <div className="injury-top">
-                    <strong>{nameOf(player)}</strong>
-                    <span className="position-pill">{positionOf(player)}</span>
-                  </div>
+                  <div className="injury-top"><strong>{nameOf(player)}</strong><span className="position-pill">{positionOf(player)}</span></div>
                   <div className="meta">{teamOf(player)}</div>
-                  <div className="injury-status">
-                    {player.injury_status || "Practice report"}
-                  </div>
-                  {player.practice_participation ? (
-                    <div className="practice">Practice: {player.practice_participation}</div>
-                  ) : null}
+                  <div className="injury-status">{player.injury_status || "Practice report"}</div>
+                  {player.practice_participation ? <div className="practice">Practice: {player.practice_participation}</div> : null}
                 </div>
               ))}
             </div>
-          ) : (
-            <div className="empty">No injury/practice data available right now.</div>
-          )}
+          ) : <div className="empty">No injury/practice data available right now.</div>}
         </section>
 
         <section className="roadmap">
           <div className="roadmap-copy">
-            <div className="eyebrow">NEXT UP</div>
-            <h2>This is only Version 0.</h2>
-            <p>
-              Yahoo approval unlocks the part that matters most: your exact scoring systems, rosters, opponents,
-              free agents, standings, matchups and transactions. The public-data layer we are building now stays
-              underneath it.
-            </p>
+            <div className="eyebrow">BUILD PLAN</div>
+            <h2>The league-specific layer comes next.</h2>
+            <p>Yahoo approval unlocks your exact scoring systems, rosters, opponents, free agents, standings, matchups and transactions. Until then, the Draft and Leagues tabs let us build the personalization layer manually.</p>
           </div>
           <div className="roadmap-list">
-            <div><span>01</span><strong>Yahoo league switcher</strong><small>Every league kept separate</small></div>
-            <div><span>02</span><strong>Personal waiver board</strong><small>Available players + your roster needs</small></div>
-            <div><span>03</span><strong>Start/sit room</strong><small>Matchup, role, injury and game context</small></div>
+            <div><span>01</span><strong>League profiles</strong><small>Manual now · Yahoo-powered later</small></div>
+            <div><span>02</span><strong>Draft board</strong><small>League-adjusted rankings and roster construction</small></div>
+            <div><span>03</span><strong>Personal waiver board</strong><small>Availability + roster need + FAAB</small></div>
             <div><span>04</span><strong>Survivor lab</strong><small>V1per41 + Vegas + future-value cross-check</small></div>
-            <div><span>05</span><strong>Daily command brief</strong><small>Only the changes worth your attention</small></div>
           </div>
         </section>
 
-        <footer>
-          <span>Fantasy Command Center · private personal project</span>
-          <span>Public movement data via Sleeper API</span>
-        </footer>
+        <footer><span>Fantasy Command Center · private personal project</span><span>Public movement data via Sleeper API</span></footer>
       </div>
     </main>
   );
