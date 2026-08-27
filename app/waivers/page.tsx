@@ -1,3 +1,4 @@
+import AtAGlance from "@/components/AtAGlance";
 import PlayerContext from "@/components/PlayerContext";
 import { getDashboardData, SleeperPlayer } from "@/lib/sleeper";
 
@@ -10,6 +11,10 @@ function nameOf(player?: SleeperPlayer) {
 
 export default async function WaiversPage() {
   const data = await getDashboardData();
+  const heating = data.adds.filter((row) => row.heatingUp);
+  const topAdd = data.adds[0];
+  const topDrop = data.drops[0];
+
   return (
     <main>
       <div className="shell page-shell">
@@ -18,6 +23,13 @@ export default async function WaiversPage() {
           <h1>Waiver Room</h1>
           <p className="hero-copy">Public movement now. League-specific availability, roster fit and FAAB recommendations after Yahoo connects.</p>
         </header>
+
+        <AtAGlance items={[
+          { label: "Heating up", value: `${heating.length}`, note: "Players whose short-term add pace is accelerating", tone: heating.length ? "good" : "default" },
+          { label: "Most added", value: topAdd ? nameOf(topAdd.player) : "—", note: topAdd ? `${topAdd.count.toLocaleString()} moves in 24h` : "No add data right now", tone: "accent" },
+          { label: "Most dropped", value: topDrop ? nameOf(topDrop.player) : "—", note: topDrop ? `${topDrop.count.toLocaleString()} moves in 24h` : "No drop data right now" },
+          { label: "Personal FAAB", value: "Pending", note: "League fit, cuts and bid guidance unlock with Yahoo", tone: "warn" },
+        ]} />
 
         <section className="two-column">
           <article className="panel">
