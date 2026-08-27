@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PlayerContext from "@/components/PlayerContext";
 import { getDashboardData, SleeperPlayer } from "@/lib/sleeper";
 
 export const revalidate = 300;
@@ -49,7 +50,11 @@ export default async function DraftPage() {
           {rows.map((row, index) => (
             <div className="signal-row" key={row.player_id}>
               <span className="rank">{index + 1}</span>
-              <div><strong>{nameOf(row.player)}</strong><div className="meta">{row.player?.position || "—"} · {row.player?.team || "FA"}</div></div>
+              <div className="player-copy">
+                <strong>{nameOf(row.player)}</strong>
+                <div className="meta">{row.player?.position || "—"} · {row.player?.team || "FA"}</div>
+                <PlayerContext player={row.player} kind="add" count={row.count} heatingUp={row.heatingUp} compact />
+              </div>
               <div className="signal-value"><strong>{row.count.toLocaleString()}</strong><span>24h adds</span></div>
               <span className={row.heatingUp ? "heat-pill" : "muted-pill"}>{row.heatingUp ? "Heating up" : "Active"}</span>
             </div>
