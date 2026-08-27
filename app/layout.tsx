@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import "./globals.css";
+import "./command-center.css";
 
 export const metadata: Metadata = {
   title: "Fantasy Command Center",
