@@ -1,0 +1,266 @@
+.poolStatus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 22px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(97,226,168,.18);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(97,226,168,.07), rgba(13,24,34,.92));
+}
+
+.statusMain strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 22px;
+  letter-spacing: -.03em;
+}
+
+.statusMain p {
+  margin: 6px 0 0;
+  max-width: 700px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.statusChip {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: #c7d5df;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.entryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.entryCard {
+  min-height: 148px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(13,24,34,.82);
+}
+
+.entryTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.entryTop h3 {
+  margin-top: 6px;
+  font-size: 18px;
+}
+
+.alive {
+  padding: 4px 7px;
+  border: 1px solid rgba(97,226,168,.18);
+  border-radius: 999px;
+  color: #bcebd5;
+  background: rgba(97,226,168,.06);
+  font-size: 9px;
+  font-weight: 850;
+}
+
+.entryFacts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.entryFacts span,
+.entryFacts strong {
+  display: block;
+}
+
+.entryFacts span {
+  color: var(--muted);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.entryFacts strong {
+  margin-top: 3px;
+  font-size: 11px;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.timeline article {
+  min-height: 230px;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(13,24,34,.84);
+}
+
+.timeline article.friday {
+  border-color: rgba(240,187,95,.28);
+  background: linear-gradient(145deg, rgba(240,187,95,.08), rgba(13,24,34,.92));
+}
+
+.step {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  color: #092016;
+  background: var(--accent);
+  font-size: 10px;
+  font-weight: 950;
+}
+
+.friday .step {
+  color: #2c2108;
+  background: var(--accent-2);
+}
+
+.timeline h3 {
+  margin-top: 7px;
+  font-size: 20px;
+}
+
+.timeline p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.ownershipPanel {
+  margin-top: 16px;
+  border: 1px solid rgba(240,187,95,.18);
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(13,24,34,.88);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 22px 18px;
+}
+
+.panelHeader h3 {
+  margin-top: 5px;
+}
+
+.pending {
+  color: #d6c08d;
+  border: 1px solid rgba(240,187,95,.18);
+  border-radius: 999px;
+  padding: 6px 9px;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.ownershipGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.ownershipGrid > div {
+  min-height: 92px;
+  padding: 16px;
+  border-right: 1px solid var(--line);
+}
+
+.ownershipGrid > div:last-child {
+  border-right: none;
+}
+
+.ownershipGrid span,
+.ownershipGrid strong,
+.ownershipGrid small {
+  display: block;
+}
+
+.ownershipGrid span {
+  color: var(--muted);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.ownershipGrid strong {
+  margin: 7px 0 2px;
+  font-size: 24px;
+}
+
+.ownershipGrid small {
+  color: #637688;
+  font-size: 9px;
+}
+
+.modelGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 48px;
+}
+
+@media (max-width: 900px) {
+  .entryGrid,
+  .modelGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .poolStatus,
+  .panelHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .entryGrid,
+  .modelGrid,
+  .ownershipGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ownershipGrid > div {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .ownershipGrid > div:last-child {
+    border-bottom: 0;
+  }
+}
