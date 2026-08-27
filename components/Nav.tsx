@@ -4,11 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const items = [
-  ["/", "Home"],
-  ["/draft", "Draft"],
-  ["/leagues", "Leagues"],
-  ["/waivers", "Waivers"],
-  ["/survivor", "Survivor"],
+  ["/", "Home", "⌂"],
+  ["/survivor", "Survivor Lab", "◉"],
+  ["/draft", "Draft Room", "⌁"],
+  ["/waivers", "Waiver Room", "⇄"],
+  ["/leagues", "My Leagues", "▦"],
+  ["/pickem", "Pick'em", "✓"],
 ] as const;
 
 export default function Nav() {
@@ -16,16 +17,36 @@ export default function Nav() {
 
   return (
     <nav className="app-nav" aria-label="Fantasy Command Center">
-      <Link className="brand-mark" href="/" aria-label="Fantasy Command Center home">FCC</Link>
+      <Link className="brand-block" href="/" aria-label="Fantasy Command Center home">
+        <div className="brand-mark">FCC</div>
+        <div className="brand-name">
+          <span>FANTASY</span>
+          <span className="command">COMMAND</span>
+          <span className="center">CENTER</span>
+        </div>
+        <div className="brand-tagline">One app. Every format. Total command.</div>
+      </Link>
+
       <div className="nav-scroll">
-        {items.map(([href, label]) => {
+        {items.map(([href, label, glyph]) => {
           const active = href === "/" ? pathname === "/" : pathname.startsWith(href);
           return (
             <Link key={href} href={href} className={active ? "nav-link active" : "nav-link"}>
-              {label}
+              <span className="nav-glyph" aria-hidden="true">{glyph}</span>
+              <span>{label}</span>
             </Link>
           );
         })}
+      </div>
+
+      <div className="nav-spacer" />
+      <div className="nav-status">
+        <strong>Yahoo connection pending</strong>
+        <span>Public NFL signals are live now. League-specific intelligence unlocks after approval.</span>
+      </div>
+      <div className="nav-profile">
+        <div className="profile-dot">M</div>
+        <div><strong>Mike</strong><span>Personal command</span></div>
       </div>
     </nav>
   );
