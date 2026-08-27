@@ -5,9 +5,9 @@
   gap: 20px;
   padding: 20px 22px;
   margin-bottom: 14px;
-  border: 1px solid rgba(97,226,168,.18);
+  border: 1px solid rgba(74, 212, 255, .2);
   border-radius: 20px;
-  background: linear-gradient(135deg, rgba(97,226,168,.07), rgba(13,24,34,.92));
+  background: linear-gradient(135deg, rgba(74, 212, 255, .07), rgba(13,24,34,.94));
 }
 
 .statusMain strong {
@@ -19,14 +19,22 @@
 
 .statusMain p {
   margin: 6px 0 0;
-  max-width: 700px;
+  max-width: 760px;
   color: var(--muted);
   font-size: 12px;
   line-height: 1.55;
 }
 
-.statusChip {
+.errorText { color: #ff9e91 !important; }
+
+.connectionActions {
   flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusChip {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -38,11 +46,43 @@
   white-space: nowrap;
 }
 
-.dot {
+.dot,
+.dotOff {
   width: 7px;
   height: 7px;
   border-radius: 50%;
+}
+
+.dot {
   background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(97,226,168,.08);
+}
+
+.dotOff { background: #718292; }
+
+.connectButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 850;
+}
+
+.connectButton {
+  color: #03151d;
+  background: #53d6ff;
+  box-shadow: 0 0 24px rgba(74,212,255,.12);
+}
+
+.secondaryButton {
+  color: #9fb2c2;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
 }
 
 .entryGrid {
@@ -71,14 +111,24 @@
   font-size: 18px;
 }
 
-.alive {
+.alive,
+.out {
   padding: 4px 7px;
-  border: 1px solid rgba(97,226,168,.18);
   border-radius: 999px;
-  color: #bcebd5;
-  background: rgba(97,226,168,.06);
   font-size: 9px;
   font-weight: 850;
+}
+
+.alive {
+  border: 1px solid rgba(97,226,168,.18);
+  color: #bcebd5;
+  background: rgba(97,226,168,.06);
+}
+
+.out {
+  border: 1px solid rgba(255,143,126,.18);
+  color: #ffc3b9;
+  background: rgba(255,143,126,.06);
 }
 
 .entryFacts {
@@ -89,9 +139,7 @@
 }
 
 .entryFacts span,
-.entryFacts strong {
-  display: block;
-}
+.entryFacts strong { display: block; }
 
 .entryFacts span {
   color: var(--muted);
@@ -103,6 +151,7 @@
 .entryFacts strong {
   margin-top: 3px;
   font-size: 11px;
+  line-height: 1.5;
 }
 
 .timeline {
@@ -171,9 +220,7 @@
   padding: 20px 22px 18px;
 }
 
-.panelHeader h3 {
-  margin-top: 5px;
-}
+.panelHeader h3 { margin-top: 5px; }
 
 .pending {
   color: #d6c08d;
@@ -197,15 +244,11 @@
   border-right: 1px solid var(--line);
 }
 
-.ownershipGrid > div:last-child {
-  border-right: none;
-}
+.ownershipGrid > div:last-child { border-right: none; }
 
 .ownershipGrid span,
 .ownershipGrid strong,
-.ownershipGrid small {
-  display: block;
-}
+.ownershipGrid small { display: block; }
 
 .ownershipGrid span {
   color: var(--muted);
@@ -233,13 +276,10 @@
 
 @media (max-width: 900px) {
   .entryGrid,
-  .modelGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .timeline {
-    grid-template-columns: 1fr;
-  }
+  .modelGrid { grid-template-columns: repeat(2, 1fr); }
+  .timeline { grid-template-columns: 1fr; }
+  .poolStatus { align-items: flex-start; }
+  .connectionActions { flex-direction: column; align-items: stretch; }
 }
 
 @media (max-width: 600px) {
@@ -249,18 +289,16 @@
     flex-direction: column;
   }
 
+  .connectionActions { width: 100%; flex-direction: row; }
+  .statusChip { flex: 1 1 auto; }
   .entryGrid,
   .modelGrid,
-  .ownershipGrid {
-    grid-template-columns: 1fr;
-  }
+  .ownershipGrid { grid-template-columns: 1fr; }
 
   .ownershipGrid > div {
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
 
-  .ownershipGrid > div:last-child {
-    border-bottom: 0;
-  }
+  .ownershipGrid > div:last-child { border-bottom: 0; }
 }
