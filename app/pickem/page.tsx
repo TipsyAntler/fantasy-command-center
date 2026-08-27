@@ -1,3 +1,5 @@
+import AtAGlance from "@/components/AtAGlance";
+
 export default function PickemPage() {
   return (
     <main>
@@ -7,6 +9,13 @@ export default function PickemPage() {
           <h1>Pick&apos;em Room</h1>
           <p className="hero-copy">Weekly confidence, upset risk and game-by-game decision support. The private SZN pool connection can come later; the useful part starts with the slate itself.</p>
         </header>
+
+        <AtAGlance items={[
+          { label: "This week's slate", value: "Loading next", note: "Full NFL board with straight-up lean and confidence", tone: "accent" },
+          { label: "High-confidence picks", value: "—", note: "The clearest winners will surface here first", tone: "good" },
+          { label: "Upset radar", value: "—", note: "Games where injuries, market movement or matchup risk matter", tone: "warn" },
+          { label: "SZN tracking", value: "Optional", note: "Useful without private integration; results can layer in later" },
+        ]} />
 
         <section className="feature-grid">
           <article className="panel feature-card">
