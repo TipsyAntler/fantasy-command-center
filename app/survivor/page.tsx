@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styles from "./survivor.module.css";
 import { getDashboardData } from "@/lib/sleeper";
 import { getSurvivorSnapshot } from "@/lib/google-survivor";
@@ -12,7 +11,15 @@ function displayEntryName(name: string) {
   return match ? `Entry ${match[1]}` : name;
 }
 
-export default async function SurvivorPage() {
+export default async function SurvivorPage({
+  searchParams,
+}: {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const params = searchParams ? await searchParams : {};
+  const googleStatus = typeof params.google === "string" ? params.google : undefined;
+  const googleMessage = typeof params.message === "string" ? params.message : undefined;
+
   const dashboard = await getDashboardData();
   const rawWeek = Number(dashboard.state?.display_week ?? dashboard.state?.week ?? 1);
   const currentWeek = Number.isFinite(rawWeek) && rawWeek > 0 ? rawWeek : 1;
@@ -42,6 +49,9 @@ export default async function SurvivorPage() {
                 ? `Read-only access is active. ${snapshot.aliveEntries || "—"} pool entries are currently marked alive; ${snapshot.submitted} have a Week ${currentWeek} pick visible in the sheet.`
                 : "Authorize the app with the same Google account that can already view the Suicide Pool 2026 sheet. The app requests read-only Google Sheets access and cannot edit the pool."}
             </p>
+            {googleStatus === "error" ? (
+              <p className={styles.errorText}>Google connection error: {googleMessage || "OAuth setup failed."}</p>
+            ) : null}
             {snapshot.error ? <p className={styles.errorText}>Sheet read error: {snapshot.error}</p> : null}
           </div>
           <div className={styles.connectionActions}>
@@ -50,9 +60,9 @@ export default async function SurvivorPage() {
               {snapshot.connected && !snapshot.error ? "Live sheet access" : snapshot.connected ? "Reconnect needed" : "Not connected"}
             </div>
             {snapshot.connected ? (
-              <Link className={styles.secondaryButton} href="/api/google/disconnect">Disconnect</Link>
+              <a className={styles.secondaryButton} href="/api/google/disconnect">Disconnect</a>
             ) : (
-              <Link className={styles.connectButton} href="/api/google/connect">Connect Google</Link>
+              <a className={styles.connectButton} href="/api/google/connect">Connect Google</a>
             )}
           </div>
         </section>
