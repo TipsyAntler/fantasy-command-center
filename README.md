@@ -1,59 +1,79 @@
 # Fantasy Command Center
 
-Fantasy Command Center is a private, single-user, non-commercial analytics and decision-support project for my personal Yahoo Fantasy Sports leagues.
+Fantasy Command Center is a private, single-user, non-commercial fantasy football analytics and decision-support project.
 
-## Purpose
+## Current status
 
-The project is designed to authenticate my own Yahoo account through OAuth and retrieve read-only Yahoo Fantasy Sports data for leagues and teams that I am authorized to access.
+**Version 0 is now a working Next.js web-app scaffold.** While Yahoo Fantasy Sports API access is under review, the dashboard uses public, read-only NFL/fantasy signals so the application can be built and deployed before Yahoo credentials exist.
 
-The data used may include:
+Current live-data layer:
+
+- current NFL season/week state
+- fantasy-player add trends
+- fantasy-player drop trends
+- add-velocity signals (short-window movement vs. 24-hour movement)
+- active injury/practice status for fantasy-relevant players
+
+Public movement/player metadata is currently sourced from the read-only Sleeper API with attribution. Yahoo data is not being proxied through Sleeper.
+
+## Yahoo integration
+
+The project is designed to authenticate my own Yahoo account through OAuth and retrieve read-only Yahoo Fantasy Sports data for leagues and teams that I am authorized to access after Yahoo approves API access.
+
+The Yahoo layer is intended to include:
 
 - league settings and scoring configuration
 - teams and rosters
-- player availability and status
+- player availability
 - weekly matchups
 - standings
 - transactions
 - draft and roster metadata
 - other league information needed for personal fantasy analysis
 
-## Intended use
+That data will enable personalized draft preparation, waiver-wire evaluation, trade analysis, lineup decisions, roster construction, opponent analysis, and season-long performance tracking.
 
-Retrieved data will be used locally to create structured league snapshots for personal analysis, including:
+## Roadmap
 
-- draft preparation
-- waiver-wire evaluation
-- trade analysis
-- lineup decisions
-- roster construction
-- opponent analysis
-- season-long performance tracking
+1. Deploy the public-data dashboard as a persistent web app.
+2. Add a Yahoo OAuth connection when API access is approved.
+3. Add a league switcher so every league retains its own scoring/settings context.
+4. Build personalized waiver, lineup, opponent and trade views.
+5. Add a Survivor Lab that cross-checks external research with win probability, expected popularity and future-value considerations.
+6. Add a concise daily/throughout-the-day command brief highlighting only meaningful changes.
 
 ## Scope and privacy
 
 This is a single-user personal project. It is not a public fantasy service and is not intended for commercial use.
 
 - Yahoo Fantasy Sports API access will be read-only.
-- The project will not make automated roster or transaction changes.
+- The project will not make automated Yahoo roster or transaction changes.
 - Yahoo Fantasy Sports data will not be resold or redistributed.
-- OAuth credentials, access tokens, refresh tokens, and private league data will remain local and will not be committed to this public repository.
+- OAuth credentials, access tokens, refresh tokens, and private league data will not be committed to this public repository.
 - Only data associated with my own authenticated Yahoo account and leagues I am authorized to access will be retrieved.
 
-## Current status
+## Tech
 
-Initial project setup for the 2026 Yahoo Fantasy Football season. Yahoo Fantasy Sports API access is being requested. No Yahoo Fantasy Sports data or authentication credentials are included in this repository.
+- Next.js 16
+- React
+- TypeScript
+- server-side cached data fetching
+- Sleeper read-only API for the current public-data layer
+- Yahoo Fantasy Sports API planned after approval
 
-## Planned project structure
+## Local development
 
-```text
-fantasy-command-center/
-├── src/             # API client and snapshot-generation code
-├── data/            # Local league snapshots (gitignored)
-├── .env             # Local credentials and tokens (gitignored)
-├── .env.example     # Safe variable-name template
-└── README.md
+```bash
+npm install
+npm run dev
 ```
+
+Then open `http://localhost:3000`.
+
+## Private configuration
+
+`.env`, Yahoo OAuth credentials/tokens, league snapshots and generated private exports are gitignored. `.env.example` contains safe variable names only.
 
 ## Disclaimer
 
-This is an independent personal project and is not affiliated with, endorsed by, or sponsored by Yahoo or Yahoo Fantasy Sports.
+This is an independent personal project and is not affiliated with, endorsed by, or sponsored by Yahoo, Yahoo Fantasy Sports, Sleeper, or the NFL.
