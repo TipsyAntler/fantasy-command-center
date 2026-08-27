@@ -1,4 +1,5 @@
 import Brief from "@/components/Brief";
+import PlayerContext from "@/components/PlayerContext";
 import { getDashboardData, SleeperPlayer } from "@/lib/sleeper";
 
 export const revalidate = 300;
@@ -24,9 +25,10 @@ function seasonType(value?: string) {
   return value;
 }
 
-function TrendList({ rows, empty }: {
+function TrendList({ rows, empty, kind }: {
   rows: Array<{ player_id: string; count: number; player?: SleeperPlayer; heatingUp?: boolean }>;
   empty: string;
+  kind: "add" | "drop";
 }) {
   if (!rows.length) return <div className="empty">{empty}</div>;
 
@@ -44,6 +46,7 @@ function TrendList({ rows, empty }: {
               {positionOf(row.player)} · {teamOf(row.player)}
               {row.player?.injury_status ? ` · ${row.player.injury_status}` : ""}
             </span>
+            <PlayerContext player={row.player} kind={kind} count={row.count} heatingUp={row.heatingUp} compact />
           </div>
           <div className="count">
             <strong>{row.count.toLocaleString()}</strong>
@@ -106,13 +109,13 @@ export default async function Home() {
           <article className="panel featured-panel">
             <div className="panel-head"><div><span className="panel-kicker">ADD VELOCITY</span><h3>Trending Adds</h3></div><div className="panel-note">Past 24 hours</div></div>
             <p className="panel-explainer">“Heating up” flags players whose recent 4-hour add pace is meaningfully faster than their full-day pace.</p>
-            <TrendList rows={data.adds.slice(0, 12)} empty="No trending-add data available right now." />
+            <TrendList kind="add" rows={data.adds.slice(0, 12)} empty="No trending-add data available right now." />
           </article>
 
           <article className="panel">
             <div className="panel-head"><div><span className="panel-kicker">ROSTER PRESSURE</span><h3>Trending Drops</h3></div><div className="panel-note">Past 24 hours</div></div>
             <p className="panel-explainer">Useful for catching panic drops, roster churn, and players who may suddenly become available.</p>
-            <TrendList rows={data.drops.slice(0, 10)} empty="No trending-drop data available right now." />
+            <TrendList kind="drop" rows={data.drops.slice(0, 10)} empty="No trending-drop data available right now." />
           </article>
         </section>
 
@@ -129,6 +132,7 @@ export default async function Home() {
                   <div className="meta">{teamOf(player)}</div>
                   <div className="injury-status">{player.injury_status || "Practice report"}</div>
                   {player.practice_participation ? <div className="practice">Practice: {player.practice_participation}</div> : null}
+                  <PlayerContext player={player} kind="injury" compact />
                 </div>
               ))}
             </div>
