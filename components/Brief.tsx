@@ -1,9 +1,21 @@
+import PlayerContext from "@/components/PlayerContext";
 import type { HydratedTrend, SleeperPlayer } from "@/lib/sleeper";
 
 function nameOf(player?: SleeperPlayer) {
   if (!player) return "Unknown player";
   return player.full_name || [player.first_name, player.last_name].filter(Boolean).join(" ") || "Unknown player";
 }
+
+type BriefItem = {
+  tone: string;
+  label: string;
+  title: string;
+  detail: string;
+  player?: SleeperPlayer;
+  kind: "add" | "drop" | "injury";
+  count?: number;
+  heatingUp?: boolean;
+};
 
 export default function Brief({
   adds,
@@ -27,6 +39,10 @@ export default function Brief({
           detail: hot.heatingUp
             ? "His recent add pace is accelerating versus the full-day pace."
             : "He is among the most-added fantasy players over the past 24 hours.",
+          player: hot.player,
+          kind: "add" as const,
+          count: hot.count,
+          heatingUp: hot.heatingUp,
         }
       : null,
     injury
@@ -37,6 +53,8 @@ export default function Brief({
           detail: [injury.injury_status, injury.practice_participation ? `practice: ${injury.practice_participation}` : null]
             .filter(Boolean)
             .join(" · "),
+          player: injury,
+          kind: "injury" as const,
         }
       : null,
     drop
@@ -45,9 +63,12 @@ export default function Brief({
           label: "MARKET",
           title: `${nameOf(drop.player)} is seeing meaningful drop volume`,
           detail: "Worth monitoring for panic-drop value once league-specific availability is connected.",
+          player: drop.player,
+          kind: "drop" as const,
+          count: drop.count,
         }
       : null,
-  ].filter(Boolean) as Array<{ tone: string; label: string; title: string; detail: string }>;
+  ].filter(Boolean) as BriefItem[];
 
   return (
     <section className="brief-card">
@@ -66,6 +87,7 @@ export default function Brief({
               <div className="brief-label">{item.label}</div>
               <strong>{item.title}</strong>
               <p>{item.detail}</p>
+              <PlayerContext player={item.player} kind={item.kind} count={item.count} heatingUp={item.heatingUp} compact />
             </div>
           </div>
         )) : <div className="empty">No meaningful public signals available right now.</div>}
