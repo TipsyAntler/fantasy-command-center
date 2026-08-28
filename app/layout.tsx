@@ -5,13 +5,12 @@ import "./command-center.css";
 import "./nav-polish.css";
 
 export const metadata: Metadata = {
-  title: "Fantasy Football Command Center",
+  title: "Fantasy Command Center",
   description: "Personal fantasy football analytics and decision-support dashboard.",
   manifest: "/manifest.webmanifest",
   icons: {
-    icon: "/fcc-icon.svg",
-    shortcut: "/fcc-icon.svg",
-    apple: "/fcc-icon.svg",
+    icon: "/ffcc-icon.png",
+    apple: "/apple-touch-icon.png",
   },
   appleWebApp: {
     capable: true,
