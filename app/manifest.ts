@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Fantasy Command Center",
-    short_name: "Fantasy CC",
+    name: "Fantasy Football Command Center",
+    short_name: "FFCC",
     description: "Personal fantasy football analytics and decision-support dashboard.",
     start_url: "/",
     display: "standalone",
@@ -14,6 +14,7 @@ export default function manifest(): MetadataRoute.Manifest {
         src: "/fcc-icon.svg",
         sizes: "any",
         type: "image/svg+xml",
+        purpose: "any maskable",
       },
     ],
   };
