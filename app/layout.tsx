@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: "Personal fantasy football analytics and decision-support dashboard.",
   manifest: "/manifest.webmanifest",
   icons: {
-    icon: "/ffcc-icon.png",
-    apple: "/apple-touch-icon.png",
+    icon: "/apple-icon",
+    apple: "/apple-icon",
   },
   appleWebApp: {
     capable: true,
