@@ -11,29 +11,138 @@
 
 @media (max-width: 760px) {
   .app-nav {
-    height: 76px;
-    padding: 6px 8px max(6px, env(safe-area-inset-bottom));
+    height: 84px;
+    padding: 7px 8px max(7px, env(safe-area-inset-bottom));
   }
 
   .nav-link {
-    min-width: 56px;
-    min-height: 58px;
-    gap: 4px;
-    font-size: 7.5px;
+    min-width: 58px;
+    min-height: 64px;
+    padding: 7px 4px;
+    gap: 5px;
+    font-size: 8.5px;
+    line-height: 1.05;
+    font-weight: 800;
   }
 
   .nav-glyph {
-    width: 24px;
-    font-size: 21px;
+    width: 28px;
+    font-size: 25px;
     line-height: 1;
-    filter: drop-shadow(0 0 8px rgba(67,215,255,.06));
+    filter: drop-shadow(0 0 8px rgba(67,215,255,.08));
   }
 
   .nav-link.active .nav-glyph {
-    filter: drop-shadow(0 0 9px rgba(67,215,255,.28));
+    filter: drop-shadow(0 0 10px rgba(67,215,255,.34));
   }
 
   main {
-    padding-bottom: 86px;
+    padding-bottom: 96px;
+  }
+
+  .shell {
+    width: min(100% - 28px, 1320px);
+  }
+
+  .command-kicker,
+  .eyebrow,
+  .panel-kicker,
+  .kpi-label {
+    font-size: 10px;
+    letter-spacing: .1em;
+  }
+
+  .command-title {
+    font-size: clamp(32px, 9vw, 42px);
+  }
+
+  .command-subtitle,
+  .hero-copy,
+  .page-hero p,
+  .command-card p,
+  .panel-explainer,
+  .feature-card p,
+  .roadmap-copy p {
+    font-size: 12.5px;
+    line-height: 1.58;
+  }
+
+  .command-chip,
+  .command-button {
+    min-height: 44px;
+    font-size: 11px;
+  }
+
+  .kpi-card {
+    min-height: 112px;
+    padding: 16px;
+  }
+
+  .kpi-value {
+    margin-top: 11px;
+    font-size: 29px;
+  }
+
+  .kpi-note,
+  .kpi-mini,
+  .command-card-head span,
+  .snapshot-head .sub,
+  .entry-mini span,
+  .ownership-row,
+  .waiver-mini {
+    font-size: 9px;
+  }
+
+  .command-card-head strong,
+  .snapshot-head .title,
+  .team-line strong,
+  .intel-line strong,
+  .entry-mini strong,
+  .waiver-mini strong {
+    font-size: 10.5px;
+  }
+
+  .brief-hero .brief-line {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .brief-hero .brief-copy,
+  .player-context,
+  .player-context p,
+  .player-context summary {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .command-link,
+  .inline-action {
+    font-size: 10.5px;
+  }
+
+  .team-line,
+  .intel-line {
+    min-height: 49px;
+  }
+
+  .intel-line small {
+    font-size: 8.5px;
+    line-height: 1.45;
+  }
+
+  .meta,
+  .count span,
+  .signal-value span,
+  .panel-note,
+  .source-tag,
+  .coming-pill,
+  .muted-pill,
+  .heat-pill {
+    font-size: 9px;
+  }
+
+  .player-row,
+  .signal-row {
+    padding-block: 10px;
   }
 }
