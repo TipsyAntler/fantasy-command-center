@@ -1,6 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="112" fill="#071018"/>
-  <rect x="58" y="58" width="396" height="396" rx="86" fill="#0d1822" stroke="#61e2a8" stroke-width="14"/>
-  <path d="M150 148h222v54H214v70h130v52H214v124h-64V148Z" fill="#f4f7f9"/>
-  <path d="M298 310h74v138h-74z" fill="#61e2a8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Fantasy Command Center">
+  <defs>
+    <linearGradient id="bg" x1="64" y1="48" x2="448" y2="464" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#081522"/>
+      <stop offset="1" stop-color="#030810"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="112" y1="96" x2="408" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#43D7FF"/>
+      <stop offset=".52" stop-color="#34E7BD"/>
+      <stop offset="1" stop-color="#8467FF"/>
+    </linearGradient>
+    <linearGradient id="ball" x1="172" y1="157" x2="349" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#C8D6E8"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect x="28" y="28" width="456" height="456" rx="92" fill="none" stroke="#17314A" stroke-width="4"/>
+  <circle cx="256" cy="256" r="151" fill="none" stroke="#10263A" stroke-width="18"/>
+  <circle cx="256" cy="256" r="151" fill="none" stroke="url(#ring)" stroke-width="12" stroke-linecap="round" stroke-dasharray="410 540" transform="rotate(-28 256 256)" filter="url(#glow)" opacity=".95"/>
+  <path d="M256 72v52M256 388v52M72 256h52M388 256h52" stroke="#43D7FF" stroke-width="11" stroke-linecap="round" opacity=".9"/>
+  <path d="M174 161c52-37 112-41 164-9 27 17 45 42 53 72-19 77-69 132-149 164-34-5-63-20-87-45-24-24-39-53-44-87 11-40 32-72 63-95Z" fill="#0B1725" stroke="#21415A" stroke-width="8"/>
+  <path d="M168 310c21-68 70-120 148-157 34 3 61 17 81 39-21 72-70 127-148 165-35-3-62-19-81-47Z" fill="url(#ball)"/>
+  <path d="M230 228l57 55M246 213l12 13M263 201l12 13M279 192l12 13M296 184l12 13" stroke="#071018" stroke-width="11" stroke-linecap="round"/>
+  <path d="M327 331h34v45h-34zM371 301h34v75h-34zM415 268h34v108h-34z" fill="url(#ring)" opacity=".92"/>
+  <circle cx="256" cy="256" r="18" fill="#071018" stroke="#43D7FF" stroke-width="7"/>
 </svg>
