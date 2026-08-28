@@ -2,13 +2,18 @@
 
 import { useEffect, useState } from "react";
 
-type AlertState = "checking" | "unsupported" | "blocked" | "ready" | "enabled";
+type AlertState = "checking" | "unsupported" | "browser" | "blocked" | "ready" | "enabled";
 
 function urlBase64ToUint8Array(base64String: string) {
   const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
   const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
   const rawData = window.atob(base64);
   return Uint8Array.from([...rawData].map((char) => char.charCodeAt(0)));
+}
+
+function isStandalone() {
+  const iosStandalone = Boolean((navigator as Navigator & { standalone?: boolean }).standalone);
+  return window.matchMedia("(display-mode: standalone)").matches || iosStandalone;
 }
 
 export default function PushAlerts() {
@@ -19,23 +24,35 @@ export default function PushAlerts() {
     const supported = "serviceWorker" in navigator && "Notification" in window;
     if (!supported) {
       setState("unsupported");
-      setMessage("This browser does not support FFCC notifications.");
+      setMessage("This browser cannot enable FFCC push notifications. On iPhone, open the installed FFCC Home Screen app and return to Smart Alerts there.");
+      return;
+    }
+
+    if (!isStandalone()) {
+      setState("browser");
+      setMessage("You are viewing FFCC in a browser tab. On iPhone, notification permission must be enabled from the installed FFCC Home Screen app. Open FFCC from your Home Screen, tap Smart Alerts, then enable notifications there.");
       return;
     }
 
     if (Notification.permission === "denied") {
       setState("blocked");
-      setMessage("Notifications are blocked in iPhone settings for FFCC.");
+      setMessage("Notifications are blocked in iPhone Settings for FFCC. Re-enable them there, then return to this page.");
       return;
     }
 
     const enabled = localStorage.getItem("ffcc-alerts-enabled") === "1" && Notification.permission === "granted";
     setState(enabled ? "enabled" : "ready");
-    setMessage(enabled ? "Alerts are enabled on this device." : "Enable alerts to receive time-sensitive fantasy updates.");
+    setMessage(enabled ? "Alerts are enabled on this device." : "This installed FFCC app is ready. Tap Enable Alerts to allow time-sensitive fantasy notifications.");
   }, []);
 
   async function enableAlerts() {
     try {
+      if (!isStandalone()) {
+        setState("browser");
+        setMessage("Open the installed FFCC Home Screen app first. iPhone will not grant web-push permission from this browser tab.");
+        return;
+      }
+
       const registration = await navigator.serviceWorker.register("/sw.js", { scope: "/" });
       await navigator.serviceWorker.ready;
 
@@ -58,7 +75,7 @@ export default function PushAlerts() {
 
       localStorage.setItem("ffcc-alerts-enabled", "1");
       setState("enabled");
-      setMessage(vapidPublicKey ? "Alerts enabled. Background push subscription is registered." : "Alerts enabled. Background push transport will connect when the watcher backend is configured.");
+      setMessage(vapidPublicKey ? "Alerts enabled. Background push subscription is registered." : "Alerts enabled on this device. The league-aware background watcher will connect when the Yahoo backend is configured.");
     } catch (error) {
       setState("ready");
       setMessage(error instanceof Error ? error.message : "Could not enable alerts on this device.");
@@ -90,16 +107,12 @@ export default function PushAlerts() {
     <div className="push-alerts">
       <div className="push-alert-copy">
         <span className="panel-kicker">SMART ALERTS</span>
-        <strong>{state === "enabled" ? "Notifications enabled" : "High-value waiver alerts"}</strong>
+        <strong>{state === "enabled" ? "Notifications enabled" : state === "browser" || state === "unsupported" ? "Open the installed FFCC app" : "High-value waiver alerts"}</strong>
         <p>{message}</p>
       </div>
       <div className="push-alert-actions">
-        {state !== "enabled" && state !== "unsupported" && state !== "blocked" ? (
-          <button type="button" className="push-primary" onClick={enableAlerts}>Enable Alerts</button>
-        ) : null}
-        {state === "enabled" ? (
-          <button type="button" className="push-secondary" onClick={sendTest}>Send Test Alert</button>
-        ) : null}
+        {state === "ready" ? <button type="button" className="push-primary" onClick={enableAlerts}>Enable Alerts</button> : null}
+        {state === "enabled" ? <button type="button" className="push-secondary" onClick={sendTest}>Send Test Alert</button> : null}
       </div>
     </div>
   );
