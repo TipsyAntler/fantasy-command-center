@@ -33,6 +33,7 @@ export default async function SurvivorPage({
   const myAlive = myEntries.filter((entry) => entry.alive).length;
   const submittedPct = snapshot.aliveEntries ? (snapshot.submitted / snapshot.aliveEntries) * 100 : 0;
   const topOwnership = ownership[0];
+  const googleHealthy = snapshot.connected && !snapshot.error;
 
   return (
     <main>
@@ -49,35 +50,44 @@ export default async function SurvivorPage({
           { label: "Your entries alive", value: `${myAlive} / 4`, note: myAlive === 4 ? "Full portfolio still alive" : `${4 - myAlive} entry${4 - myAlive === 1 ? "" : "ies"} eliminated`, tone: myAlive === 4 ? "good" : "warn" },
           { label: "Pool submitted", value: snapshot.connected ? `${submittedPct.toFixed(0)}%` : "—", note: snapshot.connected ? `${snapshot.submitted} of ${snapshot.aliveEntries || "—"} live entries have a Week ${currentWeek} pick visible` : "Connect Google for live submission pace", tone: "accent" },
           { label: "Current chalk", value: topOwnership ? topOwnership.team : "—", note: topOwnership ? `${topOwnership.pct.toFixed(1)}% of submitted picks` : "No Week picks visible yet", tone: topOwnership ? "warn" : "default" },
-          { label: "Commissioner sheet", value: snapshot.connected && !snapshot.error ? "LIVE" : "Offline", note: snapshot.connected && !snapshot.error ? "Read-only Google sync is active" : "Reconnect to restore live pool intelligence", tone: snapshot.connected && !snapshot.error ? "good" : "warn" },
+          { label: "Commissioner sheet", value: googleHealthy ? "LIVE" : "Offline", note: googleHealthy ? "Read-only Google sync is active" : "Reconnect to restore live pool intelligence", tone: googleHealthy ? "good" : "warn" },
         ]} />
 
-        <section className={styles.poolStatus}>
-          <div className={styles.statusMain}>
-            <span className="panel-kicker">COMMISSIONER SHEET</span>
-            <strong>{snapshot.connected ? "Google connected" : "Connect your Google access"}</strong>
-            <p>
-              {snapshot.connected
-                ? `Read-only access is active. ${snapshot.aliveEntries || "—"} pool entries are currently marked alive; ${snapshot.submitted} have a Week ${currentWeek} pick visible in the sheet.`
-                : "Authorize the app with the same Google account that can already view the Suicide Pool 2026 sheet. The app requests read-only Google Sheets access and cannot edit the pool."}
-            </p>
-            {googleStatus === "error" ? (
-              <p className={styles.errorText}>Google connection error: {googleMessage || "OAuth setup failed."}</p>
-            ) : null}
-            {snapshot.error ? <p className={styles.errorText}>Sheet read error: {snapshot.error}</p> : null}
-          </div>
-          <div className={styles.connectionActions}>
-            <div className={styles.statusChip}>
-              <span className={snapshot.connected && !snapshot.error ? styles.dot : styles.dotOff} />
-              {snapshot.connected && !snapshot.error ? "Live sheet access" : snapshot.connected ? "Reconnect needed" : "Not connected"}
+        {googleHealthy ? (
+          <section className={`${styles.poolStatus} ${styles.poolStatusCompact}`}>
+            <div className={styles.compactConnection}>
+              <span className={styles.dot} />
+              <strong>Google Sheet · LIVE</strong>
+              <span>{snapshot.aliveEntries || "—"} alive</span>
+              <span>·</span>
+              <span>{snapshot.submitted} Week {currentWeek} picks visible</span>
             </div>
-            {snapshot.connected ? (
-              <a className={styles.secondaryButton} href="/api/google/disconnect">Disconnect</a>
-            ) : (
-              <a className={styles.connectButton} href="/api/google/connect">Connect Google</a>
-            )}
-          </div>
-        </section>
+            <a className={styles.compactDisconnect} href="/api/google/disconnect">Disconnect</a>
+          </section>
+        ) : (
+          <section className={styles.poolStatus}>
+            <div className={styles.statusMain}>
+              <span className="panel-kicker">COMMISSIONER SHEET</span>
+              <strong>{snapshot.connected ? "Google reconnect needed" : "Connect your Google access"}</strong>
+              <p>
+                {snapshot.connected
+                  ? "The Google authorization exists, but the sheet could not be read. Reconnect to restore live pool intelligence."
+                  : "Authorize the app with the same Google account that can already view the Suicide Pool 2026 sheet. The app requests read-only Google Sheets access and cannot edit the pool."}
+              </p>
+              {googleStatus === "error" ? (
+                <p className={styles.errorText}>Google connection error: {googleMessage || "OAuth setup failed."}</p>
+              ) : null}
+              {snapshot.error ? <p className={styles.errorText}>Sheet read error: {snapshot.error}</p> : null}
+            </div>
+            <div className={styles.connectionActions}>
+              <div className={styles.statusChip}>
+                <span className={snapshot.connected ? styles.dotOff : styles.dotOff} />
+                {snapshot.connected ? "Reconnect needed" : "Not connected"}
+              </div>
+              <a className={styles.connectButton} href="/api/google/connect">{snapshot.connected ? "Reconnect Google" : "Connect Google"}</a>
+            </div>
+          </section>
+        )}
 
         <section className={styles.entryGrid}>
           {myEntries.map((entry) => (
