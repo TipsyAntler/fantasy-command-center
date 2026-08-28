@@ -44,32 +44,42 @@ export default async function Home() {
         </header>
 
         <section className="kpi-grid" aria-label="Command center status">
-          <article className="kpi-card">
-            <div className="kpi-label">Fantasy Record</div>
-            <div className="kpi-value">—</div>
-            <div className="kpi-note">Yahoo sync pending</div>
-          </article>
-          <article className="kpi-card">
-            <div className="kpi-label">Survivor Entries</div>
-            <div className="kpi-value good">4</div>
-            <div className="kpi-note">Four-entry strategy ready</div>
-            <div className="kpi-mini">FRIDAY EDGE</div>
-          </article>
-          <article className="kpi-card">
-            <div className="kpi-label">Start / Sit Accuracy</div>
-            <div className="kpi-value">—</div>
-            <div className="kpi-note">Tracks after league sync</div>
-          </article>
-          <article className="kpi-card">
-            <div className="kpi-label">Live Injury Flags</div>
-            <div className="kpi-value">{data.injuries.length}</div>
-            <div className="kpi-note">Fantasy-relevant status radar</div>
-          </article>
-          <article className="kpi-card">
-            <div className="kpi-label">Last Intelligence Refresh</div>
-            <div className="kpi-value good">{refreshed}</div>
-            <div className="kpi-note">Public signals refresh ~5 min</div>
-          </article>
+          <Link href="/leagues" className="kpi-link" aria-label="Open My Leagues">
+            <article className="kpi-card">
+              <div className="kpi-label">Fantasy Record</div>
+              <div className="kpi-value">—</div>
+              <div className="kpi-note">Yahoo sync pending</div>
+            </article>
+          </Link>
+          <Link href="/survivor" className="kpi-link" aria-label="Open Survivor Lab">
+            <article className="kpi-card">
+              <div className="kpi-label">Survivor Entries</div>
+              <div className="kpi-value good">4</div>
+              <div className="kpi-note">Four-entry strategy ready</div>
+              <div className="kpi-mini">FRIDAY EDGE</div>
+            </article>
+          </Link>
+          <Link href="/leagues" className="kpi-link" aria-label="Open league start sit analysis">
+            <article className="kpi-card">
+              <div className="kpi-label">Start / Sit Accuracy</div>
+              <div className="kpi-value">—</div>
+              <div className="kpi-note">Tracks after league sync</div>
+            </article>
+          </Link>
+          <Link href="/waivers" className="kpi-link" aria-label="Open injury and waiver intelligence">
+            <article className="kpi-card">
+              <div className="kpi-label">Live Injury Flags</div>
+              <div className="kpi-value">{data.injuries.length}</div>
+              <div className="kpi-note">Fantasy-relevant status radar</div>
+            </article>
+          </Link>
+          <Link href="/waivers" className="kpi-link" aria-label="Open latest football intelligence">
+            <article className="kpi-card">
+              <div className="kpi-label">Last Intelligence Refresh</div>
+              <div className="kpi-value good">{refreshed}</div>
+              <div className="kpi-note">Public signals refresh ~5 min</div>
+            </article>
+          </Link>
         </section>
 
         <section className="command-grid">
