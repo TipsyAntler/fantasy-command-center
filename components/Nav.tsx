@@ -44,10 +44,10 @@ export default function Nav() {
         <strong>Yahoo connection pending</strong>
         <span>Public NFL signals are live now. League-specific intelligence unlocks after approval.</span>
       </div>
-      <div className="nav-profile">
+      <Link href="/settings" className="nav-profile" aria-label="Open settings">
         <div className="profile-dot">M</div>
-        <div><strong>Mike</strong><span>Personal command</span></div>
-      </div>
+        <div><strong>Mike</strong><span>Settings · personal command</span></div>
+      </Link>
     </nav>
   );
 }
