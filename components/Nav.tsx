@@ -18,7 +18,7 @@ export default function Nav() {
   return (
     <nav className="app-nav" aria-label="Fantasy Command Center">
       <Link className="brand-block" href="/" aria-label="Fantasy Command Center home">
-        <div className="brand-mark">FCC</div>
+        <div className="brand-mark"><img src="/fcc-icon.svg" alt="" aria-hidden="true" /></div>
         <div className="brand-name">
           <span>FANTASY</span>
           <span className="command">COMMAND</span>
