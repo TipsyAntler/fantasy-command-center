@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
+import PullToRefresh from "@/components/PullToRefresh";
 import "./globals.css";
 import "./command-center.css";
 import "./nav-polish.css";
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
+        <PullToRefresh />
         <Nav />
         {children}
       </body>
