@@ -36,6 +36,13 @@ export type HydratedTrend = TrendRow & {
   heatingUp?: boolean;
 };
 
+export type RosterWatchRow = {
+  requestedName: string;
+  player?: SleeperPlayer;
+  matched: boolean;
+  flagged: boolean;
+};
+
 async function sleeperFetch<T>(path: string, revalidate: number): Promise<T> {
   const response = await fetch(`${SLEEPER_BASE}${path}`, {
     next: { revalidate },
@@ -68,6 +75,40 @@ export function getPlayers() {
 function playerName(player?: SleeperPlayer) {
   if (!player) return "Unknown player";
   return player.full_name || [player.first_name, player.last_name].filter(Boolean).join(" ") || "Unknown player";
+}
+
+function normalizeName(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/\b(jr|sr|ii|iii|iv)\b\.?/g, "")
+    .replace(/[^a-z0-9]/g, "")
+    .trim();
+}
+
+export async function getRosterWatch(names: string[]): Promise<RosterWatchRow[]> {
+  try {
+    const players = await getPlayers();
+    const byName = new Map<string, SleeperPlayer>();
+
+    Object.values(players).forEach((player) => {
+      const name = playerName(player);
+      if (name && name !== "Unknown player") byName.set(normalizeName(name), player);
+    });
+
+    return names.map((requestedName) => {
+      const player = byName.get(normalizeName(requestedName));
+      const status = player?.status?.toLowerCase();
+      const flagged = Boolean(
+        player?.injury_status ||
+        player?.practice_participation ||
+        (status && !["active", "inactive"].includes(status)),
+      );
+
+      return { requestedName, player, matched: Boolean(player), flagged };
+    });
+  } catch {
+    return names.map((requestedName) => ({ requestedName, matched: false, flagged: false }));
+  }
 }
 
 export async function getDashboardData() {
