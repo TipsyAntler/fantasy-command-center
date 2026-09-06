@@ -2,6 +2,7 @@ import AtAGlance from "@/components/AtAGlance";
 import styles from "./survivor.module.css";
 import { getDashboardData } from "@/lib/sleeper";
 import { getSurvivorSnapshot } from "@/lib/google-survivor";
+import { earlySurvivorShortlist, week1MarketAsOf } from "@/data/week1";
 
 export const dynamic = "force-dynamic";
 
@@ -24,6 +25,7 @@ export default async function SurvivorPage({
   const dashboard = await getDashboardData();
   const rawWeek = Number(dashboard.state?.display_week ?? dashboard.state?.week ?? 1);
   const currentWeek = Number.isFinite(rawWeek) && rawWeek > 0 ? rawWeek : 1;
+  const earlyLockWeek = currentWeek === 1;
   const snapshot = await getSurvivorSnapshot(currentWeek);
   const entries = snapshot.entries.length
     ? snapshot.entries
@@ -34,6 +36,7 @@ export default async function SurvivorPage({
   const submittedPct = snapshot.aliveEntries ? (snapshot.submitted / snapshot.aliveEntries) * 100 : 0;
   const topOwnership = ownership[0];
   const googleHealthy = snapshot.connected && !snapshot.error;
+  const safestMarket = earlySurvivorShortlist[0];
 
   return (
     <main>
@@ -42,14 +45,16 @@ export default async function SurvivorPage({
           <div className="eyebrow">POOL STRATEGY · WEEK {currentWeek}</div>
           <h1>Survivor Lab</h1>
           <p className="hero-copy">
-            Four entries, one coordinated strategy. Survive first; use Friday ownership, diversification and future value only when the tradeoff earns it.
+            {earlyLockWeek
+              ? "Week 1 is not a normal Friday cycle: the NFL opens Wednesday night. Build the shortlist now, verify your pool's lock rule, and treat Tuesday/Wednesday as the final decision window."
+              : "Four entries, one coordinated strategy. Survive first; use Friday ownership, diversification and future value only when the tradeoff earns it."}
           </p>
         </header>
 
         <AtAGlance items={[
           { label: "Your entries alive", value: `${myAlive} / 4`, note: myAlive === 4 ? "Full portfolio still alive" : `${4 - myAlive} entry${4 - myAlive === 1 ? "" : "ies"} eliminated`, tone: myAlive === 4 ? "good" : "warn" },
           { label: "Pool submitted", value: snapshot.connected ? `${submittedPct.toFixed(0)}%` : "—", note: snapshot.connected ? `${snapshot.submitted} of ${snapshot.aliveEntries || "—"} live entries have a Week ${currentWeek} pick visible` : "Connect Google for live submission pace", tone: "accent" },
-          { label: "Current chalk", value: topOwnership ? topOwnership.team : "—", note: topOwnership ? `${topOwnership.pct.toFixed(1)}% of submitted picks` : "No Week picks visible yet", tone: topOwnership ? "warn" : "default" },
+          { label: earlyLockWeek ? "Early market leader" : "Current chalk", value: earlyLockWeek && safestMarket ? safestMarket.favorite : topOwnership ? topOwnership.team : "—", note: earlyLockWeek && safestMarket ? `${safestMarket.favorite} -${safestMarket.spread} in the ${week1MarketAsOf}` : topOwnership ? `${topOwnership.pct.toFixed(1)}% of submitted picks` : "No Week picks visible yet", tone: "warn" },
           { label: "Commissioner sheet", value: googleHealthy ? "LIVE" : "Offline", note: googleHealthy ? "Read-only Google sync is active" : "Reconnect to restore live pool intelligence", tone: googleHealthy ? "good" : "warn" },
         ]} />
 
@@ -69,21 +74,12 @@ export default async function SurvivorPage({
             <div className={styles.statusMain}>
               <span className="panel-kicker">COMMISSIONER SHEET</span>
               <strong>{snapshot.connected ? "Google reconnect needed" : "Connect your Google access"}</strong>
-              <p>
-                {snapshot.connected
-                  ? "The Google authorization exists, but the sheet could not be read. Reconnect to restore live pool intelligence."
-                  : "Authorize the app with the same Google account that can already view the Suicide Pool 2026 sheet. The app requests read-only Google Sheets access and cannot edit the pool."}
-              </p>
-              {googleStatus === "error" ? (
-                <p className={styles.errorText}>Google connection error: {googleMessage || "OAuth setup failed."}</p>
-              ) : null}
+              <p>{snapshot.connected ? "The Google authorization exists, but the sheet could not be read. Reconnect to restore live pool intelligence." : "Authorize the app with the same Google account that can already view the Suicide Pool 2026 sheet. The app requests read-only Google Sheets access and cannot edit the pool."}</p>
+              {googleStatus === "error" ? <p className={styles.errorText}>Google connection error: {googleMessage || "OAuth setup failed."}</p> : null}
               {snapshot.error ? <p className={styles.errorText}>Sheet read error: {snapshot.error}</p> : null}
             </div>
             <div className={styles.connectionActions}>
-              <div className={styles.statusChip}>
-                <span className={snapshot.connected ? styles.dotOff : styles.dotOff} />
-                {snapshot.connected ? "Reconnect needed" : "Not connected"}
-              </div>
+              <div className={styles.statusChip}><span className={styles.dotOff} />{snapshot.connected ? "Reconnect needed" : "Not connected"}</div>
               <a className={styles.connectButton} href="/api/google/connect">{snapshot.connected ? "Reconnect Google" : "Connect Google"}</a>
             </div>
           </section>
@@ -93,106 +89,86 @@ export default async function SurvivorPage({
           {myEntries.map((entry) => (
             <article className={styles.entryCard} key={entry.name}>
               <div className={styles.entryTop}>
-                <div>
-                  <span className="panel-kicker">{entry.name}</span>
-                  <h3>{displayEntryName(entry.name)}</h3>
-                </div>
+                <div><span className="panel-kicker">{entry.name}</span><h3>{displayEntryName(entry.name)}</h3></div>
                 <span className={entry.alive ? styles.alive : styles.out}>{entry.alive ? "Alive" : "Out"}</span>
               </div>
               <div className={styles.entryFacts}>
-                <div>
-                  <span>Used teams</span>
-                  <strong>{entry.usedTeams.length ? entry.usedTeams.map((item) => `${item.team} W${item.week}`).join(" · ") : "None yet"}</strong>
-                </div>
-                <div>
-                  <span>Week {currentWeek}</span>
-                  <strong>{entry.currentPick || "Not visible yet"}</strong>
-                </div>
+                <div><span>Used teams</span><strong>{entry.usedTeams.length ? entry.usedTeams.map((item) => `${item.team} W${item.week}`).join(" · ") : "None yet"}</strong></div>
+                <div><span>Week {currentWeek}</span><strong>{entry.currentPick || "Not visible yet"}</strong></div>
               </div>
             </article>
           ))}
         </section>
 
+        {earlyLockWeek ? (
+          <section className={styles.ownershipPanel}>
+            <div className={styles.panelHeader}>
+              <div><span className="panel-kicker">EARLY WEEK 1 MARKET BOARD</span><h3>Start here — not the final four-entry plan</h3></div>
+              <span className={styles.pending}>{week1MarketAsOf}</span>
+            </div>
+            <div className={styles.ownershipGrid}>
+              {earlySurvivorShortlist.map((game, index) => (
+                <div key={game.favorite}>
+                  <span>#{index + 1} market favorite</span>
+                  <strong>{game.favorite} -{game.spread}</strong>
+                  <small>{game.away} @ {game.home} · {game.day}</small>
+                </div>
+              ))}
+            </div>
+            <p className="panel-explainer">This is a market-strength shortlist only. The final call still needs current injuries, line movement, V1per41&apos;s 2026 model when it appears, future-value comparison and your own pool&apos;s submitted ownership. Do not diversify merely for the sake of using four different teams.</p>
+          </section>
+        ) : null}
+
         <section className="section-heading second-heading">
-          <div>
-            <div className="eyebrow">LOCKED PROCESS</div>
-            <h2>Use Friday as an information edge</h2>
-          </div>
+          <div><div className="eyebrow">{earlyLockWeek ? "WEEK 1 CADENCE" : "LOCKED PROCESS"}</div><h2>{earlyLockWeek ? "Move the decision cycle forward" : "Use Friday as an information edge"}</h2></div>
           <span className="source-tag">Actual pool ownership beats generic ownership</span>
         </section>
 
         <section className={styles.timeline}>
           <article>
             <span className={styles.step}>01</span>
-            <div>
-              <div className="panel-kicker">EARLY WEEK</div>
-              <h3>Build the shortlist</h3>
-              <p>Start with V1per41, market-implied win probability, injuries, matchup quality and future schedule value. Keep 3–5 viable teams alive.</p>
-            </div>
+            <div><div className="panel-kicker">{earlyLockWeek ? "NOW · WEEKEND / MONDAY" : "EARLY WEEK"}</div><h3>Build the shortlist</h3><p>Start with market-implied win probability, injuries, matchup quality and future schedule value. Cross-check V1per41 as soon as the 2026 post is available.</p></div>
           </article>
           <article>
             <span className={styles.step}>02</span>
-            <div>
-              <div className="panel-kicker">THURSDAY</div>
-              <h3>Narrow all four entries</h3>
-              <p>Coordinate the portfolio instead of choosing each entry in isolation. Preserve optionality unless a Thursday game or major news forces action.</p>
-            </div>
+            <div><div className="panel-kicker">{earlyLockWeek ? "TUESDAY" : "THURSDAY"}</div><h3>{earlyLockWeek ? "Run the pre-lock audit" : "Narrow all four entries"}</h3><p>{earlyLockWeek ? "Recheck lines, practice reports and your pool's exact lock rule. Decide whether Wednesday's opener affects all four entries or only teams playing that night." : "Coordinate the portfolio instead of choosing each entry in isolation. Preserve optionality unless a Thursday game or major news forces action."}</p></div>
           </article>
           <article className={styles.friday}>
             <span className={styles.step}>03</span>
-            <div>
-              <div className="panel-kicker">FRIDAY · NEAR DEADLINE</div>
-              <h3>Read the actual pool</h3>
-              <p>Refresh this page near the deadline. The live commissioner sheet becomes the ownership model: eat the chalk, diversify, or take leverage only when the risk/reward earns it.</p>
-            </div>
+            <div><div className="panel-kicker">{earlyLockWeek ? "WEDNESDAY · BEFORE 8:20 PM ET" : "FRIDAY · NEAR DEADLINE"}</div><h3>{earlyLockWeek ? "Handle the early opener" : "Read the actual pool"}</h3><p>{earlyLockWeek ? "Do not assume the normal Friday cadence applies. Refresh the sheet and market before the first game, then preserve later-game optionality if your pool allows game-time locks." : "Refresh this page near the deadline. The live commissioner sheet becomes the ownership model: eat the chalk, diversify, or take leverage only when the risk/reward earns it."}</p></div>
           </article>
         </section>
 
         <section className={styles.ownershipPanel}>
           <div className={styles.panelHeader}>
-            <div>
-              <span className="panel-kicker">FRIDAY OWNERSHIP SNAPSHOT</span>
-              <h3>What submitted entries are actually picking</h3>
-            </div>
+            <div><span className="panel-kicker">{earlyLockWeek ? "LIVE POOL OWNERSHIP" : "FRIDAY OWNERSHIP SNAPSHOT"}</span><h3>What submitted entries are actually picking</h3></div>
             <span className={styles.pending}>{snapshot.connected ? `${snapshot.submitted} Week ${currentWeek} picks visible` : "Connect Google to calculate"}</span>
           </div>
-
           <div className={styles.ownershipGrid}>
             {ownership.length ? ownership.map((item) => (
-              <div key={item.team}>
-                <span>{item.team}</span>
-                <strong>{item.pct.toFixed(1)}%</strong>
-                <small>{item.count} submitted {item.count === 1 ? "entry" : "entries"}</small>
-              </div>
+              <div key={item.team}><span>{item.team}</span><strong>{item.pct.toFixed(1)}%</strong><small>{item.count} submitted {item.count === 1 ? "entry" : "entries"}</small></div>
             )) : ["Top pick", "Second pick", "Third pick", "All others"].map((label) => (
-              <div key={label}>
-                <span>{label}</span>
-                <strong>—</strong>
-                <small>pool share</small>
-              </div>
+              <div key={label}><span>{label}</span><strong>—</strong><small>pool share</small></div>
             ))}
           </div>
-
-          <p className="panel-explainer">
-            Ownership is a tiebreaker, not the objective. We do not take bad teams merely to be different. The valuable spots are where a less-popular option has nearly the same survival probability, preserves premium future value, or efficiently diversifies the four-entry portfolio.
-          </p>
+          <p className="panel-explainer">Ownership is a tiebreaker, not the objective. We do not take bad teams merely to be different. The valuable spots are where a less-popular option has nearly the same survival probability, preserves premium future value, or efficiently diversifies the four-entry portfolio.</p>
         </section>
 
         <section className={styles.modelGrid}>
-          <article className="panel feature-card"><span className="panel-kicker">BACKBONE</span><h3>V1per41</h3><p>Season-long mathematical backbone, then independently audited against the current week.</p></article>
-          <article className="panel feature-card"><span className="panel-kicker">SAFETY</span><h3>Market + news</h3><p>Moneyline-implied win probability, line movement, injuries and meaningful late information.</p></article>
-          <article className="panel feature-card"><span className="panel-kicker">POOL EDGE</span><h3>Live ownership</h3><p>The commissioner sheet gives us this pool&apos;s real submitted-pick distribution before Friday lock.</p></article>
+          <article className="panel feature-card"><span className="panel-kicker">BACKBONE</span><h3>V1per41</h3><p>Season-long mathematical backbone; the 2026 Week 1 post has not been loaded into FFCC yet, so the market board is provisional.</p></article>
+          <article className="panel feature-card"><span className="panel-kicker">SAFETY</span><h3>Market + news</h3><p>Moneyline/spread strength, line movement, injuries and meaningful late information.</p></article>
+          <article className="panel feature-card"><span className="panel-kicker">POOL EDGE</span><h3>Live ownership</h3><p>The commissioner sheet gives us this pool&apos;s real submitted-pick distribution before lock.</p></article>
           <article className="panel feature-card"><span className="panel-kicker">PORTFOLIO</span><h3>Four-entry coordination</h3><p>Repeating the safest team can be correct. Diversification is used deliberately, not automatically.</p></article>
         </section>
 
         <section className="panel survivor-template">
-          <div className="panel-head"><div><span className="panel-kicker">WEEKLY DECISION CARD</span><h3>Final Friday output</h3></div></div>
+          <div className="panel-head"><div><span className="panel-kicker">WEEKLY DECISION CARD</span><h3>{earlyLockWeek ? "Early Week 1 read" : "Final Friday output"}</h3></div></div>
           <div className="decision-grid">
-            <div><span>V1per pick</span><strong>—</strong></div>
-            <div><span>Best win probability</span><strong>—</strong></div>
-            <div><span>Actual pool popularity</span><strong>{ownership[0] ? `${ownership[0].team} · ${ownership[0].pct.toFixed(1)}%` : "—"}</strong></div>
-            <div><span>Future value</span><strong>—</strong></div>
-            <div className="span-2"><span>Four-entry plan</span><strong>Waiting for Week {currentWeek} decision inputs</strong></div>
+            <div><span>V1per pick</span><strong>{earlyLockWeek ? "2026 post not surfaced yet" : "—"}</strong></div>
+            <div><span>Safest market favorite</span><strong>{safestMarket ? `${safestMarket.favorite} -${safestMarket.spread}` : "—"}</strong></div>
+            <div><span>Actual pool popularity</span><strong>{ownership[0] ? `${ownership[0].team} · ${ownership[0].pct.toFixed(1)}%` : "Not meaningful yet"}</strong></div>
+            <div><span>Next market options</span><strong>{earlyLockWeek ? earlySurvivorShortlist.slice(1, 4).map((game) => `${game.favorite} -${game.spread}`).join(" · ") : "—"}</strong></div>
+            <div className="span-2"><span>Four-entry plan</span><strong>{earlyLockWeek ? "Provisional only — wait for V1per, injuries, line movement and pool ownership before assigning entries" : `Waiting for Week ${currentWeek} decision inputs`}</strong></div>
           </div>
           <p className="panel-explainer">Default principle: survive. Deviate from the safest path only when ownership, diversification or future-value benefit justifies the additional elimination risk.</p>
         </section>
