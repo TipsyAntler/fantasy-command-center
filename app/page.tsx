@@ -38,7 +38,7 @@ export default async function Home() {
           <div className="command-actions">
             <div className="command-chip">{week ? `Week ${week}` : "2026 Preseason"}</div>
             <Link href="#brief" className="command-button">Mike&apos;s Brief</Link>
-            <Link href="/settings" className="settings-button" aria-label="Open settings" title="Settings">Settings</Link>
+            <Link href="/settings" className="settings-button" aria-label="Open settings" title="Settings"><span aria-hidden="true">⚙</span></Link>
           </div>
         </header>
 
