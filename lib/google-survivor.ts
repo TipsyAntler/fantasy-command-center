@@ -130,7 +130,22 @@ function currentPoolRows(rows: unknown[][]) {
 }
 
 export async function getSurvivorSnapshot(currentWeek: number): Promise<SurvivorSnapshot> {
-  const accessToken = await getAccessTokenFromCookie();
+  let accessToken: string | null;
+
+  try {
+    accessToken = await getAccessTokenFromCookie();
+  } catch (error) {
+    return {
+      connected: true,
+      entries: [],
+      ownership: [],
+      submitted: 0,
+      aliveEntries: 0,
+      currentWeek,
+      error: error instanceof Error ? error.message : "Unable to refresh Google connection",
+    };
+  }
+
   if (!accessToken) {
     return { connected: false, entries: [], ownership: [], submitted: 0, aliveEntries: 0, currentWeek };
   }
