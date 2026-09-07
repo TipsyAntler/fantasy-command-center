@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 const items = [
   ["/", "Home", "⌂"],
   ["/survivor", "Survivor Lab", "◉"],
-  ["/draft", "Draft Room", "⌁"],
   ["/waivers", "Waiver Room", "⇄"],
   ["/leagues", "My Leagues", "▦"],
   ["/pickem", "Pick'em", "✓"],
