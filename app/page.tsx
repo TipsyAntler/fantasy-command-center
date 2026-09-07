@@ -30,7 +30,6 @@ export default async function Home() {
   const waiverRows = data.adds.slice(0, 5);
   const rosterFlags = rosterWatch.filter((row) => row.flagged);
   const primaryFlag = rosterFlags[0];
-  const safestEarly = earlySurvivorShortlist[0];
 
   return (
     <main>
@@ -56,10 +55,10 @@ export default async function Home() {
             <article className="kpi-card"><div className="kpi-label">Survivor Entries</div><div className="kpi-value good">4</div><div className="kpi-note">Week 1 begins Wednesday night</div><div className="kpi-mini">Early lock week</div></article>
           </Link>
           <Link href="/pickem" className="kpi-link" aria-label="Open Week 1 pickem board">
-            <article className="kpi-card"><div className="kpi-label">Pick&apos;em Slate</div><div className="kpi-value">16</div><div className="kpi-note">Early market board is loaded now</div></article>
+            <article className="kpi-card"><div className="kpi-label">Pick&apos;em Slate</div><div className="kpi-value">16</div><div className="kpi-note">Early market board is loaded now</div><div className="kpi-mini">PROVISIONAL · not final picks</div></article>
           </Link>
           <Link href="/leagues" className="kpi-link" aria-label="Open roster status monitoring">
-            <article className="kpi-card"><div className="kpi-label">Your Roster Flags</div><div className="kpi-value">{rosterFlags.length}</div><div className="kpi-note">Sleeper injury + practice status across BM and LL</div></article>
+            <article className="kpi-card"><div className="kpi-label">Your Roster Flags</div><div className="kpi-value">{rosterFlags.length}</div><div className="kpi-note">Sleeper injury + practice status across BM and LL</div><div className="kpi-mini">SIGNAL ONLY · verify before acting</div></article>
           </Link>
           <Link href="/waivers" className="kpi-link" aria-label="Open latest football intelligence">
             <article className="kpi-card"><div className="kpi-label">Last Intelligence Refresh</div><div className="kpi-value good refresh-time"><LocalRefreshTime iso={data.fetchedAt} /></div><div className="kpi-note">Public signals refresh about every 5 min</div></article>
@@ -88,7 +87,7 @@ export default async function Home() {
           </article>
 
           <article className="command-card">
-            <div className="command-card-head"><strong>Early Survivor Board</strong><span>{week1MarketAsOf}</span></div>
+            <div className="command-card-head"><strong>Week 1 Safety Board</strong><span>PROVISIONAL · market only</span></div>
             <div className="team-list">
               {earlySurvivorShortlist.map((game, index) => (
                 <div className="team-line" key={`${game.away}-${game.home}`}>
@@ -98,7 +97,7 @@ export default async function Home() {
                 </div>
               ))}
             </div>
-            <div className="command-body"><Link href="/survivor" className="command-link">Open early Survivor analysis &rarr;</Link></div>
+            <div className="command-body"><p><strong>Do not use this as the pick ranking.</strong> It only reflects current Week 1 market strength. Final Survivor recommendations must also weigh V1per41, injuries, line movement, season-long future value, your four-entry portfolio and actual pool ownership.</p><Link href="/survivor" className="command-link">Open full Survivor analysis &rarr;</Link></div>
           </article>
 
           <article className="command-card">
@@ -118,7 +117,7 @@ export default async function Home() {
           </article>
 
           <article className="command-card">
-            <div className="command-card-head"><strong>League Intel Feed</strong><span>Your players first</span></div>
+            <div className="command-card-head"><strong>League Intel Feed</strong><span>SIGNALS · verify before action</span></div>
             <div className="intel-list">
               {rosterFlags.slice(0, 2).map((row) => (
                 <div className="intel-line" key={row.requestedName}>
@@ -136,18 +135,18 @@ export default async function Home() {
 
         <section className="dashboard-lower">
           <article className="snapshot-card">
-            <div className="snapshot-head"><div><div className="title">Survivor Lab</div><div className="sub">Week 1 starts early · do not wait for Friday</div></div><Link href="/survivor" className="command-link">Open Lab &rarr;</Link></div>
+            <div className="snapshot-head"><div><div className="title">Survivor Lab</div><div className="sub">PROVISIONAL · Week 1 safety screen only</div></div><Link href="/survivor" className="command-link">Open Lab &rarr;</Link></div>
             <div className="snapshot-body survivor-preview">
               <div className="entry-stack">{[1,2,3,4].map((entry) => (<div className="entry-mini" key={entry}><strong>Entry {entry}</strong><span>Early shortlist active</span><em>ALIVE | READY</em></div>))}</div>
-              <div><div className="command-kicker" style={{marginBottom: 10}}>EARLY MARKET SHORTLIST</div><div className="ownership-bars">{earlySurvivorShortlist.map((game) => (<div className="ownership-row" key={game.favorite}><span>{game.favorite}</span><div className="bar-track"><div className="bar-fill" style={{width: `${Math.min(100, game.spread * 8)}%`}} /></div><strong>-{game.spread}</strong></div>))}</div><p>These are market-strength placeholders, not final picks. V1per41, injuries, future value and your actual pool ownership still get the final say.</p><Link href="/survivor" className="command-link">Review survivor strategy &rarr;</Link></div>
+              <div><div className="command-kicker" style={{marginBottom: 10}}>EARLY MARKET SHORTLIST · NOT FINAL PICKS</div><div className="ownership-bars">{earlySurvivorShortlist.map((game) => (<div className="ownership-row" key={game.favorite}><span>{game.favorite}</span><div className="bar-track"><div className="bar-fill" style={{width: `${Math.min(100, game.spread * 8)}%`}} /></div><strong>-{game.spread}</strong></div>))}</div><p>These are market-strength placeholders, not recommendations. V1per41, injuries, season-long future value, used-team constraints and your actual pool ownership still get the final say.</p><Link href="/survivor" className="command-link">Review Survivor strategy &rarr;</Link></div>
             </div>
           </article>
 
-          <article className="snapshot-card"><div className="snapshot-head"><div><div className="title">Waiver Room</div><div className="sub">Find value. Beat the market.</div></div><Link href="/waivers" className="command-link">Open Room &rarr;</Link></div><div className="snapshot-body waiver-preview"><div className="waiver-headrow"><span>Player</span><span>Pos</span><span>Trend</span><span>Moves</span><span>Why here</span><span>Action</span></div>{waiverRows.map((row, index) => (<div className="waiver-mini" key={row.player_id}><strong>{nameOf(row.player)}</strong><span>{positionOf(row.player)} | {teamOf(row.player)}</span><span className={row.heatingUp ? "trend-up" : ""}>{row.heatingUp ? "Hot" : "Active"}</span><span>{row.count.toLocaleString()}</span><span>{row.player?.injury_status ? `${row.player.injury_status} flag` : index === 0 ? "Add leader" : "Market movement"}</span><span className="action-pill">Check</span></div>))}{!waiverRows.length ? <div className="empty">No public waiver movement is available right now.</div> : null}</div></article>
+          <article className="snapshot-card"><div className="snapshot-head"><div><div className="title">Waiver Room</div><div className="sub">SIGNALS ONLY · verify before acting</div></div><Link href="/waivers" className="command-link">Open Room &rarr;</Link></div><div className="snapshot-body waiver-preview"><div className="waiver-headrow"><span>Player</span><span>Pos</span><span>Trend</span><span>Moves</span><span>Why here</span><span>Action</span></div>{waiverRows.map((row, index) => (<div className="waiver-mini" key={row.player_id}><strong>{nameOf(row.player)}</strong><span>{positionOf(row.player)} | {teamOf(row.player)}</span><span className={row.heatingUp ? "trend-up" : ""}>{row.heatingUp ? "Hot" : "Active"}</span><span>{row.count.toLocaleString()}</span><span>{row.player?.injury_status ? `${row.player.injury_status} flag` : index === 0 ? "Add leader" : "Market movement"}</span><span className="action-pill">Check</span></div>))}{!waiverRows.length ? <div className="empty">No public waiver movement is available right now.</div> : null}</div></article>
         </section>
 
         <section className="dashboard-lower">
-          <article className="snapshot-card"><div className="snapshot-head"><div><div className="title">Pick&apos;em</div><div className="sub">Week 1 board is live now</div></div><Link href="/pickem" className="command-link">Open Pick&apos;em &rarr;</Link></div><div className="snapshot-body"><p>The full 16-game Week 1 market board is loaded with early straight-up leans and confidence tiers. The first game is Wednesday, so the late-week review moves up this week.</p></div></article>
+          <article className="snapshot-card"><div className="snapshot-head"><div><div className="title">Pick&apos;em</div><div className="sub">PROVISIONAL · early market leans</div></div><Link href="/pickem" className="command-link">Open Pick&apos;em &rarr;</Link></div><div className="snapshot-body"><p>The full 16-game Week 1 market board is loaded with early straight-up leans and confidence tiers. Treat these as pre-lock inputs, not final picks; late injury/news and meaningful line movement can still change the board.</p></div></article>
           <article className="snapshot-card"><div className="snapshot-head"><div><div className="title">Data Connections</div><div className="sub">Personalization status</div></div></div><div className="snapshot-body"><div className="team-list"><div className="team-line"><strong>Sleeper public signals</strong><span>Roster status + movement</span><span className="team-rank">LIVE</span></div><div className="team-line"><strong>Manual BM + LL rosters</strong><span>Loaded while Yahoo is pending</span><span className="team-rank">LIVE</span></div><div className="team-line"><strong>Yahoo Fantasy</strong><span>Application submitted</span><span>WAIT</span></div><div className="team-line"><strong>Survivor Google Sheet</strong><span>Read-only pool intelligence</span><span className="team-rank">LIVE</span></div></div></div></article>
         </section>
       </div>
