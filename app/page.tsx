@@ -1,153 +1,142 @@
 import Link from "next/link";
 import { LocalGreeting, LocalRefreshTime } from "@/components/LocalDashboardTime";
-import { getDashboardData, getRosterWatch, SleeperPlayer } from "@/lib/sleeper";
+import { getDashboardData, getRosterWatch } from "@/lib/sleeper";
+import { getSurvivorSnapshot } from "@/lib/google-survivor";
 import { manualLeagues, rosterPlayerNames } from "@/data/manual-leagues";
-import { earlySurvivorShortlist, week1MarketAsOf } from "@/data/week1";
+import { week1PoolGames, week1Tiebreaker } from "@/data/pickem-week1";
+import styles from "./home.module.css";
 
 export const revalidate = 300;
 
-function nameOf(player?: SleeperPlayer) {
-  if (!player) return "Unknown player";
-  return player.full_name || [player.first_name, player.last_name].filter(Boolean).join(" ") || "Unknown player";
-}
-
-function positionOf(player?: SleeperPlayer) {
-  return player?.position || player?.fantasy_positions?.[0] || "-";
-}
-
-function teamOf(player?: SleeperPlayer) {
-  return player?.team || "FA";
+function rosterStatus(row: Awaited<ReturnType<typeof getRosterWatch>>[number]) {
+  return row.player?.injury_status || row.player?.practice_participation || row.player?.status || "status flag";
 }
 
 export default async function Home() {
-  const [data, rosterWatch] = await Promise.all([
-    getDashboardData(),
+  const data = await getDashboardData();
+  const week = Number(data.state?.display_week ?? data.state?.week ?? 1) || 1;
+  const [rosterWatch, survivor] = await Promise.all([
     getRosterWatch(rosterPlayerNames),
+    getSurvivorSnapshot(week),
   ]);
-  const week = data.state?.display_week ?? data.state?.week;
-  const hot = data.adds.find((row) => row.heatingUp) || data.adds[0];
-  const topDrop = data.drops[0];
-  const waiverRows = data.adds.slice(0, 5);
-  const rosterFlags = rosterWatch.filter((row) => row.flagged);
-  const primaryFlag = rosterFlags[0];
+
+  const leagueFlags = Object.fromEntries(
+    manualLeagues.map((league) => {
+      const names = new Set([...league.roster, ...league.ir].map((player) => player.name));
+      return [league.key, rosterWatch.filter((row) => row.flagged && names.has(row.requestedName))];
+    }),
+  ) as Record<"bm" | "ll", Awaited<ReturnType<typeof getRosterWatch>>>;
+
+  const bmFlag = leagueFlags.bm[0];
+  const llFlag = leagueFlags.ll[0];
+  const survivorEntries = survivor.entries.length ? survivor.entries.slice(0, 4) : [];
+  const survivorAlive = survivorEntries.length ? survivorEntries.filter((entry) => entry.alive).length : 4;
+  const survivorHealthy = survivor.connected && !survivor.error;
+  const sleeperHealthy = !data.errors.players && !data.errors.trends;
+  const strongestPoolEdges = week1PoolGames.filter((game) => game.confidence >= 5).length;
 
   return (
     <main>
-      <div className="shell command-dashboard">
-        <header className="command-topbar">
+      <div className={`shell ${styles.homeShell}`}>
+        <header className={styles.homeTopbar}>
           <div>
-            <div className="command-kicker">HOME DASHBOARD</div>
-            <h1 className="command-title"><LocalGreeting /></h1>
-            <p className="command-subtitle">Your actual rosters are loaded. Week 1 intelligence is live while Yahoo approval is pending.</p>
+            <div className="command-kicker">FFCC · WEEK {week}</div>
+            <h1 className={styles.homeTitle}><LocalGreeting /></h1>
+            <p className={styles.homeSubtitle}>What needs your attention right now.</p>
           </div>
-          <div className="command-actions">
-            <div className="command-chip">{week ? `Week ${week}` : "Week 1 launch"}</div>
-            <Link href="#brief" className="command-button">Mike&apos;s Brief</Link>
+          <div className={styles.homeMeta}>
+            <div className={styles.metaChip}>Week {week}</div>
+            <div className={styles.refreshChip}>Updated <strong><LocalRefreshTime iso={data.fetchedAt} /></strong></div>
             <Link href="/settings" className="settings-button" aria-label="Open settings" title="Settings"><span aria-hidden="true">⚙</span></Link>
           </div>
         </header>
 
-        <section className="kpi-grid" aria-label="Command center status">
-          <Link href="/leagues" className="kpi-link" aria-label="Open My Leagues">
-            <article className="kpi-card"><div className="kpi-label">Fantasy Teams Loaded</div><div className="kpi-value good">{manualLeagues.length}</div><div className="kpi-note">BM + Legendary LeBlanc manual snapshots</div></article>
+        <div className={styles.focusLabel}>Your command board</div>
+        <section className={styles.focusGrid} aria-label="Top actionable takeaways">
+          <Link href="/leagues" className={styles.focusCard}>
+            <div className={styles.cardTop}>
+              <span className={styles.cardKicker}>BIG MONEY · BOWER&apos;S CASTLE</span>
+              <span className={`${styles.cardState} ${bmFlag ? styles.cardStateWarn : ""}`}>{bmFlag ? "Watch" : "Clear"}</span>
+            </div>
+            <h2>Bower&apos;s Castle</h2>
+            <p className={styles.actionHeadline}>
+              {bmFlag ? `${bmFlag.requestedName} is the first roster item to verify.` : "No urgent roster action. Keep the RB room under the microscope."}
+            </p>
+            <p className={styles.actionNote}>
+              {bmFlag ? `${rosterStatus(bmFlag)} is showing in the live player feed. Check the league view before making any lineup or trade move.` : "Your WR/TE core gives you room to stay patient rather than force a preseason trade."}
+            </p>
+            <div className={styles.cardFoot}><span>Open league view</span><span>→</span></div>
           </Link>
-          <Link href="/survivor" className="kpi-link" aria-label="Open Survivor Lab">
-            <article className="kpi-card"><div className="kpi-label">Survivor Entries</div><div className="kpi-value good">4</div><div className="kpi-note">Week 1 begins Wednesday night</div><div className="kpi-mini">Early lock week</div></article>
+
+          <Link href="/leagues" className={styles.focusCard}>
+            <div className={styles.cardTop}>
+              <span className={styles.cardKicker}>LEGENDARY LEBLANC · LAPORTA POTTY</span>
+              <span className={`${styles.cardState} ${llFlag ? styles.cardStateWarn : ""}`}>{llFlag ? "Watch" : "Clear"}</span>
+            </div>
+            <h2>LaPorta Potty</h2>
+            <p className={styles.actionHeadline}>
+              {llFlag ? `${llFlag.requestedName} is the main thing to monitor.` : "No forced move. Let the roster advantage come to you."}
+            </p>
+            <p className={styles.actionNote}>
+              {llFlag ? `${rosterStatus(llFlag)} is showing in the live player feed; the rest of the roster can stay patient.` : "This team is built to absorb uncertainty. Use waivers or trades only when they create a real starting-lineup upgrade."}
+            </p>
+            <div className={styles.cardFoot}><span>Open league view</span><span>→</span></div>
           </Link>
-          <Link href="/pickem" className="kpi-link" aria-label="Open Week 1 pickem board">
-            <article className="kpi-card"><div className="kpi-label">Pick&apos;em Slate</div><div className="kpi-value">16</div><div className="kpi-note">Early market board is loaded now</div><div className="kpi-mini">PROVISIONAL · not final picks</div></article>
+
+          <Link href="/survivor" className={styles.focusCard}>
+            <div className={styles.cardTop}>
+              <span className={styles.cardKicker}>SURVIVOR</span>
+              <span className={styles.cardState}>{survivorAlive} / 4 alive</span>
+            </div>
+            <h2>Survivor Lab</h2>
+            <p className={styles.actionHeadline}>Keep all four entries coordinated, not independent.</p>
+            <p className={styles.actionNote}>
+              V1per41, live pool ownership, market safety and future value all feed the final entry-by-entry plan. {survivorHealthy ? "Commissioner-sheet data is live." : "Commissioner-sheet connection needs attention."}
+            </p>
+            <div className={styles.cardFoot}><span>Open Survivor Lab</span><span>→</span></div>
           </Link>
-          <Link href="/leagues" className="kpi-link" aria-label="Open roster status monitoring">
-            <article className="kpi-card"><div className="kpi-label">Your Roster Flags</div><div className="kpi-value">{rosterFlags.length}</div><div className="kpi-note">Sleeper injury + practice status across BM and LL</div><div className="kpi-mini">SIGNAL ONLY · verify before acting</div></article>
-          </Link>
-          <Link href="/waivers" className="kpi-link" aria-label="Open latest football intelligence">
-            <article className="kpi-card"><div className="kpi-label">Last Intelligence Refresh</div><div className="kpi-value good refresh-time"><LocalRefreshTime iso={data.fetchedAt} /></div><div className="kpi-note">Public signals refresh about every 5 min</div></article>
+
+          <Link href="/pickem" className={styles.focusCard}>
+            <div className={styles.cardTop}>
+              <span className={styles.cardKicker}>THE SZN · ATS PICK&apos;EM</span>
+              <span className={styles.cardState}>{week1PoolGames.length} picks loaded</span>
+            </div>
+            <h2>Pick&apos;em Room</h2>
+            <p className={styles.actionHeadline}>Get the card in early, then only revisit meaningful movers.</p>
+            <p className={styles.actionNote}>
+              {strongestPoolEdges} current plays carry top confidence against the frozen SZN lines. Early Monday-night tiebreaker target: {week1Tiebreaker.earlyFfccTarget} total points.
+            </p>
+            <div className={styles.cardFoot}><span>Review ATS card</span><span>→</span></div>
           </Link>
         </section>
 
-        <section className="command-grid">
-          <article className="command-card brief-hero" id="brief">
-            <div className="command-card-head"><strong>Mike&apos;s Brief</strong><span>Week 1 launch</span></div>
-            <div className="command-body">
-              <div className="brief-line">
-                {primaryFlag
-                  ? `${primaryFlag.requestedName} is the first roster status to check.`
-                  : hot
-                    ? `${nameOf(hot.player)} is the first public-market player I'd investigate.`
-                    : "No roster status is demanding an immediate move right now."}
-              </div>
-              <p className="brief-copy">
-                {primaryFlag
-                  ? `${primaryFlag.player?.injury_status || primaryFlag.player?.practice_participation || primaryFlag.player?.status || "Status flag"} is showing in the live Sleeper player feed. Treat it as an alert to investigate, not an automatic lineup decision.`
-                  : "The app is now watching your actual BM and LL players instead of a generic league placeholder."}
-              </p>
-              <p><strong>Week 1 timing:</strong> New England at Seattle opens the season Wednesday night, so Survivor and Pick&apos;em need an earlier decision cycle than a normal week.</p>
-              <Link href="/leagues" className="command-link">Open roster command view &rarr;</Link>
+        <section className={styles.connections} aria-label="Data connections">
+          <div className={styles.connectionsHead}>
+            <div><div className="command-kicker">SYSTEM STATUS</div><h2>Data connections</h2></div>
+            <p>Only the feeds that power FFCC.</p>
+          </div>
+          <div className={styles.connectionPanel}>
+            <div className={styles.connectionItem}>
+              <strong>Sleeper public signals</strong>
+              <small>Roster status + player movement</small>
+              <span className={`${styles.connectionStatus} ${!sleeperHealthy ? styles.connectionStatusWarn : ""}`}>{sleeperHealthy ? "LIVE" : "DEGRADED"}</span>
             </div>
-          </article>
-
-          <article className="command-card">
-            <div className="command-card-head"><strong>Week 1 Safety Board</strong><span>PROVISIONAL · market only</span></div>
-            <div className="team-list">
-              {earlySurvivorShortlist.map((game, index) => (
-                <div className="team-line" key={`${game.away}-${game.home}`}>
-                  <strong>{index + 1}. {game.favorite}</strong>
-                  <span>{game.away} @ {game.home}</span>
-                  <span className="team-rank">-{game.spread}</span>
-                </div>
-              ))}
+            <div className={styles.connectionItem}>
+              <strong>BM + LL rosters</strong>
+              <small>Manual snapshots while Yahoo is pending</small>
+              <span className={styles.connectionStatus}>LIVE</span>
             </div>
-            <div className="command-body"><p><strong>Do not use this as the pick ranking.</strong> It only reflects current Week 1 market strength. Final Survivor recommendations must also weigh V1per41, injuries, line movement, season-long future value, your four-entry portfolio and actual pool ownership.</p><Link href="/survivor" className="command-link">Open full Survivor analysis &rarr;</Link></div>
-          </article>
-
-          <article className="command-card">
-            <div className="command-card-head"><strong>Your Teams</strong><span>Manual rosters live</span></div>
-            <div className="team-list">
-              {manualLeagues.map((league) => (
-                <div className="team-line" key={league.key}>
-                  <strong>{league.teamName}</strong>
-                  <span>{league.key.toUpperCase()} · {league.roster.length} active + {league.ir.length} IR</span>
-                  <span className="team-rank">LIVE</span>
-                </div>
-              ))}
-              <div className="team-line"><strong>Yahoo Fantasy</strong><span>API approval pending</span><span>WAIT</span></div>
-              <div className="team-line"><strong>Public status feed</strong><span>Roster-aware Sleeper scan</span><span className="team-rank">LIVE</span></div>
+            <div className={styles.connectionItem}>
+              <strong>Survivor Google Sheet</strong>
+              <small>Read-only pool intelligence</small>
+              <span className={`${styles.connectionStatus} ${!survivorHealthy ? styles.connectionStatusWarn : ""}`}>{survivorHealthy ? "LIVE" : "CHECK"}</span>
             </div>
-            <div className="command-body"><Link href="/leagues" className="command-link">View rosters &rarr;</Link></div>
-          </article>
-
-          <article className="command-card">
-            <div className="command-card-head"><strong>League Intel Feed</strong><span>SIGNALS · verify before action</span></div>
-            <div className="intel-list">
-              {rosterFlags.slice(0, 2).map((row) => (
-                <div className="intel-line" key={row.requestedName}>
-                  <div className="intel-icon">!</div>
-                  <div><strong>{row.requestedName}</strong><small>{row.player?.injury_status || row.player?.practice_participation || row.player?.status || "Roster status flag"}{row.player?.team ? ` · ${row.player.team}` : ""}</small></div>
-                </div>
-              ))}
-              {hot ? <div className="intel-line"><div className="intel-icon">+</div><div><strong>{nameOf(hot.player)}</strong><small>{hot.heatingUp ? "Add velocity is accelerating." : `Among the most-added players: ${hot.count.toLocaleString()} moves.`}</small></div></div> : null}
-              {topDrop ? <div className="intel-line"><div className="intel-icon">-</div><div><strong>{nameOf(topDrop.player)}</strong><small>{topDrop.count.toLocaleString()} drop moves in the current window.</small></div></div> : null}
-              {!rosterFlags.length && !hot && !topDrop ? <div className="empty">No major live signals right now.</div> : null}
+            <div className={styles.connectionItem}>
+              <strong>Yahoo Fantasy</strong>
+              <small>API application / automatic league sync</small>
+              <span className={`${styles.connectionStatus} ${styles.connectionStatusWarn}`}>WAITING</span>
             </div>
-            <div className="command-body"><Link href="/waivers" className="command-link">View all public movement &rarr;</Link></div>
-          </article>
-        </section>
-
-        <section className="dashboard-lower">
-          <article className="snapshot-card">
-            <div className="snapshot-head"><div><div className="title">Survivor Lab</div><div className="sub">PROVISIONAL · Week 1 safety screen only</div></div><Link href="/survivor" className="command-link">Open Lab &rarr;</Link></div>
-            <div className="snapshot-body survivor-preview">
-              <div className="entry-stack">{[1,2,3,4].map((entry) => (<div className="entry-mini" key={entry}><strong>Entry {entry}</strong><span>Early shortlist active</span><em>ALIVE | READY</em></div>))}</div>
-              <div><div className="command-kicker" style={{marginBottom: 10}}>EARLY MARKET SHORTLIST · NOT FINAL PICKS</div><div className="ownership-bars">{earlySurvivorShortlist.map((game) => (<div className="ownership-row" key={game.favorite}><span>{game.favorite}</span><div className="bar-track"><div className="bar-fill" style={{width: `${Math.min(100, game.spread * 8)}%`}} /></div><strong>-{game.spread}</strong></div>))}</div><p>These are market-strength placeholders, not recommendations. V1per41, injuries, season-long future value, used-team constraints and your actual pool ownership still get the final say.</p><Link href="/survivor" className="command-link">Review Survivor strategy &rarr;</Link></div>
-            </div>
-          </article>
-
-          <article className="snapshot-card"><div className="snapshot-head"><div><div className="title">Waiver Room</div><div className="sub">SIGNALS ONLY · verify before acting</div></div><Link href="/waivers" className="command-link">Open Room &rarr;</Link></div><div className="snapshot-body waiver-preview"><div className="waiver-headrow"><span>Player</span><span>Pos</span><span>Trend</span><span>Moves</span><span>Why here</span><span>Action</span></div>{waiverRows.map((row, index) => (<div className="waiver-mini" key={row.player_id}><strong>{nameOf(row.player)}</strong><span>{positionOf(row.player)} | {teamOf(row.player)}</span><span className={row.heatingUp ? "trend-up" : ""}>{row.heatingUp ? "Hot" : "Active"}</span><span>{row.count.toLocaleString()}</span><span>{row.player?.injury_status ? `${row.player.injury_status} flag` : index === 0 ? "Add leader" : "Market movement"}</span><span className="action-pill">Check</span></div>))}{!waiverRows.length ? <div className="empty">No public waiver movement is available right now.</div> : null}</div></article>
-        </section>
-
-        <section className="dashboard-lower">
-          <article className="snapshot-card"><div className="snapshot-head"><div><div className="title">Pick&apos;em</div><div className="sub">PROVISIONAL · early market leans</div></div><Link href="/pickem" className="command-link">Open Pick&apos;em &rarr;</Link></div><div className="snapshot-body"><p>The full 16-game Week 1 market board is loaded with early straight-up leans and confidence tiers. Treat these as pre-lock inputs, not final picks; late injury/news and meaningful line movement can still change the board.</p></div></article>
-          <article className="snapshot-card"><div className="snapshot-head"><div><div className="title">Data Connections</div><div className="sub">Personalization status</div></div></div><div className="snapshot-body"><div className="team-list"><div className="team-line"><strong>Sleeper public signals</strong><span>Roster status + movement</span><span className="team-rank">LIVE</span></div><div className="team-line"><strong>Manual BM + LL rosters</strong><span>Loaded while Yahoo is pending</span><span className="team-rank">LIVE</span></div><div className="team-line"><strong>Yahoo Fantasy</strong><span>Application submitted</span><span>WAIT</span></div><div className="team-line"><strong>Survivor Google Sheet</strong><span>Read-only pool intelligence</span><span className="team-rank">LIVE</span></div></div></div></article>
+          </div>
         </section>
       </div>
     </main>
