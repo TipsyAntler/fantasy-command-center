@@ -1,5 +1,11 @@
 import AtAGlance from "@/components/AtAGlance";
-import { week1Games, week1MarketAsOf, week1PickemStatus } from "@/data/week1";
+import {
+  week1MarketAsOf,
+  week1PoolGames,
+  week1PoolName,
+  week1PoolStatus,
+  week1Tiebreaker,
+} from "@/data/pickem-week1";
 import styles from "./pickem.module.css";
 
 function lineLabel(team: string, line: number) {
@@ -7,8 +13,8 @@ function lineLabel(team: string, line: number) {
 }
 
 export default function PickemPage() {
-  const strong = week1Games.filter((game) => game.atsConfidence >= 4);
-  const thin = week1Games.filter((game) => game.atsConfidence <= 2);
+  const strong = week1PoolGames.filter((game) => game.confidence >= 4);
+  const thin = week1PoolGames.filter((game) => game.confidence <= 2);
 
   return (
     <main>
@@ -17,19 +23,19 @@ export default function PickemPage() {
           <div className="eyebrow">PICK&apos;EM OPERATIONS · WEEK 1 · AGAINST THE SPREAD</div>
           <h1>Pick&apos;em Room</h1>
           <p className="hero-copy">
-            Every game gets a side. FFCC starts with the number, compares your pool line with the live market, then layers sharp movement, injuries, matchup data, expert/model consensus and pool strategy on top.
+            Every required game gets a side. FFCC uses your pool&apos;s frozen number as the real scoring line, then compares it with the live market and layers sharp movement, injuries, matchup data, expert/model consensus and pool strategy on top.
           </p>
         </header>
 
         <AtAGlance items={[
-          { label: "ATS picks loaded", value: `${week1Games.length} / 16`, note: "Every Week 1 game has an FFCC side", tone: "accent" },
-          { label: "Strongest early edges", value: `${strong.length}`, note: strong.map((game) => lineLabel(game.atsPick, game.atsLine)).join(" · "), tone: "good" },
+          { label: "Pool picks loaded", value: `${week1PoolGames.length} / 14`, note: "Week 1 skips the Wednesday and Thursday games", tone: "accent" },
+          { label: "Strongest current edges", value: `${strong.length}`, note: strong.map((game) => lineLabel(game.poolPick, game.poolLine)).join(" · "), tone: "good" },
           { label: "Thin / coin-flip picks", value: `${thin.length}`, note: thin.map((game) => `${game.away}/${game.home}`).join(" · "), tone: "warn" },
-          { label: "First lock", value: "Wed 8:20", note: "NE @ SEA means Week 1 must be finalized early" },
+          { label: "MNF tiebreaker", value: `${week1Tiebreaker.earlyFfccTarget}`, note: `${week1Tiebreaker.matchup} · live total ${week1Tiebreaker.currentMarketTotal} · early target only` },
         ]} />
 
         <div className={styles.topNote}>
-          <strong>{week1PickemStatus}.</strong> The board below uses the current betting market as the reference number. In an ATS pool, your pool&apos;s exact frozen spread is the single most important input: a move across 3, 7 or 10 can change the recommended side even when nothing about the teams changed.
+          <strong>{week1PoolStatus}.</strong> These are the exact Week 1 spreads shown in your {week1PoolName} interface. Because the pool freezes its line when picks open and does not move it afterward, FFCC treats later market movement as potential stale-line value rather than replacing the pool number.
         </div>
 
         <section className="section-heading">
@@ -41,7 +47,7 @@ export default function PickemPage() {
         </section>
 
         <section className={styles.board} aria-label="Week 1 ATS picks">
-          {week1Games.map((game) => (
+          {week1PoolGames.map((game) => (
             <details className={styles.gameCard} key={`${game.away}-${game.home}`}>
               <summary className={styles.gameSummary}>
                 <div className={styles.time}>
@@ -50,16 +56,16 @@ export default function PickemPage() {
                 </div>
                 <div className={styles.matchup}>
                   <strong>{game.away} @ {game.home}</strong>
-                  <span>Market: {game.favorite} -{game.spread} · O/U {game.total}</span>
+                  <span>Pool: {game.poolFavorite} -{game.poolSpread} · Live: {game.marketLabel} · O/U {game.marketTotal}</span>
                 </div>
                 <div className={styles.pick}>
-                  <strong>{lineLabel(game.atsPick, game.atsLine)}</strong>
+                  <strong>{lineLabel(game.poolPick, game.poolLine)}</strong>
                   <span>FFCC PICK</span>
                 </div>
-                <div className={styles.confidence} aria-label={`${game.atsConfidence} of 5 confidence`}>
-                  <span>Confidence {game.atsConfidence}/5</span>
+                <div className={styles.confidence} aria-label={`${game.confidence} of 5 confidence`}>
+                  <span>Confidence {game.confidence}/5</span>
                   <div className={styles.dots}>
-                    {[1,2,3,4,5].map((dot) => <i key={dot} className={dot <= game.atsConfidence ? styles.dotOn : styles.dot} />)}
+                    {[1,2,3,4,5].map((dot) => <i key={dot} className={dot <= game.confidence ? styles.dotOn : styles.dot} />)}
                   </div>
                 </div>
                 <div className={styles.chevron} aria-hidden="true">⌄</div>
@@ -82,19 +88,35 @@ export default function PickemPage() {
           ))}
         </section>
 
+        <section className="panel survivor-template second-heading">
+          <div className="panel-head">
+            <div>
+              <span className="panel-kicker">WEEKLY TIEBREAKER</span>
+              <h3>{week1Tiebreaker.matchup} total points</h3>
+            </div>
+            <span className="saved-pill">Early FFCC target: {week1Tiebreaker.earlyFfccTarget}</span>
+          </div>
+          <div className="decision-grid">
+            <div><span>Pool asks</span><strong>{week1Tiebreaker.label}</strong></div>
+            <div><span>Current market total</span><strong>{week1Tiebreaker.currentMarketTotal}</strong></div>
+            <div className="span-2"><span>FFCC process</span><strong>{week1Tiebreaker.note}</strong></div>
+          </div>
+          <p className="panel-explainer">The tiebreaker is not an afterthought: the weekly payout uses the closest Monday-night total-points prediction. FFCC will run a final expected-score/market-total check before the pool&apos;s Sunday deadline and can shade away from an obvious round-number cluster only when the underlying projection supports it.</p>
+        </section>
+
         <section className="section-heading second-heading">
           <div>
             <div className="eyebrow">THE FFCC ATS ENGINE</div>
             <h2>How the weekly recommendation is built</h2>
           </div>
-          <span className="source-tag">Market first · opinions second</span>
+          <span className="source-tag">Pool line first · market second</span>
         </section>
 
         <section className={styles.methodGrid}>
           <article className={styles.methodCard}>
             <span className={styles.weight}>35% · NUMBER VALUE</span>
-            <strong>Pool line vs live market</strong>
-            <p>Compare the frozen pool spread with current consensus books. Stale-line value gets priority, especially when movement crosses the NFL&apos;s key margins of 3, 7 or 10.</p>
+            <strong>Frozen pool line vs live market</strong>
+            <p>The pool&apos;s number determines wins and losses. Later market movement creates information value, especially when the frozen line leaves us on the favorable side of the NFL&apos;s key margins of 3, 7 or 10.</p>
           </article>
           <article className={styles.methodCard}>
             <span className={styles.weight}>20% · MARKET SIGNAL</span>
@@ -114,7 +136,7 @@ export default function PickemPage() {
           <article className={styles.methodCard}>
             <span className={styles.weight}>10% · EXTERNAL AUDIT</span>
             <strong>Expert + model consensus</strong>
-            <p>Review reputable betting analysts and simulation/model outputs every week. Consensus validates an edge; it does not replace the number or become a popularity vote.</p>
+            <p>Review reputable betting analysts and simulation/model outputs every week. Consensus validates an edge; it does not replace the pool number or become a popularity vote.</p>
           </article>
           <article className={styles.methodCard}>
             <span className={styles.weight}>POOL OVERLAY</span>
@@ -126,13 +148,13 @@ export default function PickemPage() {
         <section className="roadmap compact-roadmap">
           <div className="roadmap-copy">
             <div className="eyebrow">WEEKLY CADENCE</div>
-            <h2>Research early. Freeze late enough to use the information.</h2>
-            <p>FFCC builds the board as soon as lines are available, then does the real final audit after the midweek injury and market information arrives. Weird Wednesday games automatically move the deadline forward.</p>
+            <h2>Capture the pool line Monday. Exploit what changes afterward.</h2>
+            <p>Your pool spreads are set when picks open late Monday night and do not change. FFCC&apos;s job is therefore to preserve those exact numbers, monitor the live market all week, and identify where the frozen line becomes better or worse than what bettors can currently get.</p>
           </div>
           <div className="roadmap-list">
-            <div><span>01</span><strong>Monday / Tuesday</strong><small>Load pool lines + opening market + first expert/model sweep</small></div>
-            <div><span>02</span><strong>Wednesday</strong><small>Final full-slate injury, market, weather and sharp-money audit</small></div>
-            <div><span>03</span><strong>Special schedules</strong><small>If the NFL plays Wednesday, finalize Tuesday instead</small></div>
+            <div><span>01</span><strong>Late Monday / Tuesday</strong><small>Capture exact SZN pool lines + opening market + first expert/model sweep</small></div>
+            <div><span>02</span><strong>Tuesday → Sunday</strong><small>Track line movement, injuries, weather and stale-line value</small></div>
+            <div><span>03</span><strong>Before lock</strong><small>Finalize all sides + MNF total-points tiebreaker</small></div>
           </div>
         </section>
       </div>
