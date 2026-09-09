@@ -17,7 +17,7 @@ export type Week1PoolGame = {
 
 export const week1PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week1PoolStatus = "POOL LINES FROZEN LATE MON 9/7 · WEEK 1 SKIPS WED/THU";
-export const week1MarketAsOf = "Sep 9 · bet365 via FOX Sports · 11:10 AM ET";
+export const week1MarketAsOf = "Sep 9 · latest refs incl. post-Bowers LV/MIA move";
 
 export const week1PoolGames: Week1PoolGame[] = [
   {
@@ -87,10 +87,10 @@ export const week1PoolGames: Week1PoolGame[] = [
   {
     day: "Sun 9/13", kickoff: "4:25 PM", away: "MIA", home: "LV",
     poolPick: "MIA", poolLine: 3.5, poolFavorite: "LV", poolSpread: 3.5,
-    marketLabel: "LV -3.5", marketTotal: 40.5, confidence: 3,
-    signal: "Key-number hook in a low-total game.",
-    rationale: "Las Vegas is favored, but Miami +3.5 is the more useful ATS number. In a low-total game, a one-score outcome is more likely to keep the underdog live, and the half-point above 3 matters.",
-    watch: "Quarterback news is the dominant late-week variable."
+    marketLabel: "LV -3", marketTotal: 40.5, confidence: 5,
+    signal: "Post-Bowers upgrade: the frozen pool gives Miami +3.5 while the live line has moved to LV -3, crossing the key number 3.",
+    rationale: "Brock Bowers underwent a meniscus trim Tuesday and is expected to miss Week 1, removing Las Vegas' top pass-game weapon. The market reacted from roughly LV -3.5 to -3 while the pool stays frozen at MIA +3.5. That half-point is especially valuable because a three-point Raiders win becomes a Miami cover in the pool, and the injury news independently supports the same side.",
+    watch: "If Bowers' status unexpectedly changes or the market pushes back through LV -3.5, reassess. Otherwise Miami +3.5 is now one of the strongest frozen-line positions on the card."
   },
   {
     day: "Sun 9/13", kickoff: "4:25 PM", away: "GB", home: "MIN",
