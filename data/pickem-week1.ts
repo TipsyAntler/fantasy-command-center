@@ -17,7 +17,7 @@ export type Week1PoolGame = {
 
 export const week1PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week1PoolStatus = "POOL LINES FROZEN LATE MON 9/7 · WEEK 1 SKIPS WED/THU";
-export const week1MarketAsOf = "Sep 10 · latest FanDuel refs incl. post-Bowers LV/MIA move";
+export const week1MarketAsOf = "Sep 10 · latest FanDuel refs after overnight LV/MIA rebound";
 
 export const week1PoolGames: Week1PoolGame[] = [
   {
@@ -87,10 +87,10 @@ export const week1PoolGames: Week1PoolGame[] = [
   {
     day: "Sun 9/13", kickoff: "4:25 PM", away: "MIA", home: "LV",
     poolPick: "MIA", poolLine: 3.5, poolFavorite: "LV", poolSpread: 3.5,
-    marketLabel: "LV -3", marketTotal: 40.5, confidence: 5,
-    signal: "Post-Bowers upgrade: the frozen pool gives Miami +3.5 while the live line has moved to LV -3, capturing the key number 3.",
-    rationale: "Brock Bowers underwent a meniscus trim Tuesday and is expected to miss Week 1, removing Las Vegas' top pass-game weapon. The market reacted from roughly LV -3.5 to -3 while the pool stays frozen at MIA +3.5. That half-point is especially valuable because a three-point Raiders win becomes a Miami cover in the pool, and the injury news independently supports the same side.",
-    watch: "If Bowers' status unexpectedly changes or the market pushes back through LV -3.5, reassess. Otherwise Miami +3.5 is now one of the strongest frozen-line positions on the card."
+    marketLabel: "LV -3.5", marketTotal: 40.5, confidence: 4,
+    signal: "Bowers remains out, but the overnight market has rebounded to LV -3.5, so the earlier key-number stale-line edge is gone.",
+    rationale: "Brock Bowers' expected Week 1 absence still helps the Miami case by removing Las Vegas' top pass-game weapon. However, FanDuel has moved back from LV -3 to -3.5, matching the frozen pool spread. Miami +3.5 remains the preferred ATS side because it protects a field-goal loss and the injury context still leans its way, but this is no longer a market-arbitrage 5/5 spot.",
+    watch: "If the market falls back to LV -3, Miami regains meaningful key-number stale-line value. A move through LV -4 would instead be a reason to reassess whether new Raiders-positive information is being priced in."
   },
   {
     day: "Sun 9/13", kickoff: "4:25 PM", away: "GB", home: "MIN",
