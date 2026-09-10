@@ -17,7 +17,7 @@ export type Week1PoolGame = {
 
 export const week1PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week1PoolStatus = "POOL LINES FROZEN LATE MON 9/7 · WEEK 1 SKIPS WED/THU";
-export const week1MarketAsOf = "Sep 10 · latest FanDuel refs after overnight LV/MIA rebound";
+export const week1MarketAsOf = "Sep 10 · Thursday AM consensus refs";
 
 export const week1PoolGames: Week1PoolGame[] = [
   {
@@ -31,10 +31,10 @@ export const week1PoolGames: Week1PoolGame[] = [
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "NO", home: "DET",
     poolPick: "NO", poolLine: 7.5, poolFavorite: "DET", poolSpread: 7.5,
-    marketLabel: "DET -6.5", marketTotal: 49.5, confidence: 5,
-    signal: "The pool gives New Orleans +7.5 while the live market is +6.5 — a full point plus the key-number hook.",
-    rationale: "This is exactly why the frozen pool line matters. Detroit can be the obvious straight-up side while New Orleans is still the better ATS pick. Getting +7.5 instead of the market's +6.5 is meaningful because 7 is one of the NFL's most important final margins.",
-    watch: "Any major Saints injury news that justifies Detroit moving well beyond -7.5 would reduce this edge."
+    marketLabel: "DET -7", marketTotal: 49.5, confidence: 5,
+    signal: "The pool still gives New Orleans the valuable +7.5 hook while consensus has moved to Detroit -7.",
+    rationale: "The earlier full-point stale-line edge has narrowed, but the frozen +7.5 still crosses the key number 7. A seven-point Lions win remains a Saints cover in the pool while it pushes at the current consensus number, so New Orleans stays a high-value ATS hold.",
+    watch: "Any major Saints injury news or a market move through DET -7.5 would remove the key-number advantage and force a reassessment."
   },
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "NYJ", home: "TEN",
@@ -55,9 +55,9 @@ export const week1PoolGames: Week1PoolGame[] = [
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "ATL", home: "PIT",
     poolPick: "ATL", poolLine: 3.5, poolFavorite: "PIT", poolSpread: 3.5,
-    marketLabel: "PIT -3.5", marketTotal: 41.5, confidence: 3,
-    signal: "The earlier stale-line hook has disappeared; pool and live market now both give Atlanta +3.5.",
-    rationale: "Atlanta still gets the useful half-point above 3 in a lower-total game, but the live market has caught up to the frozen number. The Falcons remain the ATS lean because +3.5 protects a field-goal loss, though this is no longer a market-arbitrage position.",
+    marketLabel: "PIT -3.5", marketTotal: 42.5, confidence: 3,
+    signal: "Pool and consensus market both give Atlanta +3.5; the useful hook above 3 remains the case for the dog.",
+    rationale: "Atlanta still gets the useful half-point above 3. The Falcons remain the ATS lean because +3.5 protects a field-goal loss, though this is a matchup and key-number position rather than a stale-line arbitrage spot.",
     watch: "A meaningful injury or market move beyond PIT -4.5 would be the main reason to revisit."
   },
   {
@@ -88,8 +88,8 @@ export const week1PoolGames: Week1PoolGame[] = [
     day: "Sun 9/13", kickoff: "4:25 PM", away: "MIA", home: "LV",
     poolPick: "MIA", poolLine: 3.5, poolFavorite: "LV", poolSpread: 3.5,
     marketLabel: "LV -3.5", marketTotal: 40.5, confidence: 4,
-    signal: "Bowers remains out, but the overnight market has rebounded to LV -3.5, so the earlier key-number stale-line edge is gone.",
-    rationale: "Brock Bowers' expected Week 1 absence still helps the Miami case by removing Las Vegas' top pass-game weapon. However, FanDuel has moved back from LV -3 to -3.5, matching the frozen pool spread. Miami +3.5 remains the preferred ATS side because it protects a field-goal loss and the injury context still leans its way, but this is no longer a market-arbitrage 5/5 spot.",
+    signal: "Bowers remains out and consensus is LV -3.5, matching the frozen spread rather than creating a stale-line edge.",
+    rationale: "Brock Bowers' expected Week 1 absence still helps the Miami case by removing Las Vegas' top pass-game weapon. The market currently matches the frozen pool spread at LV -3.5. Miami +3.5 remains the preferred ATS side because it protects a field-goal loss and the injury context still leans its way, but this is not a market-arbitrage spot.",
     watch: "If the market falls back to LV -3, Miami regains meaningful key-number stale-line value. A move through LV -4 would instead be a reason to reassess whether new Raiders-positive information is being priced in."
   },
   {
@@ -104,8 +104,8 @@ export const week1PoolGames: Week1PoolGame[] = [
     day: "Sun 9/13", kickoff: "4:25 PM", away: "WAS", home: "PHI",
     poolPick: "PHI", poolLine: -4.5, poolFavorite: "PHI", poolSpread: 4.5,
     marketLabel: "PHI -5.5", marketTotal: 44.5, confidence: 5,
-    signal: "The stale-line edge has returned: Philadelphia is -5.5 live while the pool only requires -4.5.",
-    rationale: "Philadelphia remains one of the cleaner favorite positions on the board and now again carries a full point of favorable frozen-line value. The market asks bettors to lay -5.5 while the pool only asks -4.5, strengthening an Eagles side we already preferred.",
+    signal: "The stale-line edge remains: consensus Philadelphia is -5.5 while the pool only requires -4.5.",
+    rationale: "Philadelphia remains one of the cleaner favorite positions on the board and still carries a full point of favorable frozen-line value. The market asks bettors to lay -5.5 while the pool only asks -4.5, strengthening an Eagles side we already preferred.",
     watch: "A reversal toward PHI -4.5 or lower would remove the stale-line bonus. Major Washington or Philadelphia OL/QB news also matters."
   },
   {
@@ -119,18 +119,18 @@ export const week1PoolGames: Week1PoolGame[] = [
   {
     day: "Sun 9/13", kickoff: "8:20 PM", away: "DAL", home: "NYG",
     poolPick: "DAL", poolLine: -2.5, poolFavorite: "DAL", poolSpread: 2.5,
-    marketLabel: "DAL -2.5", marketTotal: 48.5, confidence: 3,
-    signal: "Favorite remains below key number 3.",
-    rationale: "At -2.5, Dallas covers with a standard field-goal win. The pool and current market agree, so this is not a stale-line play; it is simply the preferable side of the most important NFL key number.",
-    watch: "Malik Nabers availability and any move of the market through Dallas -3."
+    marketLabel: "DAL -3", marketTotal: 48, confidence: 3,
+    signal: "The market has nudged Dallas to -3 while the frozen pool still only asks -2.5, creating a useful half-point through the key number.",
+    rationale: "At the frozen -2.5, Dallas covers with a standard field-goal win while current consensus around -3 would only push. Malik Nabers practiced fully Wednesday and looks increasingly likely to play, which limits how aggressively to upgrade Dallas, but the pool price is now better than the live number.",
+    watch: "Malik Nabers' final game status and whether consensus pushes through Dallas -3."
   },
   {
     day: "Mon 9/14", kickoff: "8:15 PM", away: "DEN", home: "KC",
     poolPick: "DEN", poolLine: 3.5, poolFavorite: "KC", poolSpread: 3.5,
-    marketLabel: "KC -2.5", marketTotal: 43.5, confidence: 5,
-    signal: "Best key-number discrepancy on the card: Denver +3.5 versus a live market at +2.5.",
-    rationale: "The frozen pool gives Denver an entire point more than the current market and moves us from below 3 to above it. That is a major ATS advantage because a three-point Chiefs win becomes a Denver cover in the pool. This is exactly the kind of line discrepancy FFCC should prioritize.",
-    watch: "Mahomes mobility, KC offensive-line health, and whether the live market returns to KC -3.5."
+    marketLabel: "KC -3", marketTotal: 43.5, confidence: 5,
+    signal: "Denver still owns the valuable +3.5 hook while consensus has moved from KC -2.5 to KC -3.",
+    rationale: "The earlier full-point discrepancy has narrowed to a half-point, but that half-point sits on the NFL's most important key number. A three-point Chiefs win is still a Denver cover in the frozen pool while it pushes at current consensus, so Denver remains one of the strongest price positions on the board.",
+    watch: "Mahomes mobility, KC offensive-line health, and whether the live market moves through KC -3.5."
   }
 ];
 
