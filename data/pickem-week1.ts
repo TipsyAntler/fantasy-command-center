@@ -17,7 +17,7 @@ export type Week1PoolGame = {
 
 export const week1PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week1PoolStatus = "POOL LINES FROZEN LATE MON 9/7 · WEEK 1 SKIPS WED/THU";
-export const week1MarketAsOf = "Sep 10 · Thursday midday consensus refs";
+export const week1MarketAsOf = "Sep 10 · Thursday 2:40 PM ET market refs";
 
 export const week1PoolGames: Week1PoolGame[] = [
   {
@@ -31,10 +31,10 @@ export const week1PoolGames: Week1PoolGame[] = [
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "NO", home: "DET",
     poolPick: "NO", poolLine: 7.5, poolFavorite: "DET", poolSpread: 7.5,
-    marketLabel: "DET -7", marketTotal: 49.5, confidence: 5,
-    signal: "The pool still gives New Orleans the valuable +7.5 hook while consensus has moved to Detroit -7.",
-    rationale: "The earlier full-point stale-line edge has narrowed, but the frozen +7.5 still crosses the key number 7. A seven-point Lions win remains a Saints cover in the pool while it pushes at the current consensus number, so New Orleans stays a high-value ATS hold.",
-    watch: "Any major Saints injury news or a market move through DET -7.5 would remove the key-number advantage and force a reassessment."
+    marketLabel: "DET -6.5", marketTotal: 49.5, confidence: 5,
+    signal: "New Orleans now owns a full-point frozen-line advantage across key number 7: pool +7.5 versus live DET -6.5.",
+    rationale: "The market has moved below the touchdown while the pool still gives New Orleans +7.5. That creates a particularly valuable stale-line position across key number 7: a seven-point Lions win covers for New Orleans in the pool but loses at the current sportsbook number. The Saints remain one of the strongest price-driven holds on the card.",
+    watch: "Major Saints injury news or a live market surge back through DET -7.5 would erase the key-number advantage and force a reassessment."
   },
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "NYJ", home: "TEN",
@@ -63,10 +63,10 @@ export const week1PoolGames: Week1PoolGame[] = [
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "CHI", home: "CAR",
     poolPick: "CHI", poolLine: -2.5, poolFavorite: "CHI", poolSpread: 2.5,
-    marketLabel: "CHI -3", marketTotal: 47.5, confidence: 5,
-    signal: "Strong key-number price: the pool only asks Chicago to lay -2.5 while the live market is -3.",
-    rationale: "The frozen -2.5 lets Chicago cover with a three-point win while the current market would only push. That half-point is unusually valuable because 3 is the NFL's most important final margin, so Chicago remains one of the better price positions on the card.",
-    watch: "A live reversal below CHI -2.5 would weaken the signal; major Bears QB/OL news would also warrant a recheck."
+    marketLabel: "CHI -3.5", marketTotal: 47.5, confidence: 5,
+    signal: "Chicago's frozen -2.5 is now a full point better than the live -3.5 market and crosses key number 3.",
+    rationale: "The pool only asks Chicago to win by a field goal while the current market asks bettors to lay -3.5. Crossing the NFL's most important key number creates a major stale-line benefit: a three-point Bears win covers in the pool but loses at the current sportsbook number. Chicago remains one of the strongest frozen-price positions on the card.",
+    watch: "A live reversal back below CHI -2.5 would weaken the signal; major Bears QB/OL news would also warrant a recheck."
   },
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "CLE", home: "JAX",
@@ -96,17 +96,17 @@ export const week1PoolGames: Week1PoolGame[] = [
     day: "Sun 9/13", kickoff: "4:25 PM", away: "GB", home: "MIN",
     poolPick: "MIN", poolLine: -1.5, poolFavorite: "MIN", poolSpread: 1.5,
     marketLabel: "MIN -1.5", marketTotal: 46.5, confidence: 4,
-    signal: "Market-flip / sharp-support profile remains the reason to back Minnesota.",
-    rationale: "This game moved from Green Bay being favored earlier in the cycle to Minnesota -1.5. In a near pick'em, a full favorite flip is meaningful market information. The pool number still matches the current reference, so Minnesota remains the side.",
-    watch: "Any move back toward Green Bay favorite status or significant injury news would be meaningful."
+    signal: "Minnesota remains a small home favorite and the frozen pool line matches current consensus.",
+    rationale: "This remains a near pick'em divisional game, with Minnesota still favored by roughly 1.5 at the broader market. There is no stale-line edge at the moment, so the Vikings recommendation rests on the matchup and home-field lean rather than price arbitrage.",
+    watch: "Any move toward Green Bay favorite status or significant injury news would be meaningful."
   },
   {
     day: "Sun 9/13", kickoff: "4:25 PM", away: "WAS", home: "PHI",
     poolPick: "PHI", poolLine: -4.5, poolFavorite: "PHI", poolSpread: 4.5,
-    marketLabel: "PHI -5.5", marketTotal: 44.5, confidence: 5,
-    signal: "The stale-line edge remains: consensus Philadelphia is -5.5 while the pool only requires -4.5.",
-    rationale: "Philadelphia remains one of the cleaner favorite positions on the board and still carries a full point of favorable frozen-line value. The market asks bettors to lay -5.5 while the pool only asks -4.5, strengthening an Eagles side we already preferred.",
-    watch: "A reversal toward PHI -4.5 or lower would remove the stale-line bonus. Major Washington or Philadelphia OL/QB news also matters."
+    marketLabel: "PHI -4.5", marketTotal: 44.5, confidence: 4,
+    signal: "The earlier stale-line bonus has disappeared; the frozen pool spread and current market now match at Philadelphia -4.5.",
+    rationale: "Philadelphia remains the preferred side based on the underlying matchup and trench advantage, but the market has moved back to the same -4.5 number used by the pool. That removes the full-point price cushion FFCC had earlier, so confidence drops slightly while the pick itself remains intact.",
+    watch: "A renewed move toward PHI -5 or -5.5 would restore stale-line value; major Washington or Philadelphia OL/QB news could also change the recommendation."
   },
   {
     day: "Sun 9/13", kickoff: "4:25 PM", away: "ARI", home: "LAC",
@@ -119,9 +119,9 @@ export const week1PoolGames: Week1PoolGame[] = [
   {
     day: "Sun 9/13", kickoff: "8:20 PM", away: "DAL", home: "NYG",
     poolPick: "DAL", poolLine: -2.5, poolFavorite: "DAL", poolSpread: 2.5,
-    marketLabel: "DAL -3", marketTotal: 48, confidence: 3,
-    signal: "The market has nudged Dallas to -3 while the frozen pool still only asks -2.5, creating a useful half-point through the key number.",
-    rationale: "At the frozen -2.5, Dallas covers with a standard field-goal win while current consensus around -3 would only push. Malik Nabers practiced fully Wednesday and looks increasingly likely to play, which limits how aggressively to upgrade Dallas, but the pool price is now better than the live number.",
+    marketLabel: "DAL -2.5", marketTotal: 48.5, confidence: 3,
+    signal: "The short-lived key-number price edge has disappeared; pool and current market now match at Dallas -2.5.",
+    rationale: "Dallas remains the slight ATS lean at a number below the key field goal, but the current market has moved back to the same -2.5 as the pool. Malik Nabers practiced fully Wednesday and looks increasingly likely to play, so there is no reason to upgrade Dallas beyond a moderate-confidence matchup lean.",
     watch: "Malik Nabers' final game status and whether consensus pushes through Dallas -3."
   },
   {
