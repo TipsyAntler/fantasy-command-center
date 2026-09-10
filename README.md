@@ -4,7 +4,7 @@ Fantasy Command Center is a private, single-user, non-commercial fantasy footbal
 
 ## Current status
 
-**Version 0 is now a working Next.js web-app scaffold.** While Yahoo Fantasy Sports API access is under review, the dashboard uses public, read-only NFL/fantasy signals so the application can be built and deployed before Yahoo credentials exist.
+**Version 0 is a working Next.js web app.** Yahoo has approved the Fantasy API request and the app is waiting for final Fantasy Sports provisioning. The Yahoo OAuth and read-only league-sync plumbing is already deployed behind an environment gate so activation does not require another code deploy.
 
 Current live-data layer:
 
@@ -15,12 +15,24 @@ Current live-data layer:
 - active injury/practice status for fantasy-relevant players
 - Google-connected Survivor pool intelligence
 - iPhone/Home Screen notification permission + service-worker plumbing
+- Yahoo OAuth connect/callback/disconnect routes, encrypted token-cookie handling and a 2026 football-league sync probe, gated until provisioning is complete
 
 Public movement/player metadata is currently sourced from the read-only Sleeper API with attribution. Yahoo data is not being proxied through Sleeper.
 
 ## Yahoo integration
 
-The project is designed to authenticate my own Yahoo account through OAuth and retrieve read-only Yahoo Fantasy Sports data for leagues and teams that I am authorized to access after Yahoo approves API access.
+The app authenticates the owner's Yahoo account through Yahoo's server-side OAuth authorization-code flow. OAuth credentials and tokens remain server-side/private; refresh tokens are stored inside an AES-256-GCM encrypted httpOnly cookie and refreshed access tokens are rotated through server routes.
+
+Once Yahoo Fantasy Sports provisioning is confirmed, activation is:
+
+1. Register `https://fantasy-command-center-omega.vercel.app/api/yahoo/callback` as the Yahoo redirect URI.
+2. Add `YAHOO_CLIENT_ID`, `YAHOO_CLIENT_SECRET`, and a long random `YAHOO_TOKEN_SECRET` to the server environment.
+3. Set `YAHOO_REDIRECT_URI=https://fantasy-command-center-omega.vercel.app/api/yahoo/callback`.
+4. Set `YAHOO_FANTASY_ENABLED=true`.
+5. Open Settings → Yahoo and connect the Yahoo account.
+6. Run the 2026 league-sync probe before replacing manual league data.
+
+No Yahoo credential, access token, refresh token, or private league payload belongs in this repository.
 
 The Yahoo layer is intended to include:
 
@@ -33,13 +45,12 @@ The Yahoo layer is intended to include:
 - draft and roster metadata
 - other league information needed for personal fantasy analysis
 
-That data will enable personalized draft preparation, waiver-wire evaluation, trade analysis, lineup decisions, roster construction, opponent analysis, and season-long performance tracking.
+That data will enable personalized waiver-wire evaluation, trade analysis, lineup decisions, roster construction, opponent analysis, and season-long performance tracking.
 
-### Yahoo approval-day checklist
+### Yahoo activation checklist
 
-When Yahoo API access is approved, connect the following before considering the integration complete:
+After the initial league probe succeeds, connect the following before considering the integration complete:
 
-- Yahoo OAuth + refresh-token storage
 - per-league scoring, roster and standings sync
 - player availability / free-agent state per league
 - transaction and drop monitoring
@@ -54,12 +65,12 @@ When Yahoo API access is approved, connect the following before considering the 
 
 ## Roadmap
 
-1. Deploy the public-data dashboard as a persistent web app.
-2. Add a Yahoo OAuth connection when API access is approved.
-3. Add a league switcher so every league retains its own scoring/settings context.
-4. Build personalized waiver, lineup, opponent and trade views.
-5. Add a Survivor Lab that cross-checks external research with win probability, expected popularity and future-value considerations.
-6. Add a concise daily/throughout-the-day command brief highlighting only meaningful changes.
+1. Keep the public-data dashboard live while Yahoo provisioning finishes.
+2. Activate the already-deployed Yahoo OAuth connection and validate the 2026 league probe.
+3. Replace manual roster snapshots with Yahoo league-aware sync and add a league switcher.
+4. Build personalized waiver, lineup, opponent and trade views from Yahoo availability/settings.
+5. Continue Survivor Lab cross-checking external research with win probability, ownership and future value.
+6. Keep concise command briefs focused on meaningful changes.
 7. Activate league-aware background push alerts for high-value waiver/injury/drop events.
 
 ## Scope and privacy
@@ -70,7 +81,7 @@ This is a single-user personal project. It is not a public fantasy service and i
 - The project will not make automated Yahoo roster or transaction changes.
 - Yahoo Fantasy Sports data will not be resold or redistributed.
 - OAuth credentials, access tokens, refresh tokens, push private keys, and private league data will not be committed to this public repository.
-- Only data associated with my own authenticated Yahoo account and leagues I am authorized to access will be retrieved.
+- Only data associated with the owner's authenticated Yahoo account and leagues they are authorized to access will be retrieved.
 
 ## Tech
 
@@ -80,7 +91,7 @@ This is a single-user personal project. It is not a public fantasy service and i
 - server-side cached data fetching
 - service worker + Web Notifications / Push plumbing
 - Sleeper read-only API for the current public-data layer
-- Yahoo Fantasy Sports API planned after approval
+- Yahoo OAuth 2.0 / Fantasy Sports API integration staged behind an environment gate
 
 ## Local development
 
