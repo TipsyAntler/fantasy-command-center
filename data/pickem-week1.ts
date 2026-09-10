@@ -17,7 +17,7 @@ export type Week1PoolGame = {
 
 export const week1PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week1PoolStatus = "POOL LINES FROZEN LATE MON 9/7 · WEEK 1 SKIPS WED/THU";
-export const week1MarketAsOf = "Sep 9 · latest refs incl. post-Bowers LV/MIA move";
+export const week1MarketAsOf = "Sep 10 · latest FanDuel refs incl. post-Bowers LV/MIA move";
 
 export const week1PoolGames: Week1PoolGame[] = [
   {
@@ -63,10 +63,10 @@ export const week1PoolGames: Week1PoolGame[] = [
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "CHI", home: "CAR",
     poolPick: "CHI", poolLine: -2.5, poolFavorite: "CHI", poolSpread: 2.5,
-    marketLabel: "CHI -3.5", marketTotal: 47.5, confidence: 5,
-    signal: "Major stale-line upgrade: the pool only asks Chicago to lay -2.5 while the live market is -3.5, crossing the key number 3.",
-    rationale: "This is now one of the strongest price positions on the card. The frozen -2.5 lets Chicago cover with a three-point win while the current market requires four. Crossing the NFL's most important key number is materially more valuable than an ordinary one-point move.",
-    watch: "A live reversal back below CHI -3 would weaken the stale-line signal; major Bears QB/OL news would also warrant a recheck."
+    marketLabel: "CHI -3", marketTotal: 47.5, confidence: 5,
+    signal: "Strong key-number price: the pool only asks Chicago to lay -2.5 while the live market is -3.",
+    rationale: "The frozen -2.5 lets Chicago cover with a three-point win while the current market would only push. That half-point is unusually valuable because 3 is the NFL's most important final margin, so Chicago remains one of the better price positions on the card.",
+    watch: "A live reversal below CHI -2.5 would weaken the signal; major Bears QB/OL news would also warrant a recheck."
   },
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "CLE", home: "JAX",
@@ -88,7 +88,7 @@ export const week1PoolGames: Week1PoolGame[] = [
     day: "Sun 9/13", kickoff: "4:25 PM", away: "MIA", home: "LV",
     poolPick: "MIA", poolLine: 3.5, poolFavorite: "LV", poolSpread: 3.5,
     marketLabel: "LV -3", marketTotal: 40.5, confidence: 5,
-    signal: "Post-Bowers upgrade: the frozen pool gives Miami +3.5 while the live line has moved to LV -3, crossing the key number 3.",
+    signal: "Post-Bowers upgrade: the frozen pool gives Miami +3.5 while the live line has moved to LV -3, capturing the key number 3.",
     rationale: "Brock Bowers underwent a meniscus trim Tuesday and is expected to miss Week 1, removing Las Vegas' top pass-game weapon. The market reacted from roughly LV -3.5 to -3 while the pool stays frozen at MIA +3.5. That half-point is especially valuable because a three-point Raiders win becomes a Miami cover in the pool, and the injury news independently supports the same side.",
     watch: "If Bowers' status unexpectedly changes or the market pushes back through LV -3.5, reassess. Otherwise Miami +3.5 is now one of the strongest frozen-line positions on the card."
   },
@@ -103,10 +103,10 @@ export const week1PoolGames: Week1PoolGame[] = [
   {
     day: "Sun 9/13", kickoff: "4:25 PM", away: "WAS", home: "PHI",
     poolPick: "PHI", poolLine: -4.5, poolFavorite: "PHI", poolSpread: 4.5,
-    marketLabel: "PHI -4.5", marketTotal: 44.5, confidence: 4,
-    signal: "Pool and live market currently match at Philadelphia -4.5.",
-    rationale: "Philadelphia remains one of the cleaner favorite positions on the board, but there is no current stale-line bonus. The Eagles recommendation remains intact on matchup strength rather than price arbitrage.",
-    watch: "A move toward PHI -5.5 would restore stale-line value; a reversal toward -3 would weaken the case. Major Washington or Philadelphia OL/QB news also matters."
+    marketLabel: "PHI -5.5", marketTotal: 44.5, confidence: 5,
+    signal: "The stale-line edge has returned: Philadelphia is -5.5 live while the pool only requires -4.5.",
+    rationale: "Philadelphia remains one of the cleaner favorite positions on the board and now again carries a full point of favorable frozen-line value. The market asks bettors to lay -5.5 while the pool only asks -4.5, strengthening an Eagles side we already preferred.",
+    watch: "A reversal toward PHI -4.5 or lower would remove the stale-line bonus. Major Washington or Philadelphia OL/QB news also matters."
   },
   {
     day: "Sun 9/13", kickoff: "4:25 PM", away: "ARI", home: "LAC",
