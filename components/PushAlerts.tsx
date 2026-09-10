@@ -16,12 +16,24 @@ function isStandalone() {
   return window.matchMedia("(display-mode: standalone)").matches || iosStandalone;
 }
 
+async function registerSubscription(subscription: PushSubscription) {
+  const response = await fetch("/api/push/subscribe", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(subscription.toJSON()),
+  });
+  if (!response.ok) {
+    const payload = await response.json().catch(() => null);
+    throw new Error(payload?.error || "Could not register FFCC push subscription.");
+  }
+}
+
 export default function PushAlerts() {
   const [state, setState] = useState<AlertState>("checking");
   const [message, setMessage] = useState("Checking this device…");
 
   useEffect(() => {
-    const supported = "serviceWorker" in navigator && "Notification" in window;
+    const supported = "serviceWorker" in navigator && "Notification" in window && "PushManager" in window;
     if (!supported) {
       setState("unsupported");
       setMessage("This browser cannot enable FFCC push notifications. On iPhone, open the installed FFCC Home Screen app and return to Smart Alerts there.");
@@ -42,7 +54,7 @@ export default function PushAlerts() {
 
     const enabled = localStorage.getItem("ffcc-alerts-enabled") === "1" && Notification.permission === "granted";
     setState(enabled ? "enabled" : "ready");
-    setMessage(enabled ? "Alerts are enabled on this device." : "This installed FFCC app is ready. Tap Enable Alerts to allow time-sensitive fantasy notifications.");
+    setMessage(enabled ? "FFCC push is enabled on this device for high-value Fantasy, Survivor and Pick'em alerts." : "This installed FFCC app is ready. Tap Enable Alerts to allow high-value fantasy notifications.");
   }, []);
 
   async function enableAlerts() {
@@ -64,18 +76,19 @@ export default function PushAlerts() {
       }
 
       const vapidPublicKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
-      if (vapidPublicKey && "PushManager" in window) {
-        const existing = await registration.pushManager.getSubscription();
-        const subscription = existing || await registration.pushManager.subscribe({
-          userVisibleOnly: true,
-          applicationServerKey: urlBase64ToUint8Array(vapidPublicKey),
-        });
-        localStorage.setItem("ffcc-push-subscription", JSON.stringify(subscription.toJSON()));
-      }
+      if (!vapidPublicKey) throw new Error("FFCC push keys are not configured on the server yet.");
 
+      const existing = await registration.pushManager.getSubscription();
+      const subscription = existing || await registration.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(vapidPublicKey),
+      });
+      await registerSubscription(subscription);
+
+      localStorage.setItem("ffcc-push-subscription", JSON.stringify(subscription.toJSON()));
       localStorage.setItem("ffcc-alerts-enabled", "1");
       setState("enabled");
-      setMessage(vapidPublicKey ? "Alerts enabled. Background push subscription is registered." : "Alerts enabled on this device. The league-aware background watcher will connect when the Yahoo backend is configured.");
+      setMessage("FFCC push is enabled. Breaking and actionable Fantasy, Survivor and Pick'em alerts can reach this device even when FFCC is closed.");
     } catch (error) {
       setState("ready");
       setMessage(error instanceof Error ? error.message : "Could not enable alerts on this device.");
@@ -91,11 +104,11 @@ export default function PushAlerts() {
         return;
       }
       await registration.showNotification("FFCC · Test Alert", {
-        body: "Push plumbing is alive. Future alerts can deep-link straight to the relevant league or player.",
+        body: "Push plumbing is alive. Real alerts will deep-link to the exact Fantasy, Survivor or Pick'em decision.",
         icon: "/api/app-icon",
         badge: "/api/app-icon",
         tag: "ffcc-test",
-        data: { url: "/waivers" },
+        data: { url: "/" },
       });
       setMessage("Test alert sent to this device.");
     } catch (error) {
@@ -107,8 +120,9 @@ export default function PushAlerts() {
     <div className="push-alerts">
       <div className="push-alert-copy">
         <span className="panel-kicker">SMART ALERTS</span>
-        <strong>{state === "enabled" ? "Notifications enabled" : state === "browser" || state === "unsupported" ? "Open the installed FFCC app" : "High-value waiver alerts"}</strong>
+        <strong>{state === "enabled" ? "Notifications enabled" : state === "browser" || state === "unsupported" ? "Open the installed FFCC app" : "High-value FFCC alerts"}</strong>
         <p>{message}</p>
+        {state === "enabled" ? <p>Push-worthy by default: recommendation flips, FINAL Survivor decisions, major injury/role news affecting your roster, deadline-critical action, and other genuinely important FFCC changes.</p> : null}
       </div>
       <div className="push-alert-actions">
         {state === "ready" ? <button type="button" className="push-primary" onClick={enableAlerts}>Enable Alerts</button> : null}
