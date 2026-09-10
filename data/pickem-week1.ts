@@ -17,7 +17,7 @@ export type Week1PoolGame = {
 
 export const week1PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week1PoolStatus = "POOL LINES FROZEN LATE MON 9/7 · WEEK 1 SKIPS WED/THU";
-export const week1MarketAsOf = "Sep 10 · Thursday AM consensus refs";
+export const week1MarketAsOf = "Sep 10 · Thursday midday consensus refs";
 
 export const week1PoolGames: Week1PoolGame[] = [
   {
@@ -127,10 +127,10 @@ export const week1PoolGames: Week1PoolGame[] = [
   {
     day: "Mon 9/14", kickoff: "8:15 PM", away: "DEN", home: "KC",
     poolPick: "DEN", poolLine: 3.5, poolFavorite: "KC", poolSpread: 3.5,
-    marketLabel: "KC -3", marketTotal: 43.5, confidence: 5,
-    signal: "Denver still owns the valuable +3.5 hook while consensus has moved from KC -2.5 to KC -3.",
-    rationale: "The earlier full-point discrepancy has narrowed to a half-point, but that half-point sits on the NFL's most important key number. A three-point Chiefs win is still a Denver cover in the frozen pool while it pushes at current consensus, so Denver remains one of the strongest price positions on the board.",
-    watch: "Mahomes mobility, KC offensive-line health, and whether the live market moves through KC -3.5."
+    marketLabel: "KC -2.5", marketTotal: 43.5, confidence: 5,
+    signal: "Denver's frozen +3.5 now sits a full point above the live KC -2.5 market and keeps the valuable hook over key number 3.",
+    rationale: "The pool gives Denver +3.5 while current sportsbook/consensus references have Kansas City around -2.5. That is a full point of stale-line value across the NFL's most important key number: a three-point Chiefs win covers for Denver in the pool while losing for Denver at the live market number. Mahomes is expected to start, but the favorable frozen price keeps Denver one of the strongest ATS positions on the card.",
+    watch: "Mahomes mobility, KC offensive-line health, and whether the live market moves back through KC -3 or -3.5."
   }
 ];
 
