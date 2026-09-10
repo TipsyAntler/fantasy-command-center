@@ -21,11 +21,23 @@
   border-radius: 13px;
   background: linear-gradient(145deg, rgba(10,20,33,.94), rgba(7,15,25,.96));
   overflow: hidden;
+  scroll-margin-top: 78px;
 }
 
 .gameCard[open] {
   border-color: rgba(67,215,255,.28);
   box-shadow: 0 10px 28px rgba(0,0,0,.14);
+}
+
+.gameCardChanged {
+  border: 2px solid #df4450;
+  background: linear-gradient(145deg, rgba(62,14,21,.96), rgba(18,11,20,.98));
+  box-shadow: 0 0 0 3px rgba(223,68,80,.10), 0 14px 36px rgba(0,0,0,.24);
+}
+
+.gameCardChanged[open] {
+  border-color: #ef5965;
+  box-shadow: 0 0 0 3px rgba(223,68,80,.13), 0 16px 38px rgba(0,0,0,.28);
 }
 
 .gameSummary {
@@ -46,12 +58,30 @@
 .time span, .matchup span, .pick span { color: var(--cc-muted); font-size: 8px; }
 .matchup strong { font-size: 12px; }
 .pick strong { color: var(--cc-cyan); font-size: 14px; letter-spacing: -.02em; }
+.gameCardChanged .pick strong { color: #ff7b85; }
+.gameCardChanged .pick span { color: #ffc0c5; font-weight: 900; }
+
+.changedBadge {
+  display: inline-flex !important;
+  width: fit-content;
+  margin-top: 7px;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: #d62f3a;
+  color: #fff !important;
+  font-size: 8px !important;
+  font-weight: 950;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  box-shadow: 0 0 16px rgba(214,47,58,.24);
+}
 
 .confidence { display: grid; gap: 5px; justify-items: end; }
 .confidence span { color: var(--cc-muted); font-size: 8px; text-transform: uppercase; letter-spacing: .07em; }
 .dots { display: flex; gap: 3px; }
 .dot, .dotOn { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.09); }
 .dotOn { background: var(--cc-teal); box-shadow: 0 0 8px rgba(52,231,189,.22); }
+.gameCardChanged .dotOn { background: #ef5965; box-shadow: 0 0 8px rgba(239,89,101,.28); }
 .chevron { color: #73869c; font-size: 16px; text-align: right; }
 .gameCard[open] .chevron { transform: rotate(180deg); }
 
@@ -63,9 +93,11 @@
   background: rgba(137,180,220,.08);
 }
 .detail > div { padding: 14px; background: #08121d; }
+.gameCardChanged .detail > div { background: #110b12; }
 .detailLabel { color: var(--cc-muted); font-size: 8px; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
 .detail p { margin: 6px 0 0; color: #bdcad7; font-size: 10px; line-height: 1.55; }
 .signal { color: var(--cc-teal) !important; font-weight: 750; }
+.gameCardChanged .signal { color: #ff929a !important; }
 .watch { color: #e7bd72 !important; }
 
 .methodGrid {
