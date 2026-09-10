@@ -123,7 +123,7 @@ export default async function Home() {
             </div>
             <div className={styles.connectionItem}>
               <strong>BM + LL rosters</strong>
-              <small>Manual snapshots while Yahoo is pending</small>
+              <small>Manual snapshots while Yahoo provisioning finishes</small>
               <span className={styles.connectionStatus}>LIVE</span>
             </div>
             <div className={styles.connectionItem}>
@@ -133,8 +133,8 @@ export default async function Home() {
             </div>
             <div className={styles.connectionItem}>
               <strong>Yahoo Fantasy</strong>
-              <small>API application / automatic league sync</small>
-              <span className={`${styles.connectionStatus} ${styles.connectionStatusWarn}`}>WAITING</span>
+              <small>OAuth + automatic league sync plumbing installed</small>
+              <span className={`${styles.connectionStatus} ${styles.connectionStatusWarn}`}>PROVISIONING</span>
             </div>
           </div>
         </section>
