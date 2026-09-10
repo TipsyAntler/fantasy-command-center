@@ -47,45 +47,50 @@ export default function PickemPage() {
         </section>
 
         <section className={styles.board} aria-label="Week 1 ATS picks">
-          {week1PoolGames.map((game) => (
-            <details className={styles.gameCard} key={`${game.away}-${game.home}`}>
-              <summary className={styles.gameSummary}>
-                <div className={styles.time}>
-                  <strong>{game.day}</strong>
-                  <span>{game.kickoff} ET</span>
-                </div>
-                <div className={styles.matchup}>
-                  <strong>{game.away} @ {game.home}</strong>
-                  <span>Pool: {game.poolFavorite} -{game.poolSpread} · Live: {game.marketLabel} · O/U {game.marketTotal}</span>
-                </div>
-                <div className={styles.pick}>
-                  <strong>{lineLabel(game.poolPick, game.poolLine)}</strong>
-                  <span>FFCC PICK</span>
-                </div>
-                <div className={styles.confidence} aria-label={`${game.confidence} of 5 confidence`}>
-                  <span>Confidence {game.confidence}/5</span>
-                  <div className={styles.dots}>
-                    {[1,2,3,4,5].map((dot) => <i key={dot} className={dot <= game.confidence ? styles.dotOn : styles.dot} />)}
+          {week1PoolGames.map((game) => {
+            const changed = game.signal.startsWith("CHANGED:");
+            const gameId = `${game.away}-${game.home}`.toLowerCase();
+            return (
+              <details id={gameId} className={`${styles.gameCard} ${changed ? styles.gameCardChanged : ""}`} key={`${game.away}-${game.home}`} open={changed || undefined}>
+                <summary className={styles.gameSummary}>
+                  <div className={styles.time}>
+                    <strong>{game.day}</strong>
+                    <span>{game.kickoff} ET</span>
+                  </div>
+                  <div className={styles.matchup}>
+                    <strong>{game.away} @ {game.home}</strong>
+                    <span>Pool: {game.poolFavorite} -{game.poolSpread} · Live: {game.marketLabel} · O/U {game.marketTotal}</span>
+                    {changed ? <span className={styles.changedBadge}>PICK CHANGED</span> : null}
+                  </div>
+                  <div className={styles.pick}>
+                    <strong>{lineLabel(game.poolPick, game.poolLine)}</strong>
+                    <span>{changed ? "NEW FFCC PICK" : "FFCC PICK"}</span>
+                  </div>
+                  <div className={styles.confidence} aria-label={`${game.confidence} of 5 confidence`}>
+                    <span>Confidence {game.confidence}/5</span>
+                    <div className={styles.dots}>
+                      {[1,2,3,4,5].map((dot) => <i key={dot} className={dot <= game.confidence ? styles.dotOn : styles.dot} />)}
+                    </div>
+                  </div>
+                  <div className={styles.chevron} aria-hidden="true">⌄</div>
+                </summary>
+                <div className={styles.detail}>
+                  <div>
+                    <div className={styles.detailLabel}>WHY THIS SIDE</div>
+                    <p>{game.rationale}</p>
+                  </div>
+                  <div>
+                    <div className={styles.detailLabel}>PRIMARY SIGNAL</div>
+                    <p className={styles.signal}>{game.signal}</p>
+                  </div>
+                  <div>
+                    <div className={styles.detailLabel}>WHAT COULD FLIP IT</div>
+                    <p className={styles.watch}>{game.watch}</p>
                   </div>
                 </div>
-                <div className={styles.chevron} aria-hidden="true">⌄</div>
-              </summary>
-              <div className={styles.detail}>
-                <div>
-                  <div className={styles.detailLabel}>WHY THIS SIDE</div>
-                  <p>{game.rationale}</p>
-                </div>
-                <div>
-                  <div className={styles.detailLabel}>PRIMARY SIGNAL</div>
-                  <p className={styles.signal}>{game.signal}</p>
-                </div>
-                <div>
-                  <div className={styles.detailLabel}>WHAT COULD FLIP IT</div>
-                  <p className={styles.watch}>{game.watch}</p>
-                </div>
-              </div>
-            </details>
-          ))}
+              </details>
+            );
+          })}
         </section>
 
         <section className="panel survivor-template second-heading">
