@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import PullToRefresh from "@/components/PullToRefresh";
+import BreakingNewsTicker from "@/components/BreakingNewsTicker";
 import "./globals.css";
 import "./command-center.css";
 import "./nav-polish.css";
+import "./breaking-news.css";
 
 export const metadata: Metadata = {
   title: "Fantasy Command Center",
@@ -25,6 +27,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <body>
         <PullToRefresh />
+        <BreakingNewsTicker />
         <Nav />
         {children}
       </body>
