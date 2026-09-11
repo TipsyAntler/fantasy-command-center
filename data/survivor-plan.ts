@@ -32,17 +32,17 @@ export type SurvivorWeekPlan = {
 export const survivorWeekPlan: SurvivorWeekPlan = {
   week: 1,
   status: "directional",
-  asOf: "Sep 11, 2026 · Friday 9 AM ET portfolio review",
+  asOf: "Sep 11, 2026 · Friday 10:25 AM ET portfolio review",
   headline: "Portfolio lean: 2 LAC / 1 JAX / 1 DET",
   summary:
-    "The portfolio objective is to maximize the chance at least one of four entries survives the full pool, not to make four copies of the single-entry favorite. Friday market pricing still makes LAC and JAX the two strongest raw-survival choices. V1per41's Friday update also keeps LAC/JAX as his best options, followed by PHI/PIT rather than DET. The DET assignment is therefore not a single-entry ranking call; it is an intentional cross-entry hedge. At roughly current market win rates, using three independent Week 1 outcomes (LAC/JAX/DET) materially lowers the chance that one upset wipes out all four entries versus a pure 2 LAC / 2 JAX split, while two LAC entries preserve expected survivors. DET's higher future value makes Entry 4 the most sensitive assignment and it can still move back to JAX if ownership or late market/injury information makes the hedge too expensive. Directional only until ownership, late injuries, current lines and entry-history checks are complete.",
+    "The portfolio objective is to maximize the chance at least one of four entries survives the full pool, not to make four copies of the single-entry favorite. V1per41's latest Week 1 post now ranks LAC first (81%), JAX second (75%), DET third (73%), and PHI fourth (66%), which directly supports keeping DET as the fourth-entry hedge instead of treating it as a purely contrarian reach. Current market pricing still makes LAC and JAX the two strongest raw-survival choices, while DET remains close enough to provide meaningful cross-entry diversification. The 2 LAC / 1 JAX / 1 DET split therefore remains unchanged: two Chargers entries preserve expected survivors, while JAX and DET reduce the chance that one upset wipes out the entire portfolio. Directional only until the final Friday injury, ownership, market, duplicate-history, and cross-entry audit is complete before the 4 PM deadline.",
   entries: [
     {
       entryNumber: 1,
       team: "LAC",
       alternate: "JAX",
       confidence: "high",
-      rationale: "Portfolio anchor. LAC remains the strongest raw Week 1 survival option at roughly 80-85% across current market/model sources, with manageable future-value cost.",
+      rationale: "Portfolio anchor. LAC remains the strongest raw Week 1 survival option, and V1per41's latest post ranks the Chargers first at 81% win probability.",
     },
     {
       entryNumber: 2,
@@ -56,14 +56,14 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
       team: "JAX",
       alternate: "LAC",
       confidence: "high",
-      rationale: "JAX remains very close to LAC in current survival probability, carries little future opportunity cost, and protects the portfolio from a Chargers-specific upset.",
+      rationale: "JAX remains very close to LAC in current survival probability, carries little future opportunity cost, and protects the portfolio from a Chargers-specific upset. V1per41 currently ranks Jacksonville second at 75%.",
     },
     {
       entryNumber: 4,
       team: "DET",
       alternate: "JAX",
       confidence: "medium",
-      rationale: "Portfolio hedge, not the fourth-best single-entry pick. Detroit gives up some Week 1 safety and has more future value than JAX, but creates a third independent outcome and sharply reduces the risk that one LAC/JAX upset scenario takes down the entire four-entry portfolio. Revert this entry to JAX if ownership or late information makes the diversification cost too high.",
+      rationale: "Portfolio hedge with legitimate model support. V1per41's latest post ranks Detroit third at 73%, so the diversification no longer requires reaching outside his top tier. DET creates a third independent Week 1 outcome while giving up only modest raw safety versus JAX.",
     },
   ],
   inputs: [
@@ -73,14 +73,14 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
       detail: "Optimize jointly for the chance at least one of four entries survives the season, with expected survivors and per-entry path quality as secondary objectives.",
     },
     {
-      label: "V1per41 Friday update",
+      label: "V1per41 latest Week 1 post",
       state: "loaded",
-      detail: "Friday update says LAC and JAX remain the best Week 1 options, now followed by PHI and PIT. V1per41 does not plan a normal Sunday update this week.",
+      detail: "Latest post ranks LAC 81%, JAX 75%, DET 73%, PHI 66%. He says LAC and JAX are the only two teams he would normally consider, but DET is now clearly his third-ranked survival option and fits the portfolio hedge role.",
     },
     {
       label: "Current market/model safety",
       state: "live",
-      detail: "Current sources price LAC around 80-85% and JAX around 77-81% to win; Detroit remains in the next safety tier around the mid-70s. LAC/JAX remain the raw-safety core.",
+      detail: "Current sources continue to price LAC as the strongest favorite, JAX next, with DET in the next safety tier. No market move yet warrants changing the 2/1/1 split.",
     },
     {
       label: "Cross-entry correlation",
@@ -95,7 +95,7 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     {
       label: "Final injury + market audit",
       state: "pending",
-      detail: "Required before this portfolio turns FINAL / green.",
+      detail: "Required before this portfolio turns FINAL / green. Friday game-status reports are still pending for several Sunday teams.",
     },
   ],
 };
