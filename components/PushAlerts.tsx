@@ -142,20 +142,26 @@ export default function PushAlerts() {
     try {
       const registration = await navigator.serviceWorker.register("/sw.js", { scope: "/" });
       await navigator.serviceWorker.ready;
-      if (Notification.permission !== "granted") {
-        await enableAlerts();
+      const subscription = await registration.pushManager.getSubscription();
+      if (!subscription) {
+        setState("ready");
+        setMessage("Tap Finish Push Setup first, then run the server test again.");
         return;
       }
-      await registration.showNotification("FFCC · Test Alert", {
-        body: "Push plumbing is alive. Real alerts will deep-link to the exact Fantasy, Survivor or Pick'em decision.",
-        icon: "/api/app-icon",
-        badge: "/api/app-icon",
-        tag: "ffcc-test",
-        data: { url: "/" },
+
+      setMessage("Sending a real FFCC server push…");
+      const response = await fetch("/api/push/test", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ endpoint: subscription.endpoint }),
       });
-      setMessage("Test alert sent to this device.");
+      const payload = await response.json().catch(() => null);
+      if (!response.ok || !payload?.ok) {
+        throw new Error(payload?.error || "FFCC server push test failed.");
+      }
+      setMessage("Server push sent. If the FFCC notification arrived, background alerts are fully live.");
     } catch (error) {
-      setMessage(error instanceof Error ? error.message : "Could not send the test alert.");
+      setMessage(error instanceof Error ? error.message : "Could not send the server push test.");
     }
   }
 
