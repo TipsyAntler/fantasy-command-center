@@ -42,28 +42,64 @@ export default function PushAlerts() {
   const [message, setMessage] = useState("Checking this device…");
 
   useEffect(() => {
-    const supported = "serviceWorker" in navigator && "Notification" in window && "PushManager" in window;
-    if (!supported) {
-      setState("unsupported");
-      setMessage("This browser cannot enable FFCC push notifications. On iPhone, open the installed FFCC Home Screen app and return to Smart Alerts there.");
-      return;
+    let cancelled = false;
+
+    async function check() {
+      const supported = "serviceWorker" in navigator && "Notification" in window && "PushManager" in window;
+      if (!supported) {
+        if (!cancelled) {
+          setState("unsupported");
+          setMessage("This browser cannot enable FFCC push notifications. On iPhone, open the installed FFCC Home Screen app and return to Smart Alerts there.");
+        }
+        return;
+      }
+
+      if (!isStandalone()) {
+        if (!cancelled) {
+          setState("browser");
+          setMessage("You are viewing FFCC in a browser tab. On iPhone, notification permission must be enabled from the installed FFCC Home Screen app. Open FFCC from your Home Screen, tap Smart Alerts, then enable notifications there.");
+        }
+        return;
+      }
+
+      if (Notification.permission === "denied") {
+        if (!cancelled) {
+          setState("blocked");
+          setMessage("Notifications are blocked in iPhone Settings for FFCC. Re-enable them there, then return to this page.");
+        }
+        return;
+      }
+
+      if (Notification.permission === "granted") {
+        const registration = await navigator.serviceWorker.register("/sw.js", { scope: "/" });
+        await navigator.serviceWorker.ready;
+        const subscription = await registration.pushManager.getSubscription();
+        if (subscription) {
+          await registerSubscription(subscription).catch(() => undefined);
+          if (!cancelled) {
+            localStorage.setItem("ffcc-alerts-enabled", "1");
+            setState("enabled");
+            setMessage("FFCC push is enabled on this device for high-value Fantasy, Survivor and Pick'em alerts.");
+          }
+          return;
+        }
+      }
+
+      if (!cancelled) {
+        localStorage.removeItem("ffcc-alerts-enabled");
+        setState("ready");
+        setMessage(Notification.permission === "granted" ? "Your phone can show FFCC notifications. Tap Finish Push Setup once to enable automatic background alerts." : "This installed FFCC app is ready. Tap Enable Alerts to allow high-value fantasy notifications.");
+      }
     }
 
-    if (!isStandalone()) {
-      setState("browser");
-      setMessage("You are viewing FFCC in a browser tab. On iPhone, notification permission must be enabled from the installed FFCC Home Screen app. Open FFCC from your Home Screen, tap Smart Alerts, then enable notifications there.");
-      return;
-    }
+    check().catch(() => {
+      if (!cancelled) {
+        setState("ready");
+        setMessage("Tap Enable Alerts to finish setting up FFCC background notifications.");
+      }
+    });
 
-    if (Notification.permission === "denied") {
-      setState("blocked");
-      setMessage("Notifications are blocked in iPhone Settings for FFCC. Re-enable them there, then return to this page.");
-      return;
-    }
-
-    const enabled = localStorage.getItem("ffcc-alerts-enabled") === "1" && Notification.permission === "granted";
-    setState(enabled ? "enabled" : "ready");
-    setMessage(enabled ? "FFCC push is enabled on this device for high-value Fantasy, Survivor and Pick'em alerts." : "This installed FFCC app is ready. Tap Enable Alerts to allow high-value fantasy notifications.");
+    return () => { cancelled = true; };
   }, []);
 
   async function enableAlerts() {
@@ -132,7 +168,7 @@ export default function PushAlerts() {
         {state === "enabled" ? <p>Push-worthy by default: recommendation flips, FINAL Survivor decisions, major injury/role news affecting your roster, deadline-critical action, and other genuinely important FFCC changes.</p> : null}
       </div>
       <div className="push-alert-actions">
-        {state === "ready" ? <button type="button" className="push-primary" onClick={enableAlerts}>Enable Alerts</button> : null}
+        {state === "ready" ? <button type="button" className="push-primary" onClick={enableAlerts}>{Notification.permission === "granted" ? "Finish Push Setup" : "Enable Alerts"}</button> : null}
         {state === "enabled" ? <button type="button" className="push-secondary" onClick={sendTest}>Send Test Alert</button> : null}
       </div>
     </div>
