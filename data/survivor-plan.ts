@@ -24,62 +24,73 @@ export type SurvivorWeekPlan = {
   inputs: SurvivorPlanInput[];
 };
 
-// This is the human-reviewed working portfolio, not an automatic market ranking.
-// Update it whenever new V1per41 work, pool ownership, injuries, market movement,
-// future-value analysis or Mike's input materially changes the recommended split.
-// Switch status to "final" only when the four entry assignments are ready to submit.
+// Human-reviewed four-entry portfolio plan.
+// Primary objective: maximize the probability that at least one entry survives the season.
+// Secondary objectives: preserve strong individual paths, expected survivors and future inventory.
+// Same-team concentration is used only when the quality gap is worth the correlation risk.
+// Switch status to "final" only after the last ownership/injury/market/history audit.
 export const survivorWeekPlan: SurvivorWeekPlan = {
   week: 1,
   status: "directional",
-  asOf: "Sep 11, 2026 · Friday morning working plan",
-  headline: "Working split holds: 2 LAC / 2 JAX",
+  asOf: "Sep 11, 2026 · Friday morning portfolio review",
+  headline: "Portfolio lean: 2 LAC / 1 JAX / 1 DET",
   summary:
-    "V1per41's Friday update still ranks LAC and JAX as the two best Week 1 options. Current market pricing also keeps both clearly atop the safety tier, so there is no reason to disturb the balanced four-entry split yet. The plan remains directional until the final ownership, injury, market and duplicate-history audit is complete.",
+    "The portfolio objective is not to make four copies of the single-entry favorite. Current research supports cheap diversification when the top alternatives are close, but not diversification at any price. LAC remains the best raw-survival anchor, JAX is close while carrying very little future-value cost, and DET adds a third independent Week 1 outcome with only a small current-week safety drop. A fourth unique team such as PHI currently gives up enough win probability that the extra diversification does not yet justify the dilution. Directional only until actual pool ownership, late injuries and market movement are checked before submission.",
   entries: [
     {
       entryNumber: 1,
       team: "LAC",
       alternate: "JAX",
       confidence: "high",
-      rationale: "V1per41 still has LAC among the top two Week 1 options, and the Chargers remain the strongest current moneyline favorite. Keep one of the portfolio anchors on the highest raw survival probability.",
+      rationale: "Portfolio anchor. LAC remains the strongest raw Week 1 survival option and still grades as a strong full-season path in V1per41's model.",
     },
     {
       entryNumber: 2,
       team: "LAC",
       alternate: "JAX",
       confidence: "high",
-      rationale: "A second LAC entry preserves the portfolio's emphasis on the strongest Week 1 survival probability while still leaving half the portfolio diversified to Jacksonville.",
+      rationale: "The one deliberate duplicate. Keeping two entries on the best current path preserves portfolio quality while the other two entries diversify away from the Chargers upset scenario.",
     },
     {
       entryNumber: 3,
       team: "JAX",
       alternate: "LAC",
       confidence: "high",
-      rationale: "Jacksonville remains V1per41's other top Week 1 option and a substantial favorite, giving the four-entry portfolio meaningful diversification without a large survival-probability sacrifice.",
+      rationale: "JAX is very close to LAC in current and season-path quality, has minimal future opportunity cost, and protects the portfolio if Arizona upsets the Chargers.",
     },
     {
       entryNumber: 4,
-      team: "JAX",
-      alternate: "LAC",
-      confidence: "high",
-      rationale: "Second JAX allocation keeps the portfolio balanced between the two consensus top choices pending final ownership and late injury/market information.",
+      team: "DET",
+      alternate: "JAX",
+      confidence: "medium",
+      rationale: "DET creates a third independent game outcome and materially cuts single-upset concentration while remaining near the top survival tier. The cost is meaningful future value, so this entry remains the most ownership-sensitive assignment before lock.",
     },
   ],
   inputs: [
     {
+      label: "Portfolio objective",
+      state: "loaded",
+      detail: "Optimize jointly for the chance at least one of four entries survives the season, not merely the expected number of Week 1 survivors.",
+    },
+    {
       label: "V1per41 model",
       state: "loaded",
-      detail: "Friday update: LAC and JAX remain his best Week 1 options; PHI and PIT follow. He does not expect to post his normal Sunday-morning update this week.",
+      detail: "Core Week 1 hierarchy remains LAC/JAX at the top, with DET next. V1per's season-path model keeps LAC and JAX especially close after future value is considered.",
+    },
+    {
+      label: "Multi-entry research",
+      state: "loaded",
+      detail: "Distinct paths improve portfolio survival when alternatives are close; convergence is still correct when the quality drop to another team is too steep. Current sweet spot is three unique Week 1 outcomes rather than forced four-way diversification.",
     },
     {
       label: "Pool ownership",
       state: "live",
-      detail: "Commissioner sheet remains the ownership/history source; no portfolio-changing ownership signal has been established in this check.",
+      detail: "Commissioner sheet is the source of truth. Ownership can still move Entry 4 between DET/JAX or alter the LAC concentration before submission.",
     },
     {
       label: "Final injury + market audit",
       state: "pending",
-      detail: "Required before the four-entry portfolio turns FINAL.",
+      detail: "Required before this portfolio turns FINAL / green.",
     },
   ],
 };
