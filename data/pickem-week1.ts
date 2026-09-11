@@ -17,7 +17,7 @@ export type Week1PoolGame = {
 
 export const week1PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week1PoolStatus = "POOL LINES FROZEN LATE MON 9/7 · WEEK 1 SKIPS WED/THU";
-export const week1MarketAsOf = "Sep 11 · early Friday market recheck";
+export const week1MarketAsOf = "Sep 11 · Friday 7 AM ET market recheck";
 
 export const week1PoolGames: Week1PoolGame[] = [
   {
@@ -54,11 +54,11 @@ export const week1PoolGames: Week1PoolGame[] = [
   },
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "ATL", home: "PIT",
-    poolPick: "ATL", poolLine: 3.5, poolFavorite: "PIT", poolSpread: 3.5,
-    marketLabel: "PIT -3 to -3.5", marketTotal: 42.5, confidence: 3,
-    signal: "CHANGED BACK: keep ATL +3.5. The earlier PIT -4.5 spike did not hold; current books are back around PIT -3 to -3.5.",
-    rationale: "Tua Tagovailoa's Thursday oblique injury is real and keeps this game on the watch list, but the market has not sustained the move that justified flipping to Pittsburgh. With the pool locked at Atlanta +3.5 and current books around Steelers -3 to -3.5, the Falcons again own at least equal and sometimes a half-point better pricing across key number 3. Unless Friday news materially worsens Tua's outlook or the market drives back through PIT -4, stay with the already-submitted Atlanta +3.5.",
-    watch: "Friday Tua status is the key trigger. A likely Cooper Rush start plus a renewed market move through PIT -4 would reopen the Pittsburgh case."
+    poolPick: "PIT", poolLine: -3.5, poolFavorite: "PIT", poolSpread: 3.5,
+    marketLabel: "PIT -4.5 consensus", marketTotal: 41.5, confidence: 5,
+    signal: "CHANGED AGAIN: PIT -3.5 replaces ATL +3.5. Friday consensus has moved back through -4 while Tua Tagovailoa remains day-to-day with an oblique injury.",
+    rationale: "The decisive signal is the combination of price and quarterback uncertainty. The pool is frozen at Pittsburgh -3.5, while Friday consensus is around Steelers -4.5 after opening closer to -3. That gives Pittsburgh roughly a full point of stale-line value, and Atlanta still does not know whether Tua Tagovailoa will be able to start after Thursday's oblique strain. Because the user's submitted baseline is Atlanta +3.5, this is now worth revisiting and switching to Pittsburgh -3.5 while edits remain open.",
+    watch: "Friday's official Tua status remains the key late trigger. A full practice/clear start plus a broad market reversal back to PIT -3 or lower would reopen Atlanta; absent both, Pittsburgh is the recommendation."
   },
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "CHI", home: "CAR",
