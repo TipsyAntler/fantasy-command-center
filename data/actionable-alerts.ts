@@ -13,6 +13,14 @@ export type ActionableAlert = {
 // Updating this file also triggers the FFCC push-sync workflow.
 export const actionableAlerts: ActionableAlert[] = [
   {
+    id: "2026-w1-bowers-out",
+    category: "Fantasy",
+    headline: "LINEUP: Brock Bowers OUT for Week 1",
+    detail: "Bowers is still in the Big Money TE slot. Move Dallas Goedert into TE before Sunday; Bowers is expected to miss 1-2 games after a meniscus trim.",
+    href: "/leagues",
+    active: true,
+  },
+  {
     id: "2026-w1-pit-flip",
     category: "Pick'em",
     headline: "PICK FLIP: PIT -3.5 replaces ATL +3.5",
