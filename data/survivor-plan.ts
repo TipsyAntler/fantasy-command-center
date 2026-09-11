@@ -31,55 +31,55 @@ export type SurvivorWeekPlan = {
 export const survivorWeekPlan: SurvivorWeekPlan = {
   week: 1,
   status: "directional",
-  asOf: "Sep 10, 2026 · working plan",
-  headline: "Working split: 2 LAC / 2 JAX",
+  asOf: "Sep 11, 2026 · Friday morning working plan",
+  headline: "Working split holds: 2 LAC / 2 JAX",
   summary:
-    "LAC remains the mathematical default, while JAX is the close alternative for deliberate multi-entry diversification. This split is directional until the final ownership, injury and market audit is complete.",
+    "V1per41's Friday update still ranks LAC and JAX as the two best Week 1 options. Current market pricing also keeps both clearly atop the safety tier, so there is no reason to disturb the balanced four-entry split yet. The plan remains directional until the final ownership, injury, market and duplicate-history audit is complete.",
   entries: [
     {
       entryNumber: 1,
       team: "LAC",
       alternate: "JAX",
       confidence: "high",
-      rationale: "V1per41's top Week 1 path: strongest current survival probability and a slight edge even after the near-term future-value check.",
+      rationale: "V1per41 still has LAC among the top two Week 1 options, and the Chargers remain the strongest current moneyline favorite. Keep one of the portfolio anchors on the highest raw survival probability.",
     },
     {
       entryNumber: 2,
       team: "LAC",
       alternate: "JAX",
       confidence: "high",
-      rationale: "A second LAC entry keeps the portfolio anchored to the strongest season-aware Week 1 path rather than diversifying just for variety.",
+      rationale: "A second LAC entry preserves the portfolio's emphasis on the strongest Week 1 survival probability while still leaving half the portfolio diversified to Jacksonville.",
     },
     {
       entryNumber: 3,
       team: "JAX",
       alternate: "LAC",
-      confidence: "medium",
-      rationale: "JAX is the closest conventional alternative and gives the four-entry portfolio meaningful diversification without a large survival-probability sacrifice.",
+      confidence: "high",
+      rationale: "Jacksonville remains V1per41's other top Week 1 option and a substantial favorite, giving the four-entry portfolio meaningful diversification without a large survival-probability sacrifice.",
     },
     {
       entryNumber: 4,
       team: "JAX",
       alternate: "LAC",
-      confidence: "medium",
-      rationale: "Second JAX allocation keeps the current working portfolio balanced while we wait for final pool ownership and late-week information.",
+      confidence: "high",
+      rationale: "Second JAX allocation keeps the portfolio balanced between the two consensus top choices pending final ownership and late injury/market information.",
     },
   ],
   inputs: [
     {
       label: "V1per41 model",
       state: "loaded",
-      detail: "Week 1 model and future-value comparison loaded",
+      detail: "Friday update: LAC and JAX remain his best Week 1 options; PHI and PIT follow. He does not expect to post his normal Sunday-morning update this week.",
     },
     {
       label: "Pool ownership",
       state: "live",
-      detail: "Commissioner-sheet ownership is available when Google sync is healthy",
+      detail: "Commissioner sheet remains the ownership/history source; no portfolio-changing ownership signal has been established in this check.",
     },
     {
       label: "Final injury + market audit",
       state: "pending",
-      detail: "Required before the portfolio turns green / FINAL",
+      detail: "Required before the four-entry portfolio turns FINAL.",
     },
   ],
 };
