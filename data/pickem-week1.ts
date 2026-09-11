@@ -17,7 +17,7 @@ export type Week1PoolGame = {
 
 export const week1PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week1PoolStatus = "POOL LINES FROZEN LATE MON 9/7 · WEEK 1 SKIPS WED/THU";
-export const week1MarketAsOf = "Sep 11 · Friday 1:40 PM ET market/news recheck";
+export const week1MarketAsOf = "Sep 11 · Friday 5:00 PM ET market/news recheck";
 
 export const week1PoolGames: Week1PoolGame[] = [
   {
@@ -56,8 +56,8 @@ export const week1PoolGames: Week1PoolGame[] = [
     day: "Sun 9/13", kickoff: "1:00 PM", away: "ATL", home: "PIT",
     poolPick: "PIT", poolLine: -3.5, poolFavorite: "PIT", poolSpread: 3.5,
     marketLabel: "PIT -4.5 consensus · some books -3.5", marketTotal: 41.5, confidence: 5,
-    signal: "ACTIONABLE FLIP: PIT -3.5. Tua Tagovailoa and Michael Penix Jr. are both inactive, and the live market has moved through the frozen pool number.",
-    rationale: "Atlanta is now expected to start Cooper Rush with both Tua Tagovailoa and Michael Penix Jr. inactive. That is a material quarterback downgrade, and current consensus is broadly around Pittsburgh -4.5 while the pool only asks PIT -3.5. The frozen Steelers side therefore owns both the injury-driven matchup edge and roughly a point of stale-line value.",
+    signal: "CHANGED: PIT -3.5 from ATL +3.5. Tua Tagovailoa and Michael Penix Jr. are out, Cooper Rush will start, and the live market moved through the frozen pool number.",
+    rationale: "Atlanta will start Cooper Rush with both Tua Tagovailoa and Michael Penix Jr. unavailable. That is a material quarterback downgrade, and the frozen Steelers -3.5 remains the preferred side after the injury-driven market move.",
     watch: "Only an unexpected quarterback-status reversal or a broad market collapse back to PIT -3 or lower would justify revisiting Atlanta."
   },
   {
@@ -121,8 +121,8 @@ export const week1PoolGames: Week1PoolGame[] = [
     poolPick: "DAL", poolLine: -2.5, poolFavorite: "DAL", poolSpread: 2.5,
     marketLabel: "DAL -3", marketTotal: 48.5, confidence: 4,
     signal: "Dallas' frozen -2.5 beats the live -3 market across key number 3.",
-    rationale: "Dallas remains the preferred side and the current market is Cowboys -3 while the pool stays -2.5. A three-point Dallas win covers in the pool but pushes at the live number, preserving a useful key-number edge.",
-    watch: "Malik Nabers' final game status and whether consensus pushes beyond Dallas -3."
+    rationale: "Dallas remains the preferred side and the current market is Cowboys -3 while the pool stays -2.5. A three-point Dallas win covers in the pool but pushes at the live number, preserving a useful key-number edge. Malik Nabers is questionable and expressed hesitation about returning, which is additional Dallas-positive context but not enough by itself to change the recommendation because Dallas was already the pick.",
+    watch: "Malik Nabers' final active/inactive status and whether consensus pushes beyond Dallas -3."
   },
   {
     day: "Mon 9/14", kickoff: "8:15 PM", away: "DEN", home: "KC",
@@ -130,7 +130,7 @@ export const week1PoolGames: Week1PoolGame[] = [
     marketLabel: "KC -3", marketTotal: 43.5, confidence: 5,
     signal: "Denver's frozen +3.5 remains better than the live +3 market across key number 3.",
     rationale: "The pool gives Denver +3.5 while the current market has Kansas City around -3. That remains an excellent stale-line position across the NFL's most important key number: a three-point Chiefs win covers for Denver in the pool while pushing at the live market number.",
-    watch: "Mahomes mobility, KC offensive-line health, and whether the live market moves back through KC -3.5."
+    watch: "Mahomes mobility, KC offensive-line health, Chris Jones' newly added calf limitation, and whether the live market moves back through KC -3.5."
   }
 ];
 
