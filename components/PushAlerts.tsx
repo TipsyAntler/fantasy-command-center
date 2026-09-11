@@ -16,6 +16,15 @@ function isStandalone() {
   return window.matchMedia("(display-mode: standalone)").matches || iosStandalone;
 }
 
+async function getVapidPublicKey() {
+  const response = await fetch("/api/push/public-key", { cache: "no-store" });
+  const payload = await response.json().catch(() => null);
+  if (!response.ok || !payload?.publicKey) {
+    throw new Error(payload?.error || "FFCC could not prepare push notifications yet.");
+  }
+  return payload.publicKey as string;
+}
+
 async function registerSubscription(subscription: PushSubscription) {
   const response = await fetch("/api/push/subscribe", {
     method: "POST",
@@ -75,9 +84,7 @@ export default function PushAlerts() {
         return;
       }
 
-      const vapidPublicKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
-      if (!vapidPublicKey) throw new Error("FFCC push keys are not configured on the server yet.");
-
+      const vapidPublicKey = await getVapidPublicKey();
       const existing = await registration.pushManager.getSubscription();
       const subscription = existing || await registration.pushManager.subscribe({
         userVisibleOnly: true,
