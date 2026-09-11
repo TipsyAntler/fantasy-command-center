@@ -13,8 +13,15 @@ type StoredSubscription = webpush.PushSubscription;
 
 const STORE_KEY = "ffcc:push:primary";
 
+function getPushStoreConfig() {
+  const url = process.env.KV_REST_API_URL || process.env.PUSH_STORE_URL;
+  const token = process.env.KV_REST_API_TOKEN || process.env.PUSH_STORE_TOKEN;
+  return { url, token };
+}
+
 function pushStoreConfigured() {
-  return Boolean(process.env.PUSH_STORE_URL && process.env.PUSH_STORE_TOKEN);
+  const { url, token } = getPushStoreConfig();
+  return Boolean(url && token);
 }
 
 function vapidConfigured() {
@@ -27,10 +34,11 @@ function vapidConfigured() {
 
 async function redis(command: Array<string>) {
   if (!pushStoreConfigured()) throw new Error("Push store is not configured.");
-  const response = await fetch(process.env.PUSH_STORE_URL!, {
+  const { url, token } = getPushStoreConfig();
+  const response = await fetch(url!, {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${process.env.PUSH_STORE_TOKEN}`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify(command),
