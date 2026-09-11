@@ -17,7 +17,7 @@ export type Week1PoolGame = {
 
 export const week1PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week1PoolStatus = "POOL LINES FROZEN LATE MON 9/7 · WEEK 1 SKIPS WED/THU";
-export const week1MarketAsOf = "Sep 10 · late Thursday market recheck";
+export const week1MarketAsOf = "Sep 11 · early Friday market recheck";
 
 export const week1PoolGames: Week1PoolGame[] = [
   {
@@ -71,10 +71,10 @@ export const week1PoolGames: Week1PoolGame[] = [
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "CLE", home: "JAX",
     poolPick: "JAX", poolLine: -7.5, poolFavorite: "JAX", poolSpread: 7.5,
-    marketLabel: "JAX -7.5", marketTotal: 40.5, confidence: 4,
-    signal: "The earlier Jacksonville stale-line edge has faded; pool and current market are back together at -7.5.",
-    rationale: "Jacksonville remains one of the strongest Week 1 favorites, but the pool price no longer beats the current market. The recommendation stays Jaguars on team-strength and matchup grounds rather than a stale-line advantage.",
-    watch: "If Cleveland gets major positive quarterback/offensive-line news or the market falls below JAX -7, lower confidence."
+    marketLabel: "JAX -8.5", marketTotal: 40.5, confidence: 5,
+    signal: "Jacksonville's frozen -7.5 has regained a full point of stale-line value versus the live -8.5 market.",
+    rationale: "Jacksonville remains one of the strongest Week 1 favorites, and the live market has moved back out to roughly -8.5 while the pool remains locked at -7.5. That restores a meaningful full-point price advantage to the submitted Jaguars side.",
+    watch: "If Cleveland gets major positive quarterback/offensive-line news or the market falls back to JAX -7.5 or below, the stale-line edge disappears."
   },
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "BUF", home: "HOU",
@@ -111,10 +111,10 @@ export const week1PoolGames: Week1PoolGame[] = [
   {
     day: "Sun 9/13", kickoff: "4:25 PM", away: "ARI", home: "LAC",
     poolPick: "ARI", poolLine: 10.5, poolFavorite: "LAC", poolSpread: 10.5,
-    marketLabel: "LAC -10", marketTotal: 46, confidence: 5,
-    signal: "Arizona retains stale-line value: pool +10.5 versus live +10, preserving the hook across key number 10.",
-    rationale: "The Chargers remain the much safer straight-up team, but this pool is ATS. Arizona's frozen +10.5 is a half-point better than the current sportsbook line and preserves the key-number hook, so a ten-point Chargers win still covers for the Cardinals in the pool.",
-    watch: "Major Arizona injury news or a live market surge through LAC -10.5 would reduce the advantage; movement toward LAC -9.5 strengthens it."
+    marketLabel: "LAC -9.5", marketTotal: 47.5, confidence: 5,
+    signal: "Arizona's frozen +10.5 now owns a full point of stale-line value versus live +9.5 and crosses key number 10.",
+    rationale: "The Chargers remain the much safer straight-up team, but this pool is ATS. Arizona's frozen +10.5 is now a full point better than the consensus -9.5 reference and crosses key number 10, so a ten-point Chargers win covers for Arizona in the pool but loses at the live sportsbook number.",
+    watch: "Major Arizona injury news or a live market surge back through LAC -10.5 would reduce the advantage; continued movement toward LAC -9 strengthens it."
   },
   {
     day: "Sun 9/13", kickoff: "8:20 PM", away: "DAL", home: "NYG",
@@ -127,9 +127,9 @@ export const week1PoolGames: Week1PoolGame[] = [
   {
     day: "Mon 9/14", kickoff: "8:15 PM", away: "DEN", home: "KC",
     poolPick: "DEN", poolLine: 3.5, poolFavorite: "KC", poolSpread: 3.5,
-    marketLabel: "KC -3", marketTotal: 42.5, confidence: 5,
+    marketLabel: "KC -3", marketTotal: 43.5, confidence: 5,
     signal: "Denver's frozen +3.5 remains better than the live +3 market across key number 3.",
-    rationale: "The pool gives Denver +3.5 while the current market has Kansas City at -3. That remains an excellent stale-line position across the NFL's most important key number: a three-point Chiefs win covers for Denver in the pool while pushing at the live market number.",
+    rationale: "The pool gives Denver +3.5 while the current market has Kansas City around -3. That remains an excellent stale-line position across the NFL's most important key number: a three-point Chiefs win covers for Denver in the pool while pushing at the live market number.",
     watch: "Mahomes mobility, KC offensive-line health, and whether the live market moves back through KC -3.5."
   }
 ];
@@ -137,7 +137,7 @@ export const week1PoolGames: Week1PoolGame[] = [
 export const week1Tiebreaker = {
   matchup: "DEN @ KC",
   label: "Total points scored in the final game of the week",
-  currentMarketTotal: 42.5,
+  currentMarketTotal: 43.5,
   earlyFfccTarget: 43,
-  note: "Late-Thursday market is 42.5. Keep 43 as the early target for now and re-run the score/total model before the Sunday 10 AM PT pool deadline."
+  note: "Early-Friday market has returned to 43.5. Keep 43 as the current FFCC target and re-run the score/total model before the Sunday 10 AM PT pool deadline."
 };
