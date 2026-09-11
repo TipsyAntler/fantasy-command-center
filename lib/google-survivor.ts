@@ -108,6 +108,14 @@ export type SurvivorSnapshot = {
   error?: string;
 };
 
+function normalizeTeamAbbr(team: string) {
+  const upper = team.trim().toUpperCase();
+  const aliases: Record<string, string> = {
+    JAC: "JAX",
+  };
+  return aliases[upper] || upper;
+}
+
 function numericWeek(value: unknown) {
   const text = String(value ?? "").trim();
   if (!/^\d+$/.test(text)) return null;
@@ -162,7 +170,7 @@ export async function getSurvivorSnapshot(currentWeek: number): Promise<Survivor
     const header = (rows[0] || []).map((v) => String(v ?? "").trim());
 
     const teamColumns = header
-      .map((label, index) => ({ label, index }))
+      .map((label, index) => ({ label: normalizeTeamAbbr(label), index }))
       .filter(({ label, index }) => index >= 4 && index <= 35 && /^[A-Z]{2,3}$/.test(label));
 
     const poolRows = currentPoolRows(rows);
