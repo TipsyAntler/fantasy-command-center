@@ -17,7 +17,7 @@ export type Week1PoolGame = {
 
 export const week1PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week1PoolStatus = "POOL LINES FROZEN LATE MON 9/7 · WEEK 1 SKIPS WED/THU";
-export const week1MarketAsOf = "Sep 11 · Friday 11:20 AM ET market recheck";
+export const week1MarketAsOf = "Sep 11 · Friday 1:40 PM ET market/news recheck";
 
 export const week1PoolGames: Week1PoolGame[] = [
   {
@@ -54,11 +54,11 @@ export const week1PoolGames: Week1PoolGame[] = [
   },
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "ATL", home: "PIT",
-    poolPick: "ATL", poolLine: 3.5, poolFavorite: "PIT", poolSpread: 3.5,
-    marketLabel: "PIT -3 consensus · some books wider", marketTotal: 41.5, confidence: 4,
-    signal: "CHANGED: restore ATL +3.5. The late-morning Friday market has reversed back toward PIT -3, restoring the frozen hook across key number 3.",
-    rationale: "Atlanta +3.5 is again the better pool price because the live market has come back toward Pittsburgh -3 after the earlier move through -4. At that reference, the frozen Falcons side captures the key field-goal margin while the live market does not. Tua Tagovailoa's oblique injury is still a real risk and Friday's official status matters, but the market reversal is strong enough that Pittsburgh -3.5 no longer offers the stale-line advantage that justified the morning flip.",
-    watch: "Friday's official Tua status remains the key trigger. If Tua is ruled out or clearly unlikely to play AND consensus drives back through PIT -4, reconsider Pittsburgh. Otherwise keep ATL +3.5."
+    poolPick: "PIT", poolLine: -3.5, poolFavorite: "PIT", poolSpread: 3.5,
+    marketLabel: "PIT -4.5 consensus · some books -3.5", marketTotal: 41.5, confidence: 5,
+    signal: "ACTIONABLE FLIP: PIT -3.5. Tua Tagovailoa and Michael Penix Jr. are both inactive, and the live market has moved through the frozen pool number.",
+    rationale: "Atlanta is now expected to start Cooper Rush with both Tua Tagovailoa and Michael Penix Jr. inactive. That is a material quarterback downgrade, and current consensus is broadly around Pittsburgh -4.5 while the pool only asks PIT -3.5. The frozen Steelers side therefore owns both the injury-driven matchup edge and roughly a point of stale-line value.",
+    watch: "Only an unexpected quarterback-status reversal or a broad market collapse back to PIT -3 or lower would justify revisiting Atlanta."
   },
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "CHI", home: "CAR",
