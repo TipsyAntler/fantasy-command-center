@@ -14,6 +14,7 @@ type StoredVapidKeys = { publicKey: string; privateKey: string };
 
 const STORE_KEY = "ffcc:push:primary";
 const VAPID_KEY = "ffcc:push:vapid";
+const SENT_TTL_SECONDS = 60 * 60 * 24 * 21;
 
 function getPushStoreConfig() {
   const url = process.env.KV_REST_API_URL || process.env.PUSH_STORE_URL;
@@ -84,4 +85,18 @@ export async function sendFfccPush(alert: FfccPushAlert) {
     category: alert.category,
     severity: alert.severity,
   }));
+}
+
+export async function sendFfccPushOnce(alertId: string, alert: FfccPushAlert): Promise<boolean> {
+  const sentKey = `ffcc:push:sent:${alertId}`;
+  const claimed = await redis(["SET", sentKey, "1", "NX", "EX", String(SENT_TTL_SECONDS)]);
+  if (claimed !== "OK") return false;
+
+  try {
+    await sendFfccPush(alert);
+    return true;
+  } catch (error) {
+    await redis(["DEL", sentKey]).catch(() => undefined);
+    throw error;
+  }
 }
