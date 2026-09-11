@@ -111,7 +111,12 @@ export type SurvivorSnapshot = {
 function normalizeTeamAbbr(team: string) {
   const upper = team.trim().toUpperCase();
   const aliases: Record<string, string> = {
+    // Commissioner sheet / historical NFL abbreviations -> FFCC canonical codes.
     JAC: "JAX",
+    OAK: "LV",
+    SD: "LAC",
+    STL: "LAR",
+    WSH: "WAS",
   };
   return aliases[upper] || upper;
 }
