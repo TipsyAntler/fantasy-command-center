@@ -1,0 +1,30 @@
+name: FFCC Push Sync
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "data/actionable-alerts.ts"
+      - ".github/workflows/ffcc-push-sync.yml"
+
+jobs:
+  sync-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for Vercel deployment
+        run: sleep 90
+
+      - name: Send active FFCC alerts
+        shell: bash
+        run: |
+          set -e
+          for attempt in 1 2 3 4 5; do
+            if response=$(curl --fail --silent --show-error "https://fantasy-command-center-omega.vercel.app/api/push/sync"); then
+              echo "$response"
+              exit 0
+            fi
+            echo "Push sync attempt $attempt failed; retrying..."
+            sleep 30
+          done
+          exit 1
