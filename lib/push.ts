@@ -10,8 +10,10 @@ export type FfccPushAlert = {
 };
 
 type StoredSubscription = webpush.PushSubscription;
+type StoredVapidKeys = { publicKey: string; privateKey: string };
 
 const STORE_KEY = "ffcc:push:primary";
+const VAPID_KEY = "ffcc:push:vapid";
 
 function getPushStoreConfig() {
   const url = process.env.KV_REST_API_URL || process.env.PUSH_STORE_URL;
@@ -22,14 +24,6 @@ function getPushStoreConfig() {
 function pushStoreConfigured() {
   const { url, token } = getPushStoreConfig();
   return Boolean(url && token);
-}
-
-function vapidConfigured() {
-  return Boolean(
-    process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY &&
-    process.env.PUSH_VAPID_PRIVATE_KEY &&
-    process.env.PUSH_VAPID_SUBJECT,
-  );
 }
 
 async function redis(command: Array<string>) {
@@ -49,6 +43,20 @@ async function redis(command: Array<string>) {
   return payload?.result;
 }
 
+export async function getOrCreateVapidKeys(): Promise<StoredVapidKeys> {
+  const envPublic = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
+  const envPrivate = process.env.PUSH_VAPID_PRIVATE_KEY;
+  if (envPublic && envPrivate) return { publicKey: envPublic, privateKey: envPrivate };
+
+  const stored = await redis(["GET", VAPID_KEY]);
+  if (stored) return JSON.parse(stored) as StoredVapidKeys;
+
+  const generated = webpush.generateVAPIDKeys();
+  const keys = { publicKey: generated.publicKey, privateKey: generated.privateKey };
+  await redis(["SET", VAPID_KEY, JSON.stringify(keys)]);
+  return keys;
+}
+
 export async function savePushSubscription(subscription: StoredSubscription) {
   await redis(["SET", STORE_KEY, JSON.stringify(subscription)]);
 }
@@ -60,15 +68,13 @@ export async function getPushSubscription(): Promise<StoredSubscription | null> 
 }
 
 export async function sendFfccPush(alert: FfccPushAlert) {
-  if (!vapidConfigured()) throw new Error("VAPID is not configured.");
   const subscription = await getPushSubscription();
   if (!subscription) throw new Error("No FFCC push subscription is registered.");
 
-  webpush.setVapidDetails(
-    process.env.PUSH_VAPID_SUBJECT!,
-    process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY!,
-    process.env.PUSH_VAPID_PRIVATE_KEY!,
-  );
+  const vapid = await getOrCreateVapidKeys();
+  const subject = process.env.PUSH_VAPID_SUBJECT || process.env.NEXT_PUBLIC_APP_URL || "https://fantasy-command-center-omega.vercel.app";
+
+  webpush.setVapidDetails(subject, vapid.publicKey, vapid.privateKey);
 
   await webpush.sendNotification(subscription, JSON.stringify({
     title: alert.title,
