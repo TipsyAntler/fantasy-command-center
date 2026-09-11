@@ -16,7 +16,7 @@ export const actionableAlerts: ActionableAlert[] = [
     id: "2026-w1-pit-flip",
     category: "Pick'em",
     headline: "PICK FLIP: PIT -3.5 replaces ATL +3.5",
-    detail: "Tua oblique injury + market move to PIT -4.5 materially changed the Week 1 recommendation.",
+    detail: "FFCC's Week 1 recommendation switched from Atlanta +3.5 to Pittsburgh -3.5. Tap to review the changed pick.",
     href: "/pickem#atl-pit",
     active: true,
   },
