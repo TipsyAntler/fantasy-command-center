@@ -17,7 +17,7 @@ export type Week1PoolGame = {
 
 export const week1PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week1PoolStatus = "POOL LINES FROZEN LATE MON 9/7 · WEEK 1 SKIPS WED/THU";
-export const week1MarketAsOf = "Sep 11 · Friday 7 AM ET market recheck";
+export const week1MarketAsOf = "Sep 11 · Friday 11:20 AM ET market recheck";
 
 export const week1PoolGames: Week1PoolGame[] = [
   {
@@ -54,11 +54,11 @@ export const week1PoolGames: Week1PoolGame[] = [
   },
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "ATL", home: "PIT",
-    poolPick: "PIT", poolLine: -3.5, poolFavorite: "PIT", poolSpread: 3.5,
-    marketLabel: "PIT -4.5 consensus", marketTotal: 41.5, confidence: 5,
-    signal: "CHANGED AGAIN: PIT -3.5 replaces ATL +3.5. Friday consensus has moved back through -4 while Tua Tagovailoa remains day-to-day with an oblique injury.",
-    rationale: "The decisive signal is the combination of price and quarterback uncertainty. The pool is frozen at Pittsburgh -3.5, while Friday consensus is around Steelers -4.5 after opening closer to -3. That gives Pittsburgh roughly a full point of stale-line value, and Atlanta still does not know whether Tua Tagovailoa will be able to start after Thursday's oblique strain. Because the user's submitted baseline is Atlanta +3.5, this is now worth revisiting and switching to Pittsburgh -3.5 while edits remain open.",
-    watch: "Friday's official Tua status remains the key late trigger. A full practice/clear start plus a broad market reversal back to PIT -3 or lower would reopen Atlanta; absent both, Pittsburgh is the recommendation."
+    poolPick: "ATL", poolLine: 3.5, poolFavorite: "PIT", poolSpread: 3.5,
+    marketLabel: "PIT -3 consensus · some books wider", marketTotal: 41.5, confidence: 4,
+    signal: "CHANGED: restore ATL +3.5. The late-morning Friday market has reversed back toward PIT -3, restoring the frozen hook across key number 3.",
+    rationale: "Atlanta +3.5 is again the better pool price because the live market has come back toward Pittsburgh -3 after the earlier move through -4. At that reference, the frozen Falcons side captures the key field-goal margin while the live market does not. Tua Tagovailoa's oblique injury is still a real risk and Friday's official status matters, but the market reversal is strong enough that Pittsburgh -3.5 no longer offers the stale-line advantage that justified the morning flip.",
+    watch: "Friday's official Tua status remains the key trigger. If Tua is ruled out or clearly unlikely to play AND consensus drives back through PIT -4, reconsider Pittsburgh. Otherwise keep ATL +3.5."
   },
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "CHI", home: "CAR",
@@ -139,5 +139,5 @@ export const week1Tiebreaker = {
   label: "Total points scored in the final game of the week",
   currentMarketTotal: 43.5,
   earlyFfccTarget: 43,
-  note: "Early-Friday market has returned to 43.5. Keep 43 as the current FFCC target and re-run the score/total model before the Sunday 10 AM PT pool deadline."
+  note: "Friday market remains around 43.5. Keep 43 as the current FFCC target and re-run the score/total model before the Sunday 10 AM PT pool deadline."
 };
