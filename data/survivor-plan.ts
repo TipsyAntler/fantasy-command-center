@@ -32,10 +32,10 @@ export type SurvivorWeekPlan = {
 export const survivorWeekPlan: SurvivorWeekPlan = {
   week: 1,
   status: "final",
-  asOf: "Sep 11, 2026 · Friday 3:11 PM ET final pre-deadline audit",
-  headline: "FINAL: 2 LAC / 1 JAX / 1 DET",
+  asOf: "Sep 11, 2026 · Friday 3:14 PM ET · submitted",
+  headline: "FINAL / SUBMITTED: 2 LAC / 1 JAX / 1 DET",
   summary:
-    "FINAL Week 1 portfolio: Entry 1 LAC, Entry 2 LAC, Entry 3 JAX, Entry 4 DET. The portfolio objective is to maximize the chance at least one of four entries survives the full pool while preserving expected survivors and future inventory. LAC remains the strongest raw Week 1 survival option, JAX remains the clear second anchor, and DET remains close enough in win probability to justify the correlation reduction from adding a third independent outcome. V1per41's Friday update still identifies LAC and JAX as the best Week 1 options and does not introduce a late change. Jacksonville's final Friday report has no new major offensive absence: Montaric Brown and Wyatt Milum are out, while Cole Van Lanen is questionable. Current market pricing continues to support the hierarchy, with LAC around the mid--500s, JAX roughly -400 to -470, and DET roughly -300 to -330. No late injury, market, duplicate-history, or portfolio-correlation signal is strong enough to alter the 2/1/1 allocation before the 4 PM deadline.",
+    "Week 1 portfolio has been submitted: Entry 1 LAC, Entry 2 LAC, Entry 3 JAX, Entry 4 DET. The portfolio objective is to maximize the chance at least one of four entries survives the full pool while preserving expected survivors and future inventory. LAC remains the strongest raw Week 1 survival option, JAX remains the clear second anchor, and DET remains close enough in win probability to justify the correlation reduction from adding a third independent outcome. V1per41's Friday update still identifies LAC and JAX as the best Week 1 options and does not introduce a late change. Jacksonville's final Friday report has no new major offensive absence: Montaric Brown and Wyatt Milum are out, while Cole Van Lanen is questionable. Current market pricing continues to support the hierarchy, with LAC around the mid--500s, JAX roughly -400 to -470, and DET roughly -300 to -330. No late injury, market, duplicate-history, or portfolio-correlation signal was strong enough to alter the 2/1/1 allocation before submission.",
   entries: [
     {
       entryNumber: 1,
@@ -80,7 +80,7 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     {
       label: "Current market/model safety",
       state: "loaded",
-      detail: "Current pricing still clearly ranks LAC first, JAX second, and DET in the next safety tier. No late market move warrants changing the 2/1/1 split.",
+      detail: "Current pricing still clearly ranks LAC first, JAX second, and DET in the next safety tier. No late market move warranted changing the 2/1/1 split.",
     },
     {
       label: "Cross-entry correlation",
@@ -90,12 +90,17 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     {
       label: "Pool ownership + entry history",
       state: "loaded",
-      detail: "Week 1 has no prior used-team conflict for any entry. No duplicate-history restriction blocks LAC, JAX, or DET.",
+      detail: "Week 1 had no prior used-team conflict for any entry. No duplicate-history restriction blocked LAC, JAX, or DET.",
     },
     {
       label: "Final injury + market audit",
       state: "loaded",
-      detail: "Completed Friday afternoon before the 4 PM submission deadline. Jacksonville's final report shows no new major offensive absence; no available late information changes LAC/JAX/DET materially enough to alter the portfolio.",
+      detail: "Completed Friday afternoon before the 4 PM submission deadline. Jacksonville's final report showed no new major offensive absence; no available late information changed LAC/JAX/DET materially enough to alter the portfolio.",
+    },
+    {
+      label: "Submission",
+      state: "loaded",
+      detail: "User confirmed all four Week 1 picks submitted Friday at approximately 3:14 PM ET: LAC / LAC / JAX / DET.",
     },
   ],
 };
