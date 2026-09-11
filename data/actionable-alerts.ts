@@ -10,6 +10,7 @@ export type ActionableAlert = {
 // Global FFCC breaking-news strip. Keep this reserved for genuinely actionable
 // developments: recommendation flips, FINAL Survivor changes, major roster news,
 // or other items the user should see immediately.
+// Updating this file also triggers the FFCC push-sync workflow.
 export const actionableAlerts: ActionableAlert[] = [
   {
     id: "2026-w1-pit-flip",
