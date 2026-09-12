@@ -17,7 +17,7 @@ export type Week1PoolGame = {
 
 export const week1PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week1PoolStatus = "POOL LINES FROZEN LATE MON 9/7 · WEEK 1 SKIPS WED/THU";
-export const week1MarketAsOf = "Sep 11 · Friday 8:26 PM ET market/news recheck";
+export const week1MarketAsOf = "Sep 11 · Friday 10:19 PM ET market/news recheck";
 
 export const week1PoolGames: Week1PoolGame[] = [
   {
@@ -55,10 +55,10 @@ export const week1PoolGames: Week1PoolGame[] = [
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "ATL", home: "PIT",
     poolPick: "PIT", poolLine: -3.5, poolFavorite: "PIT", poolSpread: 3.5,
-    marketLabel: "PIT roughly -3 to -4.5 across books", marketTotal: 41.5, confidence: 5,
-    signal: "ACTIONABLE CHANGE: PIT -3.5 over ATL +3.5. Tua Tagovailoa is OUT, Michael Penix Jr. is also OUT, and Cooper Rush will start.",
-    rationale: "Atlanta will start Cooper Rush with both Tua Tagovailoa and Michael Penix Jr. unavailable. That is a material quarterback downgrade from the lineup assumed when the frozen pool spread was posted. Even with some sportsbook disagreement around the current number, the personnel change is large enough that Pittsburgh -3.5 is now the preferred ATS side.",
-    watch: "Only an unexpected quarterback-status reversal or a broad market collapse below PIT -3 would justify revisiting Atlanta."
+    marketLabel: "PIT -5.5 to -6 after Tua ruled out", marketTotal: 41.5, confidence: 5,
+    signal: "ACTIONABLE CHANGE HOLDS: PIT -3.5 over ATL +3.5. Tua Tagovailoa is OUT, Michael Penix Jr. is unavailable, Cooper Rush starts, and the live market has surged to roughly PIT -5.5/-6.",
+    rationale: "Atlanta will start Cooper Rush with Tua Tagovailoa ruled out and Michael Penix Jr. still unavailable. The market response has confirmed the size of that quarterback downgrade: Pittsburgh is now broadly priced around -5.5 to -6 while the pool remains frozen at -3.5. That gives Pittsburgh roughly two to two-and-a-half points of stale-line value and makes the switch from the submitted Atlanta side materially stronger than it was earlier Friday.",
+    watch: "Only an unexpected quarterback-status reversal or a sharp broad market collapse back toward PIT -3 would justify revisiting Atlanta."
   },
   {
     day: "Sun 9/13", kickoff: "1:00 PM", away: "CHI", home: "CAR",
