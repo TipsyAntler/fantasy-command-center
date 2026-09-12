@@ -17,7 +17,7 @@ export type Week1PoolGame = {
 
 export const week1PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week1PoolStatus = "POOL LINES FROZEN LATE MON 9/7 · WEEK 1 SKIPS WED/THU";
-export const week1MarketAsOf = "Sep 12 · Saturday 12:39 PM ET market/news recheck";
+export const week1MarketAsOf = "Sep 12 · Saturday 4:18 PM ET market/news recheck";
 
 export const week1PoolGames: Week1PoolGame[] = [
   {
@@ -128,9 +128,9 @@ export const week1PoolGames: Week1PoolGame[] = [
     day: "Mon 9/14", kickoff: "8:15 PM", away: "DEN", home: "KC",
     poolPick: "DEN", poolLine: 3.5, poolFavorite: "KC", poolSpread: 3.5,
     marketLabel: "KC -2.5", marketTotal: 43.5, confidence: 5,
-    signal: "Denver's frozen +3.5 remains better than the live +2.5 market across key number 3.",
-    rationale: "The pool gives Denver +3.5 while the current market has Kansas City around -2.5. That remains an excellent stale-line position across the NFL's most important key number. Chris Jones was newly limited Friday with a calf issue, while Josh Simmons did not practice.",
-    watch: "Mahomes mobility, KC offensive-line health, Chris Jones' calf limitation, and whether the live market moves back through KC -3.5."
+    signal: "Denver's frozen +3.5 remains better than the live +2.5 market across key number 3, and Kansas City will be without starting LT Josh Simmons.",
+    rationale: "The pool gives Denver +3.5 while the current market has Kansas City around -2.5, preserving excellent stale-line value across key number 3. Kansas City's final Saturday report also ruled starting left tackle Josh Simmons out. Chris Jones missed Saturday's practice with a calf issue, but Andy Reid called it precautionary and Jones carries no game designation, so the defensive-star uncertainty no longer needs to be priced as a likely absence.",
+    watch: "Mahomes' first regular-season game back from the knee injury, Kansas City's replacement plan at left tackle, and any Sunday/Monday move back through KC -3.5. Chris Jones is cleared to play."
   }
 ];
 
@@ -139,5 +139,5 @@ export const week1Tiebreaker = {
   label: "Total points scored in the final game of the week",
   currentMarketTotal: 43.5,
   earlyFfccTarget: 43,
-  note: "Saturday midday market remains around 43.5. Keep 43 as the current FFCC target and re-run the score/total model before the Sunday 10 AM PT pool deadline."
+  note: "Saturday afternoon market remains around 43.5. Keep 43 as the current FFCC target and re-run the score/total model before the Sunday 10 AM PT pool deadline."
 };
