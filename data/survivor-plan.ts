@@ -32,10 +32,10 @@ export type SurvivorWeekPlan = {
 export const survivorWeekPlan: SurvivorWeekPlan = {
   week: 1,
   status: "final",
-  asOf: "Sep 11, 2026 · Friday 3:14 PM ET · submitted",
+  asOf: "Sep 13, 2026 · Sunday 12:15 PM ET · submitted / monitored",
   headline: "FINAL / SUBMITTED: 2 LAC / 1 JAX / 1 DET",
   summary:
-    "Week 1 portfolio has been submitted: Entry 1 LAC, Entry 2 LAC, Entry 3 JAX, Entry 4 DET. The portfolio objective is to maximize the chance at least one of four entries survives the full pool while preserving expected survivors and future inventory. LAC remains the strongest raw Week 1 survival option, JAX remains the clear second anchor, and DET remains close enough in win probability to justify the correlation reduction from adding a third independent outcome. V1per41's Friday update still identifies LAC and JAX as the best Week 1 options and does not introduce a late change. Jacksonville's final Friday report has no new major offensive absence: Montaric Brown and Wyatt Milum are out, while Cole Van Lanen is questionable. Current market pricing continues to support the hierarchy, with LAC around the mid--500s, JAX roughly -400 to -470, and DET roughly -300 to -330. No late injury, market, duplicate-history, or portfolio-correlation signal was strong enough to alter the 2/1/1 allocation before submission.",
+    "Week 1 portfolio remains submitted and unchanged: Entry 1 LAC, Entry 2 LAC, Entry 3 JAX, Entry 4 DET. The portfolio objective is to maximize the chance at least one of four entries survives the full pool while preserving expected survivors and future inventory. V1per41's current Week 1 post ranks LAC first at 81% current-week win probability, JAX second at 75%, and DET third at 73%, matching the portfolio's three-team structure. His full-season model also slightly prefers the LAC Week 1 path to JAX when looking through Week 2. No Sunday injury, market, duplicate-history, or portfolio-correlation signal is strong enough to alter the already-submitted 2/1/1 allocation.",
   entries: [
     {
       entryNumber: 1,
@@ -56,14 +56,14 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
       team: "JAX",
       alternate: "LAC",
       confidence: "high",
-      rationale: "JAX remains the clear second anchor. The final Friday injury report does not create a meaningful downgrade, and Jacksonville still carries strong current-week safety with modest future-value cost.",
+      rationale: "JAX remains the clear second anchor and V1per41's current Week 1 model still ranks Jacksonville second behind LAC.",
     },
     {
       entryNumber: 4,
       team: "DET",
       alternate: "JAX",
       confidence: "medium",
-      rationale: "Intentional portfolio hedge. Detroit gives up some raw Week 1 safety versus a second JAX entry but creates a third independent outcome and materially lowers the risk that one upset wipes out multiple entries, without a large enough survival-cost gap to justify reconverging.",
+      rationale: "Intentional portfolio hedge. Detroit remains V1per41's third-ranked current-week option and supplies a third independent outcome without enough survival-cost gap to justify reconverging.",
     },
   ],
   inputs: [
@@ -73,14 +73,14 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
       detail: "Optimize jointly for the chance at least one of four entries survives the season, with expected survivors and per-entry path quality as secondary objectives.",
     },
     {
-      label: "V1per41 Friday update",
+      label: "V1per41 Week 1 update",
       state: "loaded",
-      detail: "Latest Friday guidance still has LAC and JAX as the best Week 1 options. No later post materially changes the recommendation before the deadline.",
+      detail: "Current Week 1 post ranks LAC 81% / JAX 75% / DET 73% for this week's win probability. The recommended full-season path begins LAC in Week 1; no Sunday update changes the submitted portfolio.",
     },
     {
       label: "Current market/model safety",
       state: "loaded",
-      detail: "Current pricing still clearly ranks LAC first, JAX second, and DET in the next safety tier. No late market move warranted changing the 2/1/1 split.",
+      detail: "Sunday pricing and V1per41's current-week probabilities continue to rank LAC first, JAX second, and DET in the next safety tier. No late move warrants changing the 2/1/1 split.",
     },
     {
       label: "Cross-entry correlation",
@@ -95,7 +95,7 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     {
       label: "Final injury + market audit",
       state: "loaded",
-      detail: "Completed Friday afternoon before the 4 PM submission deadline. Jacksonville's final report showed no new major offensive absence; no available late information changed LAC/JAX/DET materially enough to alter the portfolio.",
+      detail: "Completed before submission and monitored again Sunday. No available Week 1 news changed LAC/JAX/DET materially enough to alter the portfolio.",
     },
     {
       label: "Submission",
