@@ -34,7 +34,7 @@ export const manualLeagues: ManualLeague[] = [
       { name: "Chris Olave", position: "WR", slot: "FLEX" },
       { name: "Titans", position: "DEF", slot: "DEF" },
       { name: "Brock Bowers", position: "TE", slot: "BN" },
-      { name: "Bijan Robinson", position: "RB", slot: "BN" },
+      { name: "Brian Robinson Jr.", position: "RB", slot: "BN" },
       { name: "Travis Hunter", position: "WR", slot: "BN" },
       { name: "Alvin Kamara", position: "RB", slot: "BN" },
       { name: "Kaleb Johnson", position: "RB", slot: "BN" },
