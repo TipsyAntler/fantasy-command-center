@@ -32,10 +32,10 @@ export type SurvivorWeekPlan = {
 export const survivorWeekPlan: SurvivorWeekPlan = {
   week: 1,
   status: "final",
-  asOf: "Sep 13, 2026 · Sunday 12:15 PM ET · submitted / monitored",
-  headline: "FINAL / SUBMITTED: 2 LAC / 1 JAX / 1 DET",
+  asOf: "Sep 13, 2026 · Sunday 4:26 PM ET · live results monitored",
+  headline: "FINAL / SUBMITTED: 2 LAC / 1 JAX / 1 DET · JAX ADVANCED",
   summary:
-    "Week 1 portfolio remains submitted and unchanged: Entry 1 LAC, Entry 2 LAC, Entry 3 JAX, Entry 4 DET. The portfolio objective is to maximize the chance at least one of four entries survives the full pool while preserving expected survivors and future inventory. V1per41's current Week 1 post ranks LAC first at 81% current-week win probability, JAX second at 75%, and DET third at 73%, matching the portfolio's three-team structure. His full-season model also slightly prefers the LAC Week 1 path to JAX when looking through Week 2. No Sunday injury, market, duplicate-history, or portfolio-correlation signal is strong enough to alter the already-submitted 2/1/1 allocation.",
+    "Week 1 portfolio remains submitted and unchanged: Entry 1 LAC, Entry 2 LAC, Entry 3 JAX, Entry 4 DET. Jacksonville has completed a 34-10 win over Cleveland, so Entry 3 is safely through Week 1. Detroit is still in progress against New Orleans and the two Chargers entries are beginning the late window against Arizona. No late injury, market, duplicate-history, or portfolio-correlation signal created an actionable change before those games locked.",
   entries: [
     {
       entryNumber: 1,
@@ -56,14 +56,14 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
       team: "JAX",
       alternate: "LAC",
       confidence: "high",
-      rationale: "JAX remains the clear second anchor and V1per41's current Week 1 model still ranks Jacksonville second behind LAC.",
+      rationale: "ADVANCED: Jacksonville beat Cleveland 34-10, validating the second portfolio anchor and safely moving Entry 3 through Week 1.",
     },
     {
       entryNumber: 4,
       team: "DET",
       alternate: "JAX",
       confidence: "medium",
-      rationale: "Intentional portfolio hedge. Detroit remains V1per41's third-ranked current-week option and supplies a third independent outcome without enough survival-cost gap to justify reconverging.",
+      rationale: "Intentional portfolio hedge. Detroit remains the third independent outcome in the portfolio; its Week 1 game is in progress.",
     },
   ],
   inputs: [
@@ -75,17 +75,17 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     {
       label: "V1per41 Week 1 update",
       state: "loaded",
-      detail: "Current Week 1 post ranks LAC 81% / JAX 75% / DET 73% for this week's win probability. The recommended full-season path begins LAC in Week 1; no Sunday update changes the submitted portfolio.",
+      detail: "Current Week 1 post ranked LAC 81% / JAX 75% / DET 73% for this week's win probability. No newer post or spreadsheet update located that changes the submitted portfolio.",
     },
     {
       label: "Current market/model safety",
-      state: "loaded",
-      detail: "Sunday pricing and V1per41's current-week probabilities continue to rank LAC first, JAX second, and DET in the next safety tier. No late move warrants changing the 2/1/1 split.",
+      state: "live",
+      detail: "Jacksonville has already advanced with a 34-10 win. Detroit remains in progress and both Chargers entries have locked into the late window; there is no remaining pre-lock action on those entries.",
     },
     {
       label: "Cross-entry correlation",
       state: "loaded",
-      detail: "The 2 LAC / 1 JAX / 1 DET structure keeps the strongest favorite duplicated while adding two independent alternatives, balancing expected survivors against single-upset portfolio risk.",
+      detail: "The 2 LAC / 1 JAX / 1 DET structure kept the strongest favorite duplicated while adding two independent alternatives, balancing expected survivors against single-upset portfolio risk.",
     },
     {
       label: "Pool ownership + entry history",
@@ -95,7 +95,7 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     {
       label: "Final injury + market audit",
       state: "loaded",
-      detail: "Completed before submission and monitored again Sunday. No available Week 1 news changed LAC/JAX/DET materially enough to alter the portfolio.",
+      detail: "Completed before submission and monitored through Sunday lock. No available Week 1 news changed LAC/JAX/DET materially enough to alter the portfolio.",
     },
     {
       label: "Submission",
