@@ -27,10 +27,10 @@ export type SurvivorWeekPlan = {
 export const survivorWeekPlan: SurvivorWeekPlan = {
   week: 2,
   status: "directional",
-  asOf: "Sep 14, 2026 · 4:45 AM ET · overnight refresh",
+  asOf: "Sep 14, 2026 · 6:35 AM ET · morning refresh",
   headline: "WEEK 2 DIRECTIONAL: E3 SF / E4 TB",
   summary:
-    "Only Entries 3 and 4 remain alive. Entry 3 used JAX in Week 1 and Entry 4 used DET. SF remains the clear Week 2 anchor. The second leg moves back from LAC to TB after the overnight market clarified that Tampa Bay is now materially safer than Los Angeles this week. SF/TB keeps the two surviving entries independent while improving current-week survival. The plan remains directional pending ownership, injuries, a fresh V1per41 update, and the final duplicate-history audit.",
+    "Only Entries 3 and 4 remain alive. Entry 3 used JAX in Week 1 and Entry 4 used DET. SF remains the clear Week 2 anchor. TB remains the preferred independent second leg after the morning market refresh: Baltimore and the Rams price slightly safer, but their future inventory remains more valuable, while the Chargers are no safer than Tampa Bay on the current board. The plan remains directional pending ownership, injuries, a fresh V1per41 update, and the final duplicate-history audit.",
   entries: [
     {
       entryNumber: 1,
@@ -56,7 +56,7 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
       team: "TB",
       alternate: "BAL",
       confidence: "medium",
-      rationale: "Entry 4 used DET in Week 1, so TB is available. Tampa Bay has moved ahead of the Chargers as the safer second-leg option for this week, enough to outweigh the future-inventory case for using LAC now.",
+      rationale: "Entry 4 used DET in Week 1, so TB is available. Tampa Bay remains in the second safety tier and preserves more valuable future inventory than Baltimore or the Rams while keeping the two surviving entries independent.",
     },
   ],
   inputs: [
@@ -68,17 +68,17 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     {
       label: "Current market",
       state: "live",
-      detail: "San Francisco is the clear top favorite. Tampa Bay and Baltimore form the next safety tier, with the Chargers now a step behind after overnight movement.",
+      detail: "Morning Week 2 board: SF -13.5 / about -950 vs MIA is the clear top favorite; BAL -8.5 / about -480 and LAR -8.5 / about -490 are next; TB -7.5 / about -450 and LAC -7.5 / about -405 follow. No recommendation change from the morning refresh.",
     },
     {
       label: "Future inventory",
       state: "loaded",
-      detail: "LAC still has relatively limited near-term value after Week 2, but the current safety gap versus TB has widened enough that future-inventory efficiency no longer drives the second entry onto LAC. Baltimore remains a viable alternate but is more valuable future inventory than Tampa Bay.",
+      detail: "Baltimore and the Rams are slightly safer than Tampa Bay this week but carry more useful future spots. LAC remains relatively expendable later, but its current-week safety is not superior to TB. That keeps TB as the preferred diversified second leg for now.",
     },
     {
       label: "Ownership",
       state: "pending",
-      detail: "Reliable Week 2 survivor ownership projections were not yet available in the overnight search. Re-evaluate once public and pool ownership stabilizes.",
+      detail: "Reliable Week 2 survivor ownership projections are not yet stable enough to drive a portfolio change. Re-evaluate once public and pool ownership firms up.",
     },
     {
       label: "V1per41",
