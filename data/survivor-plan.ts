@@ -32,10 +32,10 @@ export type SurvivorWeekPlan = {
 export const survivorWeekPlan: SurvivorWeekPlan = {
   week: 2,
   status: "directional",
-  asOf: "Sep 14, 2026 · 12:45 AM ET · Week 2 opening-market plan",
+  asOf: "Sep 14, 2026 · 1:18 AM ET · opening-market refresh",
   headline: "WEEK 2 DIRECTIONAL: E3 SF / E4 TB · TWO-ENTRY DIVERSIFICATION",
   summary:
-    "Only Entries 3 and 4 remain alive after Week 1. Entry 3 has JAX used; Entry 4 has DET used. The opening Week 2 market makes San Francisco the clear raw-survival leader at roughly -950 versus Miami, while Tampa Bay and Baltimore are the next tier around -425. With only two bullets left, putting both on SF would maximize expected current-week survivors but would expose the entire portfolio to one upset. The directional split is therefore Entry 3 SF and Entry 4 TB: SF supplies the strongest single-entry survival anchor, while TB creates an independent path at a still-strong win probability and aligns with V1per41's preseason/Week-1-thread season map identifying TB-CLE as Tampa Bay's best use. This is not FINAL; ownership, injury news, fresh V1per41 Week 2 output, market movement, and the commissioner-sheet history audit still need to be rechecked before submission.",
+    "Only Entries 3 and 4 remain alive after Week 1. Entry 3 has JAX used; Entry 4 has DET used. San Francisco remains the clear raw-survival leader, now around -13.5 versus Miami. Tampa Bay is around -7.5 versus Cleveland, while Baltimore and the Rams are around -8.5. With only two bullets left, doubling SF would maximize expected current-week survivors but would expose the entire portfolio to one upset. The directional split remains Entry 3 SF and Entry 4 TB: SF supplies the strongest single-entry survival anchor, while TB creates an independent path at a still-strong win probability and preserves Baltimore for later. The one-point market gap between TB and BAL is not yet large enough to outweigh the portfolio/path value of keeping the entries differentiated. This is not FINAL; ownership, injury news, fresh V1per41 Week 2 output, market movement, and the commissioner-sheet history audit still need to be rechecked before submission.",
   entries: [
     {
       entryNumber: 1,
@@ -54,14 +54,14 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
       team: "SF",
       alternate: "TB",
       confidence: "high",
-      rationale: "Directional anchor. Entry 3 used JAX in Week 1, so SF is available. San Francisco opened around -950 / -12.5 vs Miami, by far the strongest raw win probability on the Week 2 board. Using SF here gives one surviving entry the safest available current-week path while leaving Entry 4 uncorrelated.",
+      rationale: "Directional anchor. Entry 3 used JAX in Week 1, so SF is available. San Francisco is now roughly -13.5 vs Miami, clearly the strongest raw win-probability option on the Week 2 board. Using SF here gives one surviving entry the safest available current-week path while leaving Entry 4 uncorrelated.",
     },
     {
       entryNumber: 4,
       team: "TB",
       alternate: "BAL",
       confidence: "medium",
-      rationale: "Directional diversification leg. Entry 4 used DET in Week 1, so TB is available. Tampa Bay opened around -425 / -8.5 vs Cleveland. The win probability is meaningfully below SF, but pairing TB with SF materially raises the portfolio's chance that at least one entry survives the week versus doubling SF, while preserving a deliberately different future path. Fresh V1per41 Week 2 output and ownership still need review.",
+      rationale: "Directional diversification leg. Entry 4 used DET in Week 1, so TB is available. Tampa Bay is currently about -7.5 vs Cleveland; Baltimore is about -8.5 vs New Orleans. BAL has a small current-week market edge, but TB remains the directional choice because the survival gap is modest, V1per41's prior season map identified TB-CLE as Tampa Bay's best use, and preserving Baltimore helps keep the surviving entries on more distinct future paths. Fresh V1per41 Week 2 output and ownership still need review.",
     },
   ],
   inputs: [
@@ -73,12 +73,12 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     {
       label: "Opening market",
       state: "live",
-      detail: "Early Week 2 prices: SF about -950 vs MIA; TB about -425 vs CLE; BAL about -425 vs NO; LAR about -375 vs NYG; PHI about -340 at TEN; LAC about -330 vs LV. Markets can move materially after Monday night and early injury reporting.",
+      detail: "Early Week 2 market after Sunday's games: SF about -13.5 vs MIA; TB about -7.5 vs CLE; BAL about -8.5 vs NO; LAR about -8.5 vs NYG; LAC about -7 vs LV. SF strengthened from the first look, while TB softened by about a point relative to the initial snapshot. The recommendation has not changed.",
     },
     {
       label: "V1per41",
       state: "pending",
-      detail: "No fresh 2026 Week 2 post/rerun located yet. V1per41's Week 1 thread season map listed TB vs CLE as the Week 2 choice at 70%, but he explicitly noted the workbook should be rerun once Week 2 sportsbook lines are available. Treat TB as supportive directional evidence, not a final pick.",
+      detail: "No fresh 2026 Week 2 post/rerun located in the latest check. V1per41's prior season map listed TB vs CLE as the Week 2 choice, but the workbook should be rerun with current sportsbook lines. Treat TB as supportive directional evidence, not a final pick.",
     },
     {
       label: "Used-team history",
