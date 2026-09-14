@@ -27,10 +27,10 @@ export type SurvivorWeekPlan = {
 export const survivorWeekPlan: SurvivorWeekPlan = {
   week: 2,
   status: "directional",
-  asOf: "Sep 14, 2026 · 3:41 AM ET · overnight refresh",
-  headline: "WEEK 2 DIRECTIONAL: E3 SF / E4 LAC",
+  asOf: "Sep 14, 2026 · 4:45 AM ET · overnight refresh",
+  headline: "WEEK 2 DIRECTIONAL: E3 SF / E4 TB",
   summary:
-    "Only Entries 3 and 4 remain alive. Entry 3 used JAX in Week 1 and Entry 4 used DET. SF remains the Week 2 anchor. The second leg changes from TB to LAC after a meaningful overnight market move: LAC is now about -9.5 / -380 vs LV while TB is about -6.5 / -278 vs CLE. LAC also enters a much tougher run after Week 2, so this is an efficient spot to use them while keeping the two surviving entries on different teams. The plan remains directional pending ownership, injuries, a fresh V1per41 update, and the final duplicate-history audit.",
+    "Only Entries 3 and 4 remain alive. Entry 3 used JAX in Week 1 and Entry 4 used DET. SF remains the clear Week 2 anchor. The second leg moves back from LAC to TB after the overnight market clarified that Tampa Bay is now materially safer than Los Angeles this week. SF/TB keeps the two surviving entries independent while improving current-week survival. The plan remains directional pending ownership, injuries, a fresh V1per41 update, and the final duplicate-history audit.",
   entries: [
     {
       entryNumber: 1,
@@ -47,38 +47,43 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     {
       entryNumber: 3,
       team: "SF",
-      alternate: "SEA",
+      alternate: "BAL",
       confidence: "high",
-      rationale: "Entry 3 used JAX in Week 1, so SF is available. SF remains the strongest current Week 2 option at roughly -10.5 / -675 vs Miami.",
+      rationale: "Entry 3 used JAX in Week 1, so SF is available. San Francisco remains the strongest current Week 2 option and the portfolio's maximum-survival anchor.",
     },
     {
       entryNumber: 4,
-      team: "LAC",
-      alternate: "LAR",
+      team: "TB",
+      alternate: "BAL",
       confidence: "medium",
-      rationale: "Entry 4 used DET in Week 1, so LAC is available. LAC has strengthened to roughly -9.5 / -380 vs Las Vegas while TB has slipped to about -6.5 / -278 vs Cleveland, creating enough separation to change the directional second leg.",
+      rationale: "Entry 4 used DET in Week 1, so TB is available. Tampa Bay has moved ahead of the Chargers as the safer second-leg option for this week, enough to outweigh the future-inventory case for using LAC now.",
     },
   ],
   inputs: [
     {
       label: "Portfolio objective",
       state: "loaded",
-      detail: "Keep one SF anchor and one independent second leg rather than put both surviving entries on the same team.",
+      detail: "Keep one SF anchor and one independent second leg rather than putting both surviving entries on the same team.",
     },
     {
       label: "Current market",
       state: "live",
-      detail: "SF about -10.5 / -675 vs MIA; SEA about -10 / -550 at ARI; LAR about -9.5 / -485 vs NYG; LAC about -9.5 / -380 vs LV; BAL about -7.5 / -360 vs NO; TB about -6.5 / -278 vs CLE.",
+      detail: "San Francisco is the clear top favorite. Tampa Bay and Baltimore form the next safety tier, with the Chargers now a step behind after overnight movement.",
     },
     {
       label: "Future inventory",
       state: "loaded",
-      detail: "LAC faces BUF, SEA, DEN and KC in the four games after Week 2, making Raiders-at-home one of the cleaner near-term spots to use them. TB, SEA and LAR retain useful later opportunities.",
+      detail: "LAC still has relatively limited near-term value after Week 2, but the current safety gap versus TB has widened enough that future-inventory efficiency no longer drives the second entry onto LAC. Baltimore remains a viable alternate but is more valuable future inventory than Tampa Bay.",
+    },
+    {
+      label: "Ownership",
+      state: "pending",
+      detail: "Reliable Week 2 survivor ownership projections were not yet available in the overnight search. Re-evaluate once public and pool ownership stabilizes.",
     },
     {
       label: "V1per41",
       state: "pending",
-      detail: "No fresh 2026 Week 2 rerun located in the latest overnight search. The prior season map had TB vs CLE for Week 2, but current market movement now points to stronger alternatives.",
+      detail: "No fresh 2026 Week 2 rerun located in the latest search. The prior season map had TB vs CLE for Week 2, but a current-week rerun is still needed before finalization.",
     },
     {
       label: "Used-team history",
