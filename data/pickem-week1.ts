@@ -17,7 +17,7 @@ export type Week1PoolGame = {
 
 export const week1PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week1PoolStatus = "POOL LINES FROZEN LATE MON 9/7 · WEEK 1 SKIPS WED/THU";
-export const week1MarketAsOf = "Sep 13 · Sunday 12:15 PM ET final early-window inactives/news recheck";
+export const week1MarketAsOf = "Sep 13 · Sunday 10:45 PM ET post-Sunday recheck";
 
 export const week1PoolGames: Week1PoolGame[] = [
   {
@@ -127,10 +127,10 @@ export const week1PoolGames: Week1PoolGame[] = [
   {
     day: "Mon 9/14", kickoff: "8:15 PM", away: "DEN", home: "KC",
     poolPick: "DEN", poolLine: 3.5, poolFavorite: "KC", poolSpread: 3.5,
-    marketLabel: "KC -2.5", marketTotal: 43.5, confidence: 5,
-    signal: "Denver's frozen +3.5 remains better than the live +2.5 market across key number 3, and Kansas City will be without starting LT Josh Simmons.",
-    rationale: "The pool gives Denver +3.5 while the current market has Kansas City around -2.5, preserving excellent stale-line value across key number 3. Kansas City's final Saturday report ruled starting left tackle Josh Simmons out. Chris Jones carries no game designation after the precautionary calf issue.",
-    watch: "Mahomes' first regular-season game back from the knee injury, Kansas City's replacement plan at left tackle, and any Sunday/Monday move back through KC -3.5."
+    marketLabel: "KC -1.5", marketTotal: 43.5, confidence: 5,
+    signal: "Denver's frozen +3.5 has strengthened materially versus the live market: consensus is now around KC -1.5, so the pool owns roughly two points of stale-line value and still crosses key number 3. Kansas City will also be without starting LT Josh Simmons.",
+    rationale: "The pool gives Denver +3.5 while the current consensus market has Kansas City around -1.5. That is roughly two points of stale-line value and crosses the key field-goal number. Kansas City's final injury report ruled starting left tackle Josh Simmons out; Chris Jones has no game designation after the precautionary calf issue. Denver's listed Marvin Mims practiced fully and has no game designation.",
+    watch: "Mahomes' first regular-season game back from the knee injury, Kansas City's replacement plan at left tackle, and any Monday move back toward or through KC -3."
   }
 ];
 
@@ -139,5 +139,5 @@ export const week1Tiebreaker = {
   label: "Total points scored in the final game of the week",
   currentMarketTotal: 43.5,
   earlyFfccTarget: 43,
-  note: "Sunday noon recheck leaves the market around 43.5. Keep 43 as the current FFCC target and re-run the score/total model before Monday night if edits remain open."
+  note: "Sunday night recheck still has the market total around 43.5. Keep 43 as the current FFCC tiebreaker target and re-run the score/total model before Monday night if edits remain open."
 };
