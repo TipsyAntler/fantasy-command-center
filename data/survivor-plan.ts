@@ -27,10 +27,10 @@ export type SurvivorWeekPlan = {
 export const survivorWeekPlan: SurvivorWeekPlan = {
   week: 2,
   status: "directional",
-  asOf: "Sep 14, 2026 · 11:50 AM ET · midday refresh",
+  asOf: "Sep 14, 2026 · 2:22 PM ET · afternoon market refresh",
   headline: "WEEK 2 DIRECTIONAL: E3 SF / E4 TB",
   summary:
-    "Only Entries 3 and 4 remain alive. Entry 3 used JAX in Week 1 and Entry 4 used DET. SF remains the clear Week 2 anchor. TB remains the preferred independent second leg after the midday market refresh: Baltimore and the Rams price slightly safer on some boards, but their future inventory remains more valuable, while Tampa Bay remains in the next safety tier. The plan remains directional pending ownership, injuries, a fresh V1per41 update, and the final duplicate-history audit.",
+    "Only Entries 3 and 4 remain alive. Entry 3 used JAX in Week 1 and Entry 4 used DET. SF remains the clear Week 2 anchor. TB remains the preferred independent second leg after the afternoon market refresh: Baltimore is priced identically on the latest bet365 moneyline and the Rams slightly safer, but their future inventory remains more valuable, while Tampa Bay remains in the same safety tier as Baltimore. The plan remains directional pending ownership, injuries, a fresh V1per41 update, and the final duplicate-history audit.",
   entries: [
     {
       entryNumber: 1,
@@ -56,7 +56,7 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
       team: "TB",
       alternate: "BAL",
       confidence: "medium",
-      rationale: "Entry 4 used DET in Week 1, so TB is available. Tampa Bay remains in the second safety tier and preserves more valuable future inventory than Baltimore or the Rams while keeping the two surviving entries independent.",
+      rationale: "Entry 4 used DET in Week 1, so TB is available. Tampa Bay is priced identically to Baltimore on the latest bet365 moneyline while preserving more valuable future inventory and keeping the two surviving entries independent.",
     },
   ],
   inputs: [
@@ -68,12 +68,12 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     {
       label: "Current market",
       state: "live",
-      detail: "Midday Week 2 market remains consistent with the plan: SF is roughly -12.5 to -13.5 vs MIA and the clear top favorite; BAL is around -8.5 vs NO; TB ranges roughly -6.5 to -8.5 vs CLE depending on book. The dispersion does not materially alter E3 SF / E4 TB.",
+      detail: "Latest bet365 board at 1:37 PM ET: SF -12.5 / -900 vs MIA; TB -8.5 / -425 vs CLE; BAL -8.5 / -425 vs NO; LAR -7.5 / -360 vs NYG; LAC -6.5 / -310 vs LV. The market reinforces E3 SF / E4 TB rather than changing it.",
     },
     {
       label: "Future inventory",
       state: "loaded",
-      detail: "Baltimore and the Rams are slightly safer than Tampa Bay on some current boards but carry more useful future spots. Tampa Bay remains close enough in current-week survival probability to justify the independent path for now.",
+      detail: "Baltimore is currently priced the same as Tampa Bay and the Rams slightly safer by moneyline, but both carry more useful future spots. Tampa Bay remains close enough in current-week survival probability to justify the independent path.",
     },
     {
       label: "Ownership",
