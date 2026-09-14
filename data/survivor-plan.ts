@@ -27,10 +27,10 @@ export type SurvivorWeekPlan = {
 export const survivorWeekPlan: SurvivorWeekPlan = {
   week: 2,
   status: "directional",
-  asOf: "Sep 14, 2026 · 6:35 AM ET · morning refresh",
+  asOf: "Sep 14, 2026 · 11:50 AM ET · midday refresh",
   headline: "WEEK 2 DIRECTIONAL: E3 SF / E4 TB",
   summary:
-    "Only Entries 3 and 4 remain alive. Entry 3 used JAX in Week 1 and Entry 4 used DET. SF remains the clear Week 2 anchor. TB remains the preferred independent second leg after the morning market refresh: Baltimore and the Rams price slightly safer, but their future inventory remains more valuable, while the Chargers are no safer than Tampa Bay on the current board. The plan remains directional pending ownership, injuries, a fresh V1per41 update, and the final duplicate-history audit.",
+    "Only Entries 3 and 4 remain alive. Entry 3 used JAX in Week 1 and Entry 4 used DET. SF remains the clear Week 2 anchor. TB remains the preferred independent second leg after the midday market refresh: Baltimore and the Rams price slightly safer on some boards, but their future inventory remains more valuable, while Tampa Bay remains in the next safety tier. The plan remains directional pending ownership, injuries, a fresh V1per41 update, and the final duplicate-history audit.",
   entries: [
     {
       entryNumber: 1,
@@ -68,12 +68,12 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     {
       label: "Current market",
       state: "live",
-      detail: "Morning Week 2 board: SF -13.5 / about -950 vs MIA is the clear top favorite; BAL -8.5 / about -480 and LAR -8.5 / about -490 are next; TB -7.5 / about -450 and LAC -7.5 / about -405 follow. No recommendation change from the morning refresh.",
+      detail: "Midday Week 2 market remains consistent with the plan: SF is roughly -12.5 to -13.5 vs MIA and the clear top favorite; BAL is around -8.5 vs NO; TB ranges roughly -6.5 to -8.5 vs CLE depending on book. The dispersion does not materially alter E3 SF / E4 TB.",
     },
     {
       label: "Future inventory",
       state: "loaded",
-      detail: "Baltimore and the Rams are slightly safer than Tampa Bay this week but carry more useful future spots. LAC remains relatively expendable later, but its current-week safety is not superior to TB. That keeps TB as the preferred diversified second leg for now.",
+      detail: "Baltimore and the Rams are slightly safer than Tampa Bay on some current boards but carry more useful future spots. Tampa Bay remains close enough in current-week survival probability to justify the independent path for now.",
     },
     {
       label: "Ownership",
