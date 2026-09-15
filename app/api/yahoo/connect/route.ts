@@ -15,7 +15,17 @@ export async function GET(request: NextRequest) {
       throw new Error("Yahoo Fantasy access is still in provisioning mode");
     }
     if (!yahooCredentialsConfigured()) {
-      throw new Error("Yahoo OAuth credentials are not configured in the server environment");
+      const requiredVariables = [
+        "YAHOO_CLIENT_ID",
+        "YAHOO_CLIENT_SECRET",
+        "YAHOO_TOKEN_SECRET",
+      ] as const;
+      const missing = requiredVariables.filter((name) => !process.env[name]);
+      throw new Error(
+        missing.length
+          ? `Yahoo OAuth is missing server environment variable(s): ${missing.join(", ")}`
+          : "Yahoo OAuth credentials are not configured in the server environment",
+      );
     }
 
     const state = randomBytes(24).toString("base64url");
