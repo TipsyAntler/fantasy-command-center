@@ -17,7 +17,7 @@ export default function Nav() {
   return (
     <nav className="app-nav" aria-label="Fantasy Command Center">
       <Link className="brand-block" href="/" aria-label="Fantasy Command Center home">
-        <div className="brand-mark brand-mark-native" aria-hidden="true"><span>F</span><span>C</span></div>
+        <div className="brand-mark brand-mark-logo" aria-hidden="true" />
         <div className="brand-name">
           <span>FANTASY</span>
           <span className="command">COMMAND</span>
