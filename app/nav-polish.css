@@ -3,64 +3,34 @@
   padding: 0;
 }
 
-/* Sidebar logo is rendered from the existing repository SVG, avoiding the
-   browser's unreliable handling of the old image element while preserving
-   the actual FFCC artwork. */
 .brand-mark-logo {
   width: 74px;
   height: 74px;
   border-radius: 20px;
-  border: 1px solid rgba(51, 153, 255, .42);
-  background: #07111f url('/fcc-icon.svg') center / cover no-repeat;
+  border: 1px solid rgba(48, 145, 255, .42);
+  background: #07111f url('/fcc-icon.svg?v=2') center / cover no-repeat;
   box-shadow: 0 0 28px rgba(24, 119, 255, .12);
 }
 
-/* FFCC brand treatment: blue-spectrum command-center UI, not pastel teal/purple. */
-.brand-name .command { color: #39a9ff !important; }
-.brand-name .center { color: #6f8fff !important; }
-
-.kpi-link {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-  border-radius: 12px;
+/* One restrained blue-spectrum identity. Purple/teal are no longer brand colors. */
+:root {
+  --cc-cyan: #3b9cff;
+  --cc-purple: #3b82f6;
+  --cc-teal: #38a0ff;
+  --cc-line-strong: rgba(59, 156, 255, .28);
 }
 
-.kpi-link .kpi-card {
-  height: 100%;
-  transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease, background .16s ease;
-}
+.brand-name > span:first-child { color: #f5f8fc !important; }
+.brand-name .command,
+.brand-name .center { color: #3b9cff !important; }
 
-.kpi-link:hover .kpi-card,
-.kpi-link:focus-visible .kpi-card {
-  transform: translateY(-2px);
-  border-color: rgba(51,153,255,.38);
-  box-shadow: 0 10px 28px rgba(0,0,0,.18), 0 0 24px rgba(30,119,255,.08);
-  background: linear-gradient(145deg, rgba(15,30,52,.96), rgba(6,15,29,.98));
-}
-
-.kpi-link:focus-visible {
-  outline: 2px solid rgba(51,153,255,.72);
-  outline-offset: 2px;
-}
-
-.kpi-mini {
-  position: static;
-  display: inline-flex;
-  width: fit-content;
-  margin-top: 8px;
-  padding: 4px 7px;
-  border: 1px solid rgba(51,153,255,.2);
-  border-radius: 999px;
-  background: rgba(51,153,255,.06);
-  color: #75baff;
-  text-transform: uppercase;
-  letter-spacing: .07em;
-  line-height: 1;
-}
-
-.refresh-time { font-size: 20px; line-height: 1.08; white-space: nowrap; }
-.command-actions { flex-wrap: wrap; justify-content: flex-end; }
+.kpi-link { display:block; color:inherit; text-decoration:none; border-radius:12px; }
+.kpi-link .kpi-card { height:100%; transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,background .16s ease; }
+.kpi-link:hover .kpi-card,.kpi-link:focus-visible .kpi-card { transform:translateY(-2px); border-color:rgba(51,153,255,.38); box-shadow:0 10px 28px rgba(0,0,0,.18),0 0 24px rgba(30,119,255,.08); background:linear-gradient(145deg,rgba(15,30,52,.96),rgba(6,15,29,.98)); }
+.kpi-link:focus-visible { outline:2px solid rgba(51,153,255,.72); outline-offset:2px; }
+.kpi-mini { position:static; display:inline-flex; width:fit-content; margin-top:8px; padding:4px 7px; border:1px solid rgba(51,153,255,.2); border-radius:999px; background:rgba(51,153,255,.06); color:#75baff; text-transform:uppercase; letter-spacing:.07em; line-height:1; }
+.refresh-time { font-size:20px; line-height:1.08; white-space:nowrap; }
+.command-actions { flex-wrap:wrap; justify-content:flex-end; }
 .settings-button { width:38px; height:38px; display:inline-grid; place-items:center; flex:0 0 auto; border:1px solid var(--cc-line); border-radius:9px; color:#9fb0c2; background:rgba(255,255,255,.025); text-decoration:none; font-size:15px; transition:color .16s ease,border-color .16s ease,background .16s ease; }
 .settings-button:hover,.settings-button:focus-visible { color:#49aaff; border-color:rgba(51,153,255,.35); background:rgba(51,153,255,.06); }
 .nav-profile { color:inherit; text-decoration:none; }
