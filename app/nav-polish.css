@@ -1,28 +1,38 @@
-.brand-mark {
-  overflow: hidden;
-  padding: 0;
-}
+.brand-mark { overflow:hidden; padding:0; }
 
+/* Use the known-good app icon file directly. Cache-busting query prevents the
+   service worker/browser from serving the previously broken asset. */
 .brand-mark-logo {
   width: 74px;
   height: 74px;
+  flex: 0 0 74px;
   border-radius: 20px;
-  border: 1px solid rgba(48, 145, 255, .42);
-  background: #07111f url('/fcc-icon.svg?v=2') center / cover no-repeat;
-  box-shadow: 0 0 28px rgba(24, 119, 255, .12);
+  border: 1px solid rgba(45,139,255,.45);
+  background-color: #07111f;
+  background-image: url('/apple-touch-icon.png?v=ffcc-logo-2');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 28px rgba(24,119,255,.12);
 }
 
-/* One restrained blue-spectrum identity. Purple/teal are no longer brand colors. */
-:root {
-  --cc-cyan: #3b9cff;
-  --cc-purple: #3b82f6;
-  --cc-teal: #38a0ff;
-  --cc-line-strong: rgba(59, 156, 255, .28);
-}
-
-.brand-name > span:first-child { color: #f5f8fc !important; }
 .brand-name .command,
-.brand-name .center { color: #3b9cff !important; }
+.brand-name .center { color:#2f94ff !important; }
+
+/* Bottom account row: keep name and descriptor as distinct, readable lines. */
+.nav-profile {
+  color:inherit;
+  text-decoration:none;
+  display:grid !important;
+  grid-template-columns:52px minmax(0,1fr);
+  align-items:center;
+  column-gap:16px;
+  padding:20px 0;
+}
+.nav-profile > div:last-child { min-width:0; display:flex; flex-direction:column; align-items:flex-start; gap:5px; }
+.nav-profile strong { display:block; margin:0; color:#f4f7f9; font-size:16px; line-height:1.15; }
+.nav-profile span { display:block; margin:0; color:#6caeff; font-size:10px; line-height:1.45; font-weight:800; letter-spacing:.08em; text-transform:uppercase; white-space:normal; }
+.profile-dot { margin:0 !important; }
 
 .kpi-link { display:block; color:inherit; text-decoration:none; border-radius:12px; }
 .kpi-link .kpi-card { height:100%; transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,background .16s ease; }
@@ -33,7 +43,6 @@
 .command-actions { flex-wrap:wrap; justify-content:flex-end; }
 .settings-button { width:38px; height:38px; display:inline-grid; place-items:center; flex:0 0 auto; border:1px solid var(--cc-line); border-radius:9px; color:#9fb0c2; background:rgba(255,255,255,.025); text-decoration:none; font-size:15px; transition:color .16s ease,border-color .16s ease,background .16s ease; }
 .settings-button:hover,.settings-button:focus-visible { color:#49aaff; border-color:rgba(51,153,255,.35); background:rgba(51,153,255,.06); }
-.nav-profile { color:inherit; text-decoration:none; }
 .settings-hero { margin-bottom:18px; }
 .settings-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
 .settings-card { padding:18px; }
@@ -52,7 +61,7 @@
 
 @media (max-width:760px) {
   .app-nav { height:84px; padding:7px 8px max(7px,env(safe-area-inset-bottom)); }
-  .brand-mark-logo { width:38px; height:38px; border-radius:11px; }
+  .brand-mark-logo { width:38px; height:38px; flex-basis:38px; border-radius:11px; }
   .nav-link { min-width:58px; min-height:64px; padding:7px 4px; gap:5px; font-size:8.5px; line-height:1.05; font-weight:800; }
   .nav-glyph { width:28px; font-size:25px; line-height:1; filter:drop-shadow(0 0 8px rgba(51,153,255,.10)); }
   .nav-link.active .nav-glyph { filter:drop-shadow(0 0 10px rgba(51,153,255,.38)); }
