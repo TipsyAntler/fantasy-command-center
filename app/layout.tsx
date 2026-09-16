@@ -6,6 +6,7 @@ import "./globals.css";
 import "./command-center.css";
 import "./nav-polish.css";
 import "./breaking-news.css";
+import "./futuristic-theme.css";
 
 export const metadata: Metadata = {
   title: "Fantasy Command Center",
