@@ -1,38 +1,12 @@
 .brand-mark { overflow:hidden; padding:0; }
+.brand-mark-logo { width:74px; height:74px; flex:0 0 74px; border-radius:20px; border:1px solid rgba(45,139,255,.45); background:#07111f; box-shadow:0 0 28px rgba(24,119,255,.12); }
+.brand-name .command,.brand-name .center { color:#2f94ff !important; }
 
-/* Use the known-good app icon file directly. Cache-busting query prevents the
-   service worker/browser from serving the previously broken asset. */
-.brand-mark-logo {
-  width: 74px;
-  height: 74px;
-  flex: 0 0 74px;
-  border-radius: 20px;
-  border: 1px solid rgba(45,139,255,.45);
-  background-color: #07111f;
-  background-image: url('/apple-touch-icon.png?v=ffcc-logo-2');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  box-shadow: 0 0 28px rgba(24,119,255,.12);
-}
-
-.brand-name .command,
-.brand-name .center { color:#2f94ff !important; }
-
-/* Bottom account row: keep name and descriptor as distinct, readable lines. */
-.nav-profile {
-  color:inherit;
-  text-decoration:none;
-  display:grid !important;
-  grid-template-columns:52px minmax(0,1fr);
-  align-items:center;
-  column-gap:16px;
-  padding:20px 0;
-}
-.nav-profile > div:last-child { min-width:0; display:flex; flex-direction:column; align-items:flex-start; gap:5px; }
-.nav-profile strong { display:block; margin:0; color:#f4f7f9; font-size:16px; line-height:1.15; }
-.nav-profile span { display:block; margin:0; color:#6caeff; font-size:10px; line-height:1.45; font-weight:800; letter-spacing:.08em; text-transform:uppercase; white-space:normal; }
-.profile-dot { margin:0 !important; }
+.nav-profile { color:inherit; text-decoration:none; display:flex !important; align-items:center; gap:14px; padding:20px 0; }
+.nav-profile > div:last-child { min-width:0; display:block; }
+.nav-profile strong { display:block; margin:0 0 3px; color:#f4f7f9; font-size:16px; line-height:1.15; }
+.nav-profile span { display:block; margin:0; color:#6caeff; font-size:9px; line-height:1.35; font-weight:800; letter-spacing:.06em; text-transform:none; white-space:nowrap; }
+.profile-dot { flex:0 0 auto; margin:0 !important; }
 
 .kpi-link { display:block; color:inherit; text-decoration:none; border-radius:12px; }
 .kpi-link .kpi-card { height:100%; transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease,background .16s ease; }
