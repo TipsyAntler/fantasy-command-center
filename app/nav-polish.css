@@ -1,5 +1,5 @@
 .brand-mark { overflow:hidden; padding:0; }
-.brand-mark-logo { width:74px; height:74px; flex:0 0 74px; border-radius:20px; border:1px solid rgba(45,139,255,.45); background:#07111f; box-shadow:0 0 28px rgba(24,119,255,.12); }
+.brand-mark-logo { width:74px; height:74px; flex:0 0 74px; border-radius:20px; border:1px solid rgba(45,139,255,.45); background:#07111f url('/ffcc-logo.svg?v=1') center/cover no-repeat; box-shadow:0 0 28px rgba(24,119,255,.12); }
 .brand-name .command,.brand-name .center { color:#2f94ff !important; }
 
 .nav-profile { color:inherit; text-decoration:none; display:flex !important; align-items:center; gap:14px; padding:20px 0; }
@@ -59,7 +59,7 @@
   .command-link,.inline-action { font-size:10.5px; }
   .team-line,.intel-line { min-height:49px; }
   .intel-line small { font-size:8.5px; line-height:1.45; }
-  .meta,.count span,.signal-value span,.panel-note,.source-tag,.coming-pill,.muted-pill,.heat-pill { font-size:9px; }
+  .meta,.count span,.signal-value,.panel-note,.source-tag,.coming-pill,.muted-pill,.heat-pill { font-size:9px; }
   .player-row,.signal-row { padding-block:10px; }
   .push-alerts { align-items:stretch; flex-direction:column; padding:18px; }
   .push-alert-copy strong { font-size:20px; }
