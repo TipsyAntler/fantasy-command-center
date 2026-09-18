@@ -14,6 +14,7 @@ type StoredVapidKeys = { publicKey: string; privateKey: string };
 
 const STORE_KEY = "ffcc:push:primary";
 const TRIQ_STORE_KEY = "triq:push:primary";
+const TRIQ_SUBSCRIPTIONS_KEY = "triq:push:subscriptions";
 const VAPID_KEY = "ffcc:push:vapid";
 const SENT_TTL_SECONDS = 60 * 60 * 24 * 21;
 
@@ -63,14 +64,50 @@ function pushKey(channel: "ffcc" | "triq") {
   return channel === "triq" ? TRIQ_STORE_KEY : STORE_KEY;
 }
 
+function uniqueSubscriptions(subscriptions: StoredSubscription[]) {
+  const byEndpoint = new Map<string, StoredSubscription>();
+  for (const sub of subscriptions) {
+    if (sub?.endpoint) byEndpoint.set(sub.endpoint, sub);
+  }
+  return [...byEndpoint.values()];
+}
+
+export async function getPushSubscriptionsFor(channel: "ffcc" | "triq"): Promise<StoredSubscription[]> {
+  if (channel === "ffcc") {
+    const value = await redis(["GET", STORE_KEY]);
+    return value ? [JSON.parse(value) as StoredSubscription] : [];
+  }
+
+  const [manyRaw, legacyRaw] = await Promise.all([
+    redis(["GET", TRIQ_SUBSCRIPTIONS_KEY]),
+    redis(["GET", TRIQ_STORE_KEY]),
+  ]);
+  const many = manyRaw ? (JSON.parse(manyRaw) as StoredSubscription[]) : [];
+  const legacy = legacyRaw ? [JSON.parse(legacyRaw) as StoredSubscription] : [];
+  return uniqueSubscriptions([...many, ...legacy]);
+}
+
 export async function savePushSubscriptionFor(channel: "ffcc" | "triq", subscription: StoredSubscription) {
-  await redis(["SET", pushKey(channel), JSON.stringify(subscription)]);
+  if (channel === "ffcc") {
+    await redis(["SET", STORE_KEY, JSON.stringify(subscription)]);
+    return;
+  }
+  const existing = await getPushSubscriptionsFor("triq");
+  const merged = uniqueSubscriptions([...existing, subscription]);
+  await redis(["SET", TRIQ_SUBSCRIPTIONS_KEY, JSON.stringify(merged)]);
 }
 
 export async function getPushSubscriptionFor(channel: "ffcc" | "triq"): Promise<StoredSubscription | null> {
-  const value = await redis(["GET", pushKey(channel)]);
-  if (!value) return null;
-  return JSON.parse(value) as StoredSubscription;
+  const subscriptions = await getPushSubscriptionsFor(channel);
+  return subscriptions[0] || null;
+}
+
+export async function getPushSubscriptionByEndpoint(
+  channel: "ffcc" | "triq",
+  endpoint: string,
+): Promise<StoredSubscription | null> {
+  const subscriptions = await getPushSubscriptionsFor(channel);
+  return subscriptions.find((sub) => sub.endpoint === endpoint) || null;
 }
 
 export async function savePushSubscription(subscription: StoredSubscription) {
@@ -81,26 +118,77 @@ export async function getPushSubscription(): Promise<StoredSubscription | null> 
   return getPushSubscriptionFor("ffcc");
 }
 
-export async function sendPushTo(
-  channel: "ffcc" | "triq",
+async function sendToSubscription(
+  subscription: StoredSubscription,
   alert: { title: string; body: string; url: string; tag?: string; category?: string; severity?: string },
 ) {
-  const subscription = await getPushSubscriptionFor(channel);
-  if (!subscription) throw new Error(`No ${channel === "triq" ? "TrIQ" : "FFCC"} push subscription is registered.`);
-
   const vapid = await getOrCreateVapidKeys();
   const subject = process.env.PUSH_VAPID_SUBJECT || process.env.NEXT_PUBLIC_APP_URL || "https://fantasy-command-center-omega.vercel.app";
-
   webpush.setVapidDetails(subject, vapid.publicKey, vapid.privateKey);
-
   await webpush.sendNotification(subscription, JSON.stringify({
     title: alert.title,
     body: alert.body,
     url: alert.url,
-    tag: alert.tag || `${channel}-alert`,
-    category: alert.category || channel,
+    tag: alert.tag || "triq-alert",
+    category: alert.category || "system",
     severity: alert.severity || "actionable",
   }));
+}
+
+export async function sendPushToSubscription(
+  subscription: StoredSubscription,
+  alert: { title: string; body: string; url: string; tag?: string; category?: string; severity?: string },
+) {
+  await sendToSubscription(subscription, alert);
+}
+
+export async function sendPushTo(
+  channel: "ffcc" | "triq",
+  alert: { title: string; body: string; url: string; tag?: string; category?: string; severity?: string },
+) {
+  const subscriptions = await getPushSubscriptionsFor(channel);
+  if (!subscriptions.length) throw new Error(`No ${channel === "triq" ? "TrIQ" : "FFCC"} push subscription is registered.`);
+
+  if (channel === "ffcc") {
+    await sendToSubscription(subscriptions[0], alert);
+    return;
+  }
+
+  const valid: StoredSubscription[] = [];
+  let delivered = 0;
+  for (const subscription of subscriptions) {
+    try {
+      await sendToSubscription(subscription, alert);
+      valid.push(subscription);
+      delivered += 1;
+    } catch (error: any) {
+      const code = error?.statusCode;
+      if (code !== 404 && code !== 410) {
+        valid.push(subscription);
+        console.error("TrIQ push delivery failed", error);
+      }
+    }
+  }
+  await redis(["SET", TRIQ_SUBSCRIPTIONS_KEY, JSON.stringify(uniqueSubscriptions(valid))]);
+  if (!delivered) throw new Error("TrIQ push could not be delivered to any registered device.");
+}
+
+export async function sendPushToOnce(
+  channel: "ffcc" | "triq",
+  alertId: string,
+  alert: { title: string; body: string; url: string; tag?: string; category?: string; severity?: string },
+): Promise<boolean> {
+  const sentKey = `${channel}:push:sent:${alertId}`;
+  const claimed = await redis(["SET", sentKey, "1", "NX", "EX", String(SENT_TTL_SECONDS)]);
+  if (claimed !== "OK") return false;
+
+  try {
+    await sendPushTo(channel, alert);
+    return true;
+  } catch (error) {
+    await redis(["DEL", sentKey]).catch(() => undefined);
+    throw error;
+  }
 }
 
 export async function sendFfccPush(alert: FfccPushAlert) {
@@ -111,15 +199,5 @@ export async function sendFfccPush(alert: FfccPushAlert) {
 }
 
 export async function sendFfccPushOnce(alertId: string, alert: FfccPushAlert): Promise<boolean> {
-  const sentKey = `ffcc:push:sent:${alertId}`;
-  const claimed = await redis(["SET", sentKey, "1", "NX", "EX", String(SENT_TTL_SECONDS)]);
-  if (claimed !== "OK") return false;
-
-  try {
-    await sendFfccPush(alert);
-    return true;
-  } catch (error) {
-    await redis(["DEL", sentKey]).catch(() => undefined);
-    throw error;
-  }
+  return sendPushToOnce("ffcc", alertId, alert);
 }
