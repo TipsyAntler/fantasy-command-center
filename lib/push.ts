@@ -13,6 +13,7 @@ type StoredSubscription = webpush.PushSubscription;
 type StoredVapidKeys = { publicKey: string; privateKey: string };
 
 const STORE_KEY = "ffcc:push:primary";
+const TRIQ_STORE_KEY = "triq:push:primary";
 const VAPID_KEY = "ffcc:push:vapid";
 const SENT_TTL_SECONDS = 60 * 60 * 24 * 21;
 
@@ -58,19 +59,34 @@ export async function getOrCreateVapidKeys(): Promise<StoredVapidKeys> {
   return keys;
 }
 
-export async function savePushSubscription(subscription: StoredSubscription) {
-  await redis(["SET", STORE_KEY, JSON.stringify(subscription)]);
+function pushKey(channel: "ffcc" | "triq") {
+  return channel === "triq" ? TRIQ_STORE_KEY : STORE_KEY;
 }
 
-export async function getPushSubscription(): Promise<StoredSubscription | null> {
-  const value = await redis(["GET", STORE_KEY]);
+export async function savePushSubscriptionFor(channel: "ffcc" | "triq", subscription: StoredSubscription) {
+  await redis(["SET", pushKey(channel), JSON.stringify(subscription)]);
+}
+
+export async function getPushSubscriptionFor(channel: "ffcc" | "triq"): Promise<StoredSubscription | null> {
+  const value = await redis(["GET", pushKey(channel)]);
   if (!value) return null;
   return JSON.parse(value) as StoredSubscription;
 }
 
-export async function sendFfccPush(alert: FfccPushAlert) {
-  const subscription = await getPushSubscription();
-  if (!subscription) throw new Error("No FFCC push subscription is registered.");
+export async function savePushSubscription(subscription: StoredSubscription) {
+  await savePushSubscriptionFor("ffcc", subscription);
+}
+
+export async function getPushSubscription(): Promise<StoredSubscription | null> {
+  return getPushSubscriptionFor("ffcc");
+}
+
+export async function sendPushTo(
+  channel: "ffcc" | "triq",
+  alert: { title: string; body: string; url: string; tag?: string; category?: string; severity?: string },
+) {
+  const subscription = await getPushSubscriptionFor(channel);
+  if (!subscription) throw new Error(`No ${channel === "triq" ? "TrIQ" : "FFCC"} push subscription is registered.`);
 
   const vapid = await getOrCreateVapidKeys();
   const subject = process.env.PUSH_VAPID_SUBJECT || process.env.NEXT_PUBLIC_APP_URL || "https://fantasy-command-center-omega.vercel.app";
@@ -81,10 +97,17 @@ export async function sendFfccPush(alert: FfccPushAlert) {
     title: alert.title,
     body: alert.body,
     url: alert.url,
-    tag: alert.tag || `ffcc-${alert.category}-${alert.severity}`,
-    category: alert.category,
-    severity: alert.severity,
+    tag: alert.tag || `${channel}-alert`,
+    category: alert.category || channel,
+    severity: alert.severity || "actionable",
   }));
+}
+
+export async function sendFfccPush(alert: FfccPushAlert) {
+  await sendPushTo("ffcc", {
+    ...alert,
+    tag: alert.tag || `ffcc-${alert.category}-${alert.severity}`,
+  });
 }
 
 export async function sendFfccPushOnce(alertId: string, alert: FfccPushAlert): Promise<boolean> {
