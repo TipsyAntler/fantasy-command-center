@@ -15,6 +15,7 @@ type StoredVapidKeys = { publicKey: string; privateKey: string };
 const STORE_KEY = "ffcc:push:primary";
 const TRIQ_STORE_KEY = "triq:push:primary";
 const TRIQ_SUBSCRIPTIONS_KEY = "triq:push:subscriptions";
+// TrIQ supports multiple registered devices.
 const VAPID_KEY = "ffcc:push:vapid";
 const SENT_TTL_SECONDS = 60 * 60 * 24 * 21;
 
