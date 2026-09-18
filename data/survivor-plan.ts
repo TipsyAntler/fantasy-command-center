@@ -27,10 +27,10 @@ export type SurvivorWeekPlan = {
 export const survivorWeekPlan: SurvivorWeekPlan = {
   week: 2,
   status: "directional",
-  asOf: "Sep 16, 2026 · 7:21 PM ET · Wednesday injury and market refresh",
+  asOf: "Sep 17, 2026 · 11:54 PM ET · Thursday injury and market refresh",
   headline: "WEEK 2 DIRECTIONAL: E3 SF / E4 TB",
   summary:
-    "Only Entries 3 and 4 remain alive. Entry 3 used JAX in Week 1 and Entry 4 used DET. SF remains the clear Week 2 anchor and has strengthened from -12.5 to -13.5 while holding roughly a -900 moneyline. TB remains the preferred independent second leg at -8.5 / about -425: Baltimore is priced similarly, while Tampa Bay preserves the more useful Baltimore inventory and keeps the surviving entries on different outcomes. Wednesday injury news does not materially change the allocation. The plan remains directional pending late-week injuries, a fresh V1per41 update, final ownership, and the commissioner-sheet duplicate-history audit.",
+    "Only Entries 3 and 4 remain alive. Entry 3 used JAX in Week 1 and Entry 4 used DET. SF remains the clear Week 2 anchor at roughly -13.5 / -900 or stronger. TB remains the preferred independent second leg around -8.5 / -440: Baltimore is in the same general safety tier but carries more useful future inventory, while Tampa keeps the two surviving entries on different outcomes. Thursday injury and market news does not materially change the allocation. The plan remains directional pending Friday game statuses, a fresh V1per41 update, final ownership, and the commissioner-sheet duplicate-history audit.",
   entries: [
     {
       entryNumber: 1,
@@ -49,14 +49,14 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
       team: "SF",
       alternate: "BAL",
       confidence: "high",
-      rationale: "Entry 3 used JAX in Week 1, so SF is available. San Francisco remains the strongest current Week 2 option and the portfolio's maximum-survival anchor; the spread has strengthened to -13.5 while the moneyline remains around -900.",
+      rationale: "Entry 3 used JAX in Week 1, so SF is available. San Francisco remains the portfolio's maximum-survival anchor at roughly -13.5 with a moneyline around -900 or stronger; Thursday's 49ers injury developments do not materially weaken the matchup.",
     },
     {
       entryNumber: 4,
       team: "TB",
       alternate: "BAL",
       confidence: "medium",
-      rationale: "Entry 4 used DET in Week 1, so TB is available. Tampa Bay remains around -8.5 / -425 and is close enough to Baltimore in current-week safety to justify preserving BAL future inventory and keeping the two surviving entries independent.",
+      rationale: "Entry 4 used DET in Week 1, so TB is available. Tampa Bay remains around -8.5 / roughly -440 and close enough to Baltimore in current-week safety to justify preserving BAL future inventory and keeping the two surviving entries independent.",
     },
   ],
   inputs: [
@@ -68,22 +68,22 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     {
       label: "Current market",
       state: "live",
-      detail: "Sept. 16 market: SF -13.5 / roughly -900 vs MIA; TB -8.5 / roughly -425 vs CLE; BAL -8.5 / roughly -425 vs NO; PHI -7 / roughly -340 at TEN. SF has strengthened by about a point since the prior refresh; the market still supports E3 SF / E4 TB.",
+      detail: "Sept. 17 late market: SF about -13.5 / -900 or stronger vs MIA; TB about -8.5 / -440 vs CLE; BAL remains in the same general favorite tier vs NO. The market still supports E3 SF / E4 TB.",
     },
     {
       label: "Future inventory",
       state: "loaded",
-      detail: "Baltimore is currently priced similarly to Tampa Bay, but BAL carries more useful future spots. Tampa Bay remains close enough in current-week survival probability to justify the independent path.",
+      detail: "Baltimore remains a useful future asset. Tampa Bay is close enough in current-week survival probability to justify using TB as the independent second path while preserving BAL.",
     },
     {
       label: "Ownership",
       state: "live",
-      detail: "Early public Week 2 survivor usage remains directionally concentrated on SF and TB. Exact commissioner-pool ownership is still required before finalization.",
+      detail: "Public Week 2 survivor guidance remains concentrated on SF among the premier choices. Exact commissioner-pool ownership is still required before finalization.",
     },
     {
       label: "V1per41",
       state: "pending",
-      detail: "No credible fresh 2026 Week 2 V1per41 Survivor/Eliminator thread or spreadsheet update located in the latest Sept. 16 search. The prior season map had TB vs CLE for Week 2, but a current-week rerun is still needed before finalization.",
+      detail: "No credible fresh 2026 Week 2 V1per41 Survivor/Eliminator thread or spreadsheet update located in the latest Sept. 17 search. A current-week rerun is still needed before finalization.",
     },
     {
       label: "Used-team history",
@@ -93,7 +93,7 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     {
       label: "Finalization gate",
       state: "pending",
-      detail: "Do not mark FINAL until injuries, late-week market, final ownership, V1per41, commissioner-sheet duplicate history, and cross-entry path overlap are audited.",
+      detail: "Do not mark FINAL until Friday injuries/game statuses, late-week market, final ownership, V1per41, commissioner-sheet duplicate history, and cross-entry path overlap are audited.",
     },
   ],
 };
