@@ -18,6 +18,7 @@ const TRIQ_SUBSCRIPTIONS_KEY = "triq:push:subscriptions";
 // TrIQ supports multiple registered devices.
 const VAPID_KEY = "ffcc:push:vapid";
 const SENT_TTL_SECONDS = 60 * 60 * 24 * 21;
+const TRIQ_MONEY_BRIDGE_KEY = "triq:money:bridge-token";
 
 function getPushStoreConfig() {
   const url = process.env.KV_REST_API_URL || process.env.PUSH_STORE_URL;
@@ -190,6 +191,21 @@ export async function sendPushToOnce(
     await redis(["DEL", sentKey]).catch(() => undefined);
     throw error;
   }
+}
+
+export async function claimTriqMoneyBridgeToken(): Promise<string | null> {
+  const existing = await redis(["GET", TRIQ_MONEY_BRIDGE_KEY]);
+  if (existing) return null;
+
+  const token = (crypto.randomUUID() + crypto.randomUUID()).replace(/-/g, "");
+  const claimed = await redis(["SET", TRIQ_MONEY_BRIDGE_KEY, token, "NX"]);
+  return claimed === "OK" ? token : null;
+}
+
+export async function triqMoneyBridgeAuthorized(token: string | null): Promise<boolean> {
+  if (!token) return false;
+  const stored = await redis(["GET", TRIQ_MONEY_BRIDGE_KEY]);
+  return Boolean(stored && stored === token);
 }
 
 export async function sendFfccPush(alert: FfccPushAlert) {
