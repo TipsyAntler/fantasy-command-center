@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getPushSubscriptionFor, sendPushTo } from "@/lib/push";
+import { getPushSubscriptionByEndpoint, sendPushToSubscription } from "@/lib/push";
 
 export const dynamic = "force-dynamic";
 
@@ -34,12 +34,12 @@ export async function POST(request: Request) {
   }
   try {
     const { endpoint } = await request.json();
-    const stored = await getPushSubscriptionFor("triq");
-    if (!stored || !endpoint || stored.endpoint !== endpoint) {
-      return NextResponse.json({ ok: false, error: "This device is not the registered TrIQ push device." }, { status: 403, headers: cors(origin) });
+    const stored = endpoint ? await getPushSubscriptionByEndpoint("triq", endpoint) : null;
+    if (!stored) {
+      return NextResponse.json({ ok: false, error: "This device is not registered for TrIQ push." }, { status: 403, headers: cors(origin) });
     }
 
-    await sendPushTo("triq", {
+    await sendPushToSubscription(stored, {
       title: "TrIQ · Push is live",
       body: "Family HQ can reach this phone even when TrIQ is closed.",
       url: "https://tridente-family-hq.vercel.app/",
