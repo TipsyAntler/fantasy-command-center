@@ -27,10 +27,10 @@ export type SurvivorWeekPlan = {
 export const survivorWeekPlan: SurvivorWeekPlan = {
   week: 2,
   status: "directional",
-  asOf: "Sep 17, 2026 · 11:54 PM ET · Thursday injury and market refresh",
-  headline: "WEEK 2 DIRECTIONAL: E3 SF / E4 TB",
+  asOf: "Sep 18, 2026 · 1:48 PM ET · Friday submission audit",
+  headline: "WEEK 2 DIRECTIONAL: E3 SF / E4 TB · READY TO SUBMIT",
   summary:
-    "Only Entries 3 and 4 remain alive. Entry 3 used JAX in Week 1 and Entry 4 used DET. SF remains the clear Week 2 anchor at roughly -13.5 / -900 or stronger. TB remains the preferred independent second leg around -8.5 / -440: Baltimore is in the same general safety tier but carries more useful future inventory, while Tampa keeps the two surviving entries on different outcomes. Thursday injury and market news does not materially change the allocation. The plan remains directional pending Friday game statuses, a fresh V1per41 update, final ownership, and the commissioner-sheet duplicate-history audit.",
+    "Only Entries 3 and 4 remain alive. Entry 3 used JAX in Week 1 and Entry 4 used DET. SF remains the clear Week 2 anchor at roughly -13.5 / -900 or stronger. TB remains the preferred independent second leg around -8.5 / -440: Baltimore is in the same general safety tier but carries more useful future inventory, while Tampa keeps the two surviving entries on different outcomes. Thursday injury and market news does not materially change the allocation. The allocation remains E3 SF / E4 TB after the Friday submission audit. V1per41’s Week 2 post names TB as his top season-long pick (78% current-week, 0.90% win-out) and SF second (87% current-week, 0.87% win-out), which supports using both across the two-entry portfolio. The plan is operationally ready to submit, but remains labeled directional because the linked MediaFire workbook could not be fully inspected in-environment.",
   entries: [
     {
       entryNumber: 1,
@@ -68,7 +68,7 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     {
       label: "Current market",
       state: "live",
-      detail: "Sept. 17 late market: SF about -13.5 / -900 or stronger vs MIA; TB about -8.5 / -440 vs CLE; BAL remains in the same general favorite tier vs NO. The market still supports E3 SF / E4 TB.",
+      detail: "Sept. 18 market: SF about -13.5 / -900 vs MIA; TB about -8.5 / -455 vs CLE. Both remain strong favorites, with SF the safety anchor and TB the better low-future-value second leg. The market still supports E3 SF / E4 TB.",
     },
     {
       label: "Future inventory",
@@ -83,7 +83,7 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     {
       label: "V1per41",
       state: "pending",
-      detail: "No credible fresh 2026 Week 2 V1per41 Survivor/Eliminator thread or spreadsheet update located in the latest Sept. 17 search. A current-week rerun is still needed before finalization.",
+      detail: "V1per41 Week 2 post is live: TB ranks #1 season-long at 78% current-week / 0.90% P(Win Out), SF #2 at 87% / 0.87%. The linked workbook was located, but the MediaFire download could not be fully retrieved for formula/input inspection in-environment, so the post is incorporated while the workbook audit remains incomplete.",
     },
     {
       label: "Used-team history",
@@ -93,7 +93,7 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     {
       label: "Finalization gate",
       state: "pending",
-      detail: "Do not mark FINAL until Friday injuries/game statuses, late-week market, final ownership, V1per41, commissioner-sheet duplicate history, and cross-entry path overlap are audited.",
+      detail: "Operationally ready to submit E3 SF / E4 TB. Keep status directional until the V1per41 workbook itself can be fully inspected/reconciled, per the project finalization gate.",
     },
   ],
 };
