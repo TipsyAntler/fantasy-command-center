@@ -25,75 +25,30 @@ export type SurvivorWeekPlan = {
 };
 
 export const survivorWeekPlan: SurvivorWeekPlan = {
-  week: 2,
+  week: 3,
   status: "directional",
-  asOf: "Sep 18, 2026 · 1:48 PM ET · Friday submission audit",
-  headline: "WEEK 2 DIRECTIONAL: E3 SF / E4 TB · READY TO SUBMIT",
+  asOf: "Sep 21, 2026 · early Monday opening-line audit",
+  headline: "WEEK 3 DIRECTIONAL: E3 KC · ONE ENTRY REMAINS",
   summary:
-    "Only Entries 3 and 4 remain alive. Entry 3 used JAX in Week 1 and Entry 4 used DET. SF remains the clear Week 2 anchor at roughly -13.5 / -900 or stronger. TB remains the preferred independent second leg around -8.5 / -440: Baltimore is in the same general safety tier but carries more useful future inventory, while Tampa keeps the two surviving entries on different outcomes. Thursday injury and market news does not materially change the allocation. The allocation remains E3 SF / E4 TB after the Friday submission audit. V1per41’s Week 2 post names TB as his top season-long pick (78% current-week, 0.90% win-out) and SF second (87% current-week, 0.87% win-out), which supports using both across the two-entry portfolio. The plan is operationally ready to submit, but remains labeled directional because the linked MediaFire workbook could not be fully inspected in-environment.",
+    "Week 2 is complete for the survivor portfolio: Entry 3 advanced with SF, while Entry 4 was eliminated by Tampa Bay's 23-19 loss to Cleveland. Entries 1 and 2 were already eliminated in Week 1, so Entry 3 is the sole survivor. Its used-team history is JAX (Week 1) and SF (Week 2). Kansas City opens as the clear Week 3 directional anchor at roughly -10.5 at Miami, the largest favorite on the early board. Keep this directional until V1per41 posts Week 3, the workbook is inspected/reconciled, ownership and injury news develop, and the final market is audited.",
   entries: [
-    {
-      entryNumber: 1,
-      team: "ELIMINATED",
-      confidence: "low",
-      rationale: "Eliminated in Week 1 on LAC.",
-    },
-    {
-      entryNumber: 2,
-      team: "ELIMINATED",
-      confidence: "low",
-      rationale: "Eliminated in Week 1 on LAC.",
-    },
+    { entryNumber: 1, team: "ELIMINATED", confidence: "low", rationale: "Eliminated in Week 1 on LAC." },
+    { entryNumber: 2, team: "ELIMINATED", confidence: "low", rationale: "Eliminated in Week 1 on LAC." },
     {
       entryNumber: 3,
-      team: "SF",
-      alternate: "BAL",
+      team: "KC",
+      alternate: "SF",
       confidence: "high",
-      rationale: "Entry 3 used JAX in Week 1, so SF is available. San Francisco remains the portfolio's maximum-survival anchor at roughly -13.5 with a moneyline around -900 or stronger; Thursday's 49ers injury developments do not materially weaken the matchup.",
+      rationale: "Sole surviving entry used JAX then SF. KC is available and opens around -10.5 at Miami, the strongest early Week 3 favorite. SF is not a legal alternate for this entry because it was used in Week 2; retained here only as a market-comparison benchmark, not a selectable pick.",
     },
-    {
-      entryNumber: 4,
-      team: "TB",
-      alternate: "BAL",
-      confidence: "medium",
-      rationale: "Entry 4 used DET in Week 1, so TB is available. Tampa Bay remains around -8.5 / roughly -440 and close enough to Baltimore in current-week safety to justify preserving BAL future inventory and keeping the two surviving entries independent.",
-    },
+    { entryNumber: 4, team: "ELIMINATED", confidence: "low", rationale: "Eliminated in Week 2 on TB after using DET in Week 1." },
   ],
   inputs: [
-    {
-      label: "Portfolio objective",
-      state: "loaded",
-      detail: "Keep one SF anchor and one independent second leg rather than putting both surviving entries on the same team when the safety gap is not large enough to justify correlated elimination risk.",
-    },
-    {
-      label: "Current market",
-      state: "live",
-      detail: "Sept. 18 market: SF about -13.5 / -900 vs MIA; TB about -8.5 / -455 vs CLE. Both remain strong favorites, with SF the safety anchor and TB the better low-future-value second leg. The market still supports E3 SF / E4 TB.",
-    },
-    {
-      label: "Future inventory",
-      state: "loaded",
-      detail: "Baltimore remains a useful future asset. Tampa Bay is close enough in current-week survival probability to justify using TB as the independent second path while preserving BAL.",
-    },
-    {
-      label: "Ownership",
-      state: "live",
-      detail: "Public Week 2 survivor guidance remains concentrated on SF among the premier choices. Exact commissioner-pool ownership is still required before finalization.",
-    },
-    {
-      label: "V1per41",
-      state: "pending",
-      detail: "V1per41 Week 2 post is live: TB ranks #1 season-long at 78% current-week / 0.90% P(Win Out), SF #2 at 87% / 0.87%. The linked workbook was located, but the MediaFire download could not be fully retrieved for formula/input inspection in-environment, so the post is incorporated while the workbook audit remains incomplete.",
-    },
-    {
-      label: "Used-team history",
-      state: "loaded",
-      detail: "Entry 3 used JAX in Week 1; Entry 4 used DET. Entries 1 and 2 are eliminated after using LAC.",
-    },
-    {
-      label: "Finalization gate",
-      state: "pending",
-      detail: "Operationally ready to submit E3 SF / E4 TB. Keep status directional until the V1per41 workbook itself can be fully inspected/reconciled, per the project finalization gate.",
-    },
+    { label: "Used-team history", state: "loaded", detail: "Entry 3: JAX Week 1, SF Week 2. Entries 1-2 eliminated Week 1 on LAC. Entry 4: DET Week 1, eliminated Week 2 on TB." },
+    { label: "Current market", state: "live", detail: "Early Week 3: KC opens about -10.5 at Miami, ahead of SF around -8.5 vs Arizona, GB around -7 vs Atlanta and BUF around -7 vs the Chargers." },
+    { label: "Portfolio state", state: "loaded", detail: "Only Entry 3 remains alive, so cross-entry diversification is no longer applicable. Optimize the single surviving path for full-season survival and future inventory." },
+    { label: "V1per41", state: "pending", detail: "No verified Week 3 V1per41 post/workbook found in the early Monday audit. When posted, inspect and reconcile the workbook probability matrix, formulas and post before finalizing." },
+    { label: "Ownership", state: "pending", detail: "Week 3 ownership is not mature yet. Recheck commissioner-pool/public ownership as the week develops." },
+    { label: "Finalization gate", state: "pending", detail: "KC is directional only. Do not mark FINAL until V1per41 workbook, injuries, market, ownership, legal used-team history and future-path opportunity cost are fully audited." },
   ],
 };
