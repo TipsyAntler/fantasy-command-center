@@ -21,10 +21,10 @@ export const manualLeagues: ManualLeague[] = [
     leagueName: "NFL FF BIG Money League - S8",
     leagueId: "890742",
     teamName: "Bower's Castle",
-    snapshotLabel: "Manual snapshot updated after Week 3 waivers Sep 23",
+    snapshotLabel: "Manual snapshot updated Sep 23 after Daniels IR / Stroud add",
     format: "12 teams · Half PPR · 3 WR + FLEX · no kicker",
     roster: [
-      { name: "Jayden Daniels", position: "QB", slot: "QB" },
+      { name: "C.J. Stroud", position: "QB", slot: "QB" },
       { name: "Tony Pollard", position: "RB", slot: "RB" },
       { name: "TreVeyon Henderson", position: "RB", slot: "RB" },
       { name: "Tee Higgins", position: "WR", slot: "WR" },
@@ -38,10 +38,10 @@ export const manualLeagues: ManualLeague[] = [
       { name: "Brian Robinson Jr.", position: "RB", slot: "BN" },
       { name: "Emanuel Wilson", position: "RB", slot: "BN" },
       { name: "Dontayvion Wicks", position: "WR", slot: "BN" },
-      { name: "Chris Brooks", position: "RB", slot: "BN" },
+      { name: "Jauan Jennings", position: "WR", slot: "BN" },
     ],
     ir: [
-      { name: "Jauan Jennings", position: "WR", slot: "IR" },
+      { name: "Jayden Daniels", position: "QB", slot: "IR" },
     ],
   },
   {
