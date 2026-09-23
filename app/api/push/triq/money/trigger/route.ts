@@ -21,7 +21,7 @@ export async function GET(request: Request) {
     const url = new URL(request.url);
     const token = url.searchParams.get("token");
     if (!(await triqMoneyBridgeAuthorized(token))) return NextResponse.json({ ok: false, error: "Unauthorized." }, { status: 401 });
-    const event = clean(url.searchParams.get("event"), 30).toLowerCase();
+    const event = String(url.searchParams.get("event") || "").toLowerCase().replace(/[^a-z0-9_]/g, "").slice(0, 30);
     const copy = COPY[event];
     if (!copy) return NextResponse.json({ ok: false, error: "Unknown money alert event." }, { status: 400 });
     const item = clean(url.searchParams.get("item"), 60);
