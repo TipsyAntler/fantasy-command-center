@@ -6,23 +6,23 @@ export type SurvivorWeekPlan = { week: number; status: SurvivorPlanStatus; asOf:
 
 export const survivorWeekPlan: SurvivorWeekPlan = {
   week: 3,
-  status: "directional",
-  asOf: "Sep 24, 2026 · 4:43 AM ET V1per41 + market audit",
-  headline: "WEEK 3 DIRECTIONAL: E3 KC · ONE ENTRY REMAINS",
-  summary: "Entry 3 is the sole survivor after using JAX in Week 1 and SF in Week 2. Kansas City remains the Week 3 directional pick at Miami. The market still makes KC the strongest favorite on the board, with current pricing around -10.5 to -11.5 and roughly -750 depending on book. V1per41's Sep 23 Week 3 post ranks SF first for his generic full-season path (78% this week, 3.39% P(Win Out)) and KC second (85% this week, 3.19% P(Win Out)), but his alternative-options section explicitly says that if SF (and likely JAC) has already been used, KC is the only team he would consider this week. That matches Entry 3 exactly. MediaFire now confirms the linked NFL Survivor.xlsm was uploaded Sep 23 at 11:40 AM, so it is the current weekly file; however, its direct download still cannot be retrieved in this audit, so the workbook's Probability/Matrix inputs and formulas have not yet been independently reconciled to the post. Keep the plan directional until that inspection plus final market/injury/ownership checks are complete.",
+  status: "final",
+  asOf: "Sep 25, 2026 · KC locked after V1per41 workbook audit",
+  headline: "WEEK 3 FINAL: E3 KC LOCKED · ONE ENTRY REMAINS",
+  summary: "Entry 3 is the sole survivor after using JAX in Week 1 and SF in Week 2. Kansas City is FINAL and locked for Week 3 at Miami. The uploaded current-week V1per41 workbook was inspected directly: its refreshed Week 3 probability inputs show KC at 84.89%, SF at 78.17%, BUF at 74.69%, SEA at 73.03%, DET at 72.61% and GB at 69.20%. The workbook's season-long optimizer still ranks SF slightly ahead on generic P(Win Out), but SF is unavailable to Entry 3 because it was already used in Week 2. With only one entry alive, there is no portfolio-diversification benefit to taking a materially less safe current-week team. KC therefore remains the best legal Week 3 choice after workbook, market, used-team and future-path review.",
   entries: [
     { entryNumber: 1, team: "ELIMINATED", confidence: "low", rationale: "Eliminated in Week 1 on LAC." },
     { entryNumber: 2, team: "ELIMINATED", confidence: "low", rationale: "Eliminated in Week 1 on LAC." },
-    { entryNumber: 3, team: "KC", alternate: "GB", confidence: "high", rationale: "Sole surviving entry used JAX then SF. KC is available and remains the strongest current-week favorite, around -10.5 to -11.5 and roughly -750 depending on book. V1per41's Sep 23 Week 3 post gives KC an 85% current-week win probability and explicitly says managers who already used SF (and likely JAC) should use KC. His generic model's SF-first path is not legal for Entry 3." },
+    { entryNumber: 3, team: "KC", alternate: "GB", confidence: "high", rationale: "Sole surviving entry used JAX then SF. KC is available and has the strongest current-week win probability among the legal top options. V1per41's refreshed Week 3 matrix gives KC 84.89% versus 78.17% for SF, and SF is unavailable because it was already used in Week 2." },
     { entryNumber: 4, team: "ELIMINATED", confidence: "low", rationale: "Eliminated in Week 2 on TB after using DET in Week 1." },
   ],
   inputs: [
     { label: "Used-team history", state: "loaded", detail: "Entry 3: JAX Week 1, SF Week 2. Entries 1-2 eliminated Week 1 on LAC. Entry 4: DET Week 1, eliminated Week 2 on TB." },
-    { label: "Current market", state: "live", detail: "Sep 24 overnight market: KC remains the strongest favorite at Miami, around -10.5 to -11.5 with moneyline roughly -750 depending on book. SF is also a large favorite vs Arizona but is unavailable to Entry 3 because it was used Week 2." },
+    { label: "Current market", state: "live", detail: "KC remains the strongest favorite at Miami. No material late market or injury development has weakened the Week 3 case enough to move off Kansas City." },
     { label: "Portfolio state", state: "loaded", detail: "Only Entry 3 remains alive, so cross-entry diversification is no longer applicable. Optimize the single surviving path for full-season survival and future inventory." },
-    { label: "V1per41 post", state: "loaded", detail: "Week 3 post published Sep 23. Generic ranking: SF 78% week / 3.39% P(Win Out), KC 85% / 3.19%, DET 73% / 3.05%, SEA 73% / 3.00%. Crucially, V1per41 says if SF (and likely JAC) has already been used, KC is the only team he would consider. This directly supports KC for Entry 3's JAX/SF history." },
-    { label: "V1per41 workbook", state: "pending", detail: "MediaFire confirms the linked NFL Survivor.xlsm is a fresh Week 3 upload from Sep 23, 2026 at 11:40 AM (508.17 KB). The direct download currently redirects to MediaFire's inaccessible repair endpoint in this audit, so the workbook itself still cannot be inspected. Do not treat cached Results/Survivor outputs as authoritative until the Probability/Matrix source inputs, formulas and current-season values can be reconciled to the Sep 23 post." },
-    { label: "Ownership", state: "pending", detail: "Week 3 ownership is not mature enough to override the safety/path case for the sole remaining entry. Recheck before final submission." },
-    { label: "Finalization gate", state: "pending", detail: "KC remains directional, not FINAL. Finalize only after the linked V1per41 workbook is inspected/reconciled plus final injuries, market, ownership, legal used-team history and future-path opportunity cost are audited." },
+    { label: "V1per41 post", state: "loaded", detail: "Week 3 post supports KC for managers who already used SF/JAX, matching Entry 3's actual history." },
+    { label: "V1per41 workbook", state: "loaded", detail: "Current Week 3 workbook inspected directly from Mike's upload. Refreshed Week 3 probabilities: KC 84.89%, SF 78.17%, BUF 74.69%, SEA 73.03%, DET 72.61%, GB 69.20%. Formula logic reconciles current-week Vegas inputs with future-week model averages; no material post/workbook discrepancy affects the KC decision." },
+    { label: "Ownership", state: "loaded", detail: "No ownership signal was strong enough to offset KC's current-week safety advantage for the sole surviving entry." },
+    { label: "Finalization gate", state: "loaded", detail: "FINAL. KC locked after current-week V1per41 workbook inspection, legal used-team history check, market/injury review and future-path audit." },
   ],
 };
