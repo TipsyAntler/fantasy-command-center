@@ -21,10 +21,10 @@ export const manualLeagues: ManualLeague[] = [
     leagueName: "NFL FF BIG Money League - S8",
     leagueId: "890742",
     teamName: "Bower's Castle",
-    snapshotLabel: "Manual snapshot updated Sep 23 from latest Week 3 Yahoo screenshots",
+    snapshotLabel: "Manual snapshot updated Sep 25 · Sam Darnold added for C.J. Stroud",
     format: "12 teams · Half PPR · 3 WR + FLEX · no kicker",
     roster: [
-      { name: "C.J. Stroud", position: "QB", slot: "QB" },
+      { name: "Sam Darnold", position: "QB", slot: "QB" },
       { name: "Tony Pollard", position: "RB", slot: "RB" },
       { name: "TreVeyon Henderson", position: "RB", slot: "RB" },
       { name: "Tee Higgins", position: "WR", slot: "WR" },
