@@ -3,7 +3,7 @@ import { LocalGreeting, LocalRefreshTime } from "@/components/LocalDashboardTime
 import { getDashboardData, getRosterWatch } from "@/lib/sleeper";
 import { getSurvivorSnapshot } from "@/lib/google-survivor";
 import { manualLeagues, rosterPlayerNames } from "@/data/manual-leagues";
-import { week1PoolGames, week1Tiebreaker } from "@/data/pickem-week1";
+import { week3PoolGames, week3Tiebreaker } from "@/data/pickem-week3";
 import styles from "./home.module.css";
 
 export const revalidate = 300;
@@ -33,7 +33,7 @@ export default async function Home() {
   const survivorAlive = survivorEntries.length ? survivorEntries.filter((entry) => entry.alive).length : 4;
   const survivorHealthy = survivor.connected && !survivor.error;
   const sleeperHealthy = !data.errors.players && !data.errors.trends;
-  const strongestPoolEdges = week1PoolGames.filter((game) => game.confidence >= 5).length;
+  const strongestPoolEdges = week3PoolGames.filter((game) => game.confidence >= 5).length;
 
   return (
     <main>
@@ -99,12 +99,12 @@ export default async function Home() {
           <Link href="/pickem" className={styles.focusCard}>
             <div className={styles.cardTop}>
               <span className={styles.cardKicker}>THE SZN · ATS PICK&apos;EM</span>
-              <span className={styles.cardState}>{week1PoolGames.length} picks loaded</span>
+              <span className={styles.cardState}>{week3PoolGames.length} picks loaded</span>
             </div>
             <h2>Pick&apos;em Room</h2>
             <p className={styles.actionHeadline}>Get the card in early, then only revisit meaningful movers.</p>
             <p className={styles.actionNote}>
-              {strongestPoolEdges} current plays carry top confidence against the frozen SZN lines. Early Monday-night tiebreaker target: {week1Tiebreaker.earlyFfccTarget} total points.
+              {strongestPoolEdges} current plays carry top confidence against the frozen SZN lines. Early Monday-night tiebreaker target: {week3Tiebreaker.earlyFfccTarget} total points.
             </p>
             <div className={styles.cardFoot}><span>Review ATS card</span><span>→</span></div>
           </Link>
