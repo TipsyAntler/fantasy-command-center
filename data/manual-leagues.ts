@@ -20,7 +20,7 @@ export const manualLeagues: ManualLeague[] = [
     key: "bm",
     leagueName: "NFL FF BIG Money League - S8",
     leagueId: "890742",
-    teamName: "Bower's Castle",
+    teamName: "Bowers' Castle",
     snapshotLabel: "Manual snapshot updated Sep 26 · Vikings D/ST added for Patriots D/ST",
     format: "12 teams · Half PPR · 3 WR + FLEX · no kicker",
     roster: [
