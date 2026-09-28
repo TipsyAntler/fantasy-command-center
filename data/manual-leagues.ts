@@ -49,7 +49,7 @@ export const manualLeagues: ManualLeague[] = [
     leagueName: "Legendary LeBlanc League",
     leagueId: "864304",
     teamName: "LaPorta Potty",
-    snapshotLabel: "Manual snapshot updated Sep 25 · Evan McPherson added for Harrison Mevis",
+    snapshotLabel: "Manual snapshot updated Sep 28 · Dontayvion Wicks added for Khalil Shakir",
     format: "10 teams · Half PPR · 2 WR + FLEX · K + DEF",
     roster: [
       { name: "Brock Purdy", position: "QB", slot: "QB" },
@@ -64,7 +64,7 @@ export const manualLeagues: ManualLeague[] = [
       { name: "DK Metcalf", position: "WR", slot: "BN" },
       { name: "RJ Harvey", position: "RB", slot: "BN" },
       { name: "Kyle Monangai", position: "RB", slot: "BN" },
-      { name: "Khalil Shakir", position: "WR", slot: "BN" },
+      { name: "Dontayvion Wicks", position: "WR", slot: "BN" },
       { name: "Tyler Allgeier", position: "RB", slot: "BN" },
       { name: "Kaelon Black", position: "RB", slot: "BN" },
     ],
