@@ -24,7 +24,6 @@ export default async function PickemPage() {
   const boardIsCurrent = currentWeek === week4Number;
   const games = boardIsCurrent ? week4PoolGames : [];
   const strong = games.filter((game) => game.confidence >= 4);
-  const thin = games.filter((game) => game.confidence <= 2);
 
   return (
     <main>
