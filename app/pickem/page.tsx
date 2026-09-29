@@ -1,13 +1,14 @@
 import AtAGlance from "@/components/AtAGlance";
 import { getDashboardData } from "@/lib/sleeper";
 import {
-  week3MarketAsOf,
-  week3Number,
-  week3PoolGames,
-  week3PoolName,
-  week3PoolStatus,
-  week3Tiebreaker,
-} from "@/data/pickem-week3";
+  week4MarketAsOf,
+  week4Number,
+  week4PoolGames,
+  week4PoolName,
+  week4PoolStatus,
+  week4Tiebreaker,
+  week4Standing,
+} from "@/data/pickem-week4";
 import styles from "./pickem.module.css";
 
 export const dynamic = "force-dynamic";
@@ -18,10 +19,10 @@ function lineLabel(team: string, line: number) {
 
 export default async function PickemPage() {
   const dashboard = await getDashboardData();
-  const rawWeek = Number(dashboard.state?.display_week ?? dashboard.state?.week ?? week3Number);
-  const currentWeek = Number.isFinite(rawWeek) && rawWeek > 0 ? rawWeek : week3Number;
-  const boardIsCurrent = currentWeek === week3Number;
-  const games = boardIsCurrent ? week3PoolGames : [];
+  const rawWeek = Number(dashboard.state?.display_week ?? dashboard.state?.week ?? week4Number);
+  const currentWeek = Number.isFinite(rawWeek) && rawWeek > 0 ? rawWeek : week4Number;
+  const boardIsCurrent = currentWeek === week4Number;
+  const games = boardIsCurrent ? week4PoolGames : [];
   const strong = games.filter((game) => game.confidence >= 4);
   const thin = games.filter((game) => game.confidence <= 2);
 
@@ -42,17 +43,17 @@ export default async function PickemPage() {
         ) : (
           <>
             <AtAGlance items={[
+              { label: "Season standing", value: `#${week4Standing.rank}`, note: `${week4Standing.correct} correct · leader ${week4Standing.leaderCorrect}`, tone: "accent" },
               { label: "Pool picks loaded", value: `${games.length} / 16`, note: `Exact Week ${currentWeek} frozen lines captured`, tone: "accent" },
               { label: "Strongest current edges", value: `${strong.length}`, note: strong.map((game) => lineLabel(game.poolPick, game.poolLine)).join(" · "), tone: "good" },
-              { label: "Thin / coin-flip picks", value: `${thin.length}`, note: thin.map((game) => `${game.away}/${game.home}`).join(" · "), tone: "warn" },
-              { label: "MNF tiebreaker", value: `${week3Tiebreaker.earlyFfccTarget}`, note: `${week3Tiebreaker.matchup} · live total ${week3Tiebreaker.currentMarketTotal} · early target` },
+              { label: "MNF tiebreaker", value: `${week4Tiebreaker.earlyFfccTarget}`, note: `${week4Tiebreaker.matchup} · live total ${week4Tiebreaker.currentMarketTotal} · early target` },
             ]} />
 
-            <div className={styles.topNote}><strong>{week3PoolStatus}.</strong> These are the exact Week {currentWeek} spreads from your {week3PoolName} screenshots. Later market movement is stale-line information; it never replaces the frozen pool number.</div>
+            <div className={styles.topNote}><strong>{week4PoolStatus}.</strong> These are the exact Week {currentWeek} spreads from your {week4PoolName} screenshots. Later market movement is stale-line information; it never replaces the frozen pool number.</div>
 
             <section className="section-heading">
               <div><div className="eyebrow">FFCC WEEK {currentWeek} CARD</div><h2>Provisional picks. Tap any game for the why.</h2></div>
-              <span className="source-tag">{week3MarketAsOf}</span>
+              <span className="source-tag">{week4MarketAsOf}</span>
             </section>
 
             <section className={styles.board} aria-label={`Week ${currentWeek} ATS picks`}>
@@ -75,8 +76,8 @@ export default async function PickemPage() {
             </section>
 
             <section className="panel survivor-template second-heading">
-              <div className="panel-head"><div><span className="panel-kicker">WEEK {currentWeek} TIEBREAKER</span><h3>{week3Tiebreaker.matchup} total points</h3></div><span className="saved-pill">Early FFCC target: {week3Tiebreaker.earlyFfccTarget}</span></div>
-              <div className="decision-grid"><div><span>Pool asks</span><strong>{week3Tiebreaker.label}</strong></div><div><span>Current market total</span><strong>{week3Tiebreaker.currentMarketTotal}</strong></div><div className="span-2"><span>FFCC process</span><strong>{week3Tiebreaker.note}</strong></div></div>
+              <div className="panel-head"><div><span className="panel-kicker">WEEK {currentWeek} TIEBREAKER</span><h3>{week4Tiebreaker.matchup} total points</h3></div><span className="saved-pill">Early FFCC target: {week4Tiebreaker.earlyFfccTarget}</span></div>
+              <div className="decision-grid"><div><span>Pool asks</span><strong>{week4Tiebreaker.label}</strong></div><div><span>Current market total</span><strong>{week4Tiebreaker.currentMarketTotal}</strong></div><div className="span-2"><span>FFCC process</span><strong>{week4Tiebreaker.note}</strong></div></div>
             </section>
           </>
         )}
