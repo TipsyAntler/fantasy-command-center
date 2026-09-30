@@ -33,7 +33,7 @@ export default async function Home() {
   const survivorAlive = survivorEntries.length ? survivorEntries.filter((entry) => entry.alive).length : 1;
   const survivorHealthy = survivor.connected && !survivor.error;
   const sleeperHealthy = !data.errors.players && !data.errors.trends;
-  const strongestPoolEdges = week4PoolGames.filter((game) => game.confidence >= 5).length;
+  const strongestPoolEdges = week4PoolGames.filter((game) => game.confidence >= 3).length;
 
   return (
     <main>
@@ -104,7 +104,7 @@ export default async function Home() {
             <h2>Pick&apos;em Room</h2>
             <p className={styles.actionHeadline}>Get the card in early, then only revisit meaningful movers.</p>
             <p className={styles.actionNote}>
-              Week 4 lines are loaded. You are #{week4Standing.rank} with {week4Standing.correct} correct; {strongestPoolEdges} current plays carry top confidence. Early Monday-night tiebreaker target: {week4Tiebreaker.earlyFfccTarget}.
+              Week 4 lines are loaded. You are #{week4Standing.rank} with {week4Standing.correct} correct; {strongestPoolEdges} picks have a frozen-number advantage, with modest confidence. Early Monday-night tiebreaker target: {week4Tiebreaker.earlyFfccTarget}.
             </p>
             <div className={styles.cardFoot}><span>Review ATS card</span><span>→</span></div>
           </Link>

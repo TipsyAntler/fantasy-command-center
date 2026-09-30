@@ -22,7 +22,7 @@ export default async function PickemPage() {
   const currentWeek = getPlanningWeek(dashboard.state, week4Number, "2026-10-06T04:00:00-04:00");
   const boardIsCurrent = currentWeek === week4Number;
   const games = boardIsCurrent ? week4PoolGames : [];
-  const strong = games.filter((game) => game.confidence >= 4);
+  const strong = games.filter((game) => game.confidence >= 3);
 
   return (
     <main>
@@ -43,11 +43,13 @@ export default async function PickemPage() {
             <AtAGlance items={[
               { label: "Season standing", value: `#${week4Standing.rank}`, note: `${week4Standing.correct} correct · leader ${week4Standing.leaderCorrect}`, tone: "accent" },
               { label: "Pool picks loaded", value: `${games.length} / 16`, note: `Exact Week ${currentWeek} frozen lines captured`, tone: "accent" },
-              { label: "Strongest current edges", value: `${strong.length}`, note: strong.map((game) => lineLabel(game.poolPick, game.poolLine)).join(" · "), tone: "good" },
+              { label: "Frozen-number advantages", value: `${strong.length}`, note: strong.map((game) => lineLabel(game.poolPick, game.poolLine)).join(" · "), tone: "good" },
               { label: "MNF tiebreaker", value: `${week4Tiebreaker.earlyFfccTarget}`, note: `${week4Tiebreaker.matchup} · live total ${week4Tiebreaker.currentMarketTotal} · early target` },
             ]} />
 
             <div className={styles.topNote}><strong>{week4PoolStatus}.</strong> These are the exact Week {currentWeek} spreads from your {week4PoolName} screenshots. Later market movement is stale-line information; it never replaces the frozen pool number.</div>
+
+            <section className="panel survivor-template second-heading"><h3>Season-total strategy</h3><p>Maximize expected correct picks at the exact frozen spread. Start with two-sided market prices, remove the margin, and use verified models and news as checks. Current evidence is modest: no pick has a calibrated high-confidence rating.</p><p><a href="/pickem/strategy">Read the research, expert review policy and weekly process →</a></p><p><a href="https://www.fanduel.com/research/nfl-week-4-schedule-odds-for-every-game">Reviewed market source: FanDuel Research</a>. Article odds can age; this board is a dated manual review, not a live feed.</p></section>
 
             <section className="section-heading">
               <div><div className="eyebrow">FFCC WEEK {currentWeek} CARD</div><h2>Provisional picks. Tap any game for the why.</h2></div>
@@ -62,9 +64,9 @@ export default async function PickemPage() {
                   <details id={gameId} className={`${styles.gameCard} ${changed ? styles.gameCardChanged : ""}`} key={`${game.away}-${game.home}`} open={changed || undefined}>
                     <summary className={styles.gameSummary}>
                       <div className={styles.time}><strong>{game.day}</strong><span>{game.kickoff} ET</span></div>
-                      <div className={styles.matchup}><strong>{game.away} @ {game.home}</strong><span>Pool: {game.poolFavorite} -{game.poolSpread} · Live: {game.marketLabel} · O/U {game.marketTotal}</span>{changed ? <span className={styles.changedBadge}>PICK CHANGED</span> : null}</div>
+                      <div className={styles.matchup}><strong>{game.away} @ {game.home}</strong><span>Pool: {game.poolFavorite} -{game.poolSpread} · Market snapshot: {game.marketLabel} · O/U {game.marketTotal}</span>{changed ? <span className={styles.changedBadge}>PICK CHANGED</span> : null}</div>
                       <div className={styles.pick}><strong>{lineLabel(game.poolPick, game.poolLine)}</strong><span>{changed ? "NEW FFCC PICK" : "FFCC PICK"}</span></div>
-                      <div className={styles.confidence} aria-label={`${game.confidence} of 5 confidence`}><span>Confidence {game.confidence}/5</span><div className={styles.dots}>{[1,2,3,4,5].map((dot) => <i key={dot} className={dot <= game.confidence ? styles.dotOn : styles.dot} />)}</div></div>
+                      <div className={styles.confidence}><span>{game.confidence === 3 ? "Number advantage" : game.confidence === 2 ? "Small price lean" : "No measured edge"}</span></div>
                       <div className={styles.chevron} aria-hidden="true">⌄</div>
                     </summary>
                     <div className={styles.detail}><div><div className={styles.detailLabel}>WHY THIS SIDE</div><p>{game.rationale}</p></div><div><div className={styles.detailLabel}>PRIMARY SIGNAL</div><p className={styles.signal}>{game.signal}</p></div><div><div className={styles.detailLabel}>WHAT COULD FLIP IT</div><p className={styles.watch}>{game.watch}</p></div></div>
