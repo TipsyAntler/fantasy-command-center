@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { LocalGreeting, LocalRefreshTime } from "@/components/LocalDashboardTime";
-import { getDashboardData, getRosterWatch } from "@/lib/sleeper";
+import { getDashboardData, getRosterWatch, getPlanningWeek } from "@/lib/sleeper";
 import { getSurvivorSnapshot } from "@/lib/google-survivor";
 import { manualLeagues, rosterPlayerNames } from "@/data/manual-leagues";
-import { week4PoolGames, week4Tiebreaker, week4Standing } from "@/data/pickem-week4";
+import { week4Number, week4PoolGames, week4Tiebreaker, week4Standing } from "@/data/pickem-week4";
 import styles from "./home.module.css";
 
 export const revalidate = 300;
@@ -14,7 +14,7 @@ function rosterStatus(row: Awaited<ReturnType<typeof getRosterWatch>>[number]) {
 
 export default async function Home() {
   const data = await getDashboardData();
-  const week = Number(data.state?.display_week ?? data.state?.week ?? 1) || 1;
+  const week = getPlanningWeek(data.state, week4Number, "2026-10-06T04:00:00-04:00");
   const [rosterWatch, survivor] = await Promise.all([
     getRosterWatch(rosterPlayerNames),
     getSurvivorSnapshot(week),
@@ -30,7 +30,7 @@ export default async function Home() {
   const bmFlag = leagueFlags.bm[0];
   const llFlag = leagueFlags.ll[0];
   const survivorEntries = survivor.entries.length ? survivor.entries.slice(0, 4) : [];
-  const survivorAlive = survivorEntries.length ? survivorEntries.filter((entry) => entry.alive).length : 4;
+  const survivorAlive = survivorEntries.length ? survivorEntries.filter((entry) => entry.alive).length : 1;
   const survivorHealthy = survivor.connected && !survivor.error;
   const sleeperHealthy = !data.errors.players && !data.errors.trends;
   const strongestPoolEdges = week4PoolGames.filter((game) => game.confidence >= 5).length;
@@ -89,9 +89,9 @@ export default async function Home() {
               <span className={styles.cardState}>{survivorAlive} / 4 alive</span>
             </div>
             <h2>Survivor Lab</h2>
-            <p className={styles.actionHeadline}>Keep all four entries coordinated, not independent.</p>
+            <p className={styles.actionHeadline}>Protect Entry 3, your surviving path.</p>
             <p className={styles.actionNote}>
-              V1per41, live pool ownership, market safety and future value all feed the final entry-by-entry plan. {survivorHealthy ? "Commissioner-sheet data is live." : "Commissioner-sheet connection needs attention."}
+              V1per41, live pool ownership, market safety and future value all feed the final entry-by-entry plan. {survivorHealthy ? "Commissioner-sheet data is live." : "Last verified entry history shown. Reconnect Google for live pool updates."}
             </p>
             <div className={styles.cardFoot}><span>Open Survivor Lab</span><span>→</span></div>
           </Link>
