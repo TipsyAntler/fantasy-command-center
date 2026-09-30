@@ -17,6 +17,32 @@ function lineLabel(team: string, line: number) {
   return `${team} ${line > 0 ? "+" : ""}${line}`;
 }
 
+
+const confidenceLevels = {
+  1: { score: 5, label: "Toss-up" },
+  2: { score: 6, label: "Slight lean" },
+  3: { score: 7, label: "Modest lean" },
+  4: { score: 8, label: "Strong lean" },
+  5: { score: 9, label: "Very strong lean" },
+} as const;
+
+// Ordinal assessment of the evidence, never a percentage chance of covering.
+function ConfidenceMeter({ evidence }: { evidence: keyof typeof confidenceLevels }) {
+  const { score, label } = confidenceLevels[evidence];
+  return (
+    <div className={styles.confidence}>
+      <div className={styles.meterHeading}><strong>{score}/10</strong><span>{label}</span></div>
+      <div className={styles.meterBars} role="meter" aria-label="FFCC pick confidence"
+        aria-valuemin={1} aria-valuemax={10} aria-valuenow={score}
+        aria-valuetext={`${score} out of 10, ${label}; qualitative rating, not a cover probability`}>
+        {Array.from({ length: 10 }, (_, index) => (
+          <i key={index} aria-hidden="true" className={`${styles.meterBar} ${index < score ? styles.meterBarOn : ""}`} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default async function PickemPage() {
   const dashboard = await getDashboardData();
   const currentWeek = getPlanningWeek(dashboard.state, week4Number, "2026-10-06T04:00:00-04:00");
@@ -56,6 +82,8 @@ export default async function PickemPage() {
               <span className="source-tag">{week4MarketAsOf}</span>
             </section>
 
+            <p className={styles.meterLegend}><strong>Confidence:</strong> 1–4 weak · 5 toss-up · 6–7 lean · 8–10 strong. A qualitative rating, not a win percentage. Current picks stay at 5–7 because the evidence is modest.</p>
+
             <section className={styles.board} aria-label={`Week ${currentWeek} ATS picks`}>
               {games.map((game) => {
                 const changed = game.signal.startsWith("CHANGED:");
@@ -66,7 +94,7 @@ export default async function PickemPage() {
                       <div className={styles.time}><strong>{game.day}</strong><span>{game.kickoff} ET</span></div>
                       <div className={styles.matchup}><strong>{game.away} @ {game.home}</strong><span>Pool: {game.poolFavorite} -{game.poolSpread} · Market snapshot: {game.marketLabel} · O/U {game.marketTotal}</span>{changed ? <span className={styles.changedBadge}>PICK CHANGED</span> : null}</div>
                       <div className={styles.pick}><strong>{lineLabel(game.poolPick, game.poolLine)}</strong><span>{changed ? "NEW FFCC PICK" : "FFCC PICK"}</span></div>
-                      <div className={styles.confidence}><span>{game.confidence === 3 ? "Number advantage" : game.confidence === 2 ? "Small price lean" : "No measured edge"}</span></div>
+                      <ConfidenceMeter evidence={game.confidence} />
                       <div className={styles.chevron} aria-hidden="true">⌄</div>
                     </summary>
                     <div className={styles.detail}><div><div className={styles.detailLabel}>WHY THIS SIDE</div><p>{game.rationale}</p></div><div><div className={styles.detailLabel}>PRIMARY SIGNAL</div><p className={styles.signal}>{game.signal}</p></div><div><div className={styles.detailLabel}>WHAT COULD FLIP IT</div><p className={styles.watch}>{game.watch}</p></div></div>

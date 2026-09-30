@@ -44,7 +44,7 @@
   list-style: none;
   cursor: pointer;
   display: grid;
-  grid-template-columns: 92px minmax(120px,1fr) minmax(110px,.85fr) 92px 24px;
+  grid-template-columns: 92px minmax(120px,1fr) minmax(110px,.85fr) 120px 24px;
   gap: 12px;
   align-items: center;
   min-height: 70px;
@@ -76,12 +76,24 @@
   box-shadow: 0 0 16px rgba(214,47,58,.24);
 }
 
-.confidence { display: grid; gap: 5px; justify-items: end; }
-.confidence span { color: var(--cc-muted); font-size: 8px; text-transform: uppercase; letter-spacing: .07em; }
-.dots { display: flex; gap: 3px; }
-.dot, .dotOn { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.09); }
-.dotOn { background: var(--cc-teal); box-shadow: 0 0 8px rgba(52,231,189,.22); }
-.gameCardChanged .dotOn { background: #ef5965; box-shadow: 0 0 8px rgba(239,89,101,.28); }
+.confidence { display: grid; gap: 6px; width: 120px; }
+.meterHeading { display: flex; justify-content: space-between; align-items: baseline; gap: 4px; }
+.meterHeading strong { color: #edf4fb; font-size: 12px; font-variant-numeric: tabular-nums; }
+.meterHeading span { color: #b9c8d8; font-size: 9px; }
+.meterBars { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px; }
+.meterBar { display: block; height: 15px; border-radius: 2px; background: #233044; }
+.meterBarOn:nth-child(1) { background: #ef5965; }
+.meterBarOn:nth-child(2) { background: #ef6f58; }
+.meterBarOn:nth-child(3) { background: #ed8d4d; }
+.meterBarOn:nth-child(4) { background: #eaaa49; }
+.meterBarOn:nth-child(5) { background: #eac64f; }
+.meterBarOn:nth-child(6) { background: #cad05a; }
+.meterBarOn:nth-child(7) { background: #9bc766; }
+.meterBarOn:nth-child(8) { background: #70c477; }
+.meterBarOn:nth-child(9) { background: #4cc28c; }
+.meterBarOn:nth-child(10) { background: #34c6a1; }
+.meterLegend { color: #b9c8d8; font-size: 11px; line-height: 1.6; margin: 0 0 14px; }
+.meterLegend strong { color: #edf4fb; }
 .chevron { color: #73869c; font-size: 16px; text-align: right; }
 .gameCard[open] .chevron { transform: rotate(180deg); }
 
@@ -118,12 +130,17 @@
 
 @media (max-width: 760px) {
   .gameSummary {
-    grid-template-columns: 66px 1fr 98px 20px;
+    grid-template-columns: 54px minmax(0, 1fr) 120px 16px;
     gap: 8px;
     min-height: 74px;
     padding: 11px 12px;
   }
-  .confidence { display: none; }
+  .time { grid-column: 1; grid-row: 1; }
+  .matchup { grid-column: 2 / 4; grid-row: 1; min-width: 0; }
+  .pick { grid-column: 1 / 3; grid-row: 2; }
+  .confidence { grid-column: 3; grid-row: 2; display: grid; }
+  .chevron { grid-column: 4; grid-row: 1 / 3; }
+  .gameSummary { row-gap: 12px; }
   .matchup strong { font-size: 11px; }
   .pick strong { font-size: 13px; }
   .detail { grid-template-columns: 1fr; }
