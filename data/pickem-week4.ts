@@ -5,7 +5,7 @@ export type Week4PoolGame = {
 export const week4Number = 4;
 export const week4PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week4PoolStatus = "POOL LINES FROZEN · EXACT WEEK 4 LINES CAPTURED FROM THE SZN";
-export const week4MarketAsOf = "Sep 29 night ET · reviewed FanDuel article snapshot · not a live odds feed";
+export const week4MarketAsOf = "Sep 30 · 8:43 AM ET · fresh multi-book exact-line audit";
 
 export const week4Standing = {
   correct: 22,
@@ -86,15 +86,15 @@ export const week4PoolGames: Week4PoolGame[] = [
     "kickoff": "1:00 PM",
     "away": "JAX",
     "home": "CIN",
-    "poolPick": "JAX",
-    "poolLine": 2.5,
+    "poolPick": "CIN",
+    "poolLine": -2.5,
     "poolFavorite": "CIN",
     "poolSpread": 2.5,
-    "marketLabel": "CIN -2.5",
+    "marketLabel": "CIN -2.5 consensus",
     "marketTotal": 51.5,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · provisional tiebreak choice",
-    "rationale": "No measured edge at this snapshot: Jacksonville and Cincinnati are both -110 at 2.5. Retain Jacksonville provisionally, with no verified model advantage. Last week's dominant win is not sufficient evidence of a cover edge.",
+    "confidence": 2,
+    "signal": "CHANGED: SMALL PRICE LEAN · exact pool spread",
+    "rationale": "CHANGED: CIN -2.5 replaces JAX +2.5. A Sep 30 multi-book exact-line audit found Cincinnati priced from -110 to -118 while Jacksonville ranged from -103 to -110. Proportional de-vig across eight paired books gives a robust consensus near 50.7% for Cincinnati to cover. This is a small price lean, not a high-confidence edge.",
     "watch": "Recheck current two-sided ATS prices, official injuries and weather before the actual pool lock. Change sides only if fresh evidence favors the opponent at the frozen pool line; a move alone is not an automatic flip."
   },
   {
