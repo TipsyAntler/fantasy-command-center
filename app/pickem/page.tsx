@@ -1,5 +1,5 @@
 import AtAGlance from "@/components/AtAGlance";
-import { getDashboardData } from "@/lib/sleeper";
+import { getDashboardData, getPlanningWeek } from "@/lib/sleeper";
 import {
   week4MarketAsOf,
   week4Number,
@@ -19,8 +19,7 @@ function lineLabel(team: string, line: number) {
 
 export default async function PickemPage() {
   const dashboard = await getDashboardData();
-  const rawWeek = Number(dashboard.state?.display_week ?? dashboard.state?.week ?? week4Number);
-  const currentWeek = Number.isFinite(rawWeek) && rawWeek > 0 ? rawWeek : week4Number;
+  const currentWeek = getPlanningWeek(dashboard.state, week4Number, "2026-10-06T04:00:00-04:00");
   const boardIsCurrent = currentWeek === week4Number;
   const games = boardIsCurrent ? week4PoolGames : [];
   const strong = games.filter((game) => game.confidence >= 4);
