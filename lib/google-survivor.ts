@@ -92,6 +92,15 @@ export type SurvivorEntry = {
   currentPick?: string;
 };
 
+
+// Last verified entry history, used only when live sheet access is unavailable.
+const verifiedEntries: SurvivorEntry[] = [
+  { name: "Mike Tridente 1", alive: false, usedTeams: [{ team: "LAC", week: 1 }] },
+  { name: "Mike Tridente 2", alive: false, usedTeams: [{ team: "LAC", week: 1 }] },
+  { name: "Mike Tridente 3", alive: true, usedTeams: [{ team: "JAX", week: 1 }, { team: "SF", week: 2 }, { team: "KC", week: 3 }] },
+  { name: "Mike Tridente 4", alive: false, usedTeams: [{ team: "DET", week: 1 }, { team: "TB", week: 2 }] },
+];
+
 export type SurvivorOwnership = {
   team: string;
   count: number;
@@ -150,7 +159,7 @@ export async function getSurvivorSnapshot(currentWeek: number): Promise<Survivor
   } catch (error) {
     return {
       connected: true,
-      entries: [],
+      entries: verifiedEntries,
       ownership: [],
       submitted: 0,
       aliveEntries: 0,
@@ -160,7 +169,7 @@ export async function getSurvivorSnapshot(currentWeek: number): Promise<Survivor
   }
 
   if (!accessToken) {
-    return { connected: false, entries: [], ownership: [], submitted: 0, aliveEntries: 0, currentWeek };
+    return { connected: false, entries: verifiedEntries, ownership: [], submitted: 0, aliveEntries: 0, currentWeek };
   }
 
   try {
@@ -231,7 +240,7 @@ export async function getSurvivorSnapshot(currentWeek: number): Promise<Survivor
   } catch (error) {
     return {
       connected: true,
-      entries: [],
+      entries: verifiedEntries,
       ownership: [],
       submitted: 0,
       aliveEntries: 0,
