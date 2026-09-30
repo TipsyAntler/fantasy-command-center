@@ -21,7 +21,7 @@ export const manualLeagues: ManualLeague[] = [
     leagueName: "NFL FF BIG Money League - S8",
     leagueId: "890742",
     teamName: "Bowers' Castle",
-    snapshotLabel: "Manual snapshot updated Sep 28 · Wicks added · Miami RB waiver claims pending",
+    snapshotLabel: "Manual snapshot updated Sep 29 · Daniels activated from IR · Jennings dropped · Miami RB waiver claims pending",
     format: "12 teams · Half PPR · 3 WR + FLEX · no kicker",
     roster: [
       { name: "Sam Darnold", position: "QB", slot: "QB" },
@@ -38,11 +38,9 @@ export const manualLeagues: ManualLeague[] = [
       { name: "Brian Robinson Jr.", position: "RB", slot: "BN" },
       { name: "Dontayvion Wicks", position: "WR", slot: "BN" },
       { name: "Emanuel Wilson", position: "RB", slot: "BN" },
-      { name: "Jauan Jennings", position: "WR", slot: "BN" },
+      { name: "Jayden Daniels", position: "QB", slot: "BN" },
     ],
-    ir: [
-      { name: "Jayden Daniels", position: "QB", slot: "IR" },
-    ],
+    ir: [],
   },
   {
     key: "ll",
