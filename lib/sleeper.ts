@@ -171,3 +171,12 @@ export async function getDashboardData() {
     helpers: { playerName },
   };
 }
+
+// Planning boards may be published before Sleeper rolls its display week.
+// Their expiry still advances the guardrail when the next Tuesday arrives.
+export function getPlanningWeek(state: NflState | null, loadedWeek: number, expiresAt: string, now = Date.now()) {
+  const feedWeek = Number(state?.display_week ?? state?.week);
+  const expiry = Date.parse(expiresAt);
+  const boardWeek = now < expiry ? loadedWeek : loadedWeek + 1 + Math.floor((now - expiry) / (7 * 86400000));
+  return Math.max(Number.isFinite(feedWeek) && feedWeek > 0 ? feedWeek : loadedWeek, boardWeek);
+}
