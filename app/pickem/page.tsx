@@ -19,11 +19,11 @@ function lineLabel(team: string, line: number) {
 
 
 const confidenceLevels = {
-  1: { score: 5, label: "Toss-up" },
-  2: { score: 6, label: "Slight lean" },
-  3: { score: 7, label: "Modest lean" },
+  1: { score: 1, label: "Toss-up" },
+  2: { score: 3, label: "Slight lean" },
+  3: { score: 5, label: "Modest lean" },
   4: { score: 8, label: "Strong lean" },
-  5: { score: 9, label: "Very strong lean" },
+  5: { score: 10, label: "Strongest confidence" },
 } as const;
 
 // Ordinal assessment of the evidence, never a percentage chance of covering.
@@ -82,7 +82,7 @@ export default async function PickemPage() {
               <span className="source-tag">{week4MarketAsOf}</span>
             </section>
 
-            <p className={styles.meterLegend}><strong>Confidence:</strong> 1–4 weak · 5 toss-up · 6–7 lean · 8–10 strong. A qualitative rating, not a win percentage. Current picks stay at 5–7 because the evidence is modest.</p>
+            <p className={styles.meterLegend}><strong>Confidence:</strong> 1/red = toss-up · 2–3 slight lean · 4–6 modest lean · 7–9 strong · 10/green = strongest confidence. Confidence in our edge, not a win percentage. Current picks range from 1–5 because the evidence is modest.</p>
 
             <section className={styles.board} aria-label={`Week ${currentWeek} ATS picks`}>
               {games.map((game) => {
