@@ -21,7 +21,7 @@ export const manualLeagues: ManualLeague[] = [
     leagueName: "NFL FF BIG Money League - S8",
     leagueId: "890742",
     teamName: "Bowers' Castle",
-    snapshotLabel: "Manual snapshot updated Sep 30 · Jaylen Wright added for Emanuel Wilson",
+    snapshotLabel: "Manual snapshot updated Oct 1 · MarShawn Lloyd added for Rashod Bateman",
     format: "12 teams · Half PPR · 3 WR + FLEX · no kicker",
     roster: [
       { name: "Sam Darnold", position: "QB", slot: "QB" },
@@ -34,7 +34,7 @@ export const manualLeagues: ManualLeague[] = [
       { name: "Blake Corum", position: "RB", slot: "BN" },
       { name: "Vikings", position: "DEF", slot: "DEF" },
       { name: "Dallas Goedert", position: "TE", slot: "BN" },
-      { name: "Rashod Bateman", position: "WR", slot: "FLEX" },
+      { name: "MarShawn Lloyd", position: "RB", slot: "BN" },
       { name: "Brian Robinson Jr.", position: "RB", slot: "BN" },
       { name: "Dontayvion Wicks", position: "WR", slot: "BN" },
       { name: "Jaylen Wright", position: "RB", slot: "BN" },
