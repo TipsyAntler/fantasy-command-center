@@ -23,5 +23,6 @@ export const survivorWeekPlan: SurvivorWeekPlan = {
     { label: "V1per41 Week 4 post/workbook", state: "loaded", detail: "AUDITED Oct 1: current 2026 Week 4 workbook reconciles to the post. MIN 82.98% / 3.895% P(Win Out) ranks first; SEA 74.57% / 3.272%; BAL 84.15% / 3.250%; DET 63.13% / 2.909%. Current-week probabilities use VegasInsider when populated; future weeks average SurvivorGrid, RotoWire and RotoBaller before the Matrix/optimizer step. Post contains minor prose typos ('Week 3 Pick' and 'assuming you pick the Cardinals') but its ranking/table match the workbook." },
     { label: "Ownership/injury audit", state: "loaded", detail: "Commissioner sheet checked Oct 2: 382 entries alive; among 229 live entries with a Week 4 pick submitted, BAL has 100 and MIN 99. Jefferson was DNP Wed/Thu with an ankle injury and Friday status is pending, but current market remains roughly MIN -10.5 / -625. Miami remains without De'Von Achane; Jaylen Wright is expected to play." },
     { label: "Finalization gate", state: "loaded", detail: "FINAL as of Oct 2 at submission: duplicate-history, V1per41 workbook, actual pool ownership, current market and available injury information all rechecked. Submit MIN for Entry 3." },
+    { label: "Submission", state: "loaded", detail: "Mike confirmed Minnesota was submitted for Entry 3 on Oct 2." },
   ],
 };
