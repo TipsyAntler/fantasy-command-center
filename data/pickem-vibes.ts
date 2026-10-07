@@ -9,6 +9,15 @@ export type PickemVibeWeek = {
   note: string;
 };
 
+export type PickemVibePick = {
+  week: number;
+  matchup: string;
+  frozenLine: string;
+  mikeSide: string;
+  loggedAt: string;
+  result?: "Win" | "Loss" | "Push" | "Pending";
+};
+
 export type PickemVibeDisagreement = {
   week: number;
   matchup: string;
@@ -50,3 +59,22 @@ export const pickemVibeWeeks: PickemVibeWeek[] = [
 ];
 
 export const pickemVibeDisagreements: PickemVibeDisagreement[] = [];
+
+
+export const pickemVibePicks: PickemVibePick[] = [
+  { week: 5, matchup: "TB @ DAL", frozenLine: "DAL -10.5 / TB +10.5", mikeSide: "DAL -10.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
+  { week: 5, matchup: "PHI @ JAX", frozenLine: "JAX -7.5 / PHI +7.5", mikeSide: "PHI +7.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
+  { week: 5, matchup: "CHI @ GB", frozenLine: "CHI -3.5 / GB +3.5", mikeSide: "CHI -3.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
+  { week: 5, matchup: "HOU @ TEN", frozenLine: "HOU -7.5 / TEN +7.5", mikeSide: "HOU -7.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
+  { week: 5, matchup: "CIN @ MIA", frozenLine: "CIN -7.5 / MIA +7.5", mikeSide: "MIA +7.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
+  { week: 5, matchup: "LV @ NE", frozenLine: "NE -4.5 / LV +4.5", mikeSide: "NE -4.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
+  { week: 5, matchup: "MIN @ NO", frozenLine: "MIN -2.5 / NO +2.5", mikeSide: "MIN -2.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
+  { week: 5, matchup: "CLE @ NYJ", frozenLine: "NYJ -3.5 / CLE +3.5", mikeSide: "CLE +3.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
+  { week: 5, matchup: "IND @ PIT", frozenLine: "PIT -3.5 / IND +3.5", mikeSide: "IND +3.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
+  { week: 5, matchup: "NYG @ WAS", frozenLine: "WAS -3.5 / NYG +3.5", mikeSide: "NYG +3.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
+  { week: 5, matchup: "DEN @ LAC", frozenLine: "DEN -4.5 / LAC +4.5", mikeSide: "LAC +4.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
+  { week: 5, matchup: "DET @ ARI", frozenLine: "DET -5.5 / ARI +5.5", mikeSide: "DET -5.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
+  { week: 5, matchup: "SF @ SEA", frozenLine: "SEA -3.5 / SF +3.5", mikeSide: "SF +3.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
+  { week: 5, matchup: "BAL @ ATL", frozenLine: "BAL -3.5 / ATL +3.5", mikeSide: "BAL -3.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
+  { week: 5, matchup: "BUF @ LAR", frozenLine: "LAR -3.5 / BUF +3.5", mikeSide: "BUF +3.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
+];
