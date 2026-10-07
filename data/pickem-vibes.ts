@@ -58,7 +58,15 @@ export const pickemVibeWeeks: PickemVibeWeek[] = [
   },
 ];
 
-export const pickemVibeDisagreements: PickemVibeDisagreement[] = [];
+export const pickemVibeDisagreements: PickemVibeDisagreement[] = [
+  { week: 5, matchup: "TB @ DAL", frozenLine: "DAL -10.5 / TB +10.5", mikeSide: "DAL -10.5", ffccSide: "TB +10.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Early market around DAL -8.5 creates roughly two points of frozen-line value on TB." },
+  { week: 5, matchup: "CHI @ GB", frozenLine: "CHI -3.5 / GB +3.5", mikeSide: "CHI -3.5", ffccSide: "GB +3.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Current market roughly CHI -2.5 to -3; FFCC takes the pool half-point above the key 3." },
+  { week: 5, matchup: "HOU @ TEN", frozenLine: "HOU -7.5 / TEN +7.5", mikeSide: "HOU -7.5", ffccSide: "TEN +7.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Current market clusters around HOU -7 to -7.5; FFCC takes the useful hook above seven." },
+  { week: 5, matchup: "LV @ NE", frozenLine: "NE -4.5 / LV +4.5", mikeSide: "NE -4.5", ffccSide: "LV +4.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Current market around NE -3.5 creates one point of frozen-line value on LV." },
+  { week: 5, matchup: "MIN @ NO", frozenLine: "MIN -2.5 / NO +2.5", mikeSide: "MIN -2.5", ffccSide: "NO +2.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Current market around MIN -1.5 creates one point of stale-line value on NO." },
+  { week: 5, matchup: "DET @ ARI", frozenLine: "DET -5.5 / ARI +5.5", mikeSide: "DET -5.5", ffccSide: "ARI +5.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Market sources range DET -4.5 to -5.5; FFCC takes the better frozen number provisionally." },
+  { week: 5, matchup: "BAL @ ATL", frozenLine: "BAL -3.5 / ATL +3.5", mikeSide: "BAL -3.5", ffccSide: "ATL +3.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Lamar Jackson has only an outside chance to play; live market flipped through zero to roughly ATL -3, creating the week's largest stale-line gap." },
+];
 
 
 export const pickemVibePicks: PickemVibePick[] = [
