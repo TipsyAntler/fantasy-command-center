@@ -1,14 +1,14 @@
 import AtAGlance from "@/components/AtAGlance";
 import { getDashboardData, getPlanningWeek } from "@/lib/sleeper";
 import {
-  week4MarketAsOf,
-  week4Number,
-  week4PoolGames,
-  week4PoolName,
-  week4PoolStatus,
-  week4Tiebreaker,
-  week4Standing,
-} from "@/data/pickem-week4";
+  week5MarketAsOf,
+  week5Number,
+  week5PoolGames,
+  week5PoolName,
+  week5PoolStatus,
+  week5Tiebreaker,
+  week5Standing,
+} from "@/data/pickem-week5";
 import styles from "./pickem.module.css";
 
 export const dynamic = "force-dynamic";
@@ -45,9 +45,9 @@ function ConfidenceMeter({ evidence }: { evidence: keyof typeof confidenceLevels
 
 export default async function PickemPage() {
   const dashboard = await getDashboardData();
-  const currentWeek = getPlanningWeek(dashboard.state, week4Number, "2026-10-06T04:00:00-04:00");
-  const boardIsCurrent = currentWeek === week4Number;
-  const games = boardIsCurrent ? week4PoolGames : [];
+  const currentWeek = getPlanningWeek(dashboard.state, week5Number, "2026-10-13T04:00:00-04:00");
+  const boardIsCurrent = currentWeek === week5Number;
+  const games = boardIsCurrent ? week5PoolGames : [];
   const strong = games.filter((game) => game.confidence >= 3);
 
   return (
@@ -67,19 +67,19 @@ export default async function PickemPage() {
         ) : (
           <>
             <AtAGlance items={[
-              { label: "Season standing", value: `#${week4Standing.rank}`, note: `${week4Standing.correct} correct · leader ${week4Standing.leaderCorrect}`, tone: "accent" },
+              { label: "Season standing", value: `#${week5Standing.rank}`, note: `${week5Standing.correct} correct · leader ${week5Standing.leaderCorrect}`, tone: "accent" },
               { label: "Pool picks loaded", value: `${games.length} / 16`, note: `Exact Week ${currentWeek} frozen lines captured`, tone: "accent" },
               { label: "Frozen-number advantages", value: `${strong.length}`, note: strong.map((game) => lineLabel(game.poolPick, game.poolLine)).join(" · "), tone: "good" },
-              { label: "MNF tiebreaker", value: `${week4Tiebreaker.earlyFfccTarget}`, note: `${week4Tiebreaker.matchup} · live total ${week4Tiebreaker.currentMarketTotal} · early target` },
+              { label: "MNF tiebreaker", value: `${week5Tiebreaker.earlyFfccTarget}`, note: `${week5Tiebreaker.matchup} · live total ${week5Tiebreaker.currentMarketTotal} · early target` },
             ]} />
 
-            <div className={styles.topNote}><strong>{week4PoolStatus}.</strong> These are the exact Week {currentWeek} spreads from your {week4PoolName} screenshots. Later market movement is stale-line information; it never replaces the frozen pool number.</div>
+            <div className={styles.topNote}><strong>{week5PoolStatus}.</strong> These are the exact Week {currentWeek} spreads from your {week5PoolName} screenshots. Later market movement is stale-line information; it never replaces the frozen pool number.</div>
 
             <section className="panel survivor-template second-heading"><h3>Season-total strategy</h3><p>Maximize expected correct picks at the exact frozen spread. Start with two-sided market prices, remove the margin, and use verified models and news as checks. Current evidence is modest: no pick has a calibrated high-confidence rating.</p><p><a href="/pickem/strategy">Read the research, expert review policy and weekly process →</a></p><p><a href="https://www.fanduel.com/research/nfl-week-4-schedule-odds-for-every-game">Reviewed market source: FanDuel Research</a>. Article odds can age; this board is a dated manual review, not a live feed.</p></section>
 
             <section className="section-heading">
               <div><div className="eyebrow">FFCC WEEK {currentWeek} CARD</div><h2>Provisional picks. Tap any game for the why.</h2></div>
-              <span className="source-tag">{week4MarketAsOf}</span>
+              <span className="source-tag">{week5MarketAsOf}</span>
             </section>
 
             <p className={styles.meterLegend}><strong>Confidence:</strong> 1/red = toss-up · 2–3 slight lean · 4–6 modest lean · 7–9 strong · 10/green = strongest confidence. Confidence in our edge, not a win percentage. Current picks range from 1–5 because the evidence is modest.</p>
@@ -92,7 +92,7 @@ export default async function PickemPage() {
                   <details id={gameId} className={`${styles.gameCard} ${changed ? styles.gameCardChanged : ""}`} key={`${game.away}-${game.home}`} open={changed || undefined}>
                     <summary className={styles.gameSummary}>
                       <div className={styles.time}><strong>{game.day}</strong><span>{game.kickoff} ET</span></div>
-                      <div className={styles.matchup}><strong>{game.away} @ {game.home}</strong><span>Pool: {game.poolFavorite} -{game.poolSpread} · Market snapshot: {game.marketLabel} · O/U {game.marketTotal}</span>{changed ? <span className={styles.changedBadge}>PICK CHANGED</span> : null}</div>
+                      <div className={styles.matchup}><strong>{game.away} @ {game.home}</strong><span>Pool: {game.poolFavorite} -{game.poolSpread} · Market snapshot: {game.marketLabel} · O/U {game.marketTotal}</span><span>Mike vibe: {game.mikeVibe}</span>{changed ? <span className={styles.changedBadge}>PICK CHANGED</span> : null}</div>
                       <div className={styles.pick}><strong>{lineLabel(game.poolPick, game.poolLine)}</strong><span>{changed ? "NEW FFCC PICK" : "FFCC PICK"}</span></div>
                       <ConfidenceMeter evidence={game.confidence} />
                       <div className={styles.chevron} aria-hidden="true">⌄</div>
@@ -104,8 +104,8 @@ export default async function PickemPage() {
             </section>
 
             <section className="panel survivor-template second-heading">
-              <div className="panel-head"><div><span className="panel-kicker">WEEK {currentWeek} TIEBREAKER</span><h3>{week4Tiebreaker.matchup} total points</h3></div><span className="saved-pill">Early FFCC target: {week4Tiebreaker.earlyFfccTarget}</span></div>
-              <div className="decision-grid"><div><span>Pool asks</span><strong>{week4Tiebreaker.label}</strong></div><div><span>Current market total</span><strong>{week4Tiebreaker.currentMarketTotal}</strong></div><div className="span-2"><span>FFCC process</span><strong>{week4Tiebreaker.note}</strong></div></div>
+              <div className="panel-head"><div><span className="panel-kicker">WEEK {currentWeek} TIEBREAKER</span><h3>{week5Tiebreaker.matchup} total points</h3></div><span className="saved-pill">Early FFCC target: {week5Tiebreaker.earlyFfccTarget}</span></div>
+              <div className="decision-grid"><div><span>Pool asks</span><strong>{week5Tiebreaker.label}</strong></div><div><span>Current market total</span><strong>{week5Tiebreaker.currentMarketTotal}</strong></div><div className="span-2"><span>FFCC process</span><strong>{week5Tiebreaker.note}</strong></div></div>
             </section>
           </>
         )}
