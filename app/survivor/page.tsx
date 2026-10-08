@@ -1,27 +1,103 @@
-import AtAGlance from "@/components/AtAGlance";
 import styles from "./survivor.module.css";
 import planStyles from "./survivor-plan.module.css";
-import { getDashboardData } from "@/lib/sleeper";
 import { getSurvivorSnapshot } from "@/lib/google-survivor";
 import { survivorWeekPlan } from "@/data/survivor-plan";
 
 export const dynamic = "force-dynamic";
-const placeholderEntries = ["Mike Tridente 1", "Mike Tridente 2", "Mike Tridente 3", "Mike Tridente 4"];
-function displayEntryName(name:string){const m=name.match(/(\d+)$/);return m?`Entry ${m[1]}`:name}
-function entryNumber(name:string,index:number):1|2|3|4{const m=name.match(/(\d+)$/);const n=m?Number(m[1]):index+1;if(n===1||n===2||n===3||n===4)return n;return Math.min(4,Math.max(1,index+1)) as 1|2|3|4}
-function inputStateClass(state:"loaded"|"live"|"pending"){if(state==="loaded")return planStyles.inputLoaded;if(state==="live")return planStyles.inputLive;return planStyles.inputPending}
 
-export default async function SurvivorPage({searchParams}:{searchParams?:Promise<Record<string,string|string[]|undefined>>}){
- const params=searchParams?await searchParams:{}; const googleStatus=typeof params.google==="string"?params.google:undefined; const googleMessage=typeof params.message==="string"?params.message:undefined;
- const dashboard=await getDashboardData(); const currentWeek=survivorWeekPlan.week;
- const snapshot=await getSurvivorSnapshot(currentWeek); const entries=snapshot.entries.length?snapshot.entries:placeholderEntries.map(name=>({name,alive:true,usedTeams:[] as Array<{team:string;week:number}>,currentPick:undefined})); const myEntries=entries.slice(0,4); const myAlive=myEntries.filter(e=>e.alive).length; const ownership=snapshot.ownership.slice(0,6); const submittedPct=snapshot.aliveEntries?(snapshot.submitted/snapshot.aliveEntries)*100:0; const googleHealthy=snapshot.connected&&!snapshot.error; const activePlan=survivorWeekPlan.week===currentWeek?survivorWeekPlan:null; const planIsFinal=activePlan?.status==="final";
- return <main><div className="shell page-shell">
-  <header className="page-hero"><div className="eyebrow">POOL STRATEGY · WEEK {currentWeek}</div><h1>Survivor Lab</h1><p className="hero-copy">Entry 3 is the surviving path. FFCC combines current safety and future team value for the planning week.</p></header>
-  <AtAGlance items={[{label:"Your entries alive",value:`${myAlive} / 4`,note:myAlive===4?"Full portfolio still alive":`${4-myAlive} eliminated`,tone:myAlive===4?"good":"warn"},{label:"Pool submitted",value:snapshot.connected?`${submittedPct.toFixed(0)}%`:"—",note:snapshot.connected?`${snapshot.submitted} of ${snapshot.aliveEntries||"—"} live entries have a Week ${currentWeek} pick visible`:"Connect Google for live submission pace",tone:"accent"},{label:activePlan?"Portfolio status":"Portfolio plan",value:activePlan?(planIsFinal?"FINAL":"DIRECTIONAL"):"PENDING",note:activePlan?activePlan.headline:`Week ${currentWeek} plan has not been loaded yet`,tone:planIsFinal?"good":"warn"},{label:"Commissioner sheet",value:googleHealthy?"LIVE":"Offline",note:googleHealthy?"Read-only Google sync is active":"Reconnect to restore pool intelligence",tone:googleHealthy?"good":"warn"}]} />
-  {googleHealthy?<section className={`${styles.poolStatus} ${styles.poolStatusCompact}`}><div className={styles.compactConnection}><span className={styles.dot}/><strong>Google Sheet · LIVE</strong><span>{snapshot.aliveEntries||"—"} alive</span><span>·</span><span>{snapshot.submitted} Week {currentWeek} picks visible</span></div><a className={styles.compactDisconnect} href="/api/google/disconnect">Disconnect</a></section>:<section className={styles.poolStatus}><div className={styles.statusMain}><span className="panel-kicker">COMMISSIONER SHEET</span><strong>{snapshot.connected?"Google reconnect needed":"Connect your Google access · last verified history shown"}</strong><p>FFCC uses the commissioner sheet read-only to verify each entry&apos;s actual used-team history and current pick.</p>{googleStatus==="error"?<p className={styles.errorText}>Google connection error: {googleMessage||"OAuth setup failed."}</p>:null}{snapshot.error?<p className={styles.errorText}>Sheet read error: {snapshot.error}</p>:null}</div><div className={styles.connectionActions}><a className={styles.connectButton} href="/api/google/connect">{snapshot.connected?"Reconnect Google":"Connect Google"}</a></div></section>}
-  {activePlan?<section className={`${planStyles.planPanel} ${planIsFinal?planStyles.planFinal:planStyles.planDirectional}`}><div className={planStyles.planHeader}><div><div className={planStyles.planKicker}>CURRENT SURVIVOR PLAN · WEEK {currentWeek}</div><h2>{activePlan.headline}</h2><p className={planStyles.planSummary}>{activePlan.summary}</p></div><div className={planStyles.planStatus}><span className={planStyles.statusDot}/>{planIsFinal?"FINAL · PICK LOCKED":"DIRECTIONAL · DO NOT LOCK YET"}</div></div><div className={planStyles.planGrid}>{myEntries.map((entry,index)=>{const number=entryNumber(entry.name,index);const rec=activePlan.entries.find(i=>i.entryNumber===number);if(!rec)return null;const duplicate=entry.usedTeams.some(i=>i.team===rec.team&&i.week<currentWeek);const submitted=entry.currentPick;return <article className={planStyles.planEntry} key={`plan-${entry.name}`}><div className={planStyles.planEntryTop}><div className={planStyles.entryLabel}>Entry {number}</div><span className={planStyles.confidence}>{rec.confidence} confidence</span></div><div className={planStyles.planTeam}>{rec.team}</div><div className={planStyles.planMeta}>Alternate: {rec.alternate||"—"}</div><p className={planStyles.planReason}>{rec.rationale}</p><div className={planStyles.planFlags}>{!entry.alive?<span className={planStyles.planOut}>ENTRY OUT</span>:null}{entry.alive&&duplicate?<span className={planStyles.planConflict}>BLOCKED · TEAM ALREADY USED</span>:null}{entry.alive&&!duplicate?<span className={planStyles.planCheck}>NO DUPLICATE ✓</span>:null}{submitted===rec.team?<span className={planStyles.planSubmitted}>SUBMITTED ✓</span>:null}{submitted&&submitted!==rec.team?<span className={planStyles.planConflict}>SUBMITTED: {submitted}</span>:null}</div></article>})}</div><div className={planStyles.planInputs}>{activePlan.inputs.map(input=><span className={`${planStyles.inputChip} ${inputStateClass(input.state)}`} title={input.detail} key={input.label}><strong>{input.label}</strong> · {input.state.toUpperCase()}</span>)}<span className={planStyles.planAsOf}>Updated {activePlan.asOf}</span></div></section>:<section className={planStyles.stalePanel}><strong>Week {currentWeek} portfolio plan not loaded yet.</strong><p>The previous week is intentionally hidden. A fresh plan must pass the used-team-history and portfolio audit before it appears.</p></section>}
-  <section className={styles.entryGrid}>{myEntries.map(entry=><article className={styles.entryCard} key={entry.name}><div className={styles.entryTop}><div><span className="panel-kicker">{entry.name}</span><h3>{displayEntryName(entry.name)}</h3></div><span className={entry.alive?styles.alive:styles.out}>{entry.alive?"Alive":"Out"}</span></div><div className={styles.entryFacts}><div><span>Used teams</span><strong>{entry.usedTeams.length?entry.usedTeams.map(i=>`${i.team} W${i.week}`).join(" · "):"None yet"}</strong></div><div><span>Official Week {currentWeek} pick</span><strong>{entry.currentPick||"Not visible yet"}</strong></div></div></article>)}</section>
-  <section className={styles.ownershipPanel}><div className={styles.panelHeader}><div><span className="panel-kicker">WEEK {currentWeek} OWNERSHIP</span><h3>What submitted entries are actually picking</h3></div><span className={styles.pending}>{snapshot.connected?`${snapshot.submitted} Week ${currentWeek} picks visible`:"Connect Google to calculate"}</span></div><div className={styles.ownershipGrid}>{ownership.length?ownership.map(item=><div key={item.team}><span>{item.team}</span><strong>{item.pct.toFixed(1)}%</strong><small>{item.count} submitted {item.count===1?"entry":"entries"}</small></div>):["Top pick","Second pick","Third pick","All others"].map(label=><div key={label}><span>{label}</span><strong>—</strong><small>pool share</small></div>)}</div><p className="panel-explainer">Ownership is a portfolio input, not the objective. FFCC combines current-week survival, future inventory, same-team correlation and each entry&apos;s actual used-team history.</p></section>
-  <section className="roadmap compact-roadmap second-heading"><div className="roadmap-copy"><div className="eyebrow">CURRENT-WEEK GUARDRAIL</div><h2>No stale Survivor board.</h2><p>If the NFL week advances before a fresh plan is loaded, FFCC hides the old recommendations and shows the new week as pending instead.</p></div><div className="roadmap-list"><div><span>01</span><strong>Verify history</strong><small>Commissioner-sheet used teams by entry</small></div><div><span>02</span><strong>Build portfolio</strong><small>Safety + future value + correlation + ownership</small></div><div><span>03</span><strong>Final audit</strong><small>Market + injuries + duplicates + V1per before FINAL</small></div></div></section>
- </div></main>
+export default async function SurvivorPage({ searchParams }: { searchParams?: Promise<Record<string, string | string[] | undefined>> }) {
+  const params = searchParams ? await searchParams : {};
+  const googleStatus = typeof params.google === "string" ? params.google : undefined;
+  const googleMessage = typeof params.message === "string" ? params.message : undefined;
+  // Only advance this board when a fresh, audited plan is published.
+  const week = survivorWeekPlan.week;
+  const snapshot = await getSurvivorSnapshot(week);
+  const googleHealthy = snapshot.connected && !snapshot.error;
+  const alive = snapshot.entries.filter(entry => entry.alive);
+  const active = alive.find(entry => /Mike Tridente 3$/i.test(entry.name)) || alive[0];
+  const activeNumber = active?.name.match(/(\d+)$/)?.[1];
+  const recommendation = survivorWeekPlan.entries.find(entry => String(entry.entryNumber) === activeNumber && entry.team !== "ELIMINATED");
+  const officialPick = active?.currentPick;
+  const alreadyUsed = Boolean(recommendation && active?.usedTeams.some(pick => pick.team === recommendation.team && pick.week < week));
+  const submittedPct = snapshot.aliveEntries ? Math.round(snapshot.submitted / snapshot.aliveEntries * 100) : 0;
+  const leaders = snapshot.ownership.slice(0, 5);
+  const maxCount = Math.max(1, ...leaders.map(item => item.count));
+  const otherCount = Math.max(0, snapshot.submitted - leaders.reduce((sum, item) => sum + item.count, 0));
+  const currentWeekPicks = active?.usedTeams.filter(pick => pick.week < week) || [];
+
+  return <main><div className="shell page-shell">
+    <header className="page-hero">
+      <div className="eyebrow">SURVIVOR · WEEK {week}</div>
+      <h1>Survivor Lab</h1>
+      <p className="hero-copy">Your pick and the pool, without the noise.</p>
+    </header>
+
+    <section className={styles.survivorSummary} aria-label="Your survivor recommendation">
+      <div className={styles.summaryTop}>
+        <span className="panel-kicker">YOUR SURVIVING ENTRY {activeNumber ? "· #" + activeNumber : ""}</span>
+        <span className={survivorWeekPlan.status === "final" ? styles.finalTag : styles.directionalTag}>
+          {survivorWeekPlan.status === "final" ? "FINAL" : "DIRECTIONAL"}
+        </span>
+      </div>
+      {active && recommendation ? <>
+        <div className={styles.pickHero}>
+          <div>
+            <div className={styles.pickLabel}>FFCC recommended pick</div>
+            <div className={styles.pickTeam}>{recommendation.team}</div>
+          </div>
+          <div className={styles.pickMeta}>
+            <span>Official Week {week} pick</span>
+            <strong>{officialPick || "Not visible yet"}</strong>
+            <small>{officialPick === recommendation.team ? "✓ Matches recommendation" : officialPick ? "Different from FFCC pick" : "Awaiting commissioner sheet"}</small>
+          </div>
+        </div>
+        {alreadyUsed ? <p className={styles.warningText}>This team was used earlier in this entry. Do not submit a duplicate.</p> : null}
+        {recommendation.alternate && !officialPick ? <p className={styles.pickNote}>Alternative: {recommendation.alternate}</p> : null}
+        <p className={styles.historyLine}>Previously used: {currentWeekPicks.length ? currentWeekPicks.map(pick => pick.team + " W" + pick.week).join(" · ") : "None"}</p>
+      </> : <p className={styles.emptyState}>{alive.length ? "A current recommendation is being audited." : "No surviving entry is visible in the commissioner sheet."}</p>}
+    </section>
+
+    <section className={styles.ownershipPanel} aria-label="Pool pick ownership">
+      <div className={styles.panelHeader}>
+        <div><span className="panel-kicker">LIVE COMMISSIONER SHEET · WEEK {week}</span><h2>What the pool is picking</h2></div>
+        <span className={googleHealthy ? styles.liveChip : styles.offlineChip}>{googleHealthy ? "● LIVE" : "OFFLINE"}</span>
+      </div>
+      <div className={styles.poolMetrics}>
+        <div><strong>{snapshot.aliveEntries || "—"}</strong><span>Pool entries alive</span></div>
+        <div><strong>{snapshot.submitted}</strong><span>Picks visible</span></div>
+        <div><strong>{googleHealthy ? submittedPct + "%" : "—"}</strong><span>Of live entries submitted</span></div>
+      </div>
+      <div className={styles.submissionTrack} role="progressbar" aria-label="Pool picks submitted" aria-valuemin={0} aria-valuemax={100} aria-valuenow={submittedPct}>
+        <div style={{ width: submittedPct + "%" }} />
+      </div>
+      {googleHealthy && leaders.length ? <>
+        <div className={styles.chartHeading}><strong>Top 5 teams</strong><span>Share of submitted picks</span></div>
+        <div className={styles.ownershipBars}>
+          {leaders.map((item, index) => <div className={styles.barRow} key={item.team}>
+            <span className={styles.barRank}>{index + 1}</span>
+            <strong className={styles.barTeam}>{item.team}</strong>
+            <div className={styles.barTrack}><div className={styles.barFill} style={{ width: item.count / maxCount * 100 + "%" }} /></div>
+            <strong className={styles.barPct}>{item.pct.toFixed(1)}%</strong>
+            <span className={styles.barCount}>{item.count}</span>
+          </div>)}
+        </div>
+        {otherCount > 0 ? <p className={styles.otherPicks}>Other teams: {otherCount} picks ({(otherCount / snapshot.submitted * 100).toFixed(1)}%)</p> : null}
+        <p className={styles.dataNote}>Percentages are among submitted picks, not all {snapshot.aliveEntries} surviving entries. Ownership can change until the pool locks.</p>
+      </> : <p className={styles.emptyState}>{googleHealthy ? "No Week " + week + " picks visible yet. The chart will populate as the pool submits." : "Reconnect Google to see live pool picks."}</p>}
+    </section>
+
+    {!googleHealthy ? <section className={styles.poolStatus}>
+      <div className={styles.statusMain}><strong>Google Sheet connection</strong><p>{snapshot.error || (googleStatus === "error" ? googleMessage : "") || "Connect your read-only commissioner sheet to see live ownership."}</p></div>
+      <a className={styles.connectButton} href="/api/google/connect">{snapshot.connected ? "Reconnect Google" : "Connect Google"}</a>
+    </section> : <div className={styles.connectionFooter}><span>Google Sheet connected · read-only</span><a href="/api/google/disconnect">Disconnect</a></div>}
+
+    <details className={styles.auditDetails}>
+      <summary>Strategy notes &amp; audit details</summary>
+      <div className={styles.auditBody}>
+        <p>{survivorWeekPlan.summary}</p>
+        <p className={styles.auditDate}>Updated {survivorWeekPlan.asOf}</p>
+        {survivorWeekPlan.inputs.map(input => <p key={input.label}><strong>{input.label}:</strong> {input.detail}</p>)}
+      </div>
+    </details>
+  </div></main>;
 }
