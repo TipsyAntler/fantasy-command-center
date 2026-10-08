@@ -34,10 +34,10 @@ export const week5PoolGames: Week5PoolGame[] = [
   {
     day:"Thu", kickoff:"8:15 PM", away:"TB", home:"DAL",
     poolPick:"TB", poolLine:10.5, mikeVibe:"DAL -10.5", poolFavorite:"DAL", poolSpread:10.5,
-    marketLabel:"DAL -8.5 consensus", marketTotal:47.5, confidence:3,
+    marketLabel:"DAL -8.5 to -9.5 final pregame", marketTotal:47.5, confidence:3,
     signal:"FROZEN-NUMBER ADVANTAGE · size uncalibrated",
-    rationale:"The pool gives Tampa Bay +10.5 while current consensus is around Dallas -8.5. Two extra points favor TB at the frozen number; this is an early line-value pick, not a claim that Tampa is the better team.",
-    watch
+    rationale:"FINAL PREGAME AUDIT (Oct 8, 7:02 PM ET): keep TB +10.5. The live market remains roughly Dallas -8.5 to -9.5, leaving one to two points of frozen-line value. Dallas activated LG Tyler Smith but unexpectedly scratched CB Joey Porter Jr.; Tampa still lacks Baker Mayfield, Antoine Winfield Jr., Benjamin Morrison and SirVocea Dennis, while Rueben Bain Jr. and Ko Kieft return. The injuries do not overcome the better frozen number.",
+    watch:"Final inactives reviewed. Recommendation is locked at TB +10.5; Mike\'s actual submitted side remains unconfirmed in FFCC."
   },
   {
     day:"Sun", kickoff:"9:30 AM", away:"PHI", home:"JAX",
