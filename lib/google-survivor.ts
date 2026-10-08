@@ -97,7 +97,7 @@ export type SurvivorEntry = {
 const verifiedEntries: SurvivorEntry[] = [
   { name: "Mike Tridente 1", alive: false, usedTeams: [{ team: "LAC", week: 1 }] },
   { name: "Mike Tridente 2", alive: false, usedTeams: [{ team: "LAC", week: 1 }] },
-  { name: "Mike Tridente 3", alive: true, usedTeams: [{ team: "JAX", week: 1 }, { team: "SF", week: 2 }, { team: "KC", week: 3 }] },
+  { name: "Mike Tridente 3", alive: true, usedTeams: [{ team: "JAX", week: 1 }, { team: "SF", week: 2 }, { team: "KC", week: 3 }, { team: "MIN", week: 4 }, { team: "DAL", week: 5 }] },
   { name: "Mike Tridente 4", alive: false, usedTeams: [{ team: "DET", week: 1 }, { team: "TB", week: 2 }] },
 ];
 
@@ -145,8 +145,8 @@ function currentPoolRows(rows: unknown[][]) {
 
     // The live 2026 pool is the first contiguous block beneath the header.
     // Archived/eliminated blocks appear after the first fully blank separator row.
-    if (!entryNumber && !entryName) break;
-    if (entryName) result.push(row);
+    if (!entryNumber && !entryName) continue;
+    if (entryName && !/^(name|entry name)$/i.test(entryName)) result.push(row);
   }
   return result;
 }
@@ -229,6 +229,7 @@ export async function getSurvivorSnapshot(currentWeek: number): Promise<Survivor
       .map(([team, count]) => ({ team, count, pct: submitted ? (count / submitted) * 100 : 0 }))
       .sort((a, b) => b.count - a.count);
 
+    if (entries.length !== 4) throw new Error(`Expected 4 Mike entries, found ${entries.length}; verify 2026 sheet layout`);
     return {
       connected: true,
       entries,
