@@ -92,7 +92,7 @@ export default async function PickemPage() {
                   <details id={gameId} className={`${styles.gameCard} ${changed ? styles.gameCardChanged : ""}`} key={`${game.away}-${game.home}`} open={changed || undefined}>
                     <summary className={styles.gameSummary}>
                       <div className={styles.time}><strong>{game.day}</strong><span>{game.kickoff} ET</span></div>
-                      <div className={styles.matchup}><strong>{game.away} @ {game.home}</strong><span>Pool: {game.poolFavorite} -{game.poolSpread} · Market snapshot: {game.marketLabel} · O/U {game.marketTotal}</span><span>Mike vibe: {game.mikeVibe}</span>{changed ? <span className={styles.changedBadge}>PICK CHANGED</span> : null}</div>
+                      <div className={styles.matchup}><strong>{game.away} @ {game.home}</strong><span className={styles.marketMeta}>Pool: {game.poolFavorite} -{game.poolSpread} · Market snapshot: {game.marketLabel} · O/U {game.marketTotal}</span><span className={styles.vibeMeta}>Mike vibe: {game.mikeVibe}</span>{changed ? <span className={styles.changedBadge}>PICK CHANGED</span> : null}</div>
                       <div className={styles.pick}><strong>{lineLabel(game.poolPick, game.poolLine)}</strong><span>{changed ? "NEW FFCC PICK" : "FFCC PICK"}</span></div>
                       <ConfidenceMeter evidence={game.confidence} />
                       <div className={styles.chevron} aria-hidden="true">⌄</div>
