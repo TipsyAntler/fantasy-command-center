@@ -65,7 +65,6 @@ export const pickemVibeDisagreements: PickemVibeDisagreement[] = [
   { week: 5, matchup: "LV @ NE", frozenLine: "NE -4.5 / LV +4.5", mikeSide: "NE -4.5", ffccSide: "LV +4.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Current market around NE -3.5 creates one point of frozen-line value on LV." },
   { week: 5, matchup: "MIN @ NO", frozenLine: "MIN -2.5 / NO +2.5", mikeSide: "MIN -2.5", ffccSide: "NO +2.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Current market around MIN -1.5 creates one point of stale-line value on NO." },
   { week: 5, matchup: "DET @ ARI", frozenLine: "DET -5.5 / ARI +5.5", mikeSide: "DET -5.5", ffccSide: "ARI +5.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Market sources range DET -4.5 to -5.5; FFCC takes the better frozen number provisionally." },
-  { week: 5, matchup: "BAL @ ATL", frozenLine: "BAL -3.5 / ATL +3.5", mikeSide: "BAL -3.5", ffccSide: "ATL +3.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Lamar Jackson has only an outside chance to play; live market flipped through zero to roughly ATL -3, creating the week's largest stale-line gap." },
 ];
 
 
@@ -83,6 +82,6 @@ export const pickemVibePicks: PickemVibePick[] = [
   { week: 5, matchup: "DEN @ LAC", frozenLine: "DEN -4.5 / LAC +4.5", mikeSide: "LAC +4.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
   { week: 5, matchup: "DET @ ARI", frozenLine: "DET -5.5 / ARI +5.5", mikeSide: "DET -5.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
   { week: 5, matchup: "SF @ SEA", frozenLine: "SEA -3.5 / SF +3.5", mikeSide: "SF +3.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
-  { week: 5, matchup: "BAL @ ATL", frozenLine: "BAL -3.5 / ATL +3.5", mikeSide: "BAL -3.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
+  { week: 5, matchup: "BAL @ ATL", frozenLine: "BAL -3.5 / ATL +3.5", mikeSide: "ATL +3.5", loggedAt: "2026-10-07 23:43 ET", result: "Pending" },
   { week: 5, matchup: "BUF @ LAR", frozenLine: "LAR -3.5 / BUF +3.5", mikeSide: "BUF +3.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
 ];
