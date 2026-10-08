@@ -137,7 +137,7 @@ export const week5PoolGames: Week5PoolGame[] = [
   },
   {
     day:"Sun", kickoff:"8:20 PM", away:"BAL", home:"ATL",
-    poolPick:"ATL", poolLine:3.5, mikeVibe:"BAL -3.5", poolFavorite:"BAL", poolSpread:3.5,
+    poolPick:"ATL", poolLine:3.5, mikeVibe:"ATL +3.5", poolFavorite:"BAL", poolSpread:3.5,
     marketLabel:"ATL -3 to -3.5", marketTotal:43.5, confidence:4,
     signal:"MAJOR FROZEN-NUMBER ADVANTAGE · injury-driven",
     rationale:"The frozen pool still makes Baltimore -3.5, but Lamar Jackson's ankle injury has moved the live market through zero to roughly Atlanta -3. That creates about six-plus points of stale-line value on ATL +3.5. This is the clearest early Week 5 discrepancy.",
