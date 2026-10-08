@@ -57,6 +57,19 @@
 .time strong { font-size: 9px; color: #d6e1ec; }
 .time span, .matchup span, .pick span { color: var(--cc-muted); font-size: 8px; }
 .matchup strong { font-size: 12px; }
+.marketMeta {
+  display: block;
+  margin-top: 2px;
+  line-height: 1.45;
+}
+.vibeMeta {
+  display: block;
+  width: fit-content;
+  margin-top: 4px;
+  color: #c8b8ff !important;
+  font-weight: 750;
+  line-height: 1.35;
+}
 .pick strong { color: var(--cc-cyan); font-size: 14px; letter-spacing: -.02em; }
 .gameCardChanged .pick strong { color: #ff7b85; }
 .gameCardChanged .pick span { color: #ffc0c5; font-weight: 900; }
@@ -142,6 +155,8 @@
   .chevron { grid-column: 4; grid-row: 1 / 3; }
   .gameSummary { row-gap: 12px; }
   .matchup strong { font-size: 11px; }
+  .marketMeta { margin-top: 3px; line-height: 1.5; }
+  .vibeMeta { margin-top: 5px; font-size: 8px !important; }
   .pick strong { font-size: 13px; }
   .detail { grid-template-columns: 1fr; }
   .methodGrid { grid-template-columns: 1fr; }
