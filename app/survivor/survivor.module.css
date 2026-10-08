@@ -351,3 +351,72 @@
 
   .ownershipGrid > div:last-child { border-bottom: 0; }
 }
+
+
+/* Compact, mobile-first Survivor Lab */
+.survivorSummary {
+  padding: 21px 22px;
+  border: 1px solid rgba(97,226,168,.32);
+  border-radius: 22px;
+  background: linear-gradient(135deg,rgba(97,226,168,.10),rgba(13,24,34,.94) 60%);
+}
+.summaryTop { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.finalTag, .directionalTag {
+  padding:6px 10px; border-radius:999px; font-size:10px; font-weight:900; letter-spacing:.08em;
+}
+.finalTag { color:#bdf1d9; background:rgba(97,226,168,.12); border:1px solid rgba(97,226,168,.30); }
+.directionalTag { color:#f1d89d; background:rgba(240,187,95,.12); border:1px solid rgba(240,187,95,.30); }
+.pickHero { display:flex; align-items:end; justify-content:space-between; gap:20px; margin-top:19px; }
+.pickLabel { color:#9bb0bf; font-size:11px; }
+.pickTeam { margin-top:2px; font-size:clamp(46px,7vw,70px); line-height:1.1; font-weight:950; letter-spacing:-.06em; }
+.pickMeta { display:grid; gap:3px; text-align:right; }
+.pickMeta span { color:#92a5b4; font-size:10px; }
+.pickMeta strong { font-size:20px; }
+.pickMeta small { color:#9fe7c8; font-size:10px; }
+.pickNote, .historyLine { margin:12px 0 0; color:#879bac; font-size:11px; line-height:1.5; }
+.historyLine { padding-top:12px; border-top:1px solid rgba(255,255,255,.07); }
+.warningText { color:#ffb9ac; font-size:12px; font-weight:700; }
+.poolMetrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; padding:0 22px 16px; }
+.poolMetrics > div { display:grid; gap:3px; }
+.poolMetrics strong { font-size:clamp(21px,3vw,29px); letter-spacing:-.04em; }
+.poolMetrics span { color:#8fa2b1; font-size:10px; }
+.submissionTrack { height:6px; margin:0 22px 20px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.08); }
+.submissionTrack > div { height:100%; background:#53d6ff; border-radius:999px; }
+.liveChip, .offlineChip { font-size:10px; font-weight:900; letter-spacing:.06em; }
+.liveChip { color:#83e9c1; }
+.offlineChip { color:#ffb9ac; }
+.chartHeading { display:flex; justify-content:space-between; gap:10px; padding:0 22px 13px; font-size:11px; }
+.chartHeading span { color:#8095a5; font-size:10px; }
+.ownershipBars { display:grid; gap:15px; padding:0 22px 22px; }
+.barRow { display:grid; grid-template-columns:15px 42px minmax(0,1fr) 55px 35px; align-items:center; gap:10px; }
+.barRank { color:#687f91; font-size:10px; }
+.barTeam { font-size:13px; }
+.barTrack { height:14px; overflow:hidden; border-radius:5px; background:rgba(255,255,255,.055); }
+.barFill { height:100%; border-radius:5px; background:linear-gradient(90deg,#39b9dc,#64dcb8); }
+.barPct { text-align:right; font-size:12px; }
+.barCount { color:#8194a4; text-align:right; font-size:10px; }
+.otherPicks, .dataNote { margin:0; padding:0 22px 13px; color:#8fa2b1; font-size:10px; line-height:1.5; }
+.dataNote { color:#718697; padding-bottom:20px; }
+.emptyState { padding:0 22px 22px; color:#94a7b7; font-size:12px; line-height:1.5; }
+.connectionFooter { display:flex; justify-content:space-between; gap:10px; padding:14px 5px; color:#718697; font-size:10px; }
+.connectionFooter a { color:#91a7b8; }
+.auditDetails { margin:10px 0 25px; border:1px solid rgba(255,255,255,.09); border-radius:14px; color:#94a7b7; }
+.auditDetails summary { padding:15px 17px; cursor:pointer; font-size:11px; font-weight:750; }
+.auditBody { padding:0 17px 17px; max-height:420px; overflow:auto; font-size:11px; line-height:1.6; }
+.auditBody p { margin:10px 0; }
+.auditDate { color:#6d8191; }
+@media (max-width:600px) {
+  .survivorSummary { padding:17px; }
+  .pickHero { gap:10px; }
+  .pickMeta strong { font-size:16px; }
+  .pickMeta small { font-size:9px; }
+  .poolMetrics { gap:8px; padding:0 16px 14px; }
+  .poolMetrics span { font-size:9px; }
+  .submissionTrack { margin:0 16px 20px; }
+  .chartHeading { padding:0 16px 12px; }
+  .ownershipBars { padding:0 16px 20px; gap:14px; }
+  .barRow { grid-template-columns:12px 34px minmax(0,1fr) 48px 24px; gap:6px; }
+  .barTeam { font-size:12px; }
+  .barPct { font-size:11px; }
+  .otherPicks,.dataNote { padding-left:16px; padding-right:16px; }
+}
