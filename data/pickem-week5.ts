@@ -14,6 +14,8 @@ export type Week5PoolGame = {
   signal: string;
   rationale: string;
   watch: string;
+  result?: string;
+  outcome?: "win" | "loss" | "push";
 };
 
 export const week5Number = 5;
@@ -37,7 +39,9 @@ export const week5PoolGames: Week5PoolGame[] = [
     marketLabel:"DAL -8.5 to -9.5 final pregame", marketTotal:47.5, confidence:3,
     signal:"FROZEN-NUMBER ADVANTAGE · size uncalibrated",
     rationale:"FINAL PREGAME AUDIT (Oct 8, 7:02 PM ET): keep TB +10.5. The live market remains roughly Dallas -8.5 to -9.5, leaving one to two points of frozen-line value. Dallas activated LG Tyler Smith but unexpectedly scratched CB Joey Porter Jr.; Tampa still lacks Baker Mayfield, Antoine Winfield Jr., Benjamin Morrison and SirVocea Dennis, while Rueben Bain Jr. and Ko Kieft return. The injuries do not overcome the better frozen number.",
-    watch:"Final inactives reviewed. Recommendation is locked at TB +10.5; Mike\'s actual submitted side remains unconfirmed in FFCC."
+    watch:"Final inactives reviewed. Mike\'s actual submitted side remains unconfirmed in FFCC.",
+    result:"TB 24, DAL 16 — FFCC recommendation TB +10.5 covered outright.",
+    outcome:"win"
   },
   {
     day:"Sun", kickoff:"9:30 AM", away:"PHI", home:"JAX",
