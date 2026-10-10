@@ -21,7 +21,7 @@ export type Week5PoolGame = {
 export const week5Number = 5;
 export const week5PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week5PoolStatus = "POOL LINES FROZEN · EXACT WEEK 5 LINES CAPTURED · MIKE VIBES LOGGED BEFORE MARKET REVIEW";
-export const week5MarketAsOf = "Oct 7 · 7:17 AM ET · early cross-source market audit";
+export const week5MarketAsOf = "Oct 10 · 4:45 PM ET · Saturday market and personnel audit";
 
 export const week5Standing = {
   correct: 27,
@@ -126,10 +126,10 @@ export const week5PoolGames: Week5PoolGame[] = [
   {
     day:"Sun", kickoff:"4:25 PM", away:"DET", home:"ARI",
     poolPick:"ARI", poolLine:5.5, mikeVibe:"DET -5.5", poolFavorite:"DET", poolSpread:5.5,
-    marketLabel:"DET -4.5 to -5.5", marketTotal:54.5, confidence:2,
-    signal:"SMALL FROZEN-NUMBER LEAN",
-    rationale:"ARI +5.5 is equal to or roughly a point better than the current market depending on source. The early edge is modest, so exact +5.5 prices matter.",
-    watch
+    marketLabel:"DET -5.5 · FanDuel exact: DET -105 / ARI -115", marketTotal:54.5, confidence:2,
+    signal:"SMALL EXACT-LINE PRICE LEAN · major personnel watch",
+    rationale:"KEEP ARI +5.5 after the Oct 10 report that Marvin Harrison Jr. will be inactive while Arizona finalizes a trade. FanDuel still prices the exact frozen spread at ARI +5.5 -115 versus DET -5.5 -105 as of 4:45 PM ET, so the market has not validated a Detroit flip; the small price lean remains Arizona after proportional de-vig. Harrison has only five catches for 85 yards through four games, but his absence is meaningful and must be rechecked after the market fully digests the news.",
+    watch:"Recheck independent books at the exact frozen 5.5 after the Harrison news and before the 4:25 PM ET game lock. Flip only if a robust exact-line consensus moves to Detroit; do not infer cover probability from the moneyline alone."
   },
   {
     day:"Sun", kickoff:"4:25 PM", away:"SF", home:"SEA",
