@@ -1,7 +1,7 @@
 export const week5PickemAudit = {
   week: 5,
   pool: "The SZN NFL Super Pick'em · NFL-575",
-  asOf: "2026-10-11T05:40:00-04:00",
+  asOf: "2026-10-11T08:22:00-04:00",
   games: [
     {
       matchup: "TB @ DAL",
@@ -22,12 +22,12 @@ export const week5PickemAudit = {
       originalRecommendation: "PHI +7.5",
       finalRecommendation: "JAX -7.5",
       mikeSubmittedSide: "unconfirmed",
-      closingMarket: "Pending; Oct 11 5:40 AM ET exact-line consensus JAX -7.5 with JAX roughly -112 to -115 and PHI -105 to -109",
+      closingMarket: "Final pregame snapshot Oct 11 8:22 AM ET: JAX -7.5 roughly -114 to -120 versus PHI +7.5 even to -106; several books JAX -8",
       evidenceLabel: "small exact-line price lean",
       result: "pending",
       recommendationOutcome: "pending",
       changeFlag: true,
-      rationale: "Fresh exact-line prices showed FanDuel JAX -114 / PHI -106, a comparable multi-book range of roughly JAX -112 to -115 versus PHI -105 to -109, and DraftKings JAX -108. The initial frozen-number advantage had disappeared, and the current exact-line consensus modestly favored Jacksonville after Philadelphia's major offensive losses. This changes FFCC advice only and does not assume Mike's submitted side."
+      rationale: "The final pregame exact-line board showed JAX -7.5 around -114 to -120 versus PHI +7.5 from even to -106, with several books already at Jacksonville -8. Philadelphia confirmed Saquon Barkley, DeVonta Smith, Drew Kendall, Hollywood Brown and Marcus Epps inactive, then also ruled Jonathan Greenard out after his pregame workout. The frozen -7.5 retained a small market price lean. This changes FFCC advice only and does not assume Mike's submitted side."
     }
   ]
 };
