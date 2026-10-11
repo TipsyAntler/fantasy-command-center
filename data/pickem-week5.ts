@@ -139,7 +139,9 @@ export const week5PoolGames: Week5PoolGame[] = [
     marketLabel:"DEN -3.5 final pregame", marketTotal:42.5, confidence:3,
     signal:"FINAL PREGAME · FROZEN-NUMBER ADVANTAGE",
     rationale:"FINAL PREGAME AUDIT (Oct 11, 3:15 PM ET): keep LAC +4.5. The live market remains around Denver -3.5, leaving a full point of frozen-line value. Los Angeles is depleted at receiver, offensive line and defensive back, but Denver is also without starting corners Pat Surtain II and Riley Moss; Omarion Hampton remains active. Those absences do not erase the better pool number.",
-    watch:"FINAL: official inactives and the current market reviewed. Keep LAC +4.5 through the 4:05 PM ET lock. Mike's actual submitted side remains unconfirmed."
+    watch:"FINAL: official inactives and the current market reviewed. Keep LAC +4.5 through the 4:05 PM ET lock. Mike's actual submitted side remains unconfirmed.",
+    result:"DEN 23, LAC 17 — FFCC recommendation LAC +4.5 did not cover.",
+    outcome:"loss"
   },
   {
     day:"Sun", kickoff:"4:25 PM", away:"DET", home:"ARI",
