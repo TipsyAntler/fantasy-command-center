@@ -1,7 +1,7 @@
 export const week5PickemAudit = {
   week: 5,
   pool: "The SZN NFL Super Pick'em · NFL-575",
-  asOf: "2026-10-11T08:22:00-04:00",
+  asOf: "2026-10-11T17:23:00-04:00",
   games: [
     {
       matchup: "TB @ DAL",
@@ -24,8 +24,8 @@ export const week5PickemAudit = {
       mikeSubmittedSide: "unconfirmed",
       closingMarket: "Final pregame snapshot Oct 11 8:22 AM ET: JAX -7.5 roughly -114 to -120 versus PHI +7.5 even to -106; several books JAX -8",
       evidenceLabel: "small exact-line price lean",
-      result: "pending",
-      recommendationOutcome: "pending",
+      result: "JAX 19, PHI 17",
+      recommendationOutcome: "loss",
       changeFlag: true,
       rationale: "The final pregame exact-line board showed JAX -7.5 around -114 to -120 versus PHI +7.5 from even to -106, with several books already at Jacksonville -8. Philadelphia confirmed Saquon Barkley, DeVonta Smith, Drew Kendall, Hollywood Brown and Marcus Epps inactive, then also ruled Jonathan Greenard out after his pregame workout. The frozen -7.5 retained a small market price lean. This changes FFCC advice only and does not assume Mike's submitted side."
     }
