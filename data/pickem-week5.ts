@@ -21,7 +21,7 @@ export type Week5PoolGame = {
 export const week5Number = 5;
 export const week5PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week5PoolStatus = "POOL LINES FROZEN · EXACT WEEK 5 LINES CAPTURED · MIKE VIBES LOGGED BEFORE MARKET REVIEW";
-export const week5MarketAsOf = "Oct 10 · 9:20 PM ET · Saturday market and personnel audit";
+export const week5MarketAsOf = "Oct 11 · 5:40 AM ET · Sunday exact-line and personnel audit";
 
 export const week5Standing = {
   correct: 27,
@@ -45,11 +45,11 @@ export const week5PoolGames: Week5PoolGame[] = [
   },
   {
     day:"Sun", kickoff:"9:30 AM", away:"PHI", home:"JAX",
-    poolPick:"PHI", poolLine:7.5, mikeVibe:"PHI +7.5", poolFavorite:"JAX", poolSpread:7.5,
-    marketLabel:"JAX -6.5 to -7", marketTotal:42.5, confidence:3,
-    signal:"FROZEN-NUMBER ADVANTAGE · key 7",
-    rationale:"PHI +7.5 is better than the current market's roughly +6.5 to +7 and turns a seven-point Jacksonville win into a pool cover.",
-    watch
+    poolPick:"JAX", poolLine:-7.5, mikeVibe:"PHI +7.5", poolFavorite:"JAX", poolSpread:7.5,
+    marketLabel:"JAX -7.5 · exact: FanDuel JAX -114 / PHI -106; multi-book JAX -112 to -115", marketTotal:41.5, confidence:2,
+    signal:"SMALL EXACT-LINE PRICE LEAN · changed from PHI +7.5",
+    rationale:"FLIP TO JAX -7.5 (Oct 11, 5:40 AM ET). The market has fully reached the frozen pool line after Philadelphia's major offensive losses. FanDuel prices JAX -7.5 -114 versus PHI +7.5 -106; the comparable multi-book exact-line board consistently shows Jacksonville around -112 to -115 and Philadelphia around -105 to -109, while DraftKings lists JAX -7.5 -108. After proportional de-vig, the robust exact-line consensus now slightly favors Jacksonville. This is a small market lean, not a calibrated high-confidence edge.",
+    watch:"Recommendation changed from PHI +7.5 to JAX -7.5. Mike's actual submitted side remains unconfirmed. Recheck official inactives and exact-line prices before the 9:30 AM ET lock; reverse only if a robust exact-line consensus moves back to Philadelphia."
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"CHI", home:"GB",
