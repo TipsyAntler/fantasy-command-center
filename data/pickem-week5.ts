@@ -21,7 +21,7 @@ export type Week5PoolGame = {
 export const week5Number = 5;
 export const week5PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week5PoolStatus = "POOL LINES FROZEN · EXACT WEEK 5 LINES CAPTURED · MIKE VIBES LOGGED BEFORE MARKET REVIEW";
-export const week5MarketAsOf = "Oct 11 · 11:58 AM ET · 1 PM official-inactives and market audit";
+export const week5MarketAsOf = "Oct 11 · 3:15 PM ET · late-window final-inactives and market audit";
 
 export const week5Standing = {
   correct: 27,
@@ -118,26 +118,26 @@ export const week5PoolGames: Week5PoolGame[] = [
   {
     day:"Sun", kickoff:"4:05 PM", away:"DEN", home:"LAC",
     poolPick:"LAC", poolLine:4.5, mikeVibe:"LAC +4.5", poolFavorite:"DEN", poolSpread:4.5,
-    marketLabel:"DEN -3.5", marketTotal:42.5, confidence:3,
-    signal:"FROZEN-NUMBER ADVANTAGE",
-    rationale:"The pool gives LAC +4.5 versus a current market around +3.5, a full point of frozen-line value.",
-    watch
+    marketLabel:"DEN -3.5 final pregame", marketTotal:42.5, confidence:3,
+    signal:"FINAL PREGAME · FROZEN-NUMBER ADVANTAGE",
+    rationale:"FINAL PREGAME AUDIT (Oct 11, 3:15 PM ET): keep LAC +4.5. The live market remains around Denver -3.5, leaving a full point of frozen-line value. Los Angeles is depleted at receiver, offensive line and defensive back, but Denver is also without starting corners Pat Surtain II and Riley Moss; Omarion Hampton remains active. Those absences do not erase the better pool number.",
+    watch:"FINAL: official inactives and the current market reviewed. Keep LAC +4.5 through the 4:05 PM ET lock. Mike's actual submitted side remains unconfirmed."
   },
   {
     day:"Sun", kickoff:"4:25 PM", away:"DET", home:"ARI",
     poolPick:"ARI", poolLine:5.5, mikeVibe:"DET -5.5", poolFavorite:"DET", poolSpread:5.5,
-    marketLabel:"DET -5.5 · FanDuel exact: DET -105 / ARI -115", marketTotal:54.5, confidence:2,
-    signal:"SMALL EXACT-LINE PRICE LEAN · major personnel watch",
-    rationale:"KEEP ARI +5.5 after the Oct 10 report that Marvin Harrison Jr. will be inactive while Arizona finalizes a trade. FanDuel still prices the exact frozen spread at ARI +5.5 -115 versus DET -5.5 -105 as of 4:45 PM ET, so the market has not validated a Detroit flip; the small price lean remains Arizona after proportional de-vig. Harrison has only five catches for 85 yards through four games, but his absence is meaningful and must be rechecked after the market fully digests the news.",
-    watch:"Recheck independent books at the exact frozen 5.5 after the Harrison news and before the 4:25 PM ET game lock. Flip only if a robust exact-line consensus moves to Detroit; do not infer cover probability from the moneyline alone."
+    marketLabel:"DET -5.5 · exact: DET -108 / ARI -111", marketTotal:54.5, confidence:2,
+    signal:"FINAL PREGAME · SMALL EXACT-LINE PRICE LEAN",
+    rationale:"FINAL PREGAME AUDIT (Oct 11, 3:15 PM ET): keep ARI +5.5. Marvin Harrison Jr. is inactive while Arizona works on a trade, but the exact frozen spread remains essentially balanced with a slight Arizona price lean: Detroit -5.5 -108 versus Arizona +5.5 -111. Detroit also confirmed DT Tyleik Williams active. The market has fully had time to digest Harrison's absence and still does not validate a Detroit flip.",
+    watch:"FINAL: official inactives and the exact frozen-line price reviewed. Keep ARI +5.5 through the 4:25 PM ET lock. Mike's actual submitted side remains unconfirmed."
   },
   {
     day:"Sun", kickoff:"4:25 PM", away:"SF", home:"SEA",
     poolPick:"SF", poolLine:3.5, mikeVibe:"SF +3.5", poolFavorite:"SEA", poolSpread:3.5,
-    marketLabel:"SEA -2.5 to -3", marketTotal:47.5, confidence:3,
-    signal:"FROZEN-NUMBER ADVANTAGE · key 3",
-    rationale:"SF +3.5 is better than the current +2.5 to +3 market and sits on the valuable side of three.",
-    watch
+    marketLabel:"SEA -3 to -3.5 final pregame", marketTotal:46.5, confidence:3,
+    signal:"FINAL PREGAME · FROZEN-NUMBER ADVANTAGE · key 3",
+    rationale:"FINAL PREGAME AUDIT (Oct 11, 3:15 PM ET): keep SF +3.5. DraftKings and FanDuel are around Seattle -3 while BetMGM is -3.5, so the frozen number is at least equal to the best widely available 49ers line and often a half-point better across the key three. Seattle's starting secondary is fully active for the first time this season, but the market has not moved far enough to erase the number advantage.",
+    watch:"FINAL: official inactives and current multi-book spreads reviewed. Keep SF +3.5 through the 4:25 PM ET lock. Mike's actual submitted side remains unconfirmed."
   },
   {
     day:"Sun", kickoff:"8:20 PM", away:"BAL", home:"ATL",
