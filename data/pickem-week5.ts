@@ -21,7 +21,7 @@ export type Week5PoolGame = {
 export const week5Number = 5;
 export const week5PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week5PoolStatus = "POOL LINES FROZEN · EXACT WEEK 5 LINES CAPTURED · MIKE VIBES LOGGED BEFORE MARKET REVIEW";
-export const week5MarketAsOf = "Oct 11 · 5:23 PM ET · completed early-window results reconciled; late games live";
+export const week5MarketAsOf = "Oct 11 · 5:59 PM ET · early-window results complete; late games live";
 
 export const week5Standing = {
   correct: 27,
@@ -129,7 +129,9 @@ export const week5PoolGames: Week5PoolGame[] = [
     marketLabel:"WAS -3 to -3.5", marketTotal:43.5, confidence:2,
     signal:"SMALL FROZEN-NUMBER LEAN",
     rationale:"NYG +3.5 is equal to or a half-point better than current consensus depending on source. Keep the Giants provisionally pending exact-line prices.",
-    watch
+    watch,
+    result:"NYG 27, WAS 27 — FFCC recommendation NYG +3.5 covered.",
+    outcome:"win"
   },
   {
     day:"Sun", kickoff:"4:05 PM", away:"DEN", home:"LAC",
