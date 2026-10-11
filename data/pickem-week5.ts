@@ -21,7 +21,7 @@ export type Week5PoolGame = {
 export const week5Number = 5;
 export const week5PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week5PoolStatus = "POOL LINES FROZEN · EXACT WEEK 5 LINES CAPTURED · MIKE VIBES LOGGED BEFORE MARKET REVIEW";
-export const week5MarketAsOf = "Oct 11 · 5:59 PM ET · early-window results complete; late games live";
+export const week5MarketAsOf = "Oct 11 · 7:28 PM ET · Sunday-night final-inactives and market audit";
 
 export const week5Standing = {
   correct: 27,
@@ -160,10 +160,10 @@ export const week5PoolGames: Week5PoolGame[] = [
   {
     day:"Sun", kickoff:"8:20 PM", away:"BAL", home:"ATL",
     poolPick:"ATL", poolLine:3.5, mikeVibe:"ATL +3.5", poolFavorite:"BAL", poolSpread:3.5,
-    marketLabel:"ATL -3 to -3.5", marketTotal:43.5, confidence:4,
-    signal:"MAJOR FROZEN-NUMBER ADVANTAGE · injury-driven",
-    rationale:"The frozen pool still makes Baltimore -3.5, but Lamar Jackson's ankle injury has moved the live market through zero to roughly Atlanta -3. That creates about six-plus points of stale-line value on ATL +3.5. This is the clearest early Week 5 discrepancy.",
-    watch
+    marketLabel:"ATL -3 to -3.5 final pregame", marketTotal:43.5, confidence:4,
+    signal:"FINAL PREGAME · MAJOR FROZEN-NUMBER ADVANTAGE · injury-driven",
+    rationale:"FINAL PREGAME AUDIT (Oct 11, 7:28 PM ET): keep ATL +3.5. Lamar Jackson is inactive and Tyler Huntley starts; Baltimore also scratched starting RG Andrew Vorhees, while Zay Flowers and Marlon Humphrey are active. Atlanta has LT Jake Matthews active but edge Za'Darius Smith inactive. FanDuel still makes Atlanta a 3.5-point favorite, with other live books around ATL -3, so the frozen pool line remains roughly 6.5 to 7 points better and crosses zero plus the key three. This is a large frozen-number advantage with uncalibrated size, not a model-derived cover probability.",
+    watch:"FINAL: official inactives and current market reviewed. Keep ATL +3.5 through the 8:20 PM ET lock. Mike's actual submitted side remains unconfirmed."
   },
   {
     day:"Mon", kickoff:"8:15 PM", away:"BUF", home:"LAR",
