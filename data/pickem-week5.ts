@@ -21,7 +21,7 @@ export type Week5PoolGame = {
 export const week5Number = 5;
 export const week5PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week5PoolStatus = "POOL LINES FROZEN · EXACT WEEK 5 LINES CAPTURED · MIKE VIBES LOGGED BEFORE MARKET REVIEW";
-export const week5MarketAsOf = "Oct 11 · 3:15 PM ET · late-window final-inactives and market audit";
+export const week5MarketAsOf = "Oct 11 · 5:23 PM ET · completed early-window results reconciled; late games live";
 
 export const week5Standing = {
   correct: 27,
@@ -49,7 +49,9 @@ export const week5PoolGames: Week5PoolGame[] = [
     marketLabel:"JAX -7.5 · exact: JAX -114 to -120 / PHI even to -106; several books JAX -8", marketTotal:41.5, confidence:2,
     signal:"FINAL PREGAME · SMALL EXACT-LINE PRICE LEAN",
     rationale:"FINAL PREGAME AUDIT (Oct 11, 8:22 AM ET): keep JAX -7.5. Philadelphia confirmed Saquon Barkley, DeVonta Smith, Drew Kendall, Hollywood Brown and Marcus Epps inactive, then also ruled edge rusher Jonathan Greenard out after his pregame workout. The comparable exact-line board prices JAX -7.5 around -114 to -120 versus PHI +7.5 from even to -106, and several books have moved to Jacksonville -8. The frozen -7.5 therefore retains a small exact-line price lean, not a calibrated high-confidence edge.",
-    watch:"FINAL: official inactives and exact-line prices reviewed. Keep JAX -7.5 through the 9:30 AM ET lock. Mike's actual submitted side remains unconfirmed."
+    watch:"FINAL: official inactives and exact-line prices reviewed. Keep JAX -7.5 through the 9:30 AM ET lock. Mike's actual submitted side remains unconfirmed.",
+    result:"JAX 19, PHI 17 — FFCC recommendation JAX -7.5 did not cover.",
+    outcome:"loss"
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"CHI", home:"GB",
@@ -57,7 +59,9 @@ export const week5PoolGames: Week5PoolGame[] = [
     marketLabel:"CHI -1.5 after Caleb Williams inactive", marketTotal:45.5, confidence:3,
     signal:"FINAL PREGAME · FROZEN-NUMBER ADVANTAGE · key 3",
     rationale:"FINAL PREGAME AUDIT (Oct 11, 11:58 AM ET): keep GB +3.5. Chicago officially ruled Caleb Williams and RB Kyle Monangai inactive, while Green Bay will have newly signed G Kevin Zeitler active. The live market is now roughly Chicago -1.5, so the frozen pool line gives Green Bay about two points of value and remains above the key three. This is a frozen-number advantage with uncalibrated size, not a model-derived cover probability.",
-    watch:"FINAL: official inactives and the current market reviewed. Keep GB +3.5 through the 1 PM ET lock. Mike's actual submitted side remains unconfirmed."
+    watch:"FINAL: official inactives and the current market reviewed. Keep GB +3.5 through the 1 PM ET lock. Mike's actual submitted side remains unconfirmed.",
+    result:"GB 31, CHI 7 — FFCC recommendation GB +3.5 covered.",
+    outcome:"win"
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"HOU", home:"TEN",
@@ -65,7 +69,9 @@ export const week5PoolGames: Week5PoolGame[] = [
     marketLabel:"HOU -7 to -7.5", marketTotal:37.5, confidence:2,
     signal:"SMALL FROZEN-NUMBER LEAN · key 7",
     rationale:"The market is clustered around Houston -7 to -7.5. TEN +7.5 gets the useful half-point above seven at some books, but the edge is not universal.",
-    watch
+    watch,
+    result:"HOU 26, TEN 3 — FFCC recommendation TEN +7.5 did not cover.",
+    outcome:"loss"
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"CIN", home:"MIA",
@@ -73,7 +79,9 @@ export const week5PoolGames: Week5PoolGame[] = [
     marketLabel:"CIN -7 to -7.5", marketTotal:42.5, confidence:2,
     signal:"SMALL FROZEN-NUMBER LEAN · key 7",
     rationale:"MIA +7.5 is at worst near the current market and at some consensus snapshots is a half-point better than +7. Keep Miami provisionally while exact +7.5 prices are audited.",
-    watch
+    watch,
+    result:"CIN 31, MIA 24 — FFCC recommendation MIA +7.5 covered.",
+    outcome:"win"
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"LV", home:"NE",
@@ -81,7 +89,9 @@ export const week5PoolGames: Week5PoolGame[] = [
     marketLabel:"NE -3.5", marketTotal:45.5, confidence:3,
     signal:"FROZEN-NUMBER ADVANTAGE",
     rationale:"The pool gives Las Vegas +4.5 while the current market is around +3.5. That full extra point favors LV.",
-    watch
+    watch,
+    result:"NE 45, LV 17 — FFCC recommendation LV +4.5 did not cover.",
+    outcome:"loss"
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"MIN", home:"NO",
@@ -89,7 +99,9 @@ export const week5PoolGames: Week5PoolGame[] = [
     marketLabel:"MIN -1.5", marketTotal:42.5, confidence:3,
     signal:"FROZEN-NUMBER ADVANTAGE",
     rationale:"NO +2.5 is a full point better than the current market around +1.5. The stale pool number favors New Orleans even though Minnesota remains the market favorite.",
-    watch
+    watch,
+    result:"MIN 23, NO 13 — FFCC recommendation NO +2.5 did not cover.",
+    outcome:"loss"
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"CLE", home:"NYJ",
@@ -97,7 +109,9 @@ export const week5PoolGames: Week5PoolGame[] = [
     marketLabel:"NYJ -1.5 to -2.5", marketTotal:39.5, confidence:3,
     signal:"FROZEN-NUMBER ADVANTAGE · key 3",
     rationale:"CLE +3.5 is one to two points better than the market and sits above the key field-goal margin.",
-    watch
+    watch,
+    result:"NYJ 17, CLE 12 — FFCC recommendation CLE +3.5 did not cover.",
+    outcome:"loss"
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"IND", home:"PIT",
@@ -105,7 +119,9 @@ export const week5PoolGames: Week5PoolGame[] = [
     marketLabel:"PIT -2.5", marketTotal:44.5, confidence:3,
     signal:"FROZEN-NUMBER ADVANTAGE · key 3",
     rationale:"IND +3.5 versus a current +2.5 market crosses the key three and creates clear frozen-line value.",
-    watch
+    watch,
+    result:"PIT 34, IND 22 — FFCC recommendation IND +3.5 did not cover.",
+    outcome:"loss"
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"NYG", home:"WAS",
