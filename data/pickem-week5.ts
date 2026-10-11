@@ -21,7 +21,7 @@ export type Week5PoolGame = {
 export const week5Number = 5;
 export const week5PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week5PoolStatus = "POOL LINES FROZEN · EXACT WEEK 5 LINES CAPTURED · MIKE VIBES LOGGED BEFORE MARKET REVIEW";
-export const week5MarketAsOf = "Oct 10 · 4:45 PM ET · Saturday market and personnel audit";
+export const week5MarketAsOf = "Oct 10 · 9:20 PM ET · Saturday market and personnel audit";
 
 export const week5Standing = {
   correct: 27,
@@ -150,9 +150,9 @@ export const week5PoolGames: Week5PoolGame[] = [
   {
     day:"Mon", kickoff:"8:15 PM", away:"BUF", home:"LAR",
     poolPick:"BUF", poolLine:3.5, mikeVibe:"BUF +3.5", poolFavorite:"LAR", poolSpread:3.5,
-    marketLabel:"LAR -3", marketTotal:54.5, confidence:3,
+    marketLabel:"LAR -3.5 · FanDuel exact: BUF +3.5 -118 / LAR -3.5 -104", marketTotal:54.5, confidence:3,
     signal:"FROZEN-NUMBER ADVANTAGE · key 3",
-    rationale:"BUF +3.5 is a half-point better than the current +3 market and turns a three-point Rams win into a pool cover.",
+    rationale:"KEEP BUF +3.5 after Buffalo ruled out DT Ed Oliver and WR Joshua Palmer, with WR DJ Moore questionable. FanDuel now lists the exact frozen spread at BUF +3.5 -118 versus LAR -3.5 -104 as of Oct 10 at 9:20 PM ET, so the injury news has not produced a Rams-side exact-line edge; the proportional de-vig price still favors Buffalo. The frozen +3.5 also remains on the valuable side of the key three.",
     watch
   }
 ];
