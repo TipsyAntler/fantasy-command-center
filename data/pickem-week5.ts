@@ -21,7 +21,7 @@ export type Week5PoolGame = {
 export const week5Number = 5;
 export const week5PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week5PoolStatus = "POOL LINES FROZEN · EXACT WEEK 5 LINES CAPTURED · MIKE VIBES LOGGED BEFORE MARKET REVIEW";
-export const week5MarketAsOf = "Oct 11 · 8:22 AM ET · London final-inactives and exact-line audit";
+export const week5MarketAsOf = "Oct 11 · 11:58 AM ET · 1 PM official-inactives and market audit";
 
 export const week5Standing = {
   correct: 27,
@@ -54,10 +54,10 @@ export const week5PoolGames: Week5PoolGame[] = [
   {
     day:"Sun", kickoff:"1:00 PM", away:"CHI", home:"GB",
     poolPick:"GB", poolLine:3.5, mikeVibe:"CHI -3.5", poolFavorite:"CHI", poolSpread:3.5,
-    marketLabel:"CHI -2.5 to -3", marketTotal:45.5, confidence:3,
-    signal:"FROZEN-NUMBER ADVANTAGE · key 3",
-    rationale:"GB +3.5 is materially better than the current +2.5 to +3 market range. A three-point Chicago win cashes the pool side instead of losing or pushing.",
-    watch
+    marketLabel:"CHI -1.5 after Caleb Williams inactive", marketTotal:45.5, confidence:3,
+    signal:"FINAL PREGAME · FROZEN-NUMBER ADVANTAGE · key 3",
+    rationale:"FINAL PREGAME AUDIT (Oct 11, 11:58 AM ET): keep GB +3.5. Chicago officially ruled Caleb Williams and RB Kyle Monangai inactive, while Green Bay will have newly signed G Kevin Zeitler active. The live market is now roughly Chicago -1.5, so the frozen pool line gives Green Bay about two points of value and remains above the key three. This is a frozen-number advantage with uncalibrated size, not a model-derived cover probability.",
+    watch:"FINAL: official inactives and the current market reviewed. Keep GB +3.5 through the 1 PM ET lock. Mike's actual submitted side remains unconfirmed."
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"HOU", home:"TEN",
