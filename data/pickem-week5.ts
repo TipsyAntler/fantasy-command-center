@@ -21,7 +21,7 @@ export type Week5PoolGame = {
 export const week5Number = 5;
 export const week5PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week5PoolStatus = "POOL LINES FROZEN · EXACT WEEK 5 LINES CAPTURED · MIKE VIBES LOGGED BEFORE MARKET REVIEW";
-export const week5MarketAsOf = "Oct 11 · 9:26 PM ET · Sunday results reconciled; Sunday night live";
+export const week5MarketAsOf = "Oct 12 · 12:23 AM ET · Sunday results reconciled; Monday game remains open";
 
 export const week5Standing = {
   correct: 27,
@@ -169,7 +169,9 @@ export const week5PoolGames: Week5PoolGame[] = [
     marketLabel:"ATL -3 to -3.5 final pregame", marketTotal:43.5, confidence:4,
     signal:"FINAL PREGAME · MAJOR FROZEN-NUMBER ADVANTAGE · injury-driven",
     rationale:"FINAL PREGAME AUDIT (Oct 11, 7:28 PM ET): keep ATL +3.5. Lamar Jackson is inactive and Tyler Huntley starts; Baltimore also scratched starting RG Andrew Vorhees, while Zay Flowers and Marlon Humphrey are active. Atlanta has LT Jake Matthews active but edge Za'Darius Smith inactive. FanDuel still makes Atlanta a 3.5-point favorite, with other live books around ATL -3, so the frozen pool line remains roughly 6.5 to 7 points better and crosses zero plus the key three. This is a large frozen-number advantage with uncalibrated size, not a model-derived cover probability.",
-    watch:"FINAL: official inactives and current market reviewed. Keep ATL +3.5 through the 8:20 PM ET lock. Mike's actual submitted side remains unconfirmed."
+    watch:"FINAL: official inactives and current market reviewed. Keep ATL +3.5 through the 8:20 PM ET lock. Mike's actual submitted side remains unconfirmed.",
+    result:"BAL 30, ATL 23 (OT) — FFCC recommendation ATL +3.5 did not cover.",
+    outcome:"loss"
   },
   {
     day:"Mon", kickoff:"8:15 PM", away:"BUF", home:"LAR",
