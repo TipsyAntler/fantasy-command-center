@@ -1,7 +1,7 @@
 export const week5PickemAudit = {
   week: 5,
   pool: "The SZN NFL Super Pick'em · NFL-575",
-  asOf: "2026-10-11T17:23:00-04:00",
+  asOf: "2026-10-12T19:30:00-04:00",
   games: [
     {
       matchup: "TB @ DAL",
@@ -28,6 +28,19 @@ export const week5PickemAudit = {
       recommendationOutcome: "loss",
       changeFlag: true,
       rationale: "The final pregame exact-line board showed JAX -7.5 around -114 to -120 versus PHI +7.5 from even to -106, with several books already at Jacksonville -8. Philadelphia confirmed Saquon Barkley, DeVonta Smith, Drew Kendall, Hollywood Brown and Marcus Epps inactive, then also ruled Jonathan Greenard out after his pregame workout. The frozen -7.5 retained a small market price lean. This changes FFCC advice only and does not assume Mike's submitted side."
+    },
+    {
+      matchup: "BUF @ LAR",
+      frozenLine: "BUF +3.5 / LAR -3.5",
+      originalRecommendation: "BUF +3.5",
+      finalRecommendation: "BUF +3.5",
+      mikeSubmittedSide: "unconfirmed",
+      closingMarket: "Final pregame snapshot Oct 12 7:30 PM ET: BUF +3.5 roughly -110 to -118 versus LAR -3.5 +100 to -105; total 54.5 with one major book at 55",
+      evidenceLabel: "small exact-line price lean",
+      result: "pending",
+      recommendationOutcome: "pending",
+      changeFlag: false,
+      rationale: "Buffalo confirmed DJ Moore, Joshua Palmer, Ed Oliver, Dee Alford and Landon Jackson inactive, while Los Angeles confirmed Quentin Lake active. After those designations, the comparable exact +3.5 prices still charged more for Buffalo, preserving a small price lean and the favorable side of the key three. Keep BUF +3.5 and the 55 tiebreaker. This changes FFCC advice only and does not assume Mike's submitted side."
     }
   ]
 };
