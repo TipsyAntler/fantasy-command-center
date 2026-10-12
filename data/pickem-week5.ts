@@ -21,7 +21,7 @@ export type Week5PoolGame = {
 export const week5Number = 5;
 export const week5PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week5PoolStatus = "POOL LINES FROZEN · EXACT WEEK 5 LINES CAPTURED · MIKE VIBES LOGGED BEFORE MARKET REVIEW";
-export const week5MarketAsOf = "Oct 11 · 7:28 PM ET · Sunday-night final-inactives and market audit";
+export const week5MarketAsOf = "Oct 11 · 9:26 PM ET · Sunday results reconciled; Sunday night live";
 
 export const week5Standing = {
   correct: 27,
@@ -149,7 +149,9 @@ export const week5PoolGames: Week5PoolGame[] = [
     marketLabel:"DET -5.5 · exact: DET -108 / ARI -111", marketTotal:54.5, confidence:2,
     signal:"FINAL PREGAME · SMALL EXACT-LINE PRICE LEAN",
     rationale:"FINAL PREGAME AUDIT (Oct 11, 3:15 PM ET): keep ARI +5.5. Marvin Harrison Jr. is inactive while Arizona works on a trade, but the exact frozen spread remains essentially balanced with a slight Arizona price lean: Detroit -5.5 -108 versus Arizona +5.5 -111. Detroit also confirmed DT Tyleik Williams active. The market has fully had time to digest Harrison's absence and still does not validate a Detroit flip.",
-    watch:"FINAL: official inactives and the exact frozen-line price reviewed. Keep ARI +5.5 through the 4:25 PM ET lock. Mike's actual submitted side remains unconfirmed."
+    watch:"FINAL: official inactives and the exact frozen-line price reviewed. Keep ARI +5.5 through the 4:25 PM ET lock. Mike's actual submitted side remains unconfirmed.",
+    result:"DET 45, ARI 21 — FFCC recommendation ARI +5.5 did not cover.",
+    outcome:"loss"
   },
   {
     day:"Sun", kickoff:"4:25 PM", away:"SF", home:"SEA",
@@ -157,7 +159,9 @@ export const week5PoolGames: Week5PoolGame[] = [
     marketLabel:"SEA -3 to -3.5 final pregame", marketTotal:46.5, confidence:3,
     signal:"FINAL PREGAME · FROZEN-NUMBER ADVANTAGE · key 3",
     rationale:"FINAL PREGAME AUDIT (Oct 11, 3:15 PM ET): keep SF +3.5. DraftKings and FanDuel are around Seattle -3 while BetMGM is -3.5, so the frozen number is at least equal to the best widely available 49ers line and often a half-point better across the key three. Seattle's starting secondary is fully active for the first time this season, but the market has not moved far enough to erase the number advantage.",
-    watch:"FINAL: official inactives and current multi-book spreads reviewed. Keep SF +3.5 through the 4:25 PM ET lock. Mike's actual submitted side remains unconfirmed."
+    watch:"FINAL: official inactives and current multi-book spreads reviewed. Keep SF +3.5 through the 4:25 PM ET lock. Mike's actual submitted side remains unconfirmed.",
+    result:"SF 32, SEA 29 — FFCC recommendation SF +3.5 covered.",
+    outcome:"win"
   },
   {
     day:"Sun", kickoff:"8:20 PM", away:"BAL", home:"ATL",
