@@ -21,7 +21,7 @@ export type Week5PoolGame = {
 export const week5Number = 5;
 export const week5PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week5PoolStatus = "POOL LINES FROZEN · EXACT WEEK 5 LINES CAPTURED · MIKE VIBES LOGGED BEFORE MARKET REVIEW";
-export const week5MarketAsOf = "Oct 12 · 12:23 AM ET · Sunday results reconciled; Monday game remains open";
+export const week5MarketAsOf = "Oct 12 · 7:30 PM ET · Monday final pregame audit complete; official inactives and exact frozen-line prices reviewed";
 
 export const week5Standing = {
   correct: 27,
@@ -176,10 +176,10 @@ export const week5PoolGames: Week5PoolGame[] = [
   {
     day:"Mon", kickoff:"8:15 PM", away:"BUF", home:"LAR",
     poolPick:"BUF", poolLine:3.5, mikeVibe:"BUF +3.5", poolFavorite:"LAR", poolSpread:3.5,
-    marketLabel:"LAR -3.5 · FanDuel exact: BUF +3.5 -118 / LAR -3.5 -104", marketTotal:54.5, confidence:3,
-    signal:"FROZEN-NUMBER ADVANTAGE · key 3",
-    rationale:"KEEP BUF +3.5 after Buffalo ruled out DT Ed Oliver and WR Joshua Palmer, with WR DJ Moore questionable. FanDuel now lists the exact frozen spread at BUF +3.5 -118 versus LAR -3.5 -104 as of Oct 10 at 9:20 PM ET, so the injury news has not produced a Rams-side exact-line edge; the proportional de-vig price still favors Buffalo. The frozen +3.5 also remains on the valuable side of the key three.",
-    watch
+    marketLabel:"LAR -3.5 · final exact: BUF +3.5 -110 to -118 / LAR -3.5 +100 to -105", marketTotal:54.5, confidence:3,
+    signal:"FINAL PREGAME · SMALL EXACT-LINE PRICE LEAN · key 3",
+    rationale:"FINAL PREGAME AUDIT (Oct 12, 7:30 PM ET): keep BUF +3.5. Buffalo confirmed WRs DJ Moore and Joshua Palmer, DT Ed Oliver, CB Dee Alford and DL Landon Jackson inactive; Los Angeles confirmed S Quentin Lake active. Even after those designations, comparable exact frozen-line prices continue to charge more for Buffalo: approximately BUF +3.5 -110 to -118 versus LAR -3.5 +100 to -105. The proportional de-vig price therefore still gives Buffalo a small exact-line lean, and the frozen +3.5 remains above the key three. This is not a calibrated high-confidence edge.",
+    watch:"FINAL: official inactives, exact frozen-line prices and total reviewed. Keep BUF +3.5 and the 55 tiebreaker through the 8:15 PM ET lock. Mike's actual submitted side remains unconfirmed."
   }
 ];
 
@@ -188,5 +188,5 @@ export const week5Tiebreaker = {
   label:"Total points scored in the final game of the week",
   currentMarketTotal:54.5,
   earlyFfccTarget:55,
-  note:"Use 55 as the early FFCC target around the current 54.5 market total. Mike's vibe tiebreaker number was not visible in the screenshots."
+  note:"FINAL: use 55. The reviewed market remains centered at 54.5, with one major book at 55. Mike's actual submitted tiebreaker remains unconfirmed."
 };
