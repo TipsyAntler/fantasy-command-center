@@ -1,7 +1,7 @@
 export const week5PickemAudit = {
   week: 5,
   pool: "The SZN NFL Super Pick'em · NFL-575",
-  asOf: "2026-10-12T19:30:00-04:00",
+  asOf: "2026-10-13T00:05:00-04:00",
   games: [
     {
       matchup: "TB @ DAL",
@@ -37,10 +37,10 @@ export const week5PickemAudit = {
       mikeSubmittedSide: "unconfirmed",
       closingMarket: "Final pregame snapshot Oct 12 7:30 PM ET: BUF +3.5 roughly -110 to -118 versus LAR -3.5 +100 to -105; total 54.5 with one major book at 55",
       evidenceLabel: "small exact-line price lean",
-      result: "pending",
-      recommendationOutcome: "pending",
+      result: "BUF 37, LAR 34 (OT)",
+      recommendationOutcome: "win",
       changeFlag: false,
-      rationale: "Buffalo confirmed DJ Moore, Joshua Palmer, Ed Oliver, Dee Alford and Landon Jackson inactive, while Los Angeles confirmed Quentin Lake active. After those designations, the comparable exact +3.5 prices still charged more for Buffalo, preserving a small price lean and the favorable side of the key three. Keep BUF +3.5 and the 55 tiebreaker. This changes FFCC advice only and does not assume Mike's submitted side."
+      rationale: "Buffalo confirmed DJ Moore, Joshua Palmer, Ed Oliver, Dee Alford and Landon Jackson inactive, while Los Angeles confirmed Quentin Lake active. After those designations, the comparable exact +3.5 prices still charged more for Buffalo, preserving a small price lean and the favorable side of the key three. Buffalo won 37-34 in overtime, so BUF +3.5 covered outright. The 71-point total finished 16 above FFCC\'s 55 tiebreaker target. Mike\'s actual submitted side and tiebreaker remain unconfirmed."
     }
   ]
 };
