@@ -21,7 +21,7 @@ export type Week5PoolGame = {
 export const week5Number = 5;
 export const week5PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week5PoolStatus = "POOL LINES FROZEN · EXACT WEEK 5 LINES CAPTURED · MIKE VIBES LOGGED BEFORE MARKET REVIEW";
-export const week5MarketAsOf = "Oct 12 · 7:30 PM ET · Monday final pregame audit complete; official inactives and exact frozen-line prices reviewed";
+export const week5MarketAsOf = "Oct 13 · 12:05 AM ET · Week 5 final results recorded";
 
 export const week5Standing = {
   correct: 27,
@@ -179,7 +179,9 @@ export const week5PoolGames: Week5PoolGame[] = [
     marketLabel:"LAR -3.5 · final exact: BUF +3.5 -110 to -118 / LAR -3.5 +100 to -105", marketTotal:54.5, confidence:3,
     signal:"FINAL PREGAME · SMALL EXACT-LINE PRICE LEAN · key 3",
     rationale:"FINAL PREGAME AUDIT (Oct 12, 7:30 PM ET): keep BUF +3.5. Buffalo confirmed WRs DJ Moore and Joshua Palmer, DT Ed Oliver, CB Dee Alford and DL Landon Jackson inactive; Los Angeles confirmed S Quentin Lake active. Even after those designations, comparable exact frozen-line prices continue to charge more for Buffalo: approximately BUF +3.5 -110 to -118 versus LAR -3.5 +100 to -105. The proportional de-vig price therefore still gives Buffalo a small exact-line lean, and the frozen +3.5 remains above the key three. This is not a calibrated high-confidence edge.",
-    watch:"FINAL: official inactives, exact frozen-line prices and total reviewed. Keep BUF +3.5 and the 55 tiebreaker through the 8:15 PM ET lock. Mike's actual submitted side remains unconfirmed."
+    watch:"FINAL: official inactives, exact frozen-line prices and total reviewed. Keep BUF +3.5 and the 55 tiebreaker through the 8:15 PM ET lock. Mike's actual submitted side remains unconfirmed.",
+    result:"BUF 37, LAR 34 (OT) — FFCC recommendation BUF +3.5 covered outright.",
+    outcome:"win"
   }
 ];
 
@@ -188,5 +190,5 @@ export const week5Tiebreaker = {
   label:"Total points scored in the final game of the week",
   currentMarketTotal:54.5,
   earlyFfccTarget:55,
-  note:"FINAL: use 55. The reviewed market remains centered at 54.5, with one major book at 55. Mike's actual submitted tiebreaker remains unconfirmed."
+  note:"FINAL RESULT: Buffalo and Los Angeles scored 71 points. FFCC\'s 55 target missed by 16; Mike\'s actual submitted tiebreaker remains unconfirmed."
 };
