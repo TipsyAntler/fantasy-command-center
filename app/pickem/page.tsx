@@ -45,7 +45,7 @@ function ConfidenceMeter({ evidence }: { evidence: keyof typeof confidenceLevels
 
 export default async function PickemPage() {
   const dashboard = await getDashboardData();
-  const currentWeek = getPlanningWeek(dashboard.state, week5Number, "2026-10-13T04:00:00-04:00");
+  const currentWeek = getPlanningWeek(dashboard.state, week5Number, "2026-10-13T00:00:00-04:00");
   const boardIsCurrent = currentWeek === week5Number;
   const games = boardIsCurrent ? week5PoolGames : [];
   const strong = games.filter((game) => game.confidence >= 3);
