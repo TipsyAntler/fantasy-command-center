@@ -69,6 +69,22 @@ export const pickemVibeDisagreements: PickemVibeDisagreement[] = [
 
 
 export const pickemVibePicks: PickemVibePick[] = [
+  // All 14 orange-highlighted sides in the Oct 14 The SZN screenshots.
+  // Picks made: 14/14 shown; successful final submission not independently confirmed.
+  { week: 6, matchup: "SEA @ DEN", frozenLine: "SEA -3.5 / DEN +3.5", mikeSide: "SEA -3.5", loggedAt: "2026-10-14 13:25 ET", result: "Pending" },
+  { week: 6, matchup: "HOU @ JAX", frozenLine: "JAX -3.5 / HOU +3.5", mikeSide: "HOU +3.5", loggedAt: "2026-10-14 13:25 ET", result: "Pending" },
+  { week: 6, matchup: "CHI @ ATL", frozenLine: "CHI -3.5 / ATL +3.5", mikeSide: "ATL +3.5", loggedAt: "2026-10-14 13:25 ET", result: "Pending" },
+  { week: 6, matchup: "BAL @ CLE", frozenLine: "BAL -4.5 / CLE +4.5", mikeSide: "BAL -4.5", loggedAt: "2026-10-14 13:25 ET", result: "Pending" },
+  { week: 6, matchup: "TEN @ IND", frozenLine: "IND -7.5 / TEN +7.5", mikeSide: "TEN +7.5", loggedAt: "2026-10-14 13:25 ET", result: "Pending" },
+  { week: 6, matchup: "NYJ @ NE", frozenLine: "NE -7.5 / NYJ +7.5", mikeSide: "NE -7.5", loggedAt: "2026-10-14 13:25 ET", result: "Pending" },
+  { week: 6, matchup: "NO @ NYG", frozenLine: "NYG -1.5 / NO +1.5", mikeSide: "NO +1.5", loggedAt: "2026-10-14 13:25 ET", result: "Pending" },
+  { week: 6, matchup: "CAR @ PHI", frozenLine: "PHI -1.5 / CAR +1.5", mikeSide: "PHI -1.5", loggedAt: "2026-10-14 13:25 ET", result: "Pending" },
+  { week: 6, matchup: "PIT @ TB", frozenLine: "PIT -3.5 / TB +3.5", mikeSide: "PIT -3.5", loggedAt: "2026-10-14 13:25 ET", result: "Pending" },
+  { week: 6, matchup: "ARI @ LAR", frozenLine: "LAR -13.5 / ARI +13.5", mikeSide: "LAR -13.5", loggedAt: "2026-10-14 13:25 ET", result: "Pending" },
+  { week: 6, matchup: "LAC @ KC", frozenLine: "KC -8.5 / LAC +8.5", mikeSide: "KC -8.5", loggedAt: "2026-10-14 13:25 ET", result: "Pending" },
+  { week: 6, matchup: "BUF @ LV", frozenLine: "BUF -6.5 / LV +6.5", mikeSide: "BUF -6.5", loggedAt: "2026-10-14 13:25 ET", result: "Pending" },
+  { week: 6, matchup: "DAL @ GB", frozenLine: "GB -1.5 / DAL +1.5", mikeSide: "DAL +1.5", loggedAt: "2026-10-14 13:25 ET", result: "Pending" },
+  { week: 6, matchup: "WAS @ SF", frozenLine: "SF -7.5 / WAS +7.5", mikeSide: "SF -7.5", loggedAt: "2026-10-14 13:25 ET", result: "Pending" },
   { week: 5, matchup: "TB @ DAL", frozenLine: "DAL -10.5 / TB +10.5", mikeSide: "DAL -10.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
   { week: 5, matchup: "PHI @ JAX", frozenLine: "JAX -7.5 / PHI +7.5", mikeSide: "PHI +7.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
   { week: 5, matchup: "CHI @ GB", frozenLine: "CHI -3.5 / GB +3.5", mikeSide: "CHI -3.5", loggedAt: "2026-10-07 07:17 ET", result: "Pending" },
