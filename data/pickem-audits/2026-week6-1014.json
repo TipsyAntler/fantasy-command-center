@@ -2,14 +2,16 @@
   "week": 6,
   "pool": "The SZN NFL Super Pick'em · NFL-575",
   "createdAt": "2026-10-14 13:25 ET",
-  "status": "early provisional; exact frozen pool lines and visible Mike selections captured, FFCC exact-line pricing audit pending",
+  "status": "Thursday recommendation final; weekend card provisional and exact-line pricing audit pending",
   "sources": {
     "frozenPoolLines": "User screenshots Oct 14, 2026, The SZN pool NFL-575",
     "vibes": "Orange selected team tiles, Picks required 14 / Picks made 14; final submission not independently confirmed",
     "seasonStandings": "User screenshot: rank 73, score 35, leader 48",
     "comparison": "https://edraft.com/nfl/schedule/week-6",
     "comparisonAsOf": "Oct 14 2026, 11:18 AM ET; aggregated current spread estimates, not independent simultaneous two-sided exact-line executable odds",
-    "schedule": "https://www.nfl.com/news/nfl-how-to-watch-week-6-nfl-games-schedule-london-game-details-and-more"
+    "schedule": "https://www.nfl.com/news/nfl-how-to-watch-week-6-nfl-games-schedule-london-game-details-and-more",
+    "thursdayFinalMarket": "Bleacher Report live odds snapshot Oct 15, 2026 at 7:06 PM ET: SEA -2.5 -115 / DEN +2.5 -105; DEN ML +126",
+    "thursdayInactives": "Final pregame reports: Riley Moss active; Patrick Surtain II and Talanoa Hufanga out; Jaxon Smith-Njigba and RJ Harvey active"
   },
   "standing": {
     "rank": 73,
@@ -35,10 +37,15 @@
       "ffccFrozenLine": 3.5,
       "datedMarketSpread": "SEA -2.5",
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
-      "exactLineTwoSidedPrices": "not yet verified",
+      "exactLineTwoSidedPrices": "DEN +3.5 alternate-line pair not publicly verified; no numerical cover probability claimed",
       "changeFlag": false,
-      "mikeSubmittedSide": "unconfirmed",
-      "result": null
+      "mikeSubmittedSide": "unconfirmed; screenshot tracked SEA -3.5 as vibe",
+      "result": null,
+      "ffccFinalSide": "DEN",
+      "finalizedAt": "2026-10-15 19:06 ET",
+      "currentMarketSpread": "SEA -2.5",
+      "currentMainLineTwoSidedPrices": "SEA -115 / DEN +2.5 -105",
+      "finalInactives": "Riley Moss active; Patrick Surtain II and Talanoa Hufanga out; Jaxon Smith-Njigba and RJ Harvey active"
     },
     {
       "matchup": "HOU @ JAX",
@@ -235,5 +242,6 @@
       "mikeSubmittedSide": "unconfirmed",
       "result": null
     }
-  ]
+  ],
+  "updatedAt": "2026-10-15 19:06 ET"
 }
