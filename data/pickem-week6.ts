@@ -20,8 +20,8 @@ export const week6PoolGames: Week5PoolGame[] = [
     "marketTotal": 40.5,
     "confidence": 3,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Early Week 6 lean at the frozen SZN number: DEN +3.5 versus a dated eDraft aggregated market around SEA -2.5. The better pool number is a directional advantage; no current independent two-sided exact-line prices or calibrated cover edge are verified yet. Mike's highlighted side is tracked separately.",
-    "watch": "Refresh independent books' two-sided ATS prices at this exact pool spread and official final injury reports before game lock. This is NOT a final card."
+    "rationale": "Thursday injury/market refresh: Denver ruled out CB Patrick Surtain II, while Seattle ruled out LB Drake Thomas. A published Oct. 15 FanDuel snapshot still shows SEA -2.5, so the frozen DEN +3.5 remains one point better and crosses the key 3 despite the defensive loss. No independent two-sided prices at the exact frozen spread or calibrated cover edge are verified; Mike's highlighted side remains tracked separately.",
+    "watch": "Refresh independent books' two-sided ATS prices at DEN +3.5 and confirm game-day inactives before Thursday lock. Published line/injury context refreshed Oct. 15 early morning; this remains provisional."
   },
   {
     "day": "Sun",
