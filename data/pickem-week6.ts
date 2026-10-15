@@ -16,12 +16,12 @@ export const week6PoolGames: Week5PoolGame[] = [
     "mikeVibe": "SEA -3.5",
     "poolFavorite": "SEA",
     "poolSpread": 3.5,
-    "marketLabel": "SEA -2.5 (eDraft Oct 14 11:18 AM ET)",
+    "marketLabel": "SEA -2.5 (FanDuel snapshot Oct 15 11:24 AM ET; SEA -118 / DEN -104)",
     "marketTotal": 40.5,
     "confidence": 3,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Thursday injury/market refresh: Denver ruled out CB Patrick Surtain II, while Seattle ruled out LB Drake Thomas. A published Oct. 15 FanDuel snapshot still shows SEA -2.5, so the frozen DEN +3.5 remains one point better and crosses the key 3 despite the defensive loss. No independent two-sided prices at the exact frozen spread or calibrated cover edge are verified; Mike's highlighted side remains tracked separately.",
-    "watch": "Refresh independent books' two-sided ATS prices at DEN +3.5 and confirm game-day inactives before Thursday lock. Published line/injury context refreshed Oct. 15 early morning; this remains provisional."
+    "rationale": "Thursday injury/market refresh: Denver ruled out CB Patrick Surtain II and S Talanoa Hufanga, with CB Riley Moss questionable; Seattle ruled out LB Drake Thomas. An Oct. 15 FanDuel snapshot prices SEA -2.5 at -118 and DEN +2.5 at -104, so the frozen DEN +3.5 remains one point better and crosses the key 3 despite Denver's secondary losses. No independent two-sided prices at the exact frozen spread or calibrated cover edge are verified; Mike's highlighted side remains tracked separately.",
+    "watch": "Refresh independent books' two-sided ATS prices at DEN +3.5 and confirm Riley Moss plus late game-day inactives before Thursday lock. FanDuel line and final injury context refreshed Oct. 15 at 11:24 AM ET; this remains provisional."
   },
   {
     "day": "Sun",
