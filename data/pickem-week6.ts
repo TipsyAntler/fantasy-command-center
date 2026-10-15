@@ -2,8 +2,8 @@ import type { Week5PoolGame } from "./pickem-week5";
 
 export const week6Number = 6;
 export const week6PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week6PoolStatus = "EXACT WEEK 6 POOL SPREADS CAPTURED · 14/14 VIBE SELECTIONS VISIBLE · FFCC PROVISIONAL, MARKET AUDIT PENDING";
-export const week6MarketAsOf = "Oct 14, 2026 · 11:18 AM ET · dated eDraft aggregated market, not executable exact-line quotes";
+export const week6PoolStatus = "THURSDAY PICK FINAL: DEN +3.5 · WEEKEND CARD PROVISIONAL · 14/14 VIBE SELECTIONS VISIBLE";
+export const week6MarketAsOf = "Oct 15, 2026 · 7:06 PM ET · final Thursday market and inactives; weekend exact-line audit pending";
 export const week6Standing = {correct:35,rank:73,leaderCorrect:48,note:"Oct 14 user screenshot. Rank ties by total correct; 95 names shown in standings. This is Mike's actual SZN standing, not FFCC model performance."};
 export const week6PoolGames: Week5PoolGame[] = [
   {
@@ -16,12 +16,12 @@ export const week6PoolGames: Week5PoolGame[] = [
     "mikeVibe": "SEA -3.5",
     "poolFavorite": "SEA",
     "poolSpread": 3.5,
-    "marketLabel": "SEA -2.5 (FanDuel snapshot Oct 15 11:24 AM ET; SEA -118 / DEN -104)",
+    "marketLabel": "SEA -2.5 (final pregame snapshot Oct 15 7:06 PM ET; SEA -115 / DEN -105)",
     "marketTotal": 40.5,
     "confidence": 3,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Thursday injury/market refresh: Denver ruled out CB Patrick Surtain II and S Talanoa Hufanga, with CB Riley Moss questionable; Seattle ruled out LB Drake Thomas. An Oct. 15 FanDuel snapshot prices SEA -2.5 at -118 and DEN +2.5 at -104, so the frozen DEN +3.5 remains one point better and crosses the key 3 despite Denver's secondary losses. No independent two-sided prices at the exact frozen spread or calibrated cover edge are verified; Mike's highlighted side remains tracked separately.",
-    "watch": "Refresh independent books' two-sided ATS prices at DEN +3.5 and confirm Riley Moss plus late game-day inactives before Thursday lock. FanDuel line and final injury context refreshed Oct. 15 at 11:24 AM ET; this remains provisional."
+    "rationale": "FINAL THURSDAY DECISION: retain DEN +3.5. The final pregame main line remains SEA -2.5, priced about SEA -115 / DEN +2.5 -105, so the frozen pool number gives Denver one extra point and crosses the key 3. Riley Moss is active for Denver; Patrick Surtain II and Talanoa Hufanga are out, while Jaxon Smith-Njigba is active for Seattle. No two-sided alternate-line price at the exact frozen DEN +3.5 or calibrated cover edge was verified, so the advantage size remains uncalibrated.",
+    "watch": "FINAL FOR THURSDAY. Mike's tracked vibe remains SEA -3.5; his actual submitted side is unconfirmed. Record the result against the original FFCC card and the same-line market baseline after the game."
   },
   {
     "day": "Sun",
