@@ -2,7 +2,7 @@
   "week": 6,
   "pool": "The SZN NFL Super Pick'em · NFL-575",
   "createdAt": "2026-10-14 13:25 ET",
-  "status": "Thursday result recorded; weekend card provisional and exact-line pricing audit pending",
+  "status": "Friday recommendation flip recorded: CLE +4.5 replaces BAL -4.5; weekend card remains provisional",
   "sources": {
     "frozenPoolLines": "User screenshots Oct 14, 2026, The SZN pool NFL-575",
     "vibes": "Orange selected team tiles, Picks required 14 / Picks made 14; final submission not independently confirmed",
@@ -12,7 +12,8 @@
     "schedule": "https://www.nfl.com/news/nfl-how-to-watch-week-6-nfl-games-schedule-london-game-details-and-more",
     "thursdayFinalMarket": "Bleacher Report live odds snapshot Oct 15, 2026 at 7:06 PM ET: SEA -2.5 -115 / DEN +2.5 -105; DEN ML +126",
     "thursdayInactives": "Final pregame reports: Riley Moss active; Patrick Surtain II and Talanoa Hufanga out; Jaxon Smith-Njigba and RJ Harvey active",
-    "thursdayResult": "Denver 17, Seattle 14 (OT), Oct 15, 2026; verified against Field Gulls final recap and Mile High Report final recap"
+    "thursdayResult": "Denver 17, Seattle 14 (OT), Oct 15, 2026; verified against Field Gulls final recap and Mile High Report final recap",
+    "baltimoreClevelandFridayMarket": "Covers multi-book spread board, last updated Oct 16, 2026 at 10:02 AM ET: market predominantly BAL -3.5; two exact frozen -4.5 pairs BAL -105/CLE -117 and BAL -105/CLE -115"
   },
   "standing": {
     "rank": 73,
@@ -92,14 +93,19 @@
       "frozenSpread": 4.5,
       "mikeSide": "BAL",
       "ffccOriginalSide": "BAL",
-      "ffccProvisionalSide": "BAL",
-      "ffccFrozenLine": -4.5,
+      "ffccProvisionalSide": "CLE",
+      "ffccFrozenLine": 4.5,
       "datedMarketSpread": "BAL -5.5",
-      "evidenceLabel": "frozen-number advantage with uncalibrated size",
-      "exactLineTwoSidedPrices": "not yet verified",
-      "changeFlag": false,
+      "evidenceLabel": "small exact-line price lean",
+      "exactLineTwoSidedPrices": "Covers Oct 16 10:02 AM ET: BAL -4.5 -105 / CLE +4.5 -117; BAL -4.5 -105 / CLE +4.5 -115",
+      "changeFlag": true,
       "mikeSubmittedSide": "unconfirmed",
-      "result": null
+      "result": null,
+      "previousFfccSide": "BAL -4.5",
+      "currentMarketSpread": "BAL -3.5 consensus",
+      "devig": "Proportional de-vig: CLE 51.3% and 51.1%; robust consensus approximately 51.2%",
+      "changeReason": "The live market moved from the dated BAL -5.5 reference to predominantly BAL -3.5. At the frozen -4.5, two verified two-sided pairs favor Cleveland, so CLE +4.5 replaces BAL -4.5.",
+      "changedAt": "2026-10-16 10:02 ET"
     },
     {
       "matchup": "TEN @ IND",
@@ -252,5 +258,5 @@
       "result": null
     }
   ],
-  "updatedAt": "2026-10-15 23:54 ET"
+  "updatedAt": "2026-10-16 10:02 ET"
 }
