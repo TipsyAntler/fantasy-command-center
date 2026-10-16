@@ -2,8 +2,8 @@ import type { Week5PoolGame } from "./pickem-week5";
 
 export const week6Number = 6;
 export const week6PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week6PoolStatus = "THURSDAY PICK FINAL: DEN +3.5 · WEEKEND CARD PROVISIONAL · 14/14 VIBE SELECTIONS VISIBLE";
-export const week6MarketAsOf = "Oct 15, 2026 · 7:06 PM ET · final Thursday market and inactives; weekend exact-line audit pending";
+export const week6PoolStatus = "THURSDAY RESULT: DEN +3.5 WON · WEEKEND CARD PROVISIONAL · 14/14 VIBE SELECTIONS VISIBLE";
+export const week6MarketAsOf = "Oct 15, 2026 · 11:54 PM ET · Thursday result recorded; weekend exact-line audit pending";
 export const week6Standing = {correct:35,rank:73,leaderCorrect:48,note:"Oct 14 user screenshot. Rank ties by total correct; 95 names shown in standings. This is Mike's actual SZN standing, not FFCC model performance."};
 export const week6PoolGames: Week5PoolGame[] = [
   {
@@ -21,7 +21,9 @@ export const week6PoolGames: Week5PoolGame[] = [
     "confidence": 3,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     "rationale": "FINAL THURSDAY DECISION: retain DEN +3.5. The final pregame main line remains SEA -2.5, priced about SEA -115 / DEN +2.5 -105, so the frozen pool number gives Denver one extra point and crosses the key 3. Riley Moss is active for Denver; Patrick Surtain II and Talanoa Hufanga are out, while Jaxon Smith-Njigba is active for Seattle. No two-sided alternate-line price at the exact frozen DEN +3.5 or calibrated cover edge was verified, so the advantage size remains uncalibrated.",
-    "watch": "FINAL FOR THURSDAY. Mike's tracked vibe remains SEA -3.5; his actual submitted side is unconfirmed. Record the result against the original FFCC card and the same-line market baseline after the game."
+    "watch": "FINAL RESULT: Denver won 17-14 in overtime. FFCC DEN +3.5 won; the closing-market DEN +2.5 baseline also won; Mike's tracked SEA -3.5 vibe lost. His actual submitted side remains unconfirmed.",
+    "result": "DEN 17, SEA 14 (OT) — FFCC recommendation DEN +3.5 covered; closing-market DEN +2.5 also covered.",
+    "outcome": "win"
   },
   {
     "day": "Sun",
