@@ -2,8 +2,8 @@ import type { Week5PoolGame } from "./pickem-week5";
 
 export const week6Number = 6;
 export const week6PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week6PoolStatus = "THURSDAY RESULT: DEN +3.5 WON · FRIDAY FLIP: CLE +4.5 REPLACES BAL -4.5 · WEEKEND CARD PROVISIONAL";
-export const week6MarketAsOf = "Oct 16, 2026 · 10:02 AM ET · Baltimore–Cleveland exact-line audit; remaining weekend games provisional";
+export const week6PoolStatus = "THURSDAY RESULT: DEN +3.5 WON · CLE +4.5 FLIP HOLDS · CAR +1.5 STRENGTHENED BY HURTS OUT/MARKET MOVE · WEEKEND CARD PROVISIONAL";
+export const week6MarketAsOf = "Oct 16, 2026 · 2:30 PM ET · Carolina–Philadelphia material update plus Baltimore–Cleveland exact-line audit; remaining weekend games provisional";
 export const week6Standing = {correct:35,rank:73,leaderCorrect:48,note:"Oct 14 user screenshot. Rank ties by total correct; 95 names shown in standings. This is Mike's actual SZN standing, not FFCC model performance."};
 export const week6PoolGames: Week5PoolGame[] = [
   {
@@ -137,12 +137,12 @@ export const week6PoolGames: Week5PoolGame[] = [
     "mikeVibe": "PHI -1.5",
     "poolFavorite": "PHI",
     "poolSpread": 1.5,
-    "marketLabel": "CAR -1 (eDraft Oct 14 11:18 AM ET)",
+    "marketLabel": "CAR -3.5 current market (VegasInsider/StatMuse Oct 16 2:30 PM ET); FanDuel exact frozen +1.5 pair CAR -225 / PHI -1.5 +172",
     "marketTotal": 40.5,
     "confidence": 3,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Early Week 6 lean at the frozen SZN number: CAR +1.5 versus a dated eDraft aggregated market around CAR -1. The better pool number is a directional advantage; no current independent two-sided exact-line prices or calibrated cover edge are verified yet. Mike's highlighted side is tracked separately.",
-    "watch": "Refresh independent books' two-sided ATS prices at this exact pool spread and official final injury reports before game lock. This is NOT a final card."
+    "rationale": "FRIDAY MATERIAL UPGRADE, SAME SIDE: retain CAR +1.5. Philadelphia ruled Jalen Hurts out because of a superficial blood clot, so Tanner McKee will start; the main market moved to Carolina -3.5. The frozen pool gives Carolina a five-point gap, crossing pick’em and the key 3. FanDuel’s current exact +1.5 alternate pair is CAR -225 / PHI -1.5 +172; proportional de-vig indicates about 65.3% for Carolina at the frozen number. That is a useful exact-line confirmation, but it is one verified book rather than a robust independent-book consensus, so the evidence label remains frozen-number advantage with uncalibrated size.",
+    "watch": "Keep CAR +1.5. Recheck Philadelphia’s final Friday report—especially Saquon Barkley, Dontayvion Wicks and DeVonta Smith—and seek a second independent exact-line pair before Sunday lock. Mike’s tracked vibe remains PHI -1.5; his actual submitted side is unconfirmed. This is NOT a final card."
   },
   {
     "day": "Sun",
