@@ -2,7 +2,7 @@
   "week": 6,
   "pool": "The SZN NFL Super Pick'em · NFL-575",
   "createdAt": "2026-10-14 13:25 ET",
-  "status": "Friday recommendation flip recorded: CLE +4.5 replaces BAL -4.5; weekend card remains provisional",
+  "status": "Friday CLE +4.5 flip holds; CAR +1.5 materially strengthened by Hurts ruling and market move; weekend card remains provisional",
   "sources": {
     "frozenPoolLines": "User screenshots Oct 14, 2026, The SZN pool NFL-575",
     "vibes": "Orange selected team tiles, Picks required 14 / Picks made 14; final submission not independently confirmed",
@@ -13,7 +13,8 @@
     "thursdayFinalMarket": "Bleacher Report live odds snapshot Oct 15, 2026 at 7:06 PM ET: SEA -2.5 -115 / DEN +2.5 -105; DEN ML +126",
     "thursdayInactives": "Final pregame reports: Riley Moss active; Patrick Surtain II and Talanoa Hufanga out; Jaxon Smith-Njigba and RJ Harvey active",
     "thursdayResult": "Denver 17, Seattle 14 (OT), Oct 15, 2026; verified against Field Gulls final recap and Mile High Report final recap",
-    "baltimoreClevelandFridayMarket": "Covers multi-book spread board, last updated Oct 16, 2026 at 10:02 AM ET: market predominantly BAL -3.5; two exact frozen -4.5 pairs BAL -105/CLE -117 and BAL -105/CLE -115"
+    "baltimoreClevelandFridayMarket": "Covers multi-book spread board, last updated Oct 16, 2026 at 10:02 AM ET: market predominantly BAL -3.5; two exact frozen -4.5 pairs BAL -105/CLE -117 and BAL -105/CLE -115",
+    "carolinaPhiladelphiaFridayMarket": "Oct 16, 2026 at 2:30 PM ET: VegasInsider/StatMuse main market CAR -3.5; FanDuel exact frozen-line alternate pair CAR +1.5 -225 / PHI -1.5 +172; Reuters confirmed Jalen Hurts out and Tanner McKee starting"
   },
   "standing": {
     "rank": 73,
@@ -162,10 +163,14 @@
       "ffccFrozenLine": 1.5,
       "datedMarketSpread": "CAR -1",
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
-      "exactLineTwoSidedPrices": "not yet verified",
+      "exactLineTwoSidedPrices": "FanDuel Oct 16 2:30 PM ET: CAR +1.5 -225 / PHI -1.5 +172",
       "changeFlag": false,
       "mikeSubmittedSide": "unconfirmed",
-      "result": null
+      "result": null,
+      "currentMarketSpread": "CAR -3.5",
+      "devig": "Single-book proportional de-vig: CAR approximately 65.3% at frozen +1.5; not treated as robust multi-book consensus",
+      "updateReason": "Jalen Hurts was ruled out and Tanner McKee will start. The current main market moved to CAR -3.5, creating a five-point gap from the frozen CAR +1.5 and crossing pick’em plus the key 3. Recommendation stays CAR; changeFlag remains false because there was no side flip.",
+      "updatedAt": "2026-10-16 14:30 ET"
     },
     {
       "matchup": "PIT @ TB",
@@ -258,5 +263,5 @@
       "result": null
     }
   ],
-  "updatedAt": "2026-10-16 10:02 ET"
+  "updatedAt": "2026-10-16 14:30 ET"
 }
