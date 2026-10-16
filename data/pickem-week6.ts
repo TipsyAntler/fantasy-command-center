@@ -2,8 +2,8 @@ import type { Week5PoolGame } from "./pickem-week5";
 
 export const week6Number = 6;
 export const week6PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week6PoolStatus = "THURSDAY RESULT: DEN +3.5 WON · CLE +4.5 FLIP HOLDS · CAR +1.5 STRENGTHENED BY HURTS OUT/MARKET MOVE · WEEKEND CARD PROVISIONAL";
-export const week6MarketAsOf = "Oct 16, 2026 · 2:30 PM ET · Carolina–Philadelphia material update plus Baltimore–Cleveland exact-line audit; remaining weekend games provisional";
+export const week6PoolStatus = "THURSDAY RESULT: DEN +3.5 WON · CLE +4.5 FLIP HOLDS · CAR +1.5 STRONGEST FROZEN NUMBER · FRIDAY MARKETS REFRESHED · WEEKEND CARD PROVISIONAL";
+export const week6MarketAsOf = "Oct 16, 2026 · 4:10 PM ET · Friday bet365/VegasInsider market refresh plus exact-line audits where verified; weekend games remain provisional";
 export const week6Standing = {correct:35,rank:73,leaderCorrect:48,note:"Oct 14 user screenshot. Rank ties by total correct; 95 names shown in standings. This is Mike's actual SZN standing, not FFCC model performance."};
 export const week6PoolGames: Week5PoolGame[] = [
   {
@@ -35,12 +35,12 @@ export const week6PoolGames: Week5PoolGame[] = [
     "mikeVibe": "HOU +3.5",
     "poolFavorite": "JAX",
     "poolSpread": 3.5,
-    "marketLabel": "JAX -2.5 (eDraft Oct 14 11:18 AM ET)",
+    "marketLabel": "JAX -2.5 (bet365 Oct 16: HOU +2.5 -105 / JAX -2.5 -115)",
     "marketTotal": 42.5,
     "confidence": 3,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Early Week 6 lean at the frozen SZN number: HOU +3.5 versus a dated eDraft aggregated market around JAX -2.5. The better pool number is a directional advantage; no current independent two-sided exact-line prices or calibrated cover edge are verified yet. Mike's highlighted side is tracked separately.",
-    "watch": "Refresh independent books' two-sided ATS prices at this exact pool spread and official final injury reports before game lock. This is NOT a final card."
+    "rationale": "Friday market refresh: retain HOU +3.5. Bet365 lists Jacksonville -2.5, priced HOU +2.5 -105 / JAX -2.5 -115. The frozen pool gives Houston one extra point and sits above the key 3. No current two-sided alternate pair at the exact HOU +3.5 was verified, so the edge size remains uncalibrated.",
+    "watch": "Recheck Sunday-morning London inactives and seek a current exact HOU +3.5 two-sided pair before the 9:30 AM ET lock. This is NOT final."
   },
   {
     "day": "Sun",
@@ -52,12 +52,12 @@ export const week6PoolGames: Week5PoolGame[] = [
     "mikeVibe": "ATL +3.5",
     "poolFavorite": "CHI",
     "poolSpread": 3.5,
-    "marketLabel": "CHI -3 (eDraft Oct 14 11:18 AM ET)",
-    "marketTotal": 49.5,
+    "marketLabel": "CHI -1.5 (bet365 Oct 16: CHI -1.5 -108 / ATL +1.5 -112)",
+    "marketTotal": 51.5,
     "confidence": 3,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Early Week 6 lean at the frozen SZN number: ATL +3.5 versus a dated eDraft aggregated market around CHI -3. The better pool number is a directional advantage; no current independent two-sided exact-line prices or calibrated cover edge are verified yet. Mike's highlighted side is tracked separately.",
-    "watch": "Refresh independent books' two-sided ATS prices at this exact pool spread and official final injury reports before game lock. This is NOT a final card."
+    "rationale": "Friday market refresh: retain ATL +3.5. Bet365 lists Chicago -1.5, priced CHI -108 / ATL +1.5 -112. The frozen pool gives Atlanta two additional points and crosses the key 3. No current exact ATL +3.5 alternate pair was verified, so the advantage size remains uncalibrated.",
+    "watch": "Recheck final Atlanta designations and seek a current exact ATL +3.5 two-sided pair before Sunday lock. This is NOT final."
   },
   {
     "day": "Sun",
@@ -69,12 +69,12 @@ export const week6PoolGames: Week5PoolGame[] = [
     "mikeVibe": "BAL -4.5",
     "poolFavorite": "BAL",
     "poolSpread": 4.5,
-    "marketLabel": "BAL -3.5 consensus (Covers multi-book board Oct 16 10:02 AM ET); exact frozen -4.5 pairs BAL -105 / CLE -117 and BAL -105 / CLE -115",
+    "marketLabel": "BAL -3 to -3.5 Friday market; exact frozen -4.5 pairs BAL -105 / CLE -117 and BAL -105 / CLE -115",
     "marketTotal": 40.5,
     "confidence": 2,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "FRIDAY FLIP: CLE +4.5 replaces BAL -4.5. The current multi-book market is predominantly BAL -3.5, so the frozen pool asks Baltimore to cover an extra point. Two independently listed exact -4.5 pairs price BAL -105 against CLE -117 and BAL -105 against CLE -115. Proportional de-vig yields roughly 51.3% and 51.1% for Cleveland, a robust consensus near 51.2%. That is enough to favor CLE at the fixed pool number, but it is only a small exact-line price lean and not a high-confidence edge.",
-    "watch": "Recheck Friday injury designations and fresh exact-line prices before Sunday lock. Mike's tracked vibe remains BAL -4.5; his actual submitted side is unconfirmed. This is NOT a final card."
+    "rationale": "FRIDAY FLIP HOLDS: CLE +4.5 remains the recommendation. The main market is BAL -3 to -3.5, and two verified exact frozen-line pairs price BAL -105 against CLE -117 and -115. Proportional de-vig gives Cleveland about 51.3% and 51.1%, a robust consensus near 51.2%. This is a small exact-line price lean, not a high-confidence edge.",
+    "watch": "Recheck Sunday pricing and inactives. Mike’s tracked vibe remains BAL -4.5; actual submission is unconfirmed. This is NOT final."
   },
   {
     "day": "Sun",
@@ -86,12 +86,12 @@ export const week6PoolGames: Week5PoolGame[] = [
     "mikeVibe": "TEN +7.5",
     "poolFavorite": "IND",
     "poolSpread": 7.5,
-    "marketLabel": "IND -7 (eDraft Oct 14 11:18 AM ET)",
-    "marketTotal": 44,
+    "marketLabel": "IND -6.5 (bet365 Oct 16: TEN +6.5 +100 / IND -6.5 -120)",
+    "marketTotal": 44.5,
     "confidence": 3,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Early Week 6 lean at the frozen SZN number: TEN +7.5 versus a dated eDraft aggregated market around IND -7. The better pool number is a directional advantage; no current independent two-sided exact-line prices or calibrated cover edge are verified yet. Mike's highlighted side is tracked separately.",
-    "watch": "Refresh independent books' two-sided ATS prices at this exact pool spread and official final injury reports before game lock. This is NOT a final card."
+    "rationale": "Friday market refresh: retain TEN +7.5. Bet365 lists Indianapolis -6.5, priced TEN +6.5 +100 / IND -6.5 -120. The frozen pool gives Tennessee a full point and crosses the key 7. No current exact TEN +7.5 alternate pair was verified, so the advantage size remains uncalibrated.",
+    "watch": "Recheck Sunday pricing and final inactives; seek a current exact TEN +7.5 two-sided pair. This is NOT final."
   },
   {
     "day": "Sun",
@@ -103,12 +103,12 @@ export const week6PoolGames: Week5PoolGame[] = [
     "mikeVibe": "NE -7.5",
     "poolFavorite": "NE",
     "poolSpread": 7.5,
-    "marketLabel": "NE -7 (eDraft Oct 14 11:18 AM ET)",
+    "marketLabel": "NE -7.5 (bet365 Oct 16 exact pool line: NYJ +7.5 -117 / NE -7.5 -103)",
     "marketTotal": 43.5,
     "confidence": 3,
-    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Early Week 6 lean at the frozen SZN number: NYJ +7.5 versus a dated eDraft aggregated market around NE -7. The better pool number is a directional advantage; no current independent two-sided exact-line prices or calibrated cover edge are verified yet. Mike's highlighted side is tracked separately.",
-    "watch": "Refresh independent books' two-sided ATS prices at this exact pool spread and official final injury reports before game lock. This is NOT a final card."
+    "signal": "SMALL EXACT-LINE PRICE LEAN",
+    "rationale": "Friday exact-line refresh: retain NYJ +7.5. Bet365 prices the frozen line at NYJ -117 / NE -103, about 51.5% Jets after proportional de-vig. Hall, Adonai Mitchell, Dylan Parham and Joseph Ossai are out for New York; the price still modestly favors the Jets at the fixed number. This is a small exact-line price lean, not a high-confidence edge.",
+    "watch": "Recheck Sunday inactives and a second independent exact-line pair. Mike’s tracked vibe remains NE -7.5; actual submission is unconfirmed. This is NOT final."
   },
   {
     "day": "Sun",
@@ -120,12 +120,12 @@ export const week6PoolGames: Week5PoolGame[] = [
     "mikeVibe": "NO +1.5",
     "poolFavorite": "NYG",
     "poolSpread": 1.5,
-    "marketLabel": "NO -1.5 (eDraft Oct 14 11:18 AM ET)",
+    "marketLabel": "NO -1.5 (bet365 Oct 16: NO -1.5 +102 / NYG +1.5 -122)",
     "marketTotal": 45.5,
     "confidence": 3,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Early Week 6 lean at the frozen SZN number: NO +1.5 versus a dated eDraft aggregated market around NO -1.5. The better pool number is a directional advantage; no current independent two-sided exact-line prices or calibrated cover edge are verified yet. Mike's highlighted side is tracked separately.",
-    "watch": "Refresh independent books' two-sided ATS prices at this exact pool spread and official final injury reports before game lock. This is NOT a final card."
+    "rationale": "Friday market refresh: retain NO +1.5. Bet365 now lists New Orleans -1.5, priced NO +102 / NYG +1.5 -122. The frozen pool number is three points better for the Saints and crosses pick’em. Chris Olave returned limited Friday and is questionable. No exact NO +1.5 alternate pair was verified, so the advantage size remains uncalibrated.",
+    "watch": "Recheck Olave and all final Sunday inactives; seek a current exact NO +1.5 two-sided pair. This is NOT final."
   },
   {
     "day": "Sun",
@@ -137,12 +137,12 @@ export const week6PoolGames: Week5PoolGame[] = [
     "mikeVibe": "PHI -1.5",
     "poolFavorite": "PHI",
     "poolSpread": 1.5,
-    "marketLabel": "CAR -3.5 current market (VegasInsider/StatMuse Oct 16 2:30 PM ET); FanDuel exact frozen +1.5 pair CAR -225 / PHI -1.5 +172",
-    "marketTotal": 40.5,
+    "marketLabel": "CAR -3.5 (bet365 Oct 16: CAR -3.5 -108 / PHI +3.5 -112); FanDuel frozen +1.5 pair CAR -225 / PHI +172",
+    "marketTotal": 38.5,
     "confidence": 3,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "FRIDAY MATERIAL UPGRADE, SAME SIDE: retain CAR +1.5. Philadelphia ruled Jalen Hurts out because of a superficial blood clot, so Tanner McKee will start; the main market moved to Carolina -3.5. The frozen pool gives Carolina a five-point gap, crossing pick’em and the key 3. FanDuel’s current exact +1.5 alternate pair is CAR -225 / PHI -1.5 +172; proportional de-vig indicates about 65.3% for Carolina at the frozen number. That is a useful exact-line confirmation, but it is one verified book rather than a robust independent-book consensus, so the evidence label remains frozen-number advantage with uncalibrated size.",
-    "watch": "Keep CAR +1.5. Recheck Philadelphia’s final Friday report—especially Saquon Barkley, Dontayvion Wicks and DeVonta Smith—and seek a second independent exact-line pair before Sunday lock. Mike’s tracked vibe remains PHI -1.5; his actual submitted side is unconfirmed. This is NOT a final card."
+    "rationale": "FRIDAY MATERIAL UPGRADE, SAME SIDE: retain CAR +1.5. Hurts and Barkley are out, while Wicks and DeVonta Smith finished full Friday. The main market remains Carolina -3.5, a five-point gap from the frozen pool number crossing pick’em and the key 3. FanDuel’s exact +1.5 alternate pair was CAR -225 / PHI +172, about 65.3% Carolina after de-vig, but it remains a single-book exact-line indication.",
+    "watch": "Keep CAR +1.5. Recheck Sunday inactives and seek a second independent exact-line pair. Mike’s tracked vibe remains PHI -1.5; actual submission is unconfirmed. This is NOT final."
   },
   {
     "day": "Sun",
@@ -154,12 +154,12 @@ export const week6PoolGames: Week5PoolGame[] = [
     "mikeVibe": "PIT -3.5",
     "poolFavorite": "PIT",
     "poolSpread": 3.5,
-    "marketLabel": "PIT -2.5 (eDraft Oct 14 11:18 AM ET)",
+    "marketLabel": "PIT -2.5 (bet365 Oct 16: PIT -2.5 -113 / TB +2.5 -107)",
     "marketTotal": 39.5,
     "confidence": 3,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Early Week 6 lean at the frozen SZN number: TB +3.5 versus a dated eDraft aggregated market around PIT -2.5. The better pool number is a directional advantage; no current independent two-sided exact-line prices or calibrated cover edge are verified yet. Mike's highlighted side is tracked separately.",
-    "watch": "Refresh independent books' two-sided ATS prices at this exact pool spread and official final injury reports before game lock. This is NOT a final card."
+    "rationale": "Friday market refresh: retain TB +3.5. Bet365 lists Pittsburgh -2.5, priced PIT -113 / TB +2.5 -107. The frozen pool gives Tampa Bay one extra point and crosses the key 3. No current exact TB +3.5 alternate pair was verified, so the advantage size remains uncalibrated.",
+    "watch": "Recheck Sunday pricing and final inactives; seek a current exact TB +3.5 two-sided pair. This is NOT final."
   },
   {
     "day": "Sun",
@@ -171,12 +171,12 @@ export const week6PoolGames: Week5PoolGame[] = [
     "mikeVibe": "LAR -13.5",
     "poolFavorite": "LAR",
     "poolSpread": 13.5,
-    "marketLabel": "LAR -12.5 (eDraft Oct 14 11:18 AM ET)",
-    "marketTotal": 51.8,
+    "marketLabel": "LAR -12.5 (bet365 Oct 16: ARI +12.5 -110 / LAR -12.5 -110)",
+    "marketTotal": 51.5,
     "confidence": 3,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Early Week 6 lean at the frozen SZN number: ARI +13.5 versus a dated eDraft aggregated market around LAR -12.5. The better pool number is a directional advantage; no current independent two-sided exact-line prices or calibrated cover edge are verified yet. Mike's highlighted side is tracked separately.",
-    "watch": "Refresh independent books' two-sided ATS prices at this exact pool spread and official final injury reports before game lock. This is NOT a final card."
+    "rationale": "Friday market refresh: retain ARI +13.5. Bet365 lists Los Angeles -12.5 at balanced -110 pricing, so the frozen pool gives Arizona one extra point. No current exact ARI +13.5 alternate pair was verified, so the advantage size remains uncalibrated.",
+    "watch": "Recheck Sunday pricing and final inactives; seek a current exact ARI +13.5 two-sided pair. This is NOT final."
   },
   {
     "day": "Sun",
@@ -188,12 +188,12 @@ export const week6PoolGames: Week5PoolGame[] = [
     "mikeVibe": "KC -8.5",
     "poolFavorite": "KC",
     "poolSpread": 8.5,
-    "marketLabel": "KC -8 (eDraft Oct 14 11:18 AM ET)",
-    "marketTotal": 42.5,
+    "marketLabel": "KC -7.5 (bet365 Oct 16: LAC +7.5 -107 / KC -7.5 -113)",
+    "marketTotal": 41.5,
     "confidence": 3,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Early Week 6 lean at the frozen SZN number: LAC +8.5 versus a dated eDraft aggregated market around KC -8. The better pool number is a directional advantage; no current independent two-sided exact-line prices or calibrated cover edge are verified yet. Mike's highlighted side is tracked separately.",
-    "watch": "Refresh independent books' two-sided ATS prices at this exact pool spread and official final injury reports before game lock. This is NOT a final card."
+    "rationale": "Friday market refresh: retain LAC +8.5. Bet365 lists Kansas City -7.5, priced LAC +7.5 -107 / KC -7.5 -113. The frozen pool gives Los Angeles one extra point above the current market. No current exact LAC +8.5 alternate pair was verified, so the advantage size remains uncalibrated.",
+    "watch": "Recheck Sunday pricing and final inactives; seek a current exact LAC +8.5 two-sided pair. This is NOT final."
   },
   {
     "day": "Sun",
@@ -205,12 +205,12 @@ export const week6PoolGames: Week5PoolGame[] = [
     "mikeVibe": "BUF -6.5",
     "poolFavorite": "BUF",
     "poolSpread": 6.5,
-    "marketLabel": "BUF -5 (eDraft Oct 14 11:18 AM ET)",
+    "marketLabel": "BUF -4.5 (bet365 Oct 16: BUF -4.5 -111 / LV +4.5 -109)",
     "marketTotal": 53.5,
     "confidence": 3,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Early Week 6 lean at the frozen SZN number: LV +6.5 versus a dated eDraft aggregated market around BUF -5. The better pool number is a directional advantage; no current independent two-sided exact-line prices or calibrated cover edge are verified yet. Mike's highlighted side is tracked separately.",
-    "watch": "Refresh independent books' two-sided ATS prices at this exact pool spread and official final injury reports before game lock. This is NOT a final card."
+    "rationale": "Friday market refresh: retain LV +6.5. Bet365 lists Buffalo -4.5, priced BUF -111 / LV +4.5 -109. The frozen pool gives Las Vegas two additional points. No current exact LV +6.5 alternate pair was verified, so the advantage size remains uncalibrated.",
+    "watch": "Recheck Sunday pricing and final inactives; seek a current exact LV +6.5 two-sided pair. This is NOT final."
   },
   {
     "day": "Sun",
@@ -222,12 +222,12 @@ export const week6PoolGames: Week5PoolGame[] = [
     "mikeVibe": "DAL +1.5",
     "poolFavorite": "GB",
     "poolSpread": 1.5,
-    "marketLabel": "GB -1.5 (eDraft Oct 14 11:18 AM ET)",
-    "marketTotal": 52.8,
+    "marketLabel": "GB -1.5 (bet365 Oct 16 exact pool line: DAL +1.5 -115 / GB -1.5 -105)",
+    "marketTotal": 52.5,
     "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Early provisional tie choice. The SZN frozen DAL +1.5 is effectively the same as the dated eDraft consensus spread. Without current exact-line two-sided prices or validated independent ATS evidence, no measured edge is established. This temporary FFCC side is not proof of agreement with Mike's vibe.",
-    "watch": "Refresh independent books' two-sided ATS prices at this exact pool spread and official final injury reports before game lock. This is NOT a final card."
+    "signal": "SMALL EXACT-LINE PRICE LEAN",
+    "rationale": "Friday exact-line refresh: retain DAL +1.5. Bet365 prices the frozen line DAL -115 / GB -105, about 51.1% Dallas after proportional de-vig. That is a small exact-line price lean, not a high-confidence edge, and no validated independent model is being added.",
+    "watch": "Recheck Sunday-night inactives and a second independent exact-line pair. Mike’s tracked vibe remains DAL +1.5; actual submission is unconfirmed. This is NOT final."
   },
   {
     "day": "Mon",
@@ -239,12 +239,12 @@ export const week6PoolGames: Week5PoolGame[] = [
     "mikeVibe": "SF -7.5",
     "poolFavorite": "SF",
     "poolSpread": 7.5,
-    "marketLabel": "SF -7.5 (eDraft Oct 14 11:18 AM ET)",
-    "marketTotal": 50.5,
+    "marketLabel": "SF -7.5 (Oct 16 exact pool line: bet365 WAS -112 / SF -108; DraftKings WAS -110 / SF -108)",
+    "marketTotal": 51.5,
     "confidence": 1,
     "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Early provisional tie choice. The SZN frozen SF -7.5 is effectively the same as the dated eDraft consensus spread. Without current exact-line two-sided prices or validated independent ATS evidence, no measured edge is established. This temporary FFCC side is not proof of agreement with Mike's vibe.",
-    "watch": "Refresh independent books' two-sided ATS prices at this exact pool spread and official final injury reports before game lock. This is NOT a final card."
+    "rationale": "Friday exact-line refresh: retain the prior SF -7.5 tie choice. Bet365 and DraftKings each price Washington only marginally shorter at the frozen line—about 50.4% and 50.2% after de-vig—while another current listing is essentially balanced. That is too close to justify chasing a market twitch, so there is still no measured edge and no flip.",
+    "watch": "Monday game remains provisional. Recheck the final reports, weather and exact-line consensus before lock. Mike’s tracked vibe remains SF -7.5; actual submission is unconfirmed."
   }
 ];
-export const week6Tiebreaker = {matchup:"WAS @ SF",label:"Total points scored in final game of the week (Monday)",currentMarketTotal:50.5,earlyFfccTarget:51,note:"PRELIMINARY only: dated eDraft aggregate total 50.5 rounded to 51. Mike's screenshot has a blank tiebreaker field; no submitted number confirmed. Verify fresh two-sided totals and the pool tiebreaker lock before finalizing."};
+export const week6Tiebreaker = {matchup:"WAS @ SF",label:"Total points scored in final game of the week (Monday)",currentMarketTotal:51.5,earlyFfccTarget:52,note:"PRELIMINARY: Friday bet365/DraftKings market total is 51.5, rounded to 52 for the pool field. Mike's actual submitted number is unconfirmed. Recheck final reports, weather, fresh two-sided totals and the pool lock rule before finalizing."};
