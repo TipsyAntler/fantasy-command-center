@@ -2,8 +2,8 @@ import type { Week5PoolGame } from "./pickem-week5";
 
 export const week6Number = 6;
 export const week6PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week6PoolStatus = "THURSDAY RESULT: DEN +3.5 WON · WEEKEND CARD PROVISIONAL · 14/14 VIBE SELECTIONS VISIBLE";
-export const week6MarketAsOf = "Oct 15, 2026 · 11:54 PM ET · Thursday result recorded; weekend exact-line audit pending";
+export const week6PoolStatus = "THURSDAY RESULT: DEN +3.5 WON · FRIDAY FLIP: CLE +4.5 REPLACES BAL -4.5 · WEEKEND CARD PROVISIONAL";
+export const week6MarketAsOf = "Oct 16, 2026 · 10:02 AM ET · Baltimore–Cleveland exact-line audit; remaining weekend games provisional";
 export const week6Standing = {correct:35,rank:73,leaderCorrect:48,note:"Oct 14 user screenshot. Rank ties by total correct; 95 names shown in standings. This is Mike's actual SZN standing, not FFCC model performance."};
 export const week6PoolGames: Week5PoolGame[] = [
   {
@@ -64,17 +64,17 @@ export const week6PoolGames: Week5PoolGame[] = [
     "kickoff": "1:00 PM",
     "away": "BAL",
     "home": "CLE",
-    "poolPick": "BAL",
-    "poolLine": -4.5,
+    "poolPick": "CLE",
+    "poolLine": 4.5,
     "mikeVibe": "BAL -4.5",
     "poolFavorite": "BAL",
     "poolSpread": 4.5,
-    "marketLabel": "BAL -5.5 (eDraft Oct 14 11:18 AM ET)",
-    "marketTotal": 42.5,
-    "confidence": 3,
-    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Early Week 6 lean at the frozen SZN number: BAL -4.5 versus a dated eDraft aggregated market around BAL -5.5. The better pool number is a directional advantage; no current independent two-sided exact-line prices or calibrated cover edge are verified yet. Mike's highlighted side is tracked separately.",
-    "watch": "Refresh independent books' two-sided ATS prices at this exact pool spread and official final injury reports before game lock. This is NOT a final card."
+    "marketLabel": "BAL -3.5 consensus (Covers multi-book board Oct 16 10:02 AM ET); exact frozen -4.5 pairs BAL -105 / CLE -117 and BAL -105 / CLE -115",
+    "marketTotal": 40.5,
+    "confidence": 2,
+    "signal": "SMALL EXACT-LINE PRICE LEAN",
+    "rationale": "FRIDAY FLIP: CLE +4.5 replaces BAL -4.5. The current multi-book market is predominantly BAL -3.5, so the frozen pool asks Baltimore to cover an extra point. Two independently listed exact -4.5 pairs price BAL -105 against CLE -117 and BAL -105 against CLE -115. Proportional de-vig yields roughly 51.3% and 51.1% for Cleveland, a robust consensus near 51.2%. That is enough to favor CLE at the fixed pool number, but it is only a small exact-line price lean and not a high-confidence edge.",
+    "watch": "Recheck Friday injury designations and fresh exact-line prices before Sunday lock. Mike's tracked vibe remains BAL -4.5; his actual submitted side is unconfirmed. This is NOT a final card."
   },
   {
     "day": "Sun",
