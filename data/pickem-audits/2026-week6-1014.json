@@ -14,6 +14,7 @@
     "thursdayInactives": "Final pregame reports: Riley Moss active; Patrick Surtain II and Talanoa Hufanga out; Jaxon Smith-Njigba and RJ Harvey active",
     "thursdayResult": "Denver 17, Seattle 14 (OT), Oct 15, 2026; verified against Field Gulls final recap and Mile High Report final recap",
     "baltimoreClevelandFridayMarket": "Covers multi-book spread board, last updated Oct 16, 2026 at 10:02 AM ET: market predominantly BAL -3.5; two exact frozen -4.5 pairs BAL -105/CLE -117 and BAL -105/CLE -115",
+    "baltimoreClevelandFinalInjury": "BaltimoreRavens.com, Oct 16, 2026 at 12:58 PM ET: Lamar Jackson ruled OUT; Tyler Huntley will start. The news strengthens CLE +4.5 but was already reflected in the moved market and is not counted as a separate numerical edge.",
     "carolinaPhiladelphiaFridayMarket": "Oct 16, 2026 at 2:30 PM ET: VegasInsider/StatMuse main market CAR -3.5; FanDuel exact frozen-line alternate pair CAR +1.5 -225 / PHI -1.5 +172; Reuters confirmed Jalen Hurts out and Tanner McKee starting",
     "fridayMarketBoard": "Retrieved Oct 16, 2026 at 4:10 PM ET: bet365 Week 6 two-sided main spreads/totals/prices via CanadaSportsBetting; VegasInsider consensus used as cross-check. Main-line prices are not treated as exact frozen-line prices when the spread differs.",
     "mondayExactLine": "Oct 16, 2026: bet365 WAS +7.5 -112 / SF -7.5 -108; DraftKings WAS +7.5 -110 / SF -7.5 -108 via SportsLine. Both are essentially balanced; no recommendation flip."
@@ -112,9 +113,10 @@
       "previousFfccSide": "BAL -4.5",
       "currentMarketSpread": "BAL -3 to -3.5",
       "devig": "Proportional de-vig: CLE 51.3% and 51.1%; robust consensus approximately 51.2%",
-      "changeReason": "The live market moved from the dated BAL -5.5 reference to predominantly BAL -3.5. At the frozen -4.5, two verified two-sided pairs favor Cleveland, so CLE +4.5 replaces BAL -4.5.",
+      "changeReason": "The live market moved from the dated BAL -5.5 reference to predominantly BAL -3.5. At the frozen -4.5, two verified two-sided pairs favor Cleveland, so CLE +4.5 replaces BAL -4.5. Baltimore then officially ruled Lamar Jackson out at 12:58 PM ET; Tyler Huntley will start. That confirmation strengthens the recommendation but is already reflected in the market and does not increase the calibrated edge.",
       "changedAt": "2026-10-16 10:02 ET",
-      "currentMainLineTwoSidedPrices": "bet365 BAL -3.5 -113 / CLE +3.5 -107"
+      "currentMainLineTwoSidedPrices": "bet365 BAL -3.5 -113 / CLE +3.5 -107",
+      "officialNews": "BaltimoreRavens.com Oct 16, 12:58 PM ET: Lamar Jackson OUT; Tyler Huntley starting. Browns list Quinshon Judkins, Mason Graham and Carson Schwesinger questionable after limited Friday practices."
     },
     {
       "matchup": "TEN @ IND",
