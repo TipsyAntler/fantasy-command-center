@@ -73,8 +73,8 @@ export const week6PoolGames: Week5PoolGame[] = [
     "marketTotal": 40.5,
     "confidence": 2,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "FRIDAY FLIP HOLDS: CLE +4.5 remains the recommendation. The main market is BAL -3 to -3.5, and two verified exact frozen-line pairs price BAL -105 against CLE -117 and -115. Proportional de-vig gives Cleveland about 51.3% and 51.1%, a robust consensus near 51.2%. This is a small exact-line price lean, not a high-confidence edge.",
-    "watch": "Recheck Sunday pricing and inactives. Mike’s tracked vibe remains BAL -4.5; actual submission is unconfirmed. This is NOT final."
+    "rationale": "FRIDAY FLIP HOLDS: CLE +4.5 remains the recommendation. Baltimore officially ruled Lamar Jackson out at 12:58 PM ET, with Tyler Huntley starting. The main market is BAL -3 to -3.5, and two verified exact frozen-line pairs price BAL -105 against CLE -117 and -115. Proportional de-vig gives Cleveland about 51.3% and 51.1%, a robust consensus near 51.2%. Jackson’s absence strengthens the rationale but was already reflected in the moved market, so it is not double-counted or treated as a larger calibrated edge.",
+    "watch": "Jackson is OUT; recheck Sunday pricing and the Browns’ questionable returnees, especially Quinshon Judkins, Mason Graham and Carson Schwesinger. Mike’s tracked vibe remains BAL -4.5; actual submission is unconfirmed. This is NOT final."
   },
   {
     "day": "Sun",
