@@ -181,14 +181,18 @@ export async function sendPushToOnce(
   alert: { title: string; body: string; url: string; tag?: string; category?: string; severity?: string },
 ): Promise<boolean> {
   const sentKey = `${channel}:push:sent:${alertId}`;
-  const claimed = await redis(["SET", sentKey, "1", "NX", "EX", String(SENT_TTL_SECONDS)]);
+  // Claim before sending so concurrent requests cannot send the same alert twice.
+  // The state is intentionally not deleted on an ambiguous delivery failure:
+  // automatic retries must not turn a timeout into a duplicate notification.
+  const claimed = await redis(["SET", sentKey, "pending", "NX", "EX", String(SENT_TTL_SECONDS)]);
   if (claimed !== "OK") return false;
 
   try {
     await sendPushTo(channel, alert);
+    await redis(["SET", sentKey, "accepted", "EX", String(SENT_TTL_SECONDS)]);
     return true;
   } catch (error) {
-    await redis(["DEL", sentKey]).catch(() => undefined);
+    await redis(["SET", sentKey, "failed", "EX", String(SENT_TTL_SECONDS)]).catch(() => undefined);
     throw error;
   }
 }
