@@ -2,9 +2,19 @@ import type { Week5PoolGame } from "./pickem-week5";
 
 export const week6Number = 6;
 export const week6PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week6PoolStatus = "THURSDAY RESULT: DEN +3.5 WON · CLE +4.5 FLIP HOLDS · CAR +1.5 STRONGEST FROZEN NUMBER · FRIDAY MARKETS REFRESHED · WEEKEND CARD PROVISIONAL";
+export const week6PoolStatus = "MIKE SUBMITTED CARD CONFIRMED · THURSDAY RESULT: DEN +3.5 WON · CLE +4.5 FLIP HOLDS · CAR +1.5 STRONGEST FROZEN NUMBER · FRIDAY MARKETS REFRESHED · WEEKEND FFCC CARD PROVISIONAL";
 export const week6MarketAsOf = "Oct 16, 2026 · 4:10 PM ET · Friday bet365/VegasInsider market refresh plus exact-line audits where verified; weekend games remain provisional";
 export const week6Standing = {correct:35,rank:73,leaderCorrect:48,note:"Oct 14 user screenshot. Rank ties by total correct; 95 names shown in standings. This is Mike's actual SZN standing, not FFCC model performance."};
+export const week6MikeSubmittedCard = {
+  confirmedAt: "Oct 17, 2026 · 12:17 AM ET · user screenshot",
+  source: "The SZN Week 6 pool card",
+  picks: [
+    "SEA -3.5", "HOU +3.5", "ATL +3.5", "BAL -4.5", "TEN +7.5", "NE -7.5", "NO +1.5",
+    "PHI -1.5", "PIT -3.5", "LAR -13.5", "KC -8.5", "BUF -6.5", "DAL +1.5", "SF -7.5",
+  ],
+  tiebreaker: 51,
+  note: "Confirmed submitted card from Mike's SZN screenshot. This is tracked separately from FFCC recommendations.",
+};
 export const week6PoolGames: Week5PoolGame[] = [
   {
     "day": "Thu",
@@ -21,7 +31,7 @@ export const week6PoolGames: Week5PoolGame[] = [
     "confidence": 3,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     "rationale": "FINAL THURSDAY DECISION: retain DEN +3.5. The final pregame main line remains SEA -2.5, priced about SEA -115 / DEN +2.5 -105, so the frozen pool number gives Denver one extra point and crosses the key 3. Riley Moss is active for Denver; Patrick Surtain II and Talanoa Hufanga are out, while Jaxon Smith-Njigba is active for Seattle. No two-sided alternate-line price at the exact frozen DEN +3.5 or calibrated cover edge was verified, so the advantage size remains uncalibrated.",
-    "watch": "FINAL RESULT: Denver won 17-14 in overtime. FFCC DEN +3.5 won; the closing-market DEN +2.5 baseline also won; Mike's tracked SEA -3.5 vibe lost. His actual submitted side remains unconfirmed.",
+    "watch": "FINAL RESULT: Denver won 17-14 in overtime. FFCC DEN +3.5 won; the closing-market DEN +2.5 baseline also won; Mike's tracked SEA -3.5 vibe lost. Mike’s confirmed submission was SEA -3.5.",
     "result": "DEN 17, SEA 14 (OT) — FFCC recommendation DEN +3.5 covered; closing-market DEN +2.5 also covered.",
     "outcome": "win"
   },
@@ -247,4 +257,4 @@ export const week6PoolGames: Week5PoolGame[] = [
     "watch": "Monday game remains provisional. Recheck the final reports, weather and exact-line consensus before lock. Mike’s tracked vibe remains SF -7.5; actual submission is unconfirmed."
   }
 ];
-export const week6Tiebreaker = {matchup:"WAS @ SF",label:"Total points scored in final game of the week (Monday)",currentMarketTotal:51.5,earlyFfccTarget:52,note:"PRELIMINARY: Friday bet365/DraftKings market total is 51.5, rounded to 52 for the pool field. Mike's actual submitted number is unconfirmed. Recheck final reports, weather, fresh two-sided totals and the pool lock rule before finalizing."};
+export const week6Tiebreaker = {matchup:"WAS @ SF",label:"Total points scored in final game of the week (Monday)",currentMarketTotal:51.5,earlyFfccTarget:52,mikeSubmittedTotal:51,note:"PRELIMINARY FFCC TARGET: Friday bet365/DraftKings market total is 51.5, rounded to 52. Mike’s confirmed submitted tiebreaker is 51. Recheck final reports, weather, fresh two-sided totals and the pool lock rule before finalizing FFCC advice."};
