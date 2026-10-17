@@ -2,10 +2,10 @@
   "week": 6,
   "pool": "The SZN NFL Super Pick'em · NFL-575",
   "createdAt": "2026-10-14 13:25 ET",
-  "status": "Friday market board refreshed; CLE +4.5 flip holds, CAR +1.5 remains strongest frozen-number advantage, all weekend recommendations remain provisional",
+  "status": "Mike’s actual Week 6 card and 51-point tiebreaker confirmed by SZN screenshot; FFCC weekend recommendations remain separate and provisional",
   "sources": {
     "frozenPoolLines": "User screenshots Oct 14, 2026, The SZN pool NFL-575",
-    "vibes": "Orange selected team tiles, Picks required 14 / Picks made 14; final submission not independently confirmed",
+    "vibes": "User SZN screenshot captured Oct 17, 2026 at 12:17 AM ET: full submitted Week 6 card visible with 14 picks, SEA result, and 51-point tiebreaker.",
     "seasonStandings": "User screenshot: rank 73, score 35, leader 48",
     "comparison": "https://edraft.com/nfl/schedule/week-6",
     "comparisonAsOf": "Oct 14 2026, 11:18 AM ET; aggregated current spread estimates, not independent simultaneous two-sided exact-line executable odds",
@@ -26,12 +26,13 @@
   },
   "tiebreaker": {
     "game": "WAS @ SF",
-    "mikeSubmittedTotal": null,
-    "screenshotField": "blank",
+    "mikeSubmittedTotal": 51,
+    "screenshotField": "51 pts",
     "datedMarketTotal": 51.5,
     "ffccProvisionalTarget": 52,
     "final": false,
-    "marketSource": "Friday bet365/DraftKings total 51.5; rounded to 52"
+    "marketSource": "Friday bet365/DraftKings total 51.5; rounded to 52",
+    "submissionConfirmed": true
   },
   "games": [
     {
@@ -46,21 +47,22 @@
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
       "exactLineTwoSidedPrices": "DEN +3.5 alternate-line pair not publicly verified; no numerical cover probability claimed",
       "changeFlag": false,
-      "mikeSubmittedSide": "unconfirmed; screenshot tracked SEA -3.5 as vibe",
+      "mikeSubmittedSide": "SEA -3.5",
       "result": {
         "finalScore": "DEN 17, SEA 14 (OT)",
         "margin": "DEN by 3",
         "ffccOutcome": "win — DEN +3.5 covered",
         "sameLineMarketBaselineOutcome": "win — closing DEN +2.5 covered",
         "mikeTrackedVibeOutcome": "loss — SEA -3.5 did not cover",
-        "mikeActualSubmission": "unconfirmed"
+        "mikeActualSubmission": "loss — SEA -3.5 did not cover"
       },
       "ffccFinalSide": "DEN",
       "finalizedAt": "2026-10-15 19:06 ET",
       "currentMarketSpread": "SEA -2.5",
       "currentMainLineTwoSidedPrices": "SEA -115 / DEN +2.5 -105",
       "finalInactives": "Riley Moss active; Patrick Surtain II and Talanoa Hufanga out; Jaxon Smith-Njigba and RJ Harvey active",
-      "resultRecordedAt": "2026-10-15 23:54 ET"
+      "resultRecordedAt": "2026-10-15 23:54 ET",
+      "submissionConfirmed": true
     },
     {
       "matchup": "HOU @ JAX",
@@ -74,10 +76,11 @@
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
       "exactLineTwoSidedPrices": "Exact HOU +3.5 alternate pair not verified",
       "changeFlag": false,
-      "mikeSubmittedSide": "unconfirmed",
+      "mikeSubmittedSide": "HOU +3.5",
       "result": null,
       "currentMarketSpread": "JAX -2.5",
-      "currentMainLineTwoSidedPrices": "bet365 HOU +2.5 -105 / JAX -2.5 -115"
+      "currentMainLineTwoSidedPrices": "bet365 HOU +2.5 -105 / JAX -2.5 -115",
+      "submissionConfirmed": true
     },
     {
       "matchup": "CHI @ ATL",
@@ -91,10 +94,11 @@
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
       "exactLineTwoSidedPrices": "Exact ATL +3.5 alternate pair not verified",
       "changeFlag": false,
-      "mikeSubmittedSide": "unconfirmed",
+      "mikeSubmittedSide": "ATL +3.5",
       "result": null,
       "currentMarketSpread": "CHI -1.5",
-      "currentMainLineTwoSidedPrices": "bet365 CHI -1.5 -108 / ATL +1.5 -112"
+      "currentMainLineTwoSidedPrices": "bet365 CHI -1.5 -108 / ATL +1.5 -112",
+      "submissionConfirmed": true
     },
     {
       "matchup": "BAL @ CLE",
@@ -108,7 +112,7 @@
       "evidenceLabel": "small exact-line price lean",
       "exactLineTwoSidedPrices": "Covers Oct 16 10:02 AM ET: BAL -4.5 -105 / CLE +4.5 -117; BAL -4.5 -105 / CLE +4.5 -115",
       "changeFlag": true,
-      "mikeSubmittedSide": "unconfirmed",
+      "mikeSubmittedSide": "BAL -4.5",
       "result": null,
       "previousFfccSide": "BAL -4.5",
       "currentMarketSpread": "BAL -3 to -3.5",
@@ -116,7 +120,8 @@
       "changeReason": "The live market moved from the dated BAL -5.5 reference to predominantly BAL -3.5. At the frozen -4.5, two verified two-sided pairs favor Cleveland, so CLE +4.5 replaces BAL -4.5. Baltimore then officially ruled Lamar Jackson out at 12:58 PM ET; Tyler Huntley will start. That confirmation strengthens the recommendation but is already reflected in the market and does not increase the calibrated edge.",
       "changedAt": "2026-10-16 10:02 ET",
       "currentMainLineTwoSidedPrices": "bet365 BAL -3.5 -113 / CLE +3.5 -107",
-      "officialNews": "BaltimoreRavens.com Oct 16, 12:58 PM ET: Lamar Jackson OUT; Tyler Huntley starting. Browns list Quinshon Judkins, Mason Graham and Carson Schwesinger questionable after limited Friday practices."
+      "officialNews": "BaltimoreRavens.com Oct 16, 12:58 PM ET: Lamar Jackson OUT; Tyler Huntley starting. Browns list Quinshon Judkins, Mason Graham and Carson Schwesinger questionable after limited Friday practices.",
+      "submissionConfirmed": true
     },
     {
       "matchup": "TEN @ IND",
@@ -130,10 +135,11 @@
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
       "exactLineTwoSidedPrices": "Exact TEN +7.5 alternate pair not verified",
       "changeFlag": false,
-      "mikeSubmittedSide": "unconfirmed",
+      "mikeSubmittedSide": "TEN +7.5",
       "result": null,
       "currentMarketSpread": "IND -6.5",
-      "currentMainLineTwoSidedPrices": "bet365 TEN +6.5 +100 / IND -6.5 -120"
+      "currentMainLineTwoSidedPrices": "bet365 TEN +6.5 +100 / IND -6.5 -120",
+      "submissionConfirmed": true
     },
     {
       "matchup": "NYJ @ NE",
@@ -147,12 +153,13 @@
       "evidenceLabel": "small exact-line price lean",
       "exactLineTwoSidedPrices": "bet365 NYJ +7.5 -117 / NE -7.5 -103",
       "changeFlag": false,
-      "mikeSubmittedSide": "unconfirmed",
+      "mikeSubmittedSide": "NE -7.5",
       "result": null,
       "currentMarketSpread": "NE -7.5",
       "currentMainLineTwoSidedPrices": "bet365 exact frozen line NYJ +7.5 -117 / NE -7.5 -103",
       "devig": "Proportional de-vig: NYJ approximately 51.5%",
-      "updateReason": "The current main line now matches the frozen pool spread and modestly prices the Jets side shorter. Hall and three other Jets are out; recommendation remains NYJ +7.5."
+      "updateReason": "The current main line now matches the frozen pool spread and modestly prices the Jets side shorter. Hall and three other Jets are out; recommendation remains NYJ +7.5.",
+      "submissionConfirmed": true
     },
     {
       "matchup": "NO @ NYG",
@@ -166,10 +173,11 @@
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
       "exactLineTwoSidedPrices": "Exact NO +1.5 alternate pair not verified",
       "changeFlag": false,
-      "mikeSubmittedSide": "unconfirmed",
+      "mikeSubmittedSide": "NO +1.5",
       "result": null,
       "currentMarketSpread": "NO -1.5",
-      "currentMainLineTwoSidedPrices": "bet365 NO -1.5 +102 / NYG +1.5 -122"
+      "currentMainLineTwoSidedPrices": "bet365 NO -1.5 +102 / NYG +1.5 -122",
+      "submissionConfirmed": true
     },
     {
       "matchup": "CAR @ PHI",
@@ -183,13 +191,14 @@
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
       "exactLineTwoSidedPrices": "FanDuel Oct 16 2:30 PM ET: CAR +1.5 -225 / PHI -1.5 +172",
       "changeFlag": false,
-      "mikeSubmittedSide": "unconfirmed",
+      "mikeSubmittedSide": "PHI -1.5",
       "result": null,
       "currentMarketSpread": "CAR -3.5",
       "devig": "Single-book proportional de-vig: CAR approximately 65.3% at frozen +1.5; not treated as robust multi-book consensus",
       "updateReason": "Jalen Hurts was ruled out and Tanner McKee will start. The current main market moved to CAR -3.5, creating a five-point gap from the frozen CAR +1.5 and crossing pick’em plus the key 3. Recommendation stays CAR; changeFlag remains false because there was no side flip.",
       "updatedAt": "2026-10-16 14:30 ET",
-      "currentMainLineTwoSidedPrices": "bet365 CAR -3.5 -108 / PHI +3.5 -112"
+      "currentMainLineTwoSidedPrices": "bet365 CAR -3.5 -108 / PHI +3.5 -112",
+      "submissionConfirmed": true
     },
     {
       "matchup": "PIT @ TB",
@@ -203,10 +212,11 @@
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
       "exactLineTwoSidedPrices": "Exact TB +3.5 alternate pair not verified",
       "changeFlag": false,
-      "mikeSubmittedSide": "unconfirmed",
+      "mikeSubmittedSide": "PIT -3.5",
       "result": null,
       "currentMarketSpread": "PIT -2.5",
-      "currentMainLineTwoSidedPrices": "bet365 PIT -2.5 -113 / TB +2.5 -107"
+      "currentMainLineTwoSidedPrices": "bet365 PIT -2.5 -113 / TB +2.5 -107",
+      "submissionConfirmed": true
     },
     {
       "matchup": "ARI @ LAR",
@@ -220,10 +230,11 @@
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
       "exactLineTwoSidedPrices": "Exact ARI +13.5 alternate pair not verified",
       "changeFlag": false,
-      "mikeSubmittedSide": "unconfirmed",
+      "mikeSubmittedSide": "LAR -13.5",
       "result": null,
       "currentMarketSpread": "LAR -12.5",
-      "currentMainLineTwoSidedPrices": "bet365 ARI +12.5 -110 / LAR -12.5 -110"
+      "currentMainLineTwoSidedPrices": "bet365 ARI +12.5 -110 / LAR -12.5 -110",
+      "submissionConfirmed": true
     },
     {
       "matchup": "LAC @ KC",
@@ -237,10 +248,11 @@
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
       "exactLineTwoSidedPrices": "Exact LAC +8.5 alternate pair not verified",
       "changeFlag": false,
-      "mikeSubmittedSide": "unconfirmed",
+      "mikeSubmittedSide": "KC -8.5",
       "result": null,
       "currentMarketSpread": "KC -7.5",
-      "currentMainLineTwoSidedPrices": "bet365 LAC +7.5 -107 / KC -7.5 -113"
+      "currentMainLineTwoSidedPrices": "bet365 LAC +7.5 -107 / KC -7.5 -113",
+      "submissionConfirmed": true
     },
     {
       "matchup": "BUF @ LV",
@@ -254,10 +266,11 @@
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
       "exactLineTwoSidedPrices": "Exact LV +6.5 alternate pair not verified",
       "changeFlag": false,
-      "mikeSubmittedSide": "unconfirmed",
+      "mikeSubmittedSide": "BUF -6.5",
       "result": null,
       "currentMarketSpread": "BUF -4.5",
-      "currentMainLineTwoSidedPrices": "bet365 BUF -4.5 -111 / LV +4.5 -109"
+      "currentMainLineTwoSidedPrices": "bet365 BUF -4.5 -111 / LV +4.5 -109",
+      "submissionConfirmed": true
     },
     {
       "matchup": "DAL @ GB",
@@ -271,12 +284,13 @@
       "evidenceLabel": "small exact-line price lean",
       "exactLineTwoSidedPrices": "bet365 DAL +1.5 -115 / GB -1.5 -105",
       "changeFlag": false,
-      "mikeSubmittedSide": "unconfirmed",
+      "mikeSubmittedSide": "DAL +1.5",
       "result": null,
       "currentMarketSpread": "GB -1.5",
       "currentMainLineTwoSidedPrices": "bet365 exact frozen line DAL +1.5 -115 / GB -1.5 -105",
       "devig": "Proportional de-vig: DAL approximately 51.1%",
-      "updateReason": "The exact pool line modestly prices Dallas shorter. Recommendation remains DAL +1.5; no side change."
+      "updateReason": "The exact pool line modestly prices Dallas shorter. Recommendation remains DAL +1.5; no side change.",
+      "submissionConfirmed": true
     },
     {
       "matchup": "WAS @ SF",
@@ -290,13 +304,15 @@
       "evidenceLabel": "no measured edge / provisional tie choice",
       "exactLineTwoSidedPrices": "bet365 WAS -112 / SF -108; DraftKings WAS -110 / SF -108",
       "changeFlag": false,
-      "mikeSubmittedSide": "unconfirmed",
+      "mikeSubmittedSide": "SF -7.5",
       "result": null,
       "currentMarketSpread": "SF -7.5",
       "currentMainLineTwoSidedPrices": "bet365 WAS +7.5 -112 / SF -7.5 -108; DraftKings WAS +7.5 -110 / SF -7.5 -108",
       "devig": "WAS approximately 50.4% and 50.2% after proportional de-vig; essentially balanced",
-      "updateReason": "The tiny Washington price shading is not enough to chase a market twitch. Retain prior SF -7.5 transparently as a provisional tie choice; changeFlag remains false."
+      "updateReason": "The tiny Washington price shading is not enough to chase a market twitch. Retain prior SF -7.5 transparently as a provisional tie choice; changeFlag remains false.",
+      "submissionConfirmed": true
     }
   ],
-  "updatedAt": "2026-10-16 16:10 ET"
+  "updatedAt": "2026-10-17 01:15 ET",
+  "submittedCardConfirmedAt": "2026-10-17 00:17 ET"
 }
