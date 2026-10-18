@@ -11,6 +11,15 @@ export type ActionableAlert = { id: string; category: "Fantasy" | "Survivor" | "
 // Oct 18 cleanup: archived all previously active alerts, including stale Freiermuth,
 // Wicks, Olave, Henderson and Pick'em confirmations. New actionable events may be
 // activated individually only after verifying current roster, lock and evidence.
+// Defense-in-depth: both the visible ticker and push sync must honor this gate.
+// A mere active flag cannot turn a confirmation into breaking news.
+export function isActionableBreakingAlert(alert: ActionableAlert): boolean {
+  if (!alert.active) return false;
+  const headline = alert.headline.toLowerCase();
+  if (/\\b(clear|confirmed|keep him|still bench|no change|watch)\\b/.test(headline)) return false;
+  return true;
+}
+
 export const actionableAlerts: ActionableAlert[] = [
   { id:"2026-w6-ll-freiermuth-active-1018-1130", category:"Fantasy", headline:"LL CLEAR: Pat Freiermuth ACTIVE — start him", detail:"Pittsburgh’s official 11:30 AM ET inactive list does not include Freiermuth, clearing the late calf-questionable tag. Start Freiermuth in LL for Sunday’s 1:00 PM ET game at Tampa Bay; the emergency waiver-tight-end contingency is no longer needed.", href:"/leagues", active:false },
   { id:"2026-w6-bm-olave-active-1018-1034", category:"Fantasy", headline:"BM CLEAR: Chris Olave ACTIVE — keep him in", detail:"New Orleans’ official inactive list, posted Oct. 18 at 10:34 AM ET, does not include Olave. Keep Olave in BM’s starting lineup. Dontayvion Wicks remains cleared, and Darius Cooper returns to bench/contingency status.", href:"/leagues", active:false },
