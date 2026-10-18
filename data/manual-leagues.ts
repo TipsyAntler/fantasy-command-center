@@ -21,7 +21,7 @@ export const manualLeagues: ManualLeague[] = [
     leagueName: "NFL FF BIG Money League - S8",
     leagueId: "890742",
     teamName: "Bowers' Castle",
-    snapshotLabel: "Oct 16 Yahoo Week 6 screenshots · Oct 18 user-confirmed Omar Cooper Jr. added and starting over Wicks · drop counterpart not specified; other bench/IR not fully reconfirmed",
+    snapshotLabel: "Oct 18 Yahoo Week 6 screenshots · visible starters, bench and Christian Kirk IR confirmed",
     format: "12 teams · Half PPR · 3 WR + FLEX · no kicker",
     roster: [
       { name: "Jayden Daniels", position: "QB", slot: "QB" },
@@ -40,15 +40,15 @@ export const manualLeagues: ManualLeague[] = [
       { name: "Tee Higgins", position: "WR", slot: "BN" },
       { name: "Brian Robinson Jr.", position: "RB", slot: "BN" },
     ],
-    // Prior IR designation retained for continuity; not visible in Oct 16 screenshots.
-    ir: [{ name: "DeZhaun Stribling", position: "WR", slot: "IR (not reconfirmed)" }],
+    // IR slot confirmed in Oct 18 Yahoo screenshot.
+    ir: [{ name: "Christian Kirk", position: "WR", slot: "IR" }],
   },
   {
     key: "ll",
     leagueName: "Legendary LeBlanc League",
     leagueId: "864304",
     teamName: "LaPorta Potty",
-    snapshotLabel: "Oct 16 Yahoo Week 6 screenshots · Oct 18 user-confirmed Freiermuth dropped for Higbee · other slots from screenshot; additional slots unconfirmed",
+    snapshotLabel: "Oct 18 Yahoo Week 6 screenshots · Higbee starts at TE; visible starters, bench and IR confirmed",
     format: "12 teams per Yahoo Week 6 screenshot · Half PPR · 2 WR + FLEX · K + DEF",
     roster: [
       { name: "Brock Purdy", position: "QB", slot: "QB" },
