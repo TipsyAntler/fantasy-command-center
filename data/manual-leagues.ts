@@ -48,7 +48,7 @@ export const manualLeagues: ManualLeague[] = [
     leagueName: "Legendary LeBlanc League",
     leagueId: "864304",
     teamName: "LaPorta Potty",
-    snapshotLabel: "Oct 16 Yahoo Week 6 screenshots · all visible starters, bench and 2 visible IR slots captured · additional slots below screenshot unconfirmed",
+    snapshotLabel: "Oct 16 Yahoo Week 6 screenshots · Oct 18 user-confirmed Freiermuth dropped for Higbee · other slots from screenshot; additional slots unconfirmed",
     format: "12 teams per Yahoo Week 6 screenshot · Half PPR · 2 WR + FLEX · K + DEF",
     roster: [
       { name: "Brock Purdy", position: "QB", slot: "QB" },
@@ -56,7 +56,7 @@ export const manualLeagues: ManualLeague[] = [
       { name: "Tyler Allgeier", position: "RB", slot: "RB" },
       { name: "Emeka Egbuka", position: "WR", slot: "WR" },
       { name: "DK Metcalf", position: "WR", slot: "WR" },
-      { name: "Pat Freiermuth", position: "TE", slot: "TE" },
+      { name: "Tyler Higbee", position: "TE", slot: "TE" },
       { name: "Davante Adams", position: "WR", slot: "FLEX" },
       { name: "Matt Gay", position: "K", slot: "K" },
       { name: "Colts", position: "DEF", slot: "DEF" },
