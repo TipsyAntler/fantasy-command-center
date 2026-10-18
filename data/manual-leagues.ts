@@ -21,7 +21,7 @@ export const manualLeagues: ManualLeague[] = [
     leagueName: "NFL FF BIG Money League - S8",
     leagueId: "890742",
     teamName: "Bowers' Castle",
-    snapshotLabel: "Oct 16 Yahoo Week 6 screenshots · all 9 starters and 6 visible bench players captured · IR below screenshot not fully confirmed",
+    snapshotLabel: "Oct 16 Yahoo Week 6 screenshots · Oct 18 user-confirmed Omar Cooper Jr. added and starting over Wicks · drop counterpart not specified; other bench/IR not fully reconfirmed",
     format: "12 teams · Half PPR · 3 WR + FLEX · no kicker",
     roster: [
       { name: "Jayden Daniels", position: "QB", slot: "QB" },
@@ -29,7 +29,7 @@ export const manualLeagues: ManualLeague[] = [
       { name: "Tyler Allgeier", position: "RB", slot: "RB" },
       { name: "Chris Olave", position: "WR", slot: "WR" },
       { name: "Jaxon Smith-Njigba", position: "WR", slot: "WR" },
-      { name: "Darius Cooper", position: "WR", slot: "WR" },
+      { name: "Omar Cooper Jr.", position: "WR", slot: "WR" },
       { name: "Brock Bowers", position: "TE", slot: "TE" },
       { name: "MarShawn Lloyd", position: "RB", slot: "FLEX" },
       { name: "Ravens", position: "DEF", slot: "DEF" },
