@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { actionableAlerts } from "@/data/actionable-alerts";
+import { actionableAlerts, isActionableBreakingAlert } from "@/data/actionable-alerts";
 
 const DISMISSED_KEY = "ffcc-dismissed-breaking-alerts";
 
@@ -19,7 +19,7 @@ export default function BreakingNewsTicker() {
   }, []);
 
   const alerts = useMemo(
-    () => actionableAlerts.filter((alert) => alert.active && !dismissedIds.includes(alert.id)),
+    () => actionableAlerts.filter((alert) => isActionableBreakingAlert(alert) && !dismissedIds.includes(alert.id)),
     [dismissedIds],
   );
 
