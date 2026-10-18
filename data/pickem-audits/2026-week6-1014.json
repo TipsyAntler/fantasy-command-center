@@ -2,7 +2,7 @@
   "week": 6,
   "pool": "The SZN NFL Super Pick'em · NFL-575",
   "createdAt": "2026-10-14 13:25 ET",
-  "status": "Mike’s actual Week 6 card and 51-point tiebreaker confirmed by SZN screenshot; FFCC weekend recommendations remain separate and provisional",
+  "status": "Mike’s actual Week 6 card confirmed; Thursday and all eight Sunday early-window results recorded; late Sunday and Monday games pending",
   "sources": {
     "frozenPoolLines": "User screenshots Oct 14, 2026, The SZN pool NFL-575",
     "vibes": "User SZN screenshot captured Oct 17, 2026 at 12:17 AM ET: full submitted Week 6 card visible with 14 picks, SEA result, and 51-point tiebreaker.",
@@ -17,7 +17,8 @@
     "baltimoreClevelandFinalInjury": "BaltimoreRavens.com, Oct 16, 2026 at 12:58 PM ET: Lamar Jackson ruled OUT; Tyler Huntley will start. The news strengthens CLE +4.5 but was already reflected in the moved market and is not counted as a separate numerical edge.",
     "carolinaPhiladelphiaFridayMarket": "Oct 16, 2026 at 2:30 PM ET: VegasInsider/StatMuse main market CAR -3.5; FanDuel exact frozen-line alternate pair CAR +1.5 -225 / PHI -1.5 +172; Reuters confirmed Jalen Hurts out and Tanner McKee starting",
     "fridayMarketBoard": "Retrieved Oct 16, 2026 at 4:10 PM ET: bet365 Week 6 two-sided main spreads/totals/prices via CanadaSportsBetting; VegasInsider consensus used as cross-check. Main-line prices are not treated as exact frozen-line prices when the spread differs.",
-    "mondayExactLine": "Oct 16, 2026: bet365 WAS +7.5 -112 / SF -7.5 -108; DraftKings WAS +7.5 -110 / SF -7.5 -108 via SportsLine. Both are essentially balanced; no recommendation flip."
+    "mondayExactLine": "Oct 16, 2026: bet365 WAS +7.5 -112 / SF -7.5 -108; DraftKings WAS +7.5 -110 / SF -7.5 -108 via SportsLine. Both are essentially balanced; no recommendation flip.",
+    "sundayEarlyResults": "NFL Week 6 scoreboard, retrieved Oct 18, 2026 after the early window: HOU 34–31 JAX; CHI 31–23 ATL; CLE 13–10 BAL; TEN 26–20 IND; NE 26–19 NYJ; NO 34–27 NYG; CAR 25–14 PHI; PIT 26–19 TB."
   },
   "standing": {
     "rank": 73,
@@ -77,10 +78,19 @@
       "exactLineTwoSidedPrices": "Exact HOU +3.5 alternate pair not verified",
       "changeFlag": false,
       "mikeSubmittedSide": "HOU +3.5",
-      "result": null,
+      "result": {
+        "finalScore": "HOU 34, JAX 31",
+        "margin": "HOU by 3",
+        "ffccOutcome": "win — HOU +3.5 covered",
+        "sameLineMarketBaselineOutcome": "win — HOU +2.5 covered",
+        "mikeTrackedVibeOutcome": "win — HOU +3.5 covered",
+        "mikeActualSubmission": "win — HOU +3.5 covered"
+      },
       "currentMarketSpread": "JAX -2.5",
       "currentMainLineTwoSidedPrices": "bet365 HOU +2.5 -105 / JAX -2.5 -115",
-      "submissionConfirmed": true
+      "submissionConfirmed": true,
+      "ffccFinalSide": "HOU",
+      "resultRecordedAt": "2026-10-18 17:45 ET"
     },
     {
       "matchup": "CHI @ ATL",
@@ -95,10 +105,19 @@
       "exactLineTwoSidedPrices": "Exact ATL +3.5 alternate pair not verified",
       "changeFlag": false,
       "mikeSubmittedSide": "ATL +3.5",
-      "result": null,
+      "result": {
+        "finalScore": "CHI 31, ATL 23",
+        "margin": "CHI by 8",
+        "ffccOutcome": "loss — ATL +3.5 did not cover",
+        "sameLineMarketBaselineOutcome": "loss — ATL +1.5 did not cover",
+        "mikeTrackedVibeOutcome": "loss — ATL +3.5 did not cover",
+        "mikeActualSubmission": "loss — ATL +3.5 did not cover"
+      },
       "currentMarketSpread": "CHI -1.5",
       "currentMainLineTwoSidedPrices": "bet365 CHI -1.5 -108 / ATL +1.5 -112",
-      "submissionConfirmed": true
+      "submissionConfirmed": true,
+      "ffccFinalSide": "ATL",
+      "resultRecordedAt": "2026-10-18 17:45 ET"
     },
     {
       "matchup": "BAL @ CLE",
@@ -113,7 +132,14 @@
       "exactLineTwoSidedPrices": "Covers Oct 16 10:02 AM ET: BAL -4.5 -105 / CLE +4.5 -117; BAL -4.5 -105 / CLE +4.5 -115",
       "changeFlag": true,
       "mikeSubmittedSide": "BAL -4.5",
-      "result": null,
+      "result": {
+        "finalScore": "CLE 13, BAL 10",
+        "margin": "CLE by 3",
+        "ffccOutcome": "win — CLE +4.5 covered",
+        "sameLineMarketBaselineOutcome": "win — CLE +3.5 covered",
+        "mikeTrackedVibeOutcome": "loss — BAL -4.5 did not cover",
+        "mikeActualSubmission": "loss — BAL -4.5 did not cover"
+      },
       "previousFfccSide": "BAL -4.5",
       "currentMarketSpread": "BAL -3 to -3.5",
       "devig": "Proportional de-vig: CLE 51.3% and 51.1%; robust consensus approximately 51.2%",
@@ -121,7 +147,9 @@
       "changedAt": "2026-10-16 10:02 ET",
       "currentMainLineTwoSidedPrices": "bet365 BAL -3.5 -113 / CLE +3.5 -107",
       "officialNews": "BaltimoreRavens.com Oct 16, 12:58 PM ET: Lamar Jackson OUT; Tyler Huntley starting. Browns list Quinshon Judkins, Mason Graham and Carson Schwesinger questionable after limited Friday practices.",
-      "submissionConfirmed": true
+      "submissionConfirmed": true,
+      "ffccFinalSide": "CLE",
+      "resultRecordedAt": "2026-10-18 17:45 ET"
     },
     {
       "matchup": "TEN @ IND",
@@ -136,10 +164,19 @@
       "exactLineTwoSidedPrices": "Exact TEN +7.5 alternate pair not verified",
       "changeFlag": false,
       "mikeSubmittedSide": "TEN +7.5",
-      "result": null,
+      "result": {
+        "finalScore": "TEN 26, IND 20",
+        "margin": "TEN by 6",
+        "ffccOutcome": "win — TEN +7.5 covered",
+        "sameLineMarketBaselineOutcome": "win — TEN +6.5 covered",
+        "mikeTrackedVibeOutcome": "win — TEN +7.5 covered",
+        "mikeActualSubmission": "win — TEN +7.5 covered"
+      },
       "currentMarketSpread": "IND -6.5",
       "currentMainLineTwoSidedPrices": "bet365 TEN +6.5 +100 / IND -6.5 -120",
-      "submissionConfirmed": true
+      "submissionConfirmed": true,
+      "ffccFinalSide": "TEN",
+      "resultRecordedAt": "2026-10-18 17:45 ET"
     },
     {
       "matchup": "NYJ @ NE",
@@ -154,12 +191,21 @@
       "exactLineTwoSidedPrices": "bet365 NYJ +7.5 -117 / NE -7.5 -103",
       "changeFlag": false,
       "mikeSubmittedSide": "NE -7.5",
-      "result": null,
+      "result": {
+        "finalScore": "NE 26, NYJ 19",
+        "margin": "NE by 7",
+        "ffccOutcome": "win — NYJ +7.5 covered",
+        "sameLineMarketBaselineOutcome": "win — NYJ +7.5 covered",
+        "mikeTrackedVibeOutcome": "loss — NE -7.5 did not cover",
+        "mikeActualSubmission": "loss — NE -7.5 did not cover"
+      },
       "currentMarketSpread": "NE -7.5",
       "currentMainLineTwoSidedPrices": "bet365 exact frozen line NYJ +7.5 -117 / NE -7.5 -103",
       "devig": "Proportional de-vig: NYJ approximately 51.5%",
       "updateReason": "The current main line now matches the frozen pool spread and modestly prices the Jets side shorter. Hall and three other Jets are out; recommendation remains NYJ +7.5.",
-      "submissionConfirmed": true
+      "submissionConfirmed": true,
+      "ffccFinalSide": "NYJ",
+      "resultRecordedAt": "2026-10-18 17:45 ET"
     },
     {
       "matchup": "NO @ NYG",
@@ -174,10 +220,19 @@
       "exactLineTwoSidedPrices": "Exact NO +1.5 alternate pair not verified",
       "changeFlag": false,
       "mikeSubmittedSide": "NO +1.5",
-      "result": null,
+      "result": {
+        "finalScore": "NO 34, NYG 27",
+        "margin": "NO by 7",
+        "ffccOutcome": "win — NO +1.5 covered",
+        "sameLineMarketBaselineOutcome": "win — NO -1.5 covered",
+        "mikeTrackedVibeOutcome": "win — NO +1.5 covered",
+        "mikeActualSubmission": "win — NO +1.5 covered"
+      },
       "currentMarketSpread": "NO -1.5",
       "currentMainLineTwoSidedPrices": "bet365 NO -1.5 +102 / NYG +1.5 -122",
-      "submissionConfirmed": true
+      "submissionConfirmed": true,
+      "ffccFinalSide": "NO",
+      "resultRecordedAt": "2026-10-18 17:45 ET"
     },
     {
       "matchup": "CAR @ PHI",
@@ -192,13 +247,22 @@
       "exactLineTwoSidedPrices": "FanDuel Oct 16 2:30 PM ET: CAR +1.5 -225 / PHI -1.5 +172",
       "changeFlag": false,
       "mikeSubmittedSide": "PHI -1.5",
-      "result": null,
+      "result": {
+        "finalScore": "CAR 25, PHI 14",
+        "margin": "CAR by 11",
+        "ffccOutcome": "win — CAR +1.5 covered",
+        "sameLineMarketBaselineOutcome": "win — CAR -3.5 covered",
+        "mikeTrackedVibeOutcome": "loss — PHI -1.5 did not cover",
+        "mikeActualSubmission": "loss — PHI -1.5 did not cover"
+      },
       "currentMarketSpread": "CAR -3.5",
       "devig": "Single-book proportional de-vig: CAR approximately 65.3% at frozen +1.5; not treated as robust multi-book consensus",
       "updateReason": "Jalen Hurts was ruled out and Tanner McKee will start. The current main market moved to CAR -3.5, creating a five-point gap from the frozen CAR +1.5 and crossing pick’em plus the key 3. Recommendation stays CAR; changeFlag remains false because there was no side flip.",
       "updatedAt": "2026-10-16 14:30 ET",
       "currentMainLineTwoSidedPrices": "bet365 CAR -3.5 -108 / PHI +3.5 -112",
-      "submissionConfirmed": true
+      "submissionConfirmed": true,
+      "ffccFinalSide": "CAR",
+      "resultRecordedAt": "2026-10-18 17:45 ET"
     },
     {
       "matchup": "PIT @ TB",
@@ -213,10 +277,19 @@
       "exactLineTwoSidedPrices": "Exact TB +3.5 alternate pair not verified",
       "changeFlag": false,
       "mikeSubmittedSide": "PIT -3.5",
-      "result": null,
+      "result": {
+        "finalScore": "PIT 26, TB 19",
+        "margin": "PIT by 7",
+        "ffccOutcome": "loss — TB +3.5 did not cover",
+        "sameLineMarketBaselineOutcome": "loss — TB +2.5 did not cover",
+        "mikeTrackedVibeOutcome": "win — PIT -3.5 covered",
+        "mikeActualSubmission": "win — PIT -3.5 covered"
+      },
       "currentMarketSpread": "PIT -2.5",
       "currentMainLineTwoSidedPrices": "bet365 PIT -2.5 -113 / TB +2.5 -107",
-      "submissionConfirmed": true
+      "submissionConfirmed": true,
+      "ffccFinalSide": "TB",
+      "resultRecordedAt": "2026-10-18 17:45 ET"
     },
     {
       "matchup": "ARI @ LAR",
@@ -313,6 +386,6 @@
       "submissionConfirmed": true
     }
   ],
-  "updatedAt": "2026-10-17 01:15 ET",
+  "updatedAt": "2026-10-18 17:45 ET",
   "submittedCardConfirmedAt": "2026-10-17 00:17 ET"
 }
