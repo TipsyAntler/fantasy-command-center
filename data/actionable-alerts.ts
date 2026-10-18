@@ -16,7 +16,7 @@ export type ActionableAlert = { id: string; category: "Fantasy" | "Survivor" | "
 export function isActionableBreakingAlert(alert: ActionableAlert): boolean {
   if (!alert.active) return false;
   const headline = alert.headline.toLowerCase();
-  if (/\\b(clear|confirmed|keep him|still bench|no change|watch)\\b/.test(headline)) return false;
+  if (/\b(clear|confirmed|keep him|still bench|no change|watch)\b/.test(headline)) return false;
   return true;
 }
 
