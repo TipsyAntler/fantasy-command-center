@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { actionableAlerts } from "@/data/actionable-alerts";
+import { actionableAlerts, isActionableBreakingAlert } from "@/data/actionable-alerts";
 import { sendFfccPushOnce, type FfccPushAlert } from "@/lib/push";
 
 export const dynamic = "force-dynamic";
@@ -11,7 +11,7 @@ function categoryForPush(category: string): FfccPushAlert["category"] {
 }
 
 export async function GET() {
-  const active = actionableAlerts.filter((alert) => alert.active);
+  const active = actionableAlerts.filter(isActionableBreakingAlert);
   const results: Array<{ id: string; sent: boolean; error?: string }> = [];
 
   for (const alert of active) {
