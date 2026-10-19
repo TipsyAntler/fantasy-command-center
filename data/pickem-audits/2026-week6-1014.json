@@ -2,7 +2,7 @@
   "week": 6,
   "pool": "The SZN NFL Super Pick'em · NFL-575",
   "createdAt": "2026-10-14 13:25 ET",
-  "status": "Mike’s actual Week 6 card confirmed; Thursday and all Sunday afternoon results recorded; Sunday night and Monday games pending",
+  "status": "Mike’s actual Week 6 card confirmed; all games through Sunday night recorded; Monday game pending",
   "sources": {
     "frozenPoolLines": "User screenshots Oct 14, 2026, The SZN pool NFL-575",
     "vibes": "User SZN screenshot captured Oct 17, 2026 at 12:17 AM ET: full submitted Week 6 card visible with 14 picks, SEA result, and 51-point tiebreaker.",
@@ -19,7 +19,8 @@
     "fridayMarketBoard": "Retrieved Oct 16, 2026 at 4:10 PM ET: bet365 Week 6 two-sided main spreads/totals/prices via CanadaSportsBetting; VegasInsider consensus used as cross-check. Main-line prices are not treated as exact frozen-line prices when the spread differs.",
     "mondayExactLine": "Oct 16, 2026: bet365 WAS +7.5 -112 / SF -7.5 -108; DraftKings WAS +7.5 -110 / SF -7.5 -108 via SportsLine. Both are essentially balanced; no recommendation flip.",
     "sundayEarlyResults": "NFL Week 6 scoreboard, retrieved Oct 18, 2026 after the early window: HOU 34–31 JAX; CHI 31–23 ATL; CLE 13–10 BAL; TEN 26–20 IND; NE 26–19 NYJ; NO 34–27 NYG; CAR 25–14 PHI; PIT 26–19 TB.",
-    "sundayLateResults": "Official finals verified Oct 18, 2026: ARI 18–16 LAR; KC 22–6 LAC; BUF 33–30 LV. Cross-checked with NFL score feed and Reuters game recaps."
+    "sundayLateResults": "Official finals verified Oct 18, 2026: ARI 18–16 LAR; KC 22–6 LAC; BUF 33–30 LV. Cross-checked with NFL score feed and Reuters game recaps.",
+    "sundayNightResult": "NFL score feed final verified Oct 19, 2026: Green Bay 23, Dallas 13."
   },
   "standing": {
     "rank": 73,
@@ -386,12 +387,21 @@
       "exactLineTwoSidedPrices": "bet365 DAL +1.5 -115 / GB -1.5 -105",
       "changeFlag": false,
       "mikeSubmittedSide": "DAL +1.5",
-      "result": null,
+      "result": {
+        "finalScore": "GB 23, DAL 13",
+        "margin": "GB by 10",
+        "ffccOutcome": "loss — DAL +1.5 did not cover",
+        "sameLineMarketBaselineOutcome": "loss — DAL +1.5 did not cover",
+        "mikeTrackedVibeOutcome": "loss — DAL +1.5 did not cover",
+        "mikeActualSubmission": "loss — DAL +1.5 did not cover"
+      },
       "currentMarketSpread": "GB -1.5",
       "currentMainLineTwoSidedPrices": "bet365 exact frozen line DAL +1.5 -115 / GB -1.5 -105",
       "devig": "Proportional de-vig: DAL approximately 51.1%",
       "updateReason": "The exact pool line modestly prices Dallas shorter. Recommendation remains DAL +1.5; no side change.",
-      "submissionConfirmed": true
+      "submissionConfirmed": true,
+      "ffccFinalSide": "DAL",
+      "resultRecordedAt": "2026-10-19 01:21 ET"
     },
     {
       "matchup": "WAS @ SF",
@@ -414,6 +424,6 @@
       "submissionConfirmed": true
     }
   ],
-  "updatedAt": "2026-10-18 20:12 ET",
+  "updatedAt": "2026-10-19 01:21 ET",
   "submittedCardConfirmedAt": "2026-10-17 00:17 ET"
 }
