@@ -2,7 +2,7 @@
   "week": 6,
   "pool": "The SZN NFL Super Pick'em · NFL-575",
   "createdAt": "2026-10-14 13:25 ET",
-  "status": "Mike’s actual Week 6 card confirmed; Thursday and all eight Sunday early-window results recorded; late Sunday and Monday games pending",
+  "status": "Mike’s actual Week 6 card confirmed; Thursday and all Sunday afternoon results recorded; Sunday night and Monday games pending",
   "sources": {
     "frozenPoolLines": "User screenshots Oct 14, 2026, The SZN pool NFL-575",
     "vibes": "User SZN screenshot captured Oct 17, 2026 at 12:17 AM ET: full submitted Week 6 card visible with 14 picks, SEA result, and 51-point tiebreaker.",
@@ -18,7 +18,8 @@
     "carolinaPhiladelphiaFridayMarket": "Oct 16, 2026 at 2:30 PM ET: VegasInsider/StatMuse main market CAR -3.5; FanDuel exact frozen-line alternate pair CAR +1.5 -225 / PHI -1.5 +172; Reuters confirmed Jalen Hurts out and Tanner McKee starting",
     "fridayMarketBoard": "Retrieved Oct 16, 2026 at 4:10 PM ET: bet365 Week 6 two-sided main spreads/totals/prices via CanadaSportsBetting; VegasInsider consensus used as cross-check. Main-line prices are not treated as exact frozen-line prices when the spread differs.",
     "mondayExactLine": "Oct 16, 2026: bet365 WAS +7.5 -112 / SF -7.5 -108; DraftKings WAS +7.5 -110 / SF -7.5 -108 via SportsLine. Both are essentially balanced; no recommendation flip.",
-    "sundayEarlyResults": "NFL Week 6 scoreboard, retrieved Oct 18, 2026 after the early window: HOU 34–31 JAX; CHI 31–23 ATL; CLE 13–10 BAL; TEN 26–20 IND; NE 26–19 NYJ; NO 34–27 NYG; CAR 25–14 PHI; PIT 26–19 TB."
+    "sundayEarlyResults": "NFL Week 6 scoreboard, retrieved Oct 18, 2026 after the early window: HOU 34–31 JAX; CHI 31–23 ATL; CLE 13–10 BAL; TEN 26–20 IND; NE 26–19 NYJ; NO 34–27 NYG; CAR 25–14 PHI; PIT 26–19 TB.",
+    "sundayLateResults": "Official finals verified Oct 18, 2026: ARI 18–16 LAR; KC 22–6 LAC; BUF 33–30 LV. Cross-checked with NFL score feed and Reuters game recaps."
   },
   "standing": {
     "rank": 73,
@@ -304,10 +305,19 @@
       "exactLineTwoSidedPrices": "Exact ARI +13.5 alternate pair not verified",
       "changeFlag": false,
       "mikeSubmittedSide": "LAR -13.5",
-      "result": null,
+      "result": {
+        "finalScore": "ARI 18, LAR 16",
+        "margin": "ARI by 2",
+        "ffccOutcome": "win — ARI +13.5 covered",
+        "sameLineMarketBaselineOutcome": "win — ARI +12.5 covered",
+        "mikeTrackedVibeOutcome": "loss — LAR -13.5 did not cover",
+        "mikeActualSubmission": "loss — LAR -13.5 did not cover"
+      },
       "currentMarketSpread": "LAR -12.5",
       "currentMainLineTwoSidedPrices": "bet365 ARI +12.5 -110 / LAR -12.5 -110",
-      "submissionConfirmed": true
+      "submissionConfirmed": true,
+      "ffccFinalSide": "ARI",
+      "resultRecordedAt": "2026-10-18 20:12 ET"
     },
     {
       "matchup": "LAC @ KC",
@@ -322,10 +332,19 @@
       "exactLineTwoSidedPrices": "Exact LAC +8.5 alternate pair not verified",
       "changeFlag": false,
       "mikeSubmittedSide": "KC -8.5",
-      "result": null,
+      "result": {
+        "finalScore": "KC 22, LAC 6",
+        "margin": "KC by 16",
+        "ffccOutcome": "loss — LAC +8.5 did not cover",
+        "sameLineMarketBaselineOutcome": "loss — LAC +7.5 did not cover",
+        "mikeTrackedVibeOutcome": "win — KC -8.5 covered",
+        "mikeActualSubmission": "win — KC -8.5 covered"
+      },
       "currentMarketSpread": "KC -7.5",
       "currentMainLineTwoSidedPrices": "bet365 LAC +7.5 -107 / KC -7.5 -113",
-      "submissionConfirmed": true
+      "submissionConfirmed": true,
+      "ffccFinalSide": "LAC",
+      "resultRecordedAt": "2026-10-18 20:12 ET"
     },
     {
       "matchup": "BUF @ LV",
@@ -340,10 +359,19 @@
       "exactLineTwoSidedPrices": "Exact LV +6.5 alternate pair not verified",
       "changeFlag": false,
       "mikeSubmittedSide": "BUF -6.5",
-      "result": null,
+      "result": {
+        "finalScore": "BUF 33, LV 30",
+        "margin": "BUF by 3",
+        "ffccOutcome": "win — LV +6.5 covered",
+        "sameLineMarketBaselineOutcome": "win — LV +4.5 covered",
+        "mikeTrackedVibeOutcome": "loss — BUF -6.5 did not cover",
+        "mikeActualSubmission": "loss — BUF -6.5 did not cover"
+      },
       "currentMarketSpread": "BUF -4.5",
       "currentMainLineTwoSidedPrices": "bet365 BUF -4.5 -111 / LV +4.5 -109",
-      "submissionConfirmed": true
+      "submissionConfirmed": true,
+      "ffccFinalSide": "LV",
+      "resultRecordedAt": "2026-10-18 20:12 ET"
     },
     {
       "matchup": "DAL @ GB",
@@ -386,6 +414,6 @@
       "submissionConfirmed": true
     }
   ],
-  "updatedAt": "2026-10-18 17:45 ET",
+  "updatedAt": "2026-10-18 20:12 ET",
   "submittedCardConfirmedAt": "2026-10-17 00:17 ET"
 }
