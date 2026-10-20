@@ -2,7 +2,7 @@
   "week": 6,
   "pool": "The SZN NFL Super Pick'em · NFL-575",
   "createdAt": "2026-10-14 13:25 ET",
-  "status": "Mike’s actual Week 6 card confirmed; all games through Sunday night recorded; Monday game pending",
+  "status": "Week 6 complete; all 14 games and the Monday-night total tiebreaker recorded",
   "sources": {
     "frozenPoolLines": "User screenshots Oct 14, 2026, The SZN pool NFL-575",
     "vibes": "User SZN screenshot captured Oct 17, 2026 at 12:17 AM ET: full submitted Week 6 card visible with 14 picks, SEA result, and 51-point tiebreaker.",
@@ -20,7 +20,8 @@
     "mondayExactLine": "Oct 16, 2026: bet365 WAS +7.5 -112 / SF -7.5 -108; DraftKings WAS +7.5 -110 / SF -7.5 -108 via SportsLine. Both are essentially balanced; no recommendation flip.",
     "sundayEarlyResults": "NFL Week 6 scoreboard, retrieved Oct 18, 2026 after the early window: HOU 34–31 JAX; CHI 31–23 ATL; CLE 13–10 BAL; TEN 26–20 IND; NE 26–19 NYJ; NO 34–27 NYG; CAR 25–14 PHI; PIT 26–19 TB.",
     "sundayLateResults": "Official finals verified Oct 18, 2026: ARI 18–16 LAR; KC 22–6 LAC; BUF 33–30 LV. Cross-checked with NFL score feed and Reuters game recaps.",
-    "sundayNightResult": "NFL score feed final verified Oct 19, 2026: Green Bay 23, Dallas 13."
+    "sundayNightResult": "NFL score feed final verified Oct 19, 2026: Green Bay 23, Dallas 13.",
+    "mondayNightResult": "NFL.com official game page, verified Oct 19, 2026: San Francisco 23, Washington 17 (final)."
   },
   "standing": {
     "rank": 73,
@@ -33,9 +34,12 @@
     "screenshotField": "51 pts",
     "datedMarketTotal": 51.5,
     "ffccProvisionalTarget": 52,
-    "final": false,
+    "final": true,
     "marketSource": "Friday bet365/DraftKings total 51.5; rounded to 52",
-    "submissionConfirmed": true
+    "submissionConfirmed": true,
+    "actualTotal": 40,
+    "mikeAbsoluteError": 11,
+    "ffccAbsoluteError": 12
   },
   "games": [
     {
@@ -416,14 +420,35 @@
       "exactLineTwoSidedPrices": "bet365 WAS -112 / SF -108; DraftKings WAS -110 / SF -108",
       "changeFlag": false,
       "mikeSubmittedSide": "SF -7.5",
-      "result": null,
+      "result": {
+        "finalScore": "SF 23, WAS 17",
+        "margin": "SF by 6",
+        "ffccOutcome": "loss — SF -7.5 did not cover",
+        "sameLineMarketBaselineOutcome": "loss — SF -7.5 did not cover",
+        "mikeTrackedVibeOutcome": "loss — SF -7.5 did not cover",
+        "mikeActualSubmission": "loss — SF -7.5 did not cover"
+      },
       "currentMarketSpread": "SF -7.5",
       "currentMainLineTwoSidedPrices": "bet365 WAS +7.5 -112 / SF -7.5 -108; DraftKings WAS +7.5 -110 / SF -7.5 -108",
       "devig": "WAS approximately 50.4% and 50.2% after proportional de-vig; essentially balanced",
       "updateReason": "The tiny Washington price shading is not enough to chase a market twitch. Retain prior SF -7.5 transparently as a provisional tie choice; changeFlag remains false.",
-      "submissionConfirmed": true
+      "submissionConfirmed": true,
+      "ffccFinalSide": "SF",
+      "resultRecordedAt": "2026-10-19 23:09 ET"
     }
   ],
-  "updatedAt": "2026-10-19 01:21 ET",
-  "submittedCardConfirmedAt": "2026-10-17 00:17 ET"
+  "updatedAt": "2026-10-19 23:09 ET",
+  "submittedCardConfirmedAt": "2026-10-17 00:17 ET",
+  "resultsSummary": {
+    "completedGames": 14,
+    "ffcc": {
+      "correct": 9,
+      "incorrect": 5
+    },
+    "mikeActualSubmissions": {
+      "correct": 5,
+      "incorrect": 9
+    },
+    "note": "Results are evaluated ATS against the frozen NFL-575 pool lines. This is a one-week audit, not evidence to refit the strategy."
+  }
 }
