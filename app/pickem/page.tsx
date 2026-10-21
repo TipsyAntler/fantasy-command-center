@@ -47,7 +47,7 @@ export default async function PickemPage() {
   const currentWeek = week5Number; // Audited week advances only when a new exact-line card is published.
   const boardIsCurrent = currentWeek === week5Number;
   const games = boardIsCurrent ? week5PoolGames : [];
-  const strong = games.filter((game) => game.confidence >= 3);
+  const frozenAdvantages = games.filter((game) => game.signal.startsWith("FROZEN-NUMBER ADVANTAGE"));
 
   return (
     <main>
@@ -68,7 +68,7 @@ export default async function PickemPage() {
             <AtAGlance items={[
               { label: "Season standing", value: `#${week5Standing.rank}`, note: `${week5Standing.correct} correct · leader ${week5Standing.leaderCorrect}`, tone: "accent" },
               { label: "Mike current card", value: `${week5MikeSubmittedCard.picks.length} / 14`, note: `Current entered/vibes sides from SZN screenshot · no vibes tiebreaker`, tone: "accent" },
-              { label: "Frozen-number advantages", value: `${strong.length}`, note: strong.map((game) => lineLabel(game.poolPick, game.poolLine)).join(" · "), tone: "good" },
+              { label: "Frozen-number advantages", value: `${frozenAdvantages.length}`, note: frozenAdvantages.map((game) => lineLabel(game.poolPick, game.poolLine)).join(" · "), tone: "good" },
               { label: "MNF tiebreaker", value: `${week5Tiebreaker.earlyFfccTarget}`, note: `${week5Tiebreaker.matchup} · FFCC target ${week5Tiebreaker.earlyFfccTarget} · no vibes total` },
             ]} />
 
