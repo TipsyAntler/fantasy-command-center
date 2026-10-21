@@ -1,0 +1,201 @@
+{
+  "week": 7,
+  "pool": "The SZN NFL Super Pick'em · NFL-575",
+  "createdAt": "2026-10-20",
+  "status": "Provisional: user-submitted card and exact frozen lines captured; FFCC independent market-first recommendations not yet audited",
+  "sources": {
+    "frozenPoolLines": "User-uploaded The SZN screenshots IMG_0532.png and IMG_0533.png Oct 20 2026; 14 picks required and made",
+    "mikeSubmittedSides": "Orange selections on screenshots; do not treat as FFCC recommendations",
+    "standings": "User-uploaded IMG_0534.png Oct 20 2026: rank 78, 40 correct, leader 57",
+    "marketSnapshots": "FOX Sports Week 7 Oct 20 11:35 ET bet365 main spread and total; CBS Oct 20 14:23 ET DraftKings main spread; eDraft Oct 20 19:48 ET consensus. These are dated main-line snapshots, NOT simultaneous exact frozen-line two-sided quotes."
+  },
+  "standing": {
+    "rank": 78,
+    "correct": 40,
+    "leaderCorrect": 57
+  },
+  "tiebreaker": {
+    "game": "DAL @ PHI",
+    "rule": "Total points in LAST game of week; closest wins",
+    "mikeSubmittedTotal": null,
+    "submissionConfirmed": false,
+    "datedMarketTotal": 44.5,
+    "datedMarketSource": "FOX bet365 Oct 20 11:35 ET; not verified exact two-sided total market",
+    "ffccProvisionalTarget": null
+  },
+  "games": [
+    {
+      "matchup": "NE @ CHI",
+      "frozenPoolFavorite": "CHI",
+      "frozenSpread": 3.5,
+      "mikeSubmittedSide": "NE",
+      "ffccProvisionalSide": null,
+      "ffccOriginalSide": null,
+      "evidenceLabel": "no measured edge/provisional tie choice",
+      "exactLineTwoSidedPrices": null,
+      "changeFlag": false,
+      "result": null
+    },
+    {
+      "matchup": "PIT @ NO",
+      "frozenPoolFavorite": "PIT",
+      "frozenSpread": 3.5,
+      "mikeSubmittedSide": "NO",
+      "ffccProvisionalSide": null,
+      "ffccOriginalSide": null,
+      "evidenceLabel": "no measured edge/provisional tie choice",
+      "exactLineTwoSidedPrices": null,
+      "changeFlag": false,
+      "result": null
+    },
+    {
+      "matchup": "SF @ ATL",
+      "frozenPoolFavorite": "SF",
+      "frozenSpread": 3.5,
+      "mikeSubmittedSide": "SF",
+      "ffccProvisionalSide": null,
+      "ffccOriginalSide": null,
+      "evidenceLabel": "no measured edge/provisional tie choice",
+      "exactLineTwoSidedPrices": null,
+      "changeFlag": false,
+      "result": null
+    },
+    {
+      "matchup": "CLE @ TEN",
+      "frozenPoolFavorite": "CLE",
+      "frozenSpread": 1.5,
+      "mikeSubmittedSide": "TEN",
+      "ffccProvisionalSide": null,
+      "ffccOriginalSide": null,
+      "evidenceLabel": "no measured edge/provisional tie choice",
+      "exactLineTwoSidedPrices": null,
+      "changeFlag": false,
+      "result": null
+    },
+    {
+      "matchup": "IND @ MIN",
+      "frozenPoolFavorite": "MIN",
+      "frozenSpread": 6.5,
+      "mikeSubmittedSide": "MIN",
+      "ffccProvisionalSide": null,
+      "ffccOriginalSide": null,
+      "evidenceLabel": "no measured edge/provisional tie choice",
+      "exactLineTwoSidedPrices": null,
+      "changeFlag": false,
+      "result": null
+    },
+    {
+      "matchup": "MIA @ NYJ",
+      "frozenPoolFavorite": "NYJ",
+      "frozenSpread": 4.5,
+      "mikeSubmittedSide": "NYJ",
+      "ffccProvisionalSide": null,
+      "ffccOriginalSide": null,
+      "evidenceLabel": "no measured edge/provisional tie choice",
+      "exactLineTwoSidedPrices": null,
+      "changeFlag": false,
+      "result": null
+    },
+    {
+      "matchup": "TB @ CAR",
+      "frozenPoolFavorite": "CAR",
+      "frozenSpread": 3.5,
+      "mikeSubmittedSide": "CAR",
+      "ffccProvisionalSide": null,
+      "ffccOriginalSide": null,
+      "evidenceLabel": "no measured edge/provisional tie choice",
+      "exactLineTwoSidedPrices": null,
+      "changeFlag": false,
+      "result": null
+    },
+    {
+      "matchup": "CIN @ BAL",
+      "frozenPoolFavorite": "BAL",
+      "frozenSpread": 2.5,
+      "mikeSubmittedSide": "BAL",
+      "ffccProvisionalSide": null,
+      "ffccOriginalSide": null,
+      "evidenceLabel": "no measured edge/provisional tie choice",
+      "exactLineTwoSidedPrices": null,
+      "changeFlag": false,
+      "result": null
+    },
+    {
+      "matchup": "NYG @ HOU",
+      "frozenPoolFavorite": "HOU",
+      "frozenSpread": 10.5,
+      "mikeSubmittedSide": "NYG",
+      "ffccProvisionalSide": null,
+      "ffccOriginalSide": null,
+      "evidenceLabel": "no measured edge/provisional tie choice",
+      "exactLineTwoSidedPrices": null,
+      "changeFlag": false,
+      "result": null
+    },
+    {
+      "matchup": "DEN @ ARI",
+      "frozenPoolFavorite": "DEN",
+      "frozenSpread": 4.5,
+      "mikeSubmittedSide": "DEN",
+      "ffccProvisionalSide": null,
+      "ffccOriginalSide": null,
+      "evidenceLabel": "no measured edge/provisional tie choice",
+      "exactLineTwoSidedPrices": null,
+      "changeFlag": false,
+      "result": null
+    },
+    {
+      "matchup": "GB @ DET",
+      "frozenPoolFavorite": "DET",
+      "frozenSpread": 3.5,
+      "mikeSubmittedSide": "DET",
+      "ffccProvisionalSide": null,
+      "ffccOriginalSide": null,
+      "evidenceLabel": "no measured edge/provisional tie choice",
+      "exactLineTwoSidedPrices": null,
+      "changeFlag": false,
+      "result": null
+    },
+    {
+      "matchup": "LAR @ LV",
+      "frozenPoolFavorite": "LAR",
+      "frozenSpread": 4.5,
+      "mikeSubmittedSide": "LAR",
+      "ffccProvisionalSide": null,
+      "ffccOriginalSide": null,
+      "evidenceLabel": "no measured edge/provisional tie choice",
+      "exactLineTwoSidedPrices": null,
+      "changeFlag": false,
+      "result": null
+    },
+    {
+      "matchup": "KC @ SEA",
+      "frozenPoolFavorite": "SEA",
+      "frozenSpread": 2.5,
+      "mikeSubmittedSide": "KC",
+      "ffccProvisionalSide": null,
+      "ffccOriginalSide": null,
+      "evidenceLabel": "no measured edge/provisional tie choice",
+      "exactLineTwoSidedPrices": null,
+      "changeFlag": false,
+      "result": null
+    },
+    {
+      "matchup": "DAL @ PHI",
+      "frozenPoolFavorite": "DAL",
+      "frozenSpread": 4.5,
+      "mikeSubmittedSide": "DAL",
+      "ffccProvisionalSide": null,
+      "ffccOriginalSide": null,
+      "evidenceLabel": "no measured edge/provisional tie choice",
+      "exactLineTwoSidedPrices": null,
+      "changeFlag": false,
+      "result": null
+    }
+  ],
+  "notes": [
+    "The displayed spread applies to frozenPoolFavorite; screenshot's opposite side is the positive spread.",
+    "No numerical cover probabilities, fabricated exact-line alternate prices, or unsupported FFCC recommendations.",
+    "Commissioner Survivor plan indicates all four entries eliminated in Week 5; do not generate Week 7 picks without evidence of reinstatement."
+  ]
+}
