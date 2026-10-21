@@ -1,14 +1,14 @@
 import AtAGlance from "@/components/AtAGlance";
 import {
-  week6MarketAsOf as week5MarketAsOf,
-  week6Number as week5Number,
-  week6PoolGames as week5PoolGames,
-  week6PoolName as week5PoolName,
-  week6PoolStatus as week5PoolStatus,
-  week6Tiebreaker as week5Tiebreaker,
-  week6Standing as week5Standing,
-  week6MikeSubmittedCard as week5MikeSubmittedCard,
-} from "@/data/pickem-week6";
+  week7MarketAsOf as week5MarketAsOf,
+  week7Number as week5Number,
+  week7PoolGames as week5PoolGames,
+  week7PoolName as week5PoolName,
+  week7PoolStatus as week5PoolStatus,
+  week7Tiebreaker as week5Tiebreaker,
+  week7Standing as week5Standing,
+  week7MikeSubmittedCard as week5MikeSubmittedCard,
+} from "@/data/pickem-week7";
 import styles from "./pickem.module.css";
 
 export const dynamic = "force-dynamic";
@@ -67,21 +67,21 @@ export default async function PickemPage() {
           <>
             <AtAGlance items={[
               { label: "Season standing", value: `#${week5Standing.rank}`, note: `${week5Standing.correct} correct · leader ${week5Standing.leaderCorrect}`, tone: "accent" },
-              { label: "Mike submitted card", value: `${week5MikeSubmittedCard.picks.length} / 14`, note: `Confirmed from SZN screenshot · tiebreaker ${week5MikeSubmittedCard.tiebreaker}`, tone: "accent" },
+              { label: "Mike current card", value: `${week5MikeSubmittedCard.picks.length} / 14`, note: `Current entered/vibes sides from SZN screenshot · no vibes tiebreaker`, tone: "accent" },
               { label: "Frozen-number advantages", value: `${strong.length}`, note: strong.map((game) => lineLabel(game.poolPick, game.poolLine)).join(" · "), tone: "good" },
-              { label: "MNF tiebreaker", value: `${week5Tiebreaker.earlyFfccTarget}`, note: `${week5Tiebreaker.matchup} · FFCC target ${week5Tiebreaker.earlyFfccTarget} · Mike submitted ${week5Tiebreaker.mikeSubmittedTotal}` },
+              { label: "MNF tiebreaker", value: `${week5Tiebreaker.earlyFfccTarget}`, note: `${week5Tiebreaker.matchup} · FFCC target ${week5Tiebreaker.earlyFfccTarget} · no vibes total` },
             ]} />
 
             <div className={styles.topNote}><strong>{week5PoolStatus}.</strong> These are the exact Week {currentWeek} spreads from your {week5PoolName} screenshots. Later market movement is stale-line information; it never replaces the frozen pool number.</div>
 
-            <section className="panel survivor-template second-heading"><h3>Season-total strategy</h3><p>Maximize expected correct picks at the exact frozen spread. Start with two-sided market prices, remove the margin, and use verified models and news as checks. Current evidence is modest: no pick has a calibrated high-confidence rating.</p><p><a href="/pickem/strategy">Read the research, expert review policy and weekly process →</a></p><p><a href="https://edraft.com/nfl/schedule/week-6">Week 6 spread comparison: eDraft</a>. Week 6 comparison uses a dated aggregated eDraft snapshot, not independent two-sided prices at every exact pool line. This board is provisional.</p></section>
+            <section className="panel survivor-template second-heading"><h3>Season-total strategy</h3><p>Maximize expected correct picks at the exact frozen spread. Start with two-sided market prices, remove the margin, and use verified models and news as checks. Current evidence is modest: no pick has a calibrated high-confidence rating.</p><p><a href="/pickem/strategy">Read the research, expert review policy and weekly process →</a></p><p>Week 7 comparison uses dated bet365 snapshots from FOX Sports and Sportsbook Review plus an NFLLines movement cross-check, not independent two-sided prices at every exact pool line. This board is provisional.</p></section>
 
             <section className="section-heading">
               <div><div className="eyebrow">FFCC WEEK {currentWeek} CARD</div><h2>Early provisional FFCC picks. Tap any game for the why.</h2></div>
               <span className="source-tag">{week5MarketAsOf}</span>
             </section>
 
-            <p className={styles.meterLegend}><strong>Week 6 status:</strong> All frozen SZN lines and Mike’s 14 highlighted selections are captured from screenshots. FFCC picks are separate, provisional market-number leans pending fresh two-sided exact-line pricing and injury checks. Mike’s actual 14-pick submission and 51-point tiebreaker are confirmed from his SZN Week 6 card screenshot. <strong>Confidence:</strong> 1/red = toss-up · 2–3 slight lean · 4–6 modest lean · 7–9 strong · 10/green = strongest confidence. Confidence in our edge, not a win percentage. Current picks range from 1–5 because the evidence is modest.</p>
+            <p className={styles.meterLegend}><strong>Week {currentWeek} status:</strong> All frozen SZN lines and Mike’s 14 highlighted selections are captured from screenshots. FFCC picks are separate, provisional market-number leans pending fresh two-sided exact-line pricing and injury checks. Mike’s 14 current entered/vibes sides are captured; FFCC tiebreaker advice is tracked separately because Mike does not make a vibes tiebreaker. <strong>Confidence:</strong> 1/red = toss-up · 2–3 slight lean · 4–6 modest lean · 7–9 strong · 10/green = strongest confidence. Confidence in our edge, not a win percentage. Current picks range from 1–5 because the evidence is modest.</p>
 
             <section className={styles.board} aria-label={`Week ${currentWeek} ATS picks`}>
               {games.map((game) => {
@@ -91,7 +91,7 @@ export default async function PickemPage() {
                   <details id={gameId} className={`${styles.gameCard} ${changed ? styles.gameCardChanged : ""}`} key={`${game.away}-${game.home}`} open={changed || undefined}>
                     <summary className={styles.gameSummary}>
                       <div className={styles.time}><strong>{game.day}</strong><span>{game.kickoff} ET</span></div>
-                      <div className={styles.matchup}><strong>{game.away} @ {game.home}</strong><span className={styles.marketMeta}>Pool: {game.poolFavorite} -{game.poolSpread} · Market snapshot: {game.marketLabel} · O/U {game.marketTotal}</span><span className={styles.vibeMeta}>Mike’s confirmed submitted SZN pick: {game.mikeVibe}</span>{changed ? <span className={styles.changedBadge}>PICK CHANGED</span> : null}</div>
+                      <div className={styles.matchup}><strong>{game.away} @ {game.home}</strong><span className={styles.marketMeta}>Pool: {game.poolFavorite} -{game.poolSpread} · Market snapshot: {game.marketLabel} · O/U {game.marketTotal}</span><span className={styles.vibeMeta}>Mike’s current entered/vibes side: {game.mikeVibe}</span>{changed ? <span className={styles.changedBadge}>PICK CHANGED</span> : null}</div>
                       <div className={styles.pick}><strong>{lineLabel(game.poolPick, game.poolLine)}</strong><span>{changed ? "NEW FFCC PICK" : "FFCC PICK"}</span></div>
                       <ConfidenceMeter evidence={game.confidence} />
                       <div className={styles.chevron} aria-hidden="true">⌄</div>
@@ -104,7 +104,7 @@ export default async function PickemPage() {
 
             <section className="panel survivor-template second-heading">
               <div className="panel-head"><div><span className="panel-kicker">WEEK {currentWeek} TIEBREAKER</span><h3>{week5Tiebreaker.matchup} total points</h3></div><span className="saved-pill">Provisional FFCC total: {week5Tiebreaker.earlyFfccTarget}</span></div>
-              <div className="decision-grid"><div><span>Pool asks</span><strong>{week5Tiebreaker.label}</strong></div><div><span>Current market total</span><strong>{week5Tiebreaker.currentMarketTotal}</strong></div><div><span>Mike submitted</span><strong>{week5Tiebreaker.mikeSubmittedTotal}</strong></div><div><span>FFCC provisional target</span><strong>{week5Tiebreaker.earlyFfccTarget}</strong></div><div className="span-2"><span>FFCC process</span><strong>{week5Tiebreaker.note}</strong></div></div>
+              <div className="decision-grid"><div><span>Pool asks</span><strong>{week5Tiebreaker.label}</strong></div><div><span>Current market total</span><strong>{week5Tiebreaker.currentMarketTotal}</strong></div><div><span>Mike vibes total</span><strong>{week5Tiebreaker.mikeSubmittedTotal ?? "No vibes total"}</strong></div><div><span>FFCC provisional target</span><strong>{week5Tiebreaker.earlyFfccTarget}</strong></div><div className="span-2"><span>FFCC process</span><strong>{week5Tiebreaker.note}</strong></div></div>
             </section>
           </>
         )}
