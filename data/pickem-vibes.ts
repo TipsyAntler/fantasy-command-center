@@ -47,6 +47,16 @@ export const pickemVibePolicy = {
 
 export const pickemVibeWeeks: PickemVibeWeek[] = [
   {
+    week: 6,
+    status: "final",
+    gamesDecided: 14,
+    mikeCorrect: 5,
+    ffccCorrect: 9,
+    mikeSeasonCorrect: 40,
+    mikeRank: 78,
+    note: "Week 6 final. Tiebreaker excluded from vibes vs FFCC comparison.",
+  },
+  {
     week: 4,
     status: "partial",
     gamesDecided: 15,
@@ -59,6 +69,11 @@ export const pickemVibeWeeks: PickemVibeWeek[] = [
 ];
 
 export const pickemVibeDisagreements: PickemVibeDisagreement[] = [
+  { week: 7, matchup: "PIT @ NO", frozenLine: "PIT -3.5 / NO +3.5", mikeSide: "NO +3.5", ffccSide: "PIT -3.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending", note: "No measured edge; provisional market-side tie choice." },
+  { week: 7, matchup: "SF @ ATL", frozenLine: "SF -3.5 / ATL +3.5", mikeSide: "SF -3.5", ffccSide: "ATL +3.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending", note: "Current SF -3 gives ATL the hook above the key 3; frozen-number advantage with uncalibrated size." },
+  { week: 7, matchup: "CLE @ TEN", frozenLine: "CLE -1.5 / TEN +1.5", mikeSide: "TEN +1.5", ffccSide: "CLE -1.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending", note: "No measured edge; provisional market-side tie choice." },
+  { week: 7, matchup: "GB @ DET", frozenLine: "DET -3.5 / GB +3.5", mikeSide: "DET -3.5", ffccSide: "GB +3.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending", note: "Current DET -3 gives GB the hook above the key 3; frozen-number advantage with uncalibrated size." },
+  { week: 7, matchup: "KC @ SEA", frozenLine: "SEA -2.5 / KC +2.5", mikeSide: "KC +2.5", ffccSide: "SEA -2.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending", note: "No measured edge; provisional market-side tie choice." },
   { week: 5, matchup: "TB @ DAL", frozenLine: "DAL -10.5 / TB +10.5", mikeSide: "DAL -10.5", ffccSide: "TB +10.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Early market around DAL -8.5 creates roughly two points of frozen-line value on TB." },
   { week: 5, matchup: "CHI @ GB", frozenLine: "CHI -3.5 / GB +3.5", mikeSide: "CHI -3.5", ffccSide: "GB +3.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Current market roughly CHI -2.5 to -3; FFCC takes the pool half-point above the key 3." },
   { week: 5, matchup: "HOU @ TEN", frozenLine: "HOU -7.5 / TEN +7.5", mikeSide: "HOU -7.5", ffccSide: "TEN +7.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Current market clusters around HOU -7 to -7.5; FFCC takes the useful hook above seven." },
@@ -69,6 +84,22 @@ export const pickemVibeDisagreements: PickemVibeDisagreement[] = [
 
 
 export const pickemVibePicks: PickemVibePick[] = [
+  // All 14 orange-highlighted sides in the Oct 20 The SZN screenshots.
+  // Picks made: 14/14 shown; logged as Mike's current entered/vibes card. No vibes tiebreaker.
+  { week: 7, matchup: "NE @ CHI", frozenLine: "CHI -3.5 / NE +3.5", mikeSide: "NE +3.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending" },
+  { week: 7, matchup: "PIT @ NO", frozenLine: "PIT -3.5 / NO +3.5", mikeSide: "NO +3.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending" },
+  { week: 7, matchup: "SF @ ATL", frozenLine: "SF -3.5 / ATL +3.5", mikeSide: "SF -3.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending" },
+  { week: 7, matchup: "CLE @ TEN", frozenLine: "CLE -1.5 / TEN +1.5", mikeSide: "TEN +1.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending" },
+  { week: 7, matchup: "IND @ MIN", frozenLine: "MIN -6.5 / IND +6.5", mikeSide: "MIN -6.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending" },
+  { week: 7, matchup: "MIA @ NYJ", frozenLine: "NYJ -4.5 / MIA +4.5", mikeSide: "NYJ -4.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending" },
+  { week: 7, matchup: "TB @ CAR", frozenLine: "CAR -3.5 / TB +3.5", mikeSide: "CAR -3.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending" },
+  { week: 7, matchup: "CIN @ BAL", frozenLine: "BAL -2.5 / CIN +2.5", mikeSide: "BAL -2.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending" },
+  { week: 7, matchup: "NYG @ HOU", frozenLine: "HOU -10.5 / NYG +10.5", mikeSide: "NYG +10.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending" },
+  { week: 7, matchup: "DEN @ ARI", frozenLine: "DEN -4.5 / ARI +4.5", mikeSide: "DEN -4.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending" },
+  { week: 7, matchup: "GB @ DET", frozenLine: "DET -3.5 / GB +3.5", mikeSide: "DET -3.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending" },
+  { week: 7, matchup: "LAR @ LV", frozenLine: "LAR -4.5 / LV +4.5", mikeSide: "LAR -4.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending" },
+  { week: 7, matchup: "KC @ SEA", frozenLine: "SEA -2.5 / KC +2.5", mikeSide: "KC +2.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending" },
+  { week: 7, matchup: "DAL @ PHI", frozenLine: "DAL -4.5 / PHI +4.5", mikeSide: "DAL -4.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending" },
   // All 14 orange-highlighted sides in the Oct 14 The SZN screenshots.
   // Picks made: 14/14 shown; successful final submission not independently confirmed.
   { week: 6, matchup: "SEA @ DEN", frozenLine: "SEA -3.5 / DEN +3.5", mikeSide: "SEA -3.5", loggedAt: "2026-10-14 13:25 ET", result: "Pending" },
