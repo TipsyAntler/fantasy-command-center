@@ -2,7 +2,7 @@
   "week": 7,
   "pool": "The SZN NFL Super Pick'em · NFL-575",
   "createdAt": "2026-10-20 22:35 ET",
-  "status": "early provisional · exact Week 7 pool lines and Mike's current 14 entered/vibes sides captured",
+  "status": "Week 7 hybrid submission confirmed (14 of 14); FFCC recommendation board remains provisional and independently unchanged",
   "policy": "market-first season-total strategy; all required games ATS; equal credit; initial card publication is not a recommendation flip",
   "sources": [
     {
@@ -23,6 +23,10 @@
       "type": "movement cross-check",
       "url": "https://www.nfllines.com/nfl-lines/week-7",
       "detail": "reviewed Tuesday night Oct 20, 2026"
+    },
+    {
+      "type": "user confirmation photo",
+      "detail": "Oct 22, 2026 morning: The SZN 'Boom! Picks confirmed' photo of all 14 Week 7 picks; Pittsburgh, Cleveland, Green Bay selected vs original Oct 20 vibes. Tiebreaker number not visible and not attributed to vibes."
     }
   ],
   "standing": {
@@ -48,18 +52,26 @@
       "marketSnapshot": "CHI -2.5 to -3",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": false,
-      "result": null
+      "result": null,
+      "mikeOriginalVibeSide": "NE +3.5",
+      "mikeConfirmedSubmittedSide": "NE +3.5",
+      "mikeSideChangedFromOriginal": false,
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     },
     {
       "matchup": "PIT @ NO",
       "frozenLine": "PIT -3.5",
-      "mikeCurrentSide": "NO +3.5",
+      "mikeCurrentSide": "PIT -3.5",
       "ffccProvisionalSide": "PIT -3.5",
       "evidenceLabel": "no measured edge/provisional tie choice",
       "marketSnapshot": "PIT -3.5",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": false,
-      "result": null
+      "result": null,
+      "mikeOriginalVibeSide": "NO +3.5",
+      "mikeConfirmedSubmittedSide": "PIT -3.5",
+      "mikeSideChangedFromOriginal": true,
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     },
     {
       "matchup": "SF @ ATL",
@@ -70,18 +82,26 @@
       "marketSnapshot": "SF -3 to -3.5",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": false,
-      "result": null
+      "result": null,
+      "mikeOriginalVibeSide": "SF -3.5",
+      "mikeConfirmedSubmittedSide": "SF -3.5",
+      "mikeSideChangedFromOriginal": false,
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     },
     {
       "matchup": "CLE @ TEN",
       "frozenLine": "CLE -1.5",
-      "mikeCurrentSide": "TEN +1.5",
+      "mikeCurrentSide": "CLE -1.5",
       "ffccProvisionalSide": "CLE -1.5",
       "evidenceLabel": "no measured edge/provisional tie choice",
       "marketSnapshot": "CLE -1.5",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": false,
-      "result": null
+      "result": null,
+      "mikeOriginalVibeSide": "TEN +1.5",
+      "mikeConfirmedSubmittedSide": "CLE -1.5",
+      "mikeSideChangedFromOriginal": true,
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     },
     {
       "matchup": "IND @ MIN",
@@ -92,7 +112,11 @@
       "marketSnapshot": "MIN -6.5",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": false,
-      "result": null
+      "result": null,
+      "mikeOriginalVibeSide": "MIN -6.5",
+      "mikeConfirmedSubmittedSide": "MIN -6.5",
+      "mikeSideChangedFromOriginal": false,
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     },
     {
       "matchup": "MIA @ NYJ",
@@ -103,7 +127,11 @@
       "marketSnapshot": "NYJ -4.5",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": false,
-      "result": null
+      "result": null,
+      "mikeOriginalVibeSide": "NYJ -4.5",
+      "mikeConfirmedSubmittedSide": "NYJ -4.5",
+      "mikeSideChangedFromOriginal": false,
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     },
     {
       "matchup": "TB @ CAR",
@@ -114,7 +142,11 @@
       "marketSnapshot": "CAR -3.5",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": false,
-      "result": null
+      "result": null,
+      "mikeOriginalVibeSide": "CAR -3.5",
+      "mikeConfirmedSubmittedSide": "CAR -3.5",
+      "mikeSideChangedFromOriginal": false,
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     },
     {
       "matchup": "CIN @ BAL",
@@ -125,7 +157,11 @@
       "marketSnapshot": "BAL -2.5",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": false,
-      "result": null
+      "result": null,
+      "mikeOriginalVibeSide": "BAL -2.5",
+      "mikeConfirmedSubmittedSide": "BAL -2.5",
+      "mikeSideChangedFromOriginal": false,
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     },
     {
       "matchup": "NYG @ HOU",
@@ -136,7 +172,11 @@
       "marketSnapshot": "HOU -9.5 to -10",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": false,
-      "result": null
+      "result": null,
+      "mikeOriginalVibeSide": "NYG +10.5",
+      "mikeConfirmedSubmittedSide": "NYG +10.5",
+      "mikeSideChangedFromOriginal": false,
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     },
     {
       "matchup": "DEN @ ARI",
@@ -147,18 +187,26 @@
       "marketSnapshot": "DEN -4.5",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": false,
-      "result": null
+      "result": null,
+      "mikeOriginalVibeSide": "DEN -4.5",
+      "mikeConfirmedSubmittedSide": "DEN -4.5",
+      "mikeSideChangedFromOriginal": false,
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     },
     {
       "matchup": "GB @ DET",
       "frozenLine": "DET -3.5",
-      "mikeCurrentSide": "DET -3.5",
+      "mikeCurrentSide": "GB +3.5",
       "ffccProvisionalSide": "GB +3.5",
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
       "marketSnapshot": "DET -3 to -3.5",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": false,
-      "result": null
+      "result": null,
+      "mikeOriginalVibeSide": "DET -3.5",
+      "mikeConfirmedSubmittedSide": "GB +3.5",
+      "mikeSideChangedFromOriginal": true,
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     },
     {
       "matchup": "LAR @ LV",
@@ -169,7 +217,11 @@
       "marketSnapshot": "LAR -4.5",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": false,
-      "result": null
+      "result": null,
+      "mikeOriginalVibeSide": "LAR -4.5",
+      "mikeConfirmedSubmittedSide": "LAR -4.5",
+      "mikeSideChangedFromOriginal": false,
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     },
     {
       "matchup": "KC @ SEA",
@@ -180,7 +232,11 @@
       "marketSnapshot": "SEA -2.5",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": false,
-      "result": null
+      "result": null,
+      "mikeOriginalVibeSide": "KC +2.5",
+      "mikeConfirmedSubmittedSide": "KC +2.5",
+      "mikeSideChangedFromOriginal": false,
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     },
     {
       "matchup": "DAL @ PHI",
@@ -191,8 +247,22 @@
       "marketSnapshot": "DAL -4.5",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": false,
-      "result": null
+      "result": null,
+      "mikeOriginalVibeSide": "DAL -4.5",
+      "mikeConfirmedSubmittedSide": "DAL -4.5",
+      "mikeSideChangedFromOriginal": false,
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     }
   ],
-  "alertDecision": "No actionable-alert record created: this is the initial Week 7 recommendation card, not a genuine recommendation flip."
+  "alertDecision": "No actionable FFCC pick flip: Mike changed his own submitted card to a hybrid; independent FFCC sides remained the same.",
+  "originalVibesCapturedAt": "2026-10-20 22:35 ET",
+  "submittedHybridConfirmedAt": "2026-10-22 08:54 ET",
+  "submittedHybridAgreementWithProvisionalFFCC": {
+    "agree": 12,
+    "disagree": 2,
+    "disagreementMatchups": [
+      "SF @ ATL",
+      "KC @ SEA"
+    ]
+  }
 }
