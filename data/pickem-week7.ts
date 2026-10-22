@@ -2,18 +2,18 @@ import type { Week5PoolGame } from "./pickem-week5";
 
 export const week7Number = 7;
 export const week7PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week7PoolStatus = "EXACT WEEK 7 FROZEN LINES CAPTURED · MIKE'S 14 CURRENT ENTERED/VIBES SIDES CAPTURED · EARLY FFCC CARD PROVISIONAL";
+export const week7PoolStatus = "EXACT WEEK 7 FROZEN LINES CAPTURED · MIKE'S 14 HYBRID PICKS CONFIRMED OCT 22 · EARLY FFCC CARD PROVISIONAL";
 export const week7MarketAsOf = "Oct 20, 2026 · Tuesday night ET · bet365 snapshots via FOX Sports and Sportsbook Review, with NFLLines movement cross-check; exact two-sided ATS prices remain unverified unless stated";
 export const week7Standing = {correct:40,rank:78,leaderCorrect:57,note:"Oct 20 user screenshot. Rank ties by total correct. This is Mike's actual SZN standing, not FFCC model performance."};
 export const week7MikeSubmittedCard = {
-  confirmedAt: "Oct 20, 2026 · 10:35 PM ET · user screenshots",
+  confirmedAt: "Oct 22, 2026 · morning ET · user submission confirmation photo",
   source: "The SZN Week 7 pool card",
   picks: [
-    "NE +3.5", "NO +3.5", "SF -3.5", "TEN +1.5", "MIN -6.5", "NYJ -4.5", "CAR -3.5",
-    "BAL -2.5", "NYG +10.5", "DEN -4.5", "DET -3.5", "LAR -4.5", "KC +2.5", "DAL -4.5",
+    "NE +3.5", "PIT -3.5", "SF -3.5", "CLE -1.5", "MIN -6.5", "NYJ -4.5", "CAR -3.5",
+    "BAL -2.5", "NYG +10.5", "DEN -4.5", "GB +3.5", "LAR -4.5", "KC +2.5", "DAL -4.5",
   ],
   tiebreaker: null,
-  note: "Orange-highlighted sides and 14/14 entered are visible in Mike's SZN screenshots. They are logged as his current Week 7 entered/vibes card and remain editable; Mike does not make a separate vibes tiebreaker.",
+  note: "The SZN Oct 22 Boom! Picks confirmed screen verifies all 14 actual Week 7 hybrid choices. Oct 20 original vibes preserved in audit. Mike does not make a separate vibes tiebreaker; shared FFCC target is provisional.",
 };
 export const week7PoolGames: Week5PoolGame[] = [
   {
@@ -24,11 +24,11 @@ export const week7PoolGames: Week5PoolGame[] = [
     watch:"Thursday final injury report, inactives, weather and fresh exact-line prices. Mike is also currently on NE +3.5. Not final."
   },
   {
-    day:"Sun", kickoff:"9:30 AM", away:"PIT", home:"NO", poolPick:"PIT", poolLine:-3.5, mikeVibe:"NO +3.5", poolFavorite:"PIT", poolSpread:3.5,
+    day:"Sun", kickoff:"9:30 AM", away:"PIT", home:"NO", poolPick:"PIT", poolLine:-3.5, mikeVibe:"PIT -3.5", poolFavorite:"PIT", poolSpread:3.5,
     marketLabel:"PIT -3.5 (FOX/bet365 and NFLLines Tuesday)", marketTotal:44.5, confidence:1,
     signal:"NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
     rationale:"The reliable reviewed market is sitting on the frozen PIT -3.5 and no validated independent same-line edge was found. Use Pittsburgh as the initial market-side tie choice, not as a claimed advantage.",
-    watch:"Seek independent two-sided prices at PIT -3.5 and recheck France-game reports. Mike is currently on NO +3.5."
+    watch:"Seek independent two-sided prices at PIT -3.5 and recheck France-game reports. Mike submitted PIT -3.5 in the confirmed hybrid card."
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"SF", home:"ATL", poolPick:"ATL", poolLine:3.5, mikeVibe:"SF -3.5", poolFavorite:"SF", poolSpread:3.5,
@@ -38,11 +38,11 @@ export const week7PoolGames: Week5PoolGame[] = [
     watch:"49ers receiver availability, final reports and a verified exact ATL +3.5 price. Mike is currently on SF -3.5."
   },
   {
-    day:"Sun", kickoff:"1:00 PM", away:"CLE", home:"TEN", poolPick:"CLE", poolLine:-1.5, mikeVibe:"TEN +1.5", poolFavorite:"CLE", poolSpread:1.5,
+    day:"Sun", kickoff:"1:00 PM", away:"CLE", home:"TEN", poolPick:"CLE", poolLine:-1.5, mikeVibe:"CLE -1.5", poolFavorite:"CLE", poolSpread:1.5,
     marketLabel:"CLE -1.5 (reviewed market consensus)", marketTotal:38.5, confidence:1,
     signal:"NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
     rationale:"The reviewed market matches the pool at CLE -1.5 and no verified exact-line price lean or independent override was found. Use Cleveland as the initial market-side tie choice.",
-    watch:"Wednesday-Friday quarterback/offensive-line reports and exact-line prices. Mike is currently on TEN +1.5."
+    watch:"Wednesday-Friday quarterback/offensive-line reports and exact-line prices. Mike submitted CLE -1.5 in the confirmed hybrid card."
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"IND", home:"MIN", poolPick:"MIN", poolLine:-6.5, mikeVibe:"MIN -6.5", poolFavorite:"MIN", poolSpread:6.5,
@@ -87,11 +87,11 @@ export const week7PoolGames: Week5PoolGame[] = [
     watch:"Recheck quarterback/offensive-line reports and exact-line consensus. Mike is currently on DEN -4.5."
   },
   {
-    day:"Sun", kickoff:"4:25 PM", away:"GB", home:"DET", poolPick:"GB", poolLine:3.5, mikeVibe:"DET -3.5", poolFavorite:"DET", poolSpread:3.5,
+    day:"Sun", kickoff:"4:25 PM", away:"GB", home:"DET", poolPick:"GB", poolLine:3.5, mikeVibe:"GB +3.5", poolFavorite:"DET", poolSpread:3.5,
     marketLabel:"DET -3 (NFLLines Tuesday); FOX/bet365 earlier -3.5", marketTotal:53.5, confidence:2,
     signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     rationale:"Take GB +3.5 provisionally. A current movement source lists Detroit -3, so the pool gives Green Bay the hook above the key 3; an earlier bet365 snapshot was still -3.5. No exact-line price consensus was verified.",
-    watch:"Resolve the -3 versus -3.5 market split and review final divisional-game injuries. Mike is currently on DET -3.5."
+    watch:"Resolve the -3 versus -3.5 market split and review final divisional-game injuries. Mike submitted GB +3.5 in the confirmed hybrid card."
   },
   {
     day:"Sun", kickoff:"4:25 PM", away:"LAR", home:"LV", poolPick:"LAR", poolLine:-4.5, mikeVibe:"LAR -4.5", poolFavorite:"LAR", poolSpread:4.5,
