@@ -2,7 +2,7 @@
   "week": 7,
   "pool": "The SZN NFL Super Pick'em · NFL-575",
   "createdAt": "2026-10-20 22:35 ET",
-  "status": "Week 7 hybrid submission confirmed (14 of 14); Thursday final; Friday FFCC recommendation flipped BAL -2.5 to CIN +2.5; remaining board provisional",
+  "status": "Week 7 hybrid submission confirmed (14 of 14); Thursday final; four Friday FFCC recommendation flips; Friday tiebreaker target 44; remaining board provisional",
   "policy": "market-first season-total strategy; all required games ATS; equal credit; initial card publication is not a recommendation flip",
   "sources": [
     {
@@ -36,7 +36,22 @@
     {
       "type": "official injury report",
       "url": "https://www.bengals.com/news/bengals-ravens-week-7-2026-injury-report",
-      "detail": "Reviewed Oct 23: Lamar Jackson was limited Wednesday and Thursday with an ankle injury; final designation pending."
+      "detail": "Final report reviewed Oct 23: Lamar Jackson limited all three days and officially QUESTIONABLE; coach described him as a possible game-time decision."
+    },
+    {
+      "type": "fresh multi-book median",
+      "url": "https://edraft.com/nfl/odds/week-7",
+      "detail": "Updated Oct 23, 2026 3:48 PM ET; median active-book spreads and totals used for Friday cross-check."
+    },
+    {
+      "type": "independent sportsbook snapshot",
+      "url": "https://www.cbssports.com/betting/news/week-7-nfl-betting-lines-spreads-odds-totals/",
+      "detail": "DraftKings lines published Oct 23, 2026 10:45 AM ET."
+    },
+    {
+      "type": "independent sportsbook snapshot",
+      "url": "https://www.foxsports.com/stories/nfl/2026-nfl-odds-week-7-lines-spreads-results-all-14-games",
+      "detail": "bet365 lines updated Oct 23, 2026 11:13 AM ET."
     }
   ],
   "standing": {
@@ -47,10 +62,10 @@
   "tiebreaker": {
     "matchup": "DAL @ PHI",
     "mikeVibesTotal": null,
-    "currentMarketTotal": 44.5,
-    "ffccProvisionalTarget": 45,
+    "currentMarketTotal": 44,
+    "ffccProvisionalTarget": 44,
     "final": false,
-    "note": "Mike does not make a vibes tiebreaker. FFCC target rounds the reviewed 44.5 market total and remains provisional."
+    "note": "Friday multi-book median is 44; DraftKings and bet365 remain 44.5. FFCC uses 44 provisionally and will recheck before finalization."
   },
   "games": [
     {
@@ -73,16 +88,19 @@
       "matchup": "PIT @ NO",
       "frozenLine": "PIT -3.5",
       "mikeCurrentSide": "PIT -3.5",
-      "ffccProvisionalSide": "PIT -3.5",
-      "evidenceLabel": "no measured edge/provisional tie choice",
-      "marketSnapshot": "PIT -3.5",
+      "ffccProvisionalSide": "NO +3.5",
+      "evidenceLabel": "frozen-number advantage with uncalibrated size",
+      "marketSnapshot": "PIT -3 median; DraftKings -3, bet365 -3.5",
       "exactLineTwoSidedPrices": "not publicly verified",
-      "changeFlag": false,
+      "changeFlag": true,
       "result": null,
       "mikeOriginalVibeSide": "NO +3.5",
       "mikeConfirmedSubmittedSide": "PIT -3.5",
       "mikeSideChangedFromOriginal": true,
-      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET",
+      "previousFfccSide": "PIT -3.5",
+      "changedAt": "2026-10-23 17:17 ET",
+      "changeReason": "The multi-book median and DraftKings moved to PIT -3, giving NO +3.5 the hook above the key 3; bet365 remains -3.5, so exact frozen-line edge size is uncalibrated."
     },
     {
       "matchup": "SF @ ATL",
@@ -148,16 +166,19 @@
       "matchup": "TB @ CAR",
       "frozenLine": "CAR -3.5",
       "mikeCurrentSide": "CAR -3.5",
-      "ffccProvisionalSide": "CAR -3.5",
-      "evidenceLabel": "no measured edge/provisional tie choice",
-      "marketSnapshot": "CAR -3.5",
+      "ffccProvisionalSide": "TB +3.5",
+      "evidenceLabel": "frozen-number advantage with uncalibrated size",
+      "marketSnapshot": "CAR -2.8 median; bet365 -2.5, DraftKings -3",
       "exactLineTwoSidedPrices": "not publicly verified",
-      "changeFlag": false,
+      "changeFlag": true,
       "result": null,
       "mikeOriginalVibeSide": "CAR -3.5",
       "mikeConfirmedSubmittedSide": "CAR -3.5",
       "mikeSideChangedFromOriginal": false,
-      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET",
+      "previousFfccSide": "CAR -3.5",
+      "changedAt": "2026-10-23 17:17 ET",
+      "changeReason": "All reviewed Friday views price Carolina below -3.5, giving TB +3.5 the hook above the key 3; exact frozen-line two-sided prices remain unverified."
     },
     {
       "matchup": "CIN @ BAL",
@@ -165,7 +186,7 @@
       "mikeCurrentSide": "BAL -2.5",
       "ffccProvisionalSide": "CIN +2.5",
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
-      "marketSnapshot": "BAL -1.5 Friday consensus after earlier books briefly flipped to CIN -1/-1.5",
+      "marketSnapshot": "BAL -1.5 Friday consensus; Lamar Jackson officially questionable after three limited practices",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": true,
       "result": null,
@@ -175,15 +196,15 @@
       "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET",
       "previousFfccSide": "BAL -2.5",
       "changedAt": "2026-10-23 02:18 ET",
-      "changeReason": "The frozen CIN +2.5 is one point better than the fresh BAL -1.5 consensus after quarterback-driven volatility; Lamar Jackson remained limited Thursday. No exact frozen-line two-sided pair was verified, so the size is uncalibrated."
+      "changeReason": "The frozen CIN +2.5 is one point better than the BAL -1.5 consensus. Lamar Jackson is officially questionable and may be a game-time decision. No exact frozen-line two-sided pair was verified, so the size is uncalibrated."
     },
     {
       "matchup": "NYG @ HOU",
       "frozenLine": "HOU -10.5",
       "mikeCurrentSide": "NYG +10.5",
       "ffccProvisionalSide": "NYG +10.5",
-      "evidenceLabel": "frozen-number advantage with uncalibrated size",
-      "marketSnapshot": "HOU -9.5 to -10",
+      "evidenceLabel": "no measured edge/provisional tie choice",
+      "marketSnapshot": "HOU -10.5 Friday median, DraftKings and bet365",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": false,
       "result": null,
@@ -226,16 +247,19 @@
       "matchup": "LAR @ LV",
       "frozenLine": "LAR -4.5",
       "mikeCurrentSide": "LAR -4.5",
-      "ffccProvisionalSide": "LAR -4.5",
-      "evidenceLabel": "no measured edge/provisional tie choice",
-      "marketSnapshot": "LAR -4.5",
+      "ffccProvisionalSide": "LV +4.5",
+      "evidenceLabel": "frozen-number advantage with uncalibrated size",
+      "marketSnapshot": "LAR -3.5 Friday median, DraftKings and bet365",
       "exactLineTwoSidedPrices": "not publicly verified",
-      "changeFlag": false,
+      "changeFlag": true,
       "result": null,
       "mikeOriginalVibeSide": "LAR -4.5",
       "mikeConfirmedSubmittedSide": "LAR -4.5",
       "mikeSideChangedFromOriginal": false,
-      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET",
+      "previousFfccSide": "LAR -4.5",
+      "changedAt": "2026-10-23 17:17 ET",
+      "changeReason": "Three independently reviewed Friday views price LAR -3.5, giving LV +4.5 a full extra point at the frozen pool line; exact frozen-line two-sided prices remain unverified."
     },
     {
       "matchup": "KC @ SEA",
@@ -268,15 +292,18 @@
       "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     }
   ],
-  "alertDecision": "Genuine editable FFCC recommendation flip: BAL -2.5 to CIN +2.5. Created active actionable alert 2026-w7-pickem-cin-over-bal-flip-1023-0218.",
+  "alertDecision": "Four genuine editable FFCC flips are active: BAL→CIN, PIT→NO, CAR→TB, and LAR→LV. Each has its own unique actionable alert.",
   "originalVibesCapturedAt": "2026-10-20 22:35 ET",
   "submittedHybridConfirmedAt": "2026-10-22 08:54 ET",
   "submittedHybridAgreementWithProvisionalFFCC": {
-    "agree": 11,
-    "disagree": 3,
+    "agree": 8,
+    "disagree": 6,
     "disagreementMatchups": [
+      "PIT @ NO",
       "SF @ ATL",
+      "TB @ CAR",
       "CIN @ BAL",
+      "LAR @ LV",
       "KC @ SEA"
     ]
   }
