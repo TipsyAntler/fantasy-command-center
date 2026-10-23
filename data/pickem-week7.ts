@@ -2,7 +2,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 
 export const week7Number = 7;
 export const week7PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week7PoolStatus = "EXACT WEEK 7 FROZEN LINES CAPTURED · MIKE'S 14 HYBRID PICKS CONFIRMED OCT 22 · EARLY FFCC CARD PROVISIONAL";
+export const week7PoolStatus = "EXACT WEEK 7 FROZEN LINES CAPTURED · MIKE'S 14 HYBRID PICKS CONFIRMED OCT 22 · THURSDAY FINAL · REMAINING FFCC CARD PROVISIONAL";
 export const week7MarketAsOf = "Oct 20, 2026 · Tuesday night ET · bet365 snapshots via FOX Sports and Sportsbook Review, with NFLLines movement cross-check; exact two-sided ATS prices remain unverified unless stated";
 export const week7Standing = {correct:40,rank:78,leaderCorrect:57,note:"Oct 20 user screenshot. Rank ties by total correct. This is Mike's actual SZN standing, not FFCC model performance."};
 export const week7MikeSubmittedCard = {
@@ -18,10 +18,12 @@ export const week7MikeSubmittedCard = {
 export const week7PoolGames: Week5PoolGame[] = [
   {
     day:"Thu", kickoff:"8:15 PM", away:"NE", home:"CHI", poolPick:"NE", poolLine:3.5, mikeVibe:"NE +3.5", poolFavorite:"CHI", poolSpread:3.5,
-    marketLabel:"CHI -2.5 (FOX/bet365 11:35 AM ET) to -3 (NFLLines Tuesday night)", marketTotal:50.5, confidence:3,
-    signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    rationale:"Take NE +3.5 provisionally. The pool gives New England the hook above the key 3 while reviewed current markets list Chicago -2.5 to -3. No current two-sided alternate pair at the exact NE +3.5 was verified, so the size is uncalibrated.",
-    watch:"Thursday final injury report, inactives, weather and fresh exact-line prices. Mike is also currently on NE +3.5. Not final."
+    marketLabel:"CHI -3 closing consensus after earlier -2.5; total 50.5", marketTotal:50.5, confidence:3,
+    signal:"FINAL · FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
+    rationale:"Final pregame audit kept NE +3.5. Official inactives and the closing market were reviewed; Chicago remained -3, so the frozen pool line gave New England the hook above the key 3. No current two-sided alternate pair at the exact NE +3.5 was verified, so the edge size remained uncalibrated.",
+    watch:"Locked at kickoff. Mike's submitted side was also NE +3.5; FFCC advice and the SZN submission are recorded separately.",
+    result:"CHI 30, NE 24 — FFCC recommendation NE +3.5 did not cover; Mike's submitted NE +3.5 also lost.",
+    outcome:"loss"
   },
   {
     day:"Sun", kickoff:"9:30 AM", away:"PIT", home:"NO", poolPick:"PIT", poolLine:-3.5, mikeVibe:"PIT -3.5", poolFavorite:"PIT", poolSpread:3.5,
