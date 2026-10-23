@@ -2,8 +2,8 @@ import type { Week5PoolGame } from "./pickem-week5";
 
 export const week7Number = 7;
 export const week7PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week7PoolStatus = "EXACT WEEK 7 FROZEN LINES CAPTURED · MIKE'S 14 HYBRID PICKS CONFIRMED OCT 22 · THURSDAY FINAL · 1 FRIDAY FFCC FLIP · REMAINING CARD PROVISIONAL";
-export const week7MarketAsOf = "Oct 23, 2026 · early Friday ET · VegasInsider multi-book consensus and Oct 22 bet365 snapshot; exact two-sided ATS prices at frozen lines remain unverified unless stated";
+export const week7PoolStatus = "EXACT WEEK 7 FROZEN LINES CAPTURED · MIKE'S 14 HYBRID PICKS CONFIRMED OCT 22 · THURSDAY FINAL · 4 FRIDAY FFCC FLIPS · TIEBREAKER UPDATED TO 44 · REMAINING CARD PROVISIONAL";
+export const week7MarketAsOf = "Oct 23, 2026 · 3:48 PM ET · eDraft multi-book median cross-checked against 10:45 AM DraftKings and 11:13 AM bet365 snapshots; exact two-sided ATS prices at frozen lines remain unverified unless stated";
 export const week7Standing = {correct:40,rank:78,leaderCorrect:57,note:"Oct 20 user screenshot. Rank ties by total correct. This is Mike's actual SZN standing, not FFCC model performance."};
 export const week7MikeSubmittedCard = {
   confirmedAt: "Oct 22, 2026 · morning ET · user submission confirmation photo",
@@ -26,11 +26,11 @@ export const week7PoolGames: Week5PoolGame[] = [
     outcome:"loss"
   },
   {
-    day:"Sun", kickoff:"9:30 AM", away:"PIT", home:"NO", poolPick:"PIT", poolLine:-3.5, mikeVibe:"PIT -3.5", poolFavorite:"PIT", poolSpread:3.5,
-    marketLabel:"PIT -3.5 (FOX/bet365 and NFLLines Tuesday)", marketTotal:44.5, confidence:1,
-    signal:"NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    rationale:"The reliable reviewed market is sitting on the frozen PIT -3.5 and no validated independent same-line edge was found. Use Pittsburgh as the initial market-side tie choice, not as a claimed advantage.",
-    watch:"Seek independent two-sided prices at PIT -3.5 and recheck France-game reports. Mike submitted PIT -3.5 in the confirmed hybrid card."
+    day:"Sun", kickoff:"9:30 AM", away:"PIT", home:"NO", poolPick:"NO", poolLine:3.5, mikeVibe:"PIT -3.5", poolFavorite:"PIT", poolSpread:3.5,
+    marketLabel:"PIT -3 median Friday; DraftKings -3, bet365 -3.5", marketTotal:44.5, confidence:2,
+    signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
+    rationale:"Flip to NO +3.5. Friday's multi-book median and DraftKings both moved Pittsburgh to -3, giving New Orleans the hook above the key 3 at the frozen pool line. Bet365 remained PIT -3.5, and no exact two-sided alternate pair at NO +3.5 was verified, so the edge size is uncalibrated.",
+    watch:"Recheck the Sunday-morning market and France-game inactives before the 1:00 PM ET pool edit cutoff. Mike's submitted side remains PIT -3.5; this changes FFCC advice only."
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"SF", home:"ATL", poolPick:"ATL", poolLine:3.5, mikeVibe:"SF -3.5", poolFavorite:"SF", poolSpread:3.5,
@@ -61,25 +61,25 @@ export const week7PoolGames: Week5PoolGame[] = [
     watch:"Monitor Miami quarterback/skill availability and exact-line consensus. Mike is currently on NYJ -4.5."
   },
   {
-    day:"Sun", kickoff:"1:00 PM", away:"TB", home:"CAR", poolPick:"CAR", poolLine:-3.5, mikeVibe:"CAR -3.5", poolFavorite:"CAR", poolSpread:3.5,
-    marketLabel:"CAR -3.5 (reviewed market consensus)", marketTotal:44.5, confidence:1,
-    signal:"NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    rationale:"The reviewed market matches the frozen CAR -3.5. No verified exact-line price lean or validated independent override was found, so retain Carolina as the initial market-side tie choice.",
-    watch:"Recheck final offensive-line and quarterback reports plus exact-line prices. Mike is currently on CAR -3.5."
+    day:"Sun", kickoff:"1:00 PM", away:"TB", home:"CAR", poolPick:"TB", poolLine:3.5, mikeVibe:"CAR -3.5", poolFavorite:"CAR", poolSpread:3.5,
+    marketLabel:"CAR -2.8 median Friday; bet365 -2.5, DraftKings -3", marketTotal:44.5, confidence:2,
+    signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
+    rationale:"Flip to TB +3.5. Friday's independent snapshots and multi-book median all price Carolina below -3.5, with the market clustered from -2.5 to -3. The frozen pool line gives Tampa Bay the hook above the key 3; no exact two-sided alternate pair at TB +3.5 was verified, so the edge size is uncalibrated.",
+    watch:"Recheck Baker Mayfield and both offensive lines plus fresh prices before Sunday's 1:00 PM ET edit cutoff. Mike's submitted side remains CAR -3.5; this changes FFCC advice only."
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"CIN", home:"BAL", poolPick:"CIN", poolLine:2.5, mikeVibe:"BAL -2.5", poolFavorite:"BAL", poolSpread:2.5,
     marketLabel:"BAL -1.5 consensus Friday after a volatile move that briefly flipped to CIN -1/-1.5", marketTotal:48.5, confidence:2,
     signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    rationale:"Flip to CIN +2.5. The frozen pool line asks Baltimore to cover one point more than the fresh Friday multi-book consensus of BAL -1.5. The market briefly made Cincinnati the favorite as Lamar Jackson's ankle status drove volatility; he remained limited Thursday. No current two-sided alternate pair at the exact CIN +2.5 was verified, so the advantage is real in number but uncalibrated.",
-    watch:"Recheck Jackson's Friday designation and fresh exact-line prices before the Sunday 1:00 PM ET edit cutoff. Mike's submitted side remains BAL -2.5; this changes FFCC advice only."
+    rationale:"Keep CIN +2.5. The frozen pool line asks Baltimore to cover one point more than Friday's BAL -1.5 multi-book consensus. Lamar Jackson was limited all three practice days and is officially questionable with a possible game-time decision. No current two-sided alternate pair at the exact CIN +2.5 was verified, so the advantage is real in number but uncalibrated.",
+    watch:"Recheck Jackson's Sunday status and fresh exact-line prices before the 1:00 PM ET edit cutoff. Mike's submitted side remains BAL -2.5; this changes FFCC advice only."
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"NYG", home:"HOU", poolPick:"NYG", poolLine:10.5, mikeVibe:"NYG +10.5", poolFavorite:"HOU", poolSpread:10.5,
-    marketLabel:"HOU -9.5 (FOX/bet365) to -10 (NFLLines Tuesday)", marketTotal:42.5, confidence:2,
-    signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    rationale:"Take NYG +10.5 provisionally. Reviewed markets list Houston -9.5 to -10, so the pool provides a half to full point of extra cushion. No exact NYG +10.5 two-sided pair was verified.",
-    watch:"At an integer current line, push probability matters; do not convert the half-point gap into a fabricated cover percentage. Mike is currently on NYG +10.5."
+    marketLabel:"HOU -10.5 Friday across the multi-book median, DraftKings and bet365", marketTotal:42.5, confidence:1,
+    signal:"NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
+    rationale:"Friday's reliable market now matches the frozen HOU -10.5 exactly. With no verified exact-line price lean or validated independent override, retain the prior NYG +10.5 recommendation only as a transparent tie choice.",
+    watch:"Recheck final reports and exact-line prices before the edit cutoff. Mike is currently on NYG +10.5."
   },
   {
     day:"Sun", kickoff:"4:05 PM", away:"DEN", home:"ARI", poolPick:"DEN", poolLine:-4.5, mikeVibe:"DEN -4.5", poolFavorite:"DEN", poolSpread:4.5,
@@ -96,11 +96,11 @@ export const week7PoolGames: Week5PoolGame[] = [
     watch:"Resolve the -3 versus -3.5 market split and review final divisional-game injuries. Mike submitted GB +3.5 in the confirmed hybrid card."
   },
   {
-    day:"Sun", kickoff:"4:25 PM", away:"LAR", home:"LV", poolPick:"LAR", poolLine:-4.5, mikeVibe:"LAR -4.5", poolFavorite:"LAR", poolSpread:4.5,
-    marketLabel:"LAR -4.5 Tuesday after opening near -7", marketTotal:47.5, confidence:1,
-    signal:"NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    rationale:"The latest reviewed market matches the frozen LAR -4.5 after a large early move down from -7. With no current exact-line price lean, retain the Rams only as the initial tie choice.",
-    watch:"Davante Adams is already out 6-10 weeks and the market has repriced; do not double-count it. Recheck exact-line prices and final reports. Mike is currently on LAR -4.5."
+    day:"Sun", kickoff:"4:25 PM", away:"LAR", home:"LV", poolPick:"LV", poolLine:4.5, mikeVibe:"LAR -4.5", poolFavorite:"LAR", poolSpread:4.5,
+    marketLabel:"LAR -3.5 Friday across the multi-book median, DraftKings and bet365", marketTotal:48.5, confidence:2,
+    signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
+    rationale:"Flip to LV +4.5. Three independently reviewed Friday views all price the Rams at -3.5, giving Las Vegas a full extra point at the frozen pool line. No exact two-sided alternate pair at LV +4.5 was verified, so the size remains uncalibrated.",
+    watch:"Puka Nacua is questionable after a Friday DNP; the market may keep moving. Recheck his status and exact-line prices before Sunday's 1:00 PM ET edit cutoff. Mike's submitted side remains LAR -4.5; this changes FFCC advice only."
   },
   {
     day:"Sun", kickoff:"8:20 PM", away:"KC", home:"SEA", poolPick:"SEA", poolLine:-2.5, mikeVibe:"KC +2.5", poolFavorite:"SEA", poolSpread:2.5,
@@ -117,4 +117,4 @@ export const week7PoolGames: Week5PoolGame[] = [
     watch:"Jalen Hurts is expected out long term; the market already reflects that news. Recheck final reports, weather, exact-line prices and the Sunday editing cutoff."
   }
 ];
-export const week7Tiebreaker = {matchup:"DAL @ PHI",label:"Total points scored in final game of the week (Monday)",currentMarketTotal:44.5,earlyFfccTarget:45,mikeSubmittedTotal:null,note:"EARLY FFCC TARGET: reviewed Tuesday totals center on 44.5, rounded to 45. Mike does not make a separate vibes tiebreaker, so none is logged. Recheck weather, final reports, fresh totals and the pool control before finalizing."};
+export const week7Tiebreaker = {matchup:"DAL @ PHI",label:"Total points scored in final game of the week (Monday)",currentMarketTotal:44,earlyFfccTarget:44,mikeSubmittedTotal:null,note:"FRIDAY FFCC TARGET: the 3:48 PM ET multi-book median is 44, while DraftKings and bet365 remain 44.5. Use 44 provisionally. Mike does not make a separate vibes tiebreaker, so none is logged. Recheck weather, final reports, fresh totals and the pool control before finalizing."};
