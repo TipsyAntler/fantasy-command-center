@@ -2,7 +2,7 @@
   "week": 7,
   "pool": "The SZN NFL Super Pick'em · NFL-575",
   "createdAt": "2026-10-20 22:35 ET",
-  "status": "Week 7 hybrid submission confirmed (14 of 14); FFCC recommendation board remains provisional and independently unchanged",
+  "status": "Week 7 hybrid submission confirmed (14 of 14); Thursday final; Friday FFCC recommendation flipped BAL -2.5 to CIN +2.5; remaining board provisional",
   "policy": "market-first season-total strategy; all required games ATS; equal credit; initial card publication is not a recommendation flip",
   "sources": [
     {
@@ -27,6 +27,16 @@
     {
       "type": "user confirmation photo",
       "detail": "Oct 22, 2026 morning: The SZN 'Boom! Picks confirmed' photo of all 14 Week 7 picks; Pittsburgh, Cleveland, Green Bay selected vs original Oct 20 vibes. Tiebreaker number not visible and not attributed to vibes."
+    },
+    {
+      "type": "fresh multi-book market",
+      "url": "https://www.vegasinsider.com/nfl/nfl-week-7-odds-2026/",
+      "detail": "Updated Oct 23, 2026; multi-book table showed BAL -1.5/CIN +1.5 consensus after a volatile quarterback-driven move."
+    },
+    {
+      "type": "official injury report",
+      "url": "https://www.bengals.com/news/bengals-ravens-week-7-2026-injury-report",
+      "detail": "Reviewed Oct 23: Lamar Jackson was limited Wednesday and Thursday with an ankle injury; final designation pending."
     }
   ],
   "standing": {
@@ -52,11 +62,12 @@
       "marketSnapshot": "CHI -2.5 to -3",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": false,
-      "result": null,
+      "result": "CHI 30, NE 24 — FFCC NE +3.5 and Mike's submitted NE +3.5 both lost.",
       "mikeOriginalVibeSide": "NE +3.5",
       "mikeConfirmedSubmittedSide": "NE +3.5",
       "mikeSideChangedFromOriginal": false,
-      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET",
+      "outcome": "loss"
     },
     {
       "matchup": "PIT @ NO",
@@ -152,16 +163,19 @@
       "matchup": "CIN @ BAL",
       "frozenLine": "BAL -2.5",
       "mikeCurrentSide": "BAL -2.5",
-      "ffccProvisionalSide": "BAL -2.5",
-      "evidenceLabel": "no measured edge/provisional tie choice",
-      "marketSnapshot": "BAL -2.5",
+      "ffccProvisionalSide": "CIN +2.5",
+      "evidenceLabel": "frozen-number advantage with uncalibrated size",
+      "marketSnapshot": "BAL -1.5 Friday consensus after earlier books briefly flipped to CIN -1/-1.5",
       "exactLineTwoSidedPrices": "not publicly verified",
-      "changeFlag": false,
+      "changeFlag": true,
       "result": null,
       "mikeOriginalVibeSide": "BAL -2.5",
       "mikeConfirmedSubmittedSide": "BAL -2.5",
       "mikeSideChangedFromOriginal": false,
-      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
+      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET",
+      "previousFfccSide": "BAL -2.5",
+      "changedAt": "2026-10-23 02:18 ET",
+      "changeReason": "The frozen CIN +2.5 is one point better than the fresh BAL -1.5 consensus after quarterback-driven volatility; Lamar Jackson remained limited Thursday. No exact frozen-line two-sided pair was verified, so the size is uncalibrated."
     },
     {
       "matchup": "NYG @ HOU",
@@ -254,14 +268,15 @@
       "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     }
   ],
-  "alertDecision": "No actionable FFCC pick flip: Mike changed his own submitted card to a hybrid; independent FFCC sides remained the same.",
+  "alertDecision": "Genuine editable FFCC recommendation flip: BAL -2.5 to CIN +2.5. Created active actionable alert 2026-w7-pickem-cin-over-bal-flip-1023-0218.",
   "originalVibesCapturedAt": "2026-10-20 22:35 ET",
   "submittedHybridConfirmedAt": "2026-10-22 08:54 ET",
   "submittedHybridAgreementWithProvisionalFFCC": {
-    "agree": 12,
-    "disagree": 2,
+    "agree": 11,
+    "disagree": 3,
     "disagreementMatchups": [
       "SF @ ATL",
+      "CIN @ BAL",
       "KC @ SEA"
     ]
   }
