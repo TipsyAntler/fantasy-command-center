@@ -2,8 +2,8 @@ import type { Week5PoolGame } from "./pickem-week5";
 
 export const week7Number = 7;
 export const week7PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week7PoolStatus = "EXACT WEEK 7 FROZEN LINES CAPTURED · MIKE'S 14 HYBRID PICKS CONFIRMED OCT 22 · THURSDAY FINAL · REMAINING FFCC CARD PROVISIONAL";
-export const week7MarketAsOf = "Oct 20, 2026 · Tuesday night ET · bet365 snapshots via FOX Sports and Sportsbook Review, with NFLLines movement cross-check; exact two-sided ATS prices remain unverified unless stated";
+export const week7PoolStatus = "EXACT WEEK 7 FROZEN LINES CAPTURED · MIKE'S 14 HYBRID PICKS CONFIRMED OCT 22 · THURSDAY FINAL · 1 FRIDAY FFCC FLIP · REMAINING CARD PROVISIONAL";
+export const week7MarketAsOf = "Oct 23, 2026 · early Friday ET · VegasInsider multi-book consensus and Oct 22 bet365 snapshot; exact two-sided ATS prices at frozen lines remain unverified unless stated";
 export const week7Standing = {correct:40,rank:78,leaderCorrect:57,note:"Oct 20 user screenshot. Rank ties by total correct. This is Mike's actual SZN standing, not FFCC model performance."};
 export const week7MikeSubmittedCard = {
   confirmedAt: "Oct 22, 2026 · morning ET · user submission confirmation photo",
@@ -68,11 +68,11 @@ export const week7PoolGames: Week5PoolGame[] = [
     watch:"Recheck final offensive-line and quarterback reports plus exact-line prices. Mike is currently on CAR -3.5."
   },
   {
-    day:"Sun", kickoff:"1:00 PM", away:"CIN", home:"BAL", poolPick:"BAL", poolLine:-2.5, mikeVibe:"BAL -2.5", poolFavorite:"BAL", poolSpread:2.5,
-    marketLabel:"BAL -2.5 Tuesday after opening nearer -3.5", marketTotal:51.5, confidence:1,
-    signal:"NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    rationale:"The current reviewed market matches the frozen BAL -2.5 after earlier Baltimore -3 to -3.5 readings. Without a verified exact-line price, keep Baltimore only as the initial tie choice.",
-    watch:"Lamar Jackson practice participation is the main football input; verify exact-line prices after Wednesday reports. Mike is currently on BAL -2.5."
+    day:"Sun", kickoff:"1:00 PM", away:"CIN", home:"BAL", poolPick:"CIN", poolLine:2.5, mikeVibe:"BAL -2.5", poolFavorite:"BAL", poolSpread:2.5,
+    marketLabel:"BAL -1.5 consensus Friday after a volatile move that briefly flipped to CIN -1/-1.5", marketTotal:48.5, confidence:2,
+    signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
+    rationale:"Flip to CIN +2.5. The frozen pool line asks Baltimore to cover one point more than the fresh Friday multi-book consensus of BAL -1.5. The market briefly made Cincinnati the favorite as Lamar Jackson's ankle status drove volatility; he remained limited Thursday. No current two-sided alternate pair at the exact CIN +2.5 was verified, so the advantage is real in number but uncalibrated.",
+    watch:"Recheck Jackson's Friday designation and fresh exact-line prices before the Sunday 1:00 PM ET edit cutoff. Mike's submitted side remains BAL -2.5; this changes FFCC advice only."
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"NYG", home:"HOU", poolPick:"NYG", poolLine:10.5, mikeVibe:"NYG +10.5", poolFavorite:"HOU", poolSpread:10.5,
