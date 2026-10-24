@@ -8,7 +8,7 @@ import { week7Number, week7PoolGames, week7Tiebreaker, week7Standing } from "@/d
 import { actionableAlerts, isActionableBreakingAlert } from "@/data/actionable-alerts";
 import styles from "./home.module.css";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 function rosterStatus(row: Awaited<ReturnType<typeof getRosterWatch>>[number]) {
   return row.player?.injury_status || row.player?.practice_participation || row.player?.status || "status flag";
@@ -102,8 +102,8 @@ export default async function Home() {
               <span className={styles.cardState}>{survivorHealthy ? `${survivor.aliveEntries} alive` : "Check feed"}</span>
             </div>
             <h2>Survivor Lab</h2>
-            <p className={styles.actionHeadline}>{survivorHealthy ? `${survivor.aliveEntries} entries remain · ${survivor.submitted} picks visible.` : "Pool data needs a refresh."}</p>
-            <p className={styles.actionNote}>{survivorHealthy ? `Most popular pick: ${survivor.ownership[0]?.team || "Not posted yet"}. Open the pool distribution chart for the full breakdown.` : "Reconnect Google for the latest pool standings and pick distribution."}</p>
+            <p className={styles.actionHeadline}>{survivorHealthy ? `${survivor.aliveEntries} entries remain · ${survivor.submitted} Week ${survivor.ownershipWeek || week} picks visible.` : "Pool data needs a refresh."}</p>
+            <p className={styles.actionNote}>{survivorHealthy ? `${survivor.ownershipWeek !== week ? `Week ${week} picks pending. Latest available: Week ${survivor.ownershipWeek}. ` : ""}Most popular pick: ${survivor.ownership[0]?.team || "Not posted yet"}. Open the pool distribution chart for the full breakdown.` : "Reconnect Google for the latest pool standings and pick distribution."}</p>
             <div className={styles.cardFoot}><span>Open Survivor Lab</span><span>→</span></div>
           </Link>
 
