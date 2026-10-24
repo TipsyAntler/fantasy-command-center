@@ -7,7 +7,7 @@ export default async function SurvivorPage({ searchParams }: { searchParams?: Pr
   const params = searchParams ? await searchParams : {};
   const googleStatus = typeof params.google === "string" ? params.google : undefined;
   const googleMessage = typeof params.message === "string" ? params.message : undefined;
-  const week = 8;
+  const week = Math.max(1, Math.min(18, 8 + Math.floor((Date.now() - Date.parse("2026-10-20T04:00:00Z")) / (7 * 24 * 60 * 60 * 1000))));
   const snapshot = await getSurvivorSnapshot(week);
   const googleHealthy = snapshot.connected && !snapshot.error;
   const submittedPct = snapshot.aliveEntries ? Math.round(snapshot.submitted / snapshot.aliveEntries * 100) : 0;
