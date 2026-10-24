@@ -16,7 +16,8 @@ export async function GET() {
 
   for (const alert of active) {
     try {
-      const sent = await sendFfccPushOnce(alert.id, {
+      const deliveryId = alert.pushRevision ? `${alert.id}:${alert.pushRevision}` : alert.id;
+      const sent = await sendFfccPushOnce(deliveryId, {
         category: categoryForPush(alert.category),
         severity: "breaking",
         title: `FFCC · ${alert.category}`,
