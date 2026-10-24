@@ -16,7 +16,7 @@ function rosterStatus(row: Awaited<ReturnType<typeof getRosterWatch>>[number]) {
 
 export default async function Home() {
   const data = await getDashboardData();
-  const week = getPlanningWeek(data.state, week7Number, "2026-10-20T04:00:00-04:00");
+  const week = week7Number;
   const [rosterWatch, survivor] = await Promise.all([
     getRosterWatch(rosterPlayerNames),
     getSurvivorSnapshot(week),
