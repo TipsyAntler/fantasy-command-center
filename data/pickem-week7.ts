@@ -12,8 +12,8 @@ export const week7MikeSubmittedCard = {
     "NE +3.5", "NO +3.5", "SF -3.5", "CLE -1.5", "MIN -6.5", "NYJ -4.5", "TB +3.5",
     "CIN +2.5", "NYG +10.5", "DEN -4.5", "GB +3.5", "LV +4.5", "KC +2.5", "DAL -4.5",
   ],
-  tiebreaker: null,
-  note: "The SZN Oct 23 11:35 PM confirmation verifies all 14 current submitted sides, including Friday flips to NO, TB, CIN and LV. Original Oct 22 submissions remain preserved in the audit. No tiebreaker appears in this confirmation.",
+  tiebreaker: 44,
+  note: "The SZN Oct 23 11:35 PM confirmation verifies all 14 current submitted sides, including Friday flips to NO, TB, CIN and LV. Original Oct 22 submissions remain preserved in the audit. Mike separately confirmed his submitted tiebreaker is 44.",
 };
 export const week7PoolGames: Week5PoolGame[] = [
   {
