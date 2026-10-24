@@ -2,18 +2,18 @@ import type { Week5PoolGame } from "./pickem-week5";
 
 export const week7Number = 7;
 export const week7PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week7PoolStatus = "EXACT WEEK 7 FROZEN LINES CAPTURED · MIKE'S 14 HYBRID PICKS CONFIRMED OCT 22 · THURSDAY FINAL · 4 FRIDAY FFCC FLIPS · LATE MARKET STRENGTHENS CIN +2.5 · TIEBREAKER 44 · REMAINING CARD PROVISIONAL";
+export const week7PoolStatus = "EXACT WEEK 7 FROZEN LINES CAPTURED · MIKE'S 14 UPDATED PICKS CONFIRMED OCT 23 · THURSDAY FINAL · 4 FRIDAY FFCC FLIPS · LATE MARKET STRENGTHENS CIN +2.5 · TIEBREAKER 44 · REMAINING CARD PROVISIONAL";
 export const week7MarketAsOf = "Oct 23, 2026 · 6:03 PM ET · eDraft multi-book median cross-checked against a late-Friday public pick sheet plus Friday DraftKings and bet365 snapshots; exact two-sided ATS prices at frozen lines remain unverified unless stated";
 export const week7Standing = {correct:40,rank:78,leaderCorrect:57,note:"Oct 20 user screenshot. Rank ties by total correct. This is Mike's actual SZN standing, not FFCC model performance."};
 export const week7MikeSubmittedCard = {
-  confirmedAt: "Oct 22, 2026 · morning ET · user submission confirmation photo",
+  confirmedAt: "Oct 23, 2026 · 11:35 PM ET · updated user submission confirmation photo",
   source: "The SZN Week 7 pool card",
   picks: [
-    "NE +3.5", "PIT -3.5", "SF -3.5", "CLE -1.5", "MIN -6.5", "NYJ -4.5", "CAR -3.5",
-    "BAL -2.5", "NYG +10.5", "DEN -4.5", "GB +3.5", "LAR -4.5", "KC +2.5", "DAL -4.5",
+    "NE +3.5", "NO +3.5", "SF -3.5", "CLE -1.5", "MIN -6.5", "NYJ -4.5", "TB +3.5",
+    "CIN +2.5", "NYG +10.5", "DEN -4.5", "GB +3.5", "LV +4.5", "KC +2.5", "DAL -4.5",
   ],
   tiebreaker: null,
-  note: "The SZN Oct 22 Boom! Picks confirmed screen verifies all 14 actual Week 7 hybrid choices. Oct 20 original vibes preserved in audit. Mike does not make a separate vibes tiebreaker; shared FFCC target is provisional.",
+  note: "The SZN Oct 23 11:35 PM confirmation verifies all 14 current submitted sides, including Friday flips to NO, TB, CIN and LV. Original Oct 22 submissions remain preserved in the audit. No tiebreaker appears in this confirmation.",
 };
 export const week7PoolGames: Week5PoolGame[] = [
   {
@@ -26,7 +26,7 @@ export const week7PoolGames: Week5PoolGame[] = [
     outcome:"loss"
   },
   {
-    day:"Sun", kickoff:"9:30 AM", away:"PIT", home:"NO", poolPick:"NO", poolLine:3.5, mikeVibe:"PIT -3.5", poolFavorite:"PIT", poolSpread:3.5,
+    day:"Sun", kickoff:"9:30 AM", away:"PIT", home:"NO", poolPick:"NO", poolLine:3.5, mikeVibe:"NO +3.5", poolFavorite:"PIT", poolSpread:3.5,
     marketLabel:"PIT -3 median Friday; DraftKings -3, bet365 -3.5", marketTotal:44.5, confidence:2,
     signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     rationale:"Flip to NO +3.5. Friday's multi-book median and DraftKings both moved Pittsburgh to -3, giving New Orleans the hook above the key 3 at the frozen pool line. Bet365 remained PIT -3.5, and no exact two-sided alternate pair at NO +3.5 was verified, so the edge size is uncalibrated.",
@@ -61,14 +61,14 @@ export const week7PoolGames: Week5PoolGame[] = [
     watch:"Monitor Miami quarterback/skill availability and exact-line consensus. Mike is currently on NYJ -4.5."
   },
   {
-    day:"Sun", kickoff:"1:00 PM", away:"TB", home:"CAR", poolPick:"TB", poolLine:3.5, mikeVibe:"CAR -3.5", poolFavorite:"CAR", poolSpread:3.5,
+    day:"Sun", kickoff:"1:00 PM", away:"TB", home:"CAR", poolPick:"TB", poolLine:3.5, mikeVibe:"TB +3.5", poolFavorite:"CAR", poolSpread:3.5,
     marketLabel:"CAR -2.8 median Friday; bet365 -2.5, DraftKings -3", marketTotal:44.5, confidence:2,
     signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     rationale:"Flip to TB +3.5. Friday's independent snapshots and multi-book median all price Carolina below -3.5, with the market clustered from -2.5 to -3. The frozen pool line gives Tampa Bay the hook above the key 3; no exact two-sided alternate pair at TB +3.5 was verified, so the edge size is uncalibrated.",
     watch:"Recheck Baker Mayfield and both offensive lines plus fresh prices before Sunday's 1:00 PM ET edit cutoff. Mike's submitted side remains CAR -3.5; this changes FFCC advice only."
   },
   {
-    day:"Sun", kickoff:"1:00 PM", away:"CIN", home:"BAL", poolPick:"CIN", poolLine:2.5, mikeVibe:"BAL -2.5", poolFavorite:"BAL", poolSpread:2.5,
+    day:"Sun", kickoff:"1:00 PM", away:"CIN", home:"BAL", poolPick:"CIN", poolLine:2.5, mikeVibe:"CIN +2.5", poolFavorite:"BAL", poolSpread:2.5,
     marketLabel:"Late Friday: CIN -1 eDraft median and CIN -1.5 public pick sheet; another current listing remained BAL -1.5", marketTotal:48.5, confidence:2,
     signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     rationale:"Keep CIN +2.5. The market crossed through zero late Friday: the 6:03 PM ET eDraft median made Cincinnati -1 and a public pick sheet showed CIN -1.5, while another current listing still had BAL -1.5. Every reviewed live number is therefore better for Cincinnati than the frozen +2.5, but the disagreement and lack of an exact two-sided alternate pair keep the edge size uncalibrated. Lamar Jackson remains questionable and could be a game-time decision.",
@@ -96,7 +96,7 @@ export const week7PoolGames: Week5PoolGame[] = [
     watch:"Resolve the -3 versus -3.5 market split and review final divisional-game injuries. Mike submitted GB +3.5 in the confirmed hybrid card."
   },
   {
-    day:"Sun", kickoff:"4:25 PM", away:"LAR", home:"LV", poolPick:"LV", poolLine:4.5, mikeVibe:"LAR -4.5", poolFavorite:"LAR", poolSpread:4.5,
+    day:"Sun", kickoff:"4:25 PM", away:"LAR", home:"LV", poolPick:"LV", poolLine:4.5, mikeVibe:"LV +4.5", poolFavorite:"LAR", poolSpread:4.5,
     marketLabel:"LAR -3.5 Friday across the multi-book median, DraftKings and bet365", marketTotal:48.5, confidence:2,
     signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     rationale:"Flip to LV +4.5. Three independently reviewed Friday views all price the Rams at -3.5, giving Las Vegas a full extra point at the frozen pool line. No exact two-sided alternate pair at LV +4.5 was verified, so the size remains uncalibrated.",
