@@ -18,6 +18,7 @@ const TRIQ_SUBSCRIPTIONS_KEY = "triq:push:subscriptions";
 // TrIQ supports multiple registered devices.
 const VAPID_KEY = "ffcc:push:vapid";
 const SENT_TTL_SECONDS = 60 * 60 * 24 * 21;
+const RETRY_DELAY_SECONDS = 60 * 5;
 const TRIQ_MONEY_BRIDGE_KEY = "triq:money:bridge-token";
 
 function getPushStoreConfig() {
@@ -185,7 +186,16 @@ export async function sendPushToOnce(
   // The state is intentionally not deleted on an ambiguous delivery failure:
   // automatic retries must not turn a timeout into a duplicate notification.
   const claimed = await redis(["SET", sentKey, "pending", "NX", "EX", String(SENT_TTL_SECONDS)]);
-  if (claimed !== "OK") return false;
+  if (claimed !== "OK") {
+    // Retry only explicit failures, never accepted or ambiguous pending sends.
+    const state = await redis(["GET", sentKey]);
+    if (state !== "failed") return false;
+    const retryLock = sentKey + ":retry";
+    const retryClaimed = await redis(["SET", retryLock, "1", "NX", "EX", String(RETRY_DELAY_SECONDS)]);
+    if (retryClaimed !== "OK") return false;
+    if (await redis(["GET", sentKey]) !== "failed") return false;
+    await redis(["SET", sentKey, "pending", "EX", String(SENT_TTL_SECONDS)]);
+  }
 
   try {
     await sendPushTo(channel, alert);
@@ -193,6 +203,7 @@ export async function sendPushToOnce(
     return true;
   } catch (error) {
     await redis(["SET", sentKey, "failed", "EX", String(SENT_TTL_SECONDS)]).catch(() => undefined);
+    console.error("Push delivery failed", { channel, alertId, error });
     throw error;
   }
 }
