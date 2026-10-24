@@ -39,5 +39,5 @@ export async function GET() {
     active: active.length,
     sent: results.filter((result) => result.sent).length,
     results,
-  });
+  }, { status: results.some((result) => result.error) ? 503 : 200, headers: { "Cache-Control": "no-store" } });
 }
