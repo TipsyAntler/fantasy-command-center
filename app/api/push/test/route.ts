@@ -1,18 +1,18 @@
 import { NextResponse } from "next/server";
-import { getPushSubscription, sendFfccPush } from "@/lib/push";
+import { getPushSubscriptionByEndpoint, sendPushToSubscription } from "@/lib/push";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
   try {
     const { endpoint } = await request.json();
-    const stored = await getPushSubscription();
+    const stored = endpoint ? await getPushSubscriptionByEndpoint("ffcc", endpoint) : null;
 
-    if (!stored || !endpoint || stored.endpoint !== endpoint) {
-      return NextResponse.json({ ok: false, error: "This device is not the registered FFCC push device." }, { status: 403 });
+    if (!stored) {
+      return NextResponse.json({ ok: false, error: "This device has no matching FFCC push subscription. Reconnect This Device and try again." }, { status: 403 });
     }
 
-    await sendFfccPush({
+    await sendPushToSubscription(stored, {
       category: "system",
       severity: "actionable",
       title: "FFCC · Push is live",
