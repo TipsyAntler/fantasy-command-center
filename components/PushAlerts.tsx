@@ -75,7 +75,15 @@ export default function PushAlerts() {
         await navigator.serviceWorker.ready;
         const subscription = await registration.pushManager.getSubscription();
         if (subscription) {
-          await registerSubscription(subscription).catch(() => undefined);
+          try {
+            await registerSubscription(subscription);
+          } catch {
+            if (!cancelled) {
+              setState("ready");
+              setMessage("FFCC could not register this device with the server. Tap Reconnect This Device to retry.");
+            }
+            return;
+          }
           if (!cancelled) {
             localStorage.setItem("ffcc-alerts-enabled", "1");
             setState("enabled");
@@ -174,7 +182,8 @@ export default function PushAlerts() {
         {state === "enabled" ? <p>Push-worthy by default: recommendation flips, FINAL Survivor decisions, major injury/role news affecting your roster, deadline-critical action, and other genuinely important FFCC changes.</p> : null}
       </div>
       <div className="push-alert-actions">
-        {state === "ready" ? <button type="button" className="push-primary" onClick={enableAlerts}>{Notification.permission === "granted" ? "Finish Push Setup" : "Enable Alerts"}</button> : null}
+        {state === "ready" ? <button type="button" className="push-primary" onClick={enableAlerts}>{Notification.permission === "granted" ? "Reconnect This Device" : "Enable Alerts"}</button> : null}
+        {state === "enabled" ? <button type="button" className="push-secondary" onClick={enableAlerts}>Reconnect This Device</button> : null}
         {state === "enabled" ? <button type="button" className="push-secondary" onClick={sendTest}>Send Test Alert</button> : null}
       </div>
     </div>
