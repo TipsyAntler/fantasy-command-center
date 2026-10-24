@@ -2,8 +2,8 @@ import type { Week5PoolGame } from "./pickem-week5";
 
 export const week7Number = 7;
 export const week7PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week7PoolStatus = "EXACT WEEK 7 FROZEN LINES CAPTURED · MIKE'S 14 HYBRID PICKS CONFIRMED OCT 22 · THURSDAY FINAL · 4 FRIDAY FFCC FLIPS · TIEBREAKER UPDATED TO 44 · REMAINING CARD PROVISIONAL";
-export const week7MarketAsOf = "Oct 23, 2026 · 3:48 PM ET · eDraft multi-book median cross-checked against 10:45 AM DraftKings and 11:13 AM bet365 snapshots; exact two-sided ATS prices at frozen lines remain unverified unless stated";
+export const week7PoolStatus = "EXACT WEEK 7 FROZEN LINES CAPTURED · MIKE'S 14 HYBRID PICKS CONFIRMED OCT 22 · THURSDAY FINAL · 4 FRIDAY FFCC FLIPS · LATE MARKET STRENGTHENS CIN +2.5 · TIEBREAKER 44 · REMAINING CARD PROVISIONAL";
+export const week7MarketAsOf = "Oct 23, 2026 · 6:03 PM ET · eDraft multi-book median cross-checked against a late-Friday public pick sheet plus Friday DraftKings and bet365 snapshots; exact two-sided ATS prices at frozen lines remain unverified unless stated";
 export const week7Standing = {correct:40,rank:78,leaderCorrect:57,note:"Oct 20 user screenshot. Rank ties by total correct. This is Mike's actual SZN standing, not FFCC model performance."};
 export const week7MikeSubmittedCard = {
   confirmedAt: "Oct 22, 2026 · morning ET · user submission confirmation photo",
@@ -69,10 +69,10 @@ export const week7PoolGames: Week5PoolGame[] = [
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"CIN", home:"BAL", poolPick:"CIN", poolLine:2.5, mikeVibe:"BAL -2.5", poolFavorite:"BAL", poolSpread:2.5,
-    marketLabel:"BAL -1.5 consensus Friday after a volatile move that briefly flipped to CIN -1/-1.5", marketTotal:48.5, confidence:2,
+    marketLabel:"Late Friday: CIN -1 eDraft median and CIN -1.5 public pick sheet; another current listing remained BAL -1.5", marketTotal:48.5, confidence:2,
     signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    rationale:"Keep CIN +2.5. The frozen pool line asks Baltimore to cover one point more than Friday's BAL -1.5 multi-book consensus. Lamar Jackson was limited all three practice days and is officially questionable with a possible game-time decision. No current two-sided alternate pair at the exact CIN +2.5 was verified, so the advantage is real in number but uncalibrated.",
-    watch:"Recheck Jackson's Sunday status and fresh exact-line prices before the 1:00 PM ET edit cutoff. Mike's submitted side remains BAL -2.5; this changes FFCC advice only."
+    rationale:"Keep CIN +2.5. The market crossed through zero late Friday: the 6:03 PM ET eDraft median made Cincinnati -1 and a public pick sheet showed CIN -1.5, while another current listing still had BAL -1.5. Every reviewed live number is therefore better for Cincinnati than the frozen +2.5, but the disagreement and lack of an exact two-sided alternate pair keep the edge size uncalibrated. Lamar Jackson remains questionable and could be a game-time decision.",
+    watch:"Late movement materially strengthens but does not change the CIN +2.5 recommendation. Recheck Jackson's Sunday status and fresh exact-line prices before the 1:00 PM ET edit cutoff. Mike's submitted side remains BAL -2.5; this changes FFCC advice only."
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"NYG", home:"HOU", poolPick:"NYG", poolLine:10.5, mikeVibe:"NYG +10.5", poolFavorite:"HOU", poolSpread:10.5,
@@ -100,7 +100,7 @@ export const week7PoolGames: Week5PoolGame[] = [
     marketLabel:"LAR -3.5 Friday across the multi-book median, DraftKings and bet365", marketTotal:48.5, confidence:2,
     signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     rationale:"Flip to LV +4.5. Three independently reviewed Friday views all price the Rams at -3.5, giving Las Vegas a full extra point at the frozen pool line. No exact two-sided alternate pair at LV +4.5 was verified, so the size remains uncalibrated.",
-    watch:"Puka Nacua is questionable after a Friday DNP; the market may keep moving. Recheck his status and exact-line prices before Sunday's 1:00 PM ET edit cutoff. Mike's submitted side remains LAR -4.5; this changes FFCC advice only."
+    watch:"Puka Nacua is questionable and Sean McVay called him a game-time decision; the market may keep moving. Recheck his status and exact-line prices before Sunday's 1:00 PM ET edit cutoff. Mike's submitted side remains LAR -4.5; this changes FFCC advice only."
   },
   {
     day:"Sun", kickoff:"8:20 PM", away:"KC", home:"SEA", poolPick:"SEA", poolLine:-2.5, mikeVibe:"KC +2.5", poolFavorite:"SEA", poolSpread:2.5,
