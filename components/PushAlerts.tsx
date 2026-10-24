@@ -157,7 +157,8 @@ export default function PushAlerts() {
         return;
       }
 
-      setMessage("Sending a real FFCC server push…");
+      setMessage("Registering this device and sending a real FFCC server push…");
+      await registerSubscription(subscription);
       const response = await fetch("/api/push/test", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
