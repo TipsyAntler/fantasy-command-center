@@ -31,8 +31,6 @@ export default async function Home() {
 
   const bmFlag = leagueFlags.bm[0];
   const llFlag = leagueFlags.ll[0];
-  const survivorEntries = survivor.entries.length ? survivor.entries.slice(0, 4) : [];
-  const survivorAlive = survivorEntries.length ? survivorEntries.filter((entry) => entry.alive).length : 1;
   const survivorHealthy = survivor.connected && !survivor.error;
   const sleeperHealthy = !data.errors.players && !data.errors.trends;
   const strongestPoolEdges = week7PoolGames.filter((game) => game.signal.startsWith("FROZEN-NUMBER ADVANTAGE")).length;
@@ -101,13 +99,11 @@ export default async function Home() {
           <Link href="/survivor" className={styles.focusCard}>
             <div className={styles.cardTop}>
               <span className={styles.cardKicker}>SURVIVOR</span>
-              <span className={styles.cardState}>{survivorAlive} / 4 alive</span>
+              <span className={styles.cardState}>{survivorHealthy ? `${survivor.aliveEntries} alive` : "Check feed"}</span>
             </div>
             <h2>Survivor Lab</h2>
-            <p className={styles.actionHeadline}>Protect Entry 3, your surviving path.</p>
-            <p className={styles.actionNote}>
-              V1per41, live pool ownership, market safety and future value all feed the final entry-by-entry plan. {survivorHealthy ? "Commissioner-sheet data is live." : "Last verified entry history shown. Reconnect Google for live pool updates."}
-            </p>
+            <p className={styles.actionHeadline}>{survivorHealthy ? `${survivor.aliveEntries} entries remain · ${survivor.submitted} picks visible.` : "Pool data needs a refresh."}</p>
+            <p className={styles.actionNote}>{survivorHealthy ? `Most popular pick: ${survivor.ownership[0]?.team || "Not posted yet"}. Open the pool distribution chart for the full breakdown.` : "Reconnect Google for the latest pool standings and pick distribution."}</p>
             <div className={styles.cardFoot}><span>Open Survivor Lab</span><span>→</span></div>
           </Link>
 
