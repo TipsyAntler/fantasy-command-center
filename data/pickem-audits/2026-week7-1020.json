@@ -2,7 +2,7 @@
   "week": 7,
   "pool": "The SZN NFL Super Pick'em · NFL-575",
   "createdAt": "2026-10-20 22:35 ET",
-  "status": "Week 7 hybrid submission confirmed (14 of 14); Thursday final; four Friday FFCC recommendation flips; Friday tiebreaker target 44; remaining board provisional",
+  "status": "Week 7 hybrid submission confirmed (14 of 14); Thursday final; four Friday FFCC recommendation flips; late market strengthens CIN +2.5; tiebreaker target 44; remaining board provisional",
   "policy": "market-first season-total strategy; all required games ATS; equal credit; initial card publication is not a recommendation flip",
   "sources": [
     {
@@ -52,6 +52,16 @@
       "type": "independent sportsbook snapshot",
       "url": "https://www.foxsports.com/stories/nfl/2026-nfl-odds-week-7-lines-spreads-results-all-14-games",
       "detail": "bet365 lines updated Oct 23, 2026 11:13 AM ET."
+    },
+    {
+      "type": "late-Friday multi-book update",
+      "url": "https://edraft.com/nfl/odds/week-7",
+      "detail": "Updated Oct 23, 2026 6:03 PM ET; median moved through zero to CIN -1 while a separate Oct 23 public pick sheet showed CIN -1.5. A current independent listing still showed BAL -1.5, so the market is dispersed but every reviewed number favors CIN +2.5 versus the frozen pool line."
+    },
+    {
+      "type": "late injury update",
+      "url": "https://www.therams.com/news/rams-injury-report-week-7-2026-at-raiders-puka-nacua-trent-mcduffie-questionable-nate-landman-out",
+      "detail": "Friday final report lists Puka Nacua questionable; Sean McVay said his availability at Las Vegas will be a game-time decision."
     }
   ],
   "standing": {
@@ -186,7 +196,7 @@
       "mikeCurrentSide": "BAL -2.5",
       "ffccProvisionalSide": "CIN +2.5",
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
-      "marketSnapshot": "BAL -1.5 Friday consensus; Lamar Jackson officially questionable after three limited practices",
+      "marketSnapshot": "Late Friday: CIN -1 eDraft median; CIN -1.5 public pick sheet; another current listing BAL -1.5",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": true,
       "result": null,
@@ -196,7 +206,9 @@
       "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET",
       "previousFfccSide": "BAL -2.5",
       "changedAt": "2026-10-23 02:18 ET",
-      "changeReason": "The frozen CIN +2.5 is one point better than the BAL -1.5 consensus. Lamar Jackson is officially questionable and may be a game-time decision. No exact frozen-line two-sided pair was verified, so the size is uncalibrated."
+      "changeReason": "The frozen CIN +2.5 is one point better than the BAL -1.5 consensus. Lamar Jackson is officially questionable and may be a game-time decision. No exact frozen-line two-sided pair was verified, so the size is uncalibrated.",
+      "followUpAt": "2026-10-23 23:21 ET",
+      "followUpReason": "Market crossed through zero on two reviewed late-Friday sources, materially strengthening CIN +2.5 without changing the recommended side. Exact two-sided pricing at the frozen line remains unverified."
     },
     {
       "matchup": "NYG @ HOU",
@@ -259,7 +271,9 @@
       "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET",
       "previousFfccSide": "LAR -4.5",
       "changedAt": "2026-10-23 17:17 ET",
-      "changeReason": "Three independently reviewed Friday views price LAR -3.5, giving LV +4.5 a full extra point at the frozen pool line; exact frozen-line two-sided prices remain unverified."
+      "changeReason": "Three independently reviewed Friday views price LAR -3.5, giving LV +4.5 a full extra point at the frozen pool line; exact frozen-line two-sided prices remain unverified.",
+      "followUpAt": "2026-10-23 23:21 ET",
+      "followUpReason": "Puka Nacua remained questionable and was described as a game-time decision, reinforcing but not changing LV +4.5."
     },
     {
       "matchup": "KC @ SEA",
