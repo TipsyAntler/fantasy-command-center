@@ -3,7 +3,8 @@ import { LocalGreeting, LocalRefreshTime } from "@/components/LocalDashboardTime
 import { getDashboardData, getRosterWatch, getPlanningWeek } from "@/lib/sleeper";
 import { getSurvivorSnapshot } from "@/lib/google-survivor";
 import { manualLeagues, rosterPlayerNames } from "@/data/manual-leagues";
-import { week4Number, week4PoolGames, week4Tiebreaker, week4Standing } from "@/data/pickem-week4";
+import { week7Number, week7PoolGames, week7Tiebreaker, week7Standing } from "@/data/pickem-week7";
+import { actionableAlerts, isActionableBreakingAlert } from "@/data/actionable-alerts";
 import styles from "./home.module.css";
 
 export const revalidate = 300;
@@ -14,7 +15,7 @@ function rosterStatus(row: Awaited<ReturnType<typeof getRosterWatch>>[number]) {
 
 export default async function Home() {
   const data = await getDashboardData();
-  const week = getPlanningWeek(data.state, week4Number, "2026-10-06T04:00:00-04:00");
+  const week = getPlanningWeek(data.state, week7Number, "2026-10-20T04:00:00-04:00");
   const [rosterWatch, survivor] = await Promise.all([
     getRosterWatch(rosterPlayerNames),
     getSurvivorSnapshot(week),
@@ -33,7 +34,16 @@ export default async function Home() {
   const survivorAlive = survivorEntries.length ? survivorEntries.filter((entry) => entry.alive).length : 1;
   const survivorHealthy = survivor.connected && !survivor.error;
   const sleeperHealthy = !data.errors.players && !data.errors.trends;
-  const strongestPoolEdges = week4PoolGames.filter((game) => game.confidence >= 3).length;
+  const strongestPoolEdges = week7PoolGames.filter((game) => game.signal.startsWith("FROZEN-NUMBER ADVANTAGE")).length;
+  const pickemFlipAlerts = actionableAlerts.filter(
+    (alert) => isActionableBreakingAlert(alert) && alert.category === "Pick'em" && alert.headline.includes("FLIP") && alert.id.startsWith(`2026-w${week7Number}-`),
+  );
+  const pickemFlipGames = week7PoolGames.filter((game) =>
+    pickemFlipAlerts.some((alert) => alert.href === `/pickem#${`${game.away}-${game.home}`.toLowerCase()}`),
+  );
+  const pickemFlipSummary = pickemFlipGames
+    .map((game) => `${game.poolPick} ${game.poolLine > 0 ? "+" : ""}${game.poolLine}`)
+    .join(" · ");
 
   return (
     <main>
@@ -50,6 +60,17 @@ export default async function Home() {
             <Link href="/settings" className="settings-button" aria-label="Open settings" title="Settings"><span aria-hidden="true">⚙</span></Link>
           </div>
         </header>
+
+        {pickemFlipAlerts.length > 0 ? (
+          <Link href="/pickem" className={styles.flipBanner} aria-label="Review current Pick'em recommendation flips">
+            <div>
+              <span className={styles.flipEyebrow}>ACTION REQUIRED · PICK&apos;EM FLIPS</span>
+              <strong>{pickemFlipAlerts.length} FFCC recommendations changed</strong>
+              <p>{pickemFlipSummary}</p>
+            </div>
+            <span className={styles.flipCta}>Review changes →</span>
+          </Link>
+        ) : null}
 
         <div className={styles.focusLabel}>Your command board</div>
         <section className={styles.focusGrid} aria-label="Top actionable takeaways">
@@ -99,12 +120,12 @@ export default async function Home() {
           <Link href="/pickem" className={styles.focusCard}>
             <div className={styles.cardTop}>
               <span className={styles.cardKicker}>THE SZN · ATS PICK&apos;EM</span>
-              <span className={styles.cardState}>{week4PoolGames.length} picks loaded</span>
+              <span className={`${styles.cardState} ${pickemFlipAlerts.length ? styles.cardStateWarn : ""}`}>{pickemFlipAlerts.length ? `${pickemFlipAlerts.length} flips` : `${week7PoolGames.length} picks loaded`}</span>
             </div>
             <h2>Pick&apos;em Room</h2>
-            <p className={styles.actionHeadline}>Get the card in early, then only revisit meaningful movers.</p>
+            <p className={styles.actionHeadline}>{pickemFlipAlerts.length ? `FFCC changed ${pickemFlipSummary}.` : "Get the card in early, then only revisit meaningful movers."}</p>
             <p className={styles.actionNote}>
-              Week 4 lines are loaded. You are #{week4Standing.rank} with {week4Standing.correct} correct; {strongestPoolEdges} picks have a frozen-number advantage, with modest confidence. Early Monday-night tiebreaker target: {week4Tiebreaker.earlyFfccTarget}.
+              Week {week7Number} lines are loaded. You are #{week7Standing.rank} with {week7Standing.correct} correct; {strongestPoolEdges} picks have a frozen-number advantage. Mike&apos;s SZN card is not automatically updated. Monday-night tiebreaker target: {week7Tiebreaker.earlyFfccTarget}.
             </p>
             <div className={styles.cardFoot}><span>Review ATS card</span><span>→</span></div>
           </Link>
