@@ -88,3 +88,26 @@
   .breaking-ticker__item strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; }
   .breaking-ticker__dismiss { width: 38px; }
 }
+
+/* Keep the dismiss control visible above global button styles on iOS PWAs. */
+.breaking-ticker > .breaking-ticker__dismiss {
+  position: relative;
+  z-index: 2;
+  display: grid !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  flex: 0 0 44px;
+  width: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  background: rgba(0, 0, 0, .24);
+  color: #fff !important;
+  font-size: 26px;
+  font-weight: 700;
+  -webkit-appearance: none;
+  appearance: none;
+}
+@media (max-width: 720px) {
+  .breaking-ticker { grid-template-columns: 76px minmax(0, 1fr) 44px; }
+}
