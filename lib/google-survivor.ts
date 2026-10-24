@@ -93,14 +93,6 @@ export type SurvivorEntry = {
 };
 
 
-// Last verified entry history, used only when live sheet access is unavailable.
-const verifiedEntries: SurvivorEntry[] = [
-  { name: "Mike Tridente 1", alive: false, usedTeams: [{ team: "LAC", week: 1 }] },
-  { name: "Mike Tridente 2", alive: false, usedTeams: [{ team: "LAC", week: 1 }] },
-  { name: "Mike Tridente 3", alive: true, usedTeams: [{ team: "JAX", week: 1 }, { team: "SF", week: 2 }, { team: "KC", week: 3 }, { team: "MIN", week: 4 }, { team: "DAL", week: 5 }] },
-  { name: "Mike Tridente 4", alive: false, usedTeams: [{ team: "DET", week: 1 }, { team: "TB", week: 2 }] },
-];
-
 export type SurvivorOwnership = {
   team: string;
   count: number;
@@ -114,6 +106,7 @@ export type SurvivorSnapshot = {
   submitted: number;
   aliveEntries: number;
   currentWeek: number;
+  ownershipWeek: number;
   error?: string;
 };
 
@@ -159,17 +152,18 @@ export async function getSurvivorSnapshot(currentWeek: number): Promise<Survivor
   } catch (error) {
     return {
       connected: true,
-      entries: verifiedEntries,
+      entries: [],
       ownership: [],
       submitted: 0,
       aliveEntries: 0,
       currentWeek,
+      ownershipWeek: currentWeek,
       error: error instanceof Error ? error.message : "Unable to refresh Google connection",
     };
   }
 
   if (!accessToken) {
-    return { connected: false, entries: verifiedEntries, ownership: [], submitted: 0, aliveEntries: 0, currentWeek };
+    return { connected: false, entries: [], ownership: [], submitted: 0, aliveEntries: 0, currentWeek, ownershipWeek: currentWeek };
   }
 
   try {
@@ -189,47 +183,29 @@ export async function getSurvivorSnapshot(currentWeek: number): Promise<Survivor
 
     const poolRows = currentPoolRows(rows);
     const aliveRows = poolRows.filter((row) => String(row[3] ?? "").trim().toLowerCase() === "yes");
-    const ownershipCounts = new Map<string, number>();
-    let submitted = 0;
-
+    // Show the most recent populated pick week if the current week has no submissions yet.
+    const countsByWeek = new Map<number, Map<string, number>>();
     for (const row of aliveRows) {
-      let found = false;
       for (const { label, index } of teamColumns) {
-        if (numericWeek(row[index]) === currentWeek) {
-          ownershipCounts.set(label, (ownershipCounts.get(label) || 0) + 1);
-          found = true;
+        const pickedWeek = numericWeek(row[index]);
+        if (pickedWeek !== null && pickedWeek >= 1 && pickedWeek <= currentWeek) {
+          const counts = countsByWeek.get(pickedWeek) || new Map<string, number>();
+          counts.set(label, (counts.get(label) || 0) + 1);
+          countsByWeek.set(pickedWeek, counts);
         }
       }
-      if (found) submitted += 1;
     }
-
-    const entries: SurvivorEntry[] = poolRows
-      .filter((row) => /^Mike Tridente\s+\d+$/i.test(String(row[1] ?? "").trim()))
-      .map((row) => {
-        const usedTeams: Array<{ team: string; week: number }> = [];
-        let currentPick: string | undefined;
-        for (const { label, index } of teamColumns) {
-          const week = numericWeek(row[index]);
-          if (week !== null) {
-            usedTeams.push({ team: label, week });
-            if (week === currentWeek) currentPick = label;
-          }
-        }
-        usedTeams.sort((a, b) => a.week - b.week);
-        return {
-          name: String(row[1] ?? "").trim(),
-          alive: String(row[3] ?? "").trim().toLowerCase() === "yes",
-          usedTeams,
-          currentPick,
-        };
-      })
-      .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
+    const ownershipWeek = countsByWeek.has(currentWeek)
+      ? currentWeek
+      : Math.max(0, ...countsByWeek.keys());
+    const ownershipCounts = countsByWeek.get(ownershipWeek) || new Map<string, number>();
+    const submitted = [...ownershipCounts.values()].reduce((total, count) => total + count, 0);
+    const entries: SurvivorEntry[] = [];
 
     const ownership = [...ownershipCounts.entries()]
       .map(([team, count]) => ({ team, count, pct: submitted ? (count / submitted) * 100 : 0 }))
       .sort((a, b) => b.count - a.count);
 
-    if (entries.length !== 4) throw new Error(`Expected 4 Mike entries, found ${entries.length}; verify 2026 sheet layout`);
     return {
       connected: true,
       entries,
@@ -237,15 +213,17 @@ export async function getSurvivorSnapshot(currentWeek: number): Promise<Survivor
       submitted,
       aliveEntries: aliveRows.length,
       currentWeek,
+      ownershipWeek,
     };
   } catch (error) {
     return {
       connected: true,
-      entries: verifiedEntries,
+      entries: [],
       ownership: [],
       submitted: 0,
       aliveEntries: 0,
       currentWeek,
+      ownershipWeek: currentWeek,
       error: error instanceof Error ? error.message : "Unable to read survivor sheet",
     };
   }
