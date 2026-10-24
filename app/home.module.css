@@ -354,3 +354,15 @@
     gap: 3px;
   }
 }
+
+.flipBanner { position: relative; padding-right: 54px; }
+.flipBannerLink { display: block; flex: 1; min-width: 0; color: inherit; text-decoration: none; }
+.flipBannerLink .flipCta { display: inline-block; margin-top: 13px; }
+.flipDismiss {
+  position: absolute; top: 8px; right: 8px; z-index: 2;
+  display: grid; place-items: center; width: 38px; height: 38px;
+  padding: 0; border: 1px solid rgba(255,255,255,.25); border-radius: 9px;
+  background: rgba(0,0,0,.25); color: #fff; font-size: 26px;
+  line-height: 1; cursor: pointer; -webkit-appearance: none;
+}
+.flipDismiss:hover, .flipDismiss:focus-visible { background: rgba(255,255,255,.15); }
