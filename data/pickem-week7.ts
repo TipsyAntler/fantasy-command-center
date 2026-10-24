@@ -30,7 +30,7 @@ export const week7PoolGames: Week5PoolGame[] = [
     marketLabel:"PIT -3 median Friday; DraftKings -3, bet365 -3.5", marketTotal:44.5, confidence:2,
     signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     rationale:"Flip to NO +3.5. Friday's multi-book median and DraftKings both moved Pittsburgh to -3, giving New Orleans the hook above the key 3 at the frozen pool line. Bet365 remained PIT -3.5, and no exact two-sided alternate pair at NO +3.5 was verified, so the edge size is uncalibrated.",
-    watch:"Recheck the Sunday-morning market and France-game inactives before the 1:00 PM ET pool edit cutoff. Mike's submitted side remains PIT -3.5; this changes FFCC advice only."
+    watch:"Recheck the Sunday-morning market and France-game inactives before the 1:00 PM ET pool edit cutoff. Mike's confirmed submitted side is now NO +3.5; no action is needed unless FFCC flips again before lock."
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"SF", home:"ATL", poolPick:"ATL", poolLine:3.5, mikeVibe:"SF -3.5", poolFavorite:"SF", poolSpread:3.5,
@@ -65,14 +65,14 @@ export const week7PoolGames: Week5PoolGame[] = [
     marketLabel:"CAR -2.8 median Friday; bet365 -2.5, DraftKings -3", marketTotal:44.5, confidence:2,
     signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     rationale:"Flip to TB +3.5. Friday's independent snapshots and multi-book median all price Carolina below -3.5, with the market clustered from -2.5 to -3. The frozen pool line gives Tampa Bay the hook above the key 3; no exact two-sided alternate pair at TB +3.5 was verified, so the edge size is uncalibrated.",
-    watch:"Recheck Baker Mayfield and both offensive lines plus fresh prices before Sunday's 1:00 PM ET edit cutoff. Mike's submitted side remains CAR -3.5; this changes FFCC advice only."
+    watch:"Baker Mayfield is confirmed to start after three full practices; recheck both offensive lines and fresh prices before Sunday's 1:00 PM ET edit cutoff. Mike's confirmed submitted side is now TB +3.5."
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"CIN", home:"BAL", poolPick:"CIN", poolLine:2.5, mikeVibe:"CIN +2.5", poolFavorite:"BAL", poolSpread:2.5,
     marketLabel:"Late Friday: CIN -1 eDraft median and CIN -1.5 public pick sheet; another current listing remained BAL -1.5", marketTotal:48.5, confidence:2,
     signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     rationale:"Keep CIN +2.5. The market crossed through zero late Friday: the 6:03 PM ET eDraft median made Cincinnati -1 and a public pick sheet showed CIN -1.5, while another current listing still had BAL -1.5. Every reviewed live number is therefore better for Cincinnati than the frozen +2.5, but the disagreement and lack of an exact two-sided alternate pair keep the edge size uncalibrated. Lamar Jackson remains questionable and could be a game-time decision.",
-    watch:"Late movement materially strengthens but does not change the CIN +2.5 recommendation. Recheck Jackson's Sunday status and fresh exact-line prices before the 1:00 PM ET edit cutoff. Mike's submitted side remains BAL -2.5; this changes FFCC advice only."
+    watch:"Late movement materially strengthens but does not change the CIN +2.5 recommendation. Recheck Jackson's Sunday status and fresh exact-line prices before the 1:00 PM ET edit cutoff. Mike's confirmed submitted side is now CIN +2.5; no action is needed unless FFCC flips again before lock."
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"NYG", home:"HOU", poolPick:"NYG", poolLine:10.5, mikeVibe:"NYG +10.5", poolFavorite:"HOU", poolSpread:10.5,
@@ -100,7 +100,7 @@ export const week7PoolGames: Week5PoolGame[] = [
     marketLabel:"LAR -3.5 Friday across the multi-book median, DraftKings and bet365", marketTotal:48.5, confidence:2,
     signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     rationale:"Flip to LV +4.5. Three independently reviewed Friday views all price the Rams at -3.5, giving Las Vegas a full extra point at the frozen pool line. No exact two-sided alternate pair at LV +4.5 was verified, so the size remains uncalibrated.",
-    watch:"Puka Nacua is questionable and Sean McVay called him a game-time decision; the market may keep moving. Recheck his status and exact-line prices before Sunday's 1:00 PM ET edit cutoff. Mike's submitted side remains LAR -4.5; this changes FFCC advice only."
+    watch:"Puka Nacua is questionable and Sean McVay called him a game-time decision; the market may keep moving. Recheck his status and exact-line prices before Sunday's 1:00 PM ET edit cutoff. Mike's confirmed submitted side is now LV +4.5; no action is needed unless FFCC flips again before lock."
   },
   {
     day:"Sun", kickoff:"8:20 PM", away:"KC", home:"SEA", poolPick:"SEA", poolLine:-2.5, mikeVibe:"KC +2.5", poolFavorite:"SEA", poolSpread:2.5,
@@ -117,4 +117,4 @@ export const week7PoolGames: Week5PoolGame[] = [
     watch:"Jalen Hurts is expected out long term; the market already reflects that news. Recheck final reports, weather, exact-line prices and the Sunday editing cutoff."
   }
 ];
-export const week7Tiebreaker = {matchup:"DAL @ PHI",label:"Total points scored in final game of the week (Monday)",currentMarketTotal:44,earlyFfccTarget:44,mikeSubmittedTotal:null,note:"FRIDAY FFCC TARGET: the 3:48 PM ET multi-book median is 44, while DraftKings and bet365 remain 44.5. Use 44 provisionally. Mike does not make a separate vibes tiebreaker, so none is logged. Recheck weather, final reports, fresh totals and the pool control before finalizing."};
+export const week7Tiebreaker = {matchup:"DAL @ PHI",label:"Total points scored in final game of the week (Monday)",currentMarketTotal:44,earlyFfccTarget:44,mikeSubmittedTotal:44,note:"FRIDAY FFCC TARGET: the 3:48 PM ET multi-book median is 44, while DraftKings and bet365 remain 44.5. Use 44 provisionally. Mike's submitted tiebreaker is confirmed at 44. Recheck weather, final reports, fresh totals and the pool control before finalizing."};
