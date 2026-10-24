@@ -12,6 +12,7 @@ export default async function SurvivorPage({ searchParams }: { searchParams?: Pr
   const googleHealthy = snapshot.connected && !snapshot.error;
   const submittedPct = snapshot.aliveEntries ? Math.round(snapshot.submitted / snapshot.aliveEntries * 100) : 0;
   const leaders = snapshot.ownership.slice(0, 5);
+  const pickWeek = snapshot.ownershipWeek;
   const maxCount = Math.max(1, ...leaders.map(item => item.count));
   const otherCount = Math.max(0, snapshot.submitted - leaders.reduce((sum, item) => sum + item.count, 0));
 
@@ -24,17 +25,18 @@ export default async function SurvivorPage({ searchParams }: { searchParams?: Pr
 
     <section className={styles.ownershipPanel} aria-label="Pool pick ownership">
       <div className={styles.panelHeader}>
-        <div><span className="panel-kicker">LIVE COMMISSIONER SHEET · WEEK {week}</span><h2>What the pool is picking</h2></div>
+        <div><span className="panel-kicker">LIVE COMMISSIONER SHEET · {pickWeek === week ? `WEEK ${week}` : `LATEST PICKS · WEEK ${pickWeek || "—"}`}</span><h2>What the pool is picking</h2></div>
         <span className={googleHealthy ? styles.liveChip : styles.offlineChip}>{googleHealthy ? "● LIVE" : "OFFLINE"}</span>
       </div>
       <div className={styles.poolMetrics}>
         <div><strong>{snapshot.aliveEntries || "—"}</strong><span>Pool entries alive</span></div>
-        <div><strong>{snapshot.submitted}</strong><span>Picks visible</span></div>
-        <div><strong>{googleHealthy ? submittedPct + "%" : "—"}</strong><span>Of live entries submitted</span></div>
+        <div><strong>{snapshot.submitted}</strong><span>Week {pickWeek || week} picks visible</span></div>
+        <div><strong>{googleHealthy ? submittedPct + "%" : "—"}</strong><span>Of surviving entries · Week {pickWeek || week}</span></div>
       </div>
       <div className={styles.submissionTrack} role="progressbar" aria-label="Pool picks submitted" aria-valuemin={0} aria-valuemax={100} aria-valuenow={submittedPct}>
         <div style={{ width: submittedPct + "%" }} />
       </div>
+      {googleHealthy && pickWeek !== week ? <p className={styles.dataNote}>Week {week} picks are not visible yet. Showing the latest available distribution from Week {pickWeek} instead.</p> : null}
       {googleHealthy && leaders.length ? <>
         <div className={styles.chartHeading}><strong>Top 5 teams</strong><span>Share of submitted picks</span></div>
         <div className={styles.ownershipBars}>
