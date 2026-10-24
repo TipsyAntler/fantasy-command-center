@@ -76,11 +76,6 @@ export default async function PickemPage() {
 
             <div className={styles.topNote}><strong>{week5PoolStatus}.</strong> These are the exact Week {currentWeek} spreads from your {week5PoolName} screenshots. Later market movement is stale-line information; it never replaces the frozen pool number.</div>
 
-            {flipAlerts.length > 0 && <section className="panel survivor-template second-heading" aria-label="Pick'em recommendation flips">
-              <div className="panel-head"><div><span className="panel-kicker">ACTION REQUIRED · FFCC CHANGED ITS PICK</span><h3>{flipAlerts.length} Pick'em flips to review</h3></div><span className="saved-pill">MIKE'S SZN ENTRIES ARE NOT AUTOMATICALLY UPDATED</span></div>
-              <p>These are FFCC recommendation changes, not confirmed changes to your submitted pool card.</p>
-              <div className="decision-grid">{flipAlerts.map(alert => <div key={alert.id}><strong>{alert.headline}</strong><p>{alert.detail}</p><a href={alert.href}>Review matchup →</a></div>)}</div>
-            </section>}
             <section className="panel survivor-template second-heading"><h3>Season-total strategy</h3><p>Maximize expected correct picks at the exact frozen spread. Start with two-sided market prices, remove the margin, and use verified models and news as checks. Current evidence is modest: no pick has a calibrated high-confidence rating.</p><p><a href="/pickem/strategy">Read the research, expert review policy and weekly process →</a></p><p>Week 7 comparison uses dated bet365 snapshots from FOX Sports and Sportsbook Review plus an NFLLines movement cross-check, not independent two-sided prices at every exact pool line. This board is provisional.</p></section>
 
             <section className="section-heading">
