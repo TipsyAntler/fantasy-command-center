@@ -1,7 +1,5 @@
 import styles from "./survivor.module.css";
-import planStyles from "./survivor-plan.module.css";
 import { getSurvivorSnapshot } from "@/lib/google-survivor";
-import { survivorWeekPlan } from "@/data/survivor-plan";
 
 export const dynamic = "force-dynamic";
 
@@ -9,53 +7,20 @@ export default async function SurvivorPage({ searchParams }: { searchParams?: Pr
   const params = searchParams ? await searchParams : {};
   const googleStatus = typeof params.google === "string" ? params.google : undefined;
   const googleMessage = typeof params.message === "string" ? params.message : undefined;
-  // Only advance this board when a fresh, audited plan is published.
-  const week = survivorWeekPlan.week;
+  const week = 8;
   const snapshot = await getSurvivorSnapshot(week);
   const googleHealthy = snapshot.connected && !snapshot.error;
-  const alive = snapshot.entries.filter(entry => entry.alive);
-  const active = alive.find(entry => /Mike Tridente 3$/i.test(entry.name)) || alive[0];
-  const activeNumber = active?.name.match(/(\d+)$/)?.[1];
-  const recommendation = survivorWeekPlan.entries.find(entry => String(entry.entryNumber) === activeNumber && entry.team !== "ELIMINATED");
-  const officialPick = active?.currentPick;
-  const alreadyUsed = Boolean(recommendation && active?.usedTeams.some(pick => pick.team === recommendation.team && pick.week < week));
   const submittedPct = snapshot.aliveEntries ? Math.round(snapshot.submitted / snapshot.aliveEntries * 100) : 0;
   const leaders = snapshot.ownership.slice(0, 5);
   const maxCount = Math.max(1, ...leaders.map(item => item.count));
   const otherCount = Math.max(0, snapshot.submitted - leaders.reduce((sum, item) => sum + item.count, 0));
-  const currentWeekPicks = active?.usedTeams.filter(pick => pick.week < week) || [];
 
   return <main><div className="shell page-shell">
     <header className="page-hero">
       <div className="eyebrow">SURVIVOR · WEEK {week}</div>
       <h1>Survivor Lab</h1>
-      <p className="hero-copy">Your pick and the pool, without the noise.</p>
+      <p className="hero-copy">Live pool standings and pick distribution from the commissioner sheet.</p>
     </header>
-
-    <section className={styles.survivorSummary} aria-label="Your survivor recommendation">
-      <div className={styles.summaryTop}>
-        <span className="panel-kicker">YOUR SURVIVING ENTRY {activeNumber ? "· #" + activeNumber : ""}</span>
-        <span className={survivorWeekPlan.status === "final" ? styles.finalTag : styles.directionalTag}>
-          {survivorWeekPlan.status === "final" ? "FINAL" : "DIRECTIONAL"}
-        </span>
-      </div>
-      {active && recommendation ? <>
-        <div className={styles.pickHero}>
-          <div>
-            <div className={styles.pickLabel}>FFCC recommended pick</div>
-            <div className={styles.pickTeam}>{recommendation.team}</div>
-          </div>
-          <div className={styles.pickMeta}>
-            <span>Official Week {week} pick</span>
-            <strong>{officialPick || "Not visible yet"}</strong>
-            <small>{officialPick === recommendation.team ? "✓ Matches recommendation" : officialPick ? "Different from FFCC pick" : "Awaiting commissioner sheet"}</small>
-          </div>
-        </div>
-        {alreadyUsed ? <p className={styles.warningText}>This team was used earlier in this entry. Do not submit a duplicate.</p> : null}
-        {recommendation.alternate && !officialPick ? <p className={styles.pickNote}>Alternative: {recommendation.alternate}</p> : null}
-        <p className={styles.historyLine}>Previously used: {currentWeekPicks.length ? currentWeekPicks.map(pick => pick.team + " W" + pick.week).join(" · ") : "None"}</p>
-      </> : <p className={styles.emptyState}>{alive.length ? "A current recommendation is being audited." : "No surviving entry is visible in the commissioner sheet."}</p>}
-    </section>
 
     <section className={styles.ownershipPanel} aria-label="Pool pick ownership">
       <div className={styles.panelHeader}>
@@ -91,13 +56,5 @@ export default async function SurvivorPage({ searchParams }: { searchParams?: Pr
       <a className={styles.connectButton} href="/api/google/connect">{snapshot.connected ? "Reconnect Google" : "Connect Google"}</a>
     </section> : <div className={styles.connectionFooter}><span>Google Sheet connected · read-only</span><a href="/api/google/disconnect">Disconnect</a></div>}
 
-    <details className={styles.auditDetails}>
-      <summary>Strategy notes &amp; audit details</summary>
-      <div className={styles.auditBody}>
-        <p>{survivorWeekPlan.summary}</p>
-        <p className={styles.auditDate}>Updated {survivorWeekPlan.asOf}</p>
-        {survivorWeekPlan.inputs.map(input => <p key={input.label}><strong>{input.label}:</strong> {input.detail}</p>)}
-      </div>
-    </details>
   </div></main>;
 }
