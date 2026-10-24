@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DismissibleFlipBanner from "@/components/DismissibleFlipBanner";
 import { LocalGreeting, LocalRefreshTime } from "@/components/LocalDashboardTime";
 import { getDashboardData, getRosterWatch, getPlanningWeek } from "@/lib/sleeper";
 import { getSurvivorSnapshot } from "@/lib/google-survivor";
@@ -62,14 +63,7 @@ export default async function Home() {
         </header>
 
         {pickemFlipAlerts.length > 0 ? (
-          <Link href="/pickem" className={styles.flipBanner} aria-label="Review current Pick'em recommendation flips">
-            <div>
-              <span className={styles.flipEyebrow}>ACTION REQUIRED · PICK&apos;EM FLIPS</span>
-              <strong>{pickemFlipAlerts.length} FFCC recommendations changed</strong>
-              <p>{pickemFlipSummary}</p>
-            </div>
-            <span className={styles.flipCta}>Review changes →</span>
-          </Link>
+          <DismissibleFlipBanner ids={pickemFlipAlerts.map((alert) => alert.id + ":" + (alert.pushRevision || ""))} summary={pickemFlipSummary} />
         ) : null}
 
         <div className={styles.focusLabel}>Your command board</div>
