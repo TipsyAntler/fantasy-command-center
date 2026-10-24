@@ -13,6 +13,7 @@ type StoredSubscription = webpush.PushSubscription;
 type StoredVapidKeys = { publicKey: string; privateKey: string };
 
 const STORE_KEY = "ffcc:push:primary";
+const FFCC_SUBSCRIPTIONS_KEY = "ffcc:push:subscriptions";
 const TRIQ_STORE_KEY = "triq:push:primary";
 const TRIQ_SUBSCRIPTIONS_KEY = "triq:push:subscriptions";
 // TrIQ supports multiple registered devices.
@@ -76,14 +77,9 @@ function uniqueSubscriptions(subscriptions: StoredSubscription[]) {
 }
 
 export async function getPushSubscriptionsFor(channel: "ffcc" | "triq"): Promise<StoredSubscription[]> {
-  if (channel === "ffcc") {
-    const value = await redis(["GET", STORE_KEY]);
-    return value ? [JSON.parse(value) as StoredSubscription] : [];
-  }
-
   const [manyRaw, legacyRaw] = await Promise.all([
-    redis(["GET", TRIQ_SUBSCRIPTIONS_KEY]),
-    redis(["GET", TRIQ_STORE_KEY]),
+    redis(["GET", channel === "ffcc" ? FFCC_SUBSCRIPTIONS_KEY : TRIQ_SUBSCRIPTIONS_KEY]),
+    redis(["GET", channel === "ffcc" ? STORE_KEY : TRIQ_STORE_KEY]),
   ]);
   const many = manyRaw ? (JSON.parse(manyRaw) as StoredSubscription[]) : [];
   const legacy = legacyRaw ? [JSON.parse(legacyRaw) as StoredSubscription] : [];
@@ -91,13 +87,14 @@ export async function getPushSubscriptionsFor(channel: "ffcc" | "triq"): Promise
 }
 
 export async function savePushSubscriptionFor(channel: "ffcc" | "triq", subscription: StoredSubscription) {
-  if (channel === "ffcc") {
-    await redis(["SET", STORE_KEY, JSON.stringify(subscription)]);
-    return;
-  }
-  const existing = await getPushSubscriptionsFor("triq");
+  const existing = await getPushSubscriptionsFor(channel);
   const merged = uniqueSubscriptions([...existing, subscription]);
-  await redis(["SET", TRIQ_SUBSCRIPTIONS_KEY, JSON.stringify(merged)]);
+  const subscriptionsKey = channel === "ffcc" ? FFCC_SUBSCRIPTIONS_KEY : TRIQ_SUBSCRIPTIONS_KEY;
+  await redis(["SET", subscriptionsKey, JSON.stringify(merged)]);
+  if (channel === "ffcc") {
+    // Keep the legacy primary key current while all FFCC devices receive alerts.
+    await redis(["SET", STORE_KEY, JSON.stringify(subscription)]);
+  }
 }
 
 export async function getPushSubscriptionFor(channel: "ffcc" | "triq"): Promise<StoredSubscription | null> {
@@ -152,11 +149,6 @@ export async function sendPushTo(
   const subscriptions = await getPushSubscriptionsFor(channel);
   if (!subscriptions.length) throw new Error(`No ${channel === "triq" ? "TrIQ" : "FFCC"} push subscription is registered.`);
 
-  if (channel === "ffcc") {
-    await sendToSubscription(subscriptions[0], alert);
-    return;
-  }
-
   const valid: StoredSubscription[] = [];
   let delivered = 0;
   for (const subscription of subscriptions) {
@@ -168,12 +160,13 @@ export async function sendPushTo(
       const code = error?.statusCode;
       if (code !== 404 && code !== 410) {
         valid.push(subscription);
-        console.error("TrIQ push delivery failed", error);
+        console.error(`${channel === "triq" ? "TrIQ" : "FFCC"} push delivery failed`, error);
       }
     }
   }
-  await redis(["SET", TRIQ_SUBSCRIPTIONS_KEY, JSON.stringify(uniqueSubscriptions(valid))]);
-  if (!delivered) throw new Error("TrIQ push could not be delivered to any registered device.");
+  const subscriptionsKey = channel === "ffcc" ? FFCC_SUBSCRIPTIONS_KEY : TRIQ_SUBSCRIPTIONS_KEY;
+  await redis(["SET", subscriptionsKey, JSON.stringify(uniqueSubscriptions(valid))]);
+  if (!delivered) throw new Error(`${channel === "triq" ? "TrIQ" : "FFCC"} push could not be delivered to any registered device.`);
 }
 
 export async function sendPushToOnce(
