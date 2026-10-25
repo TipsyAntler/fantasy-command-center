@@ -2,7 +2,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 
 export const week7Number = 7;
 export const week7PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week7PoolStatus = "EXACT WEEK 7 FROZEN LINES CAPTURED · MIKE'S 14 UPDATED PICKS CONFIRMED OCT 23 · THURSDAY FINAL · 4 FRIDAY FFCC FLIPS · LATE MARKET STRENGTHENS CIN +2.5 · TIEBREAKER 44 · REMAINING CARD PROVISIONAL";
+export const week7PoolStatus = "EXACT WEEK 7 FROZEN LINES CAPTURED · MIKE'S 14 UPDATED PICKS CONFIRMED OCT 23 · THURSDAY FINAL · 4 FRIDAY FFCC FLIPS · LAMAR JACKSON OUT CONFIRMS CIN +2.5 · TIEBREAKER 44 · REMAINING CARD PROVISIONAL";
 export const week7MarketAsOf = "Oct 23, 2026 · 6:03 PM ET · eDraft multi-book median cross-checked against a late-Friday public pick sheet plus Friday DraftKings and bet365 snapshots; exact two-sided ATS prices at frozen lines remain unverified unless stated";
 export const week7Standing = {correct:40,rank:78,leaderCorrect:57,note:"Oct 20 user screenshot. Rank ties by total correct. This is Mike's actual SZN standing, not FFCC model performance."};
 export const week7MikeSubmittedCard = {
@@ -69,10 +69,10 @@ export const week7PoolGames: Week5PoolGame[] = [
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"CIN", home:"BAL", poolPick:"CIN", poolLine:2.5, mikeVibe:"CIN +2.5", poolFavorite:"BAL", poolSpread:2.5,
-    marketLabel:"Late Friday: CIN -1 eDraft median and CIN -1.5 public pick sheet; another current listing remained BAL -1.5", marketTotal:48.5, confidence:2,
+    marketLabel:"Sunday: CIN +1.5 in a current public listing after a volatile late-week range; Lamar Jackson OUT", marketTotal:48.5, confidence:2,
     signal:"FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    rationale:"Keep CIN +2.5. The market crossed through zero late Friday: the 6:03 PM ET eDraft median made Cincinnati -1 and a public pick sheet showed CIN -1.5, while another current listing still had BAL -1.5. Every reviewed live number is therefore better for Cincinnati than the frozen +2.5, but the disagreement and lack of an exact two-sided alternate pair keep the edge size uncalibrated. Lamar Jackson remains questionable and could be a game-time decision.",
-    watch:"Late movement materially strengthens but does not change the CIN +2.5 recommendation. Recheck Jackson's Sunday status and fresh exact-line prices before the 1:00 PM ET edit cutoff. Mike's confirmed submitted side is now CIN +2.5; no action is needed unless FFCC flips again before lock."
+    rationale:"Keep CIN +2.5. Lamar Jackson is officially OUT and Tyler Huntley will start. A current Sunday listing prices Cincinnati +1.5, so the frozen pool number is one point better for the Bengals. The late-week market has been volatile and no exact two-sided alternate pair at CIN +2.5 was verified, so the edge size remains uncalibrated.",
+    watch:"Jackson's OUT designation confirms but does not change CIN +2.5. Recheck only for a material pre-lock market reversal. Mike's confirmed submitted side is CIN +2.5; no action is needed."
   },
   {
     day:"Sun", kickoff:"1:00 PM", away:"NYG", home:"HOU", poolPick:"NYG", poolLine:10.5, mikeVibe:"NYG +10.5", poolFavorite:"HOU", poolSpread:10.5,
