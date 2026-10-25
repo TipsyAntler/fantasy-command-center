@@ -2,7 +2,7 @@
   "week": 7,
   "pool": "The SZN NFL Super Pick'em · NFL-575",
   "createdAt": "2026-10-20 22:35 ET",
-  "status": "Week 7 hybrid submission confirmed (14 of 14); Thursday final; four Friday FFCC recommendation flips; late market strengthens CIN +2.5; tiebreaker target 44; remaining board provisional",
+  "status": "Week 7 hybrid submission confirmed (14 of 14); Thursday final; four Friday FFCC recommendation flips handled; Lamar Jackson OUT confirms CIN +2.5; tiebreaker target 44; remaining board provisional",
   "policy": "market-first season-total strategy; all required games ATS; equal credit; initial card publication is not a recommendation flip",
   "sources": [
     {
@@ -62,6 +62,16 @@
       "type": "late injury update",
       "url": "https://www.therams.com/news/rams-injury-report-week-7-2026-at-raiders-puka-nacua-trent-mcduffie-questionable-nate-landman-out",
       "detail": "Friday final report lists Puka Nacua questionable; Sean McVay said his availability at Las Vegas will be a game-time decision."
+    },
+    {
+      "type": "official Sunday injury update",
+      "url": "https://www.sbnation.com/nfl/1133541/lamar-jackson-injury-ravens-bengals",
+      "detail": "Published Oct 25, 2026: Lamar Jackson ruled OUT for Week 7; Tyler Huntley will start."
+    },
+    {
+      "type": "Sunday market cross-check",
+      "url": "https://nypost.com/2026/10/25/betting/nfl-week-7-predictions-best-bets-picks-against-the-spread-for-every-game-2/",
+      "detail": "Published Oct 25, 2026: Cincinnati listed +1.5, making the frozen CIN +2.5 one point better; article selection is not treated as independent predictive evidence."
     }
   ],
   "standing": {
@@ -97,7 +107,7 @@
     {
       "matchup": "PIT @ NO",
       "frozenLine": "PIT -3.5",
-      "mikeCurrentSide": "PIT -3.5",
+      "mikeCurrentSide": "NO +3.5",
       "ffccProvisionalSide": "NO +3.5",
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
       "marketSnapshot": "PIT -3 median; DraftKings -3, bet365 -3.5",
@@ -105,9 +115,9 @@
       "changeFlag": true,
       "result": null,
       "mikeOriginalVibeSide": "NO +3.5",
-      "mikeConfirmedSubmittedSide": "PIT -3.5",
-      "mikeSideChangedFromOriginal": true,
-      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET",
+      "mikeConfirmedSubmittedSide": "NO +3.5",
+      "mikeSideChangedFromOriginal": false,
+      "mikeSubmissionConfirmedAt": "2026-10-23 23:35 ET",
       "previousFfccSide": "PIT -3.5",
       "changedAt": "2026-10-23 17:17 ET",
       "changeReason": "The multi-book median and DraftKings moved to PIT -3, giving NO +3.5 the hook above the key 3; bet365 remains -3.5, so exact frozen-line edge size is uncalibrated."
@@ -175,7 +185,7 @@
     {
       "matchup": "TB @ CAR",
       "frozenLine": "CAR -3.5",
-      "mikeCurrentSide": "CAR -3.5",
+      "mikeCurrentSide": "TB +3.5",
       "ffccProvisionalSide": "TB +3.5",
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
       "marketSnapshot": "CAR -2.8 median; bet365 -2.5, DraftKings -3",
@@ -183,9 +193,9 @@
       "changeFlag": true,
       "result": null,
       "mikeOriginalVibeSide": "CAR -3.5",
-      "mikeConfirmedSubmittedSide": "CAR -3.5",
-      "mikeSideChangedFromOriginal": false,
-      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET",
+      "mikeConfirmedSubmittedSide": "TB +3.5",
+      "mikeSideChangedFromOriginal": true,
+      "mikeSubmissionConfirmedAt": "2026-10-23 23:35 ET",
       "previousFfccSide": "CAR -3.5",
       "changedAt": "2026-10-23 17:17 ET",
       "changeReason": "All reviewed Friday views price Carolina below -3.5, giving TB +3.5 the hook above the key 3; exact frozen-line two-sided prices remain unverified."
@@ -193,22 +203,22 @@
     {
       "matchup": "CIN @ BAL",
       "frozenLine": "BAL -2.5",
-      "mikeCurrentSide": "BAL -2.5",
+      "mikeCurrentSide": "CIN +2.5",
       "ffccProvisionalSide": "CIN +2.5",
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
-      "marketSnapshot": "Late Friday: CIN -1 eDraft median; CIN -1.5 public pick sheet; another current listing BAL -1.5",
+      "marketSnapshot": "Sunday current listing CIN +1.5 after a volatile late-week range; Lamar Jackson OUT",
       "exactLineTwoSidedPrices": "not publicly verified",
       "changeFlag": true,
       "result": null,
       "mikeOriginalVibeSide": "BAL -2.5",
-      "mikeConfirmedSubmittedSide": "BAL -2.5",
-      "mikeSideChangedFromOriginal": false,
-      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET",
+      "mikeConfirmedSubmittedSide": "CIN +2.5",
+      "mikeSideChangedFromOriginal": true,
+      "mikeSubmissionConfirmedAt": "2026-10-23 23:35 ET",
       "previousFfccSide": "BAL -2.5",
       "changedAt": "2026-10-23 02:18 ET",
-      "changeReason": "The frozen CIN +2.5 is one point better than the BAL -1.5 consensus. Lamar Jackson is officially questionable and may be a game-time decision. No exact frozen-line two-sided pair was verified, so the size is uncalibrated.",
-      "followUpAt": "2026-10-23 23:21 ET",
-      "followUpReason": "Market crossed through zero on two reviewed late-Friday sources, materially strengthening CIN +2.5 without changing the recommended side. Exact two-sided pricing at the frozen line remains unverified."
+      "changeReason": "The frozen CIN +2.5 is one point better than Sunday's CIN +1.5 listing. Lamar Jackson is officially OUT and Tyler Huntley will start. No exact frozen-line two-sided pair was verified, so the size remains uncalibrated.",
+      "followUpAt": "2026-10-25 10:32 ET",
+      "followUpReason": "Lamar Jackson ruled OUT, confirming but not changing CIN +2.5; current Sunday listing remained better for Cincinnati than the frozen pool line."
     },
     {
       "matchup": "NYG @ HOU",
@@ -258,7 +268,7 @@
     {
       "matchup": "LAR @ LV",
       "frozenLine": "LAR -4.5",
-      "mikeCurrentSide": "LAR -4.5",
+      "mikeCurrentSide": "LV +4.5",
       "ffccProvisionalSide": "LV +4.5",
       "evidenceLabel": "frozen-number advantage with uncalibrated size",
       "marketSnapshot": "LAR -3.5 Friday median, DraftKings and bet365",
@@ -266,9 +276,9 @@
       "changeFlag": true,
       "result": null,
       "mikeOriginalVibeSide": "LAR -4.5",
-      "mikeConfirmedSubmittedSide": "LAR -4.5",
-      "mikeSideChangedFromOriginal": false,
-      "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET",
+      "mikeConfirmedSubmittedSide": "LV +4.5",
+      "mikeSideChangedFromOriginal": true,
+      "mikeSubmissionConfirmedAt": "2026-10-23 23:35 ET",
       "previousFfccSide": "LAR -4.5",
       "changedAt": "2026-10-23 17:17 ET",
       "changeReason": "Three independently reviewed Friday views price LAR -3.5, giving LV +4.5 a full extra point at the frozen pool line; exact frozen-line two-sided prices remain unverified.",
@@ -306,18 +316,14 @@
       "mikeSubmissionConfirmedAt": "2026-10-22 08:54 ET"
     }
   ],
-  "alertDecision": "Four genuine editable FFCC flips are active: BAL→CIN, PIT→NO, CAR→TB, and LAR→LV. Each has its own unique actionable alert.",
+  "alertDecision": "Four genuine FFCC flips were recorded Friday (BAL→CIN, PIT→NO, CAR→TB, LAR→LV). Mike's later confirmed submission matched all four, so those Pick'em alerts are archived; no new alert is warranted.",
   "originalVibesCapturedAt": "2026-10-20 22:35 ET",
-  "submittedHybridConfirmedAt": "2026-10-22 08:54 ET",
+  "submittedHybridConfirmedAt": "2026-10-23 23:35 ET",
   "submittedHybridAgreementWithProvisionalFFCC": {
-    "agree": 8,
-    "disagree": 6,
+    "agree": 12,
+    "disagree": 2,
     "disagreementMatchups": [
-      "PIT @ NO",
       "SF @ ATL",
-      "TB @ CAR",
-      "CIN @ BAL",
-      "LAR @ LV",
       "KC @ SEA"
     ]
   }
