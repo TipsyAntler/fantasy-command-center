@@ -49,6 +49,16 @@ export const pickemVibePolicy = {
 
 export const pickemVibeWeeks: PickemVibeWeek[] = [
   {
+    week: 7,
+    status: "final",
+    gamesDecided: 14,
+    mikeCorrect: 7,
+    ffccCorrect: 9,
+    mikeSeasonCorrect: 47,
+    mikeRank: 79,
+    note: "Oct 27 user SZN screenshot establishes 7/14 Mike, 47 season correct and rank 79; FFCC went 9/14 at its previously documented final sides because FFCC took ATL +3.5 and SEA -2.5 where Mike selected losing SF -3.5 and KC +2.5. No causal advantage inferred from one week.",
+  },
+  {
     week: 6,
     status: "final",
     gamesDecided: 14,
@@ -71,8 +81,8 @@ export const pickemVibeWeeks: PickemVibeWeek[] = [
 ];
 
 export const pickemVibeDisagreements: PickemVibeDisagreement[] = [
-  { week: 7, matchup: "SF @ ATL", frozenLine: "SF -3.5 / ATL +3.5", mikeSide: "SF -3.5", ffccSide: "ATL +3.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending", note: "Current SF -3 gives ATL the hook above the key 3; frozen-number advantage with uncalibrated size." },
-  { week: 7, matchup: "KC @ SEA", frozenLine: "SEA -2.5 / KC +2.5", mikeSide: "KC +2.5", ffccSide: "SEA -2.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending", note: "No measured edge; provisional market-side tie choice." },
+  { week: 7, matchup: "SF @ ATL", frozenLine: "SF -3.5 / ATL +3.5", mikeSide: "SF -3.5", ffccSide: "ATL +3.5", loggedAt: "2026-10-20 22:35 ET", result: "FFCC", note: "Current SF -3 gives ATL the hook above the key 3; frozen-number advantage with uncalibrated size." },
+  { week: 7, matchup: "KC @ SEA", frozenLine: "SEA -2.5 / KC +2.5", mikeSide: "KC +2.5", ffccSide: "SEA -2.5", loggedAt: "2026-10-20 22:35 ET", result: "FFCC", note: "No measured edge; provisional market-side tie choice." },
   { week: 5, matchup: "TB @ DAL", frozenLine: "DAL -10.5 / TB +10.5", mikeSide: "DAL -10.5", ffccSide: "TB +10.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Early market around DAL -8.5 creates roughly two points of frozen-line value on TB." },
   { week: 5, matchup: "CHI @ GB", frozenLine: "CHI -3.5 / GB +3.5", mikeSide: "CHI -3.5", ffccSide: "GB +3.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Current market roughly CHI -2.5 to -3; FFCC takes the pool half-point above the key 3." },
   { week: 5, matchup: "HOU @ TEN", frozenLine: "HOU -7.5 / TEN +7.5", mikeSide: "HOU -7.5", ffccSide: "TEN +7.5", loggedAt: "2026-10-07 07:25 ET", result: "Pending", note: "Current market clusters around HOU -7 to -7.5; FFCC takes the useful hook above seven." },
