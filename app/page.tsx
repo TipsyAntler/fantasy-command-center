@@ -4,7 +4,7 @@ import { LocalGreeting, LocalRefreshTime } from "@/components/LocalDashboardTime
 import { getDashboardData, getRosterWatch, getPlanningWeek } from "@/lib/sleeper";
 import { getSurvivorSnapshot } from "@/lib/google-survivor";
 import { manualLeagues, rosterPlayerNames } from "@/data/manual-leagues";
-import { week7Number, week7PoolGames, week7Tiebreaker, week7Standing } from "@/data/pickem-week7";
+import { week8Number, week8PoolGames, week8Tiebreaker, week8Standing } from "@/data/pickem-week8";
 import { actionableAlerts, isActionableBreakingAlert } from "@/data/actionable-alerts";
 import styles from "./home.module.css";
 
@@ -16,7 +16,7 @@ function rosterStatus(row: Awaited<ReturnType<typeof getRosterWatch>>[number]) {
 
 export default async function Home() {
   const data = await getDashboardData();
-  const week = week7Number;
+  const week = week8Number;
   const [rosterWatch, survivor] = await Promise.all([
     getRosterWatch(rosterPlayerNames),
     getSurvivorSnapshot(week),
@@ -33,11 +33,11 @@ export default async function Home() {
   const llFlag = leagueFlags.ll[0];
   const survivorHealthy = survivor.connected && !survivor.error;
   const sleeperHealthy = !data.errors.players && !data.errors.trends;
-  const strongestPoolEdges = week7PoolGames.filter((game) => game.signal.startsWith("FROZEN-NUMBER ADVANTAGE")).length;
+  const strongestPoolEdges = week8PoolGames.filter((game) => game.signal.startsWith("FROZEN-NUMBER ADVANTAGE")).length;
   const pickemFlipAlerts = actionableAlerts.filter(
-    (alert) => isActionableBreakingAlert(alert) && alert.category === "Pick'em" && alert.headline.includes("FLIP") && alert.id.startsWith(`2026-w${week7Number}-`),
+    (alert) => isActionableBreakingAlert(alert) && alert.category === "Pick'em" && alert.headline.includes("FLIP") && alert.id.startsWith(`2026-w${week8Number}-`),
   );
-  const pickemFlipGames = week7PoolGames.filter((game) =>
+  const pickemFlipGames = week8PoolGames.filter((game) =>
     pickemFlipAlerts.some((alert) => alert.href === `/pickem#${`${game.away}-${game.home}`.toLowerCase()}`),
   );
   const pickemFlipSummary = pickemFlipGames
@@ -110,12 +110,12 @@ export default async function Home() {
           <Link href="/pickem" className={styles.focusCard}>
             <div className={styles.cardTop}>
               <span className={styles.cardKicker}>THE SZN · ATS PICK&apos;EM</span>
-              <span className={`${styles.cardState} ${pickemFlipAlerts.length ? styles.cardStateWarn : ""}`}>{pickemFlipAlerts.length ? `${pickemFlipAlerts.length} flips` : `${week7PoolGames.length} picks loaded`}</span>
+              <span className={`${styles.cardState} ${pickemFlipAlerts.length ? styles.cardStateWarn : ""}`}>{pickemFlipAlerts.length ? `${pickemFlipAlerts.length} flips` : `${week8PoolGames.length} picks loaded`}</span>
             </div>
             <h2>Pick&apos;em Room</h2>
-            <p className={styles.actionHeadline}>{pickemFlipAlerts.length ? `FFCC changed ${pickemFlipSummary}.` : "Get the card in early, then only revisit meaningful movers."}</p>
+            <p className={styles.actionHeadline}>{pickemFlipAlerts.length ? `FFCC changed ${pickemFlipSummary}.` : "Fourteen Week 8 vibes selected, but required Monday tiebreaker blank. Finish submission when ready."}</p>
             <p className={styles.actionNote}>
-              Week {week7Number} lines are loaded. You are #{week7Standing.rank} with {week7Standing.correct} correct; {strongestPoolEdges} picks have a frozen-number advantage. Mike&apos;s SZN card is not automatically updated. Monday-night tiebreaker target: {week7Tiebreaker.earlyFfccTarget}.
+              Week {week8Number} frozen lines and 14 highlighted vibe sides captured. You are #{week8Standing.rank} with {week8Standing.correct} correct (leader {week8Standing.leaderCorrect}); {strongestPoolEdges} uncalibrated frozen-number signals. Required tiebreaker is still blank in screenshot; FFCC provisional CHI–SEA total: {week8Tiebreaker.earlyFfccTarget}. No SZN submission is confirmed.
             </p>
             <div className={styles.cardFoot}><span>Review ATS card</span><span>→</span></div>
           </Link>
