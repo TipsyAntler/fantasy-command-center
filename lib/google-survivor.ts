@@ -99,6 +99,13 @@ export type SurvivorOwnership = {
   pct: number;
 };
 
+export type SurvivorWeekHistory = {
+  week: number;
+  started: number;
+  eliminated: number;
+  survived: number;
+};
+
 export type SurvivorSnapshot = {
   connected: boolean;
   entries: SurvivorEntry[];
@@ -107,6 +114,7 @@ export type SurvivorSnapshot = {
   aliveEntries: number;
   currentWeek: number;
   ownershipWeek: number;
+  weekHistory: SurvivorWeekHistory[];
   error?: string;
 };
 
@@ -158,12 +166,13 @@ export async function getSurvivorSnapshot(currentWeek: number): Promise<Survivor
       aliveEntries: 0,
       currentWeek,
       ownershipWeek: currentWeek,
+      weekHistory: [],
       error: error instanceof Error ? error.message : "Unable to refresh Google connection",
     };
   }
 
   if (!accessToken) {
-    return { connected: false, entries: [], ownership: [], submitted: 0, aliveEntries: 0, currentWeek, ownershipWeek: currentWeek };
+    return { connected: false, entries: [], ownership: [], submitted: 0, aliveEntries: 0, currentWeek, ownershipWeek: currentWeek, weekHistory: [] };
   }
 
   try {
@@ -206,6 +215,40 @@ export async function getSurvivorSnapshot(currentWeek: number): Promise<Survivor
       .map(([team, count]) => ({ team, count, pct: submitted ? (count / submitted) * 100 : 0 }))
       .sort((a, b) => b.count - a.count);
 
+    // Weekly results are informational only. Limit the history to paid, numbered
+    // pool entries and completed weeks so in-progress submissions never appear
+    // as eliminations.
+    const numberedPaidRows = poolRows.filter((row) => {
+      const number = String(row[0] ?? "").trim();
+      const name = String(row[1] ?? "").trim();
+      const paid = String(row[2] ?? "").trim().toLowerCase();
+      return /^\d+\.?$/.test(number) && Boolean(name) && name !== "#REF!" && paid === "yes";
+    });
+    const hasWeekPick = (row: unknown[], week: number) =>
+      teamColumns.some(({ index }) => numericWeek(row[index]) === week);
+    const latestRecordedWeek = Math.max(
+      0,
+      ...numberedPaidRows.flatMap((row) =>
+        teamColumns.map(({ index }) => numericWeek(row[index]) || 0),
+      ),
+    );
+    const completedWeek = Math.min(Math.max(0, currentWeek - 1), latestRecordedWeek);
+    const weekHistory: SurvivorWeekHistory[] = Array.from(
+      { length: completedWeek },
+      (_, index) => index + 1,
+    ).map((week) => {
+      const started = numberedPaidRows.filter((row) => hasWeekPick(row, week)).length;
+      const survived = week < completedWeek
+        ? numberedPaidRows.filter((row) => hasWeekPick(row, week + 1)).length
+        : aliveRows.length;
+      return {
+        week,
+        started,
+        eliminated: Math.max(0, started - survived),
+        survived,
+      };
+    }).filter((item) => item.started > 0);
+
     return {
       connected: true,
       entries,
@@ -214,6 +257,7 @@ export async function getSurvivorSnapshot(currentWeek: number): Promise<Survivor
       aliveEntries: aliveRows.length,
       currentWeek,
       ownershipWeek,
+      weekHistory,
     };
   } catch (error) {
     return {
@@ -224,6 +268,7 @@ export async function getSurvivorSnapshot(currentWeek: number): Promise<Survivor
       aliveEntries: 0,
       currentWeek,
       ownershipWeek: currentWeek,
+      weekHistory: [],
       error: error instanceof Error ? error.message : "Unable to read survivor sheet",
     };
   }
