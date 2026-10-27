@@ -38,3 +38,15 @@
 - No numerical confidence ratings are justified. Signals are frozen-number advantage (uncalibrated size), or no measured edge / provisional tie choice. Check exact alternate line juice, injury designations, final inactives and any weather/rest impacts during the week. Lamar Jackson's health and Philadelphia QB status are especially material.
 - Actual full-card/game/tiebreak lock rules have NOT been independently confirmed. Mike explicitly confirmed that none of the screenshot-highlighted 14 vibe selections was submitted. A future final SZN entry must be confirmed independently; do not change SZN directly.
 - Review final-game total near deadline. Keep Week 7 archive separate from Week 8 board.
+
+
+## Oct. 27 evening market update — 7:08 PM ET
+- **Genuine FFCC recommendation flip:** PHI +4.5 → **WAS -4.5** at the frozen NFL-575 number. Mike's PHI +4.5 remains a vibe only; no actual submission is assumed.
+- Primary market evidence: CLEATZ displayed WAS -5.5 at DraftKings, FanDuel, BetMGM, Caesars, bet365 and BetRivers; CBS also displayed Washington -5. The frozen pool therefore gives Washington approximately one point of line value versus the broad current market.
+- Evidence label: **frozen-number advantage with uncalibrated size**. No cover percentage is claimed because current exact WAS -4.5 alternate prices were not available across independent books at comparable timestamps.
+- Injury context, not double-counted as a separate edge: Philadelphia officially placed Jalen Hurts on injured reserve after his blood-clot diagnosis, and the Tuesday injury summary also flags Saquon Barkley, DeVonta Smith and other Eagles offensive availability concerns. The market move is treated as the primary signal.
+- Sources checked Oct. 27 at 7:08 PM ET:
+  - https://cleatz.com/nfl/lines/
+  - https://www.cbssports.com/nfl/odds/2026/regular/week-8/
+  - https://www.philadelphiaeagles.com/news/eagles-and-jalen-hurts-agent-nicole-lynn-provide-an-update-on-qb-jalen-hurts
+- Recheck the exact frozen line and official Wednesday-Friday reports. Reverse only if fresh verified evidence favors Philadelphia at +4.5; do not react to every small twitch.
