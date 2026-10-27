@@ -7,7 +7,7 @@ export default async function SurvivorPage({ searchParams }: { searchParams?: Pr
   const params = searchParams ? await searchParams : {};
   const googleStatus = typeof params.google === "string" ? params.google : undefined;
   const googleMessage = typeof params.message === "string" ? params.message : undefined;
-  const week = 7;
+  const week = 8;
   const snapshot = await getSurvivorSnapshot(week);
   const googleHealthy = snapshot.connected && !snapshot.error;
   const submittedPct = snapshot.aliveEntries ? Math.round(snapshot.submitted / snapshot.aliveEntries * 100) : 0;
@@ -15,6 +15,7 @@ export default async function SurvivorPage({ searchParams }: { searchParams?: Pr
   const pickWeek = snapshot.ownershipWeek;
   const maxCount = Math.max(1, ...leaders.map(item => item.count));
   const otherCount = Math.max(0, snapshot.submitted - leaders.reduce((sum, item) => sum + item.count, 0));
+  const weekHistory = [...snapshot.weekHistory].reverse();
 
   return <main><div className="shell page-shell">
     <header className="page-hero">
@@ -37,6 +38,17 @@ export default async function SurvivorPage({ searchParams }: { searchParams?: Pr
         <div style={{ width: submittedPct + "%" }} />
       </div>
       {googleHealthy && pickWeek !== week ? <p className={styles.dataNote}>Week {week} picks are not visible yet. Showing the latest available distribution from Week {pickWeek} instead.</p> : null}
+      {googleHealthy && weekHistory.length ? <div className={styles.weekHistory}>
+        <div className={styles.historyHeading}><strong>Weekly pool survival</strong><span>Completed weeks · paid entries</span></div>
+        <div className={styles.historyRows}>
+          {weekHistory.map((item) => <div className={styles.historyRow} key={item.week}>
+            <strong>Week {item.week}</strong>
+            <span><b>{item.started}</b> entered</span>
+            <span className={styles.eliminated}><b>{item.eliminated}</b> eliminated</span>
+            <span className={styles.survived}><b>{item.survived}</b> survived</span>
+          </div>)}
+        </div>
+      </div> : null}
       {googleHealthy && leaders.length ? <>
         <div className={styles.chartHeading}><strong>Top 5 teams</strong><span>Share of submitted picks</span></div>
         <div className={styles.ownershipBars}>
