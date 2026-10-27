@@ -1,8 +1,8 @@
 # Week 8 SZN NFL-575 initial audit — October 27, 2026
 
 ## Inputs verified
-- User screenshots October 27 at ~9:52–9:53 AM ET show **14 required games, 14 highlighted early selections**, all spread numbers captured in `data/pickem-week8.ts`. The highlighted orange sides are USER VIBES/FORM SELECTIONS, not verified successfully submitted or locked picks.
-- Screenshot required Monday final-game CHI @ SEA total input is **blank**. FFCC provisional target 47 from approximately 46.5 dated sportsbook totals. Recheck and enter a tiebreaker before claiming final submission.
+- User screenshots October 27 at ~9:52–9:53 AM ET show **14 required games, 14 highlighted early selections**, all spread numbers captured in `data/pickem-week8.ts`. The highlighted orange sides are USER VIBES/FORM SELECTIONS ONLY. Mike explicitly confirmed on October 27 that they are intentionally never submitted at the vibes stage.
+- Mike intentionally leaves the CHI @ SEA tiebreaker **blank for vibes**. This is normal; do not prompt him to fill it at this stage. FFCC independently forecasts 47 (early market ~46.5). A tiebreaker matters only for a separately confirmed actual submitted card.
 - Week 7 SZN screenshot: Mike 7/14, season 47, rank 79; leader 67. FFCC previously logged week 7 sides scored 9/14, with ATL +3.5 and SEA -2.5 winning where Mike selected SF -3.5 and KC +2.5.
 - Pool exact frozen spreads are the screenshots, NOT market observations. Externally reported spreads may change; do not substitute them.
 
@@ -33,5 +33,5 @@
 - Differences above are not new recommendation *flips*: this is the first Week 8 FFCC board. Therefore no Week 8 FLIP alert was created.
 - No verified fresh **two-sided exact frozen-spread prices** from independently sourced books at comparable timestamps were available for this first pass. Do not quote invented cover probabilities or claim cross-book de-vig consensus. Some market snapshots conflict.
 - No numerical confidence ratings are justified. Signals are frozen-number advantage (uncalibrated size), or no measured edge / provisional tie choice. Check exact alternate line juice, injury designations, final inactives and any weather/rest impacts during the week. Lamar Jackson's health and Philadelphia QB status are especially material.
-- Actual full-card/game/tiebreak lock rules have NOT been independently confirmed; 14 selected does NOT prove submitted, particularly with blank required tiebreaker. Do not change SZN directly.
+- Actual full-card/game/tiebreak lock rules have NOT been independently confirmed. Mike explicitly confirmed that none of the screenshot-highlighted 14 vibe selections was submitted. A future final SZN entry must be confirmed independently; do not change SZN directly.
 - Review final-game total near deadline. Keep Week 7 archive separate from Week 8 board.
