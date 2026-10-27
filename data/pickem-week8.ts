@@ -48,8 +48,8 @@ export const week8PoolGames: Week5PoolGame[] = [
     "marketLabel": "BUF -3 to -3.5 in Oct 26 listings",
     "marketTotal": 53.5,
     "confidence": 2,
-    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Early FFCC lean BAL +3.5: several Monday reports list Buffalo -3, giving Baltimore the hook above the key 3, though other sources have BUF -3.5. Lamar Jackson's ankle status is pivotal and not yet confirmed for Sunday; do not claim an exact cover probability or count his uncertain return twice.",
+    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
+    "rationale": "Retain BAL +3.5 as the prior provisional tie choice. A fresh Oct 27 FanDuel listing matches the frozen BUF -3.5, while earlier Monday sources ranged from -3 to -3.5. Lamar Jackson remains day-to-day with the high-ankle sprain. Without comparable two-sided exact-line prices or a stable number advantage, no measured edge is established.",
     "watch": "Lamar Jackson's Wednesday practice and final designation, latest consensus and exact BAL +3.5 prices."
   },
   {
@@ -65,8 +65,8 @@ export const week8PoolGames: Week5PoolGame[] = [
     "marketLabel": "CIN -10 to -10.5 across Oct 26 listings",
     "marketTotal": 46.5,
     "confidence": 2,
-    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Initial lean TEN +10.5. Some independent Monday listings make Cincinnati -10 instead of -10.5. That half-point is favorable at the pool number, but the market is mixed and there are no verified exact-line two-sided odds.",
+    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
+    "rationale": "Retain TEN +10.5 as the prior provisional tie choice. A fresh Oct 27 market board is back at the frozen +10.5, while earlier Monday listings included Cincinnati -10. Without a comparable multi-book exact-line pair, the earlier half-point case is not stable enough to label an edge.",
     "watch": "Recheck Bengals quarterback/OL reports and whether market settles -10 or -10.5."
   },
   {
