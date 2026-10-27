@@ -93,6 +93,21 @@ export const pickemVibeDisagreements: PickemVibeDisagreement[] = [
 
 
 export const pickemVibePicks: PickemVibePick[] = [
+  // User Oct 27 screenshot: 14 highlighted early vibe selections, but required tiebreaker empty; NO final submission verified.
+  { week: 8, matchup: "CAR @ GB", frozenLine: "GB -3.5 / CAR +3.5", mikeSide: "GB -3.5", loggedAt: "2026-10-27 09:53 ET", result: "Pending" },
+  { week: 8, matchup: "BAL @ BUF", frozenLine: "BUF -3.5 / BAL +3.5", mikeSide: "BUF -3.5", loggedAt: "2026-10-27 09:53 ET", result: "Pending" },
+  { week: 8, matchup: "TEN @ CIN", frozenLine: "CIN -10.5 / TEN +10.5", mikeSide: "CIN -10.5", loggedAt: "2026-10-27 09:53 ET", result: "Pending" },
+  { week: 8, matchup: "ARI @ DAL", frozenLine: "DAL -6.5 / ARI +6.5", mikeSide: "DAL -6.5", loggedAt: "2026-10-27 09:53 ET", result: "Pending" },
+  { week: 8, matchup: "MIN @ DET", frozenLine: "DET -3.5 / MIN +3.5", mikeSide: "MIN +3.5", loggedAt: "2026-10-27 09:53 ET", result: "Pending" },
+  { week: 8, matchup: "LV @ NYJ", frozenLine: "NYJ -1.5 / LV +1.5", mikeSide: "LV +1.5", loggedAt: "2026-10-27 09:53 ET", result: "Pending" },
+  { week: 8, matchup: "CLE @ PIT", frozenLine: "PIT -3.5 / CLE +3.5", mikeSide: "PIT -3.5", loggedAt: "2026-10-27 09:53 ET", result: "Pending" },
+  { week: 8, matchup: "ATL @ TB", frozenLine: "TB -2.5 / ATL +2.5", mikeSide: "ATL +2.5", loggedAt: "2026-10-27 09:53 ET", result: "Pending" },
+  { week: 8, matchup: "IND @ JAX", frozenLine: "JAX -7.5 / IND +7.5", mikeSide: "JAX -7.5", loggedAt: "2026-10-27 09:53 ET", result: "Pending" },
+  { week: 8, matchup: "LAC @ LAR", frozenLine: "LAR -6.5 / LAC +6.5", mikeSide: "LAR -6.5", loggedAt: "2026-10-27 09:53 ET", result: "Pending" },
+  { week: 8, matchup: "KC @ DEN", frozenLine: "KC -1.5 / DEN +1.5", mikeSide: "KC -1.5", loggedAt: "2026-10-27 09:53 ET", result: "Pending" },
+  { week: 8, matchup: "NE @ MIA", frozenLine: "NE -7.5 / MIA +7.5", mikeSide: "NE -7.5", loggedAt: "2026-10-27 09:53 ET", result: "Pending" },
+  { week: 8, matchup: "PHI @ WAS", frozenLine: "WAS -4.5 / PHI +4.5", mikeSide: "PHI +4.5", loggedAt: "2026-10-27 09:53 ET", result: "Pending" },
+  { week: 8, matchup: "CHI @ SEA", frozenLine: "SEA -3.5 / CHI +3.5", mikeSide: "SEA -3.5", loggedAt: "2026-10-27 09:53 ET", result: "Pending" },
   // Oct 20 initial vibes retained as originalVibeSide; Oct 22 The SZN photo confirms Mike's 14 submitted hybrid picks.
   // Mike does not make a separate vibes tiebreaker; FFCC independently recommends one shared total.
   { week: 7, matchup: "NE @ CHI", frozenLine: "CHI -3.5 / NE +3.5", mikeSide: "NE +3.5", loggedAt: "2026-10-20 22:35 ET", result: "Pending" },
