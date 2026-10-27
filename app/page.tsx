@@ -113,9 +113,9 @@ export default async function Home() {
               <span className={`${styles.cardState} ${pickemFlipAlerts.length ? styles.cardStateWarn : ""}`}>{pickemFlipAlerts.length ? `${pickemFlipAlerts.length} flips` : `${week8PoolGames.length} picks loaded`}</span>
             </div>
             <h2>Pick&apos;em Room</h2>
-            <p className={styles.actionHeadline}>{pickemFlipAlerts.length ? `FFCC changed ${pickemFlipSummary}.` : "Fourteen Week 8 vibes selected, but required Monday tiebreaker blank. Finish submission when ready."}</p>
+            <p className={styles.actionHeadline}>{pickemFlipAlerts.length ? `FFCC changed ${pickemFlipSummary}.` : "Your 14 Week 8 vibes are logged. Compare them with FFCC’s independent recommendations."}</p>
             <p className={styles.actionNote}>
-              Week {week8Number} frozen lines and 14 highlighted vibe sides captured. You are #{week8Standing.rank} with {week8Standing.correct} correct (leader {week8Standing.leaderCorrect}); {strongestPoolEdges} uncalibrated frozen-number signals. Required tiebreaker is still blank in screenshot; FFCC provisional CHI–SEA total: {week8Tiebreaker.earlyFfccTarget}. No SZN submission is confirmed.
+              Week {week8Number} frozen lines and 14 highlighted vibe sides captured. You are #{week8Standing.rank} with {week8Standing.correct} correct (leader {week8Standing.leaderCorrect}); {strongestPoolEdges} uncalibrated frozen-number signals. No tiebreaker is expected for vibes; FFCC provisional CHI–SEA total: {week8Tiebreaker.earlyFfccTarget}. Actual SZN submission is tracked separately only after confirmation.
             </p>
             <div className={styles.cardFoot}><span>Review ATS card</span><span>→</span></div>
           </Link>
