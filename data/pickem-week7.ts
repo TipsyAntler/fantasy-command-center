@@ -4,7 +4,7 @@ export const week7Number = 7;
 export const week7PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week7PoolStatus = "WEEK 7 CARD FINAL AND LOCKED · EXACT FROZEN LINES CAPTURED · MIKE'S 14 UPDATED PICKS CONFIRMED OCT 23 · 4 FRIDAY FFCC FLIPS · LAMAR JACKSON OUT CONFIRMED CIN +2.5 · PUKA NACUA ACTIVE · FINAL TIEBREAKER 44";
 export const week7MarketAsOf = "Final audit Oct 25, 2026 · Sunday 1:00 PM ET full-card edit cutoff passed · Friday eDraft multi-book median cross-checked against a late-Friday public pick sheet, DraftKings and bet365 snapshots; Sunday article snapshots were not treated as live exact-line quotes";
-export const week7Standing = {correct:40,rank:78,leaderCorrect:57,note:"Oct 20 user screenshot. Rank ties by total correct. This is Mike's actual SZN standing, not FFCC model performance."};
+export const week7Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 The SZN standings screenshot, Week 7 final 7/14, season 47 correct, rank 79; archive only. FFCC final Week 7 sides finished 9/14."};
 export const week7MikeSubmittedCard = {
   confirmedAt: "Oct 23, 2026 · 11:35 PM ET · updated user submission confirmation photo",
   source: "The SZN Week 7 pool card",
