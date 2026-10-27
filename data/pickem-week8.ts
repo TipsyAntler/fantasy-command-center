@@ -227,17 +227,17 @@ export const week8PoolGames: Week5PoolGame[] = [
     "kickoff": "8:20 PM",
     "away": "PHI",
     "home": "WAS",
-    "poolPick": "PHI",
-    "poolLine": 4.5,
+    "poolPick": "WAS",
+    "poolLine": -4.5,
     "mikeVibe": "PHI +4.5",
     "poolFavorite": "WAS",
     "poolSpread": 4.5,
-    "marketLabel": "WAS -3.5 to -4.5 across Oct 26-27",
+    "marketLabel": "WAS -5.5 across DraftKings, FanDuel, BetMGM, Caesars, bet365 and BetRivers on Oct 27 afternoon",
     "marketTotal": 40.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Keep PHI +4.5. Several Oct 26 sources place Washington -3.5 or -4, giving Philadelphia a better frozen line; an Oct 27 FanDuel view matches -4.5. Jalen Hurts' availability is central; the market may already price his absence.",
-    "watch": "Recheck Eagles QB and RB reports, Wednesday-Friday line and exact PHI +4.5 two-sided prices."
+    "rationale": "Flip FFCC to WAS -4.5 instead of PHI +4.5. By Oct 27 afternoon, six major books displayed Washington -5.5, so the frozen pool asks Washington to cover one point less than the current primary market. Jalen Hurts is on injured reserve and expected to miss the season; Philadelphia also enters the week monitoring Saquon Barkley, DeVonta Smith and other offensive injuries. This is a market-number advantage with uncalibrated size, not an invented cover probability.",
+    "watch": "Recheck Wednesday-Friday official Eagles/Commanders reports, whether the market holds WAS -5.5 or returns to -4.5, and any exact WAS -4.5 alternate-line prices."
   },
   {
     "day": "Mon",
