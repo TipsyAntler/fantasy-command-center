@@ -36,7 +36,7 @@ export type PickemVibeDisagreement = {
 // a side. It does not override the market-first FFCC recommendation by default.
 export const pickemVibePolicy = {
   reviewAfterWeek: 7,
-  principle: "Track Mike's pregame matchup sides against FFCC prospectively, especially on disagreements. Do not track tiebreaker totals in the vibe experiment. Keep the market-first recommendation independent until the record is large and stable enough to justify an explicit change.",
+  principle: "Mike highlights sides in The SZN as VIBES ONLY. Those highlighted selections are intentionally NOT submitted, and Mike deliberately leaves the vibes tiebreaker blank. Track pregame matchup instincts prospectively against independent FFCC recommendations. NEVER interpret highlighted picks as a submitted card or prompt Mike to fill a vibes tiebreaker. Only separately confirmed final submissions and their tiebreaker are actual entries. Keep market-first FFCC advice independent until robust evidence supports a change.",
   metrics: [
     "ATS accuracy on all prospectively logged Mike picks",
     "ATS accuracy on Mike-vs-FFCC disagreement games",
