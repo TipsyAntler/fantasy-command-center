@@ -12,11 +12,14 @@
 - VegasInsider, last updated Oct 26: https://www.vegasinsider.com/nfl/nfl-week-8-odds-2026/
 - Comped, FanDuel as of Oct 27 (aggregate service, inspect provenance before using as live quote): https://www.comped.com/nfl
 - Packers official Monday estimate for Thursday: https://www.packers.com/news/packers-panthers-injury-report-oct-26-2026
+- Buffalo Rumblings, Oct 27 FanDuel BUF -3.5 / total 53.5: https://www.buffalorumblings.com/buffalo-bills-odds/143614/bills-vs-ravens-odds-week-8-opening-lines-point-spread-total
+- Covers, checked Oct 27, TEN +10.5 / CIN -10.5 board (prices are cross-book bests, not one same-book pair): https://www.covers.com/sport/football/nfl/matchup/380027/odds
+- Sports Illustrated, Oct 27 DraftKings CHI +3 -102 / SEA -3 -118: https://www.si.com/betting/bears-vs-seahawks-opening-odds-for-monday-night-football-in-week-8-seattle-favored-in-nfc-showdown
 
 ## FFCC early provisional board (not final)
 - CAR @ GB: GB -3.5, no measured edge
-- BAL @ BUF: BAL +3.5, some market BUF -3; **Mike BUF -3.5**
-- TEN @ CIN: TEN +10.5, some market CIN -10; **Mike CIN -10.5**
+- BAL @ BUF: BAL +3.5, **no measured edge / prior provisional tie choice** after Oct 27 FanDuel matched BUF -3.5; **Mike BUF -3.5**
+- TEN @ CIN: TEN +10.5, **no measured edge / prior provisional tie choice** after an Oct 27 board returned to +10.5; **Mike CIN -10.5**
 - ARI @ DAL: DAL -6.5, no measured edge
 - MIN @ DET: MIN +3.5, some market DET -3
 - LV @ NYJ: LV +1.5, market quotes conflict between LV -1.5 and NYJ -1.5; resolve
