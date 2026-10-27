@@ -7,7 +7,7 @@ import {
   week8PoolStatus as week5PoolStatus,
   week8Tiebreaker as week5Tiebreaker,
   week8Standing as week5Standing,
-  week8MikeSubmittedCard as week5MikeSubmittedCard,
+  week8MikeVibeCard as week5MikeVibeCard,
 } from "@/data/pickem-week8";
 import styles from "./pickem.module.css";
 import { actionableAlerts, isActionableBreakingAlert } from "@/data/actionable-alerts";
@@ -71,9 +71,9 @@ export default async function PickemPage() {
           <>
             <AtAGlance items={[
               { label: "Season standing", value: `#${week5Standing.rank}`, note: `${week5Standing.correct} correct · leader ${week5Standing.leaderCorrect}`, tone: "accent" },
-              { label: "Mike selected sides", value: `${week5MikeSubmittedCard.picks.length} / 14`, note: `14 highlighted vibe selections · final submission NOT confirmed`, tone: "accent" },
+              { label: "Mike’s vibes", value: `${week5MikeVibeCard.picks.length} / 14`, note: `14 highlighted for our comparison · intentionally not submitted`, tone: "accent" },
               { label: "Frozen-number advantages", value: `${frozenAdvantages.length}`, note: frozenAdvantages.map((game) => lineLabel(game.poolPick, game.poolLine)).join(" · "), tone: "good" },
-              { label: "MNF tiebreaker · unentered", value: `${week5Tiebreaker.earlyFfccTarget}`, note: `${week5Tiebreaker.matchup} · FFCC target ${week5Tiebreaker.earlyFfccTarget} · no total entered` },
+              { label: "FFCC tiebreaker forecast", value: `${week5Tiebreaker.earlyFfccTarget}`, note: `${week5Tiebreaker.matchup} · no vibes tiebreaker by design` },
             ]} />
 
             <div className={styles.topNote}><strong>{week5PoolStatus}.</strong> These are the exact Week {currentWeek} spreads from your {week5PoolName} screenshots. Later market movement is stale-line information; it never replaces the frozen pool number.</div>
@@ -85,7 +85,7 @@ export default async function PickemPage() {
               <span className="source-tag">{week5MarketAsOf}</span>
             </section>
 
-            <p className={styles.meterLegend}><strong>Week {currentWeek} status:</strong> All 14 frozen SZN lines and Mike’s 14 highlighted early selections are captured from Oct 27 screenshots. The required CHI @ SEA tiebreaker field was BLANK, so this does NOT confirm a successfully submitted/locked card. FFCC picks are separate provisional recommendations pending two-sided exact-line pricing and final injuries. FFCC provisional tiebreaker advice is separate from Mike’s actual entry. <strong>Evidence:</strong> frozen-number advantage with uncalibrated size or no measured edge / provisional tie choice. No arbitrary numerical confidence rating. No pick currently has a calibrated numeric edge.</p>
+            <p className={styles.meterLegend}><strong>Week {currentWeek} status:</strong> All 14 frozen SZN lines and Mike’s 14 highlighted VIBE picks are captured from Oct 27 screenshots. Mike intentionally leaves the tiebreaker blank and DOES NOT submit his vibes; this is our pre-submission comparison only, not an unfinished entry. FFCC picks and its provisional tiebreaker are independent recommendations. Only explicitly confirmed final SZN entries count as Mike’s actual submitted picks. <strong>Evidence:</strong> frozen-number advantage with uncalibrated size or no measured edge / provisional tie choice. No arbitrary numerical confidence rating. No pick currently has a calibrated numeric edge.</p>
 
             <section className={styles.board} aria-label={`Week ${currentWeek} ATS picks`}>
               {games.map((game) => {
@@ -108,14 +108,14 @@ export default async function PickemPage() {
 
             <section className="panel survivor-template second-heading">
               <div className="panel-head"><div><span className="panel-kicker">WEEK {currentWeek} TIEBREAKER</span><h3>{week5Tiebreaker.matchup} total points</h3></div><span className="saved-pill">Provisional FFCC total: {week5Tiebreaker.earlyFfccTarget}</span></div>
-              <div className="decision-grid"><div><span>Pool asks</span><strong>{week5Tiebreaker.label}</strong></div><div><span>Current market total</span><strong>{week5Tiebreaker.currentMarketTotal}</strong></div><div><span>Mike entered total</span><strong>{week5Tiebreaker.mikeSubmittedTotal ?? "No vibes total"}</strong></div><div><span>FFCC provisional target</span><strong>{week5Tiebreaker.earlyFfccTarget}</strong></div><div className="span-2"><span>FFCC process</span><strong>{week5Tiebreaker.note}</strong></div></div>
+              <div className="decision-grid"><div><span>Pool asks</span><strong>{week5Tiebreaker.label}</strong></div><div><span>Current market total</span><strong>{week5Tiebreaker.currentMarketTotal}</strong></div><div><span>Mike’s vibes tiebreaker</span><strong>{"Not part of vibes"}</strong></div><div><span>FFCC provisional target</span><strong>{week5Tiebreaker.earlyFfccTarget}</strong></div><div className="span-2"><span>FFCC process</span><strong>{week5Tiebreaker.note}</strong></div></div>
             </section>
           </>
         )}
 
         <section className="roadmap compact-roadmap second-heading">
           <div className="roadmap-copy"><div className="eyebrow">WEEKLY CADENCE</div><h2>Current week only.</h2><p>FFCC will never intentionally carry the prior week&apos;s card forward. If the NFL week advances before the next frozen pool lines are loaded, the old board is hidden and the current week is shown as pending.</p></div>
-          <div className="roadmap-list"><div><span>01</span><strong>Late Monday / Tuesday</strong><small>Capture exact SZN frozen lines</small></div><div><span>02</span><strong>All week</strong><small>Track market, injuries and stale-line value</small></div><div><span>03</span><strong>Before lock</strong><small>Finalize sides + tiebreaker</small></div></div>
+          <div className="roadmap-list"><div><span>01</span><strong>Late Monday / Tuesday</strong><small>Capture exact SZN frozen lines</small></div><div><span>02</span><strong>All week</strong><small>Track market, injuries and stale-line value</small></div><div><span>03</span><strong>Before lock</strong><small>Finalize FFCC advice; await Mike’s separately confirmed SZN entry</small></div></div>
         </section>
       </div>
     </main>
