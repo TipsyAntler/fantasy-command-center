@@ -1,20 +1,22 @@
 import type { Week5PoolGame } from "./pickem-week5";
 
 // October 27, 2026 screenshots: pool's exact frozen spreads and orange-highlighted early selections.
-// Highlighted selections are entered/vibes ONLY. Successful final submission is not verified: required tiebreaker was blank.
+// Mike intentionally highlights vibe picks ONLY, with no tiebreaker. These are NEVER submissions. A separate explicit confirmation is required to record actual submitted sides and total.
 // Market references are dated snapshots, NOT live exact-line two-sided betting quotes.
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week8PoolStatus = "WEEK 8 · 14 FROZEN LINES VERIFIED FROM SZN SCREENSHOTS · 14 EARLY SELECTED SIDES CAPTURED · REQUIRED TIEBREAKER BLANK · FFCC PROVISIONAL";
+export const week8PoolStatus = "WEEK 8 · 14 FROZEN LINES VERIFIED FROM SZN SCREENSHOTS · 14 MIKE VIBE PICKS LOGGED · NO VIBES TIEBREAKER BY DESIGN · FFCC PROVISIONAL";
 export const week8MarketAsOf = "Oct 26-27, 2026 dated DK, bet365, FanDuel and VegasInsider listings; snapshots differ in timing and are NOT simultaneous exact-pool-spread juice";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
-export const week8MikeSubmittedCard = {
- confirmedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted selections, NOT successful final submission",
- source:"The SZN Week 8 14/14 selections in user's screenshots",
+export const week8MikeVibeCard = {
+ observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
+ source:"The SZN Week 8 highlighted vibe sides in user's screenshots", 
  picks:["GB -3.5","BUF -3.5","CIN -10.5","DAL -6.5","MIN +3.5","LV +1.5","PIT -3.5","ATL +2.5","JAX -7.5","LAR -6.5","KC -1.5","NE -7.5","PHI +4.5","SEA -3.5"],
  tiebreaker:null,
- note:"VIBE / SELECTED IN FORM ONLY: 14 of 14 appear highlighted and page says Picks made: 14, but required CHI @ SEA tiebreaker field is BLANK. Do not claim that Mike successfully submitted, saved or locked his 14 picks. FFCC recommendations tracked separately.",
+ note:"VIBES ONLY: Mike highlights all 14 teams to show his instinct for comparison, deliberately does NOT fill in a vibes tiebreaker, and does NOT submit. Screenshot-highlighted sides are not confirmed actual picks; track real submissions in a separate record only when Mike explicitly confirms them. FFCC advice is independent.", 
 };
+// Compatibility alias for older imports; despite its name this is NOT a submitted card.
+export const week8MikeSubmittedCard = week8MikeVibeCard;
 export const week8PoolGames: Week5PoolGame[] = [
   {
     "day": "Thu",
@@ -255,4 +257,4 @@ export const week8PoolGames: Week5PoolGame[] = [
     "watch": "Seek verified exact CHI +3.5 prices and late-week inactives; do not assume Mike has submitted SEA."
   }
 ];
-export const week8Tiebreaker = {matchup:"CHI @ SEA",label:"Total points in final game of week, Bears at Seahawks on Monday Nov 2",currentMarketTotal:46.5,earlyFfccTarget:47,mikeSubmittedTotal:null,note:"PROVISIONAL FFCC target 47, based on Oct 26-27 books clustering at 46.5. Required SZN tiebreaker box was blank in Oct 27 screenshot. Mike's selection/entry is NOT verified submitted. Recheck total and actual lock rules before final submission."};
+export const week8Tiebreaker = {matchup:"CHI @ SEA",label:"Total points in final game of week, Bears at Seahawks on Monday Nov 2",currentMarketTotal:46.5,earlyFfccTarget:47,mikeSubmittedTotal:null,note:"PROVISIONAL FFCC target 47, based on Oct 26-27 books clustering at 46.5. Mike deliberately leaves tiebreaker blank when presenting vibes; that is expected and requires no action. Actual submitted tiebreaker remains unknown until Mike explicitly confirms a final entry. Recheck near the true lock."};
