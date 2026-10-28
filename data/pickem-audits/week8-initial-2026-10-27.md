@@ -179,3 +179,15 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
   - https://www.atlantafalcons.com/news/falcons-injury-report-brian-robinson-divine-deablo-non-participants-as-week-8-practices-begin (3:50 PM ET)
   - https://www.buccaneers.com/news/buccaneers-falcons-injury-report-oct-28-week-8-2026 (4:14 PM ET)
   - https://www.detroitlions.com/news/lions-vs-vikings-practice-report-oct-28-gibbs-stbrown-joseph (4:31 PM ET)
+
+
+## Oct 28, 2026 · 7:24 PM ET — Monitoring refresh
+- **No FFCC recommendation changed.** OOSTA consensus and all 14 game totals/spreads were unchanged from the 5:59 PM ET board refresh.
+- **New roster watch, no action:** Las Vegas' official Wednesday report lists BM starter Brock Bowers limited with a calf injury. He has no game designation and no verified workload restriction, so the starting recommendation remains unchanged; Dallas Goedert is the rostered later-kickoff fallback if the situation materially worsens.
+- **Defense transaction status:** Atlanta still lists Brian Robinson Jr. DNP with no Week 8 game designation. Chicago has not issued a current Week 8 OUT designation for Kyle Monangai. Neither desired Titans D/ST move is verified as unlocked.
+- **Survivor commissioner data:** 22 entries remain alive. Week 8 selections now show Cincinnati 2 and Jacksonville 1; this is informational and the Survivor page reads the commissioner source dynamically.
+- **Alert decision:** no actionable alert or push was created because no pick changed, no lineup action became necessary and no defense transaction window opened.
+- Sources checked:
+  - https://www.oostapro.com/nfl/line-moves (7:24 PM ET)
+  - https://www.raiders.com/news/las-vegas-raiders-new-york-jets-week-8-injury-report (2:39 PM ET)
+  - https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit (commissioner sheet read at 7:24 PM ET)
