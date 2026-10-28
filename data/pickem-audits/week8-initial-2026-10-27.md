@@ -153,3 +153,14 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
 - **Recommendation:** remains **BAL +3.5**. Evidence label upgraded from **small exact-line price lean** to **frozen-number advantage · uncalibrated size**.
 - **Alert decision:** no actionable alert or push was created because the recommended side did not change.
 - Source: https://www.oostapro.com/nfl/line-moves (updated Oct 28, 2026 at 2:16 PM ET).
+
+## Oct 28, 2026 · 3:06 PM ET — Afternoon consensus refresh
+- **ARI at DAL:** FFCC remains **DAL -6.5**. OOSTA consensus is **DAL -7**, so the frozen pool number sits below the key 7 and wins instead of pushing on an exact seven-point Dallas margin. A delayed CLEATZ snapshot at 1:03 PM ET showed FanDuel's exact frozen pair at ARI +6.5 +100 / DAL -6.5 -122, but one delayed book is not a robust exact-line consensus. Evidence is **frozen-number advantage with uncalibrated size**; no cover probability is claimed.
+- **IND at JAX:** FFCC remains **JAX -7.5**. OOSTA moved to **JAX -10** at 3:06 PM ET, while Fantasy Alarm showed -9.5 at 2:37 PM ET. The frozen favorite number is 2–2.5 points better than those current boards; evidence remains **frozen-number advantage with uncalibrated size**.
+- **BAL at BUF:** FFCC remains **BAL +3.5** with OOSTA still at BUF -3.
+- **Tiebreaker:** CHI at SEA remains 46.5; FFCC target remains **47**.
+- **Alert decision:** no actionable alert or push was created because no recommended side changed.
+- Sources checked:
+  - https://www.oostapro.com/nfl/line-moves (3:06 PM ET)
+  - https://cleatz.com/nfl/lines/ (delayed snapshot, 1:03 PM ET)
+  - https://www.fantasyalarm.com/nfl/odds (2:37 PM ET)
