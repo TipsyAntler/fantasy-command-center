@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · 14 FROZEN LINES VERIFIED FROM SZN SCREENSHOTS · 14 MIKE VIBE PICKS LOGGED · NO VIBES TIEBREAKER BY DESIGN · FFCC PROVISIONAL";
-export const week8MarketAsOf = "Oct 28, 2026 · 3:06 PM ET: DAL -7 gives frozen Dallas -6.5 key-number value; JAX -10 strengthens frozen Jacksonville -7.5; all FFCC sides unchanged";
+export const week8MarketAsOf = "Oct 28, 2026 · 5:59 PM ET: consensus still supports the existing card; LV, ATL and LAR now match their frozen lines, so stale number-advantage labels were removed";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -45,8 +45,8 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "BUF -3.5",
     "poolFavorite": "BUF",
     "poolSpread": 3.5,
-    "marketLabel": "Frozen BAL +3.5 vs BUF -3 consensus at OOSTA Oct 28, 2:16 PM ET; prior seven-book exact-line de-vig median 52.2% BAL",
-    "marketTotal": 53.5,
+    "marketLabel": "Frozen BAL +3.5 vs BUF -3 OOSTA consensus at 5:59 PM ET Oct 28; prior seven-book exact-line de-vig median 52.2% BAL",
+    "marketTotal": 54,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     "rationale": "Retain BAL +3.5. At 4:38 PM ET Oct 27, DraftKings, FanDuel, BetMGM, Caesars, bet365, BetRivers and Novig all displayed two-sided prices at the exact frozen BAL +3.5/BUF -3.5 spread; proportional de-vig produced a seven-book median of 52.2% for Baltimore. By 2:16 PM ET Oct 28, OOSTA consensus had moved to BUF -3, so the frozen pool gives Baltimore the hook above the key 3. This is a frozen-number advantage with uncalibrated size, not a high-confidence rating. Lamar Jackson remains day-to-day with a high-ankle sprain; do not double-count that uncertainty beyond the market.",
@@ -79,7 +79,7 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "DAL -6.5",
     "poolFavorite": "DAL",
     "poolSpread": 6.5,
-    "marketLabel": "DAL -7 OOSTA consensus at 3:06 PM ET Oct 28; delayed FanDuel exact DAL -6.5 -122 / ARI +6.5 +100 at 1:03 PM ET",
+    "marketLabel": "DAL -7 OOSTA consensus at 5:59 PM ET Oct 28; delayed FanDuel exact DAL -6.5 -122 / ARI +6.5 +100 at 1:03 PM ET",
     "marketTotal": 54.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
@@ -96,8 +96,8 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "MIN +3.5",
     "poolFavorite": "DET",
     "poolSpread": 3.5,
-    "marketLabel": "Exact MIN +3.5 prices at six books checked Oct 27, 9:06 PM ET; de-vig median 51.7% MIN",
-    "marketTotal": 46.5,
+    "marketLabel": "Exact MIN +3.5 prices at six books checked Oct 27, 9:06 PM ET; de-vig median 51.7% MIN; OOSTA DET -3.5 at 5:59 PM ET Oct 28",
+    "marketTotal": 46,
     "confidence": 2,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
     "rationale": "Retain MIN +3.5. Six independent books now offer both sides at the exact frozen spread; proportional de-vig gives Minnesota a 51.7% median. DraftKings remained at MIN +3 rather than +3.5, so it is excluded from the exact-line price consensus but still confirms the pool hook has value. This is a small lean, not calibrated high confidence.",
@@ -113,11 +113,11 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "LV +1.5",
     "poolFavorite": "NYJ",
     "poolSpread": 1.5,
-    "marketLabel": "LV -1.5 to NYJ -1.5 across conflicting Oct 26 sources",
-    "marketTotal": 44.5,
-    "confidence": 2,
-    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Retain LV +1.5 as a provisional strong-number candidate. Multiple Oct 26 sources list Raiders -1.5, a three-point difference from the frozen Jets -1.5, but other sources still list Jets -1.5. This is market disagreement, not a verified simultaneous exact-line edge.",
+    "marketLabel": "NYJ -1.5 OOSTA consensus at 5:59 PM ET Oct 28, matching the frozen pool spread",
+    "marketTotal": 45.5,
+    "confidence": 1,
+    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
+    "rationale": "Retain LV +1.5 as the transparent prior tie choice. The fresh OOSTA consensus is NYJ -1.5, exactly matching the frozen pool spread; without a verified exact-line price lean or validated independent signal, the earlier conflicting-source number advantage is no longer claimed.",
     "watch": "Critical: resolve opposing Raiders/Jets main lines at comparable timestamps; obtain both prices at LV +1.5."
   },
   {
@@ -130,8 +130,8 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "PIT -3.5",
     "poolFavorite": "PIT",
     "poolSpread": 3.5,
-    "marketLabel": "PIT -3.5 to -4.5 Oct 26 listings",
-    "marketTotal": 38.5,
+    "marketLabel": "PIT -3.5 OOSTA consensus at 5:59 PM ET Oct 28, matching the frozen pool spread",
+    "marketTotal": 39.5,
     "confidence": 1,
     "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
     "rationale": "Keep PIT -3.5. Some Monday sources list Pittsburgh -4.5, making the frozen -3.5 better for the favorite, while others exactly match -3.5. No consistent exact-line price advantage is established.",
@@ -147,11 +147,11 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "ATL +2.5",
     "poolFavorite": "TB",
     "poolSpread": 2.5,
-    "marketLabel": "TB -1.5 to -2.5 across Oct 26-27 sources",
+    "marketLabel": "TB -2.5 OOSTA consensus at 5:59 PM ET Oct 28, matching the frozen pool spread",
     "marketTotal": 45.5,
-    "confidence": 2,
-    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Retain ATL +2.5 provisionally. Most dated quotes list Tampa -1.5 to -2, giving Atlanta a better pool number; Oct 27 FanDuel lists Tampa -2.5, removing that benefit. No robust exact +2.5 two-sided pricing yet.",
+    "confidence": 1,
+    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
+    "rationale": "Retain ATL +2.5 as the transparent prior tie choice. The fresh OOSTA consensus is TB -2.5, exactly matching the frozen pool spread; without a verified exact-line price lean or validated independent signal, the earlier frozen-number advantage is no longer claimed.",
     "watch": "Review Falcons and Buccaneers receiver/QB practice reports and same-line odds."
   },
   {
@@ -164,7 +164,7 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "JAX -7.5",
     "poolFavorite": "JAX",
     "poolSpread": 7.5,
-    "marketLabel": "JAX -10 OOSTA consensus at 3:06 PM ET; Fantasy Alarm JAX -9.5 at 2:37 PM ET Oct 28",
+    "marketLabel": "JAX -10 OOSTA consensus at 5:59 PM ET; Fantasy Alarm JAX -9.5 at 2:37 PM ET Oct 28",
     "marketTotal": 46.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
@@ -181,11 +181,11 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "LAR -6.5",
     "poolFavorite": "LAR",
     "poolSpread": 6.5,
-    "marketLabel": "LAR -6.5 to -7 (some -7.5) in Oct 26 listings",
-    "marketTotal": 44.5,
-    "confidence": 2,
-    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Keep LAR -6.5. Several dated sources have Rams -7, while others match -6.5; the pool favorite needs half a point less in the former case. The difference is not translated into an unsupported percentage.",
+    "marketLabel": "LAR -6.5 OOSTA consensus at 5:59 PM ET Oct 28, matching the frozen pool spread",
+    "marketTotal": 45,
+    "confidence": 1,
+    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
+    "rationale": "Retain LAR -6.5 as the transparent prior tie choice. The fresh OOSTA consensus exactly matches the frozen pool spread; without a verified exact-line price lean or validated independent signal, the earlier frozen-number advantage is no longer claimed.",
     "watch": "Check Rams/Chargers availability and seek exact LAR -6.5 two-sided quotes."
   },
   {
@@ -198,8 +198,8 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "KC -1.5",
     "poolFavorite": "KC",
     "poolSpread": 1.5,
-    "marketLabel": "KC -1 to -1.5 across Oct 26 sources",
-    "marketTotal": 41.5,
+    "marketLabel": "KC -1.5 OOSTA consensus at 5:59 PM ET Oct 28, matching the frozen pool spread",
+    "marketTotal": 40.5,
     "confidence": 1,
     "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
     "rationale": "Keep KC -1.5 provisionally. Most markets are near the frozen spread with no trustworthy exact-line de-vig lean. Kansas City's Week 7 loss is not independently predictive of ATS value.",
@@ -257,4 +257,4 @@ export const week8PoolGames: Week5PoolGame[] = [
     "watch": "Seek verified exact CHI +3.5 prices and late-week inactives; do not assume Mike has submitted SEA."
   }
 ];
-export const week8Tiebreaker = {matchup:"CHI @ SEA",label:"Total points in final game of week, Bears at Seahawks on Monday Nov 2",currentMarketTotal:46.5,earlyFfccTarget:47,mikeSubmittedTotal:null,note:"PROVISIONAL FFCC target 47; OOSTA still showed 46.5 at 3:06 PM ET Oct 28. Mike deliberately leaves tiebreaker blank when presenting vibes; that is expected and requires no action. Actual submitted tiebreaker remains unknown until Mike explicitly confirms a final entry. Recheck near the true lock."};
+export const week8Tiebreaker = {matchup:"CHI @ SEA",label:"Total points in final game of week, Bears at Seahawks on Monday Nov 2",currentMarketTotal:46.5,earlyFfccTarget:47,mikeSubmittedTotal:null,note:"PROVISIONAL FFCC target 47; OOSTA still showed 46.5 at 5:59 PM ET Oct 28. Mike deliberately leaves tiebreaker blank when presenting vibes; that is expected and requires no action. Actual submitted tiebreaker remains unknown until Mike explicitly confirms a final entry. Recheck near the true lock."};
