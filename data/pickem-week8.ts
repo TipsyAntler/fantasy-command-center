@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · 14 FROZEN LINES VERIFIED FROM SZN SCREENSHOTS · 14 MIKE VIBE PICKS LOGGED · NO VIBES TIEBREAKER BY DESIGN · FFCC PROVISIONAL";
-export const week8MarketAsOf = "Oct 26-27, 2026 dated DK, bet365, FanDuel and VegasInsider listings; snapshots differ in timing and are NOT simultaneous exact-pool-spread juice";
+export const week8MarketAsOf = "Oct 27, 2026 evening: exact BAL +3.5 two-sided prices captured at seven books; other listings remain dated main-line snapshots unless explicitly identified";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -45,12 +45,12 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "BUF -3.5",
     "poolFavorite": "BUF",
     "poolSpread": 3.5,
-    "marketLabel": "BUF -3 to -3.5 in Oct 26 listings",
+    "marketLabel": "Exact BAL +3.5 prices at seven books Oct 27, 4:38 PM ET; proportional de-vig median 52.2% BAL",
     "marketTotal": 53.5,
     "confidence": 2,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Retain BAL +3.5 as the prior provisional tie choice. A fresh Oct 27 FanDuel listing matches the frozen BUF -3.5, while earlier Monday sources ranged from -3 to -3.5. Lamar Jackson remains day-to-day with the high-ankle sprain. Without comparable two-sided exact-line prices or a stable number advantage, no measured edge is established.",
-    "watch": "Lamar Jackson's Wednesday practice and final designation, latest consensus and exact BAL +3.5 prices."
+    "signal": "SMALL EXACT-LINE PRICE LEAN",
+    "rationale": "Retain BAL +3.5. At 4:38 PM ET Oct 27, DraftKings, FanDuel, BetMGM, Caesars, bet365, BetRivers and Novig all displayed two-sided prices at the exact frozen BAL +3.5/BUF -3.5 spread. Proportional de-vig produced a seven-book median of 52.2% for Baltimore, a small exact-line price lean rather than a high-confidence edge. Lamar Jackson remains day-to-day with a high-ankle sprain; do not double-count that uncertainty beyond the market.",
+    "watch": "Lamar Jackson's Wednesday practice and final designation; refresh exact BAL +3.5 prices before lock."
   },
   {
     "day": "Sun",
@@ -164,12 +164,12 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "JAX -7.5",
     "poolFavorite": "JAX",
     "poolSpread": 7.5,
-    "marketLabel": "JAX -7.5 across Oct 26 sources",
+    "marketLabel": "JAX -8.5 broadly on Oct 27 after opening near -7.5; some books reached -9.5",
     "marketTotal": 46.5,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Keep JAX -7.5 as a transparent initial choice because quoted Monday markets are generally at the same line. No verified exact-line juice advantage at -7.5, and no independent calibrated model override.",
-    "watch": "Review Jaguars/Colts injury reports, particularly QB and OL, and both sides at -7.5."
+    "confidence": 2,
+    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
+    "rationale": "Keep JAX -7.5. By Oct 27 afternoon, the broad market had moved to Jacksonville -8.5, with some listings reaching -9.5, so the frozen pool asks Jacksonville to cover at least one point less. Indianapolis also officially traded All-Pro guard Quenton Nelson to Seattle and defensive tackle DeForest Buckner to San Francisco; those transactions are matchup context already reflected in the move and are not counted again as a separate edge.",
+    "watch": "Review Jaguars/Colts QB and OL reports and whether the market holds above JAX -7.5; seek exact -7.5 alternate-line pairs."
   },
   {
     "day": "Sun",
@@ -253,7 +253,7 @@ export const week8PoolGames: Week5PoolGame[] = [
     "marketTotal": 46.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Early FFCC lean CHI +3.5 instead of Mike's SEA -3.5. Multiple Monday sources show Seattle -3, meaning the frozen Bears +3.5 is above the key 3, while bet365 and other sources still show -3.5. This is an uncalibrated line advantage only.",
+    "rationale": "Retain CHI +3.5 instead of Mike's SEA -3.5. Tuesday evening consensus remained Seattle -3, so the frozen Bears +3.5 stays above the key 3. Seattle's acquisition of All-Pro guard Quenton Nelson, pending physical, is meaningful matchup context but is already allowed to flow through the market rather than counted as a separate edge.",
     "watch": "Seek verified exact CHI +3.5 prices and late-week inactives; do not assume Mike has submitted SEA."
   }
 ];
