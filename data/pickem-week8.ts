@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · 14 FROZEN LINES VERIFIED FROM SZN SCREENSHOTS · 14 MIKE VIBE PICKS LOGGED · NO VIBES TIEBREAKER BY DESIGN · FFCC PROVISIONAL";
-export const week8MarketAsOf = "Oct 28, 2026 · 11:16 AM ET: current consensus refreshed; exact frozen-spread prices support a Miami +7.5 flip, while JAX -7.5 remains a strong frozen-number advantage";
+export const week8MarketAsOf = "Oct 28, 2026 · 2:16 PM ET: consensus BUF -3 strengthens frozen BAL +3.5 above the key 3; Miami +7.5 and JAX -7.5 evidence remains intact";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -45,11 +45,11 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "BUF -3.5",
     "poolFavorite": "BUF",
     "poolSpread": 3.5,
-    "marketLabel": "Exact BAL +3.5 prices at seven books Oct 27, 4:38 PM ET; proportional de-vig median 52.2% BAL",
+    "marketLabel": "Frozen BAL +3.5 vs BUF -3 consensus at OOSTA Oct 28, 2:16 PM ET; prior seven-book exact-line de-vig median 52.2% BAL",
     "marketTotal": 53.5,
     "confidence": 2,
-    "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Retain BAL +3.5. At 4:38 PM ET Oct 27, DraftKings, FanDuel, BetMGM, Caesars, bet365, BetRivers and Novig all displayed two-sided prices at the exact frozen BAL +3.5/BUF -3.5 spread. Proportional de-vig produced a seven-book median of 52.2% for Baltimore, a small exact-line price lean rather than a high-confidence edge. Lamar Jackson remains day-to-day with a high-ankle sprain; do not double-count that uncertainty beyond the market.",
+    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
+    "rationale": "Retain BAL +3.5. At 4:38 PM ET Oct 27, DraftKings, FanDuel, BetMGM, Caesars, bet365, BetRivers and Novig all displayed two-sided prices at the exact frozen BAL +3.5/BUF -3.5 spread; proportional de-vig produced a seven-book median of 52.2% for Baltimore. By 2:16 PM ET Oct 28, OOSTA consensus had moved to BUF -3, so the frozen pool gives Baltimore the hook above the key 3. This is a frozen-number advantage with uncalibrated size, not a high-confidence rating. Lamar Jackson remains day-to-day with a high-ankle sprain; do not double-count that uncertainty beyond the market.",
     "watch": "Lamar Jackson's Wednesday practice and final designation; refresh exact BAL +3.5 prices before lock."
   },
   {
