@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · 14 FROZEN LINES VERIFIED FROM SZN SCREENSHOTS · 14 MIKE VIBE PICKS LOGGED · NO VIBES TIEBREAKER BY DESIGN · FFCC PROVISIONAL";
-export const week8MarketAsOf = "Oct 28, 2026 · 2:16 PM ET: consensus BUF -3 strengthens frozen BAL +3.5 above the key 3; Miami +7.5 and JAX -7.5 evidence remains intact";
+export const week8MarketAsOf = "Oct 28, 2026 · 3:06 PM ET: DAL -7 gives frozen Dallas -6.5 key-number value; JAX -10 strengthens frozen Jacksonville -7.5; all FFCC sides unchanged";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -79,11 +79,11 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "DAL -6.5",
     "poolFavorite": "DAL",
     "poolSpread": 6.5,
-    "marketLabel": "Exact DAL -6.5 prices at seven books checked Oct 27, 9:06 PM ET; de-vig median 50.9% DAL",
-    "marketTotal": 53.5,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Keep DAL -6.5 as the transparent tie choice. Seven books now offer both sides at the exact frozen spread; proportional de-vig gives Dallas a 50.9% median, which is effectively balanced and does not establish a measured edge.",
+    "marketLabel": "DAL -7 OOSTA consensus at 3:06 PM ET Oct 28; delayed FanDuel exact DAL -6.5 -122 / ARI +6.5 +100 at 1:03 PM ET",
+    "marketTotal": 54.5,
+    "confidence": 2,
+    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
+    "rationale": "Retain DAL -6.5. OOSTA consensus reached Dallas -7 at 3:06 PM ET, so the frozen pool number is below the key 7 and wins instead of pushing on an exact seven-point Dallas margin. A delayed CLEATZ snapshot at 1:03 PM ET showed FanDuel pricing the exact frozen pair at ARI +6.5 +100 / DAL -6.5 -122, but one delayed book is not a robust exact-line consensus. Treat this as a frozen-number advantage with uncalibrated size; do not convert the half-point into an invented cover probability.",
     "watch": "Review Wednesday-Friday Cardinals/Cowboys reports and refresh exact -6.5 prices before Sunday."
   },
   {
@@ -164,11 +164,11 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "JAX -7.5",
     "poolFavorite": "JAX",
     "poolSpread": 7.5,
-    "marketLabel": "JAX -9.5 consensus at OOSTA (11:16 AM ET) and Fantasy Alarm (9:41 AM ET) on Oct 28",
+    "marketLabel": "JAX -10 OOSTA consensus at 3:06 PM ET; Fantasy Alarm JAX -9.5 at 2:37 PM ET Oct 28",
     "marketTotal": 46.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Keep JAX -7.5. Wednesday morning consensus moved to Jacksonville -9.5 at both OOSTA and Fantasy Alarm, so the frozen pool asks Jacksonville to cover two points less than the current primary market. Indianapolis also officially traded All-Pro guard Quenton Nelson to Seattle and defensive tackle DeForest Buckner to San Francisco; those transactions are matchup context already reflected in the move and are not counted again as a separate edge.",
+    "rationale": "Keep JAX -7.5. OOSTA reached Jacksonville -10 at 3:06 PM ET while Fantasy Alarm showed -9.5 at 2:37 PM ET, so the frozen pool asks Jacksonville to cover 2–2.5 points less than those current boards. Indianapolis also officially traded All-Pro guard Quenton Nelson to Seattle and defensive tackle DeForest Buckner to San Francisco; those transactions are matchup context already reflected in the move and are not counted again as a separate edge.",
     "watch": "Review Jaguars/Colts QB and OL reports and whether the market holds above JAX -7.5; seek exact -7.5 alternate-line pairs."
   },
   {
@@ -257,4 +257,4 @@ export const week8PoolGames: Week5PoolGame[] = [
     "watch": "Seek verified exact CHI +3.5 prices and late-week inactives; do not assume Mike has submitted SEA."
   }
 ];
-export const week8Tiebreaker = {matchup:"CHI @ SEA",label:"Total points in final game of week, Bears at Seahawks on Monday Nov 2",currentMarketTotal:46.5,earlyFfccTarget:47,mikeSubmittedTotal:null,note:"PROVISIONAL FFCC target 47, based on Oct 26-27 books clustering at 46.5. Mike deliberately leaves tiebreaker blank when presenting vibes; that is expected and requires no action. Actual submitted tiebreaker remains unknown until Mike explicitly confirms a final entry. Recheck near the true lock."};
+export const week8Tiebreaker = {matchup:"CHI @ SEA",label:"Total points in final game of week, Bears at Seahawks on Monday Nov 2",currentMarketTotal:46.5,earlyFfccTarget:47,mikeSubmittedTotal:null,note:"PROVISIONAL FFCC target 47; OOSTA still showed 46.5 at 3:06 PM ET Oct 28. Mike deliberately leaves tiebreaker blank when presenting vibes; that is expected and requires no action. Actual submitted tiebreaker remains unknown until Mike explicitly confirms a final entry. Recheck near the true lock."};
