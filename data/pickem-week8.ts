@@ -2,11 +2,11 @@ import type { Week5PoolGame } from "./pickem-week5";
 
 // October 27, 2026 screenshots: pool's exact frozen spreads and orange-highlighted early selections.
 // Mike intentionally highlights vibe picks ONLY, with no tiebreaker. These are NEVER submissions. A separate explicit confirmation is required to record actual submitted sides and total.
-// Market references are dated snapshots, NOT live exact-line two-sided betting quotes.
+// Market references are dated snapshots unless a game explicitly records live two-sided prices at the exact frozen spread.
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · 14 FROZEN LINES VERIFIED FROM SZN SCREENSHOTS · 14 MIKE VIBE PICKS LOGGED · NO VIBES TIEBREAKER BY DESIGN · FFCC PROVISIONAL";
-export const week8MarketAsOf = "Oct 27, 2026 evening: exact BAL +3.5 two-sided prices captured at seven books; other listings remain dated main-line snapshots unless explicitly identified";
+export const week8MarketAsOf = "Oct 27, 2026 evening: exact frozen-spread pairs captured for CAR-GB, BAL-BUF, ARI-DAL and MIN-DET; other listings remain dated main-line snapshots unless explicitly identified";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -28,12 +28,12 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "GB -3.5",
     "poolFavorite": "GB",
     "poolSpread": 3.5,
-    "marketLabel": "GB -3 to -4.5 across Oct 26-27 listings",
+    "marketLabel": "Exact GB -3.5 prices at seven books checked Oct 27, 9:06 PM ET; de-vig median 50.5% GB",
     "marketTotal": 47.5,
     "confidence": 1,
     "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Keep GB -3.5 as the initial tie choice. Sources diverge: VegasInsider had GB -3, bet365/DraftKings cited -3.5 to -4.5. The frozen number has no consistently verified advantage. Packers' Monday estimated injury report listed several OL/defensive players DNP; Bryce Young was full for Carolina.",
-    "watch": "Thursday 8:15 PM ET kickoff; review Tuesday-Wednesday official practice reports and live exact -3.5 two-sided quotes."
+    "rationale": "Keep GB -3.5 as the transparent tie choice. Seven books now offer both sides at the exact frozen spread; proportional de-vig gives Green Bay a 50.5% median, too balanced to claim a measured edge. Green Bay's injury report remains the key non-market check, including OL and defensive absences, while Bryce Young was full for Carolina.",
+    "watch": "Thursday 8:15 PM ET kickoff; review Wednesday's official report, inactives and whether exact -3.5 pricing moves decisively."
   },
   {
     "day": "Sun",
@@ -79,12 +79,12 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "DAL -6.5",
     "poolFavorite": "DAL",
     "poolSpread": 6.5,
-    "marketLabel": "DAL -6 to -6.5 across Oct 26 listings",
+    "marketLabel": "Exact DAL -6.5 prices at seven books checked Oct 27, 9:06 PM ET; de-vig median 50.9% DAL",
     "marketTotal": 53.5,
     "confidence": 1,
     "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Dallas -6.5 is the initial tie choice. Most listed Monday books match the pool; a few list -6, so no reliable exact-line advantage has been measured.",
-    "watch": "Verify Monday-night DAL @ PHI injury outcomes and rest, then same-line ATS prices before Sunday."
+    "rationale": "Keep DAL -6.5 as the transparent tie choice. Seven books now offer both sides at the exact frozen spread; proportional de-vig gives Dallas a 50.9% median, which is effectively balanced and does not establish a measured edge.",
+    "watch": "Review Wednesday-Friday Cardinals/Cowboys reports and refresh exact -6.5 prices before Sunday."
   },
   {
     "day": "Sun",
@@ -96,12 +96,12 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "MIN +3.5",
     "poolFavorite": "DET",
     "poolSpread": 3.5,
-    "marketLabel": "DET -3 to -3.5 across Oct 26-27 listings",
+    "marketLabel": "Exact MIN +3.5 prices at six books checked Oct 27, 9:06 PM ET; de-vig median 51.7% MIN",
     "marketTotal": 46.5,
     "confidence": 2,
-    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Retain MIN +3.5. A DraftKings Monday snapshot and VegasInsider list Detroit -3 to -2.5, whereas bet365 has -3.5. The pool gives Minnesota the hook when the market is below three and a half; advantage size uncalibrated.",
-    "watch": "Monitor Minnesota personnel and whether the market consolidates at DET -3 or -3.5."
+    "signal": "SMALL EXACT-LINE PRICE LEAN",
+    "rationale": "Retain MIN +3.5. Six independent books now offer both sides at the exact frozen spread; proportional de-vig gives Minnesota a 51.7% median. DraftKings remained at MIN +3 rather than +3.5, so it is excluded from the exact-line price consensus but still confirms the pool hook has value. This is a small lean, not calibrated high confidence.",
+    "watch": "Monitor Wednesday-Friday personnel reports and refresh exact MIN +3.5 prices before lock."
   },
   {
     "day": "Sun",
