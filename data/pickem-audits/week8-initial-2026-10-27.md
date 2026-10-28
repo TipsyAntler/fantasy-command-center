@@ -83,3 +83,46 @@ This section supersedes the earlier BAL and IND evidence labels without changing
 - Recommendation remains **CHI +3.5** and Tuesday consensus remained Seattle -3, preserving the hook above the key 3.
 - Seattle acquired Quenton Nelson pending physical. This is meaningful matchup context, not an independent additive edge; the frozen-number label remains unchanged.
 - No actionable-alert entry was created because no FFCC side changed.
+
+
+## Oct. 27 exact-line expansion — 9:06 PM ET
+No FFCC recommendation changed. This pass replaced dated main-line summaries with exact frozen-spread price pairs where available.
+
+### CAR +3.5 at GB -3.5
+- Recommendation remains **GB -3.5** with evidence label **no measured edge / provisional tie choice**.
+- Exact-line pairs:
+  - DraftKings -108 / -112
+  - FanDuel -106 / -114
+  - BetMGM -108 / -120
+  - Caesars -104 / -117
+  - bet365 -109 / -112
+  - BetRivers -109 / -112
+  - Novig +100 / -104
+- Proportional de-vig median: **50.49% GB**. The market is effectively balanced, so the prior side is retained transparently.
+
+### ARI +6.5 at DAL -6.5
+- Recommendation remains **DAL -6.5** with evidence label **no measured edge / provisional tie choice**.
+- Exact-line pairs:
+  - DraftKings -105 / -115
+  - FanDuel -106 / -114
+  - BetMGM -108 / -110
+  - Caesars -106 / -114
+  - bet365 -105 / -116
+  - BetRivers -112 / -110
+  - Novig +102 / -108
+- Proportional de-vig median: **50.87% DAL**. This is too balanced to claim an edge.
+
+### MIN +3.5 at DET -3.5
+- Recommendation remains **MIN +3.5**.
+- Exact-line pairs:
+  - FanDuel -118 / -104
+  - BetMGM -118 / +100
+  - Caesars -120 / +100
+  - bet365 -116 / -104
+  - BetRivers -115 / -106
+  - Novig -113 / +108
+- DraftKings showed MIN +3 rather than +3.5 and was excluded from the exact-line price calculation.
+- Proportional de-vig median: **51.74% MIN**.
+- Evidence label updated from **frozen-number advantage with uncalibrated size** to **small exact-line price lean**.
+- Source checked Oct. 27 at 9:06 PM ET: https://cleatz.com/nfl/lines/
+- No actionable alert was created because all three recommended sides were unchanged.
