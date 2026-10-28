@@ -164,3 +164,18 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
   - https://www.oostapro.com/nfl/line-moves (3:06 PM ET)
   - https://cleatz.com/nfl/lines/ (delayed snapshot, 1:03 PM ET)
   - https://www.fantasyalarm.com/nfl/odds (2:37 PM ET)
+
+
+## Oct 28, 2026 · 5:59 PM ET — Evening consensus refresh
+- **No FFCC recommendation changed.** OOSTA consensus remained GB -3.5, CIN -10.5, DAL -7, DET -3.5, BUF -3, NYJ -1.5, PIT -3.5, TB -2.5, JAX -10, LAR -6.5, KC -1.5, NE -7, WAS -5.5 and SEA -3.
+- **Evidence-label corrections:** LV +1.5, ATL +2.5 and LAR -6.5 now exactly match the fresh primary consensus, so their stale frozen-number-advantage labels were removed. Each remains the prior transparent tie choice with **no measured edge / provisional tie choice** because no verified exact-line price lean or validated independent override favors the opposite side.
+- **Market totals refreshed:** BAL-BUF 54, MIN-DET 46, LV-NYJ 45.5, CLE-PIT 39.5, LAC-LAR 45, KC-DEN 40.5 and NE-MIA 44. These total changes do not alter ATS sides.
+- **Tiebreaker:** CHI-SEA remains 46.5; provisional FFCC target remains **47**.
+- **Fantasy availability:** Atlanta's official Wednesday report lists Brian Robinson Jr. DNP with a hamstring injury but gives no Week 8 game designation, so BM's desired defense transaction remains locked. Chicago has not posted a current Week 8 game designation for Kyle Monangai; prior-week OUT data was not carried forward.
+- **Roster injury monitoring:** Tampa Bay lists Emeka Egbuka limited (concussion/foot), Detroit lists Amon-Ra St. Brown DNP (ankle), and the Jets list Breece Hall limited (quadriceps). None creates a verified lineup action at this stage.
+- **Alert decision:** no actionable alert or push was created because no recommended side changed and no roster transaction window opened.
+- Sources checked:
+  - https://www.oostapro.com/nfl/line-moves (5:59 PM ET)
+  - https://www.atlantafalcons.com/news/falcons-injury-report-brian-robinson-divine-deablo-non-participants-as-week-8-practices-begin (3:50 PM ET)
+  - https://www.buccaneers.com/news/buccaneers-falcons-injury-report-oct-28-week-8-2026 (4:14 PM ET)
+  - https://www.detroitlions.com/news/lions-vs-vikings-practice-report-oct-28-gibbs-stbrown-joseph (4:31 PM ET)
