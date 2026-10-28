@@ -126,3 +126,22 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
 - Evidence label updated from **frozen-number advantage with uncalibrated size** to **small exact-line price lean**.
 - Source checked Oct. 27 at 9:06 PM ET: https://cleatz.com/nfl/lines/
 - No actionable alert was created because all three recommended sides were unchanged.
+
+
+## Oct. 28 late-morning market update — 11:16 AM ET
+
+### Genuine FFCC recommendation flip: NE -7.5 → MIA +7.5
+- Mike's NE -7.5 remains a vibe only; no actual submission is assumed.
+- DraftKings and FanDuel both displayed the exact frozen spread at **NE -7.5 -105 / MIA +7.5 -115**. Proportional de-vig gives Miami **51.1%** at each book.
+- OOSTA's 11:16 AM ET consensus and Fantasy Alarm's 9:41 AM ET board both moved the main market to **NE -7**, so the frozen pool gives Miami the hook above the key 7.
+- Evidence label: **small exact-line price lean**. This is not calibrated high confidence.
+- Sources:
+  - https://patriotscentric.com/
+  - https://www.oostapro.com/nfl/line-moves
+  - https://www.fantasyalarm.com/nfl/odds
+- Recheck official reports and exact pricing before Sunday's edit lock. Reverse only if fresh verified evidence favors New England at the fixed -7.5.
+
+### IND at JAX — frozen advantage strengthened
+- Recommendation remains **JAX -7.5**.
+- OOSTA (11:16 AM ET) and Fantasy Alarm (9:41 AM ET) both showed **JAX -9.5**, a two-point advantage for the frozen favorite number.
+- Evidence remains **frozen-number advantage with uncalibrated size**; no exact -7.5 cover probability is claimed.
