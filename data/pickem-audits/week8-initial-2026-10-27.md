@@ -50,3 +50,36 @@
   - https://www.cbssports.com/nfl/odds/2026/regular/week-8/
   - https://www.philadelphiaeagles.com/news/eagles-and-jalen-hurts-agent-nicole-lynn-provide-an-update-on-qb-jalen-hurts
 - Recheck the exact frozen line and official Wednesday-Friday reports. Reverse only if fresh verified evidence favors Philadelphia at +4.5; do not react to every small twitch.
+
+
+## Oct. 27 late-evening evidence refresh — 8:14 PM ET
+This section supersedes the earlier BAL and IND evidence labels without changing either recommended side.
+
+### BAL +3.5 at BUF — exact frozen-line price lean
+- Recommendation remains **BAL +3.5**; Mike's BUF -3.5 remains a vibe only.
+- CLEATZ displayed simultaneous two-sided prices at the exact frozen spread:
+  - DraftKings: BAL +3.5 -120 / BUF -3.5 +100
+  - FanDuel: BAL +3.5 -122 / BUF -3.5 +100
+  - BetMGM: BAL +3.5 -112 / BUF -3.5 -105
+  - Caesars: BAL +3.5 -121 / BUF -3.5 +100
+  - bet365: BAL +3.5 -119 / BUF -3.5 -102
+  - BetRivers: BAL +3.5 -117 / BUF -3.5 -105
+  - Novig: BAL +3.5 -125 / BUF -3.5 +113
+- Proportional de-vig Baltimore probabilities were 52.17%, 52.36%, 50.77%, 52.27%, 51.83%, 51.28% and 54.20%; the robust seven-book median was **52.17%**.
+- New evidence label: **small exact-line price lean**. This is not a high-confidence rating and does not erase the need to monitor Lamar Jackson's high-ankle sprain.
+- Source checked Oct. 27 at 8:14 PM ET: https://cleatz.com/nfl/lines/
+
+### IND at JAX — frozen number strengthened
+- Recommendation remains **JAX -7.5**.
+- Tuesday afternoon/evening listings broadly moved Jacksonville to -8.5, with some books reaching -9.5. The pool therefore asks Jacksonville to cover at least one point less than the current primary market.
+- New evidence label: **frozen-number advantage with uncalibrated size**. No exact -7.5 cover probability is claimed.
+- Indianapolis officially traded All-Pro LG Quenton Nelson to Seattle and DT DeForest Buckner to San Francisco on Oct. 27. These are meaningful matchup inputs but are treated as reflected in the market movement rather than double-counted.
+- Sources checked Oct. 27 at 8:14 PM ET:
+  - https://cleatz.com/nfl/lines/
+  - https://www.colts.com/news/colts-trade-g-quenton-nelson-to-seattle-seahawks-for-2-future-nfl-draft-picks
+  - https://www.colts.com/news/colts-acquire-2027-fourth-round-pick-in-exchange-for-dt-deforest-buckner-in-trade-with-san-francisco-49ers
+
+### CHI +3.5 at SEA — transaction context, no side change
+- Recommendation remains **CHI +3.5** and Tuesday consensus remained Seattle -3, preserving the hook above the key 3.
+- Seattle acquired Quenton Nelson pending physical. This is meaningful matchup context, not an independent additive edge; the frozen-number label remains unchanged.
+- No actionable-alert entry was created because no FFCC side changed.
