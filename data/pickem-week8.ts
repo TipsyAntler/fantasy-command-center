@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · 14 FROZEN LINES VERIFIED FROM SZN SCREENSHOTS · 14 MIKE VIBE PICKS LOGGED · NO VIBES TIEBREAKER BY DESIGN · FFCC PROVISIONAL";
-export const week8MarketAsOf = "Oct 27, 2026 evening: exact frozen-spread pairs captured for CAR-GB, BAL-BUF, ARI-DAL and MIN-DET; other listings remain dated main-line snapshots unless explicitly identified";
+export const week8MarketAsOf = "Oct 28, 2026 · 11:16 AM ET: current consensus refreshed; exact frozen-spread prices support a Miami +7.5 flip, while JAX -7.5 remains a strong frozen-number advantage";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -164,11 +164,11 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "JAX -7.5",
     "poolFavorite": "JAX",
     "poolSpread": 7.5,
-    "marketLabel": "JAX -8.5 broadly on Oct 27 after opening near -7.5; some books reached -9.5",
+    "marketLabel": "JAX -9.5 consensus at OOSTA (11:16 AM ET) and Fantasy Alarm (9:41 AM ET) on Oct 28",
     "marketTotal": 46.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Keep JAX -7.5. By Oct 27 afternoon, the broad market had moved to Jacksonville -8.5, with some listings reaching -9.5, so the frozen pool asks Jacksonville to cover at least one point less. Indianapolis also officially traded All-Pro guard Quenton Nelson to Seattle and defensive tackle DeForest Buckner to San Francisco; those transactions are matchup context already reflected in the move and are not counted again as a separate edge.",
+    "rationale": "Keep JAX -7.5. Wednesday morning consensus moved to Jacksonville -9.5 at both OOSTA and Fantasy Alarm, so the frozen pool asks Jacksonville to cover two points less than the current primary market. Indianapolis also officially traded All-Pro guard Quenton Nelson to Seattle and defensive tackle DeForest Buckner to San Francisco; those transactions are matchup context already reflected in the move and are not counted again as a separate edge.",
     "watch": "Review Jaguars/Colts QB and OL reports and whether the market holds above JAX -7.5; seek exact -7.5 alternate-line pairs."
   },
   {
@@ -210,17 +210,17 @@ export const week8PoolGames: Week5PoolGame[] = [
     "kickoff": "4:25 PM",
     "away": "NE",
     "home": "MIA",
-    "poolPick": "NE",
-    "poolLine": -7.5,
+    "poolPick": "MIA",
+    "poolLine": 7.5,
     "mikeVibe": "NE -7.5",
     "poolFavorite": "NE",
     "poolSpread": 7.5,
-    "marketLabel": "NE -7.5 to -8.5 across Oct 26 sources",
+    "marketLabel": "Exact MIA +7.5 prices at DraftKings and FanDuel checked Oct 28; both -115 vs NE -7.5 -105, de-vig 51.1% MIA",
     "marketTotal": 44.5,
     "confidence": 2,
-    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Retain NE -7.5. Some Monday books list New England -8.5, favoring the pool's shorter favorite spread, while others still match -7.5. This is an uncalibrated frozen-number lead, not an exact cover probability.",
-    "watch": "Track Dolphins quarterback status, Patriots reports and exact NE -7.5 alternate quotes."
+    "signal": "SMALL EXACT-LINE PRICE LEAN",
+    "rationale": "Flip FFCC to MIA +7.5 instead of NE -7.5. DraftKings and FanDuel both price the exact frozen spread at NE -7.5 -105 / MIA +7.5 -115; proportional de-vig gives Miami 51.1% at each book. Wednesday morning OOSTA and Fantasy Alarm consensus also moved to New England -7, so the pool gives Miami the hook above the key 7. This is a small exact-line price lean, not calibrated high confidence.",
+    "watch": "Track Dolphins quarterback status, Patriots reports and whether the market returns broadly to NE -7.5 or higher before Sunday lock."
   },
   {
     "day": "Sun",
