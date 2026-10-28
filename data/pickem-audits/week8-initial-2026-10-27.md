@@ -145,3 +145,11 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
 - Recommendation remains **JAX -7.5**.
 - OOSTA (11:16 AM ET) and Fantasy Alarm (9:41 AM ET) both showed **JAX -9.5**, a two-point advantage for the frozen favorite number.
 - Evidence remains **frozen-number advantage with uncalibrated size**; no exact -7.5 cover probability is claimed.
+
+## Oct 28, 2026 · 2:16 PM ET — Baltimore frozen-number advantage strengthened
+- **Fresh market:** OOSTA consensus moved BAL @ BUF from BUF -3.5 earlier Wednesday to **BUF -3** at 2:16 PM ET.
+- **Frozen pool number:** BAL +3.5. The pool now gives Baltimore the hook above the key 3.
+- **Exact-line price audit retained:** the Oct 27 seven-book two-sided BAL +3.5 / BUF -3.5 check produced a proportional de-vig median of **52.2% Baltimore**.
+- **Recommendation:** remains **BAL +3.5**. Evidence label upgraded from **small exact-line price lean** to **frozen-number advantage · uncalibrated size**.
+- **Alert decision:** no actionable alert or push was created because the recommended side did not change.
+- Source: https://www.oostapro.com/nfl/line-moves (updated Oct 28, 2026 at 2:16 PM ET).
