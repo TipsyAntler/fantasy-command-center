@@ -13,6 +13,7 @@ export type YahooSession = {
   refreshToken: string;
   expiresAt: number;
   tokenType: string;
+  ownerFingerprint?: string;
 };
 
 function required(name: string) {
@@ -167,6 +168,7 @@ export async function refreshYahooSession(session: YahooSession, origin: string)
     refreshToken: json.refresh_token || session.refreshToken,
     expiresAt: Date.now() + Math.max(60, json.expires_in ?? 3600) * 1000,
     tokenType: json.token_type || session.tokenType || "bearer",
+    ownerFingerprint: session.ownerFingerprint,
   };
 }
 
