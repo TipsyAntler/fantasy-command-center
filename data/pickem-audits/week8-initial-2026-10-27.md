@@ -256,3 +256,13 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
 - **Survivor:** 22 entries remain alive; visible Week 8 picks are Cincinnati 2 and Jacksonville 2. Informational only.
 - **Alert decision:** the existing generic LL bye-week QB warning was replaced with a precise live-Yahoo action alert for Baker Mayfield. No Pick'em alert was created because no side changed.
 - Sources: private Yahoo read-only monitor (not published) · https://www.buccaneers.com/team/players-roster/baker-mayfield/splits/ · https://www.nfl.com/players/sam-darnold/stats/ · https://cleatz.com/nfl/lines/ · https://www.oostapro.com/nfl/line-moves · https://www.nfl.com/injuries/ · https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
+
+
+## Oct. 29, 2026 · 2:00 PM ET — Live roster and market refresh
+- **Yahoo source status:** the private read-only monitor returned ok=true with a current fetch, both BM and LL leagues, nonempty starters and standings, and no league errors. No Yahoo mutation was performed.
+- **Fantasy:** BM and LL rosters are unchanged. Brock Purdy remains in LL's starting QB slot during San Francisco's bye, and Baker Mayfield remains available; the previously delivered Mayfield action remains valid and was not re-alerted. BM has no new independently supported lineup or waiver action.
+- **Pick'em:** all 14 FFCC sides remain unchanged. OOSTA consensus moved CIN to -11.5 and WSH to -6 at 2:00 PM ET. The Washington move strengthens the existing frozen-number advantage at WAS -4.5 but does not create a new recommendation. TEN +10.5 remains the recommendation because the latest verified six-book exact-line de-vig median favors Tennessee at 51.0%; the conflicting main-line move alone does not justify a flip. NE-MIA remains 43.5 and CHI-SEA remains 46.5, so the tiebreaker stays 47.
+- **Official reports:** the current NFL Week 8 page still shows Wednesday participation for Sunday games: Bowers LP, Breece Hall LP, Emeka Egbuka LP, Baker Mayfield FP, Brian Robinson Jr. DNP and Allgeier DNP. No final Sunday game designation has posted.
+- **Survivor:** 22 entries remain alive; visible Week 8 picks remain Cincinnati 2 and Jacksonville 2. Informational only.
+- **Alert decision:** no new actionable alert or push. Market evidence strengthened an existing side but no recommendation changed.
+- Sources: https://www.oostapro.com/nfl/line-moves (2:00 PM ET) · https://www.nfl.com/injuries/league/2026/reg8 · https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
