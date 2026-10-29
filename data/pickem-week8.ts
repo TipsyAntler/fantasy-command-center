@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · 14 FROZEN LINES VERIFIED FROM SZN SCREENSHOTS · 14 MIKE VIBE PICKS LOGGED · NO VIBES TIEBREAKER BY DESIGN · FFCC PROVISIONAL";
-export const week8MarketAsOf = "Oct 28, 2026 · 8:06 PM ET: all ATS sides unchanged; CAR-GB total eased from 47.5 to 47 while the final-game tiebreak total stayed 46.5";
+export const week8MarketAsOf = "Oct 28, 2026 · 9:17 PM ET: all ATS sides unchanged; ATL-TB total fell to 44.5 and NE-MIA to 44 while the final-game tiebreak total stayed 46.5";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -147,8 +147,8 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "ATL +2.5",
     "poolFavorite": "TB",
     "poolSpread": 2.5,
-    "marketLabel": "TB -2.5 OOSTA consensus at 5:59 PM ET Oct 28, matching the frozen pool spread",
-    "marketTotal": 45.5,
+    "marketLabel": "TB -2.5 OOSTA consensus at 9:17 PM ET Oct 28, matching the frozen pool spread; total 44.5",
+    "marketTotal": 44.5,
     "confidence": 1,
     "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
     "rationale": "Retain ATL +2.5 as the transparent prior tie choice. The fresh OOSTA consensus is TB -2.5, exactly matching the frozen pool spread; without a verified exact-line price lean or validated independent signal, the earlier frozen-number advantage is no longer claimed.",
@@ -215,8 +215,8 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "NE -7.5",
     "poolFavorite": "NE",
     "poolSpread": 7.5,
-    "marketLabel": "Exact MIA +7.5 prices at DraftKings and FanDuel checked Oct 28; both -115 vs NE -7.5 -105, de-vig 51.1% MIA",
-    "marketTotal": 44.5,
+    "marketLabel": "Exact MIA +7.5 prices at DraftKings and FanDuel checked Oct 28; both -115 vs NE -7.5 -105, de-vig 51.1% MIA; OOSTA total 44 at 9:17 PM ET",
+    "marketTotal": 44,
     "confidence": 2,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
     "rationale": "Flip FFCC to MIA +7.5 instead of NE -7.5. DraftKings and FanDuel both price the exact frozen spread at NE -7.5 -105 / MIA +7.5 -115; proportional de-vig gives Miami 51.1% at each book. Wednesday morning OOSTA and Fantasy Alarm consensus also moved to New England -7, so the pool gives Miami the hook above the key 7. This is a small exact-line price lean, not calibrated high confidence.",
