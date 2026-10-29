@@ -266,3 +266,13 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
 - **Survivor:** 22 entries remain alive; visible Week 8 picks remain Cincinnati 2 and Jacksonville 2. Informational only.
 - **Alert decision:** no new actionable alert or push. Market evidence strengthened an existing side but no recommendation changed.
 - Sources: https://www.oostapro.com/nfl/line-moves (2:00 PM ET) · https://www.nfl.com/injuries/league/2026/reg8 · https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
+
+
+## Oct. 29, 2026 · 3:54 PM ET — Live status refresh
+- **Yahoo source status:** the private read-only monitor returned ok=true with a current fetch, both BM and LL leagues, nonempty starters and standings, and no league errors. No Yahoo mutation was performed.
+- **BM:** Yahoo newly labels TreVeyon Henderson questionable in the starting flex slot. New England's official Wednesday report does not list Henderson, so the flag is not independently confirmed and does not justify a lineup change or alert. Chris Olave remains the rostered fallback if a credible report later rules Henderson at risk. Bowers remains Q; no new action.
+- **LL:** Brock Purdy remains in the starting QB slot on bye, Baker Mayfield remains available, and the previously delivered Mayfield action remains unresolved but unchanged. No duplicate alert.
+- **Pick'em:** the 2:41 PM ET OOSTA board matches the 2:00 PM snapshot used by FFCC: CIN -11.5, WSH -6, NE -7, SEA -3 and no ATS recommendation or 47-point tiebreaker change.
+- **Survivor:** 22 entries remain alive. Six Week 8 picks are now visible: Cincinnati 3, Jacksonville 2 and New England 1. The Survivor page reads the commissioner sheet dynamically; informational only.
+- **Alert decision:** no new alert or push. Henderson is an unconfirmed injury flag without a recommended move, and the Pick'em card is unchanged.
+- Sources: private Yahoo read-only monitor (not published) · https://www.patriots.com/news/week-8-injury-report-patriots-at-dolphins-x9227 · https://www.oostapro.com/nfl/line-moves (2:41 PM ET) · https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
