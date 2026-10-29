@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · INITIAL CARD SUBMISSION-READY · 14 FROZEN LINES VERIFIED · SAVE ALL PICKS + TIEBREAKER 47 BEFORE THURSDAY 8:15 PM ET · WEEKEND/MONDAY SIDES REMAIN EDITABLE UNTIL SUNDAY 1:00 PM ET";
-export const week8MarketAsOf = "Oct 29, 2026 · 12:20 PM ET: all 14 ATS recommendations and the 47-point tiebreaker unchanged; TEN +10.5 now has a six-book exact-line de-vig median of 51.0%; NE-MIA total moved to 43.5; initial full-card submission due before CAR-GB at 8:15 PM ET";
+export const week8MarketAsOf = "Oct 29, 2026 · 2:00 PM ET: all 14 ATS recommendations and the 47-point tiebreaker unchanged; OOSTA moved CIN to -11.5 and WSH to -6 while exact-line evidence still supports TEN +10.5; NE-MIA total remains 43.5; initial full-card submission due before CAR-GB at 8:15 PM ET";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -232,11 +232,11 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "PHI +4.5",
     "poolFavorite": "WAS",
     "poolSpread": 4.5,
-    "marketLabel": "WAS -5.5 across DraftKings, FanDuel, BetMGM, Caesars, bet365 and BetRivers on Oct 27 afternoon",
+    "marketLabel": "WAS -6 OOSTA consensus at 2:00 PM ET Oct 29; six major books were WAS -5.5 on Oct 27 afternoon",
     "marketTotal": 40,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Flip FFCC to WAS -4.5 instead of PHI +4.5. By Oct 27 afternoon, six major books displayed Washington -5.5, so the frozen pool asks Washington to cover one point less than the current primary market. Jalen Hurts is on injured reserve and expected to miss the season; Philadelphia also enters the week monitoring Saquon Barkley, DeVonta Smith and other offensive injuries. This is a market-number advantage with uncalibrated size, not an invented cover probability.",
+    "rationale": "Retain the FFCC flip to WAS -4.5 instead of PHI +4.5. Six major books displayed Washington -5.5 on Oct 27, and OOSTA consensus reached WAS -6 at 2:00 PM ET Oct 29, so the frozen pool asks Washington to cover 1.5 points less than the current consensus. Jalen Hurts is on injured reserve and expected to miss the season; Philadelphia also enters the week monitoring Saquon Barkley, DeVonta Smith and other offensive injuries. This is a frozen-number advantage with uncalibrated size, not an invented cover probability.",
     "watch": "Recheck Wednesday-Friday official Eagles/Commanders reports, whether the market holds WAS -5.5 or returns to -4.5, and any exact WAS -4.5 alternate-line prices."
   },
   {
@@ -257,4 +257,4 @@ export const week8PoolGames: Week5PoolGame[] = [
     "watch": "Seek verified exact CHI +3.5 prices and late-week inactives; do not assume Mike has submitted SEA."
   }
 ];
-export const week8Tiebreaker = {matchup:"CHI @ SEA",label:"Total points in final game of week, Bears at Seahawks on Monday Nov 2",currentMarketTotal:46.5,earlyFfccTarget:47,mikeSubmittedTotal:null,note:"PROVISIONAL FFCC target 47; OOSTA still showed 46.5 at 5:59 PM ET Oct 28. Mike deliberately leaves tiebreaker blank when presenting vibes; that is expected and requires no action. Actual submitted tiebreaker remains unknown until Mike explicitly confirms a final entry. Recheck near the true lock."};
+export const week8Tiebreaker = {matchup:"CHI @ SEA",label:"Total points in final game of week, Bears at Seahawks on Monday Nov 2",currentMarketTotal:46.5,earlyFfccTarget:47,mikeSubmittedTotal:null,note:"PROVISIONAL FFCC target 47; OOSTA still showed 46.5 at 2:00 PM ET Oct 29. Mike deliberately leaves tiebreaker blank when presenting vibes; that is expected and requires no action. Actual submitted tiebreaker remains unknown until Mike explicitly confirms a final entry. Recheck near the true lock."};
