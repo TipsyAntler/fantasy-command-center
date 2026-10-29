@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · INITIAL CARD SUBMISSION-READY · 14 FROZEN LINES VERIFIED · SAVE ALL PICKS + TIEBREAKER 47 BEFORE THURSDAY 8:15 PM ET · WEEKEND/MONDAY SIDES REMAIN EDITABLE UNTIL SUNDAY 1:00 PM ET";
-export const week8MarketAsOf = "Oct 29, 2026 · 5:44 PM ET: all 14 ATS recommendations and tiebreaker 47 unchanged; current public boards show CIN -11.5, JAX -9.5 to -10, WSH -5.5, NE -7 and SEA -3; CAR-GB and CHI-SEA totals are 46.5; initial full-card submission due before CAR-GB at 8:15 PM ET";
+export const week8MarketAsOf = "Oct 29, 2026 · 6:48 PM ET: all 14 ATS recommendations and tiebreaker 47 unchanged; seven-book exact GB -3.5 pricing is balanced at a 50.2% de-vig median; current public boards show CIN -11.5, JAX -9.5 to -10, WSH -5.5 to -6, NE -7 and SEA -3; initial full-card submission due before CAR-GB at 8:15 PM ET";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -28,11 +28,11 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "GB -3.5",
     "poolFavorite": "GB",
     "poolSpread": 3.5,
-    "marketLabel": "Exact GB -3.5 prices at seven books checked Oct 27, 9:06 PM ET; de-vig median 50.5% GB; OOSTA still GB -3.5 at 8:06 PM ET Oct 28",
+    "marketLabel": "Seven current exact GB -3.5 pairs reviewed Oct 29, 6:48 PM ET from a 4:15 PM multi-book board; proportional de-vig median 50.2% GB",
     "marketTotal": 47,
     "confidence": 1,
     "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Keep GB -3.5 as the transparent tie choice. Seven books now offer both sides at the exact frozen spread; proportional de-vig gives Green Bay a 50.5% median, too balanced to claim a measured edge. Green Bay's injury report remains the key non-market check, including OL and defensive absences, while Bryce Young was full for Carolina.",
+    "rationale": "Keep GB -3.5 as the transparent tie choice. Seven current books offer both sides at the exact frozen spread; proportional de-vig gives Green Bay a 50.2% median, too balanced to claim a measured edge. Green Bay's injury report remains the key non-market check, including OL and defensive absences, while Bryce Young was full for Carolina.",
     "watch": "Thursday 8:15 PM ET kickoff; review Wednesday's official report, inactives and whether exact -3.5 pricing moves decisively."
   },
   {
