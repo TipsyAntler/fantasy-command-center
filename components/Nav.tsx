@@ -5,11 +5,10 @@ import { usePathname } from "next/navigation";
 
 const items = [
   ["/", "Home", "⌂"],
-  ["/survivor", "Survivor Lab", "◉"],
-  ["/waivers", "Waiver Room", "⇄"],
-  ["/leagues", "My Leagues", "▦"],
-  ["/yahoo", "Yahoo Scout", "◈"],
-  ["/pickem", "Pick'em", "✓"],
+  ["/big-money", "Big Money", "♜"],
+  ["/legendary-leblanc", "Legendary LeBlanc", "♞"],
+  ["/pickem", "Pick 'Em", "✓"],
+  ["/survivor", "Survivor", "◉"],
 ] as const;
 
 export default function Nav() {
@@ -42,7 +41,7 @@ export default function Nav() {
       <div className="nav-spacer" />
       <div className="nav-status">
         <strong>Yahoo live scouting</strong>
-        <span>Yahoo rosters, standings and league-specific waivers are available in League Scout.</span>
+        <span>Both Yahoo leagues are read-only. Each has its own roster, waiver pool and standings.</span>
       </div>
       <Link href="/settings" className="nav-profile" aria-label="Open settings">
         <div className="profile-dot">M</div>
