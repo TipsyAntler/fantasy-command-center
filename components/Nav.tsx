@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 
 const items = [
   ["/", "Home", "⌂"],
-  ["/big-money", "Big Money", "♜"],
-  ["/legendary-leblanc", "Legendary LeBlanc", "♞"],
+  ["/big-money", "Big Money", "💵"],
+  ["/legendary-leblanc", "Legendary LeBlanc", "LL"],
   ["/pickem", "Pick 'Em", "✓"],
   ["/survivor", "Survivor", "◉"],
 ] as const;
@@ -31,7 +31,7 @@ export default function Nav() {
           const active = href === "/" ? pathname === "/" : pathname.startsWith(href);
           return (
             <Link key={href} href={href} className={active ? "nav-link active" : "nav-link"}>
-              <span className="nav-glyph" aria-hidden="true">{glyph}</span>
+              <span className={href === "/legendary-leblanc" ? "nav-glyph nav-glyph-ll" : "nav-glyph"} aria-hidden="true">{glyph}</span>
               <span>{label}</span>
             </Link>
           );
