@@ -78,7 +78,7 @@ export default function YahooLeagueScout({ leagueKey, title }: { leagueKey: "BM"
       <header className="page-hero">
         <div className="eyebrow">YAHOO LIVE • READ ONLY</div>
         <h1>{title}</h1>
-        <p className="hero-copy">Live roster, standings, injuries, waiver options and recent moves for this league only. Advice only: FFCC never changes your Yahoo team.</p>
+        <p className="hero-copy">Live roster, standings, actionable injury flags and recent moves for this league only. Waiver recommendations appear only when there is a compelling reason to consider a move. FFCC never changes your Yahoo team.</p>
       </header>
       <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
         <button style={button} onClick={() => void load()} disabled={loading}>{loading ? "Checking Yahoo…" : "↻ Refresh Yahoo"}</button>
@@ -95,7 +95,7 @@ export default function YahooLeagueScout({ leagueKey, title }: { leagueKey: "BM"
         </section>
         <section style={section}>
           <h3>Decision queue</h3>
-          <p style={muted}>Injury and depth checks first. Waiver names are Yahoo-ranked candidates, not guaranteed upgrades.</p>
+          <p style={muted}>Only issues that may warrant a decision. Generic top-ranked free agents are intentionally excluded.</p>
           {league.notes.length ? league.notes.map((n, i) => <div key={i} style={{ borderTop: "1px solid rgba(255,255,255,.07)", padding: "13px 0" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
               <span style={{ ...pill, color: n.priority === "urgent" ? "#ffb0a0" : n.priority === "review" ? "#f0bb5f" : "#bcebd5" }}>{n.priority.toUpperCase()}</span>
@@ -109,17 +109,8 @@ export default function YahooLeagueScout({ leagueKey, title }: { leagueKey: "BM"
         </div>
         {league.ir.length ? <PlayerList title="IR / inactive slots" players={league.ir} /> : null}
         <section style={section}>
-          <h3>Waiver wire • actually available in {league.short}</h3>
-          <p style={muted}>Yahoo overall-rank order. League-specific availability, not generic trending lists. Check player status before any claim.</p>
-          {["RB", "WR", "TE", "QB"].map((pos) => <div key={pos} style={{ marginTop: 20 }}>
-            <h3 style={{ fontSize: 17 }}>{pos}</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,250px),1fr))", gap: 7, marginTop: 8 }}>
-              {(league.available[pos] || []).slice(0, 12).map((p, i) => <div key={p.key || i} style={{ border: "1px solid rgba(255,255,255,.06)", borderRadius: 9, padding: 10 }}>
-                <strong style={{ fontSize: 13 }}>{i + 1}. {p.name}</strong><div style={muted}>{statusText(p)}{p.percentOwned !== null ? " · " + p.percentOwned + "% owned" : ""}</div>
-              </div>)}
-              {!league.available[pos]?.length ? <p style={muted}>No candidates returned.</p> : null}
-            </div>
-          </div>)}
+          <h3>Waiver recommendations</h3>
+          <p style={muted}>No pickup is being recommended from Yahoo rankings alone. FFCC still checks the available player pool in this league for meaningful upgrades, but will only flag a name when there is a specific, defensible reason to pursue him.</p>
         </section>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(min(100%,340px),1fr))", gap: 14 }}>
           <section style={section}><h3>Standings</h3>{league.standings.map((t, i) => <div key={t.key || i} style={{ padding: "9px 0", borderBottom: "1px solid rgba(255,255,255,.06)", display: "flex", justifyContent: "space-between", gap: 10, fontSize: 13 }}>
