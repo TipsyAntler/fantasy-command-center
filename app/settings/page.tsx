@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PushAlerts from "@/components/PushAlerts";
+import { hasServerYahooSession } from "@/lib/yahoo-store";
 import {
   hasYahooConnection,
   yahooCredentialsConfigured,
@@ -17,7 +18,7 @@ export default async function SettingsPage({
   const yahooStatus = typeof params.yahoo === "string" ? params.yahoo : undefined;
   const yahooMessage = typeof params.message === "string" ? params.message : undefined;
 
-  const yahooConnected = await hasYahooConnection();
+  const [yahooConnected, serverYahooReady] = await Promise.all([hasYahooConnection(), hasServerYahooSession()]);
   const yahooConfigured = yahooCredentialsConfigured();
   const yahooEnabled = yahooFantasyEnabled();
   const yahooLabel = yahooConnected
@@ -61,7 +62,7 @@ export default async function SettingsPage({
               <span className="source-tag">{yahooLabel}</span>
             </div>
             {yahooConnected ? (
-              <p>Yahoo OAuth is connected. Open League Scout for live 2026 rosters, league-specific waiver candidates, standings and recent moves.</p>
+              <p>Yahoo OAuth is connected. Big Money and Legendary LeBlanc have separate live league views. All Yahoo access is read-only.</p>
             ) : yahooEnabled && yahooConfigured ? (
               <p>Yahoo provisioning is enabled and the server credentials are configured. Connect your Yahoo account to activate the read-only league sync.</p>
             ) : yahooEnabled ? (
@@ -69,13 +70,14 @@ export default async function SettingsPage({
             ) : (
               <p>The Yahoo OAuth plumbing is installed and intentionally gated off while Yahoo finishes Fantasy Sports provisioning. Once access is live, add the private server credentials, flip the enable flag, and connect without another code deploy.</p>
             )}
+            {yahooConnected ? <p><strong>Automatic read-only monitoring: {serverYahooReady ? "READY" : "NEEDS INITIAL SYNC"}</strong>. {serverYahooReady ? "Your encrypted Yahoo session is stored privately for server-side checks." : "Open either league tab once to initialize the secure server connection."} FFCC cannot add, drop, trade or change your lineups.</p> : null}
             {yahooStatus === "connected" ? <p><strong>Yahoo connected successfully.</strong></p> : null}
             {yahooStatus === "disconnected" ? <p>Yahoo connection cleared.</p> : null}
             {yahooStatus === "error" ? <p>Yahoo connection error: {yahooMessage || "OAuth setup failed."}</p> : null}
             <div className="settings-foot">
               {yahooConnected ? (
                 <>
-                  <a href="/yahoo" className="command-link">Open live Yahoo League Scout →</a>
+                  <Link href="/big-money" className="command-link">Big Money →</Link><span> · </span><Link href="/legendary-leblanc" className="command-link">Legendary LeBlanc →</Link>
                   <span> · </span>
                   <a href="/api/yahoo/disconnect" className="command-link">Disconnect Yahoo</a>
                 </>
