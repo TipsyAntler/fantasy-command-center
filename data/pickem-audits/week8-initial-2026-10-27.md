@@ -276,3 +276,13 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
 - **Survivor:** 22 entries remain alive. Six Week 8 picks are now visible: Cincinnati 3, Jacksonville 2 and New England 1. The Survivor page reads the commissioner sheet dynamically; informational only.
 - **Alert decision:** no new alert or push. Henderson is an unconfirmed injury flag without a recommended move, and the Pick'em card is unchanged.
 - Sources: private Yahoo read-only monitor (not published) · https://www.patriots.com/news/week-8-injury-report-patriots-at-dolphins-x9227 · https://www.oostapro.com/nfl/line-moves (2:41 PM ET) · https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
+
+
+## Oct. 29, 2026 · 5:14 PM ET — Thursday practice refresh
+- **Yahoo source status:** the private read-only monitor returned ok=true with a current fetch, both BM and LL leagues, nonempty starters and standings, and no league errors. No Yahoo mutation was performed.
+- **BM:** Yahoo removed Brock Bowers' questionable flag. TreVeyon Henderson remains Q in the starting flex slot, but New England's official report still does not list him; no independently supported lineup change. Brian Robinson Jr. remains Q in IR.
+- **LL:** Yahoo removed Amon-Ra St. Brown's questionable flag, consistent with Detroit's official Thursday full practice. Brock Purdy remains the starter on San Francisco's bye and Baker Mayfield remains available; the existing Mayfield action remains valid and was not re-alerted.
+- **Pick'em:** the latest accessible market board remains unchanged from the 2:00 PM update: CIN -11.5, WSH -6, NE -7 and SEA -3. All 14 FFCC sides and tiebreaker 47 remain unchanged.
+- **Survivor:** 22 entries remain alive; visible Week 8 picks remain Cincinnati 3, Jacksonville 2 and New England 1. Informational only.
+- **Alert decision:** no new alert or push. The cleared injury flags require no action, Henderson remains unconfirmed, and no Pick'em recommendation changed.
+- Sources: private Yahoo read-only monitor (not published) · https://www.detroitlions.com/news/lions-vs-vikings-practice-report-oct-29-gibbs-stbrown-joseph · https://www.patriots.com/news/week-8-injury-report-patriots-at-dolphins-x9227 · https://www.oostapro.com/nfl/line-moves · https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
