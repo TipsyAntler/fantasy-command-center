@@ -8,6 +8,7 @@ const items = [
   ["/survivor", "Survivor Lab", "◉"],
   ["/waivers", "Waiver Room", "⇄"],
   ["/leagues", "My Leagues", "▦"],
+  ["/yahoo", "Yahoo Scout", "◈"],
   ["/pickem", "Pick'em", "✓"],
 ] as const;
 
@@ -40,8 +41,8 @@ export default function Nav() {
 
       <div className="nav-spacer" />
       <div className="nav-status">
-        <strong>Yahoo connection pending</strong>
-        <span>Public NFL signals are live now. League-specific intelligence unlocks after approval.</span>
+        <strong>Yahoo live scouting</strong>
+        <span>Yahoo rosters, standings and league-specific waivers are available in League Scout.</span>
       </div>
       <Link href="/settings" className="nav-profile" aria-label="Open settings">
         <div className="profile-dot">M</div>
