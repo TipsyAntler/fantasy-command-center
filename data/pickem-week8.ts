@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · INITIAL CARD SUBMISSION-READY · 14 FROZEN LINES VERIFIED · SAVE ALL PICKS + TIEBREAKER 47 BEFORE THURSDAY 8:15 PM ET · WEEKEND/MONDAY SIDES REMAIN EDITABLE UNTIL SUNDAY 1:00 PM ET";
-export const week8MarketAsOf = "Oct 29, 2026 · 2:00 PM ET: all 14 ATS recommendations and the 47-point tiebreaker unchanged; OOSTA moved CIN to -11.5 and WSH to -6 while exact-line evidence still supports TEN +10.5; NE-MIA total remains 43.5; initial full-card submission due before CAR-GB at 8:15 PM ET";
+export const week8MarketAsOf = "Oct 29, 2026 · 5:44 PM ET: all 14 ATS recommendations and tiebreaker 47 unchanged; current public boards show CIN -11.5, JAX -9.5 to -10, WSH -5.5, NE -7 and SEA -3; CAR-GB and CHI-SEA totals are 46.5; initial full-card submission due before CAR-GB at 8:15 PM ET";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -164,11 +164,11 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "JAX -7.5",
     "poolFavorite": "JAX",
     "poolSpread": 7.5,
-    "marketLabel": "JAX -10 OOSTA consensus at 5:59 PM ET; Fantasy Alarm JAX -9.5 at 2:37 PM ET Oct 28",
+    "marketLabel": "JAX -9.5 current public FanDuel board and -10 VegasInsider listing at 5:44 PM ET Oct 29; frozen pool JAX -7.5",
     "marketTotal": 46.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Keep JAX -7.5. OOSTA reached Jacksonville -10 at 3:06 PM ET while Fantasy Alarm showed -9.5 at 2:37 PM ET, so the frozen pool asks Jacksonville to cover 2–2.5 points less than those current boards. Indianapolis also officially traded All-Pro guard Quenton Nelson to Seattle and defensive tackle DeForest Buckner to San Francisco; those transactions are matchup context already reflected in the move and are not counted again as a separate edge.",
+    "rationale": "Keep JAX -7.5. Current public boards show Jacksonville -9.5 to -10, so the frozen pool asks Jacksonville to cover 2–2.5 points less than the reviewed market. Indianapolis also officially traded All-Pro guard Quenton Nelson to Seattle and defensive tackle DeForest Buckner to San Francisco; those transactions are matchup context already reflected in the move and are not counted again as a separate edge.",
     "watch": "Review Jaguars/Colts QB and OL reports and whether the market holds above JAX -7.5; seek exact -7.5 alternate-line pairs."
   },
   {
@@ -232,11 +232,11 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "PHI +4.5",
     "poolFavorite": "WAS",
     "poolSpread": 4.5,
-    "marketLabel": "WAS -6 OOSTA consensus at 2:00 PM ET Oct 29; six major books were WAS -5.5 on Oct 27 afternoon",
+    "marketLabel": "WAS -5.5 current public FanDuel board at 5:44 PM ET Oct 29; OOSTA reached -6 at 2:00 PM; six major books were -5.5 on Oct 27 afternoon",
     "marketTotal": 40,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Retain the FFCC flip to WAS -4.5 instead of PHI +4.5. Six major books displayed Washington -5.5 on Oct 27, and OOSTA consensus reached WAS -6 at 2:00 PM ET Oct 29, so the frozen pool asks Washington to cover 1.5 points less than the current consensus. Jalen Hurts is on injured reserve and expected to miss the season; Philadelphia also enters the week monitoring Saquon Barkley, DeVonta Smith and other offensive injuries. This is a frozen-number advantage with uncalibrated size, not an invented cover probability.",
+    "rationale": "Retain the FFCC flip to WAS -4.5 instead of PHI +4.5. Six major books displayed Washington -5.5 on Oct 27, and OOSTA reached WAS -6 at 2:00 PM ET Oct 29 and the current public FanDuel board is WAS -5.5, so the frozen pool asks Washington to cover 1–1.5 points less than the reviewed market. Jalen Hurts is on injured reserve and expected to miss the season; Philadelphia also enters the week monitoring Saquon Barkley, DeVonta Smith and other offensive injuries. This is a frozen-number advantage with uncalibrated size, not an invented cover probability.",
     "watch": "Recheck Wednesday-Friday official Eagles/Commanders reports, whether the market holds WAS -5.5 or returns to -4.5, and any exact WAS -4.5 alternate-line prices."
   },
   {
@@ -257,4 +257,4 @@ export const week8PoolGames: Week5PoolGame[] = [
     "watch": "Seek verified exact CHI +3.5 prices and late-week inactives; do not assume Mike has submitted SEA."
   }
 ];
-export const week8Tiebreaker = {matchup:"CHI @ SEA",label:"Total points in final game of week, Bears at Seahawks on Monday Nov 2",currentMarketTotal:46.5,earlyFfccTarget:47,mikeSubmittedTotal:null,note:"PROVISIONAL FFCC target 47; OOSTA still showed 46.5 at 2:00 PM ET Oct 29. Mike deliberately leaves tiebreaker blank when presenting vibes; that is expected and requires no action. Actual submitted tiebreaker remains unknown until Mike explicitly confirms a final entry. Recheck near the true lock."};
+export const week8Tiebreaker = {matchup:"CHI @ SEA",label:"Total points in final game of week, Bears at Seahawks on Monday Nov 2",currentMarketTotal:46.5,earlyFfccTarget:47,mikeSubmittedTotal:null,note:"PROVISIONAL FFCC target 47; current public boards still showed 46.5 at 5:44 PM ET Oct 29. Mike deliberately leaves tiebreaker blank when presenting vibes; that is expected and requires no action. Actual submitted tiebreaker remains unknown until Mike explicitly confirms a final entry. Recheck near the true lock."};
