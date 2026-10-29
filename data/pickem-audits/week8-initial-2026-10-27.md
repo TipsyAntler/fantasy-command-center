@@ -200,3 +200,16 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
 - **Fantasy availability:** Brock Bowers remains limited with a calf issue and no game designation; Brian Robinson Jr. remains DNP without a Week 8 designation. No lineup or defense transaction action is verified.
 - **Alert decision:** no actionable alert or push was created.
 - Source: https://www.oostapro.com/nfl/line-moves (8:06 PM ET).
+
+
+## Oct 28, 2026 · 9:17 PM ET — Night market and roster refresh
+- **No FFCC recommendation changed.** All 14 consensus spreads were unchanged from the 8:06 PM ET review.
+- **Total-only moves:** ATL-TB fell from 45.5 to 44.5 and NE-MIA from 44.5 to 44. These moves do not change the ATS recommendations.
+- **Tiebreaker:** CHI-SEA remains 46.5; provisional FFCC target remains **47**.
+- **Fantasy availability:** official Wednesday reports remain unchanged: Brian Robinson Jr. DNP without a Week 8 game designation; Brock Bowers limited; Emeka Egbuka limited; Breece Hall limited; Amon-Ra St. Brown DNP; Jayden Daniels full. Chicago has not issued a current Week 8 report for Kyle Monangai, so neither desired Titans D/ST transaction is verified as unlocked.
+- **Survivor commissioner data:** 22 entries remain alive; Week 8 selections are Cincinnati 2 and Jacksonville 1. Informational only.
+- **Alert decision:** no actionable alert or push was created because no recommendation changed and no roster action became available.
+- Sources checked:
+  - https://www.oostapro.com/nfl/line-moves (9:17 PM ET)
+  - official Falcons, Raiders, Buccaneers, Lions, Jets and Commanders injury reports (Oct 28)
+  - https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
