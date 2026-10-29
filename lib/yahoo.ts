@@ -45,7 +45,7 @@ export function yahooRedirectUri(origin: string) {
 
 export function yahooAuthorizationUrl(origin: string, state: string) {
   const params = new URLSearchParams({
-    client_id: required("YAHOO_CLIENT_ID"),
+    client_id: yahooOAuthCredential("YAHOO_CLIENT_ID"),
     redirect_uri: yahooRedirectUri(origin),
     response_type: "code",
     state,
@@ -77,8 +77,13 @@ export function decryptYahooSession(payload: string): YahooSession {
   return JSON.parse(json) as YahooSession;
 }
 
+function yahooOAuthCredential(name: "YAHOO_CLIENT_ID" | "YAHOO_CLIENT_SECRET") {
+  // Copying credentials from the Yahoo dashboard can accidentally include trailing whitespace.
+  return required(name).trim();
+}
+
 function basicAuthorization() {
-  const credentials = Buffer.from(`${required("YAHOO_CLIENT_ID")}:${required("YAHOO_CLIENT_SECRET")}`).toString("base64");
+  const credentials = Buffer.from(`${yahooOAuthCredential("YAHOO_CLIENT_ID")}:${yahooOAuthCredential("YAHOO_CLIENT_SECRET")}`).toString("base64");
   return `Basic ${credentials}`;
 }
 
@@ -102,11 +107,36 @@ async function tokenRequest(body: URLSearchParams) {
     cache: "no-store",
   });
 
-  const json = await response.json() as YahooTokenResponse;
-  if (!response.ok || !json.access_token) {
-    throw new Error(json.error_description || json.error || `Yahoo token request failed (${response.status})`);
+  let json = await response.json() as YahooTokenResponse;
+  if (response.ok && json.access_token) return json;
+
+  // Yahoo documents both HTTP Basic and form-body client authentication.
+  // If Basic is rejected, try the alternative once before surfacing the error.
+  const rejectedCredentials = response.status === 401 &&
+    /invalid[_ ]client|client secret/i.test(`${json.error || ""} ${json.error_description || ""}`);
+  if (rejectedCredentials) {
+    const fallbackBody = new URLSearchParams(body);
+    fallbackBody.set("client_id", yahooOAuthCredential("YAHOO_CLIENT_ID"));
+    fallbackBody.set("client_secret", yahooOAuthCredential("YAHOO_CLIENT_SECRET"));
+    const fallback = await fetch(YAHOO_TOKEN_URL, {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded" },
+      body: fallbackBody,
+      cache: "no-store",
+    });
+    json = await fallback.json() as YahooTokenResponse;
+    if (fallback.ok && json.access_token) return json;
+    console.warn("Yahoo OAuth token exchange rejected both supported client-auth methods", {
+      basicStatus: response.status,
+      fallbackStatus: fallback.status,
+      errorCode: json.error || null,
+      outerWhitespaceInCredentials:
+        required("YAHOO_CLIENT_ID") !== yahooOAuthCredential("YAHOO_CLIENT_ID") ||
+        required("YAHOO_CLIENT_SECRET") !== yahooOAuthCredential("YAHOO_CLIENT_SECRET"),
+    });
   }
-  return json;
+
+  throw new Error(json.error_description || json.error || `Yahoo token request failed (${response.status})`);
 }
 
 export async function exchangeYahooCode(code: string, origin: string): Promise<YahooSession> {
