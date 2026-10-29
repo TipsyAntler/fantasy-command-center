@@ -213,3 +213,17 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
   - https://www.oostapro.com/nfl/line-moves (9:17 PM ET)
   - official Falcons, Raiders, Buccaneers, Lions, Jets and Commanders injury reports (Oct 28)
   - https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
+
+
+## Oct. 29, 2026 · 4:09 AM ET — Thursday initial-submission audit
+- **Submission action:** the current 14-side FFCC card is ready for the required initial save. NFL-575's published rules require all games to have an initial selection before the first game begins Thursday at 8:15 PM ET; weekend and Monday sides remain editable until Sunday at 10:00 AM Pacific / 1:00 PM ET.
+- **No side changed.** OOSTA's 3:53 AM ET consensus remained GB -3.5, CIN -10.5, DAL -7, DET -3.5, BUF -3, NYJ -1.5, PIT -3.5, TB -2.5, JAX -10, LAR -6.5, KC -1.5, NE -7, WAS -5.5 and SEA -3.
+- **Tiebreaker:** CHI-SEA remained 46.5; the FFCC target remains **47**.
+- **Fantasy:** official Wednesday reports remain monitoring-only. Brian Robinson Jr. is still DNP without a game designation, Kyle Monangai has no current Week 8 report, and neither desired Titans D/ST transaction is verified as unlocked. Brock Bowers was limited; Amon-Ra St. Brown DNP; Emeka Egbuka and Breece Hall limited; Jayden Daniels and Lamar Jackson full.
+- **Survivor:** 22 entries remain alive; visible Week 8 picks are Cincinnati 2 and Jacksonville 1. Informational only.
+- **Alert decision:** a concise Pick'em action alert was created for the initial-card deadline. No recommendation-flip alert was created because every side is unchanged.
+- Sources:
+  - https://www.reddit.com/r/NFLSurvivor/comments/1w6errc/high_stakes_nfl_super_pickem_pool/
+  - https://www.oostapro.com/nfl/line-moves
+  - https://www.nfl.com/injuries/
+  - https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
