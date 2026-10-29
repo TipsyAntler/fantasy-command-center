@@ -161,7 +161,11 @@ export async function GET(request: NextRequest) {
   if (!encrypted) return NextResponse.json({ ok: false, error: "Yahoo is not connected in this browser. Open Settings and connect Yahoo." }, { status: 401 });
   try {
     const original = decryptYahooSession(encrypted);
-    const fresh = await ensureFreshYahooSession(original, request.nextUrl.origin);
+    // The initial access token may still be valid even if Yahoo has revoked its refresh token.
+    // Do not force a refresh until the access token is near expiry.
+    const fresh = original.expiresAt - Date.now() > 60000
+      ? { session: original, refreshed: false }
+      : await ensureFreshYahooSession(original, request.nextUrl.origin);
     const leagues = await Promise.all(LEAGUES.map((league) =>
       getLeague(league.id, league.short, league.expectedTeam, fresh.session, request.nextUrl.origin)));
     const response = NextResponse.json({
@@ -174,6 +178,9 @@ export async function GET(request: NextRequest) {
     });
     return response;
   } catch (error) {
-    return NextResponse.json({ ok: false, error: error instanceof Error ? error.message : "Yahoo scout failed" }, { status: 502 });
+    const message = error instanceof Error ? error.message : "Yahoo scout failed";
+    return NextResponse.json({ ok: false, error: /invalid refresh token/i.test(message)
+      ? "Yahoo session expired or its refresh token was revoked. Disconnect Yahoo in Settings, then reconnect once to establish a fresh session."
+      : message }, { status: 502 });
   }
 }
