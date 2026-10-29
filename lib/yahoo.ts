@@ -180,7 +180,10 @@ export async function ensureFreshYahooSession(session: YahooSession, origin: str
 export async function yahooFantasyRequest(path: string, session: YahooSession, origin: string) {
   const fresh = await ensureFreshYahooSession(session, origin);
   const separator = path.includes("?") ? "&" : "?";
+  // HARD SAFETY RULE: Yahoo Fantasy calls are GET-only. FFCC is advice-only;
+  // no roster, lineup, waiver, trade or other mutation endpoints are implemented.
   const response = await fetch(`${YAHOO_FANTASY_BASE}/${path}${separator}format=json`, {
+    method: "GET",
     headers: {
       authorization: `Bearer ${fresh.session.accessToken}`,
       accept: "application/json",
