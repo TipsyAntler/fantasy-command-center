@@ -75,3 +75,14 @@
   .alert-roadmap,.settings-grid { grid-template-columns:1fr; }
   .settings-card:first-child { grid-column:auto; }
 }
+
+/* League identities: a compact dollar bill and interlocking LL monogram. */
+.nav-glyph-ll {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 12px;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -3px;
+  padding-right: 3px;
+  text-shadow: 1px 1px 0 rgba(97, 226, 168, .35);
+}
