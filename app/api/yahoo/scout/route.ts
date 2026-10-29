@@ -3,6 +3,7 @@ import {
   YAHOO_SESSION_COOKIE, decryptYahooSession, encryptYahooSession,
   ensureFreshYahooSession, yahooFantasyRequest,
 } from "@/lib/yahoo";
+import { getBrowserYahooSession } from "@/lib/yahoo-store";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -160,7 +161,8 @@ export async function GET(request: NextRequest) {
   const encrypted = request.cookies.get(YAHOO_SESSION_COOKIE)?.value;
   if (!encrypted) return NextResponse.json({ ok: false, error: "Yahoo is not connected in this browser. Open Settings and connect Yahoo." }, { status: 401 });
   try {
-    const original = decryptYahooSession(encrypted);
+    const original = await getBrowserYahooSession(encrypted, request.nextUrl.origin);
+    if (!original) throw new Error("Yahoo session unavailable");
     // The initial access token may still be valid even if Yahoo has revoked its refresh token.
     // Do not force a refresh until the access token is near expiry.
     const fresh = original.expiresAt - Date.now() > 60000
