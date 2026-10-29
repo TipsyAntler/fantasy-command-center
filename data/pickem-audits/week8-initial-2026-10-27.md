@@ -191,3 +191,12 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
   - https://www.oostapro.com/nfl/line-moves (7:24 PM ET)
   - https://www.raiders.com/news/las-vegas-raiders-new-york-jets-week-8-injury-report (2:39 PM ET)
   - https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit (commissioner sheet read at 7:24 PM ET)
+
+
+## Oct 28, 2026 · 8:06 PM ET — Late-evening market refresh
+- **No FFCC recommendation changed.** All 14 consensus spreads remained unchanged from the prior review.
+- **Total-only move:** CAR-GB eased from 47.5 to 47. This does not alter the GB -3.5 transparent tie choice or create an ATS edge.
+- **Tiebreaker:** CHI-SEA remained 46.5; provisional FFCC target remains **47**.
+- **Fantasy availability:** Brock Bowers remains limited with a calf issue and no game designation; Brian Robinson Jr. remains DNP without a Week 8 designation. No lineup or defense transaction action is verified.
+- **Alert decision:** no actionable alert or push was created.
+- Source: https://www.oostapro.com/nfl/line-moves (8:06 PM ET).
