@@ -227,3 +227,12 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
   - https://www.oostapro.com/nfl/line-moves
   - https://www.nfl.com/injuries/
   - https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
+
+
+## Oct. 29, 2026 · 5:16 AM ET — Pre-dawn refresh
+- **No recommendation or action changed.** All 14 consensus spreads remained unchanged.
+- **Total-only move:** BAL-BUF increased from 54 to 54.5. The frozen BAL +3.5 recommendation and its evidence label are unchanged.
+- **Tiebreaker:** CHI-SEA remained 46.5; FFCC target remains **47**.
+- **Fantasy and Survivor:** no new official designation, transaction eligibility or commissioner-sheet change. Both desired Titans D/ST moves remain locked; 22 Survivor entries remain alive with Cincinnati 2 and Jacksonville 1 visible for Week 8.
+- **Alert decision:** no alert or push was created.
+- Sources: https://www.oostapro.com/nfl/line-moves · https://www.nfl.com/injuries/ · https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
