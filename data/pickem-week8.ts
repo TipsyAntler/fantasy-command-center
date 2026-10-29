@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · 14 FROZEN LINES VERIFIED FROM SZN SCREENSHOTS · 14 MIKE VIBE PICKS LOGGED · NO VIBES TIEBREAKER BY DESIGN · FFCC PROVISIONAL";
-export const week8MarketAsOf = "Oct 28, 2026 · 5:59 PM ET: consensus still supports the existing card; LV, ATL and LAR now match their frozen lines, so stale number-advantage labels were removed";
+export const week8MarketAsOf = "Oct 28, 2026 · 8:06 PM ET: all ATS sides unchanged; CAR-GB total eased from 47.5 to 47 while the final-game tiebreak total stayed 46.5";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -28,8 +28,8 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "GB -3.5",
     "poolFavorite": "GB",
     "poolSpread": 3.5,
-    "marketLabel": "Exact GB -3.5 prices at seven books checked Oct 27, 9:06 PM ET; de-vig median 50.5% GB",
-    "marketTotal": 47.5,
+    "marketLabel": "Exact GB -3.5 prices at seven books checked Oct 27, 9:06 PM ET; de-vig median 50.5% GB; OOSTA still GB -3.5 at 8:06 PM ET Oct 28",
+    "marketTotal": 47,
     "confidence": 1,
     "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
     "rationale": "Keep GB -3.5 as the transparent tie choice. Seven books now offer both sides at the exact frozen spread; proportional de-vig gives Green Bay a 50.5% median, too balanced to claim a measured edge. Green Bay's injury report remains the key non-market check, including OL and defensive absences, while Bryce Young was full for Carolina.",
