@@ -61,7 +61,7 @@ export default async function SettingsPage({
               <span className="source-tag">{yahooLabel}</span>
             </div>
             {yahooConnected ? (
-              <p>Yahoo OAuth is connected. The league probe is ready to read your 2026 football leagues and the next layer can replace manual roster snapshots with league-aware Yahoo data.</p>
+              <p>Yahoo OAuth is connected. Open League Scout for live 2026 rosters, league-specific waiver candidates, standings and recent moves.</p>
             ) : yahooEnabled && yahooConfigured ? (
               <p>Yahoo provisioning is enabled and the server credentials are configured. Connect your Yahoo account to activate the read-only league sync.</p>
             ) : yahooEnabled ? (
@@ -75,7 +75,7 @@ export default async function SettingsPage({
             <div className="settings-foot">
               {yahooConnected ? (
                 <>
-                  <a href="/api/yahoo/leagues" className="command-link">Test 2026 league sync →</a>
+                  <a href="/yahoo" className="command-link">Open live Yahoo League Scout →</a>
                   <span> · </span>
                   <a href="/api/yahoo/disconnect" className="command-link">Disconnect Yahoo</a>
                 </>
