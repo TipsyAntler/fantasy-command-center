@@ -68,7 +68,7 @@ export default async function Home() {
 
         <div className={styles.focusLabel}>Your command board</div>
         <section className={styles.focusGrid} aria-label="Top actionable takeaways">
-          <Link href="/leagues" className={styles.focusCard}>
+          <Link href="/big-money" className={styles.focusCard}>
             <div className={styles.cardTop}>
               <span className={styles.cardKicker}>BIG MONEY · BOWER&apos;S CASTLE</span>
               <span className={`${styles.cardState} ${bmFlag ? styles.cardStateWarn : ""}`}>{bmFlag ? "Watch" : "Clear"}</span>
@@ -83,7 +83,7 @@ export default async function Home() {
             <div className={styles.cardFoot}><span>Open league view</span><span>→</span></div>
           </Link>
 
-          <Link href="/leagues" className={styles.focusCard}>
+          <Link href="/legendary-leblanc" className={styles.focusCard}>
             <div className={styles.cardTop}>
               <span className={styles.cardKicker}>LEGENDARY LEBLANC · LAPORTA POTTY</span>
               <span className={`${styles.cardState} ${llFlag ? styles.cardStateWarn : ""}`}>{llFlag ? "Watch" : "Clear"}</span>
@@ -136,7 +136,7 @@ export default async function Home() {
             </div>
             <div className={styles.connectionItem}>
               <strong>BM + LL rosters</strong>
-              <small>Historical snapshots; live roster view in Yahoo Scout</small>
+              <small>Historical snapshots; live roster views in each league tab</small>
               <span className={styles.connectionStatus}>LIVE</span>
             </div>
             <div className={styles.connectionItem}>
@@ -146,7 +146,7 @@ export default async function Home() {
             </div>
             <div className={styles.connectionItem}>
               <strong>Yahoo Fantasy</strong>
-              <small>{yahooConnected ? "Connected • open Yahoo Scout for current league intelligence" : "Connect in Settings to load league intelligence"}</small>
+              <small>{yahooConnected ? "Connected • open Big Money or Legendary LeBlanc for current league intelligence" : "Connect in Settings to load league intelligence"}</small>
               <span className={`${styles.connectionStatus} ${!yahooConnected ? styles.connectionStatusWarn : ""}`}>{yahooConnected ? "LIVE" : "CONNECT"}</span>
             </div>
           </div>
