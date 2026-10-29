@@ -26,11 +26,11 @@ export async function GET(request: NextRequest) {
   try {
     const session = await exchangeYahooCode(code, request.nextUrl.origin);
     // Verify this is the owner of both configured leagues before saving any shared session.
-    await validateYahooLeagueMembership(session, request.nextUrl.origin);
+    const verified = await validateYahooLeagueMembership(session, request.nextUrl.origin);
     // Persist encrypted credentials for unattended read-only monitoring.
-    await saveServerYahooSession(session);
+    await saveServerYahooSession(verified);
     const response = NextResponse.redirect(new URL("/settings?yahoo=connected", request.url));
-    response.cookies.set(YAHOO_SESSION_COOKIE, encryptYahooSession(session), {
+    response.cookies.set(YAHOO_SESSION_COOKIE, encryptYahooSession(verified), {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
