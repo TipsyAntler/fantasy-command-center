@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · INITIAL CARD SUBMISSION-READY · 14 FROZEN LINES VERIFIED · SAVE ALL PICKS + TIEBREAKER 47 BEFORE THURSDAY 8:15 PM ET · WEEKEND/MONDAY SIDES REMAIN EDITABLE UNTIL SUNDAY 1:00 PM ET";
-export const week8MarketAsOf = "Oct 29, 2026 · 5:16 AM ET: all 14 ATS recommendations and the 47-point tiebreaker unchanged; BAL-BUF total moved to 54.5; initial full-card submission due before CAR-GB at 8:15 PM ET";
+export const week8MarketAsOf = "Oct 29, 2026 · 9:18 AM ET: all 14 ATS recommendations and the 47-point tiebreaker unchanged; PHI-WAS total moved to 40.0; initial full-card submission due before CAR-GB at 8:15 PM ET";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -233,7 +233,7 @@ export const week8PoolGames: Week5PoolGame[] = [
     "poolFavorite": "WAS",
     "poolSpread": 4.5,
     "marketLabel": "WAS -5.5 across DraftKings, FanDuel, BetMGM, Caesars, bet365 and BetRivers on Oct 27 afternoon",
-    "marketTotal": 40.5,
+    "marketTotal": 40,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     "rationale": "Flip FFCC to WAS -4.5 instead of PHI +4.5. By Oct 27 afternoon, six major books displayed Washington -5.5, so the frozen pool asks Washington to cover one point less than the current primary market. Jalen Hurts is on injured reserve and expected to miss the season; Philadelphia also enters the week monitoring Saquon Barkley, DeVonta Smith and other offensive injuries. This is a market-number advantage with uncalibrated size, not an invented cover probability.",
