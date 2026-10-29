@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · INITIAL CARD SUBMISSION-READY · 14 FROZEN LINES VERIFIED · SAVE ALL PICKS + TIEBREAKER 47 BEFORE THURSDAY 8:15 PM ET · WEEKEND/MONDAY SIDES REMAIN EDITABLE UNTIL SUNDAY 1:00 PM ET";
-export const week8MarketAsOf = "Oct 29, 2026 · 3:53 AM ET: all 14 ATS recommendations and the 47-point tiebreaker unchanged; initial full-card submission due before CAR-GB at 8:15 PM ET";
+export const week8MarketAsOf = "Oct 29, 2026 · 5:16 AM ET: all 14 ATS recommendations and the 47-point tiebreaker unchanged; BAL-BUF total moved to 54.5; initial full-card submission due before CAR-GB at 8:15 PM ET";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -45,8 +45,8 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "BUF -3.5",
     "poolFavorite": "BUF",
     "poolSpread": 3.5,
-    "marketLabel": "Frozen BAL +3.5 vs BUF -3 OOSTA consensus at 5:59 PM ET Oct 28; prior seven-book exact-line de-vig median 52.2% BAL",
-    "marketTotal": 54,
+    "marketLabel": "Frozen BAL +3.5 vs BUF -3 OOSTA consensus at 5:16 AM ET Oct 29; prior seven-book exact-line de-vig median 52.2% BAL",
+    "marketTotal": 54.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     "rationale": "Retain BAL +3.5. At 4:38 PM ET Oct 27, DraftKings, FanDuel, BetMGM, Caesars, bet365, BetRivers and Novig all displayed two-sided prices at the exact frozen BAL +3.5/BUF -3.5 spread; proportional de-vig produced a seven-book median of 52.2% for Baltimore. By 2:16 PM ET Oct 28, OOSTA consensus had moved to BUF -3, so the frozen pool gives Baltimore the hook above the key 3. This is a frozen-number advantage with uncalibrated size, not a high-confidence rating. Lamar Jackson remains day-to-day with a high-ankle sprain; do not double-count that uncertainty beyond the market.",
