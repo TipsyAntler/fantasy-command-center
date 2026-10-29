@@ -6,6 +6,7 @@ import {
   yahooFantasyEnabled,
   yahooFantasyRequest,
 } from "@/lib/yahoo";
+import { getBrowserYahooSession } from "@/lib/yahoo-store";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -21,7 +22,8 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const currentSession = decryptYahooSession(encrypted);
+    const currentSession = await getBrowserYahooSession(encrypted, request.nextUrl.origin);
+    if (!currentSession) throw new Error("Yahoo session unavailable");
     const result = await yahooFantasyRequest(
       "users;use_login=1/games;game_codes=nfl;seasons=2026/leagues",
       currentSession,
