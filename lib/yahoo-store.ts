@@ -115,6 +115,11 @@ export async function getBrowserYahooSession(cookie: string | undefined, origin:
   if (!configured()) return browserSession;
   const existing = await freshStoredSession(origin);
   if (existing) {
+    if (!existing.ownerFingerprint && existing.refreshToken === browserSession.refreshToken) {
+      const tagged = { ...existing, ownerFingerprint: fingerprint(browserSession.refreshToken) };
+      await saveServerYahooSession(tagged);
+      return tagged;
+    }
     if (existing.ownerFingerprint !== fingerprint(browserSession.refreshToken) &&
         existing.refreshToken !== browserSession.refreshToken) {
       throw new Error("This browser has an older or different Yahoo session. Reconnect Yahoo in Settings.");
