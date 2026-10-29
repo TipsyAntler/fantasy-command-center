@@ -42,6 +42,9 @@ export async function validateYahooLeagueMembership(session: YahooSession, origi
   if (!payload.includes('"470.l.890742"') || !payload.includes('"470.l.864304"')) {
     throw new Error("This Yahoo account is not a member of both configured FFCC leagues");
   }
+  // If validation renewed an expiring token, persist the NEW token while
+  // retaining the ORIGINAL browser session fingerprint for owner checks.
+  return { ...response.session, ownerFingerprint: fingerprint(session.refreshToken) };
 }
 export async function saveServerYahooSession(session: YahooSession) {
   const owned = { ...session, ownerFingerprint: session.ownerFingerprint || fingerprint(session.refreshToken) };
@@ -118,9 +121,9 @@ export async function getBrowserYahooSession(cookie: string | undefined, origin:
     }
     return existing;
   }
-  await validateYahooLeagueMembership(browserSession, origin);
+  const verified = await validateYahooLeagueMembership(browserSession, origin);
   // First authenticated browser request upgrades the original cookie-only
   // connection to durable storage, with no additional Yahoo login.
-  await saveServerYahooSession(browserSession);
+  await saveServerYahooSession(verified);
   return freshStoredSession(origin);
 }
