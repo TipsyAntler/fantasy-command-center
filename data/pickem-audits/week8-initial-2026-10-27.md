@@ -236,3 +236,13 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
 - **Fantasy and Survivor:** no new official designation, transaction eligibility or commissioner-sheet change. Both desired Titans D/ST moves remain locked; 22 Survivor entries remain alive with Cincinnati 2 and Jacksonville 1 visible for Week 8.
 - **Alert decision:** no alert or push was created.
 - Sources: https://www.oostapro.com/nfl/line-moves · https://www.nfl.com/injuries/ · https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
+
+
+## Oct. 29, 2026 · 9:18 AM ET — Thursday morning refresh
+- **No recommendation or action changed.** All 14 consensus spreads remained unchanged.
+- **Total-only move:** PHI-WAS decreased from 40.5 to 40.0. The frozen WAS -4.5 recommendation and evidence label are unchanged.
+- **Tiebreaker:** CHI-SEA remained 46.5; FFCC target remains **47**.
+- **Fantasy:** no new official game designation or transaction eligibility. Brian Robinson Jr. remained a Wednesday DNP with no Week 8 game status; Chicago has not posted its current Week 8 Monday-game report for Kyle Monangai. Both desired Titans D/ST moves remain locked.
+- **Survivor:** 22 entries remain alive; visible Week 8 picks remain Cincinnati 2 and Jacksonville 1. Informational only.
+- **Alert decision:** no alert or push was created.
+- Sources: https://www.oostapro.com/nfl/line-moves (9:18 AM ET) · https://www.atlantafalcons.com/team/injury-report/ · https://www.nfl.com/injuries/ · https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
