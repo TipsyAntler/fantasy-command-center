@@ -71,14 +71,14 @@ export default async function Home() {
           <Link href="/big-money" className={styles.focusCard}>
             <div className={styles.cardTop}>
               <span className={styles.cardKicker}>BIG MONEY · BOWER&apos;S CASTLE</span>
-              <span className={`${styles.cardState} ${bmFlag ? styles.cardStateWarn : ""}`}>{bmFlag ? "Watch" : "Clear"}</span>
+              <span className={`${styles.cardState} ${bmFlag ? styles.cardStateWarn : ""}`}>{yahooConnected ? "Yahoo Live" : bmFlag ? "Watch" : "Snapshot"}</span>
             </div>
             <h2>Bower&apos;s Castle</h2>
             <p className={styles.actionHeadline}>
-              {bmFlag ? `${bmFlag.requestedName} is the first roster item to verify.` : "No urgent roster action. Keep the RB room under the microscope."}
+              {yahooConnected ? "Open your live Big Money roster and league-specific waiver pool." : bmFlag ? `${bmFlag.requestedName} is the first roster item to verify.` : "Check the latest roster snapshot."}
             </p>
             <p className={styles.actionNote}>
-              {bmFlag ? `${rosterStatus(bmFlag)} is showing in the live player feed. Check the league view before making any lineup or trade move.` : "Your WR/TE core gives you room to stay patient rather than force a preseason trade."}
+              {yahooConnected ? "Advice only. Current starters, bench, injury flags, standings and available players are in Big Money." : bmFlag ? `${rosterStatus(bmFlag)} is showing in the live player feed.` : "Manual roster snapshots may be stale."}
             </p>
             <div className={styles.cardFoot}><span>Open league view</span><span>→</span></div>
           </Link>
@@ -86,14 +86,14 @@ export default async function Home() {
           <Link href="/legendary-leblanc" className={styles.focusCard}>
             <div className={styles.cardTop}>
               <span className={styles.cardKicker}>LEGENDARY LEBLANC · LAPORTA POTTY</span>
-              <span className={`${styles.cardState} ${llFlag ? styles.cardStateWarn : ""}`}>{llFlag ? "Watch" : "Clear"}</span>
+              <span className={`${styles.cardState} ${llFlag ? styles.cardStateWarn : ""}`}>{yahooConnected ? "Yahoo Live" : llFlag ? "Watch" : "Snapshot"}</span>
             </div>
             <h2>LaPorta Potty</h2>
             <p className={styles.actionHeadline}>
-              {llFlag ? `${llFlag.requestedName} is the main thing to monitor.` : "No forced move. Let the roster advantage come to you."}
+              {yahooConnected ? "Open your live LeBlanc roster and league-specific waiver pool." : llFlag ? `${llFlag.requestedName} is the main thing to monitor.` : "Check the latest roster snapshot."}
             </p>
             <p className={styles.actionNote}>
-              {llFlag ? `${rosterStatus(llFlag)} is showing in the live player feed; the rest of the roster can stay patient.` : "This team is built to absorb uncertainty. Use waivers or trades only when they create a real starting-lineup upgrade."}
+              {yahooConnected ? "Advice only. Current starters, bench, injury flags, standings and available players are in Legendary LeBlanc." : llFlag ? `${rosterStatus(llFlag)} is showing in the live player feed.` : "Manual roster snapshots may be stale."}
             </p>
             <div className={styles.cardFoot}><span>Open league view</span><span>→</span></div>
           </Link>
