@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { hasYahooConnection } from "@/lib/yahoo";
 import DismissibleFlipBanner from "@/components/DismissibleFlipBanner";
 import { LocalGreeting, LocalRefreshTime } from "@/components/LocalDashboardTime";
 import { getDashboardData, getRosterWatch, getPlanningWeek } from "@/lib/sleeper";
@@ -17,9 +18,10 @@ function rosterStatus(row: Awaited<ReturnType<typeof getRosterWatch>>[number]) {
 export default async function Home() {
   const data = await getDashboardData();
   const week = week8Number;
-  const [rosterWatch, survivor] = await Promise.all([
+  const [rosterWatch, survivor, yahooConnected] = await Promise.all([
     getRosterWatch(rosterPlayerNames),
     getSurvivorSnapshot(week),
+    hasYahooConnection(),
   ]);
 
   const leagueFlags = Object.fromEntries(
@@ -134,7 +136,7 @@ export default async function Home() {
             </div>
             <div className={styles.connectionItem}>
               <strong>BM + LL rosters</strong>
-              <small>Manual snapshots while Yahoo provisioning finishes</small>
+              <small>Historical snapshots; live roster view in Yahoo Scout</small>
               <span className={styles.connectionStatus}>LIVE</span>
             </div>
             <div className={styles.connectionItem}>
@@ -144,8 +146,8 @@ export default async function Home() {
             </div>
             <div className={styles.connectionItem}>
               <strong>Yahoo Fantasy</strong>
-              <small>OAuth + automatic league sync plumbing installed</small>
-              <span className={`${styles.connectionStatus} ${styles.connectionStatusWarn}`}>PROVISIONING</span>
+              <small>{yahooConnected ? "Connected • open Yahoo Scout for current league intelligence" : "Connect in Settings to load league intelligence"}</small>
+              <span className={`${styles.connectionStatus} ${!yahooConnected ? styles.connectionStatusWarn : ""}`}>{yahooConnected ? "LIVE" : "CONNECT"}</span>
             </div>
           </div>
         </section>
