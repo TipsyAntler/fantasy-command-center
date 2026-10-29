@@ -1,6 +1,6 @@
-import { randomUUID } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import {
-  decryptYahooSession, encryptYahooSession, refreshYahooSession,
+  decryptYahooSession, encryptYahooSession, refreshYahooSession, yahooFantasyRequest,
   type YahooSession,
 } from "@/lib/yahoo";
 
@@ -32,8 +32,20 @@ async function getStoredSession() {
   const encrypted = await redis<string | null>(["GET", SESSION_KEY]);
   return encrypted ? decryptYahooSession(encrypted) : null;
 }
+function fingerprint(token: string) {
+  return createHash("sha256").update(token).digest("hex");
+}
+export async function validateYahooLeagueMembership(session: YahooSession, origin: string) {
+  // Never let an unrelated Yahoo login replace the owner's server session.
+  const response = await yahooFantasyRequest("users;use_login=1/games;game_codes=nfl;seasons=2026/leagues", session, origin);
+  const payload = JSON.stringify(response.data);
+  if (!payload.includes('"470.l.890742"') || !payload.includes('"470.l.864304"')) {
+    throw new Error("This Yahoo account is not a member of both configured FFCC leagues");
+  }
+}
 export async function saveServerYahooSession(session: YahooSession) {
-  await redis(["SET", SESSION_KEY, encryptYahooSession(session)]);
+  const owned = { ...session, ownerFingerprint: session.ownerFingerprint || fingerprint(session.refreshToken) };
+  await redis(["SET", SESSION_KEY, encryptYahooSession(owned)]);
 }
 export async function clearServerYahooSession() {
   if (!configured()) return;
@@ -99,7 +111,14 @@ export async function getBrowserYahooSession(cookie: string | undefined, origin:
   const browserSession = decryptYahooSession(cookie);
   if (!configured()) return browserSession;
   const existing = await freshStoredSession(origin);
-  if (existing) return existing;
+  if (existing) {
+    if (existing.ownerFingerprint !== fingerprint(browserSession.refreshToken) &&
+        existing.refreshToken !== browserSession.refreshToken) {
+      throw new Error("This browser has an older or different Yahoo session. Reconnect Yahoo in Settings.");
+    }
+    return existing;
+  }
+  await validateYahooLeagueMembership(browserSession, origin);
   // First authenticated browser request upgrades the original cookie-only
   // connection to durable storage, with no additional Yahoo login.
   await saveServerYahooSession(browserSession);
