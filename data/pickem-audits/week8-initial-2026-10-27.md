@@ -246,3 +246,13 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
 - **Survivor:** 22 entries remain alive; visible Week 8 picks remain Cincinnati 2 and Jacksonville 1. Informational only.
 - **Alert decision:** no alert or push was created.
 - Sources: https://www.oostapro.com/nfl/line-moves (9:18 AM ET) · https://www.atlantafalcons.com/team/injury-report/ · https://www.nfl.com/injuries/ · https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
+
+
+## Oct. 29, 2026 · 12:22 PM ET — Live-Yahoo and exact-line refresh
+- **Yahoo source status:** private read-only monitor returned ok=true with a current fetch, both BM and LL leagues, nonempty starters, standings and available-player data. Live Yahoo is authoritative for this review; the manual roster file was not used as roster truth.
+- **Actionable LL need:** Brock Purdy remains in the starting QB slot during San Francisco's Week 8 bye. Baker Mayfield is confirmed available in LL. Recommended sequence: drop Kyle Monangai from the currently ineligible IR slot, drop Kendrick Bourne for Mayfield, then start Mayfield before Sunday 1:00 PM ET. Mayfield was a full Wednesday participant despite the right-thumb listing and has 1,767 passing yards with 13 TDs through seven games; Sam Darnold has 1,290 yards with 8 TDs and 8 INTs. No Yahoo mutation was performed.
+- **BM:** live roster and lineup are current. Brian Robinson Jr. remains Q in IR, so the desired Titans D/ST transaction is still locked. Brock Bowers remains Q after a Wednesday limited practice; no new lineup change is recommended yet.
+- **Pick'em:** all 14 recommendations remain unchanged. Six books priced the exact frozen TEN +10.5 line; proportional de-vig median is 51.0% Tennessee. DraftKings at TEN +10 was excluded. OOSTA's CIN -11.5 snapshot conflicted with the contemporaneous exact-line board and does not justify a flip. Evidence label upgraded to **small exact-line price lean**. NE-MIA total fell from 44 to 43.5; no ATS side changed. CHI-SEA remained 46.5, so the tiebreaker remains **47**.
+- **Survivor:** 22 entries remain alive; visible Week 8 picks are Cincinnati 2 and Jacksonville 2. Informational only.
+- **Alert decision:** the existing generic LL bye-week QB warning was replaced with a precise live-Yahoo action alert for Baker Mayfield. No Pick'em alert was created because no side changed.
+- Sources: private Yahoo read-only monitor (not published) · https://www.buccaneers.com/team/players-roster/baker-mayfield/splits/ · https://www.nfl.com/players/sam-darnold/stats/ · https://cleatz.com/nfl/lines/ · https://www.oostapro.com/nfl/line-moves · https://www.nfl.com/injuries/ · https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
