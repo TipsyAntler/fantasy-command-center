@@ -79,7 +79,7 @@ export default async function SettingsPage({
                 <>
                   <Link href="/big-money" className="command-link">Big Money →</Link><span> · </span><Link href="/legendary-leblanc" className="command-link">Legendary LeBlanc →</Link>
                   <span> · </span>
-                  <a href="/api/yahoo/disconnect" className="command-link">Disconnect Yahoo</a>
+                  <form action="/api/yahoo/disconnect" method="post" style={{ display: "inline" }}><button type="submit" className="command-link" style={{ background: "none", border: 0, padding: 0, cursor: "pointer" }}>Disconnect Yahoo</button></form>
                 </>
               ) : yahooEnabled && yahooConfigured ? (
                 <a href="/api/yahoo/connect" className="command-link">Connect Yahoo →</a>
