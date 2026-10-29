@@ -72,7 +72,7 @@ function parseTransactions(node: unknown) {
     players: entries(item, "players", "player").map((player) => parsePlayer(player).name).filter((name) => name !== "Unknown player").slice(0, 5),
   }));
 }
-function makeNotes(starters: Player[], bench: Player[], ir: Player[], available: Record<string, Player[]>) {
+function makeNotes(starters: Player[], bench: Player[], ir: Player[]) {
   const notes: { priority: "urgent" | "review" | "info"; title: string; detail: string }[] = [];
   const trouble = new Set(["O", "OUT", "D", "DOUBTFUL", "IR", "PUP", "SUSP", "NA"]);
   for (const p of starters) {
@@ -88,15 +88,10 @@ function makeNotes(starters: Player[], bench: Player[], ir: Player[], available:
   }
   const rb = starters.concat(bench).filter((p) => p.position.includes("RB") && !trouble.has(p.status.toUpperCase()));
   if (rb.length < 4) notes.push({ priority: "review", title: "Running-back depth looks thin", detail: "Only " + rb.length + " available RBs are on the active roster. Compare Yahoo's available RBs before making a move." });
-  for (const pos of ["RB", "WR", "TE"]) {
-    const pool = available[pos] || [];
-    if (pool.length) {
-      notes.push({
-        priority: "info", title: pos + " waiver watch: " + pool.slice(0, 3).map((p) => p.name).join(", "),
-        detail: "Available in this specific league, sorted by Yahoo's overall rank. These are candidates to evaluate, not automatic adds.",
-      });
-    }
-  }
+  // Do not turn Yahoo's raw availability ranking into pickup advice.
+  // The complete league-specific pool is retained for deeper hourly scouting,
+  // but no waiver player is promoted to the decision queue without evidence of
+  // a meaningful roster improvement (usage, projections, role and injury news).
   if (ir.length) notes.push({ priority: "info", title: ir.length + " player(s) in IR slots", detail: ir.map((p) => p.name + (p.status ? " (" + p.status + ")" : "")).join(", ") + ". Check return-to-play and roster eligibility." });
   return notes;
 }
@@ -155,7 +150,7 @@ export async function getLeague(id: string, short: string, expectedTeam: string,
     week: num(find(meta, "current_week")) || 8,
     myTeam: me || null, standings, starters, bench, ir,
     available, recentTransactions: parseTransactions(data.transactions),
-    notes: makeNotes(starters, bench, ir, available),
+    notes: makeNotes(starters, bench, ir),
     rosterCount: roster.length, errors,
     source: "Yahoo Fantasy Sports API • read-only • live on refresh",
   };
