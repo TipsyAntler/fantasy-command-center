@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · INITIAL CARD SUBMISSION-READY · 14 FROZEN LINES VERIFIED · SAVE ALL PICKS + TIEBREAKER 47 BEFORE THURSDAY 8:15 PM ET · WEEKEND/MONDAY SIDES REMAIN EDITABLE UNTIL SUNDAY 1:00 PM ET";
-export const week8MarketAsOf = "Oct 29, 2026 · 9:18 AM ET: all 14 ATS recommendations and the 47-point tiebreaker unchanged; PHI-WAS total moved to 40.0; initial full-card submission due before CAR-GB at 8:15 PM ET";
+export const week8MarketAsOf = "Oct 29, 2026 · 12:20 PM ET: all 14 ATS recommendations and the 47-point tiebreaker unchanged; TEN +10.5 now has a six-book exact-line de-vig median of 51.0%; NE-MIA total moved to 43.5; initial full-card submission due before CAR-GB at 8:15 PM ET";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -62,12 +62,12 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "CIN -10.5",
     "poolFavorite": "CIN",
     "poolSpread": 10.5,
-    "marketLabel": "CIN -10 to -10.5 across Oct 26 listings",
+    "marketLabel": "Exact TEN +10.5 prices at six books checked Oct 29, 12:22 PM ET; proportional de-vig median 51.0% TEN; DraftKings -10 excluded; OOSTA -11.5 conflicted with the exact-line board",
     "marketTotal": 46.5,
     "confidence": 2,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Retain TEN +10.5 as the prior provisional tie choice. A fresh Oct 27 market board is back at the frozen +10.5, while earlier Monday listings included Cincinnati -10. Without a comparable multi-book exact-line pair, the earlier half-point case is not stable enough to label an edge.",
-    "watch": "Recheck Bengals quarterback/OL reports and whether market settles -10 or -10.5."
+    "signal": "SMALL EXACT-LINE PRICE LEAN",
+    "rationale": "Retain TEN +10.5. FanDuel, BetMGM, Caesars, bet365, BetRivers and Novig all displayed both sides at the exact frozen spread; proportional de-vig gives Tennessee a 51.0% median. DraftKings was at TEN +10/CIN -10 and is excluded from the exact-line price consensus. OOSTA briefly displayed CIN -11.5, but that conflicted with the contemporaneous multi-book exact-line board, so it does not justify flipping the side. This is a small exact-line price lean, not calibrated high confidence.",
+    "watch": "Refresh exact TEN +10.5 prices and official Bengals/Titans reports before Sunday lock; do not flip on a conflicting consensus snapshot alone."
   },
   {
     "day": "Sun",
@@ -215,8 +215,8 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "NE -7.5",
     "poolFavorite": "NE",
     "poolSpread": 7.5,
-    "marketLabel": "Exact MIA +7.5 prices at DraftKings and FanDuel checked Oct 28; both -115 vs NE -7.5 -105, de-vig 51.1% MIA; OOSTA total 44 at 9:17 PM ET",
-    "marketTotal": 44,
+    "marketLabel": "Exact MIA +7.5 prices at DraftKings and FanDuel checked Oct 28; both -115 vs NE -7.5 -105, de-vig 51.1% MIA; OOSTA total 43.5 at 12:20 PM ET Oct 29",
+    "marketTotal": 43.5,
     "confidence": 2,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
     "rationale": "Flip FFCC to MIA +7.5 instead of NE -7.5. DraftKings and FanDuel both price the exact frozen spread at NE -7.5 -105 / MIA +7.5 -115; proportional de-vig gives Miami 51.1% at each book. Wednesday morning OOSTA and Fantasy Alarm consensus also moved to New England -7, so the pool gives Miami the hook above the key 7. This is a small exact-line price lean, not calibrated high confidence.",
