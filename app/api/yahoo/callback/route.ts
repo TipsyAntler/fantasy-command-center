@@ -5,6 +5,7 @@ import {
   encryptYahooSession,
   exchangeYahooCode,
 } from "@/lib/yahoo";
+import { saveServerYahooSession } from "@/lib/yahoo-store";
 
 export const runtime = "nodejs";
 
@@ -24,6 +25,8 @@ export async function GET(request: NextRequest) {
 
   try {
     const session = await exchangeYahooCode(code, request.nextUrl.origin);
+    // Persist encrypted credentials for unattended read-only monitoring.
+    await saveServerYahooSession(session);
     const response = NextResponse.redirect(new URL("/settings?yahoo=connected", request.url));
     response.cookies.set(YAHOO_SESSION_COOKIE, encryptYahooSession(session), {
       httpOnly: true,
