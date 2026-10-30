@@ -381,3 +381,12 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
 - **Survivor:** 22 entries remain alive. Ten Week 8 selections remain visible: Cincinnati 4, Jacksonville 3, Green Bay 1, New England 1 and Los Angeles Rams 1. Informational only.
 - **Alert decision:** no actionable alert or push was created. There is no new recommendation, exact pool line, final-card state or tiebreaker change.
 - Sources: private Yahoo read-only monitor (not published) · https://www.nfl.com/injuries/ · https://www.patriots.com/game-day/2026/reg-week8/patriots-at-dolphins/injuries · https://www.buccaneers.com/team/injury-report/ · https://www.foxsports.com/stories/nfl/2026-nfl-odds-week-8-lines-spreads-results-all-14-games · https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
+
+
+## Oct. 30, 2026 · 3:00 AM ET — Ravens availability correction
+- **Yahoo source status:** the private read-only monitor returned ok=true with a current 2:58 AM ET fetch, both BM and LL leagues, nonempty starters and standings, and no league errors. No Yahoo mutation was performed.
+- **Fantasy:** BM remains set with Dallas Goedert in the FLEX and TreVeyon Henderson benched. LL still has bye-week Brock Purdy starting and Baker Mayfield available; the existing Mayfield action remains unresolved and was not duplicated. No new waiver pursuit is recommended.
+- **Pick'em:** Baltimore's official team update confirms Lamar Jackson practiced fully for a second straight day Thursday. The BAL +3.5 rationale and Friday watch were corrected to reflect the improved availability signal. The update strengthens the retained BAL side but does not create a recommendation flip, new exact pool line or calibrated edge. All editable sides and tiebreaker **47** remain unchanged.
+- **Survivor:** 22 entries remain alive. Ten Week 8 selections remain visible: Cincinnati 4, Jacksonville 3, Green Bay 1, New England 1 and Los Angeles Rams 1. Informational only.
+- **Alert decision:** no actionable alert or push was created because the recommendation did not change.
+- Sources: private Yahoo read-only monitor (not published) · https://www.baltimoreravens.com/news/ravens-injury-report-vega-ioane-kyle-hamilton-roquan-smith-ravens-practice-return-2026 · https://www.nfl.com/injuries/ · https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
