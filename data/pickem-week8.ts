@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · THURSDAY FINAL: GB 27, CAR 19 · FFCC GB -3.5 COVERED · INITIAL FULL-CARD DEADLINE PASSED · WEEKEND/MONDAY SIDES EDITABLE UNTIL SUNDAY 1:00 PM ET · TIEBREAKER 47";
-export const week8MarketAsOf = "Oct 30, 2026 · 7:25 AM ET MORNING CHECK: GB -3.5 covered in Green Bay\'s 27-19 final; the broad TEN-CIN market moved to CIN -12.5, but six reviewed exact TEN +10.5 pairs still price Tennessee slightly shorter, so the retain-prior policy keeps TEN +10.5; no editable side flips; tiebreaker 47 remains unchanged";
+export const week8MarketAsOf = "Oct 30, 2026 · 8:30 AM ET MORNING CHECK: GB -3.5 covered in Green Bay\'s 27-19 final; current TEN-CIN consensus snapshots conflict between CIN -11.5 and -12.5, while six reviewed exact TEN +10.5 pairs still price Tennessee slightly shorter, so the retain-prior policy keeps TEN +10.5; no editable side flips; tiebreaker 47 remains unchanged";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -63,11 +63,11 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "CIN -10.5",
     "poolFavorite": "CIN",
     "poolSpread": 10.5,
-    "marketLabel": "Exact TEN +10.5 pairs reviewed Oct 30, 7:25 AM ET still price TEN slightly shorter (quote timestamps unavailable); broad consensus moved to CIN -12.5",
+    "marketLabel": "Exact TEN +10.5 pairs reviewed Oct 30, 8:30 AM ET still price TEN slightly shorter (quote timestamps unavailable); current broad snapshots conflict between CIN -11.5 and -12.5",
     "marketTotal": 46.5,
     "confidence": 2,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Retain TEN +10.5. At 7:25 AM ET, six reviewed conventional exact-line pairs still price Tennessee slightly shorter: FanDuel TEN -115/CIN -105, BetMGM -112/-105, Caesars -115/-105, bet365 -116/-105, BetRivers -112/-109 and Novig -106/+102. Proportional de-vig gives Cincinnati a 49.0% median across those pairs. The quote provider did not supply book timestamps, so this is a reviewed morning snapshot rather than a claimed live quote. The broader consensus moved materially to CIN -12.5 and Betwatch confirms a two-point move from the frozen -10.5, creating conflicting Cincinnati number value. Under the retain-prior policy, the split is not enough to reverse the exact-line side. Evidence label remains small exact-line price lean, not calibrated high confidence.",
+    "rationale": "Retain TEN +10.5. At 8:30 AM ET, six reviewed conventional exact-line pairs still price Tennessee slightly shorter: FanDuel TEN -115/CIN -105, BetMGM -112/-105, Caesars -115/-105, bet365 -116/-105, BetRivers -112/-109 and Novig -106/+102. Proportional de-vig gives Cincinnati a 49.0% median across those pairs. The quote provider did not supply book timestamps, so this is a reviewed morning snapshot rather than a claimed live quote. Current broad-market snapshots conflict: VegasInsider shows CIN -11.5 while Betwatch shows a -12.5 median. Both are beyond the frozen -10.5 and create conflicting Cincinnati number value, but the exact-line pairs remain on Tennessee. Under the retain-prior policy, that split is not enough to reverse the side. Evidence label remains small exact-line price lean, not calibrated high confidence.",
     "watch": "Refresh exact TEN +10.5 prices and official Bengals/Titans reports before Sunday lock; do not flip on a conflicting consensus snapshot alone."
   },
   {
