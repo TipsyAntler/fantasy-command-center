@@ -419,3 +419,14 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
 - **Exact frozen line:** the same six reviewed TEN +10.5 pairs still price Tennessee slightly shorter, with a 49.0% proportional de-vig median for Cincinnati. Quote timestamps remain unavailable from the provider.
 - **Decision:** retain **TEN +10.5** with **small exact-line price lean**. No recommendation flip, alert, or tiebreaker change.
 - Sources: https://www.vegasinsider.com/nfl/matchups/bengals-vs-titans/ · https://betwatch.io/teams/nfl/cincinnati-bengals · https://cleatz.com/nfl/
+
+
+## Oct 30, 2026 — 12:54 PM ET live Yahoo roster reconciliation
+
+- **Yahoo source status:** the private read-only monitor returned ok=true with a current 12:54 PM ET fetch, both BM and LL leagues, nonempty starters and standings, and no league errors. No Yahoo mutation was performed.
+- **Legendary LeBlanc roster change:** Emeka Egbuka is now marked **Out** and has been moved to IR; Kyle Monangai is already on the bench; Kansas City replaced Tennessee at DEF. Brock Purdy remains in the starting QB slot on San Francisco's Week 8 bye, Kendrick Bourne remains on the bench, and Baker Mayfield remains available in LL.
+- **Updated action:** the recommendation is unchanged but the steps are now simpler: **drop Kendrick Bourne for Baker Mayfield and start Mayfield over Purdy before Sunday 1:00 PM ET**. The existing active alert was updated in place with a new push revision; this is not a new waiver ranking or a recommendation flip.
+- **Big Money:** Dallas Goedert remains in the FLEX and TreVeyon Henderson remains benched. No new BM action is supported.
+- **Pick'em:** no frozen line, recommendation, evidence label, change flag, or tiebreaker changed. The editable card still retains MIA +7.5, WAS -4.5, TEN +10.5 and CHI +3.5; tiebreaker **47** remains reviewed and unchanged.
+- **Survivor:** 22 entries remain alive. Fourteen Week 8 selections are visible: Cincinnati 6, Jacksonville 5, Green Bay 1, New England 1 and Los Angeles Rams 1. Informational only; no Survivor alert.
+- Sources: private Yahoo read-only monitor (not published) · commissioner Google Sheet read-only snapshot.
