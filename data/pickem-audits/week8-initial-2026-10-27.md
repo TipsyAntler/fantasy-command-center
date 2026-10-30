@@ -430,3 +430,15 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
 - **Pick'em:** no frozen line, recommendation, evidence label, change flag, or tiebreaker changed. The editable card still retains MIA +7.5, WAS -4.5, TEN +10.5 and CHI +3.5; tiebreaker **47** remains reviewed and unchanged.
 - **Survivor:** 22 entries remain alive. Fourteen Week 8 selections are visible: Cincinnati 6, Jacksonville 5, Green Bay 1, New England 1 and Los Angeles Rams 1. Informational only; no Survivor alert.
 - Sources: private Yahoo read-only monitor (not published) · commissioner Google Sheet read-only snapshot.
+
+
+## Oct 30, 2026 — 2:25 PM ET LL quarterback resolution
+
+- **Yahoo source status:** the private read-only monitor returned ok=true with a current 2:25 PM ET fetch, both BM and LL leagues, nonempty starters and standings, and no league errors. No Yahoo mutation was performed.
+- **Legendary LeBlanc transaction:** Mike added **Malik Willis** for Kendrick Bourne and moved Willis into the starting QB slot. Brock Purdy is now safely on the bench for San Francisco's Week 8 bye. This resolves the urgent lineup hole.
+- **Baker waiver timing correction:** Mike confirmed Baker Mayfield remains on waivers until Saturday and intends to wait rather than spend a waiver claim. The monitor's generic availability field does not distinguish free-agent versus waiver-clearance timing, so the human-confirmed timing is authoritative for action planning.
+- **Alert disposition:** the prior Baker action alert is now inactive and archived. No Baker pickup is recommended today. Reassess after clearance only if Baker remains available and fresh evidence supports a meaningful upgrade over Willis; do not generate a generic quarterback waiver list.
+- **Other LL changes:** Emeka Egbuka remains Out in IR, Kyle Monangai remains on the bench, and Kansas City remains the starting defense.
+- **Pick'em:** no recommendation, frozen line, evidence label, change flag, or tiebreaker changed.
+- **Survivor:** 22 entries remain alive. Fifteen Week 8 selections are visible: Cincinnati 6, Jacksonville 6, Green Bay 1, New England 1 and Los Angeles Rams 1. Informational only; no Survivor alert.
+- Sources: private Yahoo read-only monitor (not published) · Mike's direct waiver-timing confirmation · commissioner Google Sheet read-only snapshot.
