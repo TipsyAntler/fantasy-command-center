@@ -5,8 +5,8 @@ import type { Week5PoolGame } from "./pickem-week5";
 // Market references are dated snapshots unless a game explicitly records live two-sided prices at the exact frozen spread.
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week8PoolStatus = "WEEK 8 · THURSDAY LOCKED: GB -3.5 · INITIAL FULL-CARD DEADLINE PASSED · 14 FROZEN LINES VERIFIED · WEEKEND/MONDAY SIDES REMAIN EDITABLE UNTIL SUNDAY 1:00 PM ET · TIEBREAKER 47";
-export const week8MarketAsOf = "Oct 30, 2026 · 3:00 AM ET OVERNIGHT CHECK: GB -3.5 is locked; Lamar Jackson practiced fully for a second straight day, but no final designation or fresh exact-line evidence supports reversing an editable weekend or Monday side; tiebreaker 47 remains unchanged";
+export const week8PoolStatus = "WEEK 8 · THURSDAY FINAL: GB 27, CAR 19 · FFCC GB -3.5 COVERED · INITIAL FULL-CARD DEADLINE PASSED · WEEKEND/MONDAY SIDES EDITABLE UNTIL SUNDAY 1:00 PM ET · TIEBREAKER 47";
+export const week8MarketAsOf = "Oct 30, 2026 · 4:15 AM ET OVERNIGHT CHECK: GB -3.5 covered in Green Bay\'s 27-19 final; exact TEN +10.5 sportsbook prices still lean slightly Tennessee despite the broader market moving toward CIN -11.5 or higher, so no editable side flips; tiebreaker 47 remains unchanged";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -33,7 +33,8 @@ export const week8PoolGames: Week5PoolGame[] = [
     "confidence": 1,
     "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
     "rationale": "Keep GB -3.5 as the transparent tie choice. Seven current books offer both sides at the exact frozen spread; proportional de-vig gives Green Bay a 50.2% median, too balanced to claim a measured edge. The final inactive check does not break the market tie: Matthew Golden, Devonte Wyatt and Keisean Nixon are active for Green Bay, while Carolina is without starting DT Bobby Brown, OLB Jaelan Phillips and LG Damien Lewis. The spread still holds GB -3.5.",
-    "watch": "LOCKED at Thursday kickoff: GB -3.5. Do not infer that Mike submitted this side; actual submission remains unknown unless he explicitly confirms it. Weekend and Monday sides remain editable until Sunday 1:00 PM ET."
+    "watch": "FINAL: GB -3.5 covered in Green Bay\'s 27-19 win. Do not infer that Mike submitted this side; actual submission remains unknown unless he explicitly confirms it.",
+    "result": "GB 27, CAR 19 — FFCC recommendation GB -3.5 covered. Mike\'s actual submitted side remains unknown."
   },
   {
     "day": "Sun",
@@ -62,11 +63,11 @@ export const week8PoolGames: Week5PoolGame[] = [
     "mikeVibe": "CIN -10.5",
     "poolFavorite": "CIN",
     "poolSpread": 10.5,
-    "marketLabel": "Exact TEN +10.5 prices at six books checked Oct 29, 12:22 PM ET; proportional de-vig median 51.0% TEN; DraftKings -10 excluded; OOSTA -11.5 conflicted with the exact-line board",
+    "marketLabel": "Exact TEN +10.5 prices refreshed Oct 30, 4:14 AM ET: conventional sportsbook pairs still price TEN slightly shorter, while prediction exchanges and the broader CIN -11.5 or higher market conflict",
     "marketTotal": 46.5,
     "confidence": 2,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Retain TEN +10.5. FanDuel, BetMGM, Caesars, bet365, BetRivers and Novig all displayed both sides at the exact frozen spread; proportional de-vig gives Tennessee a 51.0% median. DraftKings was at TEN +10/CIN -10 and is excluded from the exact-line price consensus. OOSTA briefly displayed CIN -11.5, but that conflicted with the contemporaneous multi-book exact-line board, so it does not justify flipping the side. This is a small exact-line price lean, not calibrated high confidence.",
+    "rationale": "Retain TEN +10.5. The Oct 30 refresh still shows conventional exact-line sportsbook pairs pricing Tennessee slightly shorter: BetMGM lists TEN 1.88/CIN 1.95, Action Network TEN -113/CIN -106, and the reviewed six-book exact-line median leaves Cincinnati at 49.4% no-vig. The broader main market has moved to CIN -11.5 or higher and exact prediction-exchange pairs favor Cincinnati, so the evidence is split. Under the retain-prior policy, that conflict is not enough to reverse the side at the fixed pool line. Evidence label remains small exact-line price lean, not calibrated high confidence.",
     "watch": "Refresh exact TEN +10.5 prices and official Bengals/Titans reports before Sunday lock; do not flip on a conflicting consensus snapshot alone."
   },
   {
