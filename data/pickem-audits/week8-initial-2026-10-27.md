@@ -411,3 +411,11 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
 - **Other Pick'em:** MIA +7.5 retains the hook above the current 6.5–7 market; WAS -4.5 retains a 1.5–2 point advantage versus current Washington -6; CHI +3.5 remains above the broad Seattle -3 market; Bears-Seahawks total remains 46.5, so tiebreaker **47** is unchanged.
 - **Survivor:** 22 entries remain alive. Ten Week 8 selections are visible: Cincinnati 4, Jacksonville 3, Green Bay 1, New England 1 and Los Angeles Rams 1. Informational only.
 - Sources: private Yahoo read-only monitor (not published) · https://www.vegasinsider.com/nfl/matchups/bengals-vs-titans/ · https://betwatch.io/teams/nfl/cincinnati-bengals · https://cleatz.com/nfl/ · https://www.vegasinsider.com/nfl/matchups/dolphins-vs-patriots/ · https://www.vegasinsider.com/nfl/matchups/bears-vs-seahawks/ · commissioner Google Sheet read-only snapshot.
+
+
+## Oct 30, 2026 — 8:30 AM ET source reconciliation
+
+- **TEN-CIN correction:** a fresh VegasInsider snapshot shows the main market at **CIN -11.5**, while Betwatch still reports a **CIN -12.5** median. The 7:25 AM audit preserved the Betwatch snapshot but described -12.5 too broadly as the consensus. The live board now records the verified range **CIN -11.5 to -12.5** instead of presenting either aggregator as universal.
+- **Exact frozen line:** the same six reviewed TEN +10.5 pairs still price Tennessee slightly shorter, with a 49.0% proportional de-vig median for Cincinnati. Quote timestamps remain unavailable from the provider.
+- **Decision:** retain **TEN +10.5** with **small exact-line price lean**. No recommendation flip, alert, or tiebreaker change.
+- Sources: https://www.vegasinsider.com/nfl/matchups/bengals-vs-titans/ · https://betwatch.io/teams/nfl/cincinnati-bengals · https://cleatz.com/nfl/
