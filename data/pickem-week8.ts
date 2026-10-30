@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · THURSDAY FINAL: GB 27, CAR 19 · FFCC GB -3.5 COVERED · INITIAL FULL-CARD DEADLINE PASSED · WEEKEND/MONDAY SIDES EDITABLE UNTIL SUNDAY 1:00 PM ET · TIEBREAKER 47";
-export const week8MarketAsOf = "Oct 30, 2026 · 8:30 AM ET MORNING CHECK: GB -3.5 covered in Green Bay\'s 27-19 final; current TEN-CIN consensus snapshots conflict between CIN -11.5 and -12.5, while six reviewed exact TEN +10.5 pairs still price Tennessee slightly shorter, so the retain-prior policy keeps TEN +10.5; no editable side flips; tiebreaker 47 remains unchanged";
+export const week8MarketAsOf = "Oct 30, 2026 · 5:05 PM ET FRIDAY CHECK: FFCC flips KC -1.5 to DEN +1.5 after two current exact-frozen-line pairs price Denver shorter; proportional de-vig median 50.75% DEN; a timestamped FanDuel snapshot also shows the broader market crossed through zero to DEN -1.5; evidence label small exact-line price lean; tiebreaker 47 unchanged";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -194,17 +194,17 @@ export const week8PoolGames: Week5PoolGame[] = [
     "kickoff": "4:25 PM",
     "away": "KC",
     "home": "DEN",
-    "poolPick": "KC",
-    "poolLine": -1.5,
+    "poolPick": "DEN",
+    "poolLine": 1.5,
     "mikeVibe": "KC -1.5",
     "poolFavorite": "KC",
     "poolSpread": 1.5,
-    "marketLabel": "KC -1.5 OOSTA consensus at 5:59 PM ET Oct 28, matching the frozen pool spread",
+    "marketLabel": "Exact DEN +1.5 prices reviewed Oct 30, 5:05 PM ET: BetMGM 1.90 vs KC 1.93 and DraftKings DEN -115 vs KC -105; proportional de-vig median 50.75% DEN; direct-board quote timestamps unavailable",
     "marketTotal": 40.5,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Keep KC -1.5 provisionally. Most markets are near the frozen spread with no trustworthy exact-line de-vig lean. Kansas City's Week 7 loss is not independently predictive of ATS value.",
-    "watch": "Monitor QB/OL statuses and exact two-sided KC -1.5 odds."
+    "confidence": 2,
+    "signal": "SMALL EXACT-LINE PRICE LEAN",
+    "rationale": "Flip FFCC to DEN +1.5 instead of KC -1.5. BetMGM and DraftKings each displayed both sides at the exact frozen pool spread and each priced Denver shorter. Proportional de-vig gives Denver 50.4% at BetMGM and 51.1% at DraftKings, a two-book median of 50.75%. The direct boards did not expose quote timestamps, so these are recorded as current Friday review snapshots rather than timestamped live quotes. A separate FanDuel snapshot updated Oct 30 at noon ET shows the broader market crossed through zero to DEN -1.5, corroborating the direction but not entering the exact-line de-vig calculation. Denver RB RJ Harvey being Out is context already allowed to flow through the market, not a separately added edge. This is a small exact-line price lean, not calibrated high confidence.",
+    "watch": "Refresh exact DEN +1.5 prices and final Chiefs/Broncos availability before the Sunday 1:00 PM ET full-card lock."
   },
   {
     "day": "Sun",
