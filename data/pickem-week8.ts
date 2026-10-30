@@ -5,8 +5,8 @@ import type { Week5PoolGame } from "./pickem-week5";
 // Market references are dated snapshots unless a game explicitly records live two-sided prices at the exact frozen spread.
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week8PoolStatus = "WEEK 8 · THURSDAY PICK FINAL: GB -3.5 · INITIAL CARD SUBMISSION-READY · 14 FROZEN LINES VERIFIED · SAVE ALL PICKS + TIEBREAKER 47 BEFORE THURSDAY 8:15 PM ET · WEEKEND/MONDAY SIDES REMAIN EDITABLE UNTIL SUNDAY 1:00 PM ET";
-export const week8MarketAsOf = "Oct 29, 2026 · 7:44 PM ET FINAL THURSDAY CHECK: GB -3.5 unchanged after official inactives and seven-book exact pricing; Matthew Golden, Devonte Wyatt and Keisean Nixon are active, while Carolina is without Bobby Brown, Jaelan Phillips and Damien Lewis; all 14 ATS recommendations and tiebreaker 47 unchanged";
+export const week8PoolStatus = "WEEK 8 · THURSDAY LOCKED: GB -3.5 · INITIAL FULL-CARD DEADLINE PASSED · 14 FROZEN LINES VERIFIED · WEEKEND/MONDAY SIDES REMAIN EDITABLE UNTIL SUNDAY 1:00 PM ET · TIEBREAKER 47";
+export const week8MarketAsOf = "Oct 29, 2026 · 9:11 PM ET POST-LOCK CHECK: GB -3.5 is locked after Thursday kickoff; the initial full-card deadline has passed, while weekend and Monday sides remain editable until Sunday 1:00 PM ET; all remaining ATS recommendations and tiebreaker 47 are unchanged";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -33,7 +33,7 @@ export const week8PoolGames: Week5PoolGame[] = [
     "confidence": 1,
     "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
     "rationale": "Keep GB -3.5 as the transparent tie choice. Seven current books offer both sides at the exact frozen spread; proportional de-vig gives Green Bay a 50.2% median, too balanced to claim a measured edge. The final inactive check does not break the market tie: Matthew Golden, Devonte Wyatt and Keisean Nixon are active for Green Bay, while Carolina is without starting DT Bobby Brown, OLB Jaelan Phillips and LG Damien Lewis. The spread still holds GB -3.5.",
-    "watch": "FINAL for Thursday: GB -3.5. Save the full card and tiebreaker 47 before the 8:15 PM ET kickoff; the Thursday side locks at kickoff."
+    "watch": "LOCKED at Thursday kickoff: GB -3.5. Do not infer that Mike submitted this side; actual submission remains unknown unless he explicitly confirms it. Weekend and Monday sides remain editable until Sunday 1:00 PM ET."
   },
   {
     "day": "Sun",
