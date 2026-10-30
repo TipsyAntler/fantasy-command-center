@@ -371,3 +371,13 @@ No FFCC recommendation changed. This pass replaced dated main-line summaries wit
 - **Survivor:** 22 entries remain alive. Ten Week 8 selections remain visible: Cincinnati 4, Jacksonville 3, Green Bay 1, New England 1 and Los Angeles Rams 1. Informational only.
 - **Alert decision:** no actionable alert or push was created. There is no new recommendation, exact pool line, final-card state or tiebreaker change.
 - Sources: private Yahoo read-only monitor (not published) · https://www.nfl.com/injuries/ · https://www.patriots.com/game-day/2026/reg-week8/patriots-at-dolphins/injuries · https://www.buccaneers.com/team/injury-report/ · https://www.cbssports.com/betting/news/week-8-nfl-betting-odds-lines-spreads-totals/ · https://www.oostapro.com/nfl/line-moves · https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
+
+
+## Oct. 30, 2026 · 2:31 AM ET — Overnight monitoring check
+- **Yahoo source status:** the private read-only monitor returned ok=true with a current 2:30 AM ET fetch, both BM and LL leagues, nonempty starters and standings, and no league errors. No Yahoo mutation was performed.
+- **BM:** Dallas Goedert remains in the live FLEX and TreVeyon Henderson remains benched. No new independently supported lineup or waiver action was identified.
+- **LL:** Brock Purdy remains in the starting QB slot on San Francisco's bye; Baker Mayfield remains available in LL. The previously delivered Mayfield action remains valid and unresolved, so it was not duplicated.
+- **Pick'em:** GB -3.5 remains locked. No Friday practice or final game designation has posted, and overnight accessible market pages did not provide new comparable-time, two-sided exact-line prices sufficient to reverse an editable FFCC side. Tiebreaker **47** remains unchanged.
+- **Survivor:** 22 entries remain alive. Ten Week 8 selections remain visible: Cincinnati 4, Jacksonville 3, Green Bay 1, New England 1 and Los Angeles Rams 1. Informational only.
+- **Alert decision:** no actionable alert or push was created. There is no new recommendation, exact pool line, final-card state or tiebreaker change.
+- Sources: private Yahoo read-only monitor (not published) · https://www.nfl.com/injuries/ · https://www.patriots.com/game-day/2026/reg-week8/patriots-at-dolphins/injuries · https://www.buccaneers.com/team/injury-report/ · https://www.foxsports.com/stories/nfl/2026-nfl-odds-week-8-lines-spreads-results-all-14-games · https://docs.google.com/spreadsheets/d/1D6T-kLXAhth3iZSy2V0MMujHpbQ2NIilL7usxjM-zj4/edit
