@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · THURSDAY LOCKED: GB -3.5 · INITIAL FULL-CARD DEADLINE PASSED · 14 FROZEN LINES VERIFIED · WEEKEND/MONDAY SIDES REMAIN EDITABLE UNTIL SUNDAY 1:00 PM ET · TIEBREAKER 47";
-export const week8MarketAsOf = "Oct 30, 2026 · 12:33 AM ET POST-LOCK CHECK: GB -3.5 is locked; overnight official-report and market review found no fresh comparable-time exact-line evidence sufficient to reverse any editable weekend or Monday side; tiebreaker 47 remains unchanged";
+export const week8MarketAsOf = "Oct 30, 2026 · 2:31 AM ET OVERNIGHT CHECK: GB -3.5 is locked; no Friday practice or final designation has posted, and no fresh comparable-time exact-line evidence supports reversing an editable weekend or Monday side; tiebreaker 47 remains unchanged";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
