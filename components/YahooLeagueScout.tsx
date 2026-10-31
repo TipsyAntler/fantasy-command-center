@@ -57,6 +57,8 @@ export default function YahooLeagueScout({ leagueKey, title }: { leagueKey: "BM"
   const [data, setData] = useState<Scout | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [moveFilter, setMoveFilter] = useState<"all" | "waiver" | "trade" | "drops">("all");
+  const [managerFilter, setManagerFilter] = useState("");
   const load = useCallback(async () => {
     setLoading(true); setError("");
     try {
@@ -93,6 +95,12 @@ export default function YahooLeagueScout({ leagueKey, title }: { leagueKey: "BM"
   const activeManagers = [...movement.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
   const waiverWins = transactions.filter((t) => t.isWaiver && !["failed", "unsuccessful", "rejected", "cancelled"].includes(t.status)).slice(0, 8);
   const unsuccessful = transactions.filter((t) => ["failed", "unsuccessful", "rejected"].includes(t.status) && t.isWaiver);
+  const visibleTransactions = transactions.filter((t) =>
+    (moveFilter === "all" || (moveFilter === "waiver" && t.isWaiver) ||
+      (moveFilter === "trade" && t.type.includes("trade")) ||
+      (moveFilter === "drops" && t.players.some((p) => p.action === "drop"))) &&
+    (!managerFilter || t.teamsInvolved.includes(managerFilter) || t.teamName === managerFilter)
+  );
 
   return (
     <main><div className="shell page-shell">
@@ -164,10 +172,14 @@ export default function YahooLeagueScout({ leagueKey, title }: { leagueKey: "BM"
           <h2 style={{ marginTop: 8 }}>Most active managers</h2>
           <p style={muted}>Observed activity only within the latest {transactions.length} completed transactions—not a season-long ranking or evidence that an owner is willing to trade.</p>
           {activeManagers.length ? activeManagers.map(([name, count]) => (
-            <div key={name} style={{ ...line, display: "flex", justifyContent: "space-between", gap: 12 }}>
-              <strong>{name}{name === league.myTeam?.name ? " (you)" : ""}</strong>
+            <button key={name} type="button" onClick={() => setManagerFilter(managerFilter === name ? "" : name)}
+              title="Filter recent transactions by this manager"
+              style={{ ...line, display: "flex", justifyContent: "space-between", gap: 12, alignItems: "center",
+                width: "100%", background: managerFilter === name ? "rgba(97,226,168,.08)" : "transparent",
+                color: "inherit", borderLeft: 0, borderRight: 0, borderBottom: 0, cursor: "pointer", textAlign: "left" }}>
+              <strong>{name}{name === league.myTeam?.name ? " (you)" : ""}{managerFilter === name ? " · selected" : ""}</strong>
               <span style={muted}>{count} recorded {count === 1 ? "move" : "moves"}</span>
-            </div>
+            </button>
           )) : <p style={muted}>No attributable owner activity returned yet.</p>}
           <p style={muted}>Use this with the transaction history below to spot owners repeatedly churning positions, adding depth or cutting interesting players.</p>
         </section>
@@ -175,8 +187,19 @@ export default function YahooLeagueScout({ leagueKey, title }: { leagueKey: "BM"
         <section style={section}>
           <div style={emphasis}>LEAGUE INTELLIGENCE</div>
           <h2 style={{ marginTop: 8 }}>Recent transactions</h2>
-          <p style={muted}>Each move includes the fantasy team behind it, with add/drop direction and available details. Ordered by Yahoo&apos;s returned recent activity.</p>
-          {transactions.length ? transactions.map((t, i) => (
+          <p style={muted}>Each move includes the fantasy team behind it, with add/drop direction and available details. Tap a manager above or filter by move type to narrow your research.</p>
+          <div style={{ display: "flex", gap: 6, flexWrap: "wrap", margin: "12px 0" }}>
+            {(["all", "waiver", "trade", "drops"] as const).map((filter) => (
+              <button key={filter} type="button" onClick={() => setMoveFilter(filter)}
+                aria-pressed={moveFilter === filter}
+                style={{ ...button, padding: "6px 10px", fontSize: 12,
+                  background: moveFilter === filter ? "rgba(97,226,168,.28)" : "transparent" }}>
+                {filter === "all" ? "All moves" : filter === "waiver" ? "Waivers" : filter === "trade" ? "Trades" : "Drops"}
+              </button>
+            ))}
+            {managerFilter ? <button type="button" onClick={() => setManagerFilter("")} style={{ ...button, padding: "6px 10px", fontSize: 12 }}>Clear: {managerFilter} ×</button> : null}
+          </div>
+          {visibleTransactions.length ? visibleTransactions.map((t, i) => (
             <div key={t.key || "transaction-" + i} style={line}>
               <div style={{ display: "flex", justifyContent: "space-between", gap: 10, flexWrap: "wrap" }}>
                 <strong>{t.teamName}</strong>
@@ -184,7 +207,7 @@ export default function YahooLeagueScout({ leagueKey, title }: { leagueKey: "BM"
               </div>
               <div style={{ ...muted, marginTop: 5 }}>{readableMove(t) || "Player detail unavailable"}{t.bid !== null ? " · $" + t.bid + " FAAB" : ""}</div>
             </div>
-          )) : <p style={muted}>No league transactions returned.</p>}
+          )) : <p style={muted}>{transactions.length ? "No matching transactions in this sample." : "No league transactions returned."}</p>}
         </section>
         <p style={{ ...muted, marginTop: 20 }}>{data.caveat}</p>
       </> : null}
