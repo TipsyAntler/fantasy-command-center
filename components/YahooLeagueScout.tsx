@@ -139,7 +139,8 @@ export default function YahooLeagueScout({ leagueKey, title }: { leagueKey: "BM"
     record.positions.push(offer.position);
     losingByManager.set(loser.team, record);
   }));
-  const biggestLoser = [...losingByManager.entries()].sort((a, b) => b[1].count - a[1].count)[0];
+  const frequentClaimants = [...losingByManager.entries()].sort((a, b) => b[1].count - a[1].count);
+  const biggestLoser = frequentClaimants[0];
   const yahooOffersUrl = "https://football.fantasysports.yahoo.com/f1/" +
     (leagueKey === "BM" ? "890742" : "864304") + "/transactions?transactionsfilter=waiver";
 
@@ -189,8 +190,21 @@ export default function YahooLeagueScout({ leagueKey, title }: { leagueKey: "BM"
           <div style={eyebrow}>OPPONENT INTELLIGENCE</div>
           <h2 style={{ marginTop: 8 }}>League moves & waiver offers</h2>
           {biggestLoser ? <p style={{ ...muted, margin: "8px 0", color: "#d5e5ef" }}>
-            <strong>Waiver signal:</strong> {biggestLoser[0]} submitted {biggestLoser[1].count} unsuccessful claims in the verified Oct 21–28 snapshot ({biggestLoser[1].positions.join(", ")}).
+            <strong>Waiver signal:</strong> {biggestLoser[0]} submitted {biggestLoser[1].count} unsuccessful claims in the verified Sep 16–Oct 28 screenshot ({biggestLoser[1].positions.join(", ")}).
           </p> : null}
+          {frequentClaimants.length && moveFilter === "waiver" ? <div style={{ margin: "10px 0" }}>
+            <p style={{ ...muted, margin: "0 0 7px" }}>Most persistent losing claimants in the historical sample (tap to filter):</p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 7 }}>
+              {frequentClaimants.slice(0, 5).map(([name, stats]) => (
+                <button type="button" key={name}
+                  onClick={() => setManagerFilter(managerFilter === name ? "" : name)}
+                  style={{ ...button, padding: "6px 9px", fontSize: 12,
+                    background: managerFilter === name ? "rgba(97,226,168,.27)" : "transparent" }}>
+                  {name} · {stats.count}
+                </button>
+              ))}
+            </div>
+          </div> : null}
           <div style={{ display: "flex", gap: 7, flexWrap: "wrap", margin: "14px 0 10px" }}>
             {([
               ["all", "All moves"], ["waiver", "Waiver offers"], ["adds", "Adds"],
@@ -223,7 +237,7 @@ export default function YahooLeagueScout({ leagueKey, title }: { leagueKey: "BM"
 
           {moveFilter === "waiver" ? <>
             <p style={muted}>
-              {evidence.length ? evidence.length + " screenshot-verified winning claims, " + losingClaims + " documented losing attempts (Oct 21–28). " : ""}
+              {evidence.length ? evidence.length + " screenshot-verified winning claims, " + losingClaims + " documented losing attempts (Sep 16–Oct 28). " : ""}
               More recent winners come from the live API; that feed doesn&apos;t provide the identities of competing unsuccessful claims.
             </p>
             {(expanded ? visibleOffers : visibleOffers.slice(0, 5)).map((offer) => (
@@ -250,7 +264,7 @@ export default function YahooLeagueScout({ leagueKey, title }: { leagueKey: "BM"
             ))}
             {!visibleOffers.length && !visibleTransactions.length ? <p style={muted}>No matching verified offers or recent completed waiver claims.</p> : null}
             <p style={{ ...muted, borderTop: "1px solid rgba(255,255,255,.07)", paddingTop: 10, marginTop: 12 }}>
-              <strong>Data source:</strong> Oct 21–28 offer details were transcribed from the Yahoo website screenshot, not refreshed automatically. Yahoo&apos;s documented transactions API does not expose league-wide failed competing claims.{" "}
+              <strong>Data source:</strong> Sep 16–Oct 28 offer details were transcribed from your Yahoo website screenshot, not refreshed automatically. Yahoo&apos;s documented transactions API does not expose league-wide failed competing claims.{" "}
               <a href={yahooOffersUrl} target="_blank" rel="noopener noreferrer" style={{ color: "#a4e7cc" }}>Open latest waiver offers on Yahoo Web ↗</a>
             </p>
           </> : <>
