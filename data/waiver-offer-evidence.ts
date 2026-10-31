@@ -1,7 +1,7 @@
 /**
  * Screenshot-verified historical Yahoo Fantasy desktop Waiver Offers.
- * Big Money 2026 season entries from September 16 through October 28.
- * Source: user-provided full-season screenshot on 2026-10-30.
+ * Big Money and Legendary LeBlanc 2026 waiver offers from Sep 16 to Oct 28.
+ * Sources: user-provided Yahoo desktop Waiver Offers screenshots, Oct 30, 2026.
  * This file is not live Yahoo API data and does not refresh automatically.
  * Preserve source distinction from live completed transactions.
  */
@@ -344,5 +344,175 @@ export const VERIFIED_WAIVER_OFFERS: Record<"BM" | "LL", VerifiedWaiverOffer[]> 
       ]
     }
   ],
-  "LL": []
+  "LL": [
+  {
+    "id": "ll-20261028-jaguars",
+    "date": "2026-10-28",
+    "player": "Jaguars",
+    "nflTeam": "JAX",
+    "position": "DEF",
+    "winner": "Sunday Scaries",
+    "winningPriority": 5,
+    "unsuccessful": [
+      {
+        "team": "AJ Brown Baggin",
+        "priority": 11
+      }
+    ]
+  },
+  {
+    "id": "ll-20261021-omar-cooper-jr",
+    "date": "2026-10-21",
+    "player": "Omar Cooper Jr.",
+    "nflTeam": "NYJ",
+    "position": "WR",
+    "winner": "LaPorta Potty",
+    "winningPriority": 9,
+    "unsuccessful": [
+      {
+        "team": "Likely a Swiftie",
+        "priority": 11
+      }
+    ]
+  },
+  {
+    "id": "ll-20261021-tyrone-tracy-jr",
+    "date": "2026-10-21",
+    "player": "Tyrone Tracy Jr.",
+    "nflTeam": "NYG",
+    "position": "RB",
+    "winner": "Likely a Swiftie",
+    "winningPriority": 9,
+    "unsuccessful": [
+      {
+        "team": "AJ Brown Baggin",
+        "priority": 10
+      }
+    ]
+  },
+  {
+    "id": "ll-20261021-demario-douglas",
+    "date": "2026-10-21",
+    "player": "DeMario Douglas",
+    "nflTeam": "NE",
+    "position": "WR",
+    "winner": "Super Bowl Cut",
+    "winningPriority": 9,
+    "unsuccessful": [
+      {
+        "team": "AJ Brown Baggin",
+        "priority": 11
+      }
+    ]
+  },
+  {
+    "id": "ll-20261007-will-shipley",
+    "date": "2026-10-07",
+    "player": "Will Shipley",
+    "nflTeam": "PHI",
+    "position": "RB",
+    "winner": "LaPorta Potty",
+    "winningPriority": 10,
+    "unsuccessful": [
+      {
+        "team": "Likely a Swiftie",
+        "priority": 12
+      }
+    ]
+  },
+  {
+    "id": "ll-20260930-jaylen-wright",
+    "date": "2026-09-30",
+    "player": "Jaylen Wright",
+    "nflTeam": "MIA",
+    "position": "RB",
+    "winner": "Likely a Swiftie",
+    "winningPriority": 5,
+    "unsuccessful": [
+      {
+        "team": "LaPorta Potty",
+        "priority": 11
+      }
+    ]
+  },
+  {
+    "id": "ll-20260930-will-reichard",
+    "date": "2026-09-30",
+    "player": "Will Reichard",
+    "nflTeam": "MIN",
+    "position": "K",
+    "winner": "AJ Brown Baggin",
+    "winningPriority": 5,
+    "unsuccessful": [
+      {
+        "team": "Everybody Hurts",
+        "priority": 9
+      }
+    ]
+  },
+  {
+    "id": "ll-20260930-ollie-gordon-ii",
+    "date": "2026-09-30",
+    "player": "Ollie Gordon II",
+    "nflTeam": "MIA",
+    "position": "RB",
+    "winner": "LaPorta Potty",
+    "winningPriority": 4,
+    "unsuccessful": [
+      {
+        "team": "AJ Brown Baggin",
+        "priority": 6
+      },
+      {
+        "team": "Likely a Swiftie",
+        "priority": 7
+      }
+    ]
+  },
+  {
+    "id": "ll-20260923-harrison-butker",
+    "date": "2026-09-23",
+    "player": "Harrison Butker",
+    "nflTeam": "KC",
+    "position": "K",
+    "winner": "AJ Brown Baggin",
+    "winningPriority": 11,
+    "unsuccessful": [
+      {
+        "team": "Likely a Swiftie",
+        "priority": 12
+      }
+    ]
+  },
+  {
+    "id": "ll-20260923-tre-tucker",
+    "date": "2026-09-23",
+    "player": "Tre Tucker",
+    "nflTeam": "LV",
+    "position": "WR",
+    "winner": "First Down and Goal",
+    "winningPriority": 3,
+    "unsuccessful": [
+      {
+        "team": "Likely a Swiftie",
+        "priority": 12
+      }
+    ]
+  },
+  {
+    "id": "ll-20260916-kaelon-black",
+    "date": "2026-09-16",
+    "player": "Kaelon Black",
+    "nflTeam": "SF",
+    "position": "RB",
+    "winner": "LaPorta Potty",
+    "winningPriority": 4,
+    "unsuccessful": [
+      {
+        "team": "Likely a Swiftie",
+        "priority": 12
+      }
+    ]
+  }
+]
 };
