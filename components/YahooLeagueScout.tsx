@@ -69,7 +69,7 @@ export default function YahooLeagueScout({ leagueKey, title }: { leagueKey: "BM"
   const [data, setData] = useState<Scout | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [moveFilter, setMoveFilter] = useState<MoveFilter>(leagueKey === "BM" ? "waiver" : "all");
+  const [moveFilter, setMoveFilter] = useState<MoveFilter>("waiver");
   const [managerFilter, setManagerFilter] = useState("");
   const [expanded, setExpanded] = useState(false);
   const load = useCallback(async () => {
