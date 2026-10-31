@@ -234,7 +234,7 @@ export default function YahooLeagueScout({ leagueKey, title }: { leagueKey: "BM"
                 </div>
                 <div style={{ fontSize: 13, marginTop: 5 }}><strong style={{ color: "#bcebd5" }}>Won:</strong> {offer.winner} <span style={muted}>(priority {offer.winningPriority})</span></div>
                 <div style={{ ...muted, marginTop: 4 }}>
-                  <strong style={{ color: "#f0bb5f" }}>Outbid by priority:</strong>{" "}
+                  <strong style={{ color: "#f0bb5f" }}>Also claimed (lower priority):</strong>{" "}
                   {offer.unsuccessful.map((loser) => loser.team + " (#" + loser.priority + ")").join(" · ")}
                 </div>
               </div>
