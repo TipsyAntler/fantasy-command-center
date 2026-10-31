@@ -6,7 +6,7 @@ import type { Week5PoolGame } from "./pickem-week5";
 export const week8Number = 8;
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · THURSDAY FINAL: GB 27, CAR 19 · FFCC GB -3.5 COVERED · INITIAL FULL-CARD DEADLINE PASSED · WEEKEND/MONDAY SIDES EDITABLE UNTIL SUNDAY 1:00 PM ET · TIEBREAKER 47";
-export const week8MarketAsOf = "Oct 30, 2026 · 7:10 PM ET FRIDAY REFRESH: DEN +1.5 remains the FFCC side over Mike's KC -1.5 vibe; BetMGM still shows DEN +1.5 at 1.90 vs KC -1.5 at 1.93 and DraftKings DEN -115 vs KC -105, preserving the 50.75% two-source proportional de-vig median; current broad boards continue to support MIA +7.5 and WAS -4.5 frozen-number value; no additional editable-side flip; tiebreaker 47 unchanged";
+export const week8MarketAsOf = "Oct 30, 2026 · 9:25 PM ET LATE-FRIDAY CHECK: DEN +1.5 remains the FFCC side with the same 50.75% two-source proportional de-vig median; Lamar Jackson has no game designation and will play, strengthening availability certainty for retained BAL +3.5 without creating a new edge or flip; all other editable sides and tiebreaker 47 unchanged";
 export const week8Standing = {correct:47,rank:79,leaderCorrect:67,note:"Oct 27 user screenshots: Week 7 7/14, 47 season correct, rank 79 tied with others at 47; leading account 67. Rank based on total only, not tiebreaks."};
 export const week8MikeVibeCard = {
  observedAt:"Oct 27, 2026 · approximately 9:53 AM ET · screenshots show 14 orange-highlighted VIBE PICKS, intentionally not submitted", 
@@ -50,8 +50,8 @@ export const week8PoolGames: Week5PoolGame[] = [
     "marketTotal": 54.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Retain BAL +3.5. At 4:38 PM ET Oct 27, DraftKings, FanDuel, BetMGM, Caesars, bet365, BetRivers and Novig all displayed two-sided prices at the exact frozen BAL +3.5/BUF -3.5 spread; proportional de-vig produced a seven-book median of 52.2% for Baltimore. By 2:16 PM ET Oct 28, OOSTA consensus had moved to BUF -3, so the frozen pool gives Baltimore the hook above the key 3. This is a frozen-number advantage with uncalibrated size, not a high-confidence rating. Lamar Jackson practiced fully Wednesday and Thursday, a strong availability sign, but his final designation remains pending; do not double-count the update beyond the market.",
-    "watch": "Review Lamar Jackson's Friday final designation and refresh exact BAL +3.5 prices before Sunday lock."
+    "rationale": "Retain BAL +3.5. At 4:38 PM ET Oct 27, DraftKings, FanDuel, BetMGM, Caesars, bet365, BetRivers and Novig all displayed two-sided prices at the exact frozen BAL +3.5/BUF -3.5 spread; proportional de-vig produced a seven-book median of 52.2% for Baltimore. By 2:16 PM ET Oct 28, OOSTA consensus had moved to BUF -3, so the frozen pool gives Baltimore the hook above the key 3. This is a frozen-number advantage with uncalibrated size, not a high-confidence rating. Lamar Jackson practiced fully all week, has no game designation and will play Sunday; this resolves availability uncertainty but is not double-counted beyond the market.",
+    "watch": "Refresh exact BAL +3.5 prices before Sunday lock; Lamar Jackson is cleared with no game designation."
   },
   {
     "day": "Sun",
