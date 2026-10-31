@@ -135,7 +135,7 @@ function makeNotes(starters: Player[], bench: Player[], ir: Player[]) {
   if (ir.length) notes.push({ priority: "info", title: ir.length + " player(s) in IR slots", detail: ir.map((p) => p.name + (p.status ? " (" + p.status + ")" : "")).join(", ") + ". Check return-to-play and roster eligibility." });
   return notes;
 }
-export async function getLeague(id: string, short: string, expectedTeam: string, session: YahooSession, origin: string) {
+export async function getLeague(id: string, short: string, expectedTeam: string, session: YahooSession, origin: string, includeTradeIntel = false) {
   const paths = [
     ["teams", "league/" + id + "/teams"],
     ["standings", "league/" + id + "/standings"],
@@ -184,6 +184,56 @@ export async function getLeague(id: string, short: string, expectedTeam: string,
       .map((player) => parsePlayer(player, "Available"))
       .filter((p) => p.name !== "Unknown player").slice(0, 20);
   }
+  // This additional Yahoo read-only scan is opt-in for the private BM trade scout.
+  // Fetch every opponent's CURRENT roster, rather than attempting to infer roster
+  // construction or trade targets from standings and stale manual snapshots.
+  // An incomplete scan is explicitly flagged so advice cannot assume an absent
+  // player is unowned or a missing roster is empty.
+  let tradeIntel: {
+    complete: boolean;
+    checkedAt: string;
+    opponents: Array<{
+      teamKey: string; name: string; rank: number | null; wins: number | null;
+      losses: number | null; pointsFor: number | null;
+      roster: Player[]; positionCounts: Record<string, number>;
+    }>;
+    errors: string[];
+  } | null = null;
+  if (includeTradeIntel && short === "BM" && me?.key) {
+    const opposition = standings.filter((row) => row.key && row.key !== me.key);
+    const results = await Promise.allSettled(opposition.map((row) =>
+      yahooFantasyRequest("team/" + row.key + "/roster", session, origin)));
+    const tradeErrors: string[] = [];
+    const opponents = opposition.flatMap((row, index) => {
+      const outcome = results[index];
+      if (outcome.status !== "fulfilled") {
+        tradeErrors.push(row.name + ": " +
+          (outcome.reason instanceof Error ? outcome.reason.message : "Roster unavailable"));
+        return [];
+      }
+      const roster = entries(outcome.value.data, "players", "player")
+        .map((player) => parsePlayer(player))
+        .filter((player) => player.name !== "Unknown player");
+      if (!roster.length || !roster.some((player) => player.slot)) {
+        tradeErrors.push(row.name + ": roster missing or positions unparsed");
+        return [];
+      }
+      const positionCounts: Record<string, number> = {};
+      roster.forEach((player) => {
+        const position = player.position.split(",")[0].trim();
+        if (position) positionCounts[position] = (positionCounts[position] || 0) + 1;
+      });
+      return [{
+        teamKey: row.key, name: row.name, rank: row.rank,
+        wins: row.wins, losses: row.losses, pointsFor: row.pointsFor,
+        roster, positionCounts,
+      }];
+    });
+    tradeIntel = {
+      complete: opponents.length === opposition.length && tradeErrors.length === 0,
+      checkedAt: new Date().toISOString(), opponents, errors: tradeErrors,
+    };
+  }
   const meta = find(data.teams, "league") || find(data.standings, "league");
   return {
     id, short, name: str(find(meta, "name")) || (short === "BM" ? "FF Big Money" : "Legendary LeBlanc"),
@@ -191,7 +241,7 @@ export async function getLeague(id: string, short: string, expectedTeam: string,
     myTeam: me || null, standings, starters, bench, ir,
     available, recentTransactions: parseTransactions(data.transactions, teams.length ? teams : standings),
     notes: makeNotes(starters, bench, ir),
-    rosterCount: roster.length, errors,
+    rosterCount: roster.length, errors, tradeIntel,
     source: "Yahoo Fantasy Sports API • read-only • live on refresh",
   };
 }

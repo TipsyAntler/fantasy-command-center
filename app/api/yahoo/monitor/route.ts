@@ -28,8 +28,12 @@ export async function GET(request: NextRequest) {
     if (!session) return NextResponse.json({
       ok: false, error: "Yahoo needs one authenticated FFCC browser visit to initialize server sync",
     }, { status: 503, headers });
+    // Optional detailed BM opponent roster audit for the existing FFCC scout.
+    // GET-only Yahoo access; LL deliberately stays out of trade monitoring.
+    const tradeMode = request.nextUrl.searchParams.get("trade") === "1";
     const leagues = await Promise.all(LEAGUES.map((league) =>
-      getLeague(league.id, league.short, league.expectedTeam, session, request.nextUrl.origin)));
+      getLeague(league.id, league.short, league.expectedTeam, session, request.nextUrl.origin,
+        tradeMode && league.short === "BM")));
     const complete = leagues.every((league) => league.starters.length > 0 && league.standings.length > 0);
     return NextResponse.json({
       ok: complete, fetchedAt: new Date().toISOString(),
