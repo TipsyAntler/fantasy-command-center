@@ -1,10 +1,9 @@
 /**
- * Historical waiver-offer evidence transcribed from a user-supplied screenshot
- * of Yahoo Fantasy's desktop "Waiver Offers" tab on 2026-10-30.
- *
- * This is NOT a live API response. The Yahoo Fantasy documented league
- * transactions endpoint supplies completed moves, not the full set of losing
- * claims shown in Yahoo's website. Keep provenance visible in the UI.
+ * Screenshot-verified historical Yahoo Fantasy desktop Waiver Offers.
+ * Big Money 2026 season entries from September 16 through October 28.
+ * Source: user-provided full-season screenshot on 2026-10-30.
+ * This file is not live Yahoo API data and does not refresh automatically.
+ * Preserve source distinction from live completed transactions.
  */
 export type VerifiedWaiverOffer = {
   id: string;
@@ -16,38 +15,334 @@ export type VerifiedWaiverOffer = {
   winningPriority: number;
   unsuccessful: { team: string; priority: number }[];
 };
-
 export const VERIFIED_WAIVER_OFFERS: Record<"BM" | "LL", VerifiedWaiverOffer[]> = {
-  BM: [
+  "BM": [
     {
-      id: "bm-20261028-commanders", date: "2026-10-28", player: "Commanders",
-      nflTeam: "WAS", position: "DEF", winner: "kushlifeDFS", winningPriority: 6,
-      unsuccessful: [{ team: "I'm Your Huckleberry", priority: 9 }],
+      "id": "bm-20261028-commanders",
+      "date": "2026-10-28",
+      "player": "Commanders",
+      "nflTeam": "WAS",
+      "position": "DEF",
+      "winner": "kushlifeDFS",
+      "winningPriority": 6,
+      "unsuccessful": [
+        {
+          "team": "I'm Your Huckleberry",
+          "priority": 9
+        }
+      ]
     },
     {
-      id: "bm-20261028-bengals", date: "2026-10-28", player: "Bengals",
-      nflTeam: "CIN", position: "DEF", winner: "Do I Make You Randy?", winningPriority: 4,
-      unsuccessful: [{ team: "I'm Your Huckleberry", priority: 10 }],
+      "id": "bm-20261028-bengals",
+      "date": "2026-10-28",
+      "player": "Bengals",
+      "nflTeam": "CIN",
+      "position": "DEF",
+      "winner": "Do I Make You Randy?",
+      "winningPriority": 4,
+      "unsuccessful": [
+        {
+          "team": "I'm Your Huckleberry",
+          "priority": 10
+        }
+      ]
     },
     {
-      id: "bm-20261028-caleb-douglas", date: "2026-10-28", player: "Caleb Douglas",
-      nflTeam: "MIA", position: "WR", winner: "Russini's Baby Daddy", winningPriority: 3,
-      unsuccessful: [{ team: "I'm Your Huckleberry", priority: 11 }],
+      "id": "bm-20261028-caleb-douglas",
+      "date": "2026-10-28",
+      "player": "Caleb Douglas",
+      "nflTeam": "MIA",
+      "position": "WR",
+      "winner": "Russini's Baby Daddy",
+      "winningPriority": 3,
+      "unsuccessful": [
+        {
+          "team": "I'm Your Huckleberry",
+          "priority": 11
+        }
+      ]
     },
     {
-      id: "bm-20261021-jaylin-noel", date: "2026-10-21", player: "Jaylin Noel",
-      nflTeam: "HOU", position: "WR", winner: "kushlifeDFS", winningPriority: 3,
-      unsuccessful: [
-        { team: "Do I Make You Randy?", priority: 7 },
-        { team: "The Wet Darts", priority: 8 },
-        { team: "I'm Your Huckleberry", priority: 10 },
-      ],
+      "id": "bm-20261021-jaylin-noel",
+      "date": "2026-10-21",
+      "player": "Jaylin Noel",
+      "nflTeam": "HOU",
+      "position": "WR",
+      "winner": "kushlifeDFS",
+      "winningPriority": 3,
+      "unsuccessful": [
+        {
+          "team": "Do I Make You Randy?",
+          "priority": 7
+        },
+        {
+          "team": "The Wet Darts",
+          "priority": 8
+        },
+        {
+          "team": "I'm Your Huckleberry",
+          "priority": 10
+        }
+      ]
     },
     {
-      id: "bm-20261021-tyrone-tracy", date: "2026-10-21", player: "Tyrone Tracy Jr.",
-      nflTeam: "NYG", position: "RB", winner: "The Money Team $200 12T", winningPriority: 3,
-      unsuccessful: [{ team: "The Wet Darts", priority: 9 }],
+      "id": "bm-20261021-tyrone-tracy-jr",
+      "date": "2026-10-21",
+      "player": "Tyrone Tracy Jr.",
+      "nflTeam": "NYG",
+      "position": "RB",
+      "winner": "The Money Team $200 12T",
+      "winningPriority": 3,
+      "unsuccessful": [
+        {
+          "team": "The Wet Darts",
+          "priority": 9
+        }
+      ]
     },
+    {
+      "id": "bm-20261014-germie-bernard",
+      "date": "2026-10-14",
+      "player": "Germie Bernard",
+      "nflTeam": "PIT",
+      "position": "WR",
+      "winner": "I'm Your Huckleberry",
+      "winningPriority": 10,
+      "unsuccessful": [
+        {
+          "team": "The Price Is Wrong",
+          "priority": 12
+        }
+      ]
+    },
+    {
+      "id": "bm-20261014-dameon-pierce",
+      "date": "2026-10-14",
+      "player": "Dameon Pierce",
+      "nflTeam": "PHI",
+      "position": "RB",
+      "winner": "The Price Is Wrong",
+      "winningPriority": 8,
+      "unsuccessful": [
+        {
+          "team": "Bowers' Castle",
+          "priority": 9
+        }
+      ]
+    },
+    {
+      "id": "bm-20261014-patriots",
+      "date": "2026-10-14",
+      "player": "Patriots",
+      "nflTeam": "NE",
+      "position": "DEF",
+      "winner": "I'm Your Huckleberry",
+      "winningPriority": 7,
+      "unsuccessful": [
+        {
+          "team": "The Wet Darts",
+          "priority": 8
+        }
+      ]
+    },
+    {
+      "id": "bm-20261014-xavier-worthy",
+      "date": "2026-10-14",
+      "player": "Xavier Worthy",
+      "nflTeam": "KC",
+      "position": "WR",
+      "winner": "The Price Is Wrong",
+      "winningPriority": 4,
+      "unsuccessful": [
+        {
+          "team": "Do I Make You Randy?",
+          "priority": 6
+        },
+        {
+          "team": "I'm Your Huckleberry",
+          "priority": 10
+        }
+      ]
+    },
+    {
+      "id": "bm-20261007-keon-coleman",
+      "date": "2026-10-07",
+      "player": "Keon Coleman",
+      "nflTeam": "BUF",
+      "position": "WR",
+      "winner": "Russini's Baby Daddy",
+      "winningPriority": 6,
+      "unsuccessful": [
+        {
+          "team": "Bowers' Castle",
+          "priority": 7
+        }
+      ]
+    },
+    {
+      "id": "bm-20261007-will-shipley",
+      "date": "2026-10-07",
+      "player": "Will Shipley",
+      "nflTeam": "PHI",
+      "position": "RB",
+      "winner": "The Money Team $200 12T",
+      "winningPriority": 4,
+      "unsuccessful": [
+        {
+          "team": "Russini's Baby Daddy",
+          "priority": 8
+        },
+        {
+          "team": "Bowers' Castle",
+          "priority": 9
+        },
+        {
+          "team": "I'm Your Huckleberry",
+          "priority": 12
+        }
+      ]
+    },
+    {
+      "id": "bm-20260930-steelers",
+      "date": "2026-09-30",
+      "player": "Steelers",
+      "nflTeam": "PIT",
+      "position": "DEF",
+      "winner": "I'm Your Huckleberry",
+      "winningPriority": 4,
+      "unsuccessful": [
+        {
+          "team": "The Wet Darts",
+          "priority": 11
+        }
+      ]
+    },
+    {
+      "id": "bm-20260930-jaylen-wright",
+      "date": "2026-09-30",
+      "player": "Jaylen Wright",
+      "nflTeam": "MIA",
+      "position": "RB",
+      "winner": "Bowers' Castle",
+      "winningPriority": 4,
+      "unsuccessful": [
+        {
+          "team": "The Wet Darts",
+          "priority": 5
+        },
+        {
+          "team": "2-Min Drill Rix027",
+          "priority": 9
+        },
+        {
+          "team": "The Price Is Wrong",
+          "priority": 10
+        }
+      ]
+    },
+    {
+      "id": "bm-20260930-kalif-raymond",
+      "date": "2026-09-30",
+      "player": "Kalif Raymond",
+      "nflTeam": "CHI",
+      "position": "WR",
+      "winner": "Russini's Baby Daddy",
+      "winningPriority": 3,
+      "unsuccessful": [
+        {
+          "team": "The Wet Darts",
+          "priority": 6
+        },
+        {
+          "team": "I'm Your Huckleberry",
+          "priority": 8
+        }
+      ]
+    },
+    {
+      "id": "bm-20260930-ollie-gordon-ii",
+      "date": "2026-09-30",
+      "player": "Ollie Gordon II",
+      "nflTeam": "MIA",
+      "position": "RB",
+      "winner": "kushlifeDFS",
+      "winningPriority": 1,
+      "unsuccessful": [
+        {
+          "team": "Jew lives matter",
+          "priority": 5
+        },
+        {
+          "team": "Bowers' Castle",
+          "priority": 6
+        },
+        {
+          "team": "The Wet Darts",
+          "priority": 7
+        },
+        {
+          "team": "Do I Make You Randy?",
+          "priority": 8
+        },
+        {
+          "team": "I'm Your Huckleberry",
+          "priority": 9
+        },
+        {
+          "team": "The Price Is Wrong",
+          "priority": 12
+        }
+      ]
+    },
+    {
+      "id": "bm-20260925-alvin-kamara",
+      "date": "2026-09-25",
+      "player": "Alvin Kamara",
+      "nflTeam": "NO",
+      "position": "RB",
+      "winner": "2-Min Drill Rix027",
+      "winningPriority": 3,
+      "unsuccessful": [
+        {
+          "team": "The Price Is Wrong",
+          "priority": 5
+        },
+        {
+          "team": "I'm Your Huckleberry",
+          "priority": 11
+        }
+      ]
+    },
+    {
+      "id": "bm-20260923-emanuel-wilson",
+      "date": "2026-09-23",
+      "player": "Emanuel Wilson",
+      "nflTeam": "SEA",
+      "position": "RB",
+      "winner": "Bowers' Castle",
+      "winningPriority": 5,
+      "unsuccessful": [
+        {
+          "team": "Jew lives matter",
+          "priority": 12
+        }
+      ]
+    },
+    {
+      "id": "bm-20260916-buccaneers",
+      "date": "2026-09-16",
+      "player": "Buccaneers",
+      "nflTeam": "TB",
+      "position": "DEF",
+      "winner": "Do I Make You Randy?",
+      "winningPriority": 7,
+      "unsuccessful": [
+        {
+          "team": "I'm Your Huckleberry",
+          "priority": 8
+        }
+      ]
+    }
   ],
-  LL: [],
+  "LL": []
 };
