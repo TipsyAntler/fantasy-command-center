@@ -65,12 +65,52 @@ function parseTeam(node: unknown) {
     pointsAgainst: num(find(standing, "points_against")),
   };
 }
-function parseTransactions(node: unknown) {
-  return entries(node, "transactions", "transaction").slice(0, 12).map((item) => ({
-    type: str(find(item, "type")),
-    timestamp: num(find(item, "timestamp")),
-    players: entries(item, "players", "player").map((player) => parsePlayer(player).name).filter((name) => name !== "Unknown player").slice(0, 5),
-  }));
+function parseTransactions(node: unknown, teams: ReturnType<typeof parseTeam>[]) {
+  const teamNames = new Map(teams.map((team) => [team.key, team.name]));
+  const nameFor = (key: string) => teamNames.get(key) || (key ? "Team " + key.split(".").pop() : "Team not identified");
+  // Completed league transactions have player-level team keys; the transaction
+  // itself often does not have a single acting-team field.
+  return entries(node, "transactions", "transaction").slice(0, 35).map((item) => {
+    const type = str(find(item, "type")).toLowerCase();
+    const status = str(find(item, "status")).toLowerCase();
+    const players = entries(item, "players", "player").map((player) => {
+      const transaction = find(player, "transaction_data");
+      const action = str(find(transaction, "type")).toLowerCase();
+      const sourceTeamKey = str(find(transaction, "source_team_key"));
+      const destinationTeamKey = str(find(transaction, "destination_team_key"));
+      const teamKey = action === "drop" ? sourceTeamKey || destinationTeamKey : destinationTeamKey || sourceTeamKey;
+      return {
+        name: parsePlayer(player).name,
+        action,
+        teamKey,
+        teamName: nameFor(teamKey),
+        sourceType: str(find(transaction, "source_type")).toLowerCase(),
+      };
+    }).filter((player) => player.name !== "Unknown player");
+    const involvedKeys = Array.from(new Set(players.map((player) => player.teamKey).filter(Boolean)));
+    const trader = str(find(item, "trader_team_key"));
+    const tradee = str(find(item, "tradee_team_key"));
+    if (trader && !involvedKeys.includes(trader)) involvedKeys.push(trader);
+    if (tradee && !involvedKeys.includes(tradee)) involvedKeys.push(tradee);
+    const added = players.find((player) => player.action === "add");
+    const primaryTeamKey = added?.teamKey || involvedKeys[0] || str(find(item, "team_key"));
+    const bid = num(find(item, "faab_bid"));
+    const isWaiver = type.includes("waiver") || bid !== null ||
+      players.some((player) => player.sourceType.includes("waiver"));
+    return {
+      key: str(find(item, "transaction_key")),
+      type, status,
+      timestamp: num(find(item, "timestamp")),
+      teamKey: primaryTeamKey,
+      teamName: type.includes("trade") && involvedKeys.length > 1
+        ? involvedKeys.map(nameFor).join(" ↔ ")
+        : nameFor(primaryTeamKey),
+      teamsInvolved: involvedKeys.map(nameFor),
+      players: players.map(({ name, action, teamName }) => ({ name, action, teamName })),
+      isWaiver,
+      bid,
+    };
+  });
 }
 function makeNotes(starters: Player[], bench: Player[], ir: Player[]) {
   const notes: { priority: "urgent" | "review" | "info"; title: string; detail: string }[] = [];
@@ -99,7 +139,7 @@ export async function getLeague(id: string, short: string, expectedTeam: string,
   const paths = [
     ["teams", "league/" + id + "/teams"],
     ["standings", "league/" + id + "/standings"],
-    ["transactions", "league/" + id + "/transactions;count=15"],
+    ["transactions", "league/" + id + "/transactions;count=35"],
     ["settings", "league/" + id + "/settings"],
     ...["RB", "WR", "TE", "QB"].map((position) => ["available_" + position, "league/" + id + "/players;status=A;position=" + position + ";sort=OR;count=25"]),
   ];
@@ -149,7 +189,7 @@ export async function getLeague(id: string, short: string, expectedTeam: string,
     id, short, name: str(find(meta, "name")) || (short === "BM" ? "FF Big Money" : "Legendary LeBlanc"),
     week: num(find(meta, "current_week")) || 8,
     myTeam: me || null, standings, starters, bench, ir,
-    available, recentTransactions: parseTransactions(data.transactions),
+    available, recentTransactions: parseTransactions(data.transactions, teams.length ? teams : standings),
     notes: makeNotes(starters, bench, ir),
     rosterCount: roster.length, errors,
     source: "Yahoo Fantasy Sports API • read-only • live on refresh",
