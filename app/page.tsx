@@ -75,10 +75,10 @@ export default async function Home() {
             </div>
             <h2>Bower&apos;s Castle</h2>
             <p className={styles.actionHeadline}>
-              {yahooConnected ? "Open your live Big Money roster and league-specific waiver pool." : bmFlag ? `${bmFlag.requestedName} is the first roster item to verify.` : "Check the latest roster snapshot."}
+              {yahooConnected ? "See Big Money decision flags, opponent moves and waiver-market intelligence." : bmFlag ? `${bmFlag.requestedName} is the first roster item to verify.` : "Check the latest roster snapshot."}
             </p>
             <p className={styles.actionNote}>
-              {yahooConnected ? "Advice only. Current starters, bench, injury flags, standings and available players are in Big Money." : bmFlag ? `${rosterStatus(bmFlag)} is showing in the live player feed.` : "Manual roster snapshots may be stale."}
+              {yahooConnected ? "Advice only. Actionable flags, recent drops, team-attributed transactions and verified waiver wins." : bmFlag ? `${rosterStatus(bmFlag)} is showing in the live player feed.` : "Manual roster snapshots may be stale."}
             </p>
             <div className={styles.cardFoot}><span>Open league view</span><span>→</span></div>
           </Link>
@@ -90,10 +90,10 @@ export default async function Home() {
             </div>
             <h2>LaPorta Potty</h2>
             <p className={styles.actionHeadline}>
-              {yahooConnected ? "Open your live LeBlanc roster and league-specific waiver pool." : llFlag ? `${llFlag.requestedName} is the main thing to monitor.` : "Check the latest roster snapshot."}
+              {yahooConnected ? "See Legendary LeBlanc decision flags, opponent moves and waiver-market intelligence." : llFlag ? `${llFlag.requestedName} is the main thing to monitor.` : "Check the latest roster snapshot."}
             </p>
             <p className={styles.actionNote}>
-              {yahooConnected ? "Advice only. Current starters, bench, injury flags, standings and available players are in Legendary LeBlanc." : llFlag ? `${rosterStatus(llFlag)} is showing in the live player feed.` : "Manual roster snapshots may be stale."}
+              {yahooConnected ? "Advice only. Actionable flags, recent drops, team-attributed transactions and verified waiver wins." : llFlag ? `${rosterStatus(llFlag)} is showing in the live player feed.` : "Manual roster snapshots may be stale."}
             </p>
             <div className={styles.cardFoot}><span>Open league view</span><span>→</span></div>
           </Link>
@@ -136,7 +136,7 @@ export default async function Home() {
             </div>
             <div className={styles.connectionItem}>
               <strong>BM + LL rosters</strong>
-              <small>Historical snapshots; live roster views in each league tab</small>
+              <small>Historical snapshots support live intelligence in each league tab</small>
               <span className={styles.connectionStatus}>LIVE</span>
             </div>
             <div className={styles.connectionItem}>
