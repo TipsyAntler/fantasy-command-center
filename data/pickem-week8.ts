@@ -4,6 +4,9 @@ import type { Week5PoolGame } from "./pickem-week5";
 // Mike intentionally highlights vibe picks ONLY, with no tiebreaker. These are NEVER submissions. A separate explicit confirmation is required to record actual submitted sides and total.
 // Market references are dated snapshots unless a game explicitly records live two-sided prices at the exact frozen spread.
 export const week8Number = 8;
+// Update only after a substantive full-board evidence review, never on an unverified scheduled check.
+export const week8ReviewedAt = "2026-10-30T21:25:00-04:00";
+export const week8ReviewedLabel = "Oct 30 · 9:25 PM ET";
 export const week8PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week8PoolStatus = "WEEK 8 · THURSDAY FINAL: GB 27, CAR 19 · FFCC GB -3.5 COVERED · INITIAL FULL-CARD DEADLINE PASSED · WEEKEND/MONDAY SIDES EDITABLE UNTIL SUNDAY 1:00 PM ET · TIEBREAKER 47";
 export const week8MarketAsOf = "Oct 30, 2026 · 9:25 PM ET LATE-FRIDAY CHECK: DEN +1.5 remains the FFCC side with the same 50.75% two-source proportional de-vig median; Lamar Jackson has no game designation and will play, strengthening availability certainty for retained BAL +3.5 without creating a new edge or flip; all other editable sides and tiebreaker 47 unchanged";
