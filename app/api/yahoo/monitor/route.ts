@@ -11,15 +11,18 @@ const headers = {
   "X-Robots-Tag": "noindex, nofollow",
 };
 function authorized(request: NextRequest) {
-  const secret = process.env.FFCC_MONITOR_READ_KEY;
-  if (!secret || secret.length < 32) return false;
+  const secrets = [process.env.FFCC_MONITOR_READ_KEY, process.env.FFCC_SNAPSHOT_READ_KEY]
+    .filter((value): value is string => Boolean(value && value.length >= 32));
+  if (!secrets.length) return false;
   // The Vercel fetch connector only supports URLs; accept a query capability
   // for the existing private hourly watcher, or an Authorization header.
   const provided = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "") ||
     request.nextUrl.searchParams.get("key") || "";
-  const a = Buffer.from(secret);
   const b = Buffer.from(provided);
-  return a.length === b.length && timingSafeEqual(a, b);
+  return secrets.some((secret) => {
+    const a = Buffer.from(secret);
+    return a.length === b.length && timingSafeEqual(a, b);
+  });
 }
 export async function GET(request: NextRequest) {
   if (!authorized(request)) return NextResponse.json({ ok: false, error: "Not found" }, { status: 404, headers });
