@@ -19,32 +19,16 @@ export type Week9PoolGame = {
 export const week9Number = 9;
 export const week9CapturedAt = "2026-11-04T13:01:00-05:00";
 export const week9CapturedLabel = "Nov 4 · 1:01 PM ET";
-export const week9ReviewedAt = "";
-export const week9ReviewedLabel = "Full board audit pending";
+export const week9ReviewedAt = "2026-11-04T14:36:00-05:00";
+export const week9ReviewedLabel = "Nov 4 · 2:36 PM ET";
 export const week9PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week9PoolStatus = "WEEK 9 · 14 OF 15 EXACT FROZEN SPREADS CAPTURED FROM USER SCREENSHOTS · DET–MIA SPREAD CROPPED AND NOT INFERRED · VIBES ARE NOT SUBMISSIONS";
-export const week9MarketAsOf = "Exact frozen pool numbers were transcribed from Mike's Nov. 4 screenshots. No Week 9 full-board market/injury audit has been completed yet, so all visible FFCC sides remain provisional tie choices with no measured edge.";
+export const week9PoolStatus = "WEEK 9 · 14 OF 15 EXACT FROZEN SPREADS CAPTURED · DET–MIA SPREAD CROPPED AND NOT INFERRED · FULL 14-GAME MARKET AUDIT COMPLETED · VIBES ARE NOT SUBMISSIONS";
+export const week9MarketAsOf = "Full-board audit completed Nov. 4 at 2:36 PM ET using the frozen SZN numbers, a contemporaneous multi-book board, eDraft's Nov. 4 12:33 PM ET snapshot, and dated FOX/bet365 and CBS/DraftKings snapshots. Exact-line pairs were proportionally de-vigged where available. Official reports were reviewed where posted; several Wednesday reports were still pending, so the listed watch items remain live. Article snapshots are dated evidence, not a live quote feed.";
 export const week9Standing = {correct:56,rank:70,leaderCorrect:76,note:"Nov. 4 user screenshot: 56 season correct, overall rank 70; leader 76."};
 export const week9MikeVibeCard = {
   observedAt: "Nov 4, 2026 · approximately 1:01 PM ET",
   source: "The SZN Week 9 orange-highlighted sides in Mike's screenshots",
-  picks: [
-  "JAX -8.5",
-  "CIN -3.5",
-  "DAL -6.5",
-  "KC -9.5",
-  "NO -2.5",
-  "NYG -3.5",
-  "LAR -5.5",
-  "CAR +3.5",
-  "HOU -4.5",
-  "GB +3.5",
-  "SF -10.5",
-  "ARI +11.5",
-  "CHI -6.5",
-  "MIN +3.5",
-  "DET (spread not visible)"
-],
+  picks: ["JAX -8.5","CIN -3.5","DAL -6.5","KC -9.5","NO -2.5","NYG -3.5","LAR -5.5","CAR +3.5","HOU -4.5","GB +3.5","SF -10.5","ARI +11.5","CHI -6.5","MIN +3.5","DET (spread not visible)"],
   tiebreaker: null,
   note: "VIBES ONLY. The page showed 15 picks made, but Mike uses highlights to communicate instinct; no side or tiebreaker is treated as a confirmed submission without explicit confirmation."
 };
@@ -53,9 +37,9 @@ export const week9PendingPoolGames = [
 ];
 export const week9Tiebreaker = {
   matchup: "BUF @ MIN",
-  earlyFfccTarget: "Pending audit",
-  currentMarketTotal: "Not reviewed",
-  note: "Mike has not shown an entered value. Review fresh totals, weather and final availability before setting the FFCC whole-number target."
+  earlyFfccTarget: "46",
+  currentMarketTotal: "45.5 consensus · 44.5–46.5 range",
+  note: "Provisional whole-number target from the Nov. 4 multi-book total board. Mike has not shown an entered value. Recheck after Kyler Murray's Thursday practice status and Monday weather before treating 46 as final."
 };
 export const week9PoolGames: Week9PoolGame[] = [
   {
@@ -68,46 +52,46 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "JAX -8.5",
     "poolFavorite": "JAX",
     "poolSpread": 8.5,
-    "watch": "Audit exact JAX -8.5 prices plus final Thursday injuries before kickoff.",
-    "marketLabel": "Full exact-line market audit pending; no live quote or measured edge claimed.",
-    "marketTotal": null,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Provisional FFCC tie choice mirrors the captured vibe only until fresh two-sided pricing at the exact frozen spread and official injury reports are audited. This is not a verified edge and not a submitted pick."
+    "marketLabel": "Nov. 4 audit: broad market JAX -9.5 to -10.5; pool preserves JAX -8.5. VegasInsider consensus -10 (-108), total 39.5.",
+    "marketTotal": 39.5,
+    "confidence": 2,
+    "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
+    "rationale": "Keep JAX -8.5. The reviewed market had Jacksonville roughly one to two points more expensive, so the frozen pool number is favorable. Baltimore's quarterback injuries are already reflected in the move; no separate narrative boost is added.",
+    "watch": "Thursday inactives: Lamar Jackson is headed to IR and Tyler Huntley was trending doubtful; recheck only for an unexpected Baltimore quarterback upgrade before 8:15 PM ET."
   },
   {
     "day": "Sun",
     "kickoff": "9:30 AM",
     "away": "CIN",
     "home": "ATL",
-    "poolPick": "CIN",
-    "poolLine": -3.5,
+    "poolPick": "ATL",
+    "poolLine": 3.5,
     "mikeVibe": "CIN -3.5",
     "poolFavorite": "CIN",
     "poolSpread": 3.5,
-    "watch": "Audit exact CIN -3.5 prices, travel context and official Madrid injury reports.",
-    "marketLabel": "Full exact-line market audit pending; no live quote or measured edge claimed.",
-    "marketTotal": null,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Provisional FFCC tie choice mirrors the captured vibe only until fresh two-sided pricing at the exact frozen spread and official injury reports are audited. This is not a verified edge and not a submitted pick."
+    "marketLabel": "Nov. 4 audit: most books CIN -3; exact +3.5 quotes included ATL -127 and -117 versus CIN +107 and +113. Total 52.5.",
+    "marketTotal": 52.5,
+    "confidence": 2,
+    "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
+    "rationale": "Flip to ATL +3.5. The pool crosses the key field-goal margin while most reviewed books dealt Cincinnati -3; the available exact +3.5 prices also charged a premium for Atlanta. This is a number edge, not a claim that Atlanta is the better team.",
+    "watch": "Madrid travel and official late-week injury reports; change only if verified news moves the reliable market through Cincinnati -3.5 at comparable pricing."
   },
   {
     "day": "Sun",
     "kickoff": "1:00 PM",
     "away": "DAL",
     "home": "IND",
-    "poolPick": "DAL",
-    "poolLine": -6.5,
+    "poolPick": "IND",
+    "poolLine": 6.5,
     "mikeVibe": "DAL -6.5",
     "poolFavorite": "DAL",
     "poolSpread": 6.5,
-    "watch": "Resolve Indianapolis quarterback availability and audit exact DAL -6.5 prices.",
-    "marketLabel": "Full exact-line market audit pending; no live quote or measured edge claimed.",
-    "marketTotal": null,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Provisional FFCC tie choice mirrors the captured vibe only until fresh two-sided pricing at the exact frozen spread and official injury reports are audited. This is not a verified edge and not a submitted pick."
+    "marketLabel": "Nov. 4 audit: eight-book board mostly DAL -5.5, one -6; consensus -5.5 (-112). Total 51.5.",
+    "marketTotal": 51.5,
+    "confidence": 2,
+    "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
+    "rationale": "Flip to IND +6.5. The pool gives Indianapolis a half-point to a full point beyond the reviewed market. The Colts' official Tuesday depth chart lists Daniel Jones as QB1, and the coach confirmed he remains the Week 9 starter, so no unverified quarterback absence is baked into this recommendation.",
+    "watch": "Official Wednesday-Friday Colts and Cowboys reports, especially offensive line and any quarterback setback; preserve the hook unless reliable prices reach DAL -6.5."
   },
   {
     "day": "Sun",
@@ -119,12 +103,12 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "KC -9.5",
     "poolFavorite": "KC",
     "poolSpread": 9.5,
-    "watch": "Audit exact KC -9.5 prices and final offensive-line/skill-player reports.",
-    "marketLabel": "Full exact-line market audit pending; no live quote or measured edge claimed.",
-    "marketTotal": null,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Provisional FFCC tie choice mirrors the captured vibe only until fresh two-sided pricing at the exact frozen spread and official injury reports are audited. This is not a verified edge and not a submitted pick."
+    "marketLabel": "Nov. 4 exact-line audit: KC -9.5 pairs de-vig to roughly 51.4%-52.4% across available books; broader market -9.5 to -10. Total 47.5.",
+    "marketTotal": 47.5,
+    "confidence": 2,
+    "signal": "SMALL EXACT-LINE PRICE LEAN",
+    "rationale": "Keep KC -9.5. Multiple reviewed books offered both sides at the exact frozen spread and the proportional no-vig prices modestly favored Kansas City. The lean is small and not a high-confidence projection.",
+    "watch": "Final Kansas City offensive-line and skill-player status; reverse only if fresh exact -9.5 pricing consistently favors the Jets."
   },
   {
     "day": "Sun",
@@ -136,29 +120,29 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "NO -2.5",
     "poolFavorite": "NO",
     "poolSpread": 2.5,
-    "watch": "Audit exact NO -2.5 prices and both quarterback/offensive-line reports.",
-    "marketLabel": "Full exact-line market audit pending; no live quote or measured edge claimed.",
-    "marketTotal": null,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Provisional FFCC tie choice mirrors the captured vibe only until fresh two-sided pricing at the exact frozen spread and official injury reports are audited. This is not a verified edge and not a submitted pick."
+    "marketLabel": "Nov. 4 audit: NO -2.5 to -3 across books; VegasInsider consensus NO -3 (-112). Total 42.5.",
+    "marketTotal": 42.5,
+    "confidence": 2,
+    "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
+    "rationale": "Keep NO -2.5. The frozen number stays below the key field goal while much of the reviewed market was Saints -3. The edge is the number only; no unsupported model agreement is claimed.",
+    "watch": "Both teams' quarterback and offensive-line reports; reassess if the market falls below NO -2.5 rather than merely changing price."
   },
   {
     "day": "Sun",
     "kickoff": "1:00 PM",
     "away": "NYG",
     "home": "PHI",
-    "poolPick": "NYG",
-    "poolLine": -3.5,
+    "poolPick": "PHI",
+    "poolLine": 3.5,
     "mikeVibe": "NYG -3.5",
     "poolFavorite": "NYG",
     "poolSpread": 3.5,
-    "watch": "Resolve Philadelphia quarterback availability before treating the captured side as more than provisional.",
-    "marketLabel": "Full exact-line market audit pending; no live quote or measured edge claimed.",
-    "marketTotal": null,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Provisional FFCC tie choice mirrors the captured vibe only until fresh two-sided pricing at the exact frozen spread and official injury reports are audited. This is not a verified edge and not a submitted pick."
+    "marketLabel": "Nov. 4 exact-line audit: PHI +3.5 priced -114 to -120 at several books versus NYG -3.5 from even to -106; some books had NYG -3. Total 38.5.",
+    "marketTotal": 38.5,
+    "confidence": 2,
+    "signal": "SMALL EXACT-LINE PRICE LEAN",
+    "rationale": "Flip to PHI +3.5. The exact frozen spread repeatedly charged a premium for Philadelphia, and other books shortened New York to -3. This is a modest exact-line market lean with key-number protection, not an injury-based forecast.",
+    "watch": "Philadelphia's Wednesday report was not yet posted at audit time. Recheck quarterback status and DeVonta Smith's hamstring before lock; a confirmed major absence could invalidate the lean."
   },
   {
     "day": "Sun",
@@ -170,12 +154,12 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "LAR -5.5",
     "poolFavorite": "LAR",
     "poolSpread": 5.5,
-    "watch": "Priority exact-line audit: compare LAR -5.5 with current market and Washington availability.",
-    "marketLabel": "Full exact-line market audit pending; no live quote or measured edge claimed.",
-    "marketTotal": null,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Provisional FFCC tie choice mirrors the captured vibe only until fresh two-sided pricing at the exact frozen spread and official injury reports are audited. This is not a verified edge and not a submitted pick."
+    "marketLabel": "Nov. 4 exact-line consensus LAR -5.5 (-118) versus WAS +5.5 (-102). Total 47.5.",
+    "marketTotal": 47.5,
+    "confidence": 2,
+    "signal": "SMALL EXACT-LINE PRICE LEAN",
+    "rationale": "Keep LAR -5.5. The reviewed exact-line consensus prices Los Angeles materially shorter at the frozen number. Because the evidence is a price lean rather than a calibrated cover model, confidence remains modest.",
+    "watch": "Washington quarterback and offensive-line availability; require fresh verified evidence favoring Washington at +5.5 before changing."
   },
   {
     "day": "Sun",
@@ -187,12 +171,12 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "CAR +3.5",
     "poolFavorite": "DEN",
     "poolSpread": 3.5,
-    "watch": "Audit exact CAR +3.5 prices and official quarterback/offensive-line reports.",
-    "marketLabel": "Full exact-line market audit pending; no live quote or measured edge claimed.",
-    "marketTotal": null,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Provisional FFCC tie choice mirrors the captured vibe only until fresh two-sided pricing at the exact frozen spread and official injury reports are audited. This is not a verified edge and not a submitted pick."
+    "marketLabel": "Nov. 4 audit: market DEN -2.5 to -3; consensus DEN -2.5 (-120). Total 44.5.",
+    "marketTotal": 44.5,
+    "confidence": 2,
+    "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
+    "rationale": "Keep CAR +3.5. The pool gives Carolina a full point beyond the consensus and crosses the key field goal compared with most reviewed books. That frozen-number value is not converted into an invented probability.",
+    "watch": "Official quarterback and offensive-line reports; retain unless reliable market evidence moves Denver through -3.5."
   },
   {
     "day": "Sun",
@@ -204,12 +188,12 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "HOU -4.5",
     "poolFavorite": "HOU",
     "poolSpread": 4.5,
-    "watch": "Priority exact-line audit: compare both sides at HOU -4.5 and review Chargers availability.",
-    "marketLabel": "Full exact-line market audit pending; no live quote or measured edge claimed.",
-    "marketTotal": null,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Provisional FFCC tie choice mirrors the captured vibe only until fresh two-sided pricing at the exact frozen spread and official injury reports are audited. This is not a verified edge and not a submitted pick."
+    "marketLabel": "Nov. 4 exact-line board: HOU -4.5 generally -110 to -118 versus LAC +4.5 -104 to -110; consensus -115/-105. Total 40.5.",
+    "marketTotal": 40.5,
+    "confidence": 2,
+    "signal": "SMALL EXACT-LINE PRICE LEAN",
+    "rationale": "Keep HOU -4.5. Comparable exact-line prices consistently made Houston the shorter side; the proportional no-vig edge is small, so this remains a modest market lean rather than a strong prediction.",
+    "watch": "Chargers quarterback/offensive-line and Houston injury reports; change only if fresh exact -4.5 prices favor Los Angeles."
   },
   {
     "day": "Sun",
@@ -221,29 +205,29 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "GB +3.5",
     "poolFavorite": "NE",
     "poolSpread": 3.5,
-    "watch": "Audit exact GB +3.5 prices and official quarterback/offensive-line reports.",
-    "marketLabel": "Full exact-line market audit pending; no live quote or measured edge claimed.",
-    "marketTotal": null,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Provisional FFCC tie choice mirrors the captured vibe only until fresh two-sided pricing at the exact frozen spread and official injury reports are audited. This is not a verified edge and not a submitted pick."
+    "marketLabel": "Nov. 4 audit: market NE -2.5 to -3; consensus NE -3 (-115). Pool GB +3.5 beats the reviewed market. Total 46.5.",
+    "marketTotal": 46.5,
+    "confidence": 2,
+    "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
+    "rationale": "Keep GB +3.5. The frozen line gives Green Bay the hook above the key field goal while reviewed books were mostly New England -2.5 or -3. This is uncalibrated number value, not a standalone team-rating claim.",
+    "watch": "Both quarterbacks and offensive lines; reassess only for a verified late absence that pushes the dependable market beyond NE -3.5."
   },
   {
     "day": "Sun",
     "kickoff": "4:25 PM",
     "away": "LV",
     "home": "SF",
-    "poolPick": "SF",
-    "poolLine": -10.5,
+    "poolPick": "LV",
+    "poolLine": 10.5,
     "mikeVibe": "SF -10.5",
     "poolFavorite": "SF",
     "poolSpread": 10.5,
-    "watch": "Priority exact-line audit: large spread, quarterback status and San Francisco availability.",
-    "marketLabel": "Full exact-line market audit pending; no live quote or measured edge claimed.",
-    "marketTotal": null,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Provisional FFCC tie choice mirrors the captured vibe only until fresh two-sided pricing at the exact frozen spread and official injury reports are audited. This is not a verified edge and not a submitted pick."
+    "marketLabel": "Nov. 4 audit: eight-book market SF -9.5 to -10; consensus SF -10 (-108). Pool gives LV +10.5. Total 52.5.",
+    "marketTotal": 52.5,
+    "confidence": 2,
+    "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
+    "rationale": "Flip to LV +10.5. The frozen pool spread gives Las Vegas a half-point to a full point beyond every reviewed book, including protection above 10. No separate narrative edge is added.",
+    "watch": "Quarterback and offensive-line reports for both teams; reverse only if reliable market pricing moves through SF -10.5."
   },
   {
     "day": "Sun",
@@ -255,29 +239,29 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "ARI +11.5",
     "poolFavorite": "SEA",
     "poolSpread": 11.5,
-    "watch": "Audit exact ARI +11.5 prices and both teams' final quarterback/skill-player reports.",
-    "marketLabel": "Full exact-line market audit pending; no live quote or measured edge claimed.",
-    "marketTotal": null,
+    "marketLabel": "Nov. 4 audit: independent snapshots ranged SEA -10.5 to -12.3, with several books -11.5; one VegasInsider consensus feed showed -8.5 and was treated as an outlier. Total around 40.5.",
+    "marketTotal": 40.5,
     "confidence": 1,
     "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Provisional FFCC tie choice mirrors the captured vibe only until fresh two-sided pricing at the exact frozen spread and official injury reports are audited. This is not a verified edge and not a submitted pick."
+    "rationale": "Keep ARI +11.5 provisionally. The reviewed market was too dispersed to support a robust exact-line lean; at the pool number, neither side has validated independent evidence strong enough to justify a change from the prior recommendation.",
+    "watch": "Recheck a synchronized multi-book board and both teams' quarterback status before Sunday; do not rely on the conflicting single-feed snapshot."
   },
   {
     "day": "Sun",
     "kickoff": "8:20 PM",
     "away": "TB",
     "home": "CHI",
-    "poolPick": "CHI",
-    "poolLine": -6.5,
+    "poolPick": "TB",
+    "poolLine": 6.5,
     "mikeVibe": "CHI -6.5",
     "poolFavorite": "CHI",
     "poolSpread": 6.5,
-    "watch": "Priority exact-line audit: compare TB +6.5 and CHI -6.5 at independent books.",
-    "marketLabel": "Full exact-line market audit pending; no live quote or measured edge claimed.",
-    "marketTotal": null,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Provisional FFCC tie choice mirrors the captured vibe only until fresh two-sided pricing at the exact frozen spread and official injury reports are audited. This is not a verified edge and not a submitted pick."
+    "marketLabel": "Nov. 4 exact-line board: TB +6.5 roughly -104 to -112 versus CHI -6.5 -100 to -110; broader consensus CHI -6. Total 47.5.",
+    "marketTotal": 47.5,
+    "confidence": 2,
+    "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
+    "rationale": "Flip to TB +6.5. The exact pool number was balanced to slightly Tampa-favored, while the broader market mostly sat at Chicago -6. The pool hook creates the actionable advantage; no unsupported injury narrative is counted twice.",
+    "watch": "Tampa receiver availability and Chicago's short-week report; reverse only if reliable market pricing establishes CHI -6.5 or higher."
   },
   {
     "day": "Mon",
@@ -289,11 +273,11 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "MIN +3.5",
     "poolFavorite": "BUF",
     "poolSpread": 3.5,
-    "watch": "Monitor Minnesota quarterback Kyler Murray's status, exact MIN +3.5 prices and Monday weather.",
-    "marketLabel": "Full exact-line market audit pending; no live quote or measured edge claimed.",
-    "marketTotal": null,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Provisional FFCC tie choice mirrors the captured vibe only until fresh two-sided pricing at the exact frozen spread and official injury reports are audited. This is not a verified edge and not a submitted pick."
+    "marketLabel": "Nov. 4 exact-line board: MIN +3.5 generally -115 to -120 versus BUF -3.5 from even to -105; total mostly 45.5, range 44.5-46.5.",
+    "marketTotal": 45.5,
+    "confidence": 2,
+    "signal": "SMALL EXACT-LINE PRICE LEAN",
+    "rationale": "Keep MIN +3.5. Exact frozen-spread prices consistently charged a premium for Minnesota, producing a robust small market lean. Kyler Murray's hamstring status remains unresolved, so the recommendation must be rechecked after Thursday practice.",
+    "watch": "Kyler Murray's hamstring and Minnesota's offensive line. Carson Wentz is next in line; a confirmed Murray absence could move the market enough to require a new audit."
   }
 ];
