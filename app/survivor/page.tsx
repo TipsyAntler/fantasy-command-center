@@ -3,11 +3,17 @@ import { getSurvivorSnapshot } from "@/lib/google-survivor";
 
 export const dynamic = "force-dynamic";
 
+function currentWeekET() {
+  const parts = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(new Date());
+  const value = (type: string) => Number(parts.find((part) => part.type === type)?.value || 0);
+  return Math.max(8, 8 + Math.floor((Date.UTC(value("year"), value("month") - 1, value("day")) - Date.UTC(2026, 9, 27)) / 604800000));
+}
+
 export default async function SurvivorPage({ searchParams }: { searchParams?: Promise<Record<string, string | string[] | undefined>> }) {
   const params = searchParams ? await searchParams : {};
   const googleStatus = typeof params.google === "string" ? params.google : undefined;
   const googleMessage = typeof params.message === "string" ? params.message : undefined;
-  const week = 8;
+  const week = currentWeekET();
   const snapshot = await getSurvivorSnapshot(week);
   const googleHealthy = snapshot.connected && !snapshot.error;
   const submittedPct = snapshot.aliveEntries ? Math.round(snapshot.submitted / snapshot.aliveEntries * 100) : 0;
