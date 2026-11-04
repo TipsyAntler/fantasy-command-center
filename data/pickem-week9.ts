@@ -17,24 +17,22 @@ export type Week9PoolGame = {
 };
 
 export const week9Number = 9;
-export const week9CapturedAt = "2026-11-04T13:01:00-05:00";
-export const week9CapturedLabel = "Nov 4 · 1:01 PM ET";
+export const week9CapturedAt = "2026-11-04T14:45:00-05:00";
+export const week9CapturedLabel = "Nov 4 · 2:45 PM ET";
 export const week9ReviewedAt = "2026-11-04T14:36:00-05:00";
 export const week9ReviewedLabel = "Nov 4 · 2:36 PM ET";
 export const week9PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week9PoolStatus = "WEEK 9 · 14 OF 15 EXACT FROZEN SPREADS CAPTURED · DET–MIA SPREAD CROPPED AND NOT INFERRED · FULL 14-GAME MARKET AUDIT COMPLETED · VIBES ARE NOT SUBMISSIONS";
-export const week9MarketAsOf = "Full-board audit completed Nov. 4 at 2:36 PM ET using the frozen SZN numbers, a contemporaneous multi-book board, eDraft's Nov. 4 12:33 PM ET snapshot, and dated FOX/bet365 and CBS/DraftKings snapshots. Exact-line pairs were proportionally de-vigged where available. Official reports were reviewed where posted; several Wednesday reports were still pending, so the listed watch items remain live. Article snapshots are dated evidence, not a live quote feed.";
+export const week9PoolStatus = "WEEK 9 · ALL 15 EXACT FROZEN SPREADS CAPTURED · 14-GAME MARKET AUDIT COMPLETED NOV 4 AT 2:36 PM ET · DET–MIA MARKET AUDIT PENDING · VIBES ARE NOT SUBMISSIONS";
+export const week9MarketAsOf = "Fourteen-game market audit completed Nov. 4 at 2:36 PM ET (DET–MIA was not included and remains unaudited) using the frozen SZN numbers, a contemporaneous multi-book board, eDraft's Nov. 4 12:33 PM ET snapshot, and dated FOX/bet365 and CBS/DraftKings snapshots. Exact-line pairs were proportionally de-vigged where available. Official reports were reviewed where posted; several Wednesday reports were still pending, so the listed watch items remain live. Article snapshots are dated evidence, not a live quote feed.";
 export const week9Standing = {correct:56,rank:70,leaderCorrect:76,note:"Nov. 4 user screenshot: 56 season correct, overall rank 70; leader 76."};
 export const week9MikeVibeCard = {
   observedAt: "Nov 4, 2026 · approximately 1:01 PM ET",
   source: "The SZN Week 9 orange-highlighted sides in Mike's screenshots",
-  picks: ["JAX -8.5","CIN -3.5","DAL -6.5","KC -9.5","NO -2.5","NYG -3.5","LAR -5.5","CAR +3.5","HOU -4.5","GB +3.5","SF -10.5","ARI +11.5","CHI -6.5","MIN +3.5","DET (spread not visible)"],
+  picks: ["JAX -8.5","CIN -3.5","DAL -6.5","KC -9.5","NO -2.5","NYG -3.5","LAR -5.5","CAR +3.5","HOU -4.5","GB +3.5","SF -10.5","ARI +11.5","CHI -6.5","MIN +3.5","DET -7.5"],
   tiebreaker: null,
   note: "VIBES ONLY. The page showed 15 picks made, but Mike uses highlights to communicate instinct; no side or tiebreaker is treated as a confirmed submission without explicit confirmation."
 };
-export const week9PendingPoolGames = [
-  {day:"Sun",kickoff:"1:00 PM",away:"DET",home:"MIA",mikeVibe:"DET",reason:"The screenshot cropped this game's spread. Do not infer either side's number."}
-];
+export const week9PendingPoolGames: {day:string; kickoff:string; away:string; home:string; mikeVibe:string; reason:string}[] = [];
 export const week9Tiebreaker = {
   matchup: "BUF @ MIN",
   earlyFfccTarget: "46",
@@ -109,6 +107,23 @@ export const week9PoolGames: Week9PoolGame[] = [
     "signal": "SMALL EXACT-LINE PRICE LEAN",
     "rationale": "Keep KC -9.5. Multiple reviewed books offered both sides at the exact frozen spread and the proportional no-vig prices modestly favored Kansas City. The lean is small and not a high-confidence projection.",
     "watch": "Final Kansas City offensive-line and skill-player status; reverse only if fresh exact -9.5 pricing consistently favors the Jets."
+  },
+  {
+    "day": "Sun",
+    "kickoff": "1:00 PM",
+    "away": "DET",
+    "home": "MIA",
+    "poolPick": "DET",
+    "poolLine": -7.5,
+    "mikeVibe": "DET -7.5",
+    "poolFavorite": "DET",
+    "poolSpread": 7.5,
+    "marketLabel": "Frozen SZN spread confirmed by Mike's Nov. 4, 2:45 PM ET screenshot: DET -7.5 at MIA +7.5. Independent current ATS market not yet audited for this game.",
+    "marketTotal": null,
+    "confidence": 1,
+    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
+    "rationale": "Keep DET -7.5 as a provisional tie choice matching Mike's vibe, not a validated market advantage. The exact frozen pool spread is now confirmed, but independent two-sided prices and relevant injuries have not yet been reviewed for this game.",
+    "watch": "Audit synchronized independent ATS prices at the exact -7.5 spread and current Detroit/Miami injury reports before any recommendation flip."
   },
   {
     "day": "Sun",
