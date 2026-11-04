@@ -19,11 +19,11 @@ export type Week9PoolGame = {
 export const week9Number = 9;
 export const week9CapturedAt = "2026-11-04T14:45:00-05:00";
 export const week9CapturedLabel = "Nov 4 · 2:45 PM ET";
-export const week9ReviewedAt = "2026-11-04T14:36:00-05:00";
-export const week9ReviewedLabel = "Nov 4 · 2:36 PM ET";
+export const week9ReviewedAt = "2026-11-04T15:38:00-05:00";
+export const week9ReviewedLabel = "Nov 4 · 3:38 PM ET";
 export const week9PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week9PoolStatus = "WEEK 9 · ALL 15 FROZEN SPREADS CAPTURED · USER CONFIRMED SUBMISSION OF ALL 15 FFCC SIDES + 46 TIEBREAKER NOV 4 · DET–MIA MARKET AUDIT PENDING";
-export const week9MarketAsOf = "Fourteen-game market audit completed Nov. 4 at 2:36 PM ET (DET–MIA was not included and remains unaudited) using the frozen SZN numbers, a contemporaneous multi-book board, eDraft's Nov. 4 12:33 PM ET snapshot, and dated FOX/bet365 and CBS/DraftKings snapshots. Exact-line pairs were proportionally de-vigged where available. Official reports were reviewed where posted; several Wednesday reports were still pending, so the listed watch items remain live. Article snapshots are dated evidence, not a live quote feed.";
+export const week9PoolStatus = "WEEK 9 · ALL 15 FROZEN SPREADS CAPTURED · FULL 15-GAME MARKET AUDIT COMPLETED · USER-CONFIRMED SUBMISSION SNAPSHOT PRESERVED SEPARATELY";
+export const week9MarketAsOf = "Full 15-game market audit completed Nov. 4 at 3:38 PM ET using the frozen SZN numbers, contemporaneous multi-book boards, and dated independent sportsbook snapshots. Exact-line pairs were proportionally de-vigged where available. Detroit–Miami was added from Mike\'s 2:45 PM screenshot and audited against 13-book pricing as of 11:38 AM ET plus a current multi-book board. Official reports were reviewed where posted; late-week availability remains listed under each watch item. Article snapshots are dated evidence, not a live quote feed.";
 export const week9Standing = {correct:56,rank:70,leaderCorrect:76,note:"Nov. 4 user screenshot: 56 season correct, overall rank 70; leader 76."};
 export const week9MikeVibeCard = {
   observedAt: "Nov 4, 2026 · approximately 1:01 PM ET",
@@ -129,17 +129,17 @@ export const week9PoolGames: Week9PoolGame[] = [
     "kickoff": "1:00 PM",
     "away": "DET",
     "home": "MIA",
-    "poolPick": "DET",
-    "poolLine": -7.5,
+    "poolPick": "MIA",
+    "poolLine": 7.5,
     "mikeVibe": "DET -7.5",
     "poolFavorite": "DET",
     "poolSpread": 7.5,
-    "marketLabel": "Frozen SZN spread confirmed by Mike's Nov. 4, 2:45 PM ET screenshot: DET -7.5 at MIA +7.5. Independent current ATS market not yet audited for this game.",
-    "marketTotal": null,
-    "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Keep DET -7.5 as a provisional tie choice matching Mike's vibe, not a validated market advantage. The exact frozen pool spread is now confirmed, but independent two-sided prices and relevant injuries have not yet been reviewed for this game.",
-    "watch": "Audit synchronized independent ATS prices at the exact -7.5 spread and current Detroit/Miami injury reports before any recommendation flip."
+    "marketLabel": "Nov. 4 audit: 13-book market offered DET -6.5 and -7 after opening -7.5; VegasInsider board was mostly DET -7 (-110), with the exact MIA +7.5 quote priced -122 versus DET -7.5 +117. Total 50.5.",
+    "marketTotal": 50.5,
+    "confidence": 2,
+    "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
+    "rationale": "Flip the FFCC recommendation to MIA +7.5. The frozen pool line gives Miami a half-point to a full point beyond the reviewed market and preserves the hook above the key touchdown margin. The exact +7.5 price also charged a substantial premium for Miami. This is a number edge, not a claim that Miami is the stronger team.",
+    "watch": "Detroit's secondary and center availability plus Miami's offensive line. Reverse only if synchronized reliable pricing moves through DET -7.5; later news that merely returns the market to -7 does not erase the pool hook."
   },
   {
     "day": "Sun",
