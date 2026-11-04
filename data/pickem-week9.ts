@@ -22,7 +22,7 @@ export const week9CapturedLabel = "Nov 4 · 2:45 PM ET";
 export const week9ReviewedAt = "2026-11-04T14:36:00-05:00";
 export const week9ReviewedLabel = "Nov 4 · 2:36 PM ET";
 export const week9PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week9PoolStatus = "WEEK 9 · ALL 15 EXACT FROZEN SPREADS CAPTURED · 14-GAME MARKET AUDIT COMPLETED NOV 4 AT 2:36 PM ET · DET–MIA MARKET AUDIT PENDING · VIBES ARE NOT SUBMISSIONS";
+export const week9PoolStatus = "WEEK 9 · ALL 15 FROZEN SPREADS CAPTURED · USER CONFIRMED SUBMISSION OF ALL 15 FFCC SIDES + 46 TIEBREAKER NOV 4 · DET–MIA MARKET AUDIT PENDING";
 export const week9MarketAsOf = "Fourteen-game market audit completed Nov. 4 at 2:36 PM ET (DET–MIA was not included and remains unaudited) using the frozen SZN numbers, a contemporaneous multi-book board, eDraft's Nov. 4 12:33 PM ET snapshot, and dated FOX/bet365 and CBS/DraftKings snapshots. Exact-line pairs were proportionally de-vigged where available. Official reports were reviewed where posted; several Wednesday reports were still pending, so the listed watch items remain live. Article snapshots are dated evidence, not a live quote feed.";
 export const week9Standing = {correct:56,rank:70,leaderCorrect:76,note:"Nov. 4 user screenshot: 56 season correct, overall rank 70; leader 76."};
 export const week9MikeVibeCard = {
@@ -32,12 +32,28 @@ export const week9MikeVibeCard = {
   tiebreaker: null,
   note: "VIBES ONLY. The page showed 15 picks made, but Mike uses highlights to communicate instinct; no side or tiebreaker is treated as a confirmed submission without explicit confirmation."
 };
+// Historical user-confirmed submission; do not overwrite when FFCC recommendations change.
+// User reported submitting all current FFCC sides and the recommended tiebreaker on Nov 4.
+// Confirmation is self-reported, not independently read from The SZN.
+export const week9SubmittedCard = {
+  confirmedDate: "2026-11-04",
+  confirmationSource: "User message: Just submitted all current FFCC picks + tiebreaker recommendation",
+  picks: {
+    "JAX-BAL": "JAX -8.5", "CIN-ATL": "ATL +3.5", "DAL-IND": "IND +6.5",
+    "NYJ-KC": "KC -9.5", "DET-MIA": "DET -7.5", "CLE-NO": "NO -2.5",
+    "NYG-PHI": "PHI +3.5", "LAR-WAS": "LAR -5.5", "DEN-CAR": "CAR +3.5",
+    "HOU-LAC": "HOU -4.5", "GB-NE": "GB +3.5", "LV-SF": "LV +10.5",
+    "ARI-SEA": "ARI +11.5", "TB-CHI": "TB +6.5", "BUF-MIN": "MIN +3.5"
+  } as Record<string,string>,
+  tiebreaker: "46",
+  note: "User-confirmed submission of the then-current FFCC card. Later FFCC advice changes do not automatically change The SZN entries."
+};
 export const week9PendingPoolGames: {day:string; kickoff:string; away:string; home:string; mikeVibe:string; reason:string}[] = [];
 export const week9Tiebreaker = {
   matchup: "BUF @ MIN",
   earlyFfccTarget: "46",
   currentMarketTotal: "45.5 consensus · 44.5–46.5 range",
-  note: "Provisional whole-number target from the Nov. 4 multi-book total board. Mike has not shown an entered value. Recheck after Kyler Murray's Thursday practice status and Monday weather before treating 46 as final."
+  note: "Mike confirmed submitting the FFCC-recommended 46 as the final-game tiebreaker on Nov. 4. This is user-reported, not independently verified in The SZN. Any later FFCC review is advice only."
 };
 export const week9PoolGames: Week9PoolGame[] = [
   {
