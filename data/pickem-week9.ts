@@ -168,12 +168,12 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "NYG -3.5",
     "poolFavorite": "NYG",
     "poolSpread": 3.5,
-    "marketLabel": "Nov. 4 exact-line audit: PHI +3.5 priced -114 to -120 at several books versus NYG -3.5 from even to -106; some books had NYG -3. Total 38.5.",
-    "marketTotal": 38.5,
+    "marketLabel": "Nov. 4 recheck after Philadelphia named Joe Milton the starter: exact PHI +3.5 remained -115 to -120 at several books versus NYG -3.5 from even to -105; DraftKings was PHI +3.5 -118 at 4:35 PM ET. Total 39.5.",
+    "marketTotal": 39.5,
     "confidence": 2,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Flip to PHI +3.5. The exact frozen spread repeatedly charged a premium for Philadelphia, and other books shortened New York to -3. This is a modest exact-line market lean with key-number protection, not an injury-based forecast.",
-    "watch": "Philadelphia's Wednesday report was not yet posted at audit time. Recheck quarterback status and DeVonta Smith's hamstring before lock; a confirmed major absence could invalidate the lean."
+    "rationale": "Keep PHI +3.5 after the quarterback news. Philadelphia named Joe Milton over Tanner McKee, but the post-announcement exact frozen spread still charged a premium for the Eagles and some books remained at NYG -3. The recommendation therefore stays a modest exact-line market lean with key-number protection; Milton is not counted as a separate narrative edge.",
+    "watch": "Joe Milton is confirmed to start; recheck DeVonta Smith's hamstring and the late-week offensive-line report. Change only if fresh exact +3.5 prices stop favoring Philadelphia or a verified absence materially moves the market."
   },
   {
     "day": "Sun",
