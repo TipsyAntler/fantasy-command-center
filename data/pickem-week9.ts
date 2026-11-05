@@ -66,12 +66,12 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "JAX -8.5",
     "poolFavorite": "JAX",
     "poolSpread": 8.5,
-    "marketLabel": "Nov. 4 audit: broad market JAX -9.5 to -10.5; pool preserves JAX -8.5. VegasInsider consensus -10 (-108), total 39.5.",
+    "marketLabel": "Nov. 4 late recheck (8:20 PM ET): VegasInsider remained JAX -9.5 to -10.5 with consensus -10 (-108); VSiN major books were mostly -10, totals 39.5-40.5. Pool preserves JAX -8.5.",
     "marketTotal": 39.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
     "rationale": "Keep JAX -8.5. The reviewed market had Jacksonville roughly one to two points more expensive, so the frozen pool number is favorable. Baltimore's quarterback injuries are already reflected in the move; no separate narrative boost is added.",
-    "watch": "Thursday inactives: Lamar Jackson is headed to IR and Tyler Huntley was trending doubtful; recheck only for an unexpected Baltimore quarterback upgrade before 8:15 PM ET."
+    "watch": "Official Wednesday status: Lamar Jackson and Tyler Huntley are OUT; Joe Fagnano practiced fully. Jacksonville lists Bhayshul Tuten and Travon Walker questionable. Recheck Thursday inactives before 8:15 PM ET, but no quarterback upgrade is currently indicated."
   },
   {
     "day": "Sun",
