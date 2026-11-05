@@ -23,7 +23,7 @@ export const week9ReviewedAt = "2026-11-04T15:38:00-05:00";
 export const week9ReviewedLabel = "Nov 4 · 3:38 PM ET";
 export const week9PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week9PoolStatus = "WEEK 9 · ALL 15 FROZEN SPREADS CAPTURED · FULL 15-GAME MARKET AUDIT COMPLETED · USER-CONFIRMED SUBMISSION SNAPSHOT PRESERVED SEPARATELY";
-export const week9MarketAsOf = "Full 15-game market audit completed Nov. 4 at 3:38 PM ET using the frozen SZN numbers, contemporaneous multi-book boards, and dated independent sportsbook snapshots. Exact-line pairs were proportionally de-vigged where available. Detroit–Miami was added from Mike\'s 2:45 PM screenshot and audited against 13-book pricing as of 11:38 AM ET plus a current multi-book board. Official reports were reviewed where posted; late-week availability remains listed under each watch item. Article snapshots are dated evidence, not a live quote feed.";
+export const week9MarketAsOf = "Full 15-game market audit completed Nov. 4 at 3:38 PM ET using the frozen SZN numbers, contemporaneous multi-book boards, and dated independent sportsbook snapshots. Exact-line pairs were proportionally de-vigged where available. Detroit–Miami was added from Mike\'s 2:45 PM screenshot and audited against 13-book pricing as of 11:38 AM ET plus a current multi-book board. BUF–MIN was separately rechecked Nov. 5 at 5:30 PM ET after Carson Wentz was confirmed as Minnesota\'s starter; the submitted card remains preserved separately. Official reports were reviewed where posted; late-week availability remains listed under each watch item. Article snapshots are dated evidence, not a live quote feed.";
 export const week9Standing = {correct:56,rank:70,leaderCorrect:76,note:"Nov. 4 user screenshot: 56 season correct, overall rank 70; leader 76."};
 export const week9MikeVibeCard = {
   observedAt: "Nov 4, 2026 · approximately 1:01 PM ET",
@@ -51,9 +51,9 @@ export const week9SubmittedCard = {
 export const week9PendingPoolGames: {day:string; kickoff:string; away:string; home:string; mikeVibe:string; reason:string}[] = [];
 export const week9Tiebreaker = {
   matchup: "BUF @ MIN",
-  earlyFfccTarget: "46",
-  currentMarketTotal: "45.5 consensus · 44.5–46.5 range",
-  note: "Mike confirmed submitting the FFCC-recommended 46 as the final-game tiebreaker on Nov. 4. This is user-reported, not independently verified in The SZN. Any later FFCC review is advice only."
+  earlyFfccTarget: "45",
+  currentMarketTotal: "45.5 consensus · 44.5–46 range · Nov. 5, 5:30 PM ET",
+  note: "Mike confirmed submitting 46 on Nov. 4. After Carson Wentz was confirmed as Minnesota’s starter, books repriced the total into a 44.5–46 range with a 45.5 consensus and under juice at several shops; FFCC now recommends 45. This changes advice only, not the preserved submitted tiebreaker."
 };
 export const week9PoolGames: Week9PoolGame[] = [
   {
@@ -304,11 +304,11 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "MIN +3.5",
     "poolFavorite": "BUF",
     "poolSpread": 3.5,
-    "marketLabel": "Nov. 4 exact-line board: MIN +3.5 generally -115 to -120 versus BUF -3.5 from even to -105; total mostly 45.5, range 44.5-46.5.",
+    "marketLabel": "Nov. 5 recheck after Carson Wentz was confirmed: MIN +3.5 remained roughly -115 to -125 versus BUF -3.5 near -105 across reviewed books; total clustered at 45–45.5 with a 44.5–46 range.",
     "marketTotal": 45.5,
     "confidence": 2,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Keep MIN +3.5. Exact frozen-spread prices consistently charged a premium for Minnesota, producing a robust small market lean. Kyler Murray's hamstring status remains unresolved, so the recommendation must be rechecked after Thursday practice.",
-    "watch": "Kyler Murray's hamstring and Minnesota's offensive line. Carson Wentz is next in line; a confirmed Murray absence could move the market enough to require a new audit."
+    "rationale": "Keep MIN +3.5. Wentz replacing Kyler Murray is material, but the post-news exact-line market still charges a premium for Minnesota +3.5. The strongest case against Minnesota is the quarterback downgrade; the counter is that the downgrade is now priced while the frozen hook remains market-favored.",
+    "watch": "Minnesota’s offensive line and any further move through 3. Flip only if fresh exact-line pricing makes BUF -3.5 the preferred side."
   }
 ];
