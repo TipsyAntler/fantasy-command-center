@@ -23,7 +23,7 @@ export const week9ReviewedAt = "2026-11-04T15:38:00-05:00";
 export const week9ReviewedLabel = "Nov 4 · 3:38 PM ET";
 export const week9PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week9PoolStatus = "WEEK 9 · ALL 15 FROZEN SPREADS CAPTURED · FULL 15-GAME MARKET AUDIT COMPLETED · USER-CONFIRMED SUBMISSION SNAPSHOT PRESERVED SEPARATELY";
-export const week9MarketAsOf = "Full 15-game market audit completed Nov. 4 at 3:38 PM ET using the frozen SZN numbers, contemporaneous multi-book boards, and dated independent sportsbook snapshots. Exact-line pairs were proportionally de-vigged where available. Detroit–Miami was added from Mike\'s 2:45 PM screenshot and audited against 13-book pricing as of 11:38 AM ET plus a current multi-book board. BUF–MIN was separately rechecked Nov. 5 at 5:30 PM ET after Carson Wentz was confirmed as Minnesota\'s starter; the submitted card remains preserved separately. Official reports were reviewed where posted; late-week availability remains listed under each watch item. Article snapshots are dated evidence, not a live quote feed.";
+export const week9MarketAsOf = "Full 15-game market audit completed Nov. 4 at 3:38 PM ET using the frozen SZN numbers, contemporaneous multi-book boards, and dated independent sportsbook snapshots. Exact-line pairs were proportionally de-vigged where available. Detroit–Miami was added from Mike\'s 2:45 PM screenshot and audited against 13-book pricing as of 11:38 AM ET plus a current multi-book board. BUF–MIN was separately rechecked Nov. 5 at 5:30 PM ET after Carson Wentz was confirmed as Minnesota\'s starter. LAR–WAS was separately rechecked Nov. 5 at 8:42 PM ET after the broad market settled at LAR -4.5; the submitted card remains preserved separately. Official reports were reviewed where posted; late-week availability remains listed under each watch item. Article snapshots are dated evidence, not a live quote feed.";
 export const week9Standing = {correct:56,rank:70,leaderCorrect:76,note:"Nov. 4 user screenshot: 56 season correct, overall rank 70; leader 76."};
 export const week9MikeVibeCard = {
   observedAt: "Nov 4, 2026 · approximately 1:01 PM ET",
@@ -180,17 +180,17 @@ export const week9PoolGames: Week9PoolGame[] = [
     "kickoff": "1:00 PM",
     "away": "LAR",
     "home": "WAS",
-    "poolPick": "LAR",
-    "poolLine": -5.5,
+    "poolPick": "WAS",
+    "poolLine": 5.5,
     "mikeVibe": "LAR -5.5",
     "poolFavorite": "LAR",
     "poolSpread": 5.5,
-    "marketLabel": "Nov. 4 exact-line consensus LAR -5.5 (-118) versus WAS +5.5 (-102). Total 47.5.",
-    "marketTotal": 47.5,
+    "marketLabel": "Nov. 5 late recheck: the broad market was LAR -4.5, generally -104 to -118 across DraftKings, FanDuel, BetMGM, Caesars and the consensus board; BetRivers was the reviewed -5.5 outlier. Current WAS +5.5 quotes were roughly -110 to -117. Total 47.5-48.5.",
+    "marketTotal": 48,
     "confidence": 2,
-    "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Keep LAR -5.5. The reviewed exact-line consensus prices Los Angeles materially shorter at the frozen number. Because the evidence is a price lean rather than a calibrated cover model, confidence remains modest.",
-    "watch": "Washington quarterback and offensive-line availability; require fresh verified evidence favoring Washington at +5.5 before changing."
+    "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
+    "rationale": "Flip to WAS +5.5. The frozen pool number gives Washington roughly one point beyond the broad current market, which is centered on Rams -4.5. The strongest case against the move is Washington's depleted receiving corps and offensive line; however, those absences are already present while the synchronized market still gives the Commanders the extra point.",
+    "watch": "Friday final reports for Washington's offensive line and the Rams' secondary. Reverse only if reliable multi-book pricing moves back through LAR -5.5, not if one outlier remains there."
   },
   {
     "day": "Sun",
