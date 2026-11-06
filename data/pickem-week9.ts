@@ -19,11 +19,12 @@ export type Week9PoolGame = {
 export const week9Number = 9;
 export const week9CapturedAt = "2026-11-04T14:45:00-05:00";
 export const week9CapturedLabel = "Nov 4 · 2:45 PM ET";
-export const week9ReviewedAt = "2026-11-04T15:38:00-05:00";
-export const week9ReviewedLabel = "Nov 4 · 3:38 PM ET";
+export const week9ReviewedAt = "2026-11-06T08:00:00-05:00";
+export const week9ReviewedLabel = "Nov 6 · 8:00 AM ET";
 export const week9PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week9PoolStatus = "WEEK 9 · THURSDAY RESULT: JAX -8.5 WON, 33-10 · 14 GAMES PENDING · USER-CONFIRMED SUBMISSION SNAPSHOT PRESERVED SEPARATELY";
-export const week9MarketAsOf = "Full 15-game market audit completed Nov. 4 at 3:38 PM ET using the frozen SZN numbers, contemporaneous multi-book boards, and dated independent sportsbook snapshots. Exact-line pairs were proportionally de-vigged where available. Detroit–Miami was added from Mike\'s 2:45 PM screenshot and audited against 13-book pricing as of 11:38 AM ET plus a current multi-book board. BUF–MIN was separately rechecked Nov. 5 at 5:30 PM ET after Carson Wentz was confirmed as Minnesota\'s starter. LAR–WAS was separately rechecked Nov. 5 at 8:42 PM ET after the broad market settled at LAR -4.5; the submitted card remains preserved separately. Official reports were reviewed where posted; late-week availability remains listed under each watch item. Article snapshots are dated evidence, not a live quote feed.";
+export const week9MarketAsOf = "Full 15-game board audit completed Nov. 6 at 8:00 AM ET using the frozen SZN numbers, a fresh six-book consensus built at 5:20 AM ET, and a current two-sided consensus board crawled Nov. 6. Exact-line evidence from the Nov. 4 audit remains preserved where still relevant. Friday final injury reports were not yet complete, so official availability remains a watch item rather than a separate edge. No FFCC side changed in this audit; the immutable user-confirmed submission remains preserved separately.";
+
 export const week9Standing = {correct:56,rank:70,leaderCorrect:76,note:"Nov. 4 user screenshot: 56 season correct, overall rank 70; leader 76."};
 export const week9MikeVibeCard = {
   observedAt: "Nov 4, 2026 · approximately 1:01 PM ET",
@@ -83,7 +84,7 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "CIN -3.5",
     "poolFavorite": "CIN",
     "poolSpread": 3.5,
-    "marketLabel": "Nov. 4 audit: most books CIN -3; exact +3.5 quotes included ATL -127 and -117 versus CIN +107 and +113. Total 52.5.",
+    "marketLabel": "Nov. 6 8:00 AM ET recheck: six-book consensus and current board remained CIN -3; pool ATL +3.5 retains the key-number hook. Total 52.5.",
     "marketTotal": 52.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
@@ -100,7 +101,7 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "DAL -6.5",
     "poolFavorite": "DAL",
     "poolSpread": 6.5,
-    "marketLabel": "Nov. 4 audit: eight-book board mostly DAL -5.5, one -6; consensus -5.5 (-112). Total 51.5.",
+    "marketLabel": "Nov. 6 8:00 AM ET recheck: current boards remained DAL -5.5; pool IND +6.5 retains a full point. Total 51.5.",
     "marketTotal": 51.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
@@ -117,7 +118,7 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "KC -9.5",
     "poolFavorite": "KC",
     "poolSpread": 9.5,
-    "marketLabel": "Nov. 4 exact-line audit: KC -9.5 pairs de-vig to roughly 51.4%-52.4% across available books; broader market -9.5 to -10. Total 47.5.",
+    "marketLabel": "Nov. 6 8:00 AM ET recheck: six-book consensus and current board were KC -10; the prior exact -9.5 pricing and fresh half-point gap continue to support pool KC -9.5. Total 47.5.",
     "marketTotal": 47.5,
     "confidence": 2,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
@@ -134,7 +135,7 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "DET -7.5",
     "poolFavorite": "DET",
     "poolSpread": 7.5,
-    "marketLabel": "Nov. 4 audit: 13-book market offered DET -6.5 and -7 after opening -7.5; VegasInsider board was mostly DET -7 (-110), with the exact MIA +7.5 quote priced -122 versus DET -7.5 +117. Total 50.5.",
+    "marketLabel": "Nov. 6 8:00 AM ET recheck: fresh consensus boards remained DET -7, while the pool gives MIA +7.5; the Nov. 4 exact +7.5 premium remains preserved. Total 50-50.5.",
     "marketTotal": 50.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
@@ -151,7 +152,7 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "NO -2.5",
     "poolFavorite": "NO",
     "poolSpread": 2.5,
-    "marketLabel": "Nov. 4 audit: NO -2.5 to -3 across books; VegasInsider consensus NO -3 (-112). Total 42.5.",
+    "marketLabel": "Nov. 6 8:00 AM ET recheck: current consensus was NO -3; pool NO -2.5 remains below the key field goal. Total 42.5.",
     "marketTotal": 42.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
@@ -168,7 +169,7 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "NYG -3.5",
     "poolFavorite": "NYG",
     "poolSpread": 3.5,
-    "marketLabel": "Nov. 4 recheck after Philadelphia named Joe Milton the starter: exact PHI +3.5 remained -115 to -120 at several books versus NYG -3.5 from even to -105; DraftKings was PHI +3.5 -118 at 4:35 PM ET. Total 39.5.",
+    "marketLabel": "Nov. 6 8:00 AM ET recheck: fresh consensus was NYG -3, preserving the pool hook at PHI +3.5; the prior exact +3.5 premium remains preserved. Total 38.5-39.5.",
     "marketTotal": 39.5,
     "confidence": 2,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
@@ -185,7 +186,7 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "LAR -5.5",
     "poolFavorite": "LAR",
     "poolSpread": 5.5,
-    "marketLabel": "Nov. 5 late recheck: the broad market was LAR -4.5, generally -104 to -118 across DraftKings, FanDuel, BetMGM, Caesars and the consensus board; BetRivers was the reviewed -5.5 outlier. Current WAS +5.5 quotes were roughly -110 to -117. Total 47.5-48.5.",
+    "marketLabel": "Nov. 6 8:00 AM ET recheck: fresh six-book and current boards remained LAR -4.5; pool WAS +5.5 retains roughly one point. Total 48-48.5.",
     "marketTotal": 48,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
@@ -202,7 +203,7 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "CAR +3.5",
     "poolFavorite": "DEN",
     "poolSpread": 3.5,
-    "marketLabel": "Nov. 4 audit: market DEN -2.5 to -3; consensus DEN -2.5 (-120). Total 44.5.",
+    "marketLabel": "Nov. 6 8:00 AM ET recheck: current consensus remained DEN -2.5; pool CAR +3.5 retains a full point and crosses 3. Total 44.5.",
     "marketTotal": 44.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
@@ -219,7 +220,7 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "HOU -4.5",
     "poolFavorite": "HOU",
     "poolSpread": 4.5,
-    "marketLabel": "Nov. 4 exact-line board: HOU -4.5 generally -110 to -118 versus LAC +4.5 -104 to -110; consensus -115/-105. Total 40.5.",
+    "marketLabel": "Nov. 6 8:00 AM ET recheck: fresh consensus moved to HOU -5.5; pool HOU -4.5 is now a full point better. Total 40.5.",
     "marketTotal": 40.5,
     "confidence": 2,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
@@ -236,7 +237,7 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "GB +3.5",
     "poolFavorite": "NE",
     "poolSpread": 3.5,
-    "marketLabel": "Nov. 4 audit: market NE -2.5 to -3; consensus NE -3 (-115). Pool GB +3.5 beats the reviewed market. Total 46.5.",
+    "marketLabel": "Nov. 6 8:00 AM ET recheck: current consensus remained NE -3; pool GB +3.5 preserves the hook. Total 44.5.",
     "marketTotal": 46.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
@@ -253,7 +254,7 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "SF -10.5",
     "poolFavorite": "SF",
     "poolSpread": 10.5,
-    "marketLabel": "Nov. 4 audit: eight-book market SF -9.5 to -10; consensus SF -10 (-108). Pool gives LV +10.5. Total 52.5.",
+    "marketLabel": "Nov. 6 8:00 AM ET recheck: fresh consensus was SF -9.5; pool LV +10.5 retains roughly one point and protection above 10. Total 52.",
     "marketTotal": 52.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
@@ -270,11 +271,11 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "ARI +11.5",
     "poolFavorite": "SEA",
     "poolSpread": 11.5,
-    "marketLabel": "Nov. 4 audit: independent snapshots ranged SEA -10.5 to -12.3, with several books -11.5; one VegasInsider consensus feed showed -8.5 and was treated as an outlier. Total around 40.5.",
+    "marketLabel": "Nov. 6 8:00 AM ET recheck: the earlier SEA -8.5 feed was confirmed by fresh six-book and current consensus boards; pool ARI +11.5 now gives roughly three points. Total 39.5.",
     "marketTotal": 40.5,
     "confidence": 1,
-    "signal": "NO MEASURED EDGE · PROVISIONAL TIE CHOICE",
-    "rationale": "Keep ARI +11.5 provisionally. The reviewed market was too dispersed to support a robust exact-line lean; at the pool number, neither side has validated independent evidence strong enough to justify a change from the prior recommendation.",
+    "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
+    "rationale": "Keep ARI +11.5. Fresh synchronized boards now center Seattle at -8.5, roughly three points below the frozen -11.5 pool spread. The size is not converted into an invented cover probability.",
     "watch": "Recheck a synchronized multi-book board and both teams' quarterback status before Sunday; do not rely on the conflicting single-feed snapshot."
   },
   {
@@ -287,7 +288,7 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "CHI -6.5",
     "poolFavorite": "CHI",
     "poolSpread": 6.5,
-    "marketLabel": "Nov. 4 exact-line board: TB +6.5 roughly -104 to -112 versus CHI -6.5 -100 to -110; broader consensus CHI -6. Total 47.5.",
+    "marketLabel": "Nov. 6 8:00 AM ET recheck: current consensus remained CHI -6; pool TB +6.5 preserves the hook. Total 47.5.",
     "marketTotal": 47.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · SIZE UNCALIBRATED",
@@ -304,7 +305,7 @@ export const week9PoolGames: Week9PoolGame[] = [
     "mikeVibe": "MIN +3.5",
     "poolFavorite": "BUF",
     "poolSpread": 3.5,
-    "marketLabel": "Nov. 5 recheck after Carson Wentz was confirmed: MIN +3.5 remained roughly -115 to -125 versus BUF -3.5 near -105 across reviewed books; total clustered at 45–45.5 with a 44.5–46 range.",
+    "marketLabel": "Nov. 6 8:00 AM ET recheck: fresh consensus was BUF -3 with a 44.5 total; pool MIN +3.5 retains the hook and the prior exact-line premium remains preserved.",
     "marketTotal": 45.5,
     "confidence": 2,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
