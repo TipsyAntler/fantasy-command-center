@@ -141,7 +141,7 @@ export async function getLeague(id: string, short: string, expectedTeam: string,
     ["standings", "league/" + id + "/standings"],
     ["transactions", "league/" + id + "/transactions;count=35"],
     ["settings", "league/" + id + "/settings"],
-    ...["RB", "WR", "TE", "QB"].map((position) => ["available_" + position, "league/" + id + "/players;status=A;position=" + position + ";sort=OR;count=25"]),
+    ...["RB", "WR", "TE", "QB", "DEF"].map((position) => ["available_" + position, "league/" + id + "/players;status=A;position=" + position + ";sort=OR;count=25"]),
   ];
   const responses = await Promise.allSettled(paths.map(([, path]) => yahooFantasyRequest(path, session, origin)));
   const data: Record<string, unknown> = {};
@@ -179,7 +179,7 @@ export async function getLeague(id: string, short: string, expectedTeam: string,
   const ir = roster.filter((p) => ["IR", "IR+", "NA", "IL"].includes(p.slot));
   if (roster.length && !starters.length) errors.push("Yahoo roster positions were not parsed; lineup recommendations are withheld");
   const available: Record<string, Player[]> = {};
-  for (const pos of ["RB", "WR", "TE", "QB"]) {
+  for (const pos of ["RB", "WR", "TE", "QB", "DEF"]) {
     available[pos] = entries(data["available_" + pos], "players", "player")
       .map((player) => parsePlayer(player, "Available"))
       .filter((p) => p.name !== "Unknown player").slice(0, 20);
