@@ -58,7 +58,7 @@ export const week10PoolGames: Week9PoolGame[] = [
     "poolPick": "MIN",
     "poolLine": 4.5,
     "mikeVibe": "Not provided — intentionally skipped",
-    "poolFavorite": "MIN",
+    "poolFavorite": "GB",
     "poolSpread": 4.5,
     "marketLabel": "Nov 15, 2026 public odds review: GB -2.5. Sources: FantasyData NFL odds (https://fantasydata.com/nfl/odds), FanDuel Research Week 10 board and Chargers.com Nov 14 six-book Monday preview. Dated/public snapshots, not verified simultaneous live quotes.",
     "marketTotal": 42,
