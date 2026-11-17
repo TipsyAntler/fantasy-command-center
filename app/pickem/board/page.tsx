@@ -1,5 +1,5 @@
 import AtAGlance from "@/components/AtAGlance";
-import { week10Number, week10PoolGames, week10PendingPoolGames, week10PoolStatus, week10MarketAsOf, week10ReviewedAt, week10ReviewedLabel, week10CapturedLabel, week10Tiebreaker, week10Standing, week10SubmittedCard } from "@/data/pickem-week10";
+import { week11Number, week11PoolGames, week11PendingPoolGames, week11PoolStatus, week11MarketAsOf, week11ReviewedAt, week11ReviewedLabel, week11CapturedLabel, week11Tiebreaker, week11Standing, week11SubmittedCard } from "@/data/pickem-week11";
 import { actionableAlerts } from "@/data/actionable-alerts";
 import styles from "./board.module.css";
 
@@ -14,24 +14,24 @@ function weekET(){
 function evidence(s:string){return s.startsWith("FROZEN-NUMBER")?"Frozen-number advantage":s.startsWith("SMALL EXACT-LINE")?"Small exact-line price lean":"No measured edge";}
 
 export default function PickemBoard(){
- const week=weekET(),current=week===week10Number;
- const games=current?week10PoolGames:[];
- const pending=current?week10PendingPoolGames:[];
+ const week=weekET(),current=week===week11Number;
+ const games=current?week11PoolGames:[];
+ const pending=current?week11PendingPoolGames:[];
  const flips=actionableAlerts.filter(a=>a.category==="Pick'em"&&a.id.startsWith("2026-w"+week+"-")&&a.headline.includes("FLIP:"));
- const audited=Boolean(week10ReviewedAt);
- const hours=audited?Math.max(0,Math.floor((Date.now()-Date.parse(week10ReviewedAt))/3600000)):null;
+ const audited=Boolean(week11ReviewedAt);
+ const hours=audited?Math.max(0,Math.floor((Date.now()-Date.parse(week11ReviewedAt))/3600000)):null;
  const stale=hours!==null&&hours>=18;
  return <main><div className="shell page-shell">
   <header className="page-hero"><div className="eyebrow">PICK&apos;EM OPERATIONS · WEEK {week} · ATS</div><h1>Pick&apos;em Room</h1><p className="hero-copy">The recommendation first. Tap any game for the evidence, market snapshot and what could change.</p></header>
   {!current?<section className="panel survivor-template"><h2>Week {week} lines pending</h2><p className="panel-explainer">Previous-week picks are hidden until the new SZN frozen lines are verified and the next card is published. No old spread is reused.</p></section>:<>
-   <div className={styles.freshness}><div><strong>{!audited?"Full audit pending":stale?"Review due":"Public odds checked"}</strong><span>{audited?"Last checked "+week10ReviewedLabel+" · "+hours+"h ago. Quotes are dated snapshots, not a live feed.":"Exact pool lines captured "+week10CapturedLabel+"; no review timestamp is claimed yet."}</span></div><a href="#flip-history">Flip history ↓</a></div>
+   <div className={styles.freshness}><div><strong>{!audited?"Full audit pending":stale?"Review due":"Public odds checked"}</strong><span>{audited?"Last checked "+week11ReviewedLabel+" · "+hours+"h ago. Quotes are dated snapshots, not a live feed.":"Exact pool lines captured "+week11CapturedLabel+"; no review timestamp is claimed yet."}</span></div><a href="#flip-history">Flip history ↓</a></div>
    <AtAGlance items={[
     {label:"Card coverage",value:games.length+" exact · "+pending.length+" pending",note:"No cropped spread inferred",tone:"accent"},
-    {label:"SZN submission",value:Object.keys(week10SubmittedCard.picks).length+" confirmed",note:"Enter picks in The SZN",tone:"accent"},
+    {label:"SZN submission",value:Object.keys(week11SubmittedCard.picks).length+" confirmed",note:"Enter picks in The SZN",tone:"accent"},
     {label:"Documented flips",value:String(flips.length),note:"Old → new recommendations",tone:"accent"},
-    {label:"Last standing snapshot",value:"#"+week10Standing.rank, note:"Nov 4 only · "+week10Standing.correct+" correct"}
+    {label:"Last standing snapshot",value:"#"+week11Standing.rank, note:"Nov 4 only · "+week11Standing.correct+" correct"}
    ]}/>
-   <p className={styles.notice}><strong>Recommendations ready — not submitted.</strong> {week10PoolStatus}. You still need to submit these sides and the tiebreaker in The SZN. No vibes were supplied or requested this week.</p>
+   <p className={styles.notice}><strong>Recommendations ready — not submitted.</strong> {week11PoolStatus}. You still need to submit these sides and the tiebreaker in The SZN. Mike's vibes have not been supplied; only FFCC recommendations are shown.</p>
    {pending.length>0&&<section className="panel survivor-template second-heading"><div className={styles.heading}><h2>Exact line still needed</h2><span>{pending.length} matchup</span></div>{pending.map(g=><div key={g.away+"-"+g.home} className="decision-grid"><div><span>Game</span><strong>{g.away} @ {g.home}</strong></div><div><span>Kickoff</span><strong>{g.day} · {g.kickoff} ET</strong></div><div><span>Mike&apos;s vibe</span><strong>{g.mikeVibe}</strong></div><div><span>Pool spread</span><strong>Not visible</strong></div><p className="panel-explainer">{g.reason}</p></div>)}</section>}
    <div className={styles.heading}><h2>{games.length} verified-spread matchups</h2><span>FFCC provisional · frozen SZN spreads · evidence</span></div>
    <section className={styles.games}>{games.map(g=>{
@@ -39,16 +39,16 @@ export default function PickemBoard(){
     const changed=flips.some(a=>a.headline.includes(pick+" replaces"));
     return <details id={id} key={id} className={changed?styles.flipped:styles.game}>
       <summary className={styles.summary}>
-       <div className={styles.match}><strong>{g.away} @ {g.home}</strong><small>{g.day} · {g.kickoff} ET</small><small>Submitted: {week10SubmittedCard.picks[g.away+"-"+g.home]||"Not confirmed"}</small>{changed&&<span className={styles.flipPill}>PICK FLIPPED</span>}</div>
-       <div className={styles.sides}><div><small>FFCC PICK</small><strong className={styles.ffcc}>{pick}</strong></div><div><small>VIBES</small><strong>Skipped this week</strong></div></div>
+       <div className={styles.match}><strong>{g.away} @ {g.home}</strong><small>{g.day} · {g.kickoff} ET</small><small>Submitted: {week11SubmittedCard.picks[g.away+"-"+g.home]||"Not confirmed"}</small>{changed&&<span className={styles.flipPill}>PICK FLIPPED</span>}</div>
+       <div className={styles.sides}><div><small>FFCC PICK</small><strong className={styles.ffcc}>{pick}</strong></div><div><small>VIBES</small><strong>Not provided</strong></div></div>
        <div className={styles.reason}><strong>{evidence(g.signal)}</strong><span>{g.signal.startsWith("FROZEN-NUMBER")?"Pool line appears better than reviewed market; edge not quantified.":g.signal.startsWith("SMALL EXACT-LINE")?"Modest lean at the exact frozen spread.":"Provisional tie choice; no measured advantage."}</span></div><span className={styles.arrow}>⌄</span>
       </summary>
       <div className={styles.details}><div><h4>Why this side</h4><p>{g.rationale}</p></div><div><h4>Market evidence · dated</h4><p>Frozen pool: {g.poolFavorite} -{g.poolSpread}. {g.marketLabel}{g.marketTotal!==null?" O/U "+g.marketTotal+".":""}</p><p>{g.signal}</p></div><div><h4>What could change it</h4><p>{g.watch}</p></div></div>
      </details>;
    })}</section>
    <section id="flip-history" className="panel survivor-template second-heading"><div className={styles.heading}><h2>Changes this week</h2><span>{flips.length} documented flips</span></div><p className="panel-explainer">Every verified flip shows the original and new FFCC side. A flip never changes your SZN submission.</p><div className={styles.history}>{flips.map(a=>{const g=games.find(g=>a.headline.includes(label(g.poolPick,g.poolLine)+" replaces"));return <a key={a.id} href={g?"#"+(g.away+"-"+g.home).toLowerCase():"#flip-history"}><strong>{a.headline.replace("PICK’EM FLIP: ","")}</strong><span>{a.active?"Current actionable recommendation":"Archived · recorded decision"}</span></a>;})}{flips.length===0&&<p>Initial card only; no subsequent recommendation changes recorded.</p>}</div></section>
-   <section className="panel survivor-template second-heading"><h2>Final-game tiebreaker</h2><div className="decision-grid"><div><span>Game</span><strong>{week10Tiebreaker.matchup}</strong></div><div><span>FFCC provisional total</span><strong>{week10Tiebreaker.earlyFfccTarget}</strong></div><div><span>Last market total</span><strong>{week10Tiebreaker.currentMarketTotal}</strong></div><div><span>Submitted (user-confirmed)</span><strong>{week10SubmittedCard.tiebreaker}</strong></div></div><p className="panel-explainer">{week10Tiebreaker.note}</p></section>
-   <section className={styles.footer}><strong>Evidence status</strong><p>{week10MarketAsOf}</p><p>Last known standing from the Nov. 4 screenshot (not refreshed this week): #{week10Standing.rank}. Reviews are timestamped only after actual verification, not every page load. <a href="/pickem/strategy">Read the market-first methodology →</a></p></section>
+   <section className="panel survivor-template second-heading"><h2>Final-game tiebreaker</h2><div className="decision-grid"><div><span>Game</span><strong>{week11Tiebreaker.matchup}</strong></div><div><span>FFCC provisional total</span><strong>{week11Tiebreaker.earlyFfccTarget}</strong></div><div><span>Last market total</span><strong>{week11Tiebreaker.currentMarketTotal}</strong></div><div><span>Submitted (user-confirmed)</span><strong>{week11SubmittedCard.tiebreaker}</strong></div></div><p className="panel-explainer">{week11Tiebreaker.note}</p></section>
+   <section className={styles.footer}><strong>Evidence status</strong><p>{week11MarketAsOf}</p><p>Last known standing from the Nov. 4 screenshot (not refreshed this week): #{week11Standing.rank}. Reviews are timestamped only after actual verification, not every page load. <a href="/pickem/strategy">Read the market-first methodology →</a></p></section>
   </>}
  </div></main>;
 }
