@@ -6,7 +6,7 @@ import type { Week9PoolGame } from "./pickem-week9";
 export const week11Number = 11;
 export const week11CapturedAt = "2026-11-17";
 export const week11CapturedLabel = "Nov 17 · user screenshots";
-export const week11ReviewedAt: string | null = null; // Full injury + exact-line multi-book audit still required.
+export const week11ReviewedAt = ""; // Full injury + exact-line multi-book audit still required; empty means not audited.
 export const week11ReviewedLabel = "Full board audit pending";
 export const week11PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week11PoolStatus = "WEEK 11 · ALL 13 EXACT FROZEN SPREADS CAPTURED · PROVISIONAL MARKET-FIRST LEANS · MIKE'S VIBES NOT SUPPLIED · SZN SUBMISSION NOT CONFIRMED";
