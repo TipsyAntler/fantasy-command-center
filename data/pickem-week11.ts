@@ -46,12 +46,12 @@ export const week11PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "HOU",
     "poolSpread": 11.5,
-    "marketLabel": "Nov 17 preliminary public odds: VegasInsider HOU -12.5 (-108) / IND +12.5 (-112); Odds Gap also -12.5, FantasyAlarm -10. The snapshot range varies. Source URLs: https://www.vegasinsider.com/nfl/nfl-week-11-odds-2026/ ; https://theoddsgap.com/weeklyslate/nfl ; https://www.fantasyalarm.com/nfl/odds. No verified simultaneous multi-book de-vig at exact pool line.",
-    "marketTotal": 44.5,
+    "marketLabel": "Nov 19 12:15 PM ET: DraftKings HOU -12.5 (-108) / IND +12.5 (-111), Hard Rock HOU -12 (-110) / IND +12 (-110), FanDuel HOU -12.5 (-104) / IND +12.5 (-116). Pool HOU -11.5 is one point better than the prevailing -12.5. Sources: https://linesmart.app/nfl/games/indianapolis-colts-at-houston-texans-2026-11-19/ ; https://www.nfl.com/injuries/league/2026/reg11",
+    "marketTotal": 43.5,
     "confidence": 2,
-    "signal": "FROZEN-NUMBER ADVANTAGE · MIXED MARKET",
-    "rationale": "The frozen Texans -11.5 beats two reviewed -12.5 boards by a point, but another current listing shows -10. This is provisional, not a demonstrated consensus or quantified cover edge.",
-    "watch": "Thursday 8:15 PM kickoff. Verify Texans/Colts quarterback, offensive-line and injury reports and a consistent multi-book exact-line check before entering."
+    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
+    "rationale": "The submitted Texans -11.5 beats the current multi-book market of -12 to -12.5, including two reviewed -12.5 prices. That is a real frozen-number advantage, but it is not converted into a calibrated cover probability.",
+    "watch": "Thursday 8:15 PM kickoff. Official reports list five Colts out, including two tackles and a cornerback; Houston has key defensive and skill-position absences. Recheck only for late inactives or a material market reversal; current evidence supports holding HOU -11.5."
   },
   {
     "day": "Sun",
