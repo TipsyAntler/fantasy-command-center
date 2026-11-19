@@ -9,12 +9,32 @@ export const week11CapturedLabel = "Nov 17 · user screenshots";
 export const week11ReviewedAt = ""; // Full injury + exact-line multi-book audit still required; empty means not audited.
 export const week11ReviewedLabel = "Full board audit pending";
 export const week11PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week11PoolStatus = "WEEK 11 · ALL 13 EXACT FROZEN SPREADS CAPTURED · PROVISIONAL MARKET-FIRST LEANS · MIKE'S VIBES NOT SUPPLIED · SZN SUBMISSION NOT CONFIRMED";
+export const week11PoolStatus = "WEEK 11 · ALL 13 EXACT FROZEN SPREADS CAPTURED · USER-CONFIRMED SUBMITTED PER FFCC RECOMMENDATIONS · FULL MARKET/INJURY AUDIT STILL PENDING";
 export const week11MarketAsOf = "Preliminary Nov 17, 2026 market comparison: VegasInsider Week 11 published 12:41 AM ET; The Odds Gap Week 11 multi-operator listing observed Nov 17; FantasyAlarm odds listing. URL sources: https://www.vegasinsider.com/nfl/nfl-week-11-odds-2026/ ; https://theoddsgap.com/weeklyslate/nfl ; https://www.fantasyalarm.com/nfl/odds. Single-book/aggregate public tables do not establish a fresh simultaneous independent two-sided market consensus or an exact pool-line de-vig. Full injury/market audit remains pending.";
-export const week11Standing = {correct:56,rank:70,leaderCorrect:76,note:"Historical Nov 4 user screenshot only; NOT a verified Week 11 standing."};
-export const week11SubmittedCard = { confirmedDate:null, confirmationSource:"No submission confirmed; user screenshot showed 0 picks made", picks:{} as Record<string,string>, tiebreaker:"Not submitted", note:"FFCC provisional recommendations do not modify The SZN; user must submit and confirm." };
+export const week11Standing = {correct:70,rank:76,leaderCorrect:89,note:"User screenshot shared Nov 19, 2026; leader inferred from user being 19 correct picks behind."}; NOT a verified Week 11 standing."};
+export const week11SubmittedCard = {
+  confirmedDate: "2026-11-19",
+  confirmationSource: "User message: Picks have been submitted per FFCC recommendations",
+  picks: {
+    "IND-HOU": "HOU -11.5",
+    "MIA-BUF": "MIA +16.5",
+    "NO-CHI": "NO +11.5",
+    "TEN-DAL": "TEN +8.5",
+    "TB-DET": "TB +6.5",
+    "ARI-KC": "ARI +16.5",
+    "PIT-PHI": "PHI +4.5",
+    "BAL-CAR": "CAR -2.5",
+    "NYJ-LAC": "NYJ +3.5",
+    "LV-DEN": "LV +10.5",
+    "JAX-NYG": "NYG +6.5",
+    "MIN-SF": "MIN +3.5",
+    "CIN-WAS": "WAS +6.5"
+  } as Record<string,string>,
+  tiebreaker: "53",
+  note: "User-confirmed submission of the then-current FFCC card. Later FFCC advice changes do not automatically change The SZN entries."
+};
 export const week11PendingPoolGames: {day:string; kickoff:string; away:string; home:string; mikeVibe:string; reason:string}[] = [];
-export const week11Tiebreaker = {matchup:"CIN @ WAS",earlyFfccTarget:"53 (provisional)",currentMarketTotal:"52.5 (Nov 17 public snapshots)",note:"The SZN screenshot confirms final-game total points CIN @ WAS. Preliminary market total 52.5; provisional nearest integer 53. Pool tiebreaker and all ATS picks remain unsubmitted. Recheck before the actual lock."};
+export const week11Tiebreaker = {matchup:"CIN @ WAS",earlyFfccTarget:"53",currentMarketTotal:"52.5 (Nov 17 public snapshots)",note:"User confirmed the Week 11 card was submitted per FFCC recommendations on Nov 19; submitted tiebreaker baseline is 53. Later advice does not alter The SZN entry."};
 export const week11PoolGames: Week9PoolGame[] = [
   {
     "day": "Thu",
