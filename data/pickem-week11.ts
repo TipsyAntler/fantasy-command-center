@@ -11,7 +11,7 @@ export const week11ReviewedLabel = "Full board audit pending";
 export const week11PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week11PoolStatus = "WEEK 11 · ALL 13 EXACT FROZEN SPREADS CAPTURED · USER-CONFIRMED SUBMITTED PER FFCC RECOMMENDATIONS · FULL MARKET/INJURY AUDIT STILL PENDING";
 export const week11MarketAsOf = "Preliminary Nov 17, 2026 market comparison: VegasInsider Week 11 published 12:41 AM ET; The Odds Gap Week 11 multi-operator listing observed Nov 17; FantasyAlarm odds listing. URL sources: https://www.vegasinsider.com/nfl/nfl-week-11-odds-2026/ ; https://theoddsgap.com/weeklyslate/nfl ; https://www.fantasyalarm.com/nfl/odds. Single-book/aggregate public tables do not establish a fresh simultaneous independent two-sided market consensus or an exact pool-line de-vig. Full injury/market audit remains pending.";
-export const week11Standing = {correct:70,rank:76,leaderCorrect:89,note:"User screenshot shared Nov 19, 2026; leader inferred from user being 19 correct picks behind."}; NOT a verified Week 11 standing."};
+export const week11Standing = {correct:70,rank:76,leaderCorrect:89,note:"User screenshot shared Nov 19, 2026; leader inferred from user being 19 correct picks behind. Not a verified Week 11 standing."};
 export const week11SubmittedCard = {
   confirmedDate: "2026-11-19",
   confirmationSource: "User message: Picks have been submitted per FFCC recommendations",
@@ -46,12 +46,12 @@ export const week11PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "HOU",
     "poolSpread": 11.5,
-    "marketLabel": "Nov 19 12:15 PM ET: DraftKings HOU -12.5 (-108) / IND +12.5 (-111), Hard Rock HOU -12 (-110) / IND +12 (-110), FanDuel HOU -12.5 (-104) / IND +12.5 (-116). Pool HOU -11.5 is one point better than the prevailing -12.5. Sources: https://linesmart.app/nfl/games/indianapolis-colts-at-houston-texans-2026-11-19/ ; https://www.nfl.com/injuries/league/2026/reg11",
-    "marketTotal": 43.5,
+    "marketLabel": "Nov 19 final pre-lock review: DraftKings, Hard Rock and FanDuel all HOU -12.5 at 6:16 PM ET; pool HOU -11.5 retains a one-point frozen-number advantage. Final inactives at 6:45–6:48 PM ET: Indianapolis without both starting outside corners and both starting tackles; Houston without G Wyatt Teller, DE Danielle Hunter, WR Marvin Harrison Jr. and RB Woody Marks. Sources: https://linesmart.app/nfl/games/indianapolis-colts-at-houston-texans-2026-11-19/ ; https://www.colts.com/news/colts-announce-7-inactive-players-for-week-11-game-vs-houston-texans ; https://www.nfl.com/news/week-11-thursday-night-inactives-indianapolis-colts-at-houston-texans",
+    "marketTotal": 44.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     "rationale": "The submitted Texans -11.5 beats the current multi-book market of -12 to -12.5, including two reviewed -12.5 prices. That is a real frozen-number advantage, but it is not converted into a calibrated cover probability.",
-    "watch": "Thursday 8:15 PM kickoff. Official reports list five Colts out, including two tackles and a cornerback; Houston has key defensive and skill-position absences. Recheck only for late inactives or a material market reversal; current evidence supports holding HOU -11.5."
+    "watch": "Final pre-lock review completed Nov 19 at 7:42 PM ET. Final inactives and the unchanged HOU -12.5 market did not reverse the recommendation; hold submitted HOU -11.5. No FFCC flip."
   },
   {
     "day": "Sun",
