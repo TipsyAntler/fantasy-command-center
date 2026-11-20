@@ -9,7 +9,7 @@ export const week11CapturedLabel = "Nov 17 · user screenshots";
 export const week11ReviewedAt = ""; // Full injury + exact-line multi-book audit still required; empty means not audited.
 export const week11ReviewedLabel = "Full board audit pending";
 export const week11PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week11PoolStatus = "WEEK 11 · ALL 13 EXACT FROZEN SPREADS CAPTURED · USER-CONFIRMED SUBMITTED PER FFCC RECOMMENDATIONS · FULL MARKET/INJURY AUDIT STILL PENDING";
+export const week11PoolStatus = "WEEK 11 · THURSDAY RESULT: HOU -11.5 WON, 26-3 · 12 GAMES PENDING · USER-CONFIRMED SUBMISSION PRESERVED · FULL REMAINING-BOARD AUDIT PENDING";
 export const week11MarketAsOf = "Preliminary Nov 17, 2026 market comparison: VegasInsider Week 11 published 12:41 AM ET; The Odds Gap Week 11 multi-operator listing observed Nov 17; FantasyAlarm odds listing. URL sources: https://www.vegasinsider.com/nfl/nfl-week-11-odds-2026/ ; https://theoddsgap.com/weeklyslate/nfl ; https://www.fantasyalarm.com/nfl/odds. Single-book/aggregate public tables do not establish a fresh simultaneous independent two-sided market consensus or an exact pool-line de-vig. Full injury/market audit remains pending.";
 export const week11Standing = {correct:70,rank:76,leaderCorrect:89,note:"User screenshot shared Nov 19, 2026; leader inferred from user being 19 correct picks behind. Not a verified Week 11 standing."};
 export const week11SubmittedCard = {
@@ -51,7 +51,7 @@ export const week11PoolGames: Week9PoolGame[] = [
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     "rationale": "The submitted Texans -11.5 beats the current multi-book market of -12 to -12.5, including two reviewed -12.5 prices. That is a real frozen-number advantage, but it is not converted into a calibrated cover probability.",
-    "watch": "Final pre-lock review completed Nov 19 at 7:42 PM ET. Final inactives and the unchanged HOU -12.5 market did not reverse the recommendation; hold submitted HOU -11.5. No FFCC flip."
+    "watch": "FINAL: Houston beat Indianapolis 26-3 on Nov 19; submitted HOU -11.5 covered. Pre-lock market closed around HOU -12.5, so the frozen one-point advantage was directionally useful. No FFCC flip occurred."
   },
   {
     "day": "Sun",
