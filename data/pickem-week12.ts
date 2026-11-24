@@ -2,11 +2,11 @@ import type { Week9PoolGame } from "./pickem-week9";
 export const week12Number = 12;
 export const week12CapturedAt = "2026-11-24T09:32:00-05:00";
 export const week12CapturedLabel = "Nov 24 · 9:32 AM ET · user screenshots";
-export const week12ReviewedAt = "";
-export const week12ReviewedLabel = "Full audit pending";
+export const week12ReviewedAt = "2026-11-24T12:24:00-05:00";
+export const week12ReviewedLabel = "Nov 24 · 12:24 PM ET";
 export const week12PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week12PoolStatus = "16 exact frozen spreads captured; initial market card only. First kickoff Wed Nov 25 at 8 PM ET; aim to submit the full card before then, exact pool lock not independently verified.";
-export const week12MarketAsOf = "Preliminary Nov 24 morning ET market pass: https://www.sportsbookreview.com/betting-odds/nfl-football/?week=Week12 ; totals from bet365 article dated Nov 23 12:37 PM ET https://www.sportsbookreview.com/picks/nfl/week-12-odds-betting-lines-2026/ ; official flex schedule https://amp.nfl.com/news/week-12-schedule-change ; https://www.fanduel.com/research/nfl-thanksgiving-week-12-odds-picks-predictions-and-best-bets-2026 . Paired displayed quotes are not verified independent timestamped live book prices. No full injury/weather/model audit claimed.";
+export const week12PoolStatus = "16 exact frozen spreads captured; full initial board audited Nov 24. First kickoff Wed Nov 25 at 8 PM ET; submit the full card before then because the Wednesday-game lock behavior is not independently documented.";
+export const week12MarketAsOf = "Full 16-game initial board audit completed Nov 24 at 12:24 PM ET. Current standard lines and two-sided prices: VegasInsider Week 12 updated Nov 24 and The Odds Gap 13–14-book board observed 11:32 AM ET. Wednesday exact prices: LineSmart DraftKings, Hard Rock and FanDuel at 7:45 AM ET plus official Packers injury report. Sources: https://www.vegasinsider.com/nfl/nfl-week-12-odds-2026/ ; https://theoddsgap.com/weeklyslate/nfl ; https://linesmart.app/nfl/games/green-bay-packers-at-los-angeles-rams-2026-11-25/ ; https://www.packers.com/news/packers-rams-injury-report-nov-23-2026 . Final game designations remain pending; current market is used as the baseline to avoid double-counting incomplete injury news. No FFCC side changed.";
 export const week12Standing = {correct:76,rank:73,leaderCorrect:96,note:"User screenshot Nov 24; 7th place 92."};
 export const week12SubmittedCard = {confirmedDate:"",picks:{} as Record<string,string>,tiebreaker:"Not submitted",note:"Screenshot shows 0 of 16 picked; no user vibes supplied."};
 export const week12PendingPoolGames: {day:string;kickoff:string;away:string;home:string;mikeVibe:string;reason:string}[] = [];
@@ -22,12 +22,12 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "LAR",
     "poolSpread": 2.5,
-    "marketLabel": "SBR multi-column board observed Nov 24 morning ET; individual book names/quote timestamps not independently verified. +2.5/-2.5 pairs: -110/-108, -111/-109, -110/-109, -108/-112, -115/-105, -110/-110, -110/-109. Mixed tiny lean toward GB.",
+    "marketLabel": "Nov 24 audit: VegasInsider LAR -2.5 (-109) / GB +2.5 (-110); LineSmart at 7:45 AM ET had DraftKings +2.5 -110/-2.5 -109, FanDuel +2.5 -108/-2.5 -112 and Hard Rock at GB +2. Rams moved from -3.5 to -2.5, but the frozen pool is the current standard number.",
     "marketTotal": 44.5,
     "confidence": 1,
-    "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Green Bay is narrowly favored by the median exact-line pricing, not a meaningful model edge. Jacobs limited and unlikely per Nov 23 reporting; final designations pending. Rams Nacua reported out for regular season. No double-counting.",
-    "watch": "Recheck official final injuries and exact-line prices before Wednesday kickoff. Official Nov 23 report: https://www.packers.com/news/packers-rams-injury-report-nov-23-2026 ; https://www.vegasinsider.com/nfl/nfl-week-12-odds-2026/"
+    "signal": "NO MEASURED EDGE",
+    "rationale": "The exact +2.5 market is essentially balanced, so GB remains the transparent provisional tie choice rather than a measured edge.",
+    "watch": "Official Nov 23 report: Jacobs limited; Rams G Steve Avila and C Coleman Shelton did not practice, while Puka Nacua and Davante Adams remain out. Recheck Tuesday final designations and exact prices before Wednesday 8 PM ET kickoff."
   },
   {
     "day": "Thu",
@@ -39,11 +39,11 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "CHI",
     "poolSpread": 2.5,
-    "marketLabel": "SBR multi-column board observed Nov 24 morning ET; individual book names/quote timestamps not independently verified. -2.5/+2.5 pairs: -112/-105, -114/-106, -114/-106, -112/-108, -110/-110, -114/-107, -114/-105.",
+    "marketLabel": "Nov 24 VegasInsider: CHI -2.5 (-114) / DET +2.5 (-106), total 55.5; The Odds Gap 14-book board at 11:32 AM ET showed the same spread.",
     "marketTotal": 55.5,
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Most paired quotes shade Chicago; FanDuel article separately favors Detroit +2.5 at -112, so uncertainty remains.",
+    "rationale": "The exact-line price favors Chicago, but not enough to claim a calibrated cover edge.",
     "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
   },
   {
@@ -56,11 +56,11 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "DAL",
     "poolSpread": 8.5,
-    "marketLabel": "SBR multi-column board observed Nov 24 morning ET; individual book names/quote timestamps not independently verified. +8.5/-8.5: -110/-108, -111/-109, -108/-111, -110/-110, -110/-110, -110/-110, -109/-110.",
+    "marketLabel": "Nov 24 VegasInsider: DAL -8.5 (-111) / PHI +8.5 (-108), total 47.5; The Odds Gap 14-book board at 11:32 AM ET showed the same spread.",
     "marketTotal": 47.5,
     "confidence": 1,
-    "signal": "NO MEASURED EDGE",
-    "rationale": "Median pricing balanced; Dallas is a provisional tie choice only.",
+    "signal": "SMALL EXACT-LINE PRICE LEAN",
+    "rationale": "A tiny exact-line price shade supports Dallas; this is not a meaningful independent edge.",
     "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
   },
   {
@@ -73,11 +73,11 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "BUF",
     "poolSpread": 3.5,
-    "marketLabel": "SBR multi-column board observed Nov 24 morning ET; individual book names/quote timestamps not independently verified. Market BUF -2.5 in SBR board; bet365 Nov 23 -2.5.",
-    "marketTotal": 50.5,
+    "marketLabel": "Nov 24 market: VegasInsider BUF -3 (even) / KC +3 (-120); The Odds Gap 14-book board at 11:32 AM ET centered on BUF -2.5, with -3 also available. Pool KC +3.5 is better than the current standard market.",
+    "marketTotal": 47.5,
     "confidence": 2,
-    "signal": "FROZEN-NUMBER ADVANTAGE",
-    "rationale": "Kansas City gets an extra point crossing 3; exact +3.5 pricing not verified.",
+    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
+    "rationale": "Kansas City gets the hook above 3 while the reviewed market is +2.5 to +3. That key-number advantage is real but not converted into a cover probability.",
     "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
   },
   {
@@ -90,11 +90,11 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "DEN",
     "poolSpread": 3.5,
-    "marketLabel": "SBR multi-column board observed Nov 24 morning ET; individual book names/quote timestamps not independently verified. Market DEN -2.5, heavily juiced toward Denver; bet365 -2.5.",
-    "marketTotal": 37.5,
+    "marketLabel": "Nov 24 market: VegasInsider DEN -3 (-104) / PIT +3 (-115); The Odds Gap 14-book board at 11:32 AM ET centered on DEN -3. Pool PIT +3.5 is better than the current standard market.",
+    "marketTotal": 38.5,
     "confidence": 2,
-    "signal": "FROZEN-NUMBER ADVANTAGE",
-    "rationale": "Pittsburgh gets +3.5 rather than +2.5; juice reduces certainty of the number signal.",
+    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
+    "rationale": "Pittsburgh gets the hook above 3 versus a market centered on +3. That key-number advantage outweighs the juice uncertainty without quantifying an edge.",
     "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
   },
   {
@@ -107,11 +107,11 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "CIN",
     "poolSpread": 10.5,
-    "marketLabel": "SBR multi-column board observed Nov 24 morning ET; individual book names/quote timestamps not independently verified. Exact +10.5/-10.5 pairs -122/-104, -115/-105, -127/-111; other lines +9.5 to +10.",
-    "marketTotal": 51.5,
+    "marketLabel": "Nov 24 VegasInsider: CIN -9.5 (-114) / NO +9.5 (-105), total 50.5; The Odds Gap 13-book board at 11:32 AM ET centered on CIN -10. Pool NO +10.5 is a half to full point better.",
+    "marketTotal": 50.5,
     "confidence": 1,
-    "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Exact-line quotes lean Saints; some market numbers shorter.",
+    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
+    "rationale": "The Saints receive +10.5 against a market around +9.5 to +10. The better number supports NO without implying a calibrated cover rate.",
     "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
   },
   {
@@ -124,11 +124,11 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "NYG",
     "poolSpread": 6.5,
-    "marketLabel": "SBR multi-column board observed Nov 24 morning ET; individual book names/quote timestamps not independently verified. -6.5/+6.5 pairs -112/-105, -113/-107, -115/-104, -112/-108, -110/-110, -115/-108, -113/-106.",
-    "marketTotal": 42.5,
+    "marketLabel": "Nov 24 VegasInsider: NYG -6.5 (-115) / IND +6.5 (-104), total 41.5; The Odds Gap 14-book board at 11:32 AM ET showed the same spread.",
+    "marketTotal": 41.5,
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Most exact quotes favor Giants.",
+    "rationale": "The current exact-line price supports the Giants; no independent model edge is claimed.",
     "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
   },
   {
@@ -141,11 +141,11 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "NYJ",
     "poolSpread": 3.5,
-    "marketLabel": "SBR multi-column board observed Nov 24 morning ET; individual book names/quote timestamps not independently verified. -3.5/+3.5 pairs -120/-110, -115/-105, -117/-103, -115/-105, -107/-115, -112/-108.",
-    "marketTotal": 41.5,
+    "marketLabel": "Nov 24 VegasInsider: NYJ -3.5 (-117) / MIA +3.5 (-103), total 40.5; The Odds Gap 14-book board at 11:32 AM ET showed the same spread.",
+    "marketTotal": 40.5,
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Most exact quotes favor Jets, not unanimous.",
+    "rationale": "The exact-line price favors the Jets, though the size remains uncalibrated.",
     "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
   },
   {
@@ -158,11 +158,11 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "MIN",
     "poolSpread": 7.5,
-    "marketLabel": "SBR multi-column board observed Nov 24 morning ET; individual book names/quote timestamps not independently verified. Most displayed MIN -6.5; bet365 Nov 23 -6.5; excluded malformed/outlying PK and -3.5 rows.",
-    "marketTotal": 41.5,
+    "marketLabel": "Nov 24 market: VegasInsider MIN -7 (even) / ATL +7 (-120); The Odds Gap 14-book board at 11:32 AM ET centered on MIN -7. Pool ATL +7.5 is better than the current standard market.",
+    "marketTotal": 42.5,
     "confidence": 2,
-    "signal": "FROZEN-NUMBER ADVANTAGE",
-    "rationale": "Atlanta gets a point crossing 7; exact +7.5 prices not verified.",
+    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
+    "rationale": "Atlanta gets the hook above 7 while the reviewed market is +7. That key-number advantage is real but not assigned an invented probability.",
     "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
   },
   {
@@ -175,11 +175,11 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "JAX",
     "poolSpread": 14.5,
-    "marketLabel": "SBR multi-column board observed Nov 24 morning ET; individual book names/quote timestamps not independently verified. +14.5/-14.5 pairs -110/-108, -113/-107, -116/-104, -115/-105, -110/-110, -118/-106, -114/-105.",
+    "marketLabel": "Nov 24 VegasInsider: JAX -14.5 (-104) / TEN +14.5 (-116), total 47.5; current exact-line price favors Tennessee.",
     "marketTotal": 47.5,
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Most exact quotes favor Tennessee.",
+    "rationale": "The exact frozen line is priced toward Tennessee, but this remains a modest price signal on a very large spread.",
     "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
   },
   {
@@ -192,11 +192,11 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "HOU",
     "poolSpread": 6.5,
-    "marketLabel": "SBR multi-column board observed Nov 24 morning ET; individual book names/quote timestamps not independently verified. +6.5/-6.5 pairs -105/-125, -106/-114, -104/-115, -105/-115, -105/-115, -108/-114, -109/-110.",
+    "marketLabel": "Nov 24 VegasInsider: HOU -6.5 (-115) / BAL +6.5 (-104), total 46.5; The Odds Gap 14-book board at 11:32 AM ET also showed Houston favored at the exact spread.",
     "marketTotal": 46.5,
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Most exact quotes favor Houston.",
+    "rationale": "Current exact-line pricing supports Houston, without a calibrated cover estimate.",
     "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
   },
   {
@@ -209,11 +209,11 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "LAC",
     "poolSpread": 1.5,
-    "marketLabel": "SBR multi-column board observed Nov 24 morning ET; individual book names/quote timestamps not independently verified. +1.5/-1.5 pairs -125/-105, -117/-103, -122/+102, -115/-105, -120/+100, -125/-102, -116/-103.",
+    "marketLabel": "Nov 24 VegasInsider: LAC -1.5 (+102) / NE +1.5 (-122), total 35.5; the exact-line price materially favors New England.",
     "marketTotal": 35.5,
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Exact quotes consistently shade New England.",
+    "rationale": "The strongest exact-line price shade on the board supports New England +1.5, but it is still a market price signal rather than an independent forecast.",
     "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
   },
   {
@@ -226,11 +226,11 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "WAS",
     "poolSpread": 7.5,
-    "marketLabel": "SBR multi-column board observed Nov 24 morning ET; individual book names/quote timestamps not independently verified. -7.5/+7.5 pairs -108/-110, -108/-112, -109/-110, -105/-115, -110/-110, -103/-120, -103/-116.",
-    "marketTotal": 40.5,
+    "marketLabel": "Nov 24 VegasInsider: WAS -7.5 (-109) / ARI +7.5 (-110), total 42.5. The exact frozen line is effectively balanced.",
+    "marketTotal": 42.5,
     "confidence": 1,
-    "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Exact quotes generally shade Arizona.",
+    "signal": "NO MEASURED EDGE",
+    "rationale": "The exact +7.5 market is balanced; Arizona remains the transparent provisional tie choice.",
     "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
   },
   {
@@ -243,11 +243,11 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "SF",
     "poolSpread": 3.5,
-    "marketLabel": "SBR multi-column board observed Nov 24 morning ET; individual book names/quote timestamps not independently verified. +3.5/-3.5 pairs -125/-105, -123/+103, -130/-102, -130/+102, -120/+100, -132/-105; one -2.5 market.",
+    "marketLabel": "Nov 24 market: VegasInsider SF -3 (-120) / SEA +3 (even), total 46.5. Pool SEA +3.5 captures the hook above the current standard 3.",
     "marketTotal": 46.5,
     "confidence": 1,
-    "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Exact quotes consistently favor Seattle; no calibrated probability.",
+    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
+    "rationale": "Seattle gets +3.5 while the reviewed market is +3, creating a genuine key-number advantage without a quantified cover gain.",
     "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
   },
   {
@@ -260,11 +260,11 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "CLE",
     "poolSpread": 4.5,
-    "marketLabel": "SBR multi-column board observed Nov 24 morning ET; individual book names/quote timestamps not independently verified. +4.5/-4.5 pairs -110/-108, -110/-110, -114/-105, -110/-110, -109/-112, -113/-106.",
+    "marketLabel": "Nov 24 VegasInsider: CLE -4.5 (-105) / LV +4.5 (-114), total 41.5; the exact-line price favors Las Vegas.",
     "marketTotal": 41.5,
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "Very small median lean toward Raiders; mixed quotes.",
+    "rationale": "The exact frozen line is priced toward the Raiders, but the advantage is small.",
     "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
   },
   {
@@ -277,11 +277,11 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "TB",
     "poolSpread": 3.5,
-    "marketLabel": "SBR multi-column board observed Nov 24 morning ET; individual book names/quote timestamps not independently verified. Market TB -2.5 across displayed rows, heavily juiced; bet365 Nov 23 -2.5.",
+    "marketLabel": "Nov 24 market: VegasInsider TB -3 (-105) / CAR +3 (-115); The Odds Gap 13-book board at 11:32 AM ET centered on TB -3. Pool CAR +3.5 captures the hook above the current standard 3.",
     "marketTotal": 43.5,
     "confidence": 2,
-    "signal": "FROZEN-NUMBER ADVANTAGE",
-    "rationale": "Carolina gets a point crossing 3; no exact +3.5 quote verified.",
+    "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
+    "rationale": "Carolina gets +3.5 while the reviewed market is +3, creating a genuine key-number advantage without a quantified cover gain.",
     "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
   }
 ];
