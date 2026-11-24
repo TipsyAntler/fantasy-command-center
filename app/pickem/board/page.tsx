@@ -19,6 +19,8 @@ export default function PickemBoard(){
  const pending=current?week12PendingPoolGames:[];
  const flips=actionableAlerts.filter(a=>a.category==="Pick'em"&&a.id.startsWith("2026-w"+week+"-")&&a.headline.includes("FLIP:"));
  const audited=Boolean(week12ReviewedAt);
+ const submittedCount=Object.keys(week12SubmittedCard.picks).length;
+ const fullySubmitted=current&&games.length>0&&submittedCount===games.length;
  const hours=audited?Math.max(0,Math.floor((Date.now()-Date.parse(week12ReviewedAt))/3600000)):null;
  const stale=hours!==null&&hours>=18;
  return <main><div className="shell page-shell">
@@ -27,13 +29,13 @@ export default function PickemBoard(){
    <div className={styles.freshness}><div><strong>{!audited?"Full audit pending":stale?"Review due":"Public odds checked"}</strong><span>{audited?"Last checked "+week12ReviewedLabel+" · "+hours+"h ago. Quotes are dated snapshots, not a live feed.":"Exact pool lines captured "+week12CapturedLabel+"; no review timestamp is claimed yet."}</span></div><a href="#flip-history">Flip history ↓</a></div>
    <AtAGlance items={[
     {label:"Card coverage",value:games.length+" exact · "+pending.length+" pending",note:"No cropped spread inferred",tone:"accent"},
-    {label:"SZN submission",value:Object.keys(week12SubmittedCard.picks).length+" confirmed",note:"Enter picks in The SZN",tone:"accent"},
+    {label:"SZN submission",value:submittedCount+" confirmed",note:fullySubmitted?"Submitted in The SZN":"Enter picks in The SZN",tone:"accent"},
     {label:"Documented flips",value:String(flips.length),note:"Old → new recommendations",tone:"accent"},
     {label:"Last standing snapshot",value:"#"+week12Standing.rank, note:"Nov 24 · "+week12Standing.correct+" correct"}
    ]}/>
-   <p className={styles.notice}><strong>Preliminary card — not submitted.</strong> {week12PoolStatus}. You still need to submit these sides and the tiebreaker in The SZN. Mike's vibes have not been supplied; only FFCC recommendations are shown.</p>
+   <p className={styles.notice}><strong>{fullySubmitted?"Submitted card — baseline preserved.":"Preliminary card — not submitted."}</strong> {week12PoolStatus}. {fullySubmitted?"Any later FFCC recommendation is tracked separately and does not alter the submitted baseline.":"You still need to submit these sides and the tiebreaker in The SZN."} Mike's vibes have not been supplied; only FFCC recommendations are shown.</p>
    {pending.length>0&&<section className="panel survivor-template second-heading"><div className={styles.heading}><h2>Exact line still needed</h2><span>{pending.length} matchup</span></div>{pending.map(g=><div key={g.away+"-"+g.home} className="decision-grid"><div><span>Game</span><strong>{g.away} @ {g.home}</strong></div><div><span>Kickoff</span><strong>{g.day} · {g.kickoff} ET</strong></div><div><span>Mike&apos;s vibe</span><strong>{g.mikeVibe}</strong></div><div><span>Pool spread</span><strong>Not visible</strong></div><p className="panel-explainer">{g.reason}</p></div>)}</section>}
-   <div className={styles.heading}><h2>{games.length} verified-spread matchups</h2><span>FFCC provisional · frozen SZN spreads · evidence</span></div>
+   <div className={styles.heading}><h2>{games.length} verified-spread matchups</h2><span>{fullySubmitted?"Submitted baseline":"FFCC provisional"} · frozen SZN spreads · evidence</span></div>
    <section className={styles.games}>{games.map(g=>{
     const id=(g.away+"-"+g.home).toLowerCase(),pick=label(g.poolPick,g.poolLine);
     const changed=flips.some(a=>a.headline.includes(pick+" replaces"));
