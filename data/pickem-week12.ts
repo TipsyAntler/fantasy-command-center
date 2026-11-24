@@ -10,7 +10,7 @@ export const week12MarketAsOf = "Full 16-game initial board audit completed Nov 
 export const week12Standing = {correct:76,rank:73,leaderCorrect:96,note:"User screenshot Nov 24; 7th place 92."};
 export const week12SubmittedCard = {confirmedDate:"",picks:{} as Record<string,string>,tiebreaker:"Not submitted",note:"Screenshot shows 0 of 16 picked; no user vibes supplied."};
 export const week12PendingPoolGames: {day:string;kickoff:string;away:string;home:string;mikeVibe:string;reason:string}[] = [];
-export const week12Tiebreaker = {matchup:"CAR @ TB",earlyFfccTarget:"44",currentMarketTotal:"43.5 (Nov 23 bet365 article)",note:"Provisional rounded total; 43 is equally close. Recheck before earliest lock; exact pool tiebreaker deadline not verified."};
+export const week12Tiebreaker = {matchup:"CAR @ TB",earlyFfccTarget:"44",currentMarketTotal:"43.5 (Nov 24 market audit)",note:"Provisional rounded total; 43 is equally close. Recheck before earliest lock; exact pool tiebreaker deadline not verified."};
 export const week12PoolGames: Week9PoolGame[] = [
   {
     "day": "Wed",
@@ -44,7 +44,7 @@ export const week12PoolGames: Week9PoolGame[] = [
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
     "rationale": "The exact-line price favors Chicago, but not enough to claim a calibrated cover edge.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
+    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
   },
   {
     "day": "Thu",
@@ -61,7 +61,7 @@ export const week12PoolGames: Week9PoolGame[] = [
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
     "rationale": "A tiny exact-line price shade supports Dallas; this is not a meaningful independent edge.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
+    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
   },
   {
     "day": "Thu",
@@ -78,7 +78,7 @@ export const week12PoolGames: Week9PoolGame[] = [
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     "rationale": "Kansas City gets the hook above 3 while the reviewed market is +2.5 to +3. That key-number advantage is real but not converted into a cover probability.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
+    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
   },
   {
     "day": "Fri",
@@ -95,7 +95,7 @@ export const week12PoolGames: Week9PoolGame[] = [
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     "rationale": "Pittsburgh gets the hook above 3 versus a market centered on +3. That key-number advantage outweighs the juice uncertainty without quantifying an edge.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
+    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
   },
   {
     "day": "Sun",
@@ -112,7 +112,7 @@ export const week12PoolGames: Week9PoolGame[] = [
     "confidence": 1,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     "rationale": "The Saints receive +10.5 against a market around +9.5 to +10. The better number supports NO without implying a calibrated cover rate.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
+    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
   },
   {
     "day": "Sun",
@@ -129,7 +129,7 @@ export const week12PoolGames: Week9PoolGame[] = [
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
     "rationale": "The current exact-line price supports the Giants; no independent model edge is claimed.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
+    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
   },
   {
     "day": "Sun",
@@ -146,7 +146,7 @@ export const week12PoolGames: Week9PoolGame[] = [
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
     "rationale": "The exact-line price favors the Jets, though the size remains uncalibrated.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
+    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
   },
   {
     "day": "Sun",
@@ -163,7 +163,7 @@ export const week12PoolGames: Week9PoolGame[] = [
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     "rationale": "Atlanta gets the hook above 7 while the reviewed market is +7. That key-number advantage is real but not assigned an invented probability.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
+    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
   },
   {
     "day": "Sun",
@@ -180,7 +180,7 @@ export const week12PoolGames: Week9PoolGame[] = [
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
     "rationale": "The exact frozen line is priced toward Tennessee, but this remains a modest price signal on a very large spread.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
+    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
   },
   {
     "day": "Sun",
@@ -197,7 +197,7 @@ export const week12PoolGames: Week9PoolGame[] = [
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
     "rationale": "Current exact-line pricing supports Houston, without a calibrated cover estimate.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
+    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
   },
   {
     "day": "Sun",
@@ -214,7 +214,7 @@ export const week12PoolGames: Week9PoolGame[] = [
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
     "rationale": "The strongest exact-line price shade on the board supports New England +1.5, but it is still a market price signal rather than an independent forecast.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
+    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
   },
   {
     "day": "Sun",
@@ -231,7 +231,7 @@ export const week12PoolGames: Week9PoolGame[] = [
     "confidence": 1,
     "signal": "NO MEASURED EDGE",
     "rationale": "The exact +7.5 market is balanced; Arizona remains the transparent provisional tie choice.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
+    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
   },
   {
     "day": "Sun",
@@ -248,7 +248,7 @@ export const week12PoolGames: Week9PoolGame[] = [
     "confidence": 1,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     "rationale": "Seattle gets +3.5 while the reviewed market is +3, creating a genuine key-number advantage without a quantified cover gain.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
+    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
   },
   {
     "day": "Sun",
@@ -265,7 +265,7 @@ export const week12PoolGames: Week9PoolGame[] = [
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
     "rationale": "The exact frozen line is priced toward the Raiders, but the advantage is small.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
+    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
   },
   {
     "day": "Mon",
@@ -282,6 +282,6 @@ export const week12PoolGames: Week9PoolGame[] = [
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
     "rationale": "Carolina gets +3.5 while the reviewed market is +3, creating a genuine key-number advantage without a quantified cover gain.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; full audit pending."
+    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
   }
 ];
