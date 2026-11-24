@@ -6,7 +6,7 @@ export const week12ReviewedAt = "2026-11-24T12:24:00-05:00";
 export const week12ReviewedLabel = "Nov 24 · 12:24 PM ET";
 export const week12PoolName = "The SZN · NFL Super Pick'em · NFL-575";
 export const week12PoolStatus = "16 exact frozen spreads captured; full initial board audited Nov 24. First kickoff Wed Nov 25 at 8 PM ET; user confirmed submission of all 16 FFCC picks and tiebreaker 44 on Nov 24. Exact edit-lock behavior remains unverified.";
-export const week12MarketAsOf = "Full 16-game initial board audit completed Nov 24 at 12:24 PM ET. Current standard lines and two-sided prices: VegasInsider Week 12 updated Nov 24 and The Odds Gap 13–14-book board observed 11:32 AM ET. Wednesday exact prices: LineSmart DraftKings, Hard Rock and FanDuel at 7:45 AM ET plus official Packers injury report. Sources: https://www.vegasinsider.com/nfl/nfl-week-12-odds-2026/ ; https://theoddsgap.com/weeklyslate/nfl ; https://linesmart.app/nfl/games/green-bay-packers-at-los-angeles-rams-2026-11-25/ ; https://www.packers.com/news/packers-rams-injury-report-nov-23-2026 . Final game designations remain pending; current market is used as the baseline to avoid double-counting incomplete injury news. No FFCC side changed.";
+export const week12MarketAsOf = "Full 16-game initial board audit completed Nov 24 at 12:24 PM ET. Current standard lines and two-sided prices: VegasInsider Week 12 updated Nov 24 and The Odds Gap 13–14-book board observed 11:32 AM ET. Wednesday exact prices: LineSmart DraftKings, Hard Rock and FanDuel at 7:45 AM ET plus official Packers injury report. Sources: https://www.vegasinsider.com/nfl/nfl-week-12-odds-2026/ ; https://theoddsgap.com/weeklyslate/nfl ; https://linesmart.app/nfl/games/green-bay-packers-at-los-angeles-rams-2026-11-25/ ; https://www.packers.com/news/packers-rams-injury-report-nov-23-2026 . Wednesday game rechecked Nov 24 at 1:42 PM ET after final designations: Packers listed eight questionable; Rams ruled out starting OL Steve Avila and Coleman Shelton. Exact +2.5 pricing remained mixed/balanced across reviewed books, so GB remains the submitted baseline and FFCC recommendation. Other final game designations remain pending; full-board audit timestamp remains 12:24 PM ET.";
 export const week12Standing = {correct:76,rank:73,leaderCorrect:96,note:"User screenshot Nov 24; 7th place 92."};
 export const week12SubmittedCard = {confirmedDate:"2026-11-24",confirmationSource:"User message: Submitted (in response to all 16 FFCC sides and tiebreaker 44)",picks:{"GB-LAR":"GB +2.5","CHI-DET":"CHI -2.5","PHI-DAL":"DAL -8.5","KC-BUF":"KC +3.5","DEN-PIT":"PIT +3.5","NO-CIN":"NO +10.5","NYG-IND":"NYG -6.5","NYJ-MIA":"NYJ -3.5","ATL-MIN":"ATL +7.5","TEN-JAX":"TEN +14.5","BAL-HOU":"HOU -6.5","NE-LAC":"NE +1.5","WAS-ARI":"ARI +7.5","SEA-SF":"SEA +3.5","LV-CLE":"LV +4.5","CAR-TB":"CAR +3.5"} as Record<string,string>,tiebreaker:"44",note:"Immutable user-confirmed baseline; subsequent FFCC advice does not alter submitted picks."};
 export const week12PendingPoolGames: {day:string;kickoff:string;away:string;home:string;mikeVibe:string;reason:string}[] = [];
@@ -22,12 +22,12 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "LAR",
     "poolSpread": 2.5,
-    "marketLabel": "Nov 24 audit: VegasInsider LAR -2.5 (-109) / GB +2.5 (-110); LineSmart at 7:45 AM ET had DraftKings +2.5 -110/-2.5 -109, FanDuel +2.5 -108/-2.5 -112 and Hard Rock at GB +2. Rams moved from -3.5 to -2.5, but the frozen pool is the current standard number.",
+    "marketLabel": "Nov 24 recheck after final injury designations: exact +2.5 remained mixed—BetMGM listed GB +2.5 (+100) / LAR -2.5 (-118), while the earlier three-book LineSmart snapshot ranged from GB -110 to -108 and LAR -109 to -112, with Hard Rock at GB +2. Frozen +2.5 remains the current standard number; no measured price edge.",
     "marketTotal": 44.5,
     "confidence": 1,
     "signal": "NO MEASURED EDGE",
     "rationale": "The exact +2.5 market is essentially balanced, so GB remains the transparent provisional tie choice rather than a measured edge.",
-    "watch": "Official Nov 23 report: Jacobs limited; Rams G Steve Avila and C Coleman Shelton did not practice, while Puka Nacua and Davante Adams remain out. Recheck Tuesday final designations and exact prices before Wednesday 8 PM ET kickoff."
+    "watch": "Official Nov 24 final status: Green Bay listed eight questionable, including Josh Jacobs, Micah Parsons, Sean Rhyan and Kevin Zeitler; the Rams ruled out starting OL Steve Avila and Coleman Shelton. Recheck only if a late inactive or exact-line move before Wednesday 8 PM ET materially changes the case."
   },
   {
     "day": "Thu",
