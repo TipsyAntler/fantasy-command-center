@@ -58,12 +58,12 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "DAL",
     "poolSpread": 8.5,
-    "marketLabel": "Nov 24 VegasInsider: DAL -8.5 (-111) / PHI +8.5 (-108), total 47.5; The Odds Gap 14-book board at 11:32 AM ET showed the same spread.",
+    "marketLabel": "Final pregame Nov 26 check: DraftKings held DAL -8.5 -109 and FanDuel DAL -8.5 -112, with Philadelphia +8.5 on the other side. The exact frozen line remained effectively balanced to slightly Dallas-priced; no FFCC flip.",
     "marketTotal": 47.5,
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
     "rationale": "A tiny exact-line price shade supports Dallas; this is not a meaningful independent edge.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
+    "watch": "LOCKED at kickoff. Dallas ruled out G Tyler Booker, TE Jake Ferguson, S P.J. Locke and WR Jonathan Mingo; Philadelphia ruled out CB Jonathan Jones and EDGE Arnold Ebiketie. Final inactives did not move the market off DAL -8.5 or create a verified opposite-side edge."
   },
   {
     "day": "Thu",
