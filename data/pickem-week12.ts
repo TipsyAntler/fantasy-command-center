@@ -5,9 +5,10 @@ export const week12CapturedLabel = "Nov 24 · 9:32 AM ET · user screenshots";
 export const week12ReviewedAt = "2026-11-24T12:24:00-05:00";
 export const week12ReviewedLabel = "Nov 24 · 12:24 PM ET";
 export const week12PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week12PoolStatus = "16 exact frozen spreads captured; full initial board audited Nov 24. First kickoff Wed Nov 25 at 8 PM ET; user confirmed submission of all 16 FFCC picks and tiebreaker 44 on Nov 24. Exact edit-lock behavior remains unverified.";
+export const week12PoolStatus = "16 exact frozen spreads captured; full initial board audited Nov 24. User confirmed submission of all 16 FFCC picks and tiebreaker 44 on Nov 24. Opener final: LAR 26, GB 13; submitted GB +2.5 graded as a loss. Exact edit-lock behavior remains unverified.";
 export const week12MarketAsOf = "Full 16-game initial board audit remains Nov 24 at 12:24 PM ET. Opener-only refresh Nov 25 at 3:16 PM ET: final official designations and current exact-line market were rechecked without advancing the full-board review timestamp. Rams ruled out Steve Avila, Coleman Shelton and Terrance Ferguson; Green Bay listed eight questionable including Josh Jacobs, Micah Parsons, Sean Rhyan and Kevin Zeitler. At 2:45 PM ET, LineSmart showed DraftKings GB +2.5 -104/LAR -2.5 -115, Hard Rock -110/-110 and FanDuel GB +2.5 -105/LAR -2.5 -115. Proportional de-vig across those three pairs produces only a slight Rams shade (roughly 50.8%), which remains effectively balanced and does not clear the threshold to overturn submitted GB +2.5. No recommendation flip. Sources: https://www.therams.com/team/injury-report/ ; https://www.packers.com/news/packers-list-eight-questionable-vs-rams-week-12-injury-report ; https://linesmart.app/nfl/games/green-bay-packers-at-los-angeles-rams-2026-11-25/ .";
-export const week12Standing = {correct:76,rank:73,leaderCorrect:96,note:"User screenshot Nov 24; 7th place 92."};
+export const week12Standing = {correct:76,rank:73,leaderCorrect:96,note:"User screenshot Nov 24; 7th place 92. Week 12 opener result recorded separately; overall pool standing not advanced without a verified pool update."};
+export const week12Results = {"GB-LAR":{finalScore:"LAR 26, GB 13",submittedPick:"GB +2.5",atsResult:"loss",gradedAt:"2026-11-26T00:31:00-05:00",source:"NFL final plus Reuters and Rams official recap"}} as const;
 export const week12SubmittedCard = {confirmedDate:"2026-11-24",confirmationSource:"User message: Submitted (in response to all 16 FFCC sides and tiebreaker 44)",picks:{"GB-LAR":"GB +2.5","CHI-DET":"CHI -2.5","PHI-DAL":"DAL -8.5","KC-BUF":"KC +3.5","DEN-PIT":"PIT +3.5","NO-CIN":"NO +10.5","NYG-IND":"NYG -6.5","NYJ-MIA":"NYJ -3.5","ATL-MIN":"ATL +7.5","TEN-JAX":"TEN +14.5","BAL-HOU":"HOU -6.5","NE-LAC":"NE +1.5","WAS-ARI":"ARI +7.5","SEA-SF":"SEA +3.5","LV-CLE":"LV +4.5","CAR-TB":"CAR +3.5"} as Record<string,string>,tiebreaker:"44",note:"Immutable user-confirmed baseline; subsequent FFCC advice does not alter submitted picks."};
 export const week12PendingPoolGames: {day:string;kickoff:string;away:string;home:string;mikeVibe:string;reason:string}[] = [];
 export const week12Tiebreaker = {matchup:"CAR @ TB",earlyFfccTarget:"44",currentMarketTotal:"43.5 (Nov 24 market audit)",note:"User confirmed submission of 44 on Nov 24. Subsequent advice is separate; exact pool tiebreaker edit deadline not verified."};
@@ -22,12 +23,12 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "LAR",
     "poolSpread": 2.5,
-    "marketLabel": "Nov 24 recheck after final injury designations: exact +2.5 remained mixed—BetMGM listed GB +2.5 (+100) / LAR -2.5 (-118), while the earlier three-book LineSmart snapshot ranged from GB -110 to -108 and LAR -109 to -112, with Hard Rock at GB +2. Frozen +2.5 remains the current standard number; no measured price edge.",
+    "marketLabel": "FINAL Nov 25: LAR 26, GB 13. Submitted GB +2.5 did not cover. Pregame exact-line market had remained effectively balanced with only a slight Rams shade; no FFCC flip was made.",
     "marketTotal": 44.5,
     "confidence": 1,
     "signal": "NO MEASURED EDGE",
-    "rationale": "Two of three reviewed books shade the Rams, but the proportional de-vig consensus is only about 50.8% LAR at the exact frozen line. That is too close to balanced to justify overturning submitted GB +2.5.",
-    "watch": "Official Nov 24 final status: Green Bay listed eight questionable, including Josh Jacobs, Micah Parsons, Sean Rhyan and Kevin Zeitler; the Rams ruled out starting OL Steve Avila and Coleman Shelton. Recheck only if a late inactive or exact-line move before Wednesday 8 PM ET materially changes the case."
+    "rationale": "Graded loss: submitted GB +2.5; final LAR 26-13. The pregame proportional de-vig consensus was only about 50.8% LAR at the exact frozen line, so the slight Rams shade had not cleared the threshold for a flip.",
+    "watch": "LOCKED/FINAL. Josh Jacobs was inactive. Result source: NFL final; Reuters and Rams official recap published Nov 25–26, 2026."
   },
   {
     "day": "Thu",
