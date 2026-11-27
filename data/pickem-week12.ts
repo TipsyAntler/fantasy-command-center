@@ -5,10 +5,10 @@ export const week12CapturedLabel = "Nov 24 · 9:32 AM ET · user screenshots";
 export const week12ReviewedAt = "2026-11-24T12:24:00-05:00";
 export const week12ReviewedLabel = "Nov 24 · 12:24 PM ET";
 export const week12PoolName = "The SZN · NFL Super Pick'em · NFL-575";
-export const week12PoolStatus = "16 exact frozen spreads captured; full initial board audited Nov 24. User confirmed submission of all 16 FFCC picks and tiebreaker 44 on Nov 24. Results logged: GB +2.5 lost at LAR; the applied Thanksgiving flip DET +2.5 lost to CHI 39-35, while the immutable original CHI -2.5 baseline would have covered.";
+export const week12PoolStatus = "16 exact frozen spreads captured; full initial board audited Nov 24. User confirmed submission of all 16 FFCC picks and tiebreaker 44 on Nov 24. Results logged: GB +2.5 lost at LAR; the applied Thanksgiving flip DET +2.5 lost to CHI 39-35 while the immutable original CHI -2.5 baseline would have covered; DAL -8.5 lost to PHI 39-38; KC +3.5 covered in BUF 13-10.";
 export const week12MarketAsOf = "Full 16-game initial board audit remains Nov 24 at 12:24 PM ET. Opener-only refresh Nov 25 at 3:16 PM ET: final official designations and current exact-line market were rechecked without advancing the full-board review timestamp. Rams ruled out Steve Avila, Coleman Shelton and Terrance Ferguson; Green Bay listed eight questionable including Josh Jacobs, Micah Parsons, Sean Rhyan and Kevin Zeitler. At 2:45 PM ET, LineSmart showed DraftKings GB +2.5 -104/LAR -2.5 -115, Hard Rock -110/-110 and FanDuel GB +2.5 -105/LAR -2.5 -115. Proportional de-vig across those three pairs produces only a slight Rams shade (roughly 50.8%), which remains effectively balanced and does not clear the threshold to overturn submitted GB +2.5. No recommendation flip. Thanksgiving-morning game-specific refresh Nov 26 at 7:25 AM ET: CHI-DET consensus moved from CHI -2.5 to roughly CHI -1/-1.5, making the frozen DET +2.5 side one to 1.5 points better than the current standard market. FFCC flips CHI -2.5 → DET +2.5; full-board reviewedAt remains Nov 24. Sources: https://www.therams.com/team/injury-report/ ; https://www.packers.com/news/packers-list-eight-questionable-vs-rams-week-12-injury-report ; https://linesmart.app/nfl/games/green-bay-packers-at-los-angeles-rams-2026-11-25/ ; https://fantasydata.com/nfl/odds ; https://lasvegassportsbetting.com/live-odds-and-scores/nfl-football-betting-odds-and-scores/ .";
 export const week12Standing = {correct:76,rank:73,leaderCorrect:96,note:"User screenshot Nov 24; 7th place 92. Week 12 opener result recorded separately; overall pool standing not advanced without a verified pool update."};
-export const week12Results = {"GB-LAR":{finalScore:"LAR 26, GB 13",submittedPick:"GB +2.5",atsResult:"loss",gradedAt:"2026-11-26T00:31:00-05:00",source:"NFL final plus Reuters and Rams official recap"},"CHI-DET":{finalScore:"CHI 39, DET 35",originalSubmittedPick:"CHI -2.5",originalSubmittedResult:"win",appliedFfccPick:"DET +2.5",appliedFfccResult:"loss",gradedAt:"2026-11-26T16:49:00-05:00",source:"Final score verified via game recap and official schedule feed"}} as const;
+export const week12Results = {"GB-LAR":{finalScore:"LAR 26, GB 13",submittedPick:"GB +2.5",atsResult:"loss",gradedAt:"2026-11-26T00:31:00-05:00",source:"NFL final plus Reuters and Rams official recap"},"CHI-DET":{finalScore:"CHI 39, DET 35",originalSubmittedPick:"CHI -2.5",originalSubmittedResult:"win",appliedFfccPick:"DET +2.5",appliedFfccResult:"loss",gradedAt:"2026-11-26T16:49:00-05:00",source:"Final score verified via game recap and official schedule feed"},"PHI-DAL":{finalScore:"PHI 39, DAL 38",submittedPick:"DAL -8.5",atsResult:"loss",gradedAt:"2026-11-27T01:16:00-05:00",source:"Philadelphia Eagles official recap and NFL schedule final"},"KC-BUF":{finalScore:"BUF 13, KC 10",submittedPick:"KC +3.5",atsResult:"win",gradedAt:"2026-11-27T01:16:00-05:00",source:"NFL final gamebook and CBS/AP recap"}} as const;
 export const week12RecommendationChanges = [{"game":"CHI-DET","changedAt":"2026-11-26T07:25:00-05:00","oldPick":"CHI -2.5","newPick":"DET +2.5","reason":"Current standard market moved to CHI -1/-1.5, giving the frozen Detroit side a one to 1.5-point number advantage.","submittedCardChanged":true,"userConfirmedAppliedAt":"2026-11-26T10:13:00-05:00"}] as const;
 export const week12SubmittedCard = {confirmedDate:"2026-11-24",confirmationSource:"User message: Submitted (in response to all 16 FFCC sides and tiebreaker 44)",picks:{"GB-LAR":"GB +2.5","CHI-DET":"CHI -2.5","PHI-DAL":"DAL -8.5","KC-BUF":"KC +3.5","DEN-PIT":"PIT +3.5","NO-CIN":"NO +10.5","NYG-IND":"NYG -6.5","NYJ-MIA":"NYJ -3.5","ATL-MIN":"ATL +7.5","TEN-JAX":"TEN +14.5","BAL-HOU":"HOU -6.5","NE-LAC":"NE +1.5","WAS-ARI":"ARI +7.5","SEA-SF":"SEA +3.5","LV-CLE":"LV +4.5","CAR-TB":"CAR +3.5"} as Record<string,string>,tiebreaker:"44",note:"Immutable user-confirmed baseline; subsequent FFCC advice does not alter submitted picks."};
 export const week12PendingPoolGames: {day:string;kickoff:string;away:string;home:string;mikeVibe:string;reason:string}[] = [];
@@ -58,12 +58,12 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "DAL",
     "poolSpread": 8.5,
-    "marketLabel": "Final pregame Nov 26 check: DraftKings held DAL -8.5 -109 and FanDuel DAL -8.5 -112, with Philadelphia +8.5 on the other side. The exact frozen line remained effectively balanced to slightly Dallas-priced; no FFCC flip.",
+    "marketLabel": "FINAL Nov 26: PHI 39, DAL 38. Submitted DAL -8.5 did not cover. Final pregame exact-line pricing was effectively balanced to slightly Dallas-priced; no FFCC flip was made.",
     "marketTotal": 47.5,
     "confidence": 1,
     "signal": "SMALL EXACT-LINE PRICE LEAN",
-    "rationale": "A tiny exact-line price shade supports Dallas; this is not a meaningful independent edge.",
-    "watch": "LOCKED at kickoff. Dallas ruled out G Tyler Booker, TE Jake Ferguson, S P.J. Locke and WR Jonathan Mingo; Philadelphia ruled out CB Jonathan Jones and EDGE Arnold Ebiketie. Final inactives did not move the market off DAL -8.5 or create a verified opposite-side edge."
+    "rationale": "Graded loss: submitted DAL -8.5; final PHI 39-38. The pregame exact-line price shade toward Dallas was small and uncalibrated.",
+    "watch": "LOCKED/FINAL. Dallas ruled out G Tyler Booker, TE Jake Ferguson, S P.J. Locke and WR Jonathan Mingo; Philadelphia ruled out CB Jonathan Jones and EDGE Arnold Ebiketie. Dallas TE Dallas Goedert left with a shoulder injury. Result verified via Philadelphia Eagles official recap and NFL schedule final."
   },
   {
     "day": "Thu",
@@ -75,12 +75,12 @@ export const week12PoolGames: Week9PoolGame[] = [
     "mikeVibe": "Not provided",
     "poolFavorite": "BUF",
     "poolSpread": 3.5,
-    "marketLabel": "Nov 24 market: VegasInsider BUF -3 (even) / KC +3 (-120); The Odds Gap 14-book board at 11:32 AM ET centered on BUF -2.5, with -3 also available. Pool KC +3.5 is better than the current standard market.",
+    "marketLabel": "FINAL Nov 26: BUF 13, KC 10. Submitted KC +3.5 covered. The closing standard market centered on KC +3, so the frozen hook above 3 proved outcome-relevant.",
     "marketTotal": 47.5,
     "confidence": 2,
     "signal": "FROZEN-NUMBER ADVANTAGE · UNCALIBRATED SIZE",
-    "rationale": "Kansas City gets the hook above 3 while the reviewed market is +2.5 to +3. That key-number advantage is real but not converted into a cover probability.",
-    "watch": "Recheck official injuries, weather and exact-line prices while pool edits remain possible; final injury designations pending."
+    "rationale": "Graded win: submitted KC +3.5; final BUF 13-10. The frozen hook above the closing market key number preserved the cover without assigning an invented pregame probability.",
+    "watch": "LOCKED/FINAL. Buffalo won 13-10 on a 57-yard field goal as time expired. James Cook handled 32 carries for 117 yards and one touchdown; Ray Davis had four carries and Ty Johnson two receptions, with no new injury-driven stash signal."
   },
   {
     "day": "Fri",
